@@ -1,0 +1,12 @@
+name: ecology-textbook
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - r-essentials
+  - r-base
+  - jupyter
+  - ghp-import
+  - pip
+  - pip:
+    - jupyter-book
