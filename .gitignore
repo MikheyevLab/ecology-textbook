@@ -42,3 +42,6 @@ vignettes/*.pdf
 # VSCode workspace
 
 ecology-textbook.code-workspace
+
+_build
+.DS_Store
