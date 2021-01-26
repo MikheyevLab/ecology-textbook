@@ -9,15 +9,13 @@ kernelspec:
   name: ir
 ---
 
-# Basic Population Model
-
 # A basic population model
 
 ## Characterizing populations
 
 One way to describe populations is to look at how many individuals they contain at various times. Or, instead of individuals, it may be more reasonable to consider total biomass -- the total weight of all individuals in the population combined. For example, the number of trees may not be as important as their total weight, or the total area of their canopy. Density may also be relevant—how many individuals occupy a unit of area, or the percentage covered by the population in an area. All of these are gross properties of populations that can enter models.
 
-Additional properties that can be taken into account include the age structure—the portions of the population of various ages, and the size structure—the portions of the population of various sizes. Such detail can be important because juveniles or older individuals may not reproduce. Genetic structure can also be important; it is often left out of ecological models, but evolutionary directions can affect the ecology as well. Another important measure is the rate of change—how fast the population is changing. A population can be constant, increasing, or decreasing, or can fluctuate in complex ways.
+Additional properties that can be taken into account include the age structure -- the portions of the population of various ages, and the size structure -- the portions of the population of various sizes. Such detail can be important because juveniles or older individuals may not reproduce. Genetic structure can also be important; it is often left out of ecological models, but evolutionary directions can affect the ecology as well. Another important measure is the rate of change—how fast the population is changing. A population can be constant, increasing, or decreasing, or can fluctuate in complex ways.
 
 Another important measure is the rate of change—how fast the population is changing. A population can be constant, increasing, or decreasing, or can fluctuate in complex ways.
 
@@ -127,3 +125,9 @@ There is no exception to the rule that every organic being naturally increases a
 ```
 
 That he explained in Chapter Three of his Origin of Species.After explaining results of selection by people in the breeding of domestic animals, he introduced the concept of selection by natural causes in the wild, which he called “natural selection.” The simplest model of unlimited population growth was thus useful in the extreme, leading to an inviolable law of biology and the theory of evolution as one of its consequences. Individuals with qualities that allow them to suffer lower mortality or to reproduce slightly faster, and who pass those qualities to their offspring, will be the ones whose qualities predominate.Charles Darwin was in his twenties when he realized that natural selection was a cause of evolution and started to formulate his theory.
+
+
+## Exercises and Questions
+
+1. Update this code to simulate growth of a population that triples every hour. What is the population at time after three days of growth?
+2. Update this code to simulate growth of a population that doubles every ten hours. What is the population at time after three days of growth?
