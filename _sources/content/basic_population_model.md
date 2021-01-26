@@ -35,7 +35,7 @@ Below are two lines of computer code forming a program that models the bacterial
 
 ``` r
 N <- 1
-time <- 0:(5 * 24) # create a sequence on numbers from 1 to 5 * 25, incrementing by 1
+time <- 1:(5 * 24) # create a sequence on numbers from 1 to 5 * 25, incrementing by 1
 for(t in  time) {
   N <- N * 2
   }
@@ -67,7 +67,7 @@ As it happens, the program above correctly computes the results, but it doesn't 
 :tags: ["output_scroll"]
 N <- 1
 time <- 1:(5 * 24)
-populations <- data.frame(size = integer()) # create an empty table with one column called "size".
+populations <- data.frame(size = integer()) # create an empty table with one column called "size", to be filled with numbers
 for(t in time) {
   N <- N * 2
   populations[t, "size"] = N # save the output to the table
@@ -132,4 +132,8 @@ That he explained in Chapter Three of his Origin of Species.After explaining res
 ## Exercises and Questions
 
 1. Update this code to simulate growth of a population that triples every hour. What is the population at time after three days of growth?
+
+    ```{sidebar} Hint:
+    Use the [seq](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/seq) command to vary the sequence step size, *e.g.*, `seq(0, 4, by = 2)` to get `0 2 4`.
+    ```
 2. Update this code to simulate growth of a population that doubles every ten hours. What is the population at time after three days of growth?

@@ -273,7 +273,7 @@
 <h2>A first computer model<a class="headerlink" href="#a-first-computer-model" title="Permalink to this headline">¶</a></h2>
 <p>Below are two lines of computer code forming a program that models the bacterial colony as it doubles every hour written in R. We will go through the code carefully below.</p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">&lt;-</span> <span class="m">1</span>
-<span class="n">time</span> <span class="o">&lt;-</span> <span class="m">0</span><span class="o">:</span><span class="p">(</span><span class="m">5</span> <span class="o">*</span> <span class="m">24</span><span class="p">)</span> <span class="c1"># create a sequence on numbers from 1 to 5 * 25, incrementing by 1</span>
+<span class="n">time</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="p">(</span><span class="m">5</span> <span class="o">*</span> <span class="m">24</span><span class="p">)</span> <span class="c1"># create a sequence on numbers from 1 to 5 * 25, incrementing by 1</span>
 <span class="nf">for</span><span class="p">(</span><span class="n">t</span> <span class="n">in</span>  <span class="n">time</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">N</span> <span class="o">&lt;-</span> <span class="n">N</span> <span class="o">*</span> <span class="m">2</span>
   <span class="p">}</span>
@@ -298,7 +298,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">&lt;-</span> <span class="m">1</span>
 <span class="n">time</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="p">(</span><span class="m">5</span> <span class="o">*</span> <span class="m">24</span><span class="p">)</span>
-<span class="n">populations</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="nf">integer</span><span class="p">())</span> <span class="c1"># create an empty table with one column called &quot;size&quot;.</span>
+<span class="n">populations</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="nf">integer</span><span class="p">())</span> <span class="c1"># create an empty table with one column called &quot;size&quot;, to be filled with numbers</span>
 <span class="nf">for</span><span class="p">(</span><span class="n">t</span> <span class="n">in</span> <span class="n">time</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">N</span> <span class="o">&lt;-</span> <span class="n">N</span> <span class="o">*</span> <span class="m">2</span>
   <span class="n">populations</span><span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="s">&quot;size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">N</span> <span class="c1"># save the output to the table</span>
@@ -422,8 +422,13 @@ original pair. From this, he concluded that unlimited growth is impossible.</p>
 </div>
 <div class="section" id="exercises-and-questions">
 <h2>Exercises and Questions<a class="headerlink" href="#exercises-and-questions" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>Update this code to simulate growth of a population that triples every hour. What is the population at time after three days of growth?</p></li>
+<ol>
+<li><p>Update this code to simulate growth of a population that triples every hour. What is the population at time after three days of growth?</p>
+<div class="sidebar">
+<p class="sidebar-title">Hint:</p>
+<p>Use the <a class="reference external" href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/seq">seq</a> command to vary the sequence step size, <em>e.g.</em>, <code class="docutils literal notranslate"><span class="pre">seq(0,</span> <span class="pre">4,</span> <span class="pre">by</span> <span class="pre">=</span> <span class="pre">2)</span></code> to get <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">2</span> <span class="pre">4</span></code>.</p>
+</div>
+</li>
 <li><p>Update this code to simulate growth of a population that doubles every ten hours. What is the population at time after three days of growth?</p></li>
 </ol>
 </div>
