@@ -22,3 +22,6 @@ This make take a while...
 
 ### Build the book
 
+Once you have activated the environemnt and made your way to the project directory that contains the `book` folder you can run `jupyter-book build book` to compile the book.
+
+You can then push the results using `ghp-import -n -p -f book/_build/html`
