@@ -1,0 +1,492 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Population Model &#8212; Quantitative Ecology</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Quantiative Ecology" href="../intro.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Quantitative Ecology</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Quantiative Ecology
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Single populations
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Basic Population Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#a-basic-population-model">
+   A basic population model
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/content/basic_population_model.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/basic_population_model.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/MikheyevLab/ecology-textbook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/MikheyevLab/ecology-textbook/issues/new?title=Issue%20on%20page%20%2Fcontent/basic_population_model.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/MikheyevLab/ecology-textbook/main?urlpath=tree/book/content/basic_population_model.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Basic Population Model
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-basic-population-model">
+   A basic population model
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#characterizing-populations">
+     Characterizing populations
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bacterial-growth">
+     Bacterial growth
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-first-computer-model">
+     A first computer model
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#program-results">
+     Program results
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#darwins-elephants">
+     Darwin’s elephants
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="basic-population-model">
+<h1>Basic Population Model<a class="headerlink" href="#basic-population-model" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="a-basic-population-model">
+<h1>A basic population model<a class="headerlink" href="#a-basic-population-model" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="characterizing-populations">
+<h2>Characterizing populations<a class="headerlink" href="#characterizing-populations" title="Permalink to this headline">¶</a></h2>
+<p>One way to describe populations is to look at how many individuals they contain at various times. Or, instead of individuals, it may be more reasonable to consider total biomass – the total weight of all individuals in the population combined. For example, the number of trees may not be as important as their total weight, or the total area of their canopy. Density may also be relevant—how many individuals occupy a unit of area, or the percentage covered by the population in an area. All of these are gross properties of populations that can enter models.</p>
+<p>Additional properties that can be taken into account include the age structure—the portions of the population of various ages, and the size structure—the portions of the population of various sizes. Such detail can be important because juveniles or older individuals may not reproduce. Genetic structure can also be important; it is often left out of ecological models, but evolutionary directions can affect the ecology as well. Another important measure is the rate of change—how fast the population is changing. A population can be constant, increasing, or decreasing, or can fluctuate in complex ways.</p>
+<p>Another important measure is the rate of change—how fast the population is changing. A population can be constant, increasing, or decreasing, or can fluctuate in complex ways.</p>
+<p>Remember that a model is just a simpler view of something complex, and that all scientific models are just approximations of nature. When the full complexity cannot be understood, which is almost always, we can try to construct a simplified model in hopes of finding the essence.</p>
+</div>
+<div class="section" id="bacterial-growth">
+<h2>Bacterial growth<a class="headerlink" href="#bacterial-growth" title="Permalink to this headline">¶</a></h2>
+<p>The place to start a discussion of basic population models is in discrete-time at the macroscale – the most basic. Consider a hypothetical strain of bacteria reproducing every hour.Suppose a colony is started with a single bacterium when the clock reads zero, symbolized t = 0, and one hour later that bacterium divides into two, by time t = 1. Each of those divides in two one hour after that, by time t = 2. And so forth. Suppose you start this culture on a lab bench on Monday, let it go unchecked, and then come back late on Friday to see the results.</p>
+<p>If the colony grows unchecked in this way, how many bacteria will there be at the end of the work week, after five full days of growth? You could figure that out on a calculator, or more easily you could use computer code. More easily, that is, once you know computer coding.</p>
+<p>Because computer coding is becoming embedded in almost every aspect of life, appreciating the basics of coding is meaningful for each educated citizen of this century, and this book will expose you to the basics.</p>
+</div>
+<div class="section" id="a-first-computer-model">
+<h2>A first computer model<a class="headerlink" href="#a-first-computer-model" title="Permalink to this headline">¶</a></h2>
+<p>Below are two lines of computer code forming a program that models the bacterial colony as it doubles every hour written in R. We will go through the code carefully below.</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">&lt;-</span> <span class="m">1</span>
+<span class="n">time</span> <span class="o">&lt;-</span> <span class="m">0</span><span class="o">:</span><span class="p">(</span><span class="m">5</span> <span class="o">*</span> <span class="m">24</span><span class="p">)</span> <span class="c1"># create a sequence on numbers from 1 to 5 * 25, incrementing by 1</span>
+<span class="nf">for</span><span class="p">(</span><span class="n">t</span> <span class="n">in</span>  <span class="n">time</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">N</span> <span class="o">&lt;-</span> <span class="n">N</span> <span class="o">*</span> <span class="m">2</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The way the model is implemeted differs slightly from that of the original textbook, which used a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop. These loops can run forever if not correctly specified, so are a bit dangerous for an interactive learning exercise. The actual model and results are the same.</p>
+</div>
+<p>The first “statement” is <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">&lt;-</span> <span class="pre">1</span></code>. That instructs the computer to set the number of bacteria, <code class="docutils literal notranslate"><span class="pre">N</span></code>, equal to 1. The second line determines the starting generation time and how many generations will be run using a list called <code class="docutils literal notranslate"><span class="pre">time</span></code>. In R the colon (<code class="docutils literal notranslate"><span class="pre">:</span></code>) is used to create a list that increments by 1 from the number before the colon to the number after the colon, <em>e.g.</em>, <code class="docutils literal notranslate"><span class="pre">1:3</span></code> becomes <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span></code>. So, <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">&lt;-</span> <span class="pre">1:(5</span> <span class="pre">*</span> <span class="pre">24)</span></code> instructs the computer to set the time from <code class="docutils literal notranslate"><span class="pre">1</span></code> to <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">*</span> <span class="pre">24</span></code>. We put parentheses over the last expression to make sure that it’s computer first, before the list is created, or you would get <code class="docutils literal notranslate"><span class="pre">(1:5)</span> <span class="pre">*</span> <span class="pre">24</span></code> using R’s rules of <a class="reference external" href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Syntax.html">operator precedence</a>. So, the final list will contain 120 items corresponding to the time steps of the model: <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">...</span> <span class="pre">119</span> <span class="pre">120</span></code>. One bacterium at time one forms the “initial conditions,” and once the computer has finished that line, the program is said to be “initialized.”</p>
+<p>Note that a <code class="docutils literal notranslate"><span class="pre">#</span></code> character indicates that everything following it is a comment and is not parsed by the language interpreter. Comments are great at explaining what code does, and you should use the liberally. Over time you may yourself forget why you wrote a particular line of code or what it’s supposed to do.</p>
+<p>The third line of the program is more involved, but can be understood in two parts. The first part on the left, <code class="docutils literal notranslate"><span class="pre">for(t</span> <span class="pre">in</span> <span class="pre">time)</span></code>, instructs the computer to loop over each value in the list called <code class="docutils literal notranslate"><span class="pre">time</span></code>. During each loop it chooses a value in a sequence and assigns it to the variable <code class="docutils literal notranslate"><span class="pre">t</span></code>. So, this is done for 5 simulated days of 24 hours each. The second part is the code to be repeated, within braces on the right, <code class="docutils literal notranslate"><span class="pre">{...}</span></code>.</p>
+<p>Computer coding is an exacting business, where tiny variations can make huge differences. Missing parentheses, commas, or even incorrect line breaks can cause your code to fail. If you are accustomed to coding, you will already be familiar with such subtleties; if this is all new to you, it is something to get used to. Various primers on the web can help, but don’t be discouraged if it seems difficult at first; computer coding turns out to be one of the easiest things to jump into but one of the most difficult areas of all human endeavour to get exactly right. Time and patience will assist.</p>
+<p>At the moment the loop contains only one statement, <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">&lt;-</span> <span class="pre">N</span> <span class="pre">*</span> <span class="pre">2</span></code>, is read “N equals N times two. ”It is similar in form to the statement on the first line, <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">&lt;-</span> <span class="pre">1</span></code>, which started things off with a single bacterium. The <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">&lt;-</span></code> part is the same. It tells the computer that the number of bacteria, N, is about to change. (Of course, the computer has no clue what the program is about—that you are running a program about bacteria.) What N will change to is immediately to the right of the equal sign, <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">*</span> <span class="pre">2</span></code>. So this statement thus tells the computer to double the value of N. That is what the hypothesized bacterial population does every hour, so this statement models that doubling.</p>
+<p>After the loop has executed its statement(s) it will pull the next value from <code class="docutils literal notranslate"><span class="pre">steps</span></code> and run again, until there are no more values in <code class="docutils literal notranslate"><span class="pre">steps</span></code> left to run, <em>i.e.</em>. 121 times.</p>
+<p>This code illustrates looping, a fundamental aspects of computer coding. In larger programs loops are “nested” within other loops and condition tests are nested correspondingly. But this simple program is sufficient for our first model. You will soon see that this is not a trivial model, but one that demonstrates an inviolable law of biology, which Darwin put directly to use in creating his theory of evolution.</p>
+</div>
+<div class="section" id="program-results">
+<h2>Program results<a class="headerlink" href="#program-results" title="Permalink to this headline">¶</a></h2>
+<p>As it happens, the program above correctly computes the results, but it doesn’t actually save or print them. Not very useful. Here we modify it slightly to save and print the results into a table, called a <a class="reference external" href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/data.frame"><code class="docutils literal notranslate"><span class="pre">data.frame</span></code></a> in R terminology. During each iteration of the loop, we save the results to a row of this table specified by the time in the <code class="docutils literal notranslate"><span class="pre">t</span></code> variable, which we didn’t use at all in the code above. Printing <code class="docutils literal notranslate"><span class="pre">populations</span></code> by itself in the last line dumps its contents to the screen. In real modeling or data analysis exercises you’ll always be storing your results as various kinds of data structures, so that you can manipulate and analyze them.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">&lt;-</span> <span class="m">1</span>
+<span class="n">time</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="p">(</span><span class="m">5</span> <span class="o">*</span> <span class="m">24</span><span class="p">)</span>
+<span class="n">populations</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="nf">integer</span><span class="p">())</span> <span class="c1"># create an empty table with one column called &quot;size&quot;.</span>
+<span class="nf">for</span><span class="p">(</span><span class="n">t</span> <span class="n">in</span> <span class="n">time</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">N</span> <span class="o">&lt;-</span> <span class="n">N</span> <span class="o">*</span> <span class="m">2</span>
+  <span class="n">populations</span><span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="s">&quot;size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">N</span> <span class="c1"># save the output to the table</span>
+  <span class="p">}</span>
+<span class="n">populations</span> <span class="c1"># print the results!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<caption>A data.frame: 120 × 1</caption>
+<thead>
+	<tr><th></th><th scope=col>size</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>         2</td></tr>
+	<tr><th scope=row>2</th><td>         4</td></tr>
+	<tr><th scope=row>3</th><td>         8</td></tr>
+	<tr><th scope=row>4</th><td>        16</td></tr>
+	<tr><th scope=row>5</th><td>        32</td></tr>
+	<tr><th scope=row>6</th><td>        64</td></tr>
+	<tr><th scope=row>7</th><td>       128</td></tr>
+	<tr><th scope=row>8</th><td>       256</td></tr>
+	<tr><th scope=row>9</th><td>       512</td></tr>
+	<tr><th scope=row>10</th><td>      1024</td></tr>
+	<tr><th scope=row>11</th><td>      2048</td></tr>
+	<tr><th scope=row>12</th><td>      4096</td></tr>
+	<tr><th scope=row>13</th><td>      8192</td></tr>
+	<tr><th scope=row>14</th><td>     16384</td></tr>
+	<tr><th scope=row>15</th><td>     32768</td></tr>
+	<tr><th scope=row>16</th><td>     65536</td></tr>
+	<tr><th scope=row>17</th><td>    131072</td></tr>
+	<tr><th scope=row>18</th><td>    262144</td></tr>
+	<tr><th scope=row>19</th><td>    524288</td></tr>
+	<tr><th scope=row>20</th><td>   1048576</td></tr>
+	<tr><th scope=row>21</th><td>   2097152</td></tr>
+	<tr><th scope=row>22</th><td>   4194304</td></tr>
+	<tr><th scope=row>23</th><td>   8388608</td></tr>
+	<tr><th scope=row>24</th><td>  16777216</td></tr>
+	<tr><th scope=row>25</th><td>  33554432</td></tr>
+	<tr><th scope=row>26</th><td>  67108864</td></tr>
+	<tr><th scope=row>27</th><td> 134217728</td></tr>
+	<tr><th scope=row>28</th><td> 268435456</td></tr>
+	<tr><th scope=row>29</th><td> 536870912</td></tr>
+	<tr><th scope=row>30</th><td>1073741824</td></tr>
+	<tr><th scope=row>⋮</th><td>⋮</td></tr>
+	<tr><th scope=row>91</th><td>2.475880e+27</td></tr>
+	<tr><th scope=row>92</th><td>4.951760e+27</td></tr>
+	<tr><th scope=row>93</th><td>9.903520e+27</td></tr>
+	<tr><th scope=row>94</th><td>1.980704e+28</td></tr>
+	<tr><th scope=row>95</th><td>3.961408e+28</td></tr>
+	<tr><th scope=row>96</th><td>7.922816e+28</td></tr>
+	<tr><th scope=row>97</th><td>1.584563e+29</td></tr>
+	<tr><th scope=row>98</th><td>3.169127e+29</td></tr>
+	<tr><th scope=row>99</th><td>6.338253e+29</td></tr>
+	<tr><th scope=row>100</th><td>1.267651e+30</td></tr>
+	<tr><th scope=row>101</th><td>2.535301e+30</td></tr>
+	<tr><th scope=row>102</th><td>5.070602e+30</td></tr>
+	<tr><th scope=row>103</th><td>1.014120e+31</td></tr>
+	<tr><th scope=row>104</th><td>2.028241e+31</td></tr>
+	<tr><th scope=row>105</th><td>4.056482e+31</td></tr>
+	<tr><th scope=row>106</th><td>8.112964e+31</td></tr>
+	<tr><th scope=row>107</th><td>1.622593e+32</td></tr>
+	<tr><th scope=row>108</th><td>3.245186e+32</td></tr>
+	<tr><th scope=row>109</th><td>6.490371e+32</td></tr>
+	<tr><th scope=row>110</th><td>1.298074e+33</td></tr>
+	<tr><th scope=row>111</th><td>2.596148e+33</td></tr>
+	<tr><th scope=row>112</th><td>5.192297e+33</td></tr>
+	<tr><th scope=row>113</th><td>1.038459e+34</td></tr>
+	<tr><th scope=row>114</th><td>2.076919e+34</td></tr>
+	<tr><th scope=row>115</th><td>4.153837e+34</td></tr>
+	<tr><th scope=row>116</th><td>8.307675e+34</td></tr>
+	<tr><th scope=row>117</th><td>1.661535e+35</td></tr>
+	<tr><th scope=row>118</th><td>3.323070e+35</td></tr>
+	<tr><th scope=row>119</th><td>6.646140e+35</td></tr>
+	<tr><th scope=row>120</th><td>1.329228e+36</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Evaluating the cide</p>
+<p>You can change and re-run this code interactively using the “Live Code” option available under the <span class="fas fa-rocket"></span> icon at the top of the page. You can then modify the code and re-run it.</p>
+</div>
+<p>Between Monday and Friday, 120 bacterial doublings would produce over <span class="math notranslate nohighlight">\(10^{36}\)</span> bacteria—that’s 1 followed by 36 zeros. That is the computational result, which looks like an exponential increase. We can plot it using the R <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> graphics library.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">populations</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="p">(</span><span class="m">5</span><span class="o">*</span><span class="m">24</span><span class="p">),</span> <span class="n">size</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_line</span><span class="p">()</span> <span class="o">+</span> <span class="nf">xlab</span><span class="p">(</span><span class="s">&quot;Time (hours)&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">ylab</span><span class="p">(</span><span class="s">&quot;Population size (bacteral cells)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/basic_population_model_3_0.png" src="../_images/basic_population_model_3_0.png" />
+</div>
+</div>
+<p>The scientific question is how many individuals this amounts to. Worked out exactly, it is this number: <span class="math notranslate nohighlight">\(2^{120} = 1,329,227,995,784,915,872,903,807,060,280,344,576\)</span>. To understand the size of this number, suppose the bacteria are roughly cubical 1 µm on a side—one millionth of a meter, or about four hundred thousandths of an inch (a suitable order-of-magnitude for a bacterium). What volume will the colony occupy in cubic meters at the end of the work week, after five full days of growing unchecked? You might want to speculate: will it fill the culture plate, overflow onto the lab bench, fill the lab, or what?</p>
+<p>Work it out and you will see that the answer is <span class="math notranslate nohighlight">\(2^{120}\)</span> bacteria times <span class="math notranslate nohighlight">\(10^{−18}\)</span> cubic meters per bacterium equals about <span class="math notranslate nohighlight">\(1.3 * 10^{18}\)</span> cubic meters total. How large is that? Estimate the ocean to be a film averaging 3.7 kilometers deep and coating two-thirds of a sphere with a 6400 kilometer radius (this approximates the amount of the earth’s surface that is covered by ocean). This is about <span class="math notranslate nohighlight">\(1.3 × 10^{18}\)</span> cubic meters! At the end of five days, the colony unchecked would thus fill all oceans of the earth with a dense microbial mass, from the greatest depths up to the surface!This result has deep-reaching implications. First, even though this bacterial model can be quite accurate for a day or so, it fails completely over the course of a week. All models are approximations to reality, at best applicable over a suitable range. Second, there are lessons in its failure. It illustrates one of the inviolable laws of biology—that no population growth can remain unlimited for long. And third, in a mind like Charles Darwin’s, and coupled with other biological principles, it leads to the conclusion that organisms must evolve. That is the story of Darwin’s elephants.</p>
+</div>
+<div class="section" id="darwins-elephants">
+<h2>Darwin’s elephants<a class="headerlink" href="#darwins-elephants" title="Permalink to this headline">¶</a></h2>
+<p>With elephants recognized as the slowest breeders of all known animals, Darwin made a laborious calculation, similar to thebacterial calculation above but more detailed, assuming thatelephants started breeding at age 30 and continued until age 90, producing 6 young in that time.</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/f/fa/Elephants_at_Amboseli_national_park_against_Mount_Kilimanjaro.jpg"><img alt="Elephants" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Elephants_at_Amboseli_national_park_against_Mount_Kilimanjaro.jpg" style="width: 250px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text"><a class="reference external" href="https://commons.wikimedia.org/wiki/File:Elephants_at_Amboseli_national_park_against_Mount_Kilimanjaro.jpg">Elephants at Amboseli National Park against Mount Kilimanjaro</a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Of course he had no computers, nor calculators, and apparently kept track of 90 or more age classes and made his calculations (which have never been found) on paper. He calculated by hand on paper and alas those notes have never been found. But he said it cost him “some pain” to reach the conclusion that at the end of the fifth century, fifteen million elephants would be walking the earth, descended from one
+original pair. From this, he concluded that unlimited growth is impossible.</p>
+<p>Of course he had no computers, nor calculators, and apparently kept track of 90 or more age classes and made his calculations (which have never been found) on paper. He calculated by hand on paper and alas those notes have never been found. But he said it cost him “some pain” to reach the conclusion that at the end of the fifth century, fifteen million elephants would be walking the earth, descended from one original pair. From this, he concluded that unlimited growth is impossible.</p>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/Darwin.jpg"><img alt="Darwin" src="../_images/Darwin.jpg" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Charles Darwin was in his twenties when he realized that natural selection was a cause of evolution and started to formulate his theory</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<blockquote class="epigraph">
+<div><p>There is no exception to the rule that every organic being naturally increases at so high a rate that, if not destroyed, the earth would soon be covered by the progeny.</p>
+<p class="attribution">—Darwin, 1859</p>
+</div></blockquote>
+<p>That he explained in Chapter Three of his Origin of Species.After explaining results of selection by people in the breeding of domestic animals, he introduced the concept of selection by natural causes in the wild, which he called “natural selection.” The simplest model of unlimited population growth was thus useful in the extreme, leading to an inviolable law of biology and the theory of evolution as one of its consequences. Individuals with qualities that allow them to suffer lower mortality or to reproduce slightly faster, and who pass those qualities to their offspring, will be the ones whose qualities predominate.Charles Darwin was in his twenties when he realized that natural selection was a cause of evolution and started to formulate his theory.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "MikheyevLab/ecology-textbook",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">Quantiative Ecology</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Lehman, Loberg and Clark<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
