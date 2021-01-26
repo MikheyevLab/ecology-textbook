@@ -75,7 +75,7 @@ for(t in time) {
 populations # print the results!
 ```
 
-```{admonition} Evaluating the cide
+```{admonition} Evaluating the code
 :class: tip
 You can change and re-run this code interactively using the "Live Code" option available under the <span class="fas fa-rocket"></span> icon at the top of the page. You can then modify the code and re-run it.
 ```
