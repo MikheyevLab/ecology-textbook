@@ -3,7 +3,7 @@
 
 title: Quantitative Ecology
 author: Lehman, Loberg and Clark
-copyright: 2019
+copyright: "2019"
 logo: img/logo.png
 
 # Force re-execution of notebooks on each build.
@@ -34,3 +34,7 @@ launch_buttons:
   binderhub_url: "https://mybinder.org"
   colab_url: "https://colab.research.google.com"
   thebe: true
+
+# Enable extended syntax
+parse:
+  myst_extended_syntax: true
