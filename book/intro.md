@@ -1,7 +1,4 @@
-Welcome to your Jupyter Book
+Quantiative Ecology
 ============================
 
-This is a small sample book to give you a feel for how book content is
-structured.
-
-Check out the content pages bundled with this sample book to get started.
+This a version of [*Quantitative Ecology*](http://hdl.handle.net/11299/204551) by Lehman, Loberg and Clark slightly modified for the Australian National University Ecology course.
