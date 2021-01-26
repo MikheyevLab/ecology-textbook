@@ -100,7 +100,7 @@ With elephants recognized as the slowest breeders of all known animals, Darwin m
 ```{figure} https://upload.wikimedia.org/wikipedia/commons/f/fa/Elephants_at_Amboseli_national_park_against_Mount_Kilimanjaro.jpg
 ---
 alt: Elephants
-width: 250px
+width: 600px
 align: center
 ---
 [Elephants at Amboseli National Park against Mount Kilimanjaro](https://commons.wikimedia.org/wiki/File:Elephants_at_Amboseli_national_park_against_Mount_Kilimanjaro.jpg)
@@ -114,7 +114,7 @@ Of course he had no computers, nor calculators, and apparently kept track of 90 
 ```{figure} ../img/Darwin.jpg
 ---
 alt: Darwin
-width: 200px
+width: 400px
 align: center
 ---
 Charles Darwin was in his twenties when he realized that natural selection was a cause of evolution and started to formulate his theory
