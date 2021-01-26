@@ -1,3 +1,0 @@
-matplotlib
-numpy
-jupytext~=1.6.0
