@@ -95,7 +95,7 @@ Work it out and you will see that the answer is $2^{120}$ bacteria times $10^{�
 
 ## Darwin’s elephants
  
-With elephants recognized as the slowest breeders of all known animals, Darwin made a laborious calculation, similar to thebacterial calculation above but more detailed, assuming thatelephants started breeding at age 30 and continued until age 90, producing 6 young in that time.
+With elephants recognized as the slowest breeders of all known animals, Darwin made a laborious calculation, similar to the bacterial calculation above but more detailed, assuming that elephants started breeding at age 30 and continued until age 90, producing 6 young in that time.
 
 ```{figure} https://upload.wikimedia.org/wikipedia/commons/f/fa/Elephants_at_Amboseli_national_park_against_Mount_Kilimanjaro.jpg
 ---
@@ -126,7 +126,7 @@ There is no exception to the rule that every organic being naturally increases a
 -- Darwin, 1859
 ```
 
-That he explained in Chapter Three of his Origin of Species.After explaining results of selection by people in the breeding of domestic animals, he introduced the concept of selection by natural causes in the wild, which he called “natural selection.” The simplest model of unlimited population growth was thus useful in the extreme, leading to an inviolable law of biology and the theory of evolution as one of its consequences. Individuals with qualities that allow them to suffer lower mortality or to reproduce slightly faster, and who pass those qualities to their offspring, will be the ones whose qualities predominate.Charles Darwin was in his twenties when he realized that natural selection was a cause of evolution and started to formulate his theory.
+That he explained in Chapter Three of his Origin of Species. After explaining results of selection by people in the breeding of domestic animals, he introduced the concept of selection by natural causes in the wild, which he called “natural selection.” The simplest model of unlimited population growth was thus useful in the extreme, leading to an inviolable law of biology and the theory of evolution as one of its consequences. Individuals with qualities that allow them to suffer lower mortality or to reproduce slightly faster, and who pass those qualities to their offspring, will be the ones whose qualities predominate.Charles Darwin was in his twenties when he realized that natural selection was a cause of evolution and started to formulate his theory.
 
 
 ## Exercises and Questions
@@ -137,3 +137,4 @@ That he explained in Chapter Three of his Origin of Species.After explaining res
     Use the [seq](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/seq) command to vary the sequence step size, *e.g.*, `seq(0, 4, by = 2)` to get `0 2 4`.
     ```
 2. Update this code to simulate growth of a population that doubles every ten hours. What is the population at time after three days of growth?
+3. One of the convenient features of `ggplot` is that commands can be layered on top of each other to produce different plots. Add `+ scale_y_log10()` to the plotting code and re-plot the result. This adds a [logarithmic](https://en.wikipedia.org/wiki/Logarithmic_scale) y-axis to the plot, which makes a straight line plot -- the tell-tale sign of an exponential growth curve! What are the advantages of viewing the data in this way? Note: you'll have to run the first model code cell first to save the results in the `populations` data frame.
