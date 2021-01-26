@@ -75,9 +75,9 @@ for(t in time) {
 populations # print the results!
 ```
 
-```{admonition} Evaluating the cide
+```{admonition} Evaluating the code
 :class: tip
-You can change and re-run this code interactively using the "Live Code" option available under the <span class="fas fa-rocket"></span> icon at the top of the page. You can then modify the code and re-run it.
+You can change and re-run this code interactively using the "Live Code" option available under the <span class="fas fa-rocket"></span> icon at the top of the page. You can then modify the code and re-run it. Note that the the order in which you evaluate cells in a web page matters. For example, you need to run the model before you can plot its results.
 ```
 
 Between Monday and Friday, 120 bacterial doublings would produce over $10^{36}$ bacteria—that’s 1 followed by 36 zeros. That is the computational result, which looks like an exponential increase. We can plot it using the R `ggplot2` graphics library.
@@ -103,7 +103,7 @@ alt: Elephants
 width: 600px
 align: center
 ---
-[Elephants at Amboseli National Park against Mount Kilimanjaro](https://commons.wikimedia.org/wiki/File:Elephants_at_Amboseli_national_park_against_Mount_Kilimanjaro.jpg)
+Elephants at Amboseli National Park against Mount Kilimanjaro
 ```
 
 Of course he had no computers, nor calculators, and apparently kept track of 90 or more age classes and made his calculations (which have never been found) on paper. He calculated by hand on paper and alas those notes have never been found. But he said it cost him “some pain” to reach the conclusion that at the end of the fifth century, fifteen million elephants would be walking the earth, descended from one
