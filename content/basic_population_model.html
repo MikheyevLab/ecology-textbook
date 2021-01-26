@@ -31,6 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tooltip.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -166,10 +167,7 @@
             href="https://github.com/MikheyevLab/ecology-textbook"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/MikheyevLab/ecology-textbook/issues/new?title=Issue%20on%20page%20%2Fcontent/basic_population_model.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
         
     </div>
 </div>
@@ -407,8 +405,7 @@
 <a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/f/fa/Elephants_at_Amboseli_national_park_against_Mount_Kilimanjaro.jpg"><img alt="Elephants" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Elephants_at_Amboseli_national_park_against_Mount_Kilimanjaro.jpg" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Elephants at Amboseli National Park against Mount Kilimanjaro</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>Of course he had no computers, nor calculators, and apparently kept track of 90 or more age classes and made his calculations (which have never been found) on paper. He calculated by hand on paper and alas those notes have never been found. But he said it cost him “some pain” to reach the conclusion that at the end of the fifth century, fifteen million elephants would be walking the earth, descended from one
-original pair. From this, he concluded that unlimited growth is impossible.</p>
+<p>Of course he had no computers, nor calculators, and apparently kept track of 90 or more age classes and made his calculations (which have never been found) on paper. He calculated by hand on paper and alas those notes have never been found. But he said it cost him “some pain” to reach the conclusion that at the end of the fifth century, fifteen million elephants would be walking the earth, descended from one original pair. From this, he concluded that unlimited growth is impossible.</p>
 <p>Of course he had no computers, nor calculators, and apparently kept track of 90 or more age classes and made his calculations (which have never been found) on paper. He calculated by hand on paper and alas those notes have never been found. But he said it cost him “some pain” to reach the conclusion that at the end of the fifth century, fifteen million elephants would be walking the earth, descended from one original pair. From this, he concluded that unlimited growth is impossible.</p>
 <div class="figure align-center" id="id2">
 <a class="reference internal image-reference" href="../_images/Darwin.jpg"><img alt="Darwin" src="../_images/Darwin.jpg" style="width: 400px;" /></a>
@@ -431,7 +428,13 @@ original pair. From this, he concluded that unlimited growth is impossible.</p>
 </li>
 <li><p>Update this code to simulate growth of a population that doubles every ten hours. What is the population at time after three days of growth?</p></li>
 <li><p>One of the convenient features of <code class="docutils literal notranslate"><span class="pre">ggplot</span></code> is that commands can be layered on top of each other to produce different plots. Add <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">scale_y_log10()</span></code> to the plotting code and re-plot the result. This adds a <a class="reference external" href="https://en.wikipedia.org/wiki/Logarithmic_scale">logarithmic</a> y-axis to the plot, which makes a straight line plot – the tell-tale sign of an exponential growth curve! What are the advantages of viewing the data in this way? Note: you’ll have to run the first model code cell first to save the results in the <code class="docutils literal notranslate"><span class="pre">populations</span></code> data frame.</p></li>
+<li><p>As pointed out by William Thomson, later to become Lord Kelvin, Darwin’s math was actually wrong (though the underlying idea is correct). How many elephants would be around after 10 generations (~500 years).</p></li>
 </ol>
+<ul class="simple">
+<li><p>There are only female elephants</p></li>
+<li><p>Each female produces three offspring over her lifetime (remember, we ignore males, so the numbers are halved from Darwin’s estimates)</p></li>
+<li><p>Elephants never die</p></li>
+</ul>
 </div>
 </div>
 
@@ -472,7 +475,7 @@ original pair. From this, he concluded that unlimited growth is impossible.</p>
         
           By Lehman, Loberg and Clark<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2019.<br/>
       </p>
     </div>
   </footer>
@@ -486,6 +489,16 @@ original pair. From this, he concluded that unlimited growth is impossible.</p>
   <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'G-8SXREGQC46', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
     
   </body>
 </html>
