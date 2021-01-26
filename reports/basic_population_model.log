@@ -17,15 +17,20 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-plot(time, populations$size)
-ggplot2::ggplot(populations, aes(size)) + geom_line()
+library(ggplot2)
+ggplot(populations, aes(x=1:(5*24), size)) + geom_line() + xlab("Time (hours)") + 
+  ylab("Population size (bacteral cells)"))
 ------------------
 
-Error in aes(size): could not find function "aes"
+Error in parse(text = x, srcfile = src): <text>:3:43: unexpected ')'
+2: ggplot(populations, aes(x=1:(5*24), size)) + geom_line() + xlab("Time (hours)") + 
+3:   ylab("Population size (bacteral cells)"))
+                                             ^
 Traceback:
 
-1. ggplot2::ggplot(populations, aes(size))
-2. ggplot.default(populations, aes(size))
-ERROR: Error in aes(size): could not find function "aes"
+ERROR: Error in parse(text = x, srcfile = src): <text>:3:43: unexpected ')'
+2: ggplot(populations, aes(x=1:(5*24), size)) + geom_line() + xlab("Time (hours)") + 
+3:   ylab("Population size (bacteral cells)"))
+                                             ^
 
 
