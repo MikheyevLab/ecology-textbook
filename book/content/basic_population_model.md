@@ -138,3 +138,6 @@ That he explained in Chapter Three of his Origin of Species. After explaining re
     ```
 2. Update this code to simulate growth of a population that doubles every ten hours. What is the population at time after three days of growth?
 3. One of the convenient features of `ggplot` is that commands can be layered on top of each other to produce different plots. Add `+ scale_y_log10()` to the plotting code and re-plot the result. This adds a [logarithmic](https://en.wikipedia.org/wiki/Logarithmic_scale) y-axis to the plot, which makes a straight line plot -- the tell-tale sign of an exponential growth curve! What are the advantages of viewing the data in this way? Note: you'll have to run the first model code cell first to save the results in the `populations` data frame.
+
+
+This is a test <span class="ttooltip"> hover over text. <span class="ttooltiptext">Tooltip text</span> </span>. It continues below.
