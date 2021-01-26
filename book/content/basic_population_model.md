@@ -106,8 +106,7 @@ align: center
 Elephants at Amboseli National Park against Mount Kilimanjaro
 ```
 
-Of course he had no computers, nor calculators, and apparently kept track of 90 or more age classes and made his calculations (which have never been found) on paper. He calculated by hand on paper and alas those notes have never been found. But he said it cost him “some pain” to reach the conclusion that at the end of the fifth century, fifteen million elephants would be walking the earth, descended from one
-original pair. From this, he concluded that unlimited growth is impossible.
+Of course he had no computers, nor calculators, and apparently kept track of 90 or more age classes and made his calculations (which have never been found) on paper. He calculated by hand on paper and alas those notes have never been found. But he said it cost him “some pain” to reach the conclusion that at the end of the fifth century, fifteen million elephants would be walking the earth, descended from one original pair. From this, he concluded that unlimited growth is impossible.
 
 Of course he had no computers, nor calculators, and apparently kept track of 90 or more age classes and made his calculations (which have never been found) on paper. He calculated by hand on paper and alas those notes have never been found. But he said it cost him “some pain” to reach the conclusion that at the end of the fifth century, fifteen million elephants would be walking the earth, descended from one original pair. From this, he concluded that unlimited growth is impossible.
 
@@ -138,6 +137,8 @@ That he explained in Chapter Three of his Origin of Species. After explaining re
     ```
 2. Update this code to simulate growth of a population that doubles every ten hours. What is the population at time after three days of growth?
 3. One of the convenient features of `ggplot` is that commands can be layered on top of each other to produce different plots. Add `+ scale_y_log10()` to the plotting code and re-plot the result. This adds a [logarithmic](https://en.wikipedia.org/wiki/Logarithmic_scale) y-axis to the plot, which makes a straight line plot -- the tell-tale sign of an exponential growth curve! What are the advantages of viewing the data in this way? Note: you'll have to run the first model code cell first to save the results in the `populations` data frame.
-
-
-This is a test <span class="ttooltip"> hover over text. <span class="ttooltiptext">Tooltip text</span> </span>. It continues below.
+4. As pointed out by William Thomson, later to become Lord Kelvin, Darwin's math was actually wrong (though the underlying idea is correct). How many elephants would be around after 10 generations (~500 years).
+  - There are only female elephants
+  - Each female produces three offspring over her lifetime (remember, we ignore males, so the numbers are halved from Darwin's estimates)
+  - Elephants never die
+ 
