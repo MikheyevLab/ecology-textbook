@@ -55,7 +55,7 @@ Computer coding is an exacting business, where tiny variations can make huge dif
 
 At the moment the loop contains only one statement, `N <- N * 2`, is read “N equals N times two. ”It is similar in form to the statement on the first line, `N <- 1`, which started things off with a single bacterium. The `N <-` part is the same. It tells the computer that the number of bacteria, N, is about to change. (Of course, the computer has no clue what the program is about—that you are running a program about bacteria.) What N will change to is immediately to the right of the equal sign, `N * 2`. So this statement thus tells the computer to double the value of N. That is what the hypothesized bacterial population does every hour, so this statement models that doubling. 
 
-After the loop has executed its statement(s) it will pull the next value from `steps` and run again, until there are no more values in `steps` left to run, *i.e.*. 121 times.
+After the loop has executed its statement(s) it will pull the next value from `steps` and run again, until there are no more values in `steps` left to run, *i.e.*. 120 times.
 
 This code illustrates looping, a fundamental aspects of computer coding. In larger programs loops are “nested” within other loops and condition tests are nested correspondingly. But this simple program is sufficient for our first model. You will soon see that this is not a trivial model, but one that demonstrates an inviolable law of biology, which Darwin put directly to use in creating his theory of evolution.
 
@@ -82,9 +82,11 @@ You can change and re-run this code interactively using the "Live Code" option a
 
 Between Monday and Friday, 120 bacterial doublings would produce over $10^{36}$ bacteria—that’s 1 followed by 36 zeros. That is the computational result, which looks like an exponential increase. We can plot it using the R `ggplot2` graphics library.
 
+
 ```{code-cell} r
 library(ggplot2)
-ggplot(populations, aes(x=1:(5*24), size)) + geom_line() + xlab("Time (hours)") + ylab("Population size (bacteral cells)")
+ggplot(populations, aes(x=1:(5*24), size)) + geom_line() + xlab("Time (hours)") + 
+  ylab("Population size (bacteral cells)")
 ```
 
  The scientific question is how many individuals this amounts to. Worked out exactly, it is this number: $2^{120} = 1,329,227,995,784,915,872,903,807,060,280,344,576$. To understand the size of this number, suppose the bacteria are roughly cubical 1 µm on a side—one millionth of a meter, or about four hundred thousandths of an inch (a suitable order-of-magnitude for a bacterium). What volume will the colony occupy in cubic meters at the end of the work week, after five full days of growing unchecked? You might want to speculate: will it fill the culture plate, overflow onto the lab bench, fill the lab, or what?
