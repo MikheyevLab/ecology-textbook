@@ -99,12 +99,12 @@ With elephants recognized as the slowest breeders of all known animals, Darwin m
 
 ```{figure} https://upload.wikimedia.org/wikipedia/commons/f/fa/Elephants_at_Amboseli_national_park_against_Mount_Kilimanjaro.jpg
 ---
+name: elephants-fig
 alt: Elephants
 width: 600px
 align: center
 ---
 Elephants at Amboseli National Park against Mount Kilimanjaro
-```
 
 Of course he had no computers, nor calculators, and apparently kept track of 90 or more age classes and made his calculations (which have never been found) on paper. He calculated by hand on paper and alas those notes have never been found. But he said it cost him “some pain” to reach the conclusion that at the end of the fifth century, fifteen million elephants would be walking the earth, descended from one original pair. From this, he concluded that unlimited growth is impossible.
 
@@ -142,3 +142,4 @@ That he explained in Chapter Three of his Origin of Species. After explaining re
     - Each female produces three offspring over her lifetime (as we ignore males, the numbers are halved from Darwin's estimates)
     - Elephants never die
  
+- {ref}`elephants-fig`
