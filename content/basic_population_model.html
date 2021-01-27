@@ -167,7 +167,10 @@
             href="https://github.com/MikheyevLab/ecology-textbook"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
-        
+        <a class="issues-button"
+            href="https://github.com/MikheyevLab/ecology-textbook/issues/new?title=Issue%20on%20page%20%2Fcontent/basic_population_model.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
     </div>
 </div>
@@ -258,7 +261,6 @@
 <h2>Characterizing populations<a class="headerlink" href="#characterizing-populations" title="Permalink to this headline">¶</a></h2>
 <p>One way to describe populations is to look at how many individuals they contain at various times. Or, instead of individuals, it may be more reasonable to consider total biomass – the total weight of all individuals in the population combined. For example, the number of trees may not be as important as their total weight, or the total area of their canopy. Density may also be relevant—how many individuals occupy a unit of area, or the percentage covered by the population in an area. All of these are gross properties of populations that can enter models.</p>
 <p>Additional properties that can be taken into account include the age structure – the portions of the population of various ages, and the size structure – the portions of the population of various sizes. Such detail can be important because juveniles or older individuals may not reproduce. Genetic structure can also be important; it is often left out of ecological models, but evolutionary directions can affect the ecology as well. Another important measure is the rate of change—how fast the population is changing. A population can be constant, increasing, or decreasing, or can fluctuate in complex ways.</p>
-<p>Another important measure is the rate of change—how fast the population is changing. A population can be constant, increasing, or decreasing, or can fluctuate in complex ways.</p>
 <p>Remember that a model is just a simpler view of something complex, and that all scientific models are just approximations of nature. When the full complexity cannot be understood, which is almost always, we can try to construct a simplified model in hopes of finding the essence.</p>
 </div>
 <div class="section" id="bacterial-growth">
@@ -407,9 +409,9 @@
 <div class="legend">
 <p>Of course he had no computers, nor calculators, and apparently kept track of 90 or more age classes and made his calculations (which have never been found) on paper. He calculated by hand on paper and alas those notes have never been found. But he said it cost him “some pain” to reach the conclusion that at the end of the fifth century, fifteen million elephants would be walking the earth, descended from one original pair. From this, he concluded that unlimited growth is impossible.</p>
 <p>Of course he had no computers, nor calculators, and apparently kept track of 90 or more age classes and made his calculations (which have never been found) on paper. He calculated by hand on paper and alas those notes have never been found. But he said it cost him “some pain” to reach the conclusion that at the end of the fifth century, fifteen million elephants would be walking the earth, descended from one original pair. From this, he concluded that unlimited growth is impossible.</p>
-<div class="figure align-center" id="id1">
+<div class="figure align-center" id="darwin-fig">
 <a class="reference internal image-reference" href="../_images/Darwin.jpg"><img alt="Darwin" src="../_images/Darwin.jpg" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Charles Darwin was in his twenties when he realized that natural selection was a cause of evolution and started to formulate his theory</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Charles Darwin was in his twenties when he realized that natural selection was a cause of evolution and started to formulate his theory</span><a class="headerlink" href="#darwin-fig" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -430,7 +432,7 @@
 </li>
 <li><p>Update this code to simulate growth of a population that doubles every ten hours. What is the population at time after three days of growth?</p></li>
 <li><p>One of the convenient features of <code class="docutils literal notranslate"><span class="pre">ggplot</span></code> is that commands can be layered on top of each other to produce different plots. Add <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">scale_y_log10()</span></code> to the plotting code and re-plot the result. This adds a <a class="reference external" href="https://en.wikipedia.org/wiki/Logarithmic_scale">logarithmic</a> y-axis to the plot, which makes a straight line plot – the tell-tale sign of an exponential growth curve! What are the advantages of viewing the data in this way? Note: you’ll have to run the first model code cell first to save the results in the <code class="docutils literal notranslate"><span class="pre">populations</span></code> data frame.</p></li>
-<li><p>As pointed out by William Thomson, later to become <a class="reference external" href="https://en.wikipedia.org/wiki/William_Thomson%2C_1st_Baron_Kelvin">Lord Kelvin</a>, Darwin’s math was actually wrong (though the underlying idea is correct). How many elephants would be around after 10 generations (~500 years).</p>
+<li><p>As pointed out by William Thomson, later to become <a class="reference external" href="https://en.wikipedia.org/wiki/William_Thomson%2C_1st_Baron_Kelvin">Lord Kelvin</a>, Darwin’s math was actually wrong (though the underlying idea is correct). How many elephants would be around after 10 generations (~500 years)?</p>
 <ul class="simple">
 <li><p>There are only female elephants</p></li>
 <li><p>Each female produces three offspring over her lifetime (as we ignore males, the numbers are halved from Darwin’s estimates)</p></li>
@@ -438,9 +440,6 @@
 </ul>
 </li>
 </ol>
-<ul class="simple">
-<li><p><a class="reference internal" href="#elephants-fig"><span class="std std-ref">Elephants at Amboseli National Park against Mount Kilimanjaro</span></a></p></li>
-</ul>
 </div>
 </div>
 

@@ -17,8 +17,6 @@ One way to describe populations is to look at how many individuals they contain 
 
 Additional properties that can be taken into account include the age structure -- the portions of the population of various ages, and the size structure -- the portions of the population of various sizes. Such detail can be important because juveniles or older individuals may not reproduce. Genetic structure can also be important; it is often left out of ecological models, but evolutionary directions can affect the ecology as well. Another important measure is the rate of change—how fast the population is changing. A population can be constant, increasing, or decreasing, or can fluctuate in complex ways.
 
-Another important measure is the rate of change—how fast the population is changing. A population can be constant, increasing, or decreasing, or can fluctuate in complex ways.
-
 Remember that a model is just a simpler view of something complex, and that all scientific models are just approximations of nature. When the full complexity cannot be understood, which is almost always, we can try to construct a simplified model in hopes of finding the essence.
 
 ## Bacterial growth
@@ -112,6 +110,7 @@ Of course he had no computers, nor calculators, and apparently kept track of 90 
 
 ```{figure} ../img/Darwin.jpg
 ---
+name: Darwin-fig
 alt: Darwin
 width: 400px
 align: center
@@ -137,9 +136,7 @@ That he explained in Chapter Three of his Origin of Species. After explaining re
     ```
 2. Update this code to simulate growth of a population that doubles every ten hours. What is the population at time after three days of growth?
 3. One of the convenient features of `ggplot` is that commands can be layered on top of each other to produce different plots. Add `+ scale_y_log10()` to the plotting code and re-plot the result. This adds a [logarithmic](https://en.wikipedia.org/wiki/Logarithmic_scale) y-axis to the plot, which makes a straight line plot -- the tell-tale sign of an exponential growth curve! What are the advantages of viewing the data in this way? Note: you'll have to run the first model code cell first to save the results in the `populations` data frame.
-4. As pointed out by William Thomson, later to become [Lord Kelvin](https://en.wikipedia.org/wiki/William_Thomson%2C_1st_Baron_Kelvin), Darwin's math was actually wrong (though the underlying idea is correct). How many elephants would be around after 10 generations (~500 years).
+4. As pointed out by William Thomson, later to become [Lord Kelvin](https://en.wikipedia.org/wiki/William_Thomson%2C_1st_Baron_Kelvin), Darwin's math was actually wrong (though the underlying idea is correct). How many elephants would be around after 10 generations (~500 years)?
     - There are only female elephants
     - Each female produces three offspring over her lifetime (as we ignore males, the numbers are halved from Darwin's estimates)
     - Elephants never die
- 
-- {ref}`elephants-fig`
