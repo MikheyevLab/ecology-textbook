@@ -5,3 +5,4 @@
 - part: Single populations
   chapters:
     - file: content/basic_population_model
+    - file: content/test-content
