@@ -25,34 +25,44 @@ $$
 
 Recall that the delta sign ($\Delta$) means *change in* or the *difference*. Compare the difference equation with the differential form, which uses the terminology $dN$ and $dt$. These represent infinitesimally small time steps, corresponding to our common-sense perception of time as divisible ever more finely without limit. In differential equations populations change smoothly rather than in finite steps—growth approximating that of organisms that can reproduce at any time, such as bacterial or human populations.
 
-It turns out that differential equations are harder for com- puters to solve than difference equations. Computers cannot make infinitely fine time steps, but have to approximate by using very small time steps instead. On the other hand, difference equations can be harder to solve mathematically.
+It turns out that differential equations are harder for computers to solve than difference equations. Computers cannot make infinitely fine time steps, but have to approximate by using very small time steps instead. On the other hand, difference equations can be harder to solve mathematically.
 
 ```r
 r = 1; s = -0.001; N = 1;
-dt = 1; print(N);
+dt = 1;
+#our time step here is just 1 day
+print(N);
 time = seq(from=0,to=20,by=dt);
+#the above line makes a sequence of time values from day 0 to 20, going up by 1 day each time
 for(t in time){
-  dN = (r + s * N) * N; N = N + dN; if(N < 0) N = 0;
+  dN = (r + s * N) * N; N = N + dN;
+  if(N < 0) N = 0;
+  #here, we check to see if the population size has become negative
+  #this is mathematically possible, but biologically impossible
+  #so if this is this the case, we set N to 0
   print(N)
 }
 ```
 
-Above is computer code for a difference equation presented earlier, which levelled off at 1000, but with an addition in red. If the population is far above its carrying capacity, the calculation could show such a strong decline that the next year’s population would be negative—meaning that the population would die out completely. The addition in red just avoids projecting negative populations. Below is similar code for the corresponding *differential* equation, with the differences again in red.
+Above is computer code for a difference equation presented earlier, which levelled off at 1000, but with an additional `if()` statement to catch negative population size. If the population is far above its carrying capacity, the calculation could show such a strong decline that the next year’s population would be negative—meaning that the population would die out completely. Below is similar code for the corresponding *differential* equation.
 
 ```r
 r = 1; s = -0.001; N = 1;
-dt = 1 / (365 * 24 * 60 * 60); print(N);
+dt = 1 / (20 * 24 * 60 * 60);
+#the above line makes a time step value corresponding to a single second in the 20 day period
+print(N);
 time = seq(from=0,to=20,by=dt)
+#the time period, 0 to 20 days, is now divided up by the number of seconds in that period
 for(t in time){
   dN = (r + s * N) * N * dt; N = N + dN; if(N < 0) N = 0;
   print(N)
   }
 ```
 
-This intends to model *infinitely small* time steps. Of course it cannot do that exactly, but must settle for very small time steps. Instead of $dt = 1$, for example, representing one year, it is set here to about one second, dividing 1 year by 365 days and each day by 24 hours, 60 minutes, and 60 seconds. This is hardly infinitely small, but for populations of bacteria and humans it is close enough for practical purposes. Still, it is important to check for negative populations in case the time step is not small enough.
+This intends to model *infinitely small* time steps. Of course it cannot do that exactly, but must settle for very small time steps. Instead of $dt = 1$, for example, representing one year, it is set here to about one second, dividing the time period (20 days) by 24 hours, 60 minutes, and 60 seconds, creating `20 * 24 * 60 * 60` time steps. This is hardly infinitely small, but for populations of bacteria and humans it is close enough for practical purposes. Still, it is important to check for negative populations in case the time step is not small enough.
 
 ```{warning}
-Feel free to run the above loop on your own machines, but note that we have defined our  `time` vector to contain every single second from the beginning of day 0 to the end of day 20. It will take some time for R to print all the time steps. The calculation is fast, but printing out 31,536,000 lines of text is not.
+Feel free to run the above loop on your own machines, but note that we have defined our  `time` vector to contain every single second from the beginning of day 0 to the end of day 20. It will take some time for R to print all the time steps. The calculation is fast, but printing out 1,728,000 lines of text is not.
 ```
 
 How small is close enough to infinitely small? is the question. To find out, you can set the time step to something small and run the code, which will produce a set of population values through time. Then set the step smaller still and run the code again. It will run more slowly because it is calculating more steps, but if essentially the same answer appears—if the answer “converges”—then you can make the step larger again, speeding the calculation. With a few trials you can find a time step that is small enough to give accurate answers but large enough to allow your code to run reasonably fast.
@@ -105,7 +115,7 @@ $$
 N(t) = N_0e^{rt}
 $$
 
-$N_0$ is the starting population at time 0, $N(t)$ is the population at any time $t$, and $r$ is the constant growth rate—the “intrinsic rate of natural increase.” How much time, $\tau$, will elapse before the population doubles? At some time $t$, the population will be $N(t)$, and at the later time $t+\tau$, the pop- ulation will be $N(t+\tau)$. The question to be answered is this: for what $τ$ will the ratio of those two populations be 2?
+$N_0$ is the starting population at time 0, $N(t)$ is the population at any time $t$, and $r$ is the constant growth rate—the “intrinsic rate of natural increase.” How much time, $\tau$, will elapse before the population doubles? At some time $t$, the population will be $N(t)$, and at the later time $t+\tau$, the population will be $N(t+\tau)$. The question to be answered is this: for what $τ$ will the ratio of those two populations be 2?
 
 $$
 \frac{N(t+\tau)}{N(t)} = 2
