@@ -68,8 +68,12 @@ alt: Black_Eyed_Susans
 width: 600px
 align: center
 ---
-[Black-Eyed Susans, _Rudbeckia hirta_](https://commons.wikimedia.org/wiki/File:Rudbeckia_hirta,_(_black-eyed-susans,)_(18978433569).jpg)
+<span class="ttooltip"> [Black-Eyed Susans, _Rudbeckia hirta_](https://commons.wikimedia.org/wiki/File:Rudbeckia_hirta,_(_black-eyed-susans,)_(18978433569).jpg) <span class="ttooltiptext">
+  Black-Eyed Susans (<i>Rudbeckiahirta<i>) <b>by</b> Bernard Spragg (CC0)
+  </span> </span>
+
 ```
+
 Darwin made unparalleled use of a model that failed, but how can the model be improved so that it does not fail?
 
 Think of only three Black-Eyed Susan plants (_Rudbeckia hirta_) becoming established in Yellowstone National Park, one near the north-east entrance, one in the center, and a third near the south entrance|the plants thus separated by over 30 miles. How often would the same pollinator be able to visit two of the plants so the plants could reproduce? Rarely or never, because these pollinators travel limited distances. The plant's growth rate will thus be 0. (In fact, it will be negative, since the three plants will eventually die.)
@@ -232,11 +236,12 @@ print(N)
 for(i in time)
 {
   dN=(r+s*N)*N*dt;
-  N=N+dN
-  t=t+dt
+  N=N+dN;
+  t=t+dt;
   print(N)
 }
 ```
+
 Now, because s is negative, the growth rate $1/N \ ΔN/Δt$ will drop as the population increases, so you might surmise that the rate will eventually reach zero and the population will level off. In fact, it levels off to 1000.
 
 ```{code-cell} r
@@ -272,6 +277,7 @@ ggplot() +
   scale_x_continuous(breaks=c(0,1,2,3,4,5,6,7,8,9,10,11,12)) +
   scale_y_continuous(breaks=c(0,250,500,750,1000))
 ```
+
 The value at which it levels off is called an "equilibrium," a value where the dynamical system becomes quiescent and stops changing. In the case of the logistic equation, it is also called the "carrying capacity," a level at which the environment cannot "carry" any larger population.
 
 But why 1000? What value of $1/N / ΔN/Δt$ will make the population level off? When $ΔN$ is $0$, that means "the change in $N$ is zero." And that means $N$ stops growing. And when $ΔN$ is zero, the entire term on the left is zero and algebra proceeds as follows.
@@ -285,7 +291,7 @@ N&=-r/s
 \end{align*}
 $$
 
-So the carrying capacity is $-r/s$. In [Figure 4.3] , $-r/s=-1/(-0.001) = 1000$. Exactly where it ended up! This is the celebrated logistic equation," published in 1838 by Pierre Verhulst.⋆ It is commonly written
+So the carrying capacity is $-r/s$. In [Figure 4.3] , $-r/s=-1/(-0.001) = 1000$. Exactly where it ended up! This is the celebrated logistic equation," published in 1838 by [Pierre Verhulst](https://en.wikipedia.org/wiki/Pierre_Fran%C3%A7ois_Verhulst). It is commonly written
 
 $$
 \frac{1}{N}\frac{\Delta N}{\Delta t}=rN \left(1-\frac{N}{K} \right)
@@ -303,7 +309,7 @@ Before moving further, consider all possible combinations of the parameters, as 
 5. $r<0, s<0 \qquad$ Inviable population declining to extinction.
 6. $r<0, s=0 \qquad$ Same as above.
 
-[Figure 4.4] shows three of these possibilities pieced to gether to form a complete population model. On the left in the figure, number 2 above, orthologistic growth with an [Allee point], prevails at low densities, where larger numbers of other members of the species in the vicinity enhance growth. In the middle, number 3 above, exponential growth, occurs as a transition phase. Finally on the right, number 4 above, logistic growth with a carrying capacity, takes over when crowding and other limitations reduce growth rates as larger numbers of other members of the species in the vicinity appear.
+[Figure 4.4] shows three of these possibilities pieced to gether to form a complete population model. On the left in the figure, number 2 above, orthologistic growth with an [Allee point](https://en.wikipedia.org/wiki/Allee_effect), prevails at low densities, where larger numbers of other members of the species in the vicinity enhance growth. In the middle, number 3 above, exponential growth, occurs as a transition phase. Finally on the right, number 4 above, logistic growth with a carrying capacity, takes over when crowding and other limitations reduce growth rates as larger numbers of other members of the species in the vicinity appear.
 
 The vertical axis in [Figure 4.4] shows the individual growth Rate, and the horizontal axis shows the population density. On the right, where the slope is negative, as the density approaches $-r/s$ from the left the growth rate on the vertical axis drops to zero, so the population stops growing.
 
@@ -312,7 +318,7 @@ This is the equilibrium value called the "carrying capacity." If something pushe
 
 The carrying capacity is "stable." A value is said to be stable if it tends to restore itself when it is pushed away by some outside force.
 
-The situation is entirely different on the left in thefigure, where the slope is positive. As on the right, when the density is $-r/s$, the growth rate on the vertical axis reaches zero, meaning the population does not change. This is an equilibrium too - not a carrying capacity, but an [Allee point]. However, if the population here drifts below $-r/s$, the growth rate on the vertical axis becomes negative and the population declines further still. It is unstable. In this model the population continues to decline until eventual extinction. Above the Allee point, however, the growth rate on the vertical axis
+The situation is entirely different on the left in thefigure, where the slope is positive. As on the right, when the density is $-r/s$, the growth rate on the vertical axis reaches zero, meaning the population does not change. This is an equilibrium too - not a carrying capacity, but an [Allee point](https://en.wikipedia.org/wiki/Allee_effect). However, if the population here drifts below $-r/s$, the growth rate on the vertical axis becomes negative and the population declines further still. It is unstable. In this model the population continues to decline until eventual extinction. Above the Allee point, however, the growth rate on the vertical axis
 is positive, so the population increases until it reaches some other limitation.
 
 A species thus becomes endangered when its population drops below its Allee point, and if it is to be saved something must be done to change that point. The parameter `r` must somehow be increased - by restoring habitat, reducing predation by humans, or using articial reintroductions or other conservation programs (e.g., Figure 4.5).
@@ -325,14 +331,14 @@ $$
 $$
 <div style="text-align: right"> (4.1) </div>
 
-This is a straight-line form of a more general form presented by [Hutchinson](),
+This is a straight-line form of a more general form presented by [Hutchinson](https://en.wikipedia.org/wiki/G._Evelyn_Hutchinson),
 
 $$
 \frac{1}{N}\frac{\Delta N}{\Delta t}=r+sN+s_{2}N^2+s_{3}N^3+s_{4}N^4+...
 $$
 <div style="text-align: right"> (4.2) </div>
 
-and of the most general form proposed by [Kolomogorov](),where $f(N)$ can be any function of the population density $N$.
+and of the most general form proposed by [Kolomogorov](https://en.wikipedia.org/wiki/Andrey_Kolmogorov),where $f(N)$ can be any function of the population density $N$.
 
 $$
 \frac{1}{N}\frac{\Delta N}{\Delta t}=f(N)
@@ -343,3 +349,15 @@ The higher-order terms in Equation 4.2 could rene population projections if the
 growth in Figure 6.3 will show, a piecewise approach can more closely approximate the real situation.
 
 Moreover, blending separate versions of Equation 4.1 can generalize to either the Hutchinson or Kolomorgov forms, 4.2 and 4.3, as you will see in Chapter 18.
+
+```{figure} https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Trumpeter_swans_in_winter.jpg/800px-Trumpeter_swans_in_winter.jpg
+---
+alt: Trumpeter_swan
+width: 600px
+align: center
+---
+<span class="ttooltip"> Trumpeter swans - the largest North American birds, with wingspans reaching ten feet - were nearing extinction until deliberate protection and reintroduction programs brought their r-values back to viable levels <span class="ttooltiptext">
+  Trumpeter Swans <b>by</b> Jakub Fryš (CC BY-SA 4.0)
+  </span> </span>
+
+```
