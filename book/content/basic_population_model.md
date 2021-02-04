@@ -102,8 +102,10 @@ alt: Elephants
 width: 600px
 align: center
 ---
-<span class="ttooltip"> Elephants at Amboseli National Park against Mount Kilimanjaro 
-  <span class="ttooltiptext"> Elephants at Amboseli National Park against Mount Kilimanjaro <b>by</b> Amoghavarsha JS (CC BY-SA 3.0)</span>
+<span class="ttooltip">Elephants at Amboseli National Park against Mount Kilimanjaro
+  <span class="ttooltiptext">
+    Elephants at Amboseli National Park against Mount Kilimanjaro <b>by</b> Amoghavarsha JS (CC BY-SA 3.0)
+  </span>
 </span>
 ```
 
@@ -116,10 +118,11 @@ alt: Darwin
 width: 400px
 align: center
 ---
-<span class="ttooltip"> Charles Darwin was in his twenties when he realized that natural selection was a cause of evolution and started to formulate his theory
-  <span class="ttooltiptext"> Darwin <b>by</b> 	G. Richmond (Public Domain)</span>
+<span class="ttooltip">Charles Darwin was in his twenties when he realized that natural selection was a cause of evolution and started to formulate his theory
+  <span class="ttooltiptext">
+    Darwin <b>by</b> G. Richmond (Public Domain)
+  </span>
 </span>
-
 ```
 
 ```{epigraph}
