@@ -69,7 +69,7 @@ width: 600px
 align: center
 ---
 <span class="ttooltip"> [Black-Eyed Susans, _Rudbeckia hirta_](https://commons.wikimedia.org/wiki/File:Rudbeckia_hirta,_(_black-eyed-susans,)_(18978433569).jpg) <span class="ttooltiptext">
-  Black-Eyed Susans (<i>Rudbeckiahirta<i>) <b>by</b> Bernard Spragg (CC0)
+  Black-Eyed Susans (<i>Rudbeckiahirta</i>) <b>by</b> Bernard Spragg (CC0)
   </span> </span>
 
 ```
@@ -107,7 +107,7 @@ $$
 $$
 and convert the model to computer code, like this.
 
-``` r
+```r
 r <- 0
 s <- 0.05
 dt <- 1
@@ -181,8 +181,8 @@ for(i in time)
 {
   populations2[i, "size"] = N
   dN=(r+s*N)*N*dt;
-  N=N+dN
-  t=t+dt
+  N=N+dN;
+  t=t+dt;
 }
 
 #PLOTTING
@@ -201,30 +201,26 @@ ggplot() +
 
 The blue line shows the unlimited bacterial growth (exponential growth) that helped lead Darwin to his idea of natural selection. The red line illustrates the new "density-enhanced growth" just being considered, where growth rate increases with density.
 
-Because it approaches a line that is orthogonal to the line   approached by the logistic model, described later, we call   this an "orthologistic model." It runs away to infinity so quickly that it essentially gets there in afinite amount of time. In physics and mathematics this situation is called a "singularity" - a place where the rules break down. To understand this, it is important to remember that all models are simplications and therefore approximations, and apply in their specic range. The orthologistic model applies well at low densities, where greater densities mean greater growth.But a different model will take over when the densities get too high. In fact, if a population is following an orthologis  tic model, the model predicts that there will be some great change that will occur in the near future|before the time of the singularity.
+Because it approaches a line that is orthogonal to the line   approached by the logistic model, described later, we call   this an "orthologistic model." It runs away to infinity so quickly that it essentially gets there in a finite amount of time. In physics and mathematics this situation is called a "singularity" - a place where the rules break down. To understand this, it is important to remember that all models are simplifications and therefore approximations, and apply in their specific range. The orthologistic model applies well at low densities, where greater densities mean greater growth. But a different model will take over when the densities get too high. In fact, if a population is following an orthologistic model, the model predicts that there will be some great change that will occur in the near future before the time of the singularity.
 
-In physics, models with singularities command special attention, for they can reveal previously unknown phenomena. Black holes are one example, while a more mundane one from  physics is familiar to all. Consider a spinning coin with one point touching the table, spinning ever more rapidly as friction and gravity compel the angle between the coin and the table to shrink with time. It turns out that the physical equations that quite accurately model this spinning coin include a singularity - a place where the spinning of the coin becomes innitely fast at a denite calculable time. Of course, the spinning cannot actually become infinitely fast. As the coin gets too close to the singularity - as its angle dips too near the table - it merely switches to a different model. That different model is a stationary coin. The exact nature of the transition
-between the spinning and stationary states is complex and debated, but the inevitability of the transition is not.
+In physics, models with singularities command special attention, for they can reveal previously unknown phenomena. Black holes are one example, while a more mundane one from  physics is familiar to all. Consider a spinning coin with one point touching the table, spinning ever more rapidly as friction and gravity compel the angle between the coin and the table to shrink with time. It turns out that the physical equations that quite accurately model this spinning coin include a singularity - a place where the spinning of the coin becomes infinitely fast at a definite calculable time. Of course, the spinning cannot actually become infinitely fast. As the coin gets too close to the singularity - as its angle dips too near the table - it merely switches to a different model. That different model is a stationary coin. The exact nature of the transition between the spinning and stationary states is complex and debated, but the inevitability of the transition is not.
 
 It is no different in ecology. Reasonable models leading to singularities are not to be discounted, but rather considered admissible where they apply. They arise inescapably in human population growth, considered in the next chapter.
 
 ## Density-limited growth
-What about outside of the range of the orthologistic model? Think of the same Black-Eyed Susans, not only close enough that pollinators can
-flit fluently from one to another, but also crowded so that they start to shade one another, and their roots start to compete for water and nutrients. What is a suitable model for this?
+What about outside of the range of the orthologistic model? Think of the same Black-Eyed Susans, not only close enough that pollinators can flit fluently from one to another, but also crowded so that they start to shade one another, and their roots start to compete for water and nutrients. What is a suitable model for this?
 
-The growth rate will again depend on the number of
-plants, but now more plants will _reduce_ the growth rate. That just means a minus sign on $s$.
+The growth rate will again depend on the number of plants, but now more plants will _reduce_ the growth rate. That just means a minus sign on s.
 
 $$
 \frac{1}{N}\frac{\Delta N}{\Delta t}=r+sN, \qquad \boldsymbol{s<0}
 $$
 
-Again, $r$ is the number of offspring each will produce if it is alone in the world, but with $s$ negative, $s$ is the number each plant will be $unable to produce$ for each additional plant
-that appears in its vicinity.
+Again, $r$ is the number of offspring each will produce if it is alone in the world, but with $s$ negative, $s$ is the number each plant will be _unable to produce_ for each additional plant that appears in its vicinity.
 
-Suppose we have $r = 1$ and $s = -1/1000$, and we start with three plants, so $N(0) = 3$. Here is the code, with the new negative $s$.
+Suppose we have $r=1$ and $s=-1/1000$, and we start with three plants, so $N(0)=3$. Here is the code, with the new negative $s$.
 
-```r
+```{code-cell}r
 r <- 1
 s <- -0.001 #This is the new negative s
 dt <- 1
@@ -233,18 +229,68 @@ N <- 3
 time <- 1:(20)
 print(N)
 
-for(i in time)
-{
-  dN=(r+s*N)*N*dt;
-  N=N+dN;
-  t=t+dt;
-  print(N)
+for(i in time) {
+  dN=(r+s*N)*N*dt;   
+  N=N+dN;   
+  t=t+dt;   
+  print(N);
 }
 ```
 
-Now, because s is negative, the growth rate $1/N \ ΔN/Δt$ will drop as the population increases, so you might surmise that the rate will eventually reach zero and the population will level off. In fact, it levels off to 1000.
+Graph these, and you will see the numbers expand past all bounds, vertically off the page.
+```{code-cell}r
+library(ggplot2)
+#EXPONENTIAL
+r <- 1
+s <- 0
+dt <- 1
+t <- 0
+N <- 3
+time <- 1:(20)
+populations1 <- data.frame(size = integer())
 
-```{code-cell} r
+for(i in time)
+{
+  populations1[i, "size"] = N
+  dN=(r+s*N)*N*dt;
+  N=N+dN
+  t=t+dt
+}
+
+#ORTHOLOGISTIC
+r <- 0
+s <- 0.05
+dt <- 1
+t <- 0
+N <- 3
+time <- 1:(20)
+populations2 <- data.frame(size = integer())
+
+for(i in time)
+{
+  populations2[i, "size"] = N
+  dN=(r+s*N)*N*dt;
+  N=N+dN
+  t=t+dt
+}
+
+#PLOTTING
+library(ggplot2)
+ggplot() +
+  geom_point(data=populations1, aes(x=0:19, y=size), color="blue") + #data points of exponential
+  geom_line(data=populations1, aes(x=0:19, y=size), color="blue") + #line for exponential growth
+  geom_point(data=populations2, aes(x=0:(19), y=size), color="red") + #data points of orthologistic
+  geom_line(data=populations2, aes(x=0:(19), y=size), color="red") + #line for orthologistic growth
+  coord_cartesian(ylim=c(0, 1100), xlim=c(0,11)) + #limits of x and y axis, allows for out of bounds line
+  xlab("t") + #label for x axis
+  ylab("N(t)") + #label for y axis
+  scale_x_continuous(breaks=c(0,1,2,3,4,5,6,7,8,9,10)) + #tick labels for x axis
+  scale_y_continuous(breaks=c(0,250,500,750,1000)) #tick labels for y axis
+```
+
+Now, because $s$ is negative, the growth rate $1/N \ ΔN/Δt$ will drop as the population increases, so you might surmise that the rate will eventually reach zero and the population will level off. In fact, it levels off to 1000.
+
+```{code-cell}r
 #to save the logistic growth into a dataframe
 #LOGISTIC
 r <- 1
@@ -300,7 +346,7 @@ $$
 Notice that when $N$ is equal to $K$, the factor in parentheses on the right becomes $1-N/N=1-1=0$, so the whole growth term $ΔN/Δt$ becomes zero and the population stops growing. Thus $K$ is carrying capacity, and therefore $K=-r/s$. As an exercise, you might want substitute $-r/s$ for $K$ in the equation above, then simplify and see if you get the $r + sN$ formulation.
 
 ##Parameter combinations
-Before moving further, consider all possible combinations of the parameters, as determined by their signs. There are six possibilities, ignoring growth rates of exactly zero as innitely unlikely.
+Before moving further, consider all possible combinations of the parameters, as determined by their signs. There are six possibilities, ignoring growth rates of exactly zero as infinitely unlikely.
 
 1. $r>0, s>0 \qquad$ Orthologistic growth.
 2. $r<0, s>0 \qquad$ Orthologistic growth with an Allee point.
@@ -309,7 +355,7 @@ Before moving further, consider all possible combinations of the parameters, as 
 5. $r<0, s<0 \qquad$ Inviable population declining to extinction.
 6. $r<0, s=0 \qquad$ Same as above.
 
-[Figure 4.4] shows three of these possibilities pieced to gether to form a complete population model. On the left in the figure, number 2 above, orthologistic growth with an [Allee point](https://en.wikipedia.org/wiki/Allee_effect), prevails at low densities, where larger numbers of other members of the species in the vicinity enhance growth. In the middle, number 3 above, exponential growth, occurs as a transition phase. Finally on the right, number 4 above, logistic growth with a carrying capacity, takes over when crowding and other limitations reduce growth rates as larger numbers of other members of the species in the vicinity appear.
+[Figure 4.4] shows three of these possibilities pieced to gether to form a complete population model. On the left in the figure, number 2 above, orthologistic growth with an [Allee point](https://en.wikipedia.org/wiki/Allee_effect), prevails at low densities, where larger numbers of other members of the species in the vicinity enhance growth. In the middle, number 3 above, exponential growth, occurs as a transition phase. Finally on the right, number 4 above, logistic growth with a carrying capacity, takes over when crowding and other limitations reduce growth rates as larger numbers of other members of the species in the vicinity appear.
 
 The vertical axis in [Figure 4.4] shows the individual growth Rate, and the horizontal axis shows the population density. On the right, where the slope is negative, as the density approaches $-r/s$ from the left the growth rate on the vertical axis drops to zero, so the population stops growing.
 
