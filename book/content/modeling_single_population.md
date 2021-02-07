@@ -46,14 +46,14 @@ This is just dividing both sides of the previous equation by $N$, and perhaps lo
 
 To move forward, let's focus on the last equation, with its parts bolded below.
 
-$$
+$$\require{color}
 \begin{align*}
-\frac{1}{N}\frac{\boldsymbol{\Delta N}}{\Delta t}=&\boldsymbol{1} \qquad \text{There is one new individual . . .} \\ \\
-\frac{1}{N}\frac{\Delta N}{\boldsymbol{\Delta t}} =& 1 \qquad \text{every hour . . .} \\ \\
-\frac{\boldsymbol{1}}{\boldsymbol{N}} \frac{\Delta N}{\Delta t}=&1 \qquad \text{for every member of the population.}
+\definecolor{red}{RGB}{251,0,29}
+\frac{1}{N}\frac{\color{red}{\Delta N}}{\Delta t}\color{red}=&\color{red}{1} \qquad \color{black}\text{There is one new individual . . .} \\ \\
+\frac{1}{N}\frac{\Delta N}{\color{red}{\Delta t}} =& 1 \qquad \text{every hour . . .} \\ \\
+\color{red}\frac{\boldsymbol{1}}{\boldsymbol{N}} \color{black}\frac{\Delta N}{\Delta t}=&1 \qquad \text{for every member of the population.}
 \end{align*}
 $$
-
 
 In the first row, the "$\Delta N =1$" refers to a change in the population of one individual, because delta $\Delta$ means change. In the second row, the "$\Delta t$" in the denominator modifies this to the change in each time step - in this, case each hour. In the third row, the $1/N$ modifies it drastically to mean the change in the population _per individual_ in the population.
 
@@ -218,10 +218,10 @@ It is no different in ecology. Reasonable models leading to singularities are no
 ## Density-limited growth
 What about outside of the range of the orthologistic model? Think of the same Black-Eyed Susans, not only close enough that pollinators can flit fluently from one to another, but also crowded so that they start to shade one another, and their roots start to compete for water and nutrients. What is a suitable model for this?
 
-The growth rate will again depend on the number of plants, but now more plants will _reduce_ the growth rate. That just means a minus sign on s.
+The growth rate will again depend on the number of plants, but now more plants will _reduce_ the growth rate. That just means a minus sign on $s$.
 
 $$
-\frac{1}{N}\frac{\Delta N}{\Delta t}=r+sN, \qquad \boldsymbol{s<0}
+\frac{1}{N}\frac{\Delta N}{\Delta t}=r+sN, \qquad \color{red}{s<0}
 $$
 
 Again, $r$ is the number of offspring each will produce if it is alone in the world, but with $s$ negative, $s$ is the number each plant will be _unable to produce_ for each additional plant that appears in its vicinity.
@@ -238,9 +238,9 @@ time <- 1:(20)
 print(N)
 
 for(i in time) {
-  dN=(r+s*N)*N*dt;   
-  N=N+dN;   
-  t=t+dt;   
+  dN=(r+s*N)*N*dt;
+  N=N+dN;
+  t=t+dt;
   print(N);
 }
 ```
