@@ -82,39 +82,34 @@ $1/0:606$ $x$ $0:189=63 = 0:004950495$...., which
 rounds to $0.0050$. Row 21 has no deltas because it is the last
 row in the table.
 
-### Table 6.1 Human population numbers for analysis.
-
-| Point | Year $t$ | $N$ billions | $ΔN$ | $Δt$ | $\frac{1}{N}$ $\frac{ΔN}{Δt}$
-| :- | -: | :-: | :- | :- | :- |
-|1. | 1687 |0.606 |0.189 |63 |0.0050|
-|2. | 1750 |0.795 |0.174 |50 |0.0044|
-|3. | 1800 |0.969 |0.296 |50 |0.0061|
-|4. | 1850 |1.265 |0.391 |50 |0.0062|
-|5. | 1900 |1.656 |0.204 |20 |0.0062|
-|6. | 1920 |1.860 |0.210 |10 |0.0113|
-|7. | 1930 |2.070 |0.230 |10 |0.0111|
-|8. | 1940 |2.300 |0.258 |10 |0.0112|
-|9. | 1950 |2.558 |0.224 |5  |0.0175|
-|10.|  1955| 2.782| 0.261| 5 |0.0188|
-|11.|  1960| 3.043| 0.307| 5 |0.0202|
-|12.|  1965| 3.350| 0.362| 5 |0.0216|
-|13.|  1970| 3.712| 0.377| 5 |0.0203|
-|14.|  1975| 4.089| 0.362| 5 |0.0177|
-|15.|  1980| 4.451| 0.405| 5 |0.0182|
-|16.|  1985| 4.856| 0.432| 5 |0.0178|
-|17.|  1990| 5.288| 0.412| 5 |0.0156|
-|18.|  1995| 5.700| 0.390| 5 |0.0137|
-|19.|  2000| 6.090| 0.384| 5 |0.0126|
-|20.|  2005| 6.474| 0.392| 5 |0.0121|
-|21.|  2010| 6.866||||
-
-This table from the book can turned into a data frame in R with the following code.
 
 ### Table 6.1 in R
+
+```{code-cell} r
+:tags: ["hide-input"]
+
+suppressPackageStartupMessages({
+  library(dplyr)
+  library(readr)
+  library(kableExtra)
+  library(IRdisplay)
+}) # hide annoying messages
+options(knitr.kable.NA = '') # don't plot missing values
+humanPopulation <- read_tsv("../data/humans.tsv", col_types = "nn") 
+humanPopulation %>% 
+  mutate(dN = c(diff(population), NA), dT = c(diff(year), NA), rate = 1 / population * dN / dT) %>% 
+  kbl(col.names = c("t (years)", "N (billions)", "$\\Delta N$", "$\\Delta t$", "$\\frac{1}{N} \\frac{\\Delta N}{\\Delta t}$"), 
+    caption = "Human population numbers for analysis",
+    digits = c(0, 3, 3, 0, 4)) %>%
+  as.character() %>%
+  display_html()
+```
+
+
 ```{code-cell} r
 :tags: ["output_scroll"]
 pop_data <- rbind(
-c(1. ,1687,0.606, 0.189, 63, 0.0050), 
+c(1. ,1687,0.606, 0.189, 63, 0.0050),
 c(2. ,1750,0.795, 0.174, 50, 0.0044),
 c(3. ,1800,0.969, 0.296, 50, 0.0061),
 c(4. ,1850,1.265, 0.391, 50, 0.0062),
@@ -138,20 +133,6 @@ c(21., 2010, 6.866, NA, NA, NA) )
 
 pop_data <- as.data.frame(pop_data)
 names(pop_data) <- c("Point", "Year_t", "N_billions", "delta_N", "delta_t", "1/N deltaN/deltat")
-```
-
-```{code-cell} r
-:tags": ["hide-output"]
-library(dplyr)
-library(readr)
-library(kableExtra)
-library(IRdisplay)
-humanPopulation <- read_tsv("../data/humans.tsv", col_types = "nn")
-humanPopulation %>% 
-  mutate(dN = c(diff(population), NA), dT = c(diff(year), NA), rate = 1 / population * dN / dT) %>% 
-  kbl(col.names = c("t (years)", "N (billions)", "$\\Delta N$", "$\\Delta t$", "$\\frac{1}{N} \\frac{\\Delta N}{\\Delta t}$")) %>%
-  as.character() %>%
-  display_html()
 ```
 
 ## 6.2 Biological-ecological graph 
