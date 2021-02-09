@@ -118,7 +118,16 @@ row in the table.
 ### Table 6.1 in R
 
 ```{code-cell} r
-:tags: ["hide-input"]
+---
+tags: ["hide-input"]
+render:
+  table:
+    width: 600px
+    alt: wold-population
+    caption: |
+      World population over the past 2000 years
+    name: world-population-table
+---
 
 suppressPackageStartupMessages({
   library(kableExtra)
