@@ -1,0 +1,692 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modeling a single population &#8212; Quantitative Ecology</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tooltip.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Differential and difference forms" href="differential_and_difference_forms.html" />
+    <link rel="prev" title="A basic population model" href="basic_population_model.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Quantitative Ecology</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Quantiative Ecology
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Single populations
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="basic_population_model.html">
+   A basic population model
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Modeling a single population
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="differential_and_difference_forms.html">
+   Differential and difference forms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch6-human-population.html">
+   Human population growth
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/content/modeling_single_population.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/modeling_single_population.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/MikheyevLab/ecology-textbook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/MikheyevLab/ecology-textbook/issues/new?title=Issue%20on%20page%20%2Fcontent/modeling_single_population.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/MikheyevLab/ecology-textbook/main?urlpath=tree/book/content/modeling_single_population.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#density-independent-growth">
+   Density-independent growth
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#density-enhanced-growth">
+   Density-enhanced growth
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#density-limited-growth">
+   Density-limited growth
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="modeling-a-single-population">
+<h1>Modeling a single population<a class="headerlink" href="#modeling-a-single-population" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="density-independent-growth">
+<h2>Density-independent growth<a class="headerlink" href="#density-independent-growth" title="Permalink to this headline">¶</a></h2>
+<p>Density, in the sense of population density, refers to how many individuals are present on average per unit area. One could say, “The density of elk in Yellowstone National Park during the summer is about 3 to 6 per square mile.” Sometimes, however, you will see density used as the total number
+in a place. You may see, “The density of elk in Yellowstone National Park during the summer is about 10 to 20 thousand.” The symbol <span class="math notranslate nohighlight">\(N\)</span> is often used for population density.</p>
+<p>In the first case above, you would write <span class="math notranslate nohighlight">\(N = 4.5\)</span>, the midpoint between 3 and 6. In the second case you would write <span class="math notranslate nohighlight">\(N = 15000\)</span>. It should be clear from context what the area is.</p>
+<p>With this in mind, all of the following statements are equivalent:</p>
+<ol class="simple">
+<li><p>The population doubles each hour.
+(As in the bacterial example of the previous chapter.)</p></li>
+<li><p>The population <span class="math notranslate nohighlight">\(N(t)\)</span> doubles each hour.
+Here the number of individuals is represented by the letter <span class="math notranslate nohighlight">\(N\)</span>, and <span class="math notranslate nohighlight">\(N(t)\)</span> means population at time <span class="math notranslate nohighlight">\(t\)</span>. In the bacterial example, there was one bacterium at the beginning of the experiment when the clock started running, so yould write <span class="math notranslate nohighlight">\(N(0) = 1\)</span>. One hour later, the hypothetical population had doubled, so you would write <span class="math notranslate nohighlight">\(N(1) = 2\)</span>. Doubling successively then gives<span class="math notranslate nohighlight">\(N(2) = 4\)</span>, <span class="math notranslate nohighlight">\(N(3) = 8\)</span>, and so forth until after five days, or 120 hours, <span class="math notranslate nohighlight">\(N(120) = 10^{36}\)</span>, or slightly more - enough to fill all the oceans of the world.</p></li>
+<li><p>The population <span class="math notranslate nohighlight">\(N\)</span> doubles each hour.
+Often the “(<span class="math notranslate nohighlight">\(t\)</span>)” is left off for simplicity, it being understood that the population <span class="math notranslate nohighlight">\(N\)</span> is a function of time.</p></li>
+<li><p><span class="math notranslate nohighlight">\(N\)</span> doubles each hour.
+Since <span class="math notranslate nohighlight">\(N\)</span> represents a population in this case, the word “population” will often be dropped for conciseness.</p></li>
+<li><p><span class="math notranslate nohighlight">\(N(t+1) = 2N(t)\)</span>.
+In English this would read “<span class="math notranslate nohighlight">\(N\)</span> of <span class="math notranslate nohighlight">\(t\)</span> plus 1 equals two times <span class="math notranslate nohighlight">\(N\)</span> of <span class="math notranslate nohighlight">\(t\)</span>.” That simply means that the population at some time, anytime, <span class="math notranslate nohighlight">\(t\)</span>, when multipled by 2, is the population in the next time step, <span class="math notranslate nohighlight">\(t\)</span> plus one.</p></li>
+<li><p>The change in population each hour is equal to the size of the population that hour.
+This may sound pretty confusing. But it means that the amount that the population increases in the time step
+is equal in size to the whole population. Usually the in-
+crease is much less than that, perhaps a few percent, but
+here we are dealing with a rapidly increasing bacterial
+population.</p></li>
+<li><p>The change in the population each hour is <span class="math notranslate nohighlight">\(N(t+1)\)</span> minus <span class="math notranslate nohighlight">\(N(t)\)</span>, which is to say <span class="math notranslate nohighlight">\(N(t+1)-N(t)=2N(t)-N(t)=N(t)\)</span>.</p></li>
+<li><p>The change in the pulation each hour, call it “Delta <span class="math notranslate nohighlight">\(N\)</span>” or <span class="math notranslate nohighlight">\(\Delta\)</span><span class="math notranslate nohighlight">\(N\)</span>, is <span class="math notranslate nohighlight">\(\Delta\)</span><span class="math notranslate nohighlight">\(N\)</span>/<span class="math notranslate nohighlight">\(\Delta\)</span><span class="math notranslate nohighlight">\(t\)</span> = 2 <span class="math notranslate nohighlight">\(N(t)-N(t)=N(t)\)</span>.
+Here the symbol delta (<span class="math notranslate nohighlight">\(\Delta\)</span>) means <em>change in</em> or the <em>difference</em>. So <span class="math notranslate nohighlight">\(\Delta\)</span><span class="math notranslate nohighlight">\(N\)</span> means the change in <span class="math notranslate nohighlight">\(N\)</span>, and <span class="math notranslate nohighlight">\(\Delta\)</span><span class="math notranslate nohighlight">\(t\)</span> means the change in <span class="math notranslate nohighlight">\(t\)</span>. So the change in <span class="math notranslate nohighlight">\(N\)</span> per unit of time is written <span class="math notranslate nohighlight">\(\Delta\)</span><span class="math notranslate nohighlight">\(N\)</span>/<span class="math notranslate nohighlight">\(\Delta\)</span><span class="math notranslate nohighlight">\(t\)</span>, where delta <span class="math notranslate nohighlight">\(t\)</span> is the time unit being used, such as hour or day. This statement is thus the same as the previous one, but with symbols to shorten it.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta\)</span><span class="math notranslate nohighlight">\(N\)</span>/<span class="math notranslate nohighlight">\(\Delta\)</span><span class="math notranslate nohighlight">\(t=N\)</span>.
+This means the population change in each time unit is equal to the population size itself. That is just because the population is doubling each time step.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{1}{N}\)</span><span class="math notranslate nohighlight">\(\frac{\Delta N}{\Delta t}\)</span> = 1.
+This is just dividing both sides of the previous equation by <span class="math notranslate nohighlight">\(N\)</span>, and perhaps look even more confusing. However, in what follows, it turns out to be the most useful of all.</p></li>
+</ol>
+<p>To move forward, let’s focus on the last equation, with its parts bolded below.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\frac{1}{N}\frac{\boldsymbol{\Delta N}}{\Delta t}=&amp;\boldsymbol{1} \qquad \text{There is one new individual . . .} \\ \\
+\frac{1}{N}\frac{\Delta N}{\boldsymbol{\Delta t}} =&amp; 1 \qquad \text{every hour . . .} \\ \\
+\frac{\boldsymbol{1}}{\boldsymbol{N}} \frac{\Delta N}{\Delta t}=&amp;1 \qquad \text{for every member of the population.}
+\end{align*}
+\end{split}\]</div>
+<p>In the first row, the “<span class="math notranslate nohighlight">\(\Delta N =1\)</span>” refers to a change in the population of one individual, because delta <span class="math notranslate nohighlight">\(\Delta\)</span> means change. In the second row, the “<span class="math notranslate nohighlight">\(\Delta t\)</span>” in the denominator modifies this to the change in each time step - in this, case each hour. In the third row, the <span class="math notranslate nohighlight">\(1/N\)</span> modifies it drastically to mean the change in the population <em>per individual</em> in the population.</p>
+<p>This could mean that one new individual is born while the parent lives on, or that two new individuals are born and the parent dies, or that the parent divides in two, or other equivalent events. In this model, these details are abstractions that do not matter for purposes of projecting the population. The model simply records the number of offspring produced by each member of the population and surviving to reproduce. Multiplied by 100, this becomes the percentage growth of the population. For humans, this is like the number of children per family who survive to adulthood. (Though it has to be divided by two if there are two parents per family.)</p>
+<p>You have seen how rapidly that blows up, from the calculation on <a class="reference external" href="https://github.com/MikheyevLab/ecology-textbook/blob/main/book/content/basic_population_model.md">Chapter 3</a>.</p>
+</div>
+<div class="section" id="density-enhanced-growth">
+<h2>Density-enhanced growth<a class="headerlink" href="#density-enhanced-growth" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Rudbeckia_hirta%2C_%28_black-eyed-susans%2C%29_%2818978433569%29.jpg/1200px-Rudbeckia_hirta%2C_%28_black-eyed-susans%2C%29_%2818978433569%29.jpg"><img alt="Black_Eyed_Susans" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Rudbeckia_hirta%2C_%28_black-eyed-susans%2C%29_%2818978433569%29.jpg/1200px-Rudbeckia_hirta%2C_%28_black-eyed-susans%2C%29_%2818978433569%29.jpg" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text"><a class="reference external" href="https://commons.wikimedia.org/wiki/File:Rudbeckia_hirta,_(_black-eyed-susans,)_(18978433569).jpg">Black-Eyed Susans, <em>Rudbeckia hirta</em></a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Darwin made unparalleled use of a model that failed, but how can the model be improved so that it does not fail?</p>
+<p>Think of only three Black-Eyed Susan plants (<em>Rudbeckia hirta</em>) becoming established in Yellowstone National Park, one near the north-east entrance, one in the center, and a third near the south entrance|the plants thus separated by over 30 miles. How often would the same pollinator be able to visit two of the plants so the plants could reproduce? Rarely or never, because these pollinators travel limited distances. The plant’s growth rate will thus be 0. (In fact, it will be negative, since the three plants will eventually die.)</p>
+<p>Suppose instead that 1000 of these plants were scattered about the park, making them about 2 miles apart. Occasionally a pollinator might happen by, though the chance of it visiting one of the other Black-Eyed Susans would be very low. Still, with 1000 plants in the area, the growth rate could be slightly positive.</p>
+<p>Now consider 1,000,000 of those plants, making them about 100 meters apart. Pollination would now become relatively frequent. The growth rate of the population thus depends on the number of plants in the vicinity, meaning that this number must be part of the equation used to calculate the population growth rate.</p>
+<p>We can use the equation introduced earlier to calculate this rate. First, put a parameter in place of the 1, like this.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\frac{1}{N}\frac{\Delta N}{\Delta t}=r, \quad \text{where} \ r \ \text{formerly was 1} \\
+\end{align*}
+\end{split}\]</div>
+<p>Then attach a term that recognises the density of other members of the population, <span class="math notranslate nohighlight">\(N\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align*}
+\frac{1}{N}\frac{\Delta N}{\Delta t}=r+sN
+\end{align*}
+\]</div>
+<p>Here <span class="math notranslate nohighlight">\(r\)</span> is related to the number of offspring each plant will produce if it is alone in the world or in the area, and <span class="math notranslate nohighlight">\(s\)</span> is the number of additional offspring it will produce for each additional plant that appears in its vicinity.</p>
+<p>Suppose <span class="math notranslate nohighlight">\(r=0\)</span> and <span class="math notranslate nohighlight">\(s=1/20\)</span>, just for illustration, and start with three plants, so <span class="math notranslate nohighlight">\(N(0)=3\)</span>. That is
+$<span class="math notranslate nohighlight">\(
+\begin{align*}
+\frac{1}{N}\frac{\Delta N}{\Delta t}=0+0.05N
+\end{align*}
+\)</span>$
+and convert the model to computer code, like this.</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">&lt;-</span> <span class="m">0</span>
+<span class="n">s</span> <span class="o">&lt;-</span> <span class="m">0.05</span>
+<span class="n">dt</span> <span class="o">&lt;-</span> <span class="m">1</span>
+<span class="n">t</span> <span class="o">&lt;-</span> <span class="m">0</span>
+<span class="n">N</span> <span class="o">&lt;-</span> <span class="m">3</span>
+<span class="n">time</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="p">(</span><span class="m">15</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+<span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="n">time</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">populations2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s">&quot;size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">N</span>
+  <span class="n">dN</span><span class="o">=</span><span class="p">(</span><span class="n">r</span><span class="o">+</span><span class="n">s</span><span class="o">*</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="n">N</span><span class="o">*</span><span class="n">dt</span><span class="p">;</span>
+  <span class="n">N</span><span class="o">=</span><span class="n">N</span><span class="o">+</span><span class="n">dN</span>
+  <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="o">+</span><span class="n">dt</span>
+  <span class="nf">print</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If you run this model in <code class="docutils literal notranslate"><span class="pre">R</span></code> (or other languages in which this code works, like <code class="docutils literal notranslate"><span class="pre">C</span></code> or <code class="docutils literal notranslate"><span class="pre">AWK</span></code>), you will see the numbers below.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">&lt;-</span> <span class="m">0</span>
+<span class="n">s</span> <span class="o">&lt;-</span> <span class="m">0.05</span>
+<span class="n">dt</span> <span class="o">&lt;-</span> <span class="m">1</span>
+<span class="n">t</span> <span class="o">&lt;-</span> <span class="m">0</span>
+<span class="n">N</span> <span class="o">&lt;-</span> <span class="m">3</span>
+<span class="n">time</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="p">(</span><span class="m">15</span><span class="p">)</span>
+<span class="n">populations2</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="nf">integer</span><span class="p">())</span>
+
+<span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="n">time</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">populations2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s">&quot;size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">N</span>
+  <span class="n">dN</span><span class="o">=</span><span class="p">(</span><span class="n">r</span><span class="o">+</span><span class="n">s</span><span class="o">*</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="n">N</span><span class="o">*</span><span class="n">dt</span><span class="p">;</span>
+  <span class="n">N</span><span class="o">=</span><span class="n">N</span><span class="o">+</span><span class="n">dN</span>
+  <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="o">+</span><span class="n">dt</span>
+<span class="p">}</span>
+
+<span class="n">populations2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 15 × 1</caption>
+<thead>
+	<tr><th></th><th scope=col>size</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>3.000000e+00</td></tr>
+	<tr><th scope=row>2</th><td>3.450000e+00</td></tr>
+	<tr><th scope=row>3</th><td>4.045125e+00</td></tr>
+	<tr><th scope=row>4</th><td>4.863277e+00</td></tr>
+	<tr><th scope=row>5</th><td>6.045850e+00</td></tr>
+	<tr><th scope=row>6</th><td>7.873465e+00</td></tr>
+	<tr><th scope=row>7</th><td>1.097304e+01</td></tr>
+	<tr><th scope=row>8</th><td>1.699341e+01</td></tr>
+	<tr><th scope=row>9</th><td>3.143222e+01</td></tr>
+	<tr><th scope=row>10</th><td>8.083145e+01</td></tr>
+	<tr><th scope=row>11</th><td>4.075176e+02</td></tr>
+	<tr><th scope=row>12</th><td>8.711049e+03</td></tr>
+	<tr><th scope=row>13</th><td>3.802830e+06</td></tr>
+	<tr><th scope=row>14</th><td>7.230795e+11</td></tr>
+	<tr><th scope=row>15</th><td>2.614220e+22</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>Graph these, and you will see the numbers expand past all bounds, vertically off the page.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="c1">#EXPONENTIAL</span>
+<span class="n">r</span> <span class="o">&lt;-</span> <span class="m">1</span>
+<span class="n">s</span> <span class="o">&lt;-</span> <span class="m">0</span>
+<span class="n">dt</span> <span class="o">&lt;-</span> <span class="m">1</span>
+<span class="n">t</span> <span class="o">&lt;-</span> <span class="m">0</span>
+<span class="n">N</span> <span class="o">&lt;-</span> <span class="m">3</span>
+<span class="n">time</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="p">(</span><span class="m">20</span><span class="p">)</span>
+<span class="n">populations1</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="nf">integer</span><span class="p">())</span>
+
+<span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="n">time</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">populations1</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s">&quot;size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">N</span>
+  <span class="n">dN</span><span class="o">=</span><span class="p">(</span><span class="n">r</span><span class="o">+</span><span class="n">s</span><span class="o">*</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="n">N</span><span class="o">*</span><span class="n">dt</span><span class="p">;</span>
+  <span class="n">N</span><span class="o">=</span><span class="n">N</span><span class="o">+</span><span class="n">dN</span>
+  <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="o">+</span><span class="n">dt</span>
+<span class="p">}</span>
+
+<span class="c1">#ORTHOLOGISTIC</span>
+<span class="n">r</span> <span class="o">&lt;-</span> <span class="m">0</span>
+<span class="n">s</span> <span class="o">&lt;-</span> <span class="m">0.05</span>
+<span class="n">dt</span> <span class="o">&lt;-</span> <span class="m">1</span>
+<span class="n">t</span> <span class="o">&lt;-</span> <span class="m">0</span>
+<span class="n">N</span> <span class="o">&lt;-</span> <span class="m">3</span>
+<span class="n">time</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="p">(</span><span class="m">20</span><span class="p">)</span>
+<span class="n">populations2</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="nf">integer</span><span class="p">())</span>
+
+<span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="n">time</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">populations2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s">&quot;size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">N</span>
+  <span class="n">dN</span><span class="o">=</span><span class="p">(</span><span class="n">r</span><span class="o">+</span><span class="n">s</span><span class="o">*</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="n">N</span><span class="o">*</span><span class="n">dt</span><span class="p">;</span>
+  <span class="n">N</span><span class="o">=</span><span class="n">N</span><span class="o">+</span><span class="n">dN</span>
+  <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="o">+</span><span class="n">dt</span>
+<span class="p">}</span>
+
+<span class="c1">#PLOTTING</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="nf">ggplot</span><span class="p">()</span> <span class="o">+</span>
+  <span class="nf">geom_point</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">populations1</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">0</span><span class="o">:</span><span class="m">19</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">size</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="c1">#data points of exponential</span>
+  <span class="nf">geom_line</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">populations1</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">0</span><span class="o">:</span><span class="m">19</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">size</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="c1">#line for exponential growth</span>
+  <span class="nf">geom_point</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">populations2</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">0</span><span class="o">:</span><span class="p">(</span><span class="m">19</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="n">size</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="c1">#data points of orthologistic</span>
+  <span class="nf">geom_line</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">populations2</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">0</span><span class="o">:</span><span class="p">(</span><span class="m">19</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="n">size</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="c1">#line for orthologistic growth</span>
+  <span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">ylim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1100</span><span class="p">),</span> <span class="n">xlim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">11</span><span class="p">))</span> <span class="o">+</span> <span class="c1">#limits of x and y axis, allows for out of bounds line</span>
+  <span class="nf">xlab</span><span class="p">(</span><span class="s">&quot;t&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="c1">#label for x axis</span>
+  <span class="nf">ylab</span><span class="p">(</span><span class="s">&quot;N(t)&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="c1">#label for y axis</span>
+  <span class="nf">scale_x_continuous</span><span class="p">(</span><span class="n">breaks</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">9</span><span class="p">,</span><span class="m">10</span><span class="p">))</span> <span class="o">+</span> <span class="c1">#tick labels for x axis</span>
+  <span class="nf">scale_y_continuous</span><span class="p">(</span><span class="n">breaks</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">250</span><span class="p">,</span><span class="m">500</span><span class="p">,</span><span class="m">750</span><span class="p">,</span><span class="m">1000</span><span class="p">))</span> <span class="c1">#tick labels for y axis</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/modeling_single_population_3_0.png" src="../_images/modeling_single_population_3_0.png" />
+</div>
+</div>
+<p>The blue line shows the unlimited bacterial growth (exponential growth) that helped lead Darwin to his idea of natural selection. The red line illustrates the new “density-enhanced growth” just being considered, where growth rate increases with density.</p>
+<p>Because it approaches a line that is orthogonal to the line   approached by the logistic model, described later, we call   this an “orthologistic model.” It runs away to in
+finity so quickly that it essentially gets there in a
+finite amount of time. In physics and mathematics this situation is called a “singularity” - a place where the rules break down. To understand this, it is important to remember that all models are simpli
+cations and therefore approximations, and apply in their speci
+c range. The orthologistic model applies well at low densities, where greater densities mean greater growth.But a different model will take over when the densities get too high. In fact, if a population is following an orthologis  tic model, the model predicts that there will be some great change that will occur in the near future|before the time of the singularity.</p>
+<p>In physics, models with singularities command special attention, for they can reveal previously unknown phenomena. Black holes are one example, while a more mundane one from  physics is familiar to all. Consider a spinning coin with one point touching the table, spinning ever more rapidly as friction and gravity compel the angle between the coin and the table to shrink with time. It turns out that the physical equations that quite accurately model this spinning coin include a singularity - a place where the spinning of the coin becomes in
+nitely fast at a de
+nite calculable time. Of course, the spinning cannot actually become in
+finitely fast. As the coin gets too close to the singularity - as its angle dips too near the table - it merely switches to a different model. That different model is a stationary coin. The exact nature of the transition
+between the spinning and stationary states is complex and debated, but the inevitability of the transition is not.</p>
+<p>It is no different in ecology. Reasonable models leading to singularities are not to be discounted, but rather considered admissible where they apply. They arise inescapably in human population growth, considered in the next chapter.</p>
+</div>
+<div class="section" id="density-limited-growth">
+<h2>Density-limited growth<a class="headerlink" href="#density-limited-growth" title="Permalink to this headline">¶</a></h2>
+<p>What about outside of the range of the orthologistic model? Think of the same Black-Eyed Susans, not only close enough that pollinators can
+flit fluently from one to another, but also crowded so that they start to shade one another, and their roots start to compete for water and nutrients. What is a suitable model for this?</p>
+<p>The growth rate will again depend on the number of
+plants, but now more plants will <em>reduce</em> the growth rate. That just means a minus sign on <span class="math notranslate nohighlight">\(s\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{N}\frac{\Delta N}{\Delta t}=r+sN, \qquad \boldsymbol{s&lt;0}
+\]</div>
+<p>Again, <span class="math notranslate nohighlight">\(r\)</span> is the number of offspring each will produce if it is alone in the world, but with <span class="math notranslate nohighlight">\(s\)</span> negative, <span class="math notranslate nohighlight">\(s\)</span> is the number each plant will be <span class="math notranslate nohighlight">\(unable to produce\)</span> for each additional plant
+that appears in its vicinity.</p>
+<p>Suppose we have <span class="math notranslate nohighlight">\(r = 1\)</span> and <span class="math notranslate nohighlight">\(s = -1/1000\)</span>, and we start with three plants, so <span class="math notranslate nohighlight">\(N(0) = 3\)</span>. Here is the code, with the new negative <span class="math notranslate nohighlight">\(s\)</span>.</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">&lt;-</span> <span class="m">1</span>
+<span class="n">s</span> <span class="o">&lt;-</span> <span class="m">-0.001</span> <span class="c1">#This is the new negative s</span>
+<span class="n">dt</span> <span class="o">&lt;-</span> <span class="m">1</span>
+<span class="n">t</span> <span class="o">&lt;-</span> <span class="m">0</span>
+<span class="n">N</span> <span class="o">&lt;-</span> <span class="m">3</span>
+<span class="n">time</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="p">(</span><span class="m">20</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+<span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="n">time</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">dN</span><span class="o">=</span><span class="p">(</span><span class="n">r</span><span class="o">+</span><span class="n">s</span><span class="o">*</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="n">N</span><span class="o">*</span><span class="n">dt</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#to save the logistic growth into a dataframe</span>
+<span class="c1">#LOGISTIC</span>
+<span class="n">r</span> <span class="o">&lt;-</span> <span class="m">1</span>
+<span class="n">s</span> <span class="o">&lt;-</span> <span class="m">-0.001</span>
+<span class="n">dt</span> <span class="o">&lt;-</span> <span class="m">1</span>
+<span class="n">t</span> <span class="o">&lt;-</span> <span class="m">0</span>
+<span class="n">N</span> <span class="o">&lt;-</span> <span class="m">3</span>
+<span class="n">time</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="p">(</span><span class="m">20</span><span class="p">)</span>
+<span class="n">populations3</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="nf">integer</span><span class="p">())</span>
+
+<span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="n">time</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">populations3</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s">&quot;size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">N</span>
+  <span class="n">dN</span><span class="o">=</span><span class="p">(</span><span class="n">r</span><span class="o">+</span><span class="n">s</span><span class="o">*</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="n">N</span><span class="o">*</span><span class="n">dt</span><span class="p">;</span>
+  <span class="n">N</span><span class="o">=</span><span class="n">N</span><span class="o">+</span><span class="n">dN</span>
+  <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="o">+</span><span class="n">dt</span>
+<span class="p">}</span>
+
+<span class="c1">#PLOTTING</span>
+<span class="nf">ggplot</span><span class="p">()</span> <span class="o">+</span>
+  <span class="nf">geom_point</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">populations1</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">0</span><span class="o">:</span><span class="m">19</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">size</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">geom_line</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">populations1</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">0</span><span class="o">:</span><span class="m">19</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">size</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">geom_point</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">populations2</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">0</span><span class="o">:</span><span class="p">(</span><span class="m">19</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="n">size</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">geom_line</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">populations2</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">0</span><span class="o">:</span><span class="p">(</span><span class="m">19</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="n">size</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">geom_point</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">populations3</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">0</span><span class="o">:</span><span class="p">(</span><span class="m">19</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="n">size</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;green&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="c1">#new points for logistic model</span>
+  <span class="nf">geom_line</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">populations3</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">0</span><span class="o">:</span><span class="p">(</span><span class="m">19</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="n">size</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;green&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="c1">#lines for logistic growth</span>
+  <span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">ylim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1100</span><span class="p">),</span> <span class="n">xlim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">13</span><span class="p">))</span> <span class="o">+</span>
+  <span class="nf">xlab</span><span class="p">(</span><span class="s">&quot;t&quot;</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">ylab</span><span class="p">(</span><span class="s">&quot;N(t)&quot;</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">scale_x_continuous</span><span class="p">(</span><span class="n">breaks</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">9</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">11</span><span class="p">,</span><span class="m">12</span><span class="p">))</span> <span class="o">+</span>
+  <span class="nf">scale_y_continuous</span><span class="p">(</span><span class="n">breaks</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">250</span><span class="p">,</span><span class="m">500</span><span class="p">,</span><span class="m">750</span><span class="p">,</span><span class="m">1000</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/modeling_single_population_5_0.png" src="../_images/modeling_single_population_5_0.png" />
+</div>
+</div>
+<p>geom_line(data=populations3, aes(x=0:(19), y=size), color=”green”) + #lines for logistic growth
+coord_cartesian(ylim=c(0, 1100), xlim=c(0,13)) +
+xlab(“t”) +
+ylab(“N(t)”) +
+scale_x_continuous(breaks=c(0,1,2,3,4,5,6,7,8,9,10,11,12)) +
+scale_y_continuous(breaks=c(0,250,500,750,1000))</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>The value at which it levels off is called an &quot;equilibrium,&quot; a value where the dynamical system becomes quiescent and stops changing. In the case of the logistic equation, it is also called the &quot;carrying capacity,&quot; a level at which the environment cannot &quot;carry&quot; any larger population.
+
+But why 1000? What value of $1/N / ΔN/Δt$ will make the population level off? When $ΔN$ is $0$, that means &quot;the change in $N$ is zero.&quot; And that means $N$ stops growing. And when $ΔN$ is zero, the entire term on the left is zero and algebra proceeds as follows.
+
+$$
+\begin{align*}
+\frac{1}{N}\frac{\Delta N}{\Delta t}&amp;=r+sN \\
+0&amp;=r+sN \\
+-sN&amp;=r \\
+N&amp;=-r/s
+\end{align*}
+$$
+
+So the carrying capacity is $-r/s$. In [Figure 4.3] , $-r/s=-1/(-0.001) = 1000$. Exactly where it ended up! This is the celebrated logistic equation,&quot; published in 1838 by Pierre Verhulst.⋆ It is commonly written
+
+$$
+\frac{1}{N}\frac{\Delta N}{\Delta t}=rN \left(1-\frac{N}{K} \right)
+$$
+
+Notice that when $N$ is equal to $K$, the factor in parentheses on the right becomes $1-N/N=1-1=0$, so the whole growth term $ΔN/Δt$ becomes zero and the population stops growing. Thus $K$ is carrying capacity, and therefore $K=-r/s$. As an exercise, you might want substitute $-r/s$ for $K$ in the equation above, then simplify and see if you get the $r + sN$ formulation.
+
+##Parameter combinations
+Before moving further, consider all possible combinations of the parameters, as determined by their signs. There are six possibilities, ignoring growth rates of exactly zero as in
+nitely unlikely.
+
+1. $r&gt;0, s&gt;0 \qquad$ Orthologistic growth.
+2. $r&lt;0, s&gt;0 \qquad$ Orthologistic growth with an Allee point.
+3. $r&gt;0, s=0 \qquad$ Exponential growth.
+4. $r&gt;0, s&lt;0 \qquad$ Logistic growth with a carrying capacity.
+5. $r&lt;0, s&lt;0 \qquad$ Inviable population declining to extinction.
+6. $r&lt;0, s=0 \qquad$ Same as above.
+
+[Figure 4.4] shows three of these possibilities pieced to gether to form a complete population model. On the left in the fi
+gure, number 2 above, orthologistic growth with an [Allee point], prevails at low densities, where larger numbers of other members of the species in the vicinity enhance growth. In the middle, number 3 above, exponential growth, occurs as a transition phase. Finally on the right, number 4 above, logistic growth with a carrying capacity, takes over when crowding and other limitations reduce growth rates as larger numbers of other members of the species in the vicinity appear.
+
+The vertical axis in [Figure 4.4] shows the individual growth Rate, and the horizontal axis shows the population density. On the right, where the slope is negative, as the density approaches $-r/s$ from the left the growth rate on the vertical axis drops to zero, so the population stops growing.
+
+[Figure 4.4]
+This is the equilibrium value called the &quot;carrying capacity.&quot; If something pushes the population above that value- immigration of animals from another region, for example- then the growth rate on the vertical axis drops below zero. The growth rate then is negative, and therefore the population declines. On the other hand, if something drops the population below that value - such as emigration of animals to another place - the growth rate on the vertical axis rises above zero. That growth rate is positive, and therefore the population grows.
+
+The carrying capacity is &quot;stable.&quot; A value is said to be stable if it tends to restore itself when it is pushed away by some outside force.
+
+The situation is entirely different on the left in the
+figure, where the slope is positive. As on the right, when the density is $-r/s$, the growth rate on the vertical axis reaches zero, meaning the population does not change. This is an equilibrium too - not a carrying capacity, but an [Allee point]. However, if the population here drifts below $-r/s$, the growth rate on the vertical axis becomes negative and the population declines further still. It is unstable. In this model the population continues to decline until eventual extinction. Above the Allee point, however, the growth rate on the vertical axis
+is positive, so the population increases until it reaches some other limitation.
+
+A species thus becomes endangered when its population drops below its Allee point, and if it is to be saved something must be done to change that point. The parameter `r` must somehow be increased - by restoring habitat, reducing predation by humans, or using arti
+cial reintroductions or other conservation programs (e.g., Figure 4.5).
+
+##Generalization
+In summary the macroscale model for population dynamics of a single species, in its simplest form, is
+
+$$
+\frac{1}{N}\frac{\Delta N}{\Delta t}=r+sN
+$$
+&lt;div style=&quot;text-align: right&quot;&gt; (4.1) &lt;/div&gt;
+
+This is a straight-line form of a more general form presented by [Hutchinson](),
+
+$$
+\frac{1}{N}\frac{\Delta N}{\Delta t}=r+sN+s_{2}N^2+s_{3}N^3+s_{4}N^4+...
+$$
+&lt;div style=&quot;text-align: right&quot;&gt; (4.2) &lt;/div&gt;
+
+and of the most general form proposed by [Kolomogorov](),where $f(N)$ can be any function of the population density $N$.
+
+$$
+\frac{1}{N}\frac{\Delta N}{\Delta t}=f(N)
+$$
+&lt;div style=&quot;text-align: right&quot;&gt; (4.3) &lt;/div&gt;
+
+The higher-order terms in Equation 4.2 could re
+ne population projections if there were enough data to determine them. They are not really needed, however, because straight-line parts can be pieced together to form a general population growth curve, as in Figure 4.4. And as human population
+growth in Figure 6.3 will show, a piecewise approach can more closely approximate the real situation.
+
+Moreover, blending separate versions of Equation 4.1 can generalize to either the Hutchinson or Kolomorgov forms, 4.2 and 4.3, as you will see in Chapter 18.
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "MikheyevLab/ecology-textbook",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="basic_population_model.html" title="previous page">A basic population model</a>
+    <a class='right-next' id="next-link" href="differential_and_difference_forms.html" title="next page">Differential and difference forms</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Lehman, Loberg and Clark<br/>
+        
+            &copy; Copyright 2019.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'G-8SXREGQC46', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

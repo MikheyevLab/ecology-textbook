@@ -46,8 +46,8 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
@@ -57,6 +57,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Modeling a single population" href="modeling_single_population.html" />
     <link rel="prev" title="Quantiative Ecology" href="../intro.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -103,6 +104,21 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    A basic population model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modeling_single_population.html">
+   Modeling a single population
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="differential_and_difference_forms.html">
+   Differential and difference forms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch6-human-population.html">
+   Human population growth
   </a>
  </li>
 </ul>
@@ -308,7 +324,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><table>
+<div class="output text_html"><table class="dataframe">
 <caption>A data.frame: 120 × 1</caption>
 <thead>
 	<tr><th></th><th scope=col>size</th></tr>
@@ -405,14 +421,20 @@
 <p>With elephants recognized as the slowest breeders of all known animals, Darwin made a laborious calculation, similar to the bacterial calculation above but more detailed, assuming that elephants started breeding at age 30 and continued until age 90, producing 6 young in that time.</p>
 <div class="figure align-center" id="elephants-fig">
 <a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/f/fa/Elephants_at_Amboseli_national_park_against_Mount_Kilimanjaro.jpg"><img alt="Elephants" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Elephants_at_Amboseli_national_park_against_Mount_Kilimanjaro.jpg" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text"><span class="ttooltip"> Elephants at Amboseli National Park against Mount Kilimanjaro <span class="ttooltiptext">
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text"><span class="ttooltip">Elephants at Amboseli National Park against Mount Kilimanjaro
+<span class="ttooltiptext">
 Elephants at Amboseli National Park against Mount Kilimanjaro <b>by</b> Amoghavarsha JS (CC BY-SA 3.0)
-</span> </span></span><a class="headerlink" href="#elephants-fig" title="Permalink to this image">¶</a></p>
+</span>
+</span></span><a class="headerlink" href="#elephants-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p>Of course he had no computers, nor calculators, and apparently kept track of 90 or more age classes and made his calculations (which have never been found) on paper. He calculated by hand on paper and alas those notes have never been found. But he said it cost him “some pain” to reach the conclusion that at the end of the fifth century, fifteen million elephants would be walking the earth, descended from one original pair. From this, he concluded that unlimited growth is impossible.</p>
 <div class="figure align-center" id="darwin-fig">
 <a class="reference internal image-reference" href="../_images/Darwin.jpg"><img alt="Darwin" src="../_images/Darwin.jpg" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Charles Darwin was in his twenties when he realized that natural selection was a cause of evolution and started to formulate his theory</span><a class="headerlink" href="#darwin-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text"><span class="ttooltip">Charles Darwin was in his twenties when he realized that natural selection was a cause of evolution and started to formulate his theory
+<span class="ttooltiptext">
+Darwin <b>by</b> G. Richmond (Public Domain)
+</span>
+</span></span><a class="headerlink" href="#darwin-fig" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote class="epigraph">
 <div><p>There is no exception to the rule that every organic being naturally increases at so high a rate that, if not destroyed, the earth would soon be covered by the progeny.</p>
@@ -471,6 +493,7 @@ Elephants at Amboseli National Park against Mount Kilimanjaro <b>by</b> Amoghava
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">Quantiative Ecology</a>
+    <a class='right-next' id="next-link" href="modeling_single_population.html" title="next page">Modeling a single population</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

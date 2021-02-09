@@ -17,20 +17,32 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-library(ggplot2)
-ggplot(populations, aes(x=1:(5*24), size)) + geom_line() + xlab("Time (hours)") + 
-  ylab("Population size (bacteral cells)"))
+suppressPackageStartupMessages({
+  library(dplyr)
+  library(readr)
+  library(kableExtra)
+  library(IRdisplay)
+}) # hide annoying messages
+options(knitr.kable.NA = '') # don't plot missing values
+humanPopulation <- read_tsv("../data/humans.tsv", col_types = "nn") 
+humanPopulation %>% 
+  mutate(dN = c(diff(population), NA), dT = c(diff(year), NA), rate = 1 / population * dN / dT) %>% 
+  kbl(col.names = c("t (years)", "N (billions)", "$\\Delta N$", "$\\Delta t$", "$\\frac{1}{N} \\frac{\\Delta N}{\\Delta t}$"), 
+    caption = "Human population numbers for analysis,
+    digits = c(0, 3, 3, 0, 4)) %>%
+  as.character() %>%
+  display_html()
 ------------------
 
-Error in parse(text = x, srcfile = src): <text>:3:43: unexpected ')'
-2: ggplot(populations, aes(x=1:(5*24), size)) + geom_line() + xlab("Time (hours)") + 
-3:   ylab("Population size (bacteral cells)"))
-                                             ^
+Error in parse(text = x, srcfile = src): <text>:12:15: unexpected INCOMPLETE_STRING
+14:   as.character() %>%
+15:   display_html()
+                  ^
 Traceback:
 
-ERROR: Error in parse(text = x, srcfile = src): <text>:3:43: unexpected ')'
-2: ggplot(populations, aes(x=1:(5*24), size)) + geom_line() + xlab("Time (hours)") + 
-3:   ylab("Population size (bacteral cells)"))
-                                             ^
+ERROR: Error in parse(text = x, srcfile = src): <text>:12:15: unexpected INCOMPLETE_STRING
+14:   as.character() %>%
+15:   display_html()
+                  ^
 
 

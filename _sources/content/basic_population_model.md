@@ -102,9 +102,11 @@ alt: Elephants
 width: 600px
 align: center
 ---
-<span class="ttooltip"> Elephants at Amboseli National Park against Mount Kilimanjaro <span class="ttooltiptext">
-  Elephants at Amboseli National Park against Mount Kilimanjaro <b>by</b> Amoghavarsha JS (CC BY-SA 3.0)
-  </span> </span>
+<span class="ttooltip">Elephants at Amboseli National Park against Mount Kilimanjaro
+  <span class="ttooltiptext">
+    Elephants at Amboseli National Park against Mount Kilimanjaro <b>by</b> Amoghavarsha JS (CC BY-SA 3.0)
+  </span>
+</span>
 ```
 
 Of course he had no computers, nor calculators, and apparently kept track of 90 or more age classes and made his calculations (which have never been found) on paper. He calculated by hand on paper and alas those notes have never been found. But he said it cost him “some pain” to reach the conclusion that at the end of the fifth century, fifteen million elephants would be walking the earth, descended from one original pair. From this, he concluded that unlimited growth is impossible.
@@ -116,7 +118,11 @@ alt: Darwin
 width: 400px
 align: center
 ---
-Charles Darwin was in his twenties when he realized that natural selection was a cause of evolution and started to formulate his theory
+<span class="ttooltip">Charles Darwin was in his twenties when he realized that natural selection was a cause of evolution and started to formulate his theory
+  <span class="ttooltiptext">
+    Darwin <b>by</b> G. Richmond (Public Domain)
+  </span>
+</span>
 ```
 
 ```{epigraph}

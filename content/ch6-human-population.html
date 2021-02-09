@@ -1,0 +1,781 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Human population growth &#8212; Quantitative Ecology</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tooltip.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Differential and difference forms" href="differential_and_difference_forms.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Quantitative Ecology</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Quantiative Ecology
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Single populations
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="basic_population_model.html">
+   A basic population model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modeling_single_population.html">
+   Modeling a single population
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="differential_and_difference_forms.html">
+   Differential and difference forms
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Human population growth
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/content/ch6-human-population.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/ch6-human-population.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/MikheyevLab/ecology-textbook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/MikheyevLab/ecology-textbook/issues/new?title=Issue%20on%20page%20%2Fcontent/ch6-human-population.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/MikheyevLab/ecology-textbook/main?urlpath=tree/book/content/ch6-human-population.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#phenomological-graph">
+   6.1 Phenomological graph
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#table-6-1-in-r">
+     Table 6.1 in R
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#biological-ecological-graph">
+   6.2 Biological-ecological graph
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-to-generate-figure-6-2">
+     Code to generate figure 6.2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-global-transition">
+   6.3 A global transition
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-to-generate-figure-6-3">
+     Code to generate figure 6.3
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="human-population-growth">
+<h1>Human population growth<a class="headerlink" href="#human-population-growth" title="Permalink to this headline">¶</a></h1>
+<p>There is a challenge for this chapter. Coming this far in the
+book you have learned a little about population growth, and
+you have access to computer coding, so you are ready for
+something big.</p>
+<p>Imagine for fun that you have accepted a new job in Washington as a policy fellow with the United States Geological Survey, or USGS - one of the major research branches of the US federal government. This is not farfetched; many recent doctoral graduates land such jobs at reasonably high levels. But
+suppose that your boss says she wants you to calculate what
+the world’s population will be in 2100. Other agencies have
+done this, but she wants a separate USGS estimate, presented
+in an understandable way. She can give you data from the
+18th through the 21st centuries. She discloses that she is
+meeting with the Secretary General of the United Nations
+tomorrow and hopes you can figure it out today. You tell her
+“Sure, no problem.”</p>
+<p>Are you crazy? No! The rest of this chapter will walk you
+through how to it. We’ll start by piecing together the parts,
+as in Figure 4.4 - the orthologistic part, if there is one, and
+any exponential and logistic parts as well.</p>
+<div class="section" id="phenomological-graph">
+<h2>6.1 Phenomological graph<a class="headerlink" href="#phenomological-graph" title="Permalink to this headline">¶</a></h2>
+<p>The excerpt of data you have been given includes the world’s
+population in billions, by year. That is all. Figure <a class="reference internal" href="#figure-6-1"><span class="std std-ref">6.1</span></a> shows
+the data plotted in a phenomenological way - population
+size versus year, supplemented with a curve going back 2000
+years to provide perspective. The blue dots show the range
+of data you will be using to project the future population,
+and the black ‘X’ marks a great demographic transition that
+is not obvious in this graph, but that will become glaringly
+so in Figure <a class="reference internal" href="#figure-6-3"><span class="std std-ref">6.3</span></a>.</p>
+<div class="figure align-center" id="figure-6-1">
+<a class="reference internal image-reference" href="../_images/fig_6_1.png"><img alt="figure-6_1" src="../_images/fig_6_1.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Global human population over the past 2000 years</span><a class="headerlink" href="#figure-6-1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Can you project global population by simply extending
+that curve? The population is clearly rising at an enormous
+rate, expanding most recently from 3 billion to 7 billion in
+less than half a century. Simply projecting the curve would
+lead to a prediction of more than 11 billion people by the
+middle of the 21th century, and more than 15 billion by the
+century’s end.</p>
+<p>But such an approach is too simplistic. In one sense, the
+data are all contained in that curve, but are obscured by
+the phenomena themselves. We need to extract the biology
+inherent in the changing growth rate <span class="math notranslate nohighlight">\(r\)</span> as well as the ecology
+inherent in the changing density dependence <span class="math notranslate nohighlight">\(s\)</span>. In other
+words, we want to look at data showing <span class="math notranslate nohighlight">\(1=N\)</span> <span class="math notranslate nohighlight">\(ΔN=Δt\)</span> versus
+<span class="math notranslate nohighlight">\(N\)</span>, as in Figure 4.4.</p>
+<p>Table 6.1 shows a subset of the original data, <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(N\)</span>, plus
+calculated values for
+<span class="math notranslate nohighlight">\(ΔN\)</span>, <span class="math notranslate nohighlight">\(Δt\)</span> and <span class="math notranslate nohighlight">\(1=N\)</span> <span class="math notranslate nohighlight">\(ΔN=Δt\)</span>.
+In row 1, for example, <span class="math notranslate nohighlight">\(ΔN\)</span> shows the change in <span class="math notranslate nohighlight">\(N\)</span> between row 1 and
+row 2: <span class="math notranslate nohighlight">\(0.795 - 0.606 = 0.189\)</span> billion. Likewise, Δt in row 1
+shows how many years elapse before the time of row 2:
+1750 - 1687 = 63 years. The final column in row 1 shows the value
+of <span class="math notranslate nohighlight">\(1=N\)</span> <span class="math notranslate nohighlight">\(ΔN=Δt\)</span>:
+<span class="math notranslate nohighlight">\(1/0:606\)</span> <span class="math notranslate nohighlight">\(x\)</span> <span class="math notranslate nohighlight">\(0:189=63 = 0:004950495\)</span>…., which
+rounds to <span class="math notranslate nohighlight">\(0.0050\)</span>. Row 21 has no deltas because it is the last
+row in the table.</p>
+<div class="section" id="table-6-1-in-r">
+<h3>Table 6.1 in R<a class="headerlink" href="#table-6-1-in-r" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">suppressPackageStartupMessages</span><span class="p">({</span>
+  <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+  <span class="nf">library</span><span class="p">(</span><span class="n">readr</span><span class="p">)</span>
+  <span class="nf">library</span><span class="p">(</span><span class="n">kableExtra</span><span class="p">)</span>
+  <span class="nf">library</span><span class="p">(</span><span class="n">IRdisplay</span><span class="p">)</span>
+<span class="p">})</span> <span class="c1"># hide annoying messages</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">knitr.kable.NA</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="p">)</span> <span class="c1"># don&#39;t plot missing values</span>
+<span class="n">humanPopulation</span> <span class="o">&lt;-</span> <span class="nf">read_tsv</span><span class="p">(</span><span class="s">&quot;../data/humans.tsv&quot;</span><span class="p">,</span> <span class="n">col_types</span> <span class="o">=</span> <span class="s">&quot;nn&quot;</span><span class="p">)</span> 
+<span class="n">humanPopulation</span> <span class="o">%&gt;%</span> 
+  <span class="nf">mutate</span><span class="p">(</span><span class="n">dN</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="nf">diff</span><span class="p">(</span><span class="n">population</span><span class="p">),</span> <span class="kc">NA</span><span class="p">),</span> <span class="n">dT</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="nf">diff</span><span class="p">(</span><span class="n">year</span><span class="p">),</span> <span class="kc">NA</span><span class="p">),</span> <span class="n">rate</span> <span class="o">=</span> <span class="m">1</span> <span class="o">/</span> <span class="n">population</span> <span class="o">*</span> <span class="n">dN</span> <span class="o">/</span> <span class="n">dT</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+  <span class="nf">kbl</span><span class="p">(</span><span class="n">col.names</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;t (years)&quot;</span><span class="p">,</span> <span class="s">&quot;N (billions)&quot;</span><span class="p">,</span> <span class="s">&quot;$\\Delta N$&quot;</span><span class="p">,</span> <span class="s">&quot;$\\Delta t$&quot;</span><span class="p">,</span> <span class="s">&quot;$\\frac{1}{N} \\frac{\\Delta N}{\\Delta t}$&quot;</span><span class="p">),</span> 
+    <span class="n">caption</span> <span class="o">=</span> <span class="s">&quot;Human population numbers for analysis&quot;</span><span class="p">,</span>
+    <span class="n">digits</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">))</span> <span class="o">%&gt;%</span>
+  <span class="nf">as.character</span><span class="p">()</span> <span class="o">%&gt;%</span>
+  <span class="nf">display_html</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<caption>Human population numbers for analysis</caption>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> t (years) </th>
+   <th style="text-align:right;"> N (billions) </th>
+   <th style="text-align:right;"> $\Delta N$ </th>
+   <th style="text-align:right;"> $\Delta t$ </th>
+   <th style="text-align:right;"> $\frac{1}{N} \frac{\Delta N}{\Delta t}$ </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1687 </td>
+   <td style="text-align:right;"> 0.606 </td>
+   <td style="text-align:right;"> 0.189 </td>
+   <td style="text-align:right;"> 63 </td>
+   <td style="text-align:right;"> 0.0050 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1750 </td>
+   <td style="text-align:right;"> 0.795 </td>
+   <td style="text-align:right;"> 0.174 </td>
+   <td style="text-align:right;"> 50 </td>
+   <td style="text-align:right;"> 0.0044 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1800 </td>
+   <td style="text-align:right;"> 0.969 </td>
+   <td style="text-align:right;"> 0.296 </td>
+   <td style="text-align:right;"> 50 </td>
+   <td style="text-align:right;"> 0.0061 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1850 </td>
+   <td style="text-align:right;"> 1.265 </td>
+   <td style="text-align:right;"> 0.391 </td>
+   <td style="text-align:right;"> 50 </td>
+   <td style="text-align:right;"> 0.0062 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1900 </td>
+   <td style="text-align:right;"> 1.656 </td>
+   <td style="text-align:right;"> 0.204 </td>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 0.0062 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1920 </td>
+   <td style="text-align:right;"> 1.860 </td>
+   <td style="text-align:right;"> 0.210 </td>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:right;"> 0.0113 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1930 </td>
+   <td style="text-align:right;"> 2.070 </td>
+   <td style="text-align:right;"> 0.230 </td>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:right;"> 0.0111 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1940 </td>
+   <td style="text-align:right;"> 2.300 </td>
+   <td style="text-align:right;"> 0.258 </td>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:right;"> 0.0112 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1950 </td>
+   <td style="text-align:right;"> 2.558 </td>
+   <td style="text-align:right;"> 0.224 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 0.0175 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1955 </td>
+   <td style="text-align:right;"> 2.782 </td>
+   <td style="text-align:right;"> 0.261 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 0.0188 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1960 </td>
+   <td style="text-align:right;"> 3.043 </td>
+   <td style="text-align:right;"> 0.307 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 0.0202 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1965 </td>
+   <td style="text-align:right;"> 3.350 </td>
+   <td style="text-align:right;"> 0.362 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 0.0216 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 3.712 </td>
+   <td style="text-align:right;"> 0.377 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 0.0203 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1975 </td>
+   <td style="text-align:right;"> 4.089 </td>
+   <td style="text-align:right;"> 0.362 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 0.0177 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1980 </td>
+   <td style="text-align:right;"> 4.451 </td>
+   <td style="text-align:right;"> 0.405 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 0.0182 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1985 </td>
+   <td style="text-align:right;"> 4.856 </td>
+   <td style="text-align:right;"> 0.432 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 0.0178 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1990 </td>
+   <td style="text-align:right;"> 5.288 </td>
+   <td style="text-align:right;"> 0.412 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 0.0156 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1995 </td>
+   <td style="text-align:right;"> 5.700 </td>
+   <td style="text-align:right;"> 0.390 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 0.0137 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2000 </td>
+   <td style="text-align:right;"> 6.090 </td>
+   <td style="text-align:right;"> 0.384 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 0.0126 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2005 </td>
+   <td style="text-align:right;"> 6.474 </td>
+   <td style="text-align:right;"> 0.392 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 0.0121 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2010 </td>
+   <td style="text-align:right;"> 6.866 </td>
+   <td style="text-align:right;">  </td>
+   <td style="text-align:right;">  </td>
+   <td style="text-align:right;">  </td>
+  </tr>
+</tbody>
+</table></div></div>
+</div>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">pop_data</span> <span class="o">&lt;-</span> <span class="nf">rbind</span><span class="p">(</span>
+<span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="n">.</span> <span class="p">,</span><span class="m">1687</span><span class="p">,</span><span class="m">0.606</span><span class="p">,</span> <span class="m">0.189</span><span class="p">,</span> <span class="m">63</span><span class="p">,</span> <span class="m">0.0050</span><span class="p">),</span>
+<span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="n">.</span> <span class="p">,</span><span class="m">1750</span><span class="p">,</span><span class="m">0.795</span><span class="p">,</span> <span class="m">0.174</span><span class="p">,</span> <span class="m">50</span><span class="p">,</span> <span class="m">0.0044</span><span class="p">),</span>
+<span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="n">.</span> <span class="p">,</span><span class="m">1800</span><span class="p">,</span><span class="m">0.969</span><span class="p">,</span> <span class="m">0.296</span><span class="p">,</span> <span class="m">50</span><span class="p">,</span> <span class="m">0.0061</span><span class="p">),</span>
+<span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="n">.</span> <span class="p">,</span><span class="m">1850</span><span class="p">,</span><span class="m">1.265</span><span class="p">,</span> <span class="m">0.391</span><span class="p">,</span> <span class="m">50</span><span class="p">,</span> <span class="m">0.0062</span><span class="p">),</span>
+<span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="n">.</span> <span class="p">,</span><span class="m">1900</span><span class="p">,</span><span class="m">1.656</span><span class="p">,</span> <span class="m">0.204</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="m">0.0062</span><span class="p">),</span>
+<span class="nf">c</span><span class="p">(</span><span class="m">6</span><span class="n">.</span> <span class="p">,</span><span class="m">1920</span><span class="p">,</span><span class="m">1.860</span><span class="p">,</span> <span class="m">0.210</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">0.0113</span><span class="p">),</span>
+<span class="nf">c</span><span class="p">(</span><span class="m">7</span><span class="n">.</span> <span class="p">,</span><span class="m">1930</span><span class="p">,</span><span class="m">2.070</span><span class="p">,</span> <span class="m">0.230</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">0.0111</span><span class="p">),</span>
+<span class="nf">c</span><span class="p">(</span><span class="m">8</span><span class="n">.</span> <span class="p">,</span><span class="m">1940</span><span class="p">,</span><span class="m">2.300</span><span class="p">,</span> <span class="m">0.258</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">0.0112</span><span class="p">),</span>
+<span class="nf">c</span><span class="p">(</span><span class="m">9</span><span class="n">.</span> <span class="p">,</span><span class="m">1950</span><span class="p">,</span><span class="m">2.558</span><span class="p">,</span> <span class="m">0.224</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">0.0175</span><span class="p">),</span>
+<span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="n">.</span><span class="p">,</span> <span class="m">1955</span><span class="p">,</span> <span class="m">2.782</span><span class="p">,</span> <span class="m">0.261</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">0.0188</span><span class="p">),</span>
+<span class="nf">c</span><span class="p">(</span><span class="m">11</span><span class="n">.</span><span class="p">,</span> <span class="m">1960</span><span class="p">,</span> <span class="m">3.043</span><span class="p">,</span> <span class="m">0.307</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">0.0202</span><span class="p">),</span>
+<span class="nf">c</span><span class="p">(</span><span class="m">12</span><span class="n">.</span><span class="p">,</span> <span class="m">1965</span><span class="p">,</span> <span class="m">3.350</span><span class="p">,</span> <span class="m">0.362</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">0.0216</span><span class="p">),</span>
+<span class="nf">c</span><span class="p">(</span><span class="m">13</span><span class="n">.</span><span class="p">,</span> <span class="m">1970</span><span class="p">,</span> <span class="m">3.712</span><span class="p">,</span> <span class="m">0.377</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">0.0203</span><span class="p">),</span>
+<span class="nf">c</span><span class="p">(</span><span class="m">14</span><span class="n">.</span><span class="p">,</span> <span class="m">1975</span><span class="p">,</span> <span class="m">4.089</span><span class="p">,</span> <span class="m">0.362</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">0.0177</span><span class="p">),</span>
+<span class="nf">c</span><span class="p">(</span><span class="m">15</span><span class="n">.</span><span class="p">,</span> <span class="m">1980</span><span class="p">,</span> <span class="m">4.451</span><span class="p">,</span> <span class="m">0.405</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">0.0182</span><span class="p">),</span>
+<span class="nf">c</span><span class="p">(</span><span class="m">16</span><span class="n">.</span><span class="p">,</span> <span class="m">1985</span><span class="p">,</span> <span class="m">4.856</span><span class="p">,</span> <span class="m">0.432</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">0.0178</span><span class="p">),</span>
+<span class="nf">c</span><span class="p">(</span><span class="m">17</span><span class="n">.</span><span class="p">,</span> <span class="m">1990</span><span class="p">,</span> <span class="m">5.288</span><span class="p">,</span> <span class="m">0.412</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">0.0156</span><span class="p">),</span>
+<span class="nf">c</span><span class="p">(</span><span class="m">18</span><span class="n">.</span><span class="p">,</span> <span class="m">1995</span><span class="p">,</span> <span class="m">5.700</span><span class="p">,</span> <span class="m">0.390</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">0.0137</span><span class="p">),</span>
+<span class="nf">c</span><span class="p">(</span><span class="m">19</span><span class="n">.</span><span class="p">,</span> <span class="m">2000</span><span class="p">,</span> <span class="m">6.090</span><span class="p">,</span> <span class="m">0.384</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">0.0126</span><span class="p">),</span>
+<span class="nf">c</span><span class="p">(</span><span class="m">20</span><span class="n">.</span><span class="p">,</span> <span class="m">2005</span><span class="p">,</span> <span class="m">6.474</span><span class="p">,</span> <span class="m">0.392</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">0.0121</span><span class="p">),</span>
+<span class="nf">c</span><span class="p">(</span><span class="m">21</span><span class="n">.</span><span class="p">,</span> <span class="m">2010</span><span class="p">,</span> <span class="m">6.866</span><span class="p">,</span> <span class="kc">NA</span><span class="p">,</span> <span class="kc">NA</span><span class="p">,</span> <span class="kc">NA</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="n">pop_data</span> <span class="o">&lt;-</span> <span class="nf">as.data.frame</span><span class="p">(</span><span class="n">pop_data</span><span class="p">)</span>
+<span class="nf">names</span><span class="p">(</span><span class="n">pop_data</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Point&quot;</span><span class="p">,</span> <span class="s">&quot;Year_t&quot;</span><span class="p">,</span> <span class="s">&quot;N_billions&quot;</span><span class="p">,</span> <span class="s">&quot;delta_N&quot;</span><span class="p">,</span> <span class="s">&quot;delta_t&quot;</span><span class="p">,</span> <span class="s">&quot;1/N deltaN/deltat&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="biological-ecological-graph">
+<h2>6.2 Biological-ecological graph<a class="headerlink" href="#biological-ecological-graph" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="figure-6-2">
+<a class="reference internal image-reference" href="../_images/fig_6_2.png"><img alt="figure-6_2" src="../_images/fig_6_2.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Observed human growth rate as a function of population density through the mid-1960s (blue dots), based on the data from Table 6.1, with a line representing the average trend (green).</span><a class="headerlink" href="#figure-6-2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Figure <a class="reference internal" href="#figure-6-2"><span class="std std-ref">6.2</span></a> plots the two green columns of Table 6.1 through
+line 12 - the mid-1960s - in blue dots, with a green line representing the average trend. A line like this can be drawn through the points in various ways the simplest with a ruler and pen drawing what looks right. This one was done using a statistical “regression” program, with <span class="math notranslate nohighlight">\(r\)</span> the point at which
+the line intersects the vertical axis and <span class="math notranslate nohighlight">\(s\)</span> the line’s slope -
+its Δy=Δx. The intrinsic growth rate <span class="math notranslate nohighlight">\(r\)</span> for modern, global
+human population is apparently negative and the slope <span class="math notranslate nohighlight">\(s\)</span> is
+unmistakably positive. See how Figure 6.2 can be generated with R and ggplot <a class="reference internal" href="#code-cell-fig-2"><span class="std std-ref">Code to generate figure 6.2</span></a>.</p>
+<div class="section" id="code-to-generate-figure-6-2">
+<span id="code-cell-fig-2"></span><h3>Code to generate figure 6.2<a class="headerlink" href="#code-to-generate-figure-6-2" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="n">fig_6_2</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">pop_data</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">13</span> <span class="p">,],</span> <span class="c1"># subset rows 1:13 of the data.frame</span>
+       <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">N_billions</span><span class="p">,</span>                 <span class="c1"># N_billions in the X-axis</span>
+           <span class="n">y</span> <span class="o">=</span> <span class="n">`1/N deltaN/deltat`</span><span class="p">))</span> <span class="o">+</span>     <span class="c1"># 1/N deltaN/deltat in the Y-axis</span>
+  <span class="nf">geom_point</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s">&#39;blue&#39;</span><span class="p">)</span> <span class="o">+</span>               <span class="c1"># change colour of the points</span>
+  <span class="nf">theme_classic</span><span class="p">()</span> <span class="o">+</span>                        <span class="c1"># set theme of the plot to classic</span>
+  <span class="nf">scale_x_continuous</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="nf">expression</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="nf">italic</span><span class="p">(</span><span class="s">&quot;N,&quot;</span><span class="p">),</span> <span class="s">&quot; population in billions&quot;</span><span class="p">)),</span> <span class="c1"># Name axis with italics text (using expression())</span>
+                     <span class="n">breaks</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">12</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="m">1</span><span class="p">),</span>  <span class="c1"># ticks by 1 </span>
+                     <span class="n">limits</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">12</span><span class="p">))</span> <span class="o">+</span>          <span class="c1"># limit x-axis from 0 to 12</span>
+  <span class="nf">scale_y_continuous</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="nf">expression</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="nf">frac</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="nf">italic</span><span class="p">(</span><span class="s">&quot;N&quot;</span><span class="p">)),</span> <span class="s">&quot; &quot;</span><span class="p">,</span> <span class="nf">frac</span><span class="p">(</span><span class="nf">italic</span><span class="p">(</span><span class="s">&quot;dN&quot;</span><span class="p">),</span> <span class="nf">italic</span><span class="p">(</span><span class="s">&quot;dt&quot;</span><span class="p">)))),</span>
+                     <span class="n">breaks</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">.</span><span class="m">03</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="m">0.01</span><span class="p">),</span>
+                     <span class="n">limits</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0.03</span><span class="p">))</span> <span class="o">+</span>
+  <span class="nf">geom_abline</span><span class="p">(</span><span class="n">slope</span> <span class="o">=</span> <span class="m">0.00648</span><span class="p">,</span> <span class="n">intercept</span> <span class="o">=</span> <span class="m">-0.001185</span> <span class="p">)</span> <span class="o">+</span> <span class="c1"># plot line with slope and intercept </span>
+  <span class="nf">annotate</span><span class="p">(</span><span class="s">&quot;text&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="m">0.02</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="nf">expression</span><span class="p">(</span><span class="nf">italic</span><span class="p">(</span><span class="s">&quot;r&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="m">-0.001185</span><span class="p">))</span> <span class="o">+</span> <span class="c1"># annotate value of r (sleope)</span>
+  <span class="nf">annotate</span><span class="p">(</span><span class="s">&quot;text&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="m">0.9</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="m">0.018</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="nf">expression</span><span class="p">(</span><span class="nf">italic</span><span class="p">(</span><span class="s">&quot;s&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="m">0.00648</span><span class="p">))</span>  <span class="c1"># annotate value of s (intercept)</span>
+
+<span class="n">fig_6_2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in is.na(x):
+“is.na() applied to non-(list or vector) of type &#39;expression&#39;”
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in is.na(x):
+“is.na() applied to non-(list or vector) of type &#39;expression&#39;”
+</pre></div>
+</div>
+<img alt="../_images/ch6-human-population_4_2.png" src="../_images/ch6-human-population_4_2.png" />
+</div>
+</div>
+<p>From the late 1600s to the mid 1960s, then, it’s clear that
+the birth rate per family was increasing as the population increased. Greater population was enhancing the population’s
+growth. Such growth is orthologistic, meaning that the human population has been heading for a singularity for many centuries. The singularity is not a modern phenomenon, and could conceivably have been known before the 20th century.</p>
+<p>The negative value of <span class="math notranslate nohighlight">\(r\)</span>, if it is real, means there is a
+human Allee point. If the population were to drop below
+the level of the intersection with the horizontal axis - in this
+projection, around two hundred million people|the human
+growth rate would be negative and human populations would
+decline. The Allee point demonstrates our reliance on a
+modern society; it suggests that we couldn’t survive with
+our modern systems at low population levels - although perhaps if we went back to hunter-gatherer lifestyles, this would
+change the growth curve. The Allee point thus indicates that
+there is a minimum human population we must sustain to
+avoid extinction. We depend on each other.</p>
+</div>
+</div>
+<div class="section" id="a-global-transition">
+<h2>6.3 A global transition<a class="headerlink" href="#a-global-transition" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="figure-6-3">
+<a class="reference internal image-reference" href="../_images/fig_6_3.png"><img alt="figure-6_3" src="../_images/fig_6_3.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Continuation of Figure 6.2 to the present day.</span><a class="headerlink" href="#figure-6-3" title="Permalink to this image">¶</a></p>
+</div>
+<p>In Figure <a class="reference internal" href="#figure-6-3"><span class="std std-ref">6.3</span></a> we add data from the mid-1960s to the present
+day. People living in the 1960s were completely unaware of
+the great demographic transition that was developing. For
+hundreds of years prior to this time, human populations were
+stuck on an orthologistic path, with a singularity ever looming and guaranteed by the positive slope. In most of the world, however, the slope abruptly turned about and negative. Not all countries of the world turned about, but on
+average the world did. Humanity started down a logistic-like
+path.</p>
+<div class="section" id="code-to-generate-figure-6-3">
+<h3>Code to generate figure 6.3<a class="headerlink" href="#code-to-generate-figure-6-3" title="Permalink to this headline">¶</a></h3>
+<p>Figure 6.3 includes the full data frame and additional best fit line. We can <a class="reference internal" href="#code-cell-fig-2"><span class="std std-ref">modify the code for figure 2</span></a> as follow.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fig_6_3</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">pop_data</span><span class="p">,</span> <span class="c1"># data frame not subset</span>
+                  <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">N_billions</span><span class="p">,</span> 
+                      <span class="n">y</span> <span class="o">=</span> <span class="n">`1/N deltaN/deltat`</span><span class="p">))</span> <span class="o">+</span>
+  <span class="nf">geom_point</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s">&#39;blue&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">theme_classic</span><span class="p">()</span> <span class="o">+</span>
+  <span class="nf">scale_x_continuous</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="nf">expression</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="nf">italic</span><span class="p">(</span><span class="s">&quot;N,&quot;</span><span class="p">),</span> <span class="s">&quot; population in billions&quot;</span><span class="p">)),</span>
+                     <span class="n">breaks</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span>
+                     <span class="n">limits</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">12</span><span class="p">))</span> <span class="o">+</span>
+  <span class="nf">scale_y_continuous</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="nf">expression</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="nf">frac</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="nf">italic</span><span class="p">(</span><span class="s">&quot;N&quot;</span><span class="p">)),</span> <span class="s">&quot; &quot;</span><span class="p">,</span> <span class="nf">frac</span><span class="p">(</span><span class="nf">italic</span><span class="p">(</span><span class="s">&quot;dN&quot;</span><span class="p">),</span> <span class="nf">italic</span><span class="p">(</span><span class="s">&quot;dt&quot;</span><span class="p">)))),</span>
+                     <span class="n">breaks</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">.</span><span class="m">03</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="m">0.01</span><span class="p">),</span>
+                     <span class="n">limits</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0.03</span><span class="p">))</span> <span class="o">+</span>
+  <span class="nf">geom_abline</span><span class="p">(</span><span class="n">slope</span> <span class="o">=</span> <span class="m">0.00648</span><span class="p">,</span> <span class="n">intercept</span> <span class="o">=</span> <span class="m">-0.001185</span> <span class="p">)</span> <span class="o">+</span>
+  <span class="nf">annotate</span><span class="p">(</span><span class="s">&quot;text&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="m">0.02</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="nf">expression</span><span class="p">(</span><span class="nf">italic</span><span class="p">(</span><span class="s">&quot;r&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="m">-0.001185</span><span class="p">))</span> <span class="o">+</span> 
+  <span class="nf">annotate</span><span class="p">(</span><span class="s">&quot;text&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="m">0.9</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="m">0.018</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="nf">expression</span><span class="p">(</span><span class="nf">italic</span><span class="p">(</span><span class="s">&quot;s&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="m">0.00648</span><span class="p">))</span> <span class="o">+</span>
+  <span class="nf">geom_abline</span><span class="p">(</span><span class="n">slope</span> <span class="o">=</span> <span class="m">-0.00289</span><span class="p">,</span> <span class="n">intercept</span> <span class="o">=</span> <span class="m">0.03077</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span> <span class="p">)</span> <span class="o">+</span>             <span class="c1"># the second down-slope best fit line</span>
+  <span class="nf">annotate</span><span class="p">(</span><span class="s">&quot;text&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="m">6</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="m">0.01</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="nf">expression</span><span class="p">(</span><span class="nf">italic</span><span class="p">(</span><span class="s">&quot;r&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="m">0.03077</span><span class="p">))</span> <span class="o">+</span> 
+  <span class="nf">annotate</span><span class="p">(</span><span class="s">&quot;text&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="m">6</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="m">0.007</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="nf">expression</span><span class="p">(</span><span class="nf">italic</span><span class="p">(</span><span class="s">&quot;s&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="m">-0.00289</span><span class="p">))</span>
+
+<span class="n">fig_6_3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
+“Removed 1 rows containing missing values (geom_point).”
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in is.na(x):
+“is.na() applied to non-(list or vector) of type &#39;expression&#39;”
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in is.na(x):
+“is.na() applied to non-(list or vector) of type &#39;expression&#39;”
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in is.na(x):
+“is.na() applied to non-(list or vector) of type &#39;expression&#39;”
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in is.na(x):
+“is.na() applied to non-(list or vector) of type &#39;expression&#39;”
+</pre></div>
+</div>
+<img alt="../_images/ch6-human-population_6_5.png" src="../_images/ch6-human-population_6_5.png" />
+</div>
+</div>
+<p>Where the downward-sloping line crosses the horizontal
+axis is where population growth would cease. From this simple <span class="math notranslate nohighlight">\(r\)</span> + <span class="math notranslate nohighlight">\(sN\)</span> model, it appears that world’s population will
+stabilize between 10 and 12 billion. That is in line with other
+recently published projections.</p>
+<p>Prior to the 1960s there were dips in the increasing growth,
+with World Wars I and II levelling the rate of increase worldwide, though population continued to grow rapidly. The rate
+also fell in 1960, corresponding to extreme social disruptions
+in China.</p>
+<p>What caused this great demographic transition, averaged
+over the globe? The <a class="reference external" href="https://www.dictionary.com/browse/four--horsemen">“Four Horsemen”</a> (conquest, war, famine, and plague) commonly expected
+to check human populations were not a primary cause. In
+many regions birth control, became more available. Education slowed reproduction because people got married later.
+Modern medicine raised survival rates, making large families unnecessary. The space program looked back at Earth and projected a fragile dot suspended in the black of space, viewed by billions. China’s one-child policy had a noticeable
+effect. However, so did HIV, one of the few Horsemen that
+has made a noticeable comeback.</p>
+<div class="figure align-center" id="figure-6-4">
+<a class="reference internal image-reference" href="../_images/fig_6_4.png"><img alt="figure-6_4" src="../_images/fig_6_4.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Human fecundity as a function of national per capita
+income.</span><a class="headerlink" href="#figure-6-4" title="Permalink to this image">¶</a></p>
+</div>
+<p>Plants and other animals have logistic growth forced upon
+them because of overcrowding. In humans, however, logistic
+growth has been largely voluntary. And there could be further developments in a lifetime. In many nations, birth rates are presently below replacement rates. In fact, in all nations with a gross national income above 16K dollars per person, the birth rate is at or below the replacement rate of 2.1 life-time births per female (Figure <span class="xref myst">6.4</span>).</p>
+<p>This change in demographic rates could conceivably allow
+present and future generations to voluntarily adjust the population to whatever is desired. The new question just may be: what is the minimum world population we dare have?</p>
+<p>Returning to your supervisor’s questions, you can now
+tell her that, in 2100, the world’s population will be between
+10 and 12 billion. And you can say “The other population
+projections are not far off. They are slightly different from
+what we calculate using this method. But they use very
+complicated methods so you have to cut them a little slack!”</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "MikheyevLab/ecology-textbook",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="differential_and_difference_forms.html" title="previous page">Differential and difference forms</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Lehman, Loberg and Clark<br/>
+        
+            &copy; Copyright 2019.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'G-8SXREGQC46', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>
