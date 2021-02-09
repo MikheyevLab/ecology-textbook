@@ -54,6 +54,38 @@ align: center
 Global human population over the past 2000 years
 ```
 
+```{code-cell} r
+---
+tags: ["hide-input"]
+render:
+  image:
+    width: 600px
+    alt: wold-population
+    classes: shadow bg-primary
+  figure:
+    caption: |
+      World population over the past 2000 years
+    name: world-population
+---
+
+suppressPackageStartupMessages({
+  library(tidyverse)
+}) # hide annoying messages
+# data from https://ourworldindata.org/world-population-growth
+worldPopulation <- read_csv("../data/WorldPopulationAnnual12000years_interpolated_HYDEandUNto2015.csv", skip = 1, col_names = c("year", "population"), col_types = "nn")
+filter(worldPopulation, year > 0) %>% ggplot(aes(year, population/10^9)) + geom_line() + 
+  annotate("segment", x = 476, y = 2, xend = 476, yend = .5, colour = "blue", arrow = arrow(type = "closed", length = unit(0.02, "npc"))) +
+  annotate("text", x = 476, y = 2, label = "Fall of Rome", color = "blue", angle = 90, hjust = - .1, fontface = "bold") + 
+  annotate("segment", x = 476, y = 2, xend = 476, yend = .5, color = "blue", arrow = arrow(type = "closed", length = unit(0.02, "npc"))) +
+  annotate("rect", xmin = c(500,500), xmax = c(1500,1500), ymin = c(.1, .1), ymax = c(0.9, 0.9), alpha=0.1, color=NA, fill="blue") + 
+  annotate("text", x = 1000, y = .6, label = "Middle Ages", color = "blue", fontface = "bold") + 
+  annotate("segment", x = 1666, y = 2, xend = 1666, yend = .6, colour = "blue", arrow = arrow(type = "closed", length = unit(0.02, "npc"))) +
+  annotate("text", x = 1666, y = 2, label = "Great Plague of London", color = "blue", angle = 90, hjust = - .1, fontface = "bold") + 
+  annotate("segment", x = 1346, y = 2, xend = 1346, yend = .6, colour = "blue", arrow = arrow(type = "closed", length = unit(0.02, "npc"))) +
+  annotate("text", x = 1346, y = 2, label = "Black Death", color = "blue", angle = 90, hjust = - .1, fontface = "bold") + 
+  theme_bw() + xlab(expression(paste(italic(t), ", Year"))) + ylab(expression(paste(italic(N), ", World Population (billions)")))
+```
+
 Can you project global population by simply extending
 that curve? The population is clearly rising at an enormous
 rate, expanding most recently from 3 billion to 7 billion in
@@ -89,8 +121,6 @@ row in the table.
 :tags: ["hide-input"]
 
 suppressPackageStartupMessages({
-  library(dplyr)
-  library(readr)
   library(kableExtra)
   library(IRdisplay)
 }) # hide annoying messages
