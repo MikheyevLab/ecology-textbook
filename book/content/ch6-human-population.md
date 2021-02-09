@@ -140,6 +140,20 @@ pop_data <- as.data.frame(pop_data)
 names(pop_data) <- c("Point", "Year_t", "N_billions", "delta_N", "delta_t", "1/N deltaN/deltat")
 ```
 
+```{code-cell} r
+:tags": ["hide-output"]
+library(dplyr)
+library(readr)
+library(kableExtra)
+library(IRdisplay)
+humanPopulation <- read_tsv("../data/humans.tsv", col_types = "nn")
+humanPopulation %>% 
+  mutate(dN = c(diff(population), NA), dT = c(diff(year), NA), rate = 1 / population * dN / dT) %>% 
+  kbl(col.names = c("t (years)", "N (billions)", "$\\Delta N$", "$\\Delta t$", "$\\frac{1}{N} \\frac{\\Delta N}{\\Delta t}$")) %>%
+  as.character() %>%
+  display_html()
+```
+
 ## 6.2 Biological-ecological graph 
 
 ```{figure} ../img/fig_6_2.png
