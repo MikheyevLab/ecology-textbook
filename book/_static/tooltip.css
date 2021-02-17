@@ -1,7 +1,8 @@
 
 pre {
     overflow: visible;
-}
+    color: black;
+  }
 /* Tooltip container */
 .ttooltip {
     position: relative;
@@ -49,3 +50,6 @@ pre {
     visibility: visible;
     opacity: 1;
   }
+
+
+
