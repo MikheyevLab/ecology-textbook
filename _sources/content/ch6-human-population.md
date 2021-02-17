@@ -118,7 +118,16 @@ row in the table.
 ### Table 6.1 in R
 
 ```{code-cell} r
-:tags: ["hide-input"]
+---
+tags: ["hide-input"]
+render:
+  table:
+    width: 600px
+    alt: wold-population
+caption: |
+      World population over the past 2000 years
+name: world-population-table
+---
 
 suppressPackageStartupMessages({
   library(kableExtra)
@@ -129,7 +138,6 @@ humanPopulation <- read_tsv("../data/humans.tsv", col_types = "nn")
 humanPopulation %>% 
   mutate(dN = c(diff(population), NA), dT = c(diff(year), NA), rate = 1 / population * dN / dT) %>% 
   kbl(col.names = c("t (years)", "N (billions)", "$\\Delta N$", "$\\Delta t$", "$\\frac{1}{N} \\frac{\\Delta N}{\\Delta t}$"), 
-    caption = "Human population numbers for analysis",
     digits = c(0, 3, 3, 0, 4)) %>%
   as.character() %>%
   display_html()

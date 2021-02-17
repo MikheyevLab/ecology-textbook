@@ -57,6 +57,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="test.html" />
     <link rel="prev" title="Differential and difference forms" href="differential_and_difference_forms.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -377,7 +378,6 @@ row in the table.</p>
 <span class="n">humanPopulation</span> <span class="o">%&gt;%</span> 
   <span class="nf">mutate</span><span class="p">(</span><span class="n">dN</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="nf">diff</span><span class="p">(</span><span class="n">population</span><span class="p">),</span> <span class="kc">NA</span><span class="p">),</span> <span class="n">dT</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="nf">diff</span><span class="p">(</span><span class="n">year</span><span class="p">),</span> <span class="kc">NA</span><span class="p">),</span> <span class="n">rate</span> <span class="o">=</span> <span class="m">1</span> <span class="o">/</span> <span class="n">population</span> <span class="o">*</span> <span class="n">dN</span> <span class="o">/</span> <span class="n">dT</span><span class="p">)</span> <span class="o">%&gt;%</span> 
   <span class="nf">kbl</span><span class="p">(</span><span class="n">col.names</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;t (years)&quot;</span><span class="p">,</span> <span class="s">&quot;N (billions)&quot;</span><span class="p">,</span> <span class="s">&quot;$\\Delta N$&quot;</span><span class="p">,</span> <span class="s">&quot;$\\Delta t$&quot;</span><span class="p">,</span> <span class="s">&quot;$\\frac{1}{N} \\frac{\\Delta N}{\\Delta t}$&quot;</span><span class="p">),</span> 
-    <span class="n">caption</span> <span class="o">=</span> <span class="s">&quot;Human population numbers for analysis&quot;</span><span class="p">,</span>
     <span class="n">digits</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">))</span> <span class="o">%&gt;%</span>
   <span class="nf">as.character</span><span class="p">()</span> <span class="o">%&gt;%</span>
   <span class="nf">display_html</span><span class="p">()</span>
@@ -386,7 +386,6 @@ row in the table.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
-<caption>Human population numbers for analysis</caption>
  <thead>
   <tr>
    <th style="text-align:right;"> t (years) </th>
@@ -771,6 +770,7 @@ complicated methods so you have to cut them a little slack!”</p>
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="differential_and_difference_forms.html" title="previous page">Differential and difference forms</a>
+    <a class='right-next' id="next-link" href="test.html" title="next page">&lt;no title&gt;</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

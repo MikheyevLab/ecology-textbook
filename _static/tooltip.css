@@ -1,3 +1,8 @@
+
+pre {
+    overflow: visible;
+    color: black;
+  }
 /* Tooltip container */
 .ttooltip {
     position: relative;
@@ -17,6 +22,7 @@
   
     /* Position the tooltip text */
     position: absolute;
+    overflow: visible;
     z-index: 1;
     bottom: 125%;
     left: 50%;
@@ -44,3 +50,6 @@
     visibility: visible;
     opacity: 1;
   }
+
+
+
