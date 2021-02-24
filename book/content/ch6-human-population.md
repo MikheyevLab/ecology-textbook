@@ -43,12 +43,70 @@ and the black 'X' marks a great demographic transition that
 is not obvious in this graph, but that will become glaringly
 so in Figure [6.3](figure-6_3).
 
+```{code-cell} r
+:tags: [hide-input, remove-stdout, remove-stderr]
+library(ggplot2)
 
-```{figure} ../img/fig_6_1.png
+pop_data_raw <- cbind(
+  c(0, 200, 400, 500, 600,700,800,900,
+    1000,1100,1200,1250,1300,1340,1400,1500,1600,
+    1650, 1687,1700, 1750,
+    1800, 1850,1900, 1910,1920, 1930,1940, 1950,
+    1951, 1952,1953, 1954,1955, 1956,1957, 1958,
+    1959,1960,1961,1962,1963,1964,1965,1966,
+    1967,1968,1969,1970,1971,1972,1973,1974,
+    1975,1976,1977,1978,1979,1980,1981,1982,
+    1983,1984,1985,1986,1987,1988,1989,1990,
+    1991,1992,1993,1994,1995,1996,1997,1998,
+    1999,2000,2001,2002,2003,2004,2005,2006,2007,
+    2008,2009, 2010), 
+  c(0.285,0.223,0.198,0.198,0.203,0.209,0.222,0.233,0.300,0.311,0.405,
+    0.408,0.396,0.443,0.362,0.483,0.562,0.508,0.606,0.640,0.795,0.969,1.265,1.656,1.750,1.860,2.070,
+    2.300,2.558,2.595,2.637,2.682,2.730,2.782,2.835,2.891,2.948,
+    3.001,3.043,3.084,3.140,3.210,3.281,3.350,3.420,3.490,3.562,
+    3.637,3.712,3.790,3.866,3.942,4.016,4.089,4.160,
+    4.232,4.304,4.379,4.451,4.534,4.614,4.695,4.774,4.856,4.940,5.026,5.114,
+    5.200,5.288,5.371,5.456,5.538,5.619,5.700,5.780,5.859,5.937,6.014,6.090,
+    6.167,6.244,6.320,6.397,6.474,6.552,6.631,6.710,6.788,6.866)
+)
+pop_data_raw <- as.data.frame(pop_data_raw)
+names(pop_data_raw) <- c("year", "pop")
+
+fig1_data <- pop_data_raw
+
+## Annotate events
+annotations_events <- data.frame(
+  events = c("Fall of Rome", "Middle Ages", "Black Death", "Great Plague of London"),
+  year = c(410, 880, 1350, 1665))
+
+# make plot
+ch6_fig1 <- ggplot(data = fig1_data,
+       aes(x = year,
+           y = pop)) + 
+  geom_point() +
+  scale_x_continuous(name = expression(paste(italic("N,"), " population in billions")),
+                     breaks = seq(0, 2000, by = 500),
+                     labels = c(0, 500, 1000, 1500, 2000),
+                     limits = c(0, 2000)) +
+  scale_y_continuous(name = expression(paste(italic("t,"), " year A.D")),
+                     breaks = seq(0, 7, by = 1),
+                     limits = c(0, 7)) +
+  theme_classic() +
+  annotate(geom = "segment", x = annotations_events[, 2], y = 3, xend = annotations_events[, 2], yend = 1,
+           arrow = arrow(length = unit(2, "mm"))) + 
+  annotate(geom = "text", x = annotations_events[, 2], y = 3.2, label = annotations_events[, 1], hjust = "centre",
+           size = 2.5) +
+  annotate(geom = "text", label = "X", y = 3.350, x = 1965, size = 9, color = "blue") +
+    labs(caption = "Figure 6.1 Global human population over the past 2000 years")
+
+ch6_fig1
+```
+
+```{figure} ../img/blank.png
 ---
 name: figure-6_1
 alt: figure-6_1
-width: 600px
+height: 0px
 align: center
 ---
 Global human population over the past 2000 years
