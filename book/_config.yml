@@ -41,4 +41,6 @@ sphinx:
       tex2jax:
         inlineMath: [["$", "$"], ["\\(", "\\)"]]
     myst_update_mathjax: false
+  extra_extensions: 
+  - sphinx_multitoc_numbering
 

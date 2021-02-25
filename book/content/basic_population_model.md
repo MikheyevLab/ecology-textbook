@@ -31,6 +31,19 @@ Because computer coding is becoming embedded in almost every aspect of life, app
 
 Below are two lines of computer code forming a program that models the bacterial colony as it doubles every hour written in R. We will go through the code carefully below.
 
+
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<pre>
+<code class="prettyprint">N <span class="ttooltip"><-<span class="ttooltiptext"><span class="nocode">assign</span></span></span> 1
+# create a sequence of numbers, from 1 to (5 * 24) by 1
+time <- 1<span class="ttooltip">:<span class="ttooltiptext"><span class="nocode">create a sequence</span></span></span>(5 * 24) 
+for(t <span class="ttooltip">in<span class="ttooltiptext"><span class="nocode">get one element t from list time</span></span></span> time) <span class="ttooltip">{<span class="ttooltiptext"><span class="nocode">brackets enclose code that runs together</span></span></span>
+  N <- N * 2
+  }</code>
+</pre>
+ 
+   
+
 ``` r
 N <- 1
 time <- 1:(5 * 24) # create a sequence on numbers from 1 to 5 * 25, incrementing by 1
