@@ -34,7 +34,7 @@ any exponential and logistic parts as well.
 ## 6.1 Phenomological graph
 
 The excerpt of data you have been given includes the world's
-population in billions, by year. That is all. Figure [6.1](figure-6_1) shows
+population in billions, by year. That is all. Figure [6.1](world-population) shows
 the data plotted in a phenomenological way - population
 size versus year, supplemented with a curve going back 2000
 years to provide perspective. The blue dots show the range
@@ -43,73 +43,43 @@ and the black 'X' marks a great demographic transition that
 is not obvious in this graph, but that will become glaringly
 so in Figure [6.3](figure-6_3).
 
+<a id='fig_6_1'></a>
+
 ```{code-cell} r
-:tags: [hide-input, remove-stdout, remove-stderr]
-library(ggplot2)
+---
+tags: ["hide-input"]
+render:
+  image:
+    width: 600px
+    alt: wold-population
+    classes: shadow bg-primary
+  figure:
+    caption: |
+      Fig 6.1 World population over the past 2000 years
+    name: world-population
+---
 
-pop_data_raw <- cbind(
-  c(0, 200, 400, 500, 600,700,800,900,
-    1000,1100,1200,1250,1300,1340,1400,1500,1600,
-    1650, 1687,1700, 1750,
-    1800, 1850,1900, 1910,1920, 1930,1940, 1950,
-    1951, 1952,1953, 1954,1955, 1956,1957, 1958,
-    1959,1960,1961,1962,1963,1964,1965,1966,
-    1967,1968,1969,1970,1971,1972,1973,1974,
-    1975,1976,1977,1978,1979,1980,1981,1982,
-    1983,1984,1985,1986,1987,1988,1989,1990,
-    1991,1992,1993,1994,1995,1996,1997,1998,
-    1999,2000,2001,2002,2003,2004,2005,2006,2007,
-    2008,2009, 2010), 
-  c(0.285,0.223,0.198,0.198,0.203,0.209,0.222,0.233,0.300,0.311,0.405,
-    0.408,0.396,0.443,0.362,0.483,0.562,0.508,0.606,0.640,0.795,0.969,1.265,1.656,1.750,1.860,2.070,
-    2.300,2.558,2.595,2.637,2.682,2.730,2.782,2.835,2.891,2.948,
-    3.001,3.043,3.084,3.140,3.210,3.281,3.350,3.420,3.490,3.562,
-    3.637,3.712,3.790,3.866,3.942,4.016,4.089,4.160,
-    4.232,4.304,4.379,4.451,4.534,4.614,4.695,4.774,4.856,4.940,5.026,5.114,
-    5.200,5.288,5.371,5.456,5.538,5.619,5.700,5.780,5.859,5.937,6.014,6.090,
-    6.167,6.244,6.320,6.397,6.474,6.552,6.631,6.710,6.788,6.866)
-)
-pop_data_raw <- as.data.frame(pop_data_raw)
-names(pop_data_raw) <- c("year", "pop")
-
-fig1_data <- pop_data_raw
-
-## Annotate events
-annotations_events <- data.frame(
-  events = c("Fall of Rome", "Middle Ages", "Black Death", "Great Plague of London"),
-  year = c(410, 880, 1350, 1665))
-
-# make plot
-ch6_fig1 <- ggplot(data = fig1_data,
-       aes(x = year,
-           y = pop)) + 
+suppressPackageStartupMessages({
+  library(tidyverse)
+}) # hide annoying messages
+# data from https://ourworldindata.org/world-population-growth
+worldPopulation <- read_csv("../data/WorldPopulationAnnual12000years_interpolated_HYDEandUNto2015.csv", skip = 1, col_names = c("year", "population"), col_types = "nn")
+filter(worldPopulation, year > 0) %>% ggplot(aes(year, population/10^9)) + 
   geom_point() +
-  scale_x_continuous(name = expression(paste(italic("N,"), " population in billions")),
-                     breaks = seq(0, 2000, by = 500),
-                     labels = c(0, 500, 1000, 1500, 2000),
-                     limits = c(0, 2000)) +
-  scale_y_continuous(name = expression(paste(italic("t,"), " year A.D")),
-                     breaks = seq(0, 7, by = 1),
-                     limits = c(0, 7)) +
-  theme_classic() +
-  annotate(geom = "segment", x = annotations_events[, 2], y = 3, xend = annotations_events[, 2], yend = 1,
-           arrow = arrow(length = unit(2, "mm"))) + 
-  annotate(geom = "text", x = annotations_events[, 2], y = 3.2, label = annotations_events[, 1], hjust = "centre",
-           size = 2.5) +
+  geom_line() + 
   annotate(geom = "text", label = "X", y = 3.350, x = 1965, size = 9, color = "blue") +
-    labs(caption = "Figure 6.1 Global human population over the past 2000 years")
-
-ch6_fig1
-```
-
-```{figure} ../img/blank.png
----
-name: figure-6_1
-alt: figure-6_1
-height: 0px
-align: center
----
-Global human population over the past 2000 years
+  annotate("segment", x = 476, y = 2, xend = 476, yend = .5, colour = "blue", arrow = arrow(type = "closed", length = unit(0.02, "npc"))) +
+  annotate("text", x = 476, y = 2, label = "Fall of Rome", color = "blue", angle = 90, hjust = - .1, fontface = "bold") + 
+  annotate("segment", x = 476, y = 2, xend = 476, yend = .5, color = "blue", arrow = arrow(type = "closed", length = unit(0.02, "npc"))) +
+  annotate("rect", xmin = c(500,500), xmax = c(1500,1500), ymin = c(.1, .1), ymax = c(0.9, 0.9), alpha=0.1, color=NA, fill="blue") + 
+  annotate("text", x = 1000, y = .6, label = "Middle Ages", color = "blue", fontface = "bold") + 
+  annotate("segment", x = 1666, y = 2, xend = 1666, yend = .6, colour = "blue", arrow = arrow(type = "closed", length = unit(0.02, "npc"))) +
+  annotate("text", x = 1666, y = 2, label = "Great Plague of London", color = "blue", angle = 90, hjust = - .1, fontface = "bold") + 
+  annotate("segment", x = 1346, y = 2, xend = 1346, yend = .6, colour = "blue", arrow = arrow(type = "closed", length = unit(0.02, "npc"))) +
+  annotate("text", x = 1346, y = 2, label = "Black Death", color = "blue", angle = 90, hjust = - .1, fontface = "bold") + 
+  theme_bw() + xlab(expression(paste(italic(t), ", Year"))) + ylab(expression(paste(italic(N), ", World Population (billions)"))) +
+  # labs(caption = "Figure 6.1 Global human population over the past 2000 years") +
+  theme(plot.caption = element_text(hjust = 0.5)) 
 ```
 
 Can you project global population by simply extending
@@ -120,59 +90,61 @@ lead to a prediction of more than 11 billion people by the
 middle of the 21th century, and more than 15 billion by the
 century's end.
 
-But such an approach is too simplistic. In one sense, the
-data are all contained in that curve, but are obscured by
-the phenomena themselves. We need to extract the biology
-inherent in the changing growth rate $r$ as well as the ecology 
-inherent in the changing density dependence $s$. In other
-words, we want to look at data showing $1=N$ $ΔN=Δt$ versus
-$N$, as in Figure 4.4.
+But such an approach is too simplistic. In one sense, the data are all contained
+in that curve, but are obscured by the phenomena themselves. We need to extract
+the biology inherent in the changing growth rate $r$ as well as the ecology
+inherent in the changing density dependence $s$. In other words, we want to
+look at data showing $1/N\,\Delta N/\Delta t$ versus $N$, as in
+Figure 4.4.
 
-Table 6.1 shows a subset of the original data, $t$ and $N$, plus
-calculated values for
-$ΔN$, $Δt$ and $1=N$ $ΔN=Δt$.
-In row 1, for example, $ΔN$ shows the change in $N$ between row 1 and
-row 2: $0.795 - 0.606 = 0.189$ billion. Likewise, Δt in row 1
-shows how many years elapse before the time of row 2:
-1750 - 1687 = 63 years. The final column in row 1 shows the value
-of $1=N$ $ΔN=Δt$: 
-$1/0:606$ $x$ $0:189=63 = 0:004950495$...., which
-rounds to $0.0050$. Row 21 has no deltas because it is the last
-row in the table.
+Table [6.1](#tab_6_1) shows a subset of the original data, $t$ and
+$N$, plus calculated values for $\Delta N$, $\Delta t$, and
+$1/N\,\Delta N/\Delta t$. In row 1, for example, $\Delta N$ shows the
+change in $N$ between row 1 and row 2: $ 0.795 - 0.606 = 0.189 $
+billion. Likewise, $\Delta t$ in row 1 shows how many years elapse before
+the time of row 2: $ 1750 - 1687 = 63 $ years. The final column in row 1
+shows the value of $1/N\,\Delta N /\Delta t$: $ 1 / 0.606 \times 0.189 /
+63 = 0.004950495 \dots,$ which rounds to $0.0050$. Row 21 has no deltas
+because it is the last row in the table.
 
-### Table 6.1 Human population numbers for analysis.
+<a id='tab_6_1'></a>
 
-| Point | Year $t$ | $N$ billions | $ΔN$ | $Δt$ | $\frac{1}{N}$ $\frac{ΔN}{Δt}$
-| :- | -: | :-: | :- | :- | :- |
-|1. | 1687 |0.606 |0.189 |63 |0.0050|
-|2. | 1750 |0.795 |0.174 |50 |0.0044|
-|3. | 1800 |0.969 |0.296 |50 |0.0061|
-|4. | 1850 |1.265 |0.391 |50 |0.0062|
-|5. | 1900 |1.656 |0.204 |20 |0.0062|
-|6. | 1920 |1.860 |0.210 |10 |0.0113|
-|7. | 1930 |2.070 |0.230 |10 |0.0111|
-|8. | 1940 |2.300 |0.258 |10 |0.0112|
-|9. | 1950 |2.558 |0.224 |5  |0.0175|
-|10.|  1955| 2.782| 0.261| 5 |0.0188|
-|11.|  1960| 3.043| 0.307| 5 |0.0202|
-|12.|  1965| 3.350| 0.362| 5 |0.0216|
-|13.|  1970| 3.712| 0.377| 5 |0.0203|
-|14.|  1975| 4.089| 0.362| 5 |0.0177|
-|15.|  1980| 4.451| 0.405| 5 |0.0182|
-|16.|  1985| 4.856| 0.432| 5 |0.0178|
-|17.|  1990| 5.288| 0.412| 5 |0.0156|
-|18.|  1995| 5.700| 0.390| 5 |0.0137|
-|19.|  2000| 6.090| 0.384| 5 |0.0126|
-|20.|  2005| 6.474| 0.392| 5 |0.0121|
-|21.|  2010| 6.866||||
+### Table 6.1 Human population numbers for analysis (in R)
 
-This table from the book can turned into a data frame in R with the following code.
+```{code-cell} r
+---
+tags: ["hide-input"]
+render:
+  table:
+    width: 600px
+    alt: wold-population
+caption: |
+      World population over the past 2000 years
+name: world-population-table
+---
+
+suppressPackageStartupMessages({
+  library(kableExtra)
+  library(IRdisplay)
+}) # hide annoying messages
+options(knitr.kable.NA = '') # don't plot missing values
+humanPopulation <- read_tsv("../data/humans.tsv", col_types = "nn") 
+humanPopulation %>% 
+  mutate(dN = c(diff(population), NA), dT = c(diff(year), NA), rate = 1 / population * dN / dT) %>% 
+  kbl(col.names = c("t (years)", "N (billions)", "$\\Delta N$", "$\\Delta t$", "$\\frac{1}{N} \\frac{\\Delta N}{\\Delta t}$"), 
+    digits = c(0, 3, 3, 0, 4)) %>%
+  as.character() %>%
+  display_html()
+```
+
+This table from the book can turned into a data frame in R with the following code. d
 
 ### Table 6.1 in R
+
 ```{code-cell} r
 :tags: ["output_scroll"]
 pop_data <- rbind(
-c(1. ,1687,0.606, 0.189, 63, 0.0050), 
+c(1. ,1687,0.606, 0.189, 63, 0.0050),
 c(2. ,1750,0.795, 0.174, 50, 0.0044),
 c(3. ,1800,0.969, 0.296, 50, 0.0061),
 c(4. ,1850,1.265, 0.391, 50, 0.0062),
