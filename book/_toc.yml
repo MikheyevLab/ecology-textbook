@@ -2,6 +2,13 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
 - file: intro
+  numbered: true
+
+- part: Introduction
+  chapters:
+  - file: content/C01-Definitions
+  - file: content/C02-Theory
+
 - part: Single populations
   chapters:
     - file: content/basic_population_model
