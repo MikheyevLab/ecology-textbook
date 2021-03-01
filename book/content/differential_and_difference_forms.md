@@ -27,37 +27,28 @@ Recall that the delta sign ($\Delta$) means *change in* or the *difference*. Com
 
 It turns out that differential equations are harder for computers to solve than difference equations. Computers cannot make infinitely fine time steps, but have to approximate by using very small time steps instead. On the other hand, difference equations can be harder to solve mathematically.
 
-```r
-r = 1; s = -0.001; N = 1;
+<pre><code class="prettyprint">r = 1; s = -0.001; N = 1;
 dt = 1
-#our time step here is just 1 day
 print(N);
 time = seq(from=0,to=20,by=dt);
-#the above line makes a sequence of time values from day 0 to 20, going up by 1 day each time
 for(t in time){
-  dN = (r + s * N) * N; N = N + dN;
+  dN = (r + s * N) * N; N = N + dN; <span style="background-color:red">if(N < 0) N = 0;</span>
+  print(N)
+}</code>
+</pre>
+
+Above is computer code for a difference equation presented earlier, which levelled off at 1000, but with an additional `if()` statement to catch negative population size. If the population is far above its carrying capacity, the calculation could show such a strong decline that the next year’s population would be negative—meaning that the population would die out completely. The addition in red just avoids projecting negative populations, which are mathematically possible but biologically meaningless. Below is similar code for the corresponding *differential* equation.
+
+<pre><code class="prettyprint">r = 1; s = -0.001; N = 1;
+<span style="background-color:red">dt = 1 / (20 * 24 * 60 * 60);</span>
+print(N);
+time = seq(from=0,to=20,by=<span style="background-color:red">dt</span>)
+for(t in time){
+  dN = (r + s * N) * N * <span style="background-color:red">dt</span>; N = N + dN;
   if(N < 0) N = 0;
-  #here, we check to see if the population size has become negative
-  #this is mathematically possible, but biologically impossible
-  #so if this is this the case, we set N to 0
   print(N)
 }
-```
-
-Above is computer code for a difference equation presented earlier, which levelled off at 1000, but with an additional `if()` statement to catch negative population size. If the population is far above its carrying capacity, the calculation could show such a strong decline that the next year’s population would be negative—meaning that the population would die out completely. Below is similar code for the corresponding *differential* equation.
-
-```r
-r = 1; s = -0.001; N = 1;
-dt = 1 / (20 * 24 * 60 * 60);
-#the above line makes a time step value corresponding to a single second in the 20 day period
-print(N);
-time = seq(from=0,to=20,by=dt)
-#the time period, 0 to 20 days, is now divided up by the number of seconds in that period
-for(t in time){
-  dN = (r + s * N) * N * dt; N = N + dN; if(N < 0) N = 0;
-  print(N)
-  }
-```
+</code></pre>
 
 This intends to model *infinitely small* time steps. Of course it cannot do that exactly, but must settle for very small time steps. Instead of $dt = 1$, for example, representing one year, it is set here to about one second, dividing the time period (20 days) by 24 hours, 60 minutes, and 60 seconds, creating `20 * 24 * 60 * 60` time steps. This is hardly infinitely small, but for populations of bacteria and humans it is close enough for practical purposes. Still, it is important to check for negative populations in case the time step is not small enough.
 
@@ -67,17 +58,63 @@ Feel free to run the above loop on your own machines, but note that we have defi
 
 How small is close enough to infinitely small? is the question. To find out, you can set the time step to something small and run the code, which will produce a set of population values through time. Then set the step smaller still and run the code again. It will run more slowly because it is calculating more steps, but if essentially the same answer appears—if the answer “converges”—then you can make the step larger again, speeding the calculation. With a few trials you can find a time step that is small enough to give accurate answers but large enough to allow your code to run reasonably fast.
 
-```{figure} ../img/Fig5_1.png
+```{code-cell} r
 ---
-name: Fig5_1
-alt: Fig5_1
-width: 400px
-align: center
+tags: ["hide-input","hide-stdout","hide-stderr"]
+render:
+  image:
+    width: 600px
+    alt: Differential_logistic_and_discrete_growth
+    classes: shadow bg-primary
+  figure:
+    caption: |
+      **Figure 5.1** Differential logistic growth (maroon) compared with discrete (green). No dots appear on the differential form, since that represents infinitesimal time steps, whereas the difference form has a dot at each point calculated.
+    name: figure5_1
 ---
-Differential logistic growth (maroon) compared with discrete (green). No dots appear on the differential form, since that represents infinitesimal time steps, whereas the difference form has a dot at each point calculated.
-```
 
-{numref}`Figure {number} <Fig5_1>` shows the results of running the differential equation version of the program (the second one above, in maroon) versus the difference equation version (the first above, in green). The differential equation has the same parameters and general shape, but the population approaches its carrying capacity more quickly. Because the differential time steps produce offspring earlier—not waiting for the end of the step—offspring are available to reproduce earlier, and so forth.
+suppressPackageStartupMessages(library(ggplot2))
+
+###Figure 5.1
+#green line
+r = 1; s = -0.001; N = 1; dt = 1; time = seq(from=0,to=20,by=dt);
+green.line <- data.frame(size = 1,time=0)
+for(t in time){
+  dN = (r + s * N) * N; N = N + dN; if(N < 0) N = 0;
+  green.line[t,1] <- N
+  green.line[t,2] <- t
+}
+r = 1; s = -0.001; N = 1;
+#reduce the size here for easier computation
+#divide each day into hours only
+dt = 1 / (24);
+time = seq(from=0,to=20,by=dt)
+maroon.line <- data.frame(size = 1,time=0)
+for(t in 1:length(time)){
+  dN = (r + s * N) * N * dt; N = N + dN; if(N < 0) N = 0;
+  maroon.line[t,1] <- N
+  maroon.line[t,2] <- time[t]
+}
+
+plot.n <- ggplot() +
+  geom_line(maroon.line, mapping=aes(y=size,x=time),
+    colour="#b07291",size=1) +
+  geom_point(green.line,mapping=aes(y=size,x=time),
+    colour="#00bf9c",size=2) +
+  geom_line(green.line,mapping=aes(y=size,x=time),
+    colour="#00bf9c",size=1) +
+  xlab(expression(italic("t"))) + ylab(expression(italic("N(t)"))) +
+  #plot appearance
+  theme(panel.border = element_blank(),
+  axis.line = element_line(),
+  panel.background = element_blank(),
+  panel.grid = element_blank()) +
+  #axis limits
+  scale_y_continuous(limits=c(0,1010),expand=c(0,0)) +
+  scale_x_continuous(limits=c(0,14),expand=c(0,0),breaks=c(0:13))
+
+suppressWarnings(plot(plot.n))
+```
+[Figure 5.1](figure5_1) shows the results of running the differential equation version of the program (the second one above, in maroon) versus the difference equation version (the first above, in green). The differential equation has the same parameters and general shape, but the population approaches its carrying capacity more quickly. Because the differential time steps produce offspring earlier—not waiting for the end of the step—offspring are available to reproduce earlier, and so forth.
 
 This particular method for differential equations is called “Euler’s method” (pronounced “Oiler’s”), a basic approach not often used in the twentieth century because computers not so long ago were millions of times slower than they are now. Today this method is often fast enough, and is desirable because of its relative simplicity.
 
