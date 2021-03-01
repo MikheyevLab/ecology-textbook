@@ -54,6 +54,38 @@ align: center
 Global human population over the past 2000 years
 ```
 
+```{code-cell} r
+---
+tags: ["hide-input"]
+render:
+  image:
+    width: 600px
+    alt: wold-population
+    classes: shadow bg-primary
+  figure:
+    caption: |
+      World population over the past 2000 years
+    name: world-population
+---
+
+suppressPackageStartupMessages({
+  library(tidyverse)
+}) # hide annoying messages
+# data from https://ourworldindata.org/world-population-growth
+worldPopulation <- read_csv("../data/WorldPopulationAnnual12000years_interpolated_HYDEandUNto2015.csv", skip = 1, col_names = c("year", "population"), col_types = "nn")
+filter(worldPopulation, year > 0) %>% ggplot(aes(year, population/10^9)) + geom_line() + 
+  annotate("segment", x = 476, y = 2, xend = 476, yend = .5, colour = "blue", arrow = arrow(type = "closed", length = unit(0.02, "npc"))) +
+  annotate("text", x = 476, y = 2, label = "Fall of Rome", color = "blue", angle = 90, hjust = - .1, fontface = "bold") + 
+  annotate("segment", x = 476, y = 2, xend = 476, yend = .5, color = "blue", arrow = arrow(type = "closed", length = unit(0.02, "npc"))) +
+  annotate("rect", xmin = c(500,500), xmax = c(1500,1500), ymin = c(.1, .1), ymax = c(0.9, 0.9), alpha=0.1, color=NA, fill="blue") + 
+  annotate("text", x = 1000, y = .6, label = "Middle Ages", color = "blue", fontface = "bold") + 
+  annotate("segment", x = 1666, y = 2, xend = 1666, yend = .6, colour = "blue", arrow = arrow(type = "closed", length = unit(0.02, "npc"))) +
+  annotate("text", x = 1666, y = 2, label = "Great Plague of London", color = "blue", angle = 90, hjust = - .1, fontface = "bold") + 
+  annotate("segment", x = 1346, y = 2, xend = 1346, yend = .6, colour = "blue", arrow = arrow(type = "closed", length = unit(0.02, "npc"))) +
+  annotate("text", x = 1346, y = 2, label = "Black Death", color = "blue", angle = 90, hjust = - .1, fontface = "bold") + 
+  theme_bw() + xlab(expression(paste(italic(t), ", Year"))) + ylab(expression(paste(italic(N), ", World Population (billions)")))
+```
+
 Can you project global population by simply extending
 that curve? The population is clearly rising at an enormous
 rate, expanding most recently from 3 billion to 7 billion in
@@ -65,67 +97,57 @@ century's end.
 But such an approach is too simplistic. In one sense, the
 data are all contained in that curve, but are obscured by
 the phenomena themselves. We need to extract the biology
-inherent in the changing growth rate *r* as well as the ecology 
-inherent in the changing density dependence *s*. In other
-words, we want to look at data showing *1=N* *ΔN=Δt* versus
-*N*, as in Figure 4.4.
+inherent in the changing growth rate $r$ as well as the ecology 
+inherent in the changing density dependence $s$. In other
+words, we want to look at data showing $1=N$ $ΔN=Δt$ versus
+$N$, as in Figure 4.4.
 
-Table 6.1 shows a subset of the original data, *t* and *N*, plus
+Table 6.1 shows a subset of the original data, $t$ and $N$, plus
 calculated values for
-*ΔN*, *Δt* and *1=N* *ΔN=Δt*.
-In row 1, for example, *ΔN* shows the change in *N* between row 1 and
-row 2: 0.795 - 0.606 = 0.189 billion. Likewise, Δt in row 1
+$ΔN$, $Δt$ and $1=N$ $ΔN=Δt$.
+In row 1, for example, $ΔN$ shows the change in $N$ between row 1 and
+row 2: $0.795 - 0.606 = 0.189$ billion. Likewise, Δt in row 1
 shows how many years elapse before the time of row 2:
 1750 - 1687 = 63 years. The final column in row 1 shows the value
-of *1=N* *ΔN=Δt*: 
-1/0:606 x 0:189=63 = 0:004950495...., which
-rounds to 0:0050. Row 21 has no deltas because it is the last
+of $1=N$ $ΔN=Δt$: 
+$1/0:606$ $x$ $0:189=63 = 0:004950495$...., which
+rounds to $0.0050$. Row 21 has no deltas because it is the last
 row in the table.
 
-### Table 6.1 Human population numbers for analysis.
 
-| Point | Year *t* | N billions | ΔN | Δt | 1/n ΔN/Δt
-| :- | -: | :-: | :- | :- | :- |
-|1. | 1687 |0.606 |0.189 |63 |0.0050|
-|2. | 1750 |0.795 |0.174 |50 |0.0044|
-|3. | 1800 |0.969 |0.296 |50 |0.0061|
-|4. | 1850 |1.265 |0.391 |50 |0.0062|
-|5. | 1900 |1.656 |0.204 |20 |0.0062|
-|6. | 1920 |1.860 |0.210 |10 |0.0113|
-|7. | 1930 |2.070 |0.230 |10 |0.0111|
-|8. | 1940 |2.300 |0.258 |10 |0.0112|
-|9. | 1950 |2.558 |0.224 |5  |0.0175|
-|10.|  1955| 2.782| 0.261| 5 |0.0188|
-|11.|  1960| 3.043| 0.307| 5 |0.0202|
-|12.|  1965| 3.350| 0.362| 5 |0.0216|
-|13.|  1970| 3.712| 0.377| 5 |0.0203|
-|14.|  1975| 4.089| 0.362| 5 |0.0177|
-|15.|  1980| 4.451| 0.405| 5 |0.0182|
-|16.|  1985| 4.856| 0.432| 5 |0.0178|
-|17.|  1990| 5.288| 0.412| 5 |0.0156|
-|18.|  1995| 5.700| 0.390| 5 |0.0137|
-|19.|  2000| 6.090| 0.384| 5 |0.0126|
-|20.|  2005| 6.474| 0.392| 5 |0.0121|
-|21.|  2010| 6.866||||
+### Table 6.1 in R
 
-
-## 6.2 Biological-ecological graph 
-
-```{figure} ../img/fig_6_2.png
+```{code-cell} r
 ---
-name: figure-6_2
-alt: figure-6_2
-width: 600px
-align: center
+tags: ["hide-input"]
+render:
+  table:
+    width: 600px
+    alt: wold-population
+caption: |
+      World population over the past 2000 years
+name: world-population-table
 ---
-Observed human growth rate as a function of population density through the mid-1960s (blue dots), based on the data from Table 6.1, with a line representing the average trend (green).
+
+suppressPackageStartupMessages({
+  library(kableExtra)
+  library(IRdisplay)
+}) # hide annoying messages
+options(knitr.kable.NA = '') # don't plot missing values
+humanPopulation <- read_tsv("../data/humans.tsv", col_types = "nn") 
+humanPopulation %>% 
+  mutate(dN = c(diff(population), NA), dT = c(diff(year), NA), rate = 1 / population * dN / dT) %>% 
+  kbl(col.names = c("t (years)", "N (billions)", "$\\Delta N$", "$\\Delta t$", "$\\frac{1}{N} \\frac{\\Delta N}{\\Delta t}$"), 
+    digits = c(0, 3, 3, 0, 4)) %>%
+  as.character() %>%
+  display_html()
 ```
+
 
 ```{code-cell} r
 :tags: ["output_scroll"]
-
 pop_data <- rbind(
-c(1. ,1687,0.606, 0.189, 63, 0.0050), 
+c(1. ,1687,0.606, 0.189, 63, 0.0050),
 c(2. ,1750,0.795, 0.174, 50, 0.0044),
 c(3. ,1800,0.969, 0.296, 50, 0.0061),
 c(4. ,1850,1.265, 0.391, 50, 0.0062),
@@ -151,38 +173,54 @@ pop_data <- as.data.frame(pop_data)
 names(pop_data) <- c("Point", "Year_t", "N_billions", "delta_N", "delta_t", "1/N deltaN/deltat")
 ```
 
+## 6.2 Biological-ecological graph 
+
+```{figure} ../img/fig_6_2.png
+---
+name: figure-6_2
+alt: figure-6_2
+width: 600px
+align: center
+---
+Observed human growth rate as a function of population density through the mid-1960s (blue dots), based on the data from Table 6.1, with a line representing the average trend (green).
+```
+
+Figure [6.2](figure-6_2) plots the two green columns of Table 6.1 through
+line 12 - the mid-1960s - in blue dots, with a green line representing the average trend. A line like this can be drawn through the points in various ways the simplest with a ruler and pen drawing what looks right. This one was done using a statistical "regression" program, with $r$ the point at which
+the line intersects the vertical axis and $s$ the line's slope - 
+its Δy=Δx. The intrinsic growth rate $r$ for modern, global
+human population is apparently negative and the slope $s$ is
+unmistakably positive. See how Figure 6.2 can be generated with R and ggplot [](code_cell_fig_2).
+
+(code_cell_fig_2)=
+
+### Code to generate figure 6.2
 ```{code-cell} r
 library(ggplot2)
-fig_6_2 <- ggplot(data = pop_data[1:13 ,],
-       aes(x = N_billions, 
-           y = `1/N deltaN/deltat`)) +
-  geom_point(color='blue') +
-  theme_classic() +
-  scale_x_continuous(name = expression(paste(italic("N,"), " population in billions")),
-                     breaks = seq(0, 12),
-                     limits = c(0, 12)) +
+fig_6_2 <- ggplot(data = pop_data[1:13 ,], # subset rows 1:13 of the data.frame
+       aes(x = N_billions,                 # N_billions in the X-axis
+           y = `1/N deltaN/deltat`)) +     # 1/N deltaN/deltat in the Y-axis
+  geom_point(color='blue') +               # change colour of the points
+  theme_classic() +                        # set theme of the plot to classic
+  scale_x_continuous(name = expression(paste(italic("N,"), " population in billions")), # Name axis with italics text (using expression())
+                     breaks = seq(0, 12, by = 1),  # ticks by 1 
+                     limits = c(0, 12)) +          # limit x-axis from 0 to 12
   scale_y_continuous(name = expression(paste(frac(1, italic("N")), " ", frac(italic("dN"), italic("dt")))),
                      breaks = seq(0, .03, by = 0.01),
                      limits = c(0, 0.03)) +
-  geom_abline(slope = 0.00648, intercept = -0.001185 ) +
-  annotate("text", x = 1, y = 0.02, label = expression(italic("r") == -0.001185)) + 
-  annotate("text", x = 0.9, y = 0.018, label = expression(italic("s") == 0.00648)) 
+  geom_abline(slope = 0.00648, intercept = -0.001185 ) + # plot line with slope and intercept 
+  annotate("text", x = 1, y = 0.02, label = expression(italic("r") == -0.001185)) + # annotate value of r (sleope)
+  annotate("text", x = 0.9, y = 0.018, label = expression(italic("s") == 0.00648))  # annotate value of s (intercept)
 
 fig_6_2
 ```
 
-Figure [6.2](figure-6_2) plots the two green columns of Table 6.1 through
-line 12 - the mid-1960s - in blue dots, with a green line representing the average trend. A line like this can be drawn through the points in various ways the simplest with a ruler and pen drawing what looks right. This one was done using a statistical "regression" program, with *r* the point at which
-the line intersects the vertical axis and *s* the line's slope - 
-its Δy=Δx. The intrinsic growth rate *r* for modern, global
-human population is apparently negative and the slope *s* is
-unmistakably positive.
 
 From the late 1600s to the mid 1960s, then, it's clear that
 the birth rate per family was increasing as the population increased. Greater population was enhancing the population's
 growth. Such growth is orthologistic, meaning that the human population has been heading for a singularity for many centuries. The singularity is not a modern phenomenon, and could conceivably have been known before the 20th century.
 
-The negative value of *r*, if it is real, means there is a
+The negative value of $r$, if it is real, means there is a
 human Allee point. If the population were to drop below
 the level of the intersection with the horizontal axis - in this
 projection, around two hundred million people|the human
@@ -214,8 +252,32 @@ stuck on an orthologistic path, with a singularity ever looming and guaranteed b
 average the world did. Humanity started down a logistic-like
 path.
 
+### Code to generate figure 6.3
+Figure 6.3 includes the full data frame and additional best fit line. We can [modify the code for figure 2](code_cell_fig_2) as follow.
+```{code-cell} r
+fig_6_3 <- ggplot(data = pop_data, # data frame not subset
+                  aes(x = N_billions, 
+                      y = `1/N deltaN/deltat`)) +
+  geom_point(color='blue') + theme_classic() +
+  scale_x_continuous(name = expression(paste(italic("N,"), " population in billions")),
+                     breaks = seq(0, 12),
+                     limits = c(0, 12)) +
+  scale_y_continuous(name = expression(paste(frac(1, italic("N")), " ", frac(italic("dN"), italic("dt")))),
+                     breaks = seq(0, .03, by = 0.01),
+                     limits = c(0, 0.03)) +
+  geom_abline(slope = 0.00648, intercept = -0.001185 ) +
+  annotate("text", x = 1, y = 0.02, label = expression(italic("r") == -0.001185)) + 
+  annotate("text", x = 0.9, y = 0.018, label = expression(italic("s") == 0.00648)) +
+  geom_abline(slope = -0.00289, intercept = 0.03077, colour = "red" ) +             # the second down-slope best fit line
+  annotate("text", x = 6, y = 0.01, label = expression(italic("r") == 0.03077)) + 
+  annotate("text", x = 6, y = 0.007, label = expression(italic("s") == -0.00289))
+
+fig_6_3
+```
+
+
 Where the downward-sloping line crosses the horizontal
-axis is where population growth would cease. From this simple *r* + *sN* model, it appears that world's population will
+axis is where population growth would cease. From this simple $r$ + $sN$ model, it appears that world's population will
 stabilize between 10 and 12 billion. That is in line with other
 recently published projections.
 

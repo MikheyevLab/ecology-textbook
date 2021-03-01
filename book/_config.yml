@@ -33,3 +33,14 @@ launch_buttons:
   notebook_interface: "classic" # The interface interactive links will activate ["classic", "jupyterlab"]
   binderhub_url: "https://mybinder.org"
   thebe: true
+
+sphinx:
+  config:
+    mathjax_path: https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    mathjax_config:
+      tex2jax:
+        inlineMath: [["$", "$"], ["\\(", "\\)"]]
+    myst_update_mathjax: false
+  extra_extensions: 
+  - sphinx_multitoc_numbering
+
