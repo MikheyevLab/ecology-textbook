@@ -31,6 +31,19 @@ Because computer coding is becoming embedded in almost every aspect of life, app
 
 Below are two lines of computer code forming a program that models the bacterial colony as it doubles every hour written in R. We will go through the code carefully below.
 
+
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<pre>
+<code class="prettyprint">N <span class="ttooltip"><-<span class="ttooltiptext"><span class="nocode">assign</span></span></span> 1
+# create a sequence of numbers, from 1 to (5 * 24) by 1
+time <- 1<span class="ttooltip">:<span class="ttooltiptext"><span class="nocode">create a sequence</span></span></span>(5 * 24) 
+for(t <span class="ttooltip">in<span class="ttooltiptext"><span class="nocode">get one element t from list time</span></span></span> time) <span class="ttooltip">{<span class="ttooltiptext"><span class="nocode">brackets enclose code that runs together</span></span></span>
+  N <- N * 2
+  }</code>
+</pre>
+ 
+   
+
 ``` r
 N <- 1
 time <- 1:(5 * 24) # create a sequence on numbers from 1 to 5 * 25, incrementing by 1
@@ -102,9 +115,11 @@ alt: Elephants
 width: 600px
 align: center
 ---
-<span class="ttooltip"> Elephants at Amboseli National Park against Mount Kilimanjaro <span class="ttooltiptext">
-  Elephants at Amboseli National Park against Mount Kilimanjaro <b>by</b> Amoghavarsha JS (CC BY-SA 3.0)
-  </span> </span>
+<span class="ttooltip">Elephants at Amboseli National Park against Mount Kilimanjaro
+  <span class="ttooltiptext">
+    Elephants at Amboseli National Park against Mount Kilimanjaro <b>by</b> Amoghavarsha JS (CC BY-SA 3.0)
+  </span>
+</span>
 ```
 
 Of course he had no computers, nor calculators, and apparently kept track of 90 or more age classes and made his calculations (which have never been found) on paper. He calculated by hand on paper and alas those notes have never been found. But he said it cost him “some pain” to reach the conclusion that at the end of the fifth century, fifteen million elephants would be walking the earth, descended from one original pair. From this, he concluded that unlimited growth is impossible.
@@ -116,7 +131,11 @@ alt: Darwin
 width: 400px
 align: center
 ---
-Charles Darwin was in his twenties when he realized that natural selection was a cause of evolution and started to formulate his theory
+<span class="ttooltip">Charles Darwin was in his twenties when he realized that natural selection was a cause of evolution and started to formulate his theory
+  <span class="ttooltiptext">
+    Darwin <b>by</b> G. Richmond (Public Domain)
+  </span>
+</span>
 ```
 
 ```{epigraph}
