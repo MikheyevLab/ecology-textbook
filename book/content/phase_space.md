@@ -9,9 +9,7 @@ kernelspec:
   name: ir
 ---
 
-# Phase and state space
-
-## Phase space
+# 10 Phase space
 
 In differential equation models, the basic population dynamics among species become visible as a glance in ["phase space."](https://en.wikipedia.org/wiki/Phase_space) The concepts and applications of phase spaces were orignally worked out in the late nineteenth century by Henri Poincar&eacute; and others for the dyanmics systems of physics, but the mathematical foundations also apply to the theories of ecology. (Below is Poincar&eacute; seated with Marie Curie at the initial solvay conference in 1911. As a point of interest, Marie Curie is the onlt person to have twiwce won the Nobel Prize for science&mdash;and she wasnominated the first time before her doctoral defense!).
 
@@ -45,7 +43,7 @@ Understanding the isoclines of a system goes a long ways toward understanding th
 
 For further illustration, four population growth curves are traced in green in Figure 10.5and marked as A, B, C, and D. All start with one of the populations at 2.0 and the other at a low or moderate level. And they head to one of the two stable equilibria, avoiding the unstable equilibrium in between. You can view these four growth curves plotted in the usual way, as species abundances versus time, in Figure 10.6 . Blue indicates Species 1, while red indicates Species 2.
 
-### Surface generating the flow
+## 10.1 Surface generating the flow
 
 A good way to understand the arrows of phase spaces is to imagine raindrops falling on a curvilinear rooftop and owing across its surface. Figure 10.7 shows such a surface.
 
@@ -59,7 +57,7 @@ For example, Point A divides rain flowing to the left and rain flowing to the ri
 
 Point A, on the other hand, corresponds to the Allee point. A marble could be balanced precariously at that place, with the slightest breath of air sending it to extinction at B or carrying capacity in the basin at C, depending on miniscule variations in the breath. Marbles starting close to either of the axes roll to the origin, equilibrium B. Marbles starting farther from the axes are on the other side of a long ridge and roll to the carrying capacity at C.
 
-### Eigenvectors and eigenvalues
+## 10.2 Eigenvectors and eigenvalues
 
 Think about shapes on which a marble could remain stationary, possibly balanced precariously, on a complicated two dimensional surface in three-dimensional space, with peaks and valleys in their structure. Figure 10.8 shows seven possible congurations for remaining stationary.
 
@@ -107,4 +105,26 @@ the in uence of gravity. Dynamical systems can do the opposite&mdash;they can cl
 
 In the bottom graph of Figure 10.9, an equilibrium in a hill-climbing system is stable if the slope is decreasing (negative sign) rather than increasing (positive sign). Because human intuition applies so well to marbles rolling off heights and settling into shallows, we have chosen to explain it intuitively that wayfirst, but it is important to understand both ways.
 
-PAGE 129
+It turns out that the proper axes at each equilibrium point&mdash;the eigenvectors&mdash;can be determined exactly from only four numbers, and how much the slope is increasing or decreasing at each equilibrium point&mdash;the eigenvalues&mdash;can be determined at the same time from the same four numbers. These are the four partial derivatives in what is called the ["Hessian matrix"](https://en.wikipedia.org/wiki/Hessian_matrix) of the surface, or, equivalently in the ["Jacobian matrix"](https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant) of the population growth equations. An understanding of these matrices and their applications has developed in mathematics over the past two centuries.
+
+By expending some effort and attention you can work the eigenvalues out mathematically with pencil and paper. However, you will likely employ computers to evaluate the eigenvalues of ecological systems. This can be done with abstract symbols in computer packages such as Mathematica or Maxima, or numerically in programming languages such as R. For standard two-species systems, we have worked out all equilibria and their corresponding eigenvalues. These are recorded in Table 10.1 in mathematical notation and in Program 10.1 as code, and identify the equilibria and stability for all predation, mutualism, and competition systems represented by Equation 8.1, which is copied into the table for reference.
+
+The formulae in Table 10.1 work for any two-species RSN model&mdash;that is, any model of the form $\frac{1}{N_{i}}\frac{dN_{i}}{dt} = r{i} + s{i,i}Ni + s_{i,j}N_{j}$ with constant coefficients&mdash;but formulae for other models must be derived separately, from a software package, or following methods for ["Jacobian matrices"](https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant).
+
+## 10.3 A phase space example
+
+For an example ofnding equilibria and stability, consider two competing species with intrinsic growth rates $r_{1} = 1.2$ and $r_{2} = 0.8$. Let each species inhibit itself in such a way that $s_{1,1} = -1$ and $s_{2,2} = -1$, let Species 2 inhibit Species 1 more strongly than it inhibits itself, with $s_{1,2} = -1.2$, and let Species 1 inhibit Species 2 less strongly than it inhibits itself, with $s_{2,1} = -0.5$. These conditions are summarized in Box 10.2 for reference. The question is, what are the equilibria in this particular competitive system, and what will their stability be?
+
+First, there is an equilibrium at the origin $(0,0)$ in these systems, where both species are extinct. This is sometimes called the "trivial equilibrium," and it may or may not be stable. From Table 10.1, the eigenvalues of the equilibrium at the origin are $r1$ and $r2$&mdash;in this case 1.2 and 0.8. These are both positive, so from the rules for eigenvalues in Box 10.1, the equilibrium at the origin in this case is unstable. If no individuals of either species exist in an area, none will arise. But if any individuals of either species somehow arrive in the area, or if both species arrive, the population will increase. This equilibrium is thus unstable. It is shown in the phase space diagram of Figure 10.11, along with the other equilibria in the system.
+
+On the horizontal axis, where Species 2 is not present, the equilibrium of Species 1 is $\hat{N}_{1} = -r_{1}=s_{1,1} = 1.2$. That is as expected&mdash;it is just like the equilibrium of $\hat{N} = \frac{-r}{s}$ for a single species&mdash;because it indeed is a single species when Species 2 is not present. As to the stability, one eigenvalue is $-r_{1}$, which is $-1.2$, which is negative, so it will not cause instability. For the other eigenvalue at this equilibrium, you need to calculate q from Table 10.1. You should get $q=-0.2$, and if you divide that by $s_{1.1}$, you should get $0.2$. This is positive, so by the rules of eigenvalues in Box 10.1, the equilibrium on the horizontal axis is unstable. Thus, if Species 1 is at its equilibrium and an increment of Species 2 arrives, Species 2 will increase and the equilibrium will be abandoned.
+
+Likewise, on the vertical axis, where Species 1 is not present, the equilibrium of Species 2 is $N_{2} = \frac{-r_{2}}{s_{2,2}} = 0.8$. Calculate the eigenvalues at this equilibrium from Table 10.1 and you should get $p = -0.24$, and dividing by $s_{2,2}$ give eigenvalues of $-0.8$ and $0.24$. With one negative and the other positive, by the rules of eigenvalues in Box 10.1 the equilibrium on the vertical axis is also unstable.
+
+Finally, for the fourth equilibrium&mdash;the interior equilibirum where both species are present&mdash;calculate $a$, $b$, and $c$ from the table. You should get $a = -0.4$, $b = -0.44$, and $c = -0.048$. Now the interior  equilibrium is $\hat{N}_{1} = \frac{p}{a} = 0.6$ and $\hat{N}_{2} = \frac{q}{a} = 0.5$.
+
+But is it stable? Notice the formula for the eigenvalues of the interior equilibrium in Table 10.1 , in terms of $a$, $b$, and $c$. It is simply [the quadratic formula](https://en.wikipedia.org/wiki/Quadratic_equation)! This is a clue that the eigenvalues are embedded in a quadratic equation, $ax^{2} + bx + c = 0$. And if you start a project to derive the formula for eigenvalues with pencil and paper, you will see that indeed they are. In any case, working it out more simply from the formula in the table, you should get $-0.123$ and $-0.977$. Both are negative, so by the rules of Box 10.1 the interior equilibrium for this set of parameters is stable.
+
+As anal note, the presence of the square root in the formula suggests that eigenvalues can have imaginary parts, if the square root covers a negative number. The rules of eigenvalues in Box 10.1 still apply in this case, but only to the real part of the eigenvalues. Suppose, for example, that the eigenvalues are $\frac{-1 \pm \sqrt{5}}{2} = -0.5 \pm 1.118i$. These would be stable because the real part, 􀀀0:5, is negative. But it turns out that because the imaginary part, $1.118i$, is not zero, the system would cycle around the equilibrium point, as predator-prey systems do.
+
+In closing this part of the discussion, we should point out that eigenvectors and eigenvalues have broad applications. They reveal, for instance, electron orbitals inside atoms (right), alignment of multiple variables in statistics, vibrational modes of piano strings, and rates of the spread of disease, and are used for a bounty of other applications. Asking how eigenvalues can be used is a bit like asking how the number seven can be used. Here, however, we simply employ them to evaluate the stability of equilibria.
