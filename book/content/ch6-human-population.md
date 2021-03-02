@@ -51,7 +51,7 @@ tags: ["hide-input"]
 render:
   image:
     width: 600px
-    alt: wold-population
+    alt: world-population
     classes: shadow bg-primary
   figure:
     caption: |
@@ -128,106 +128,92 @@ suppressPackageStartupMessages({
   library(IRdisplay)
 }) # hide annoying messages
 options(knitr.kable.NA = '') # don't plot missing values
-humanPopulation <- read_tsv("../data/humans.tsv", col_types = "nn") 
-humanPopulation %>% 
-  mutate(dN = c(diff(population), NA), dT = c(diff(year), NA), rate = 1 / population * dN / dT) %>% 
+humanPopulation <- read_tsv("../data/humans.tsv", col_types = "nn") # read in data
+
+# assign values from the table to humanPopulation_df (human population dataframe)
+humanPopulation_df <- humanPopulation %>% 
+  mutate(dN = c(diff(population), NA), dT = c(diff(year), NA), rate = 1 / population * dN / dT) 
+
+# Render as html table
+humanPopulation_df %>%
   kbl(col.names = c("t (years)", "N (billions)", "$\\Delta N$", "$\\Delta t$", "$\\frac{1}{N} \\frac{\\Delta N}{\\Delta t}$"), 
     digits = c(0, 3, 3, 0, 4)) %>%
   as.character() %>%
   display_html()
-```
 
-This table from the book can turned into a data frame in R with the following code. d
-
-### Table 6.1 in R
-
-```{code-cell} r
-:tags: ["output_scroll"]
-pop_data <- rbind(
-c(1. ,1687,0.606, 0.189, 63, 0.0050),
-c(2. ,1750,0.795, 0.174, 50, 0.0044),
-c(3. ,1800,0.969, 0.296, 50, 0.0061),
-c(4. ,1850,1.265, 0.391, 50, 0.0062),
-c(5. ,1900,1.656, 0.204, 20, 0.0062),
-c(6. ,1920,1.860, 0.210, 10, 0.0113),
-c(7. ,1930,2.070, 0.230, 10, 0.0111),
-c(8. ,1940,2.300, 0.258, 10, 0.0112),
-c(9. ,1950,2.558, 0.224, 5, 0.0175),
-c(10., 1955, 2.782, 0.261, 5, 0.0188),
-c(11., 1960, 3.043, 0.307, 5, 0.0202),
-c(12., 1965, 3.350, 0.362, 5, 0.0216),
-c(13., 1970, 3.712, 0.377, 5, 0.0203),
-c(14., 1975, 4.089, 0.362, 5, 0.0177),
-c(15., 1980, 4.451, 0.405, 5, 0.0182),
-c(16., 1985, 4.856, 0.432, 5, 0.0178),
-c(17., 1990, 5.288, 0.412, 5, 0.0156),
-c(18., 1995, 5.700, 0.390, 5, 0.0137),
-c(19., 2000, 6.090, 0.384, 5, 0.0126),
-c(20., 2005, 6.474, 0.392, 5, 0.0121),
-c(21., 2010, 6.866, NA, NA, NA) )
-
-pop_data <- as.data.frame(pop_data)
-names(pop_data) <- c("Point", "Year_t", "N_billions", "delta_N", "delta_t", "1/N deltaN/deltat")
 ```
 
 ## 6.2 Biological-ecological graph 
 
-```{figure} ../img/fig_6_2.png
----
-name: figure-6_2
-alt: figure-6_2
-width: 600px
-align: center
----
-Observed human growth rate as a function of population density through the mid-1960s (blue dots), based on the data from Table 6.1, with a line representing the average trend (green).
-```
+<a id='fig_6_2'></a>
 
-Figure [6.2](figure-6_2) plots the two green columns of Table 6.1 through
-line 12 - the mid-1960s - in blue dots, with a green line representing the average trend. A line like this can be drawn through the points in various ways the simplest with a ruler and pen drawing what looks right. This one was done using a statistical "regression" program, with $r$ the point at which
-the line intersects the vertical axis and $s$ the line's slope - 
-its Δy=Δx. The intrinsic growth rate $r$ for modern, global
-human population is apparently negative and the slope $s$ is
-unmistakably positive. See how Figure 6.2 can be generated with R and ggplot [](code_cell_fig_2).
-
-(code_cell_fig_2)=
-
-### Code to generate figure 6.2
 ```{code-cell} r
-library(ggplot2)
-fig_6_2 <- ggplot(data = pop_data[1:13 ,], # subset rows 1:13 of the data.frame
-       aes(x = N_billions,                 # N_billions in the X-axis
-           y = `1/N deltaN/deltat`)) +     # 1/N deltaN/deltat in the Y-axis
-  geom_point(color='blue') +               # change colour of the points
-  theme_classic() +                        # set theme of the plot to classic
-  scale_x_continuous(name = expression(paste(italic("N,"), " population in billions")), # Name axis with italics text (using expression())
-                     breaks = seq(0, 12, by = 1),  # ticks by 1 
-                     limits = c(0, 12)) +          # limit x-axis from 0 to 12
+---
+tags: [hide-input, remove-stdout, remove-stderr]
+name: observed-human
+alt: observed-human
+caption: Observed human growth rate as a function of population density through the mid-1960s (blue dots), based on the data from Table 6.1, with a line representing the average trend (green).
+---
+
+suppressWarnings(suppressMessages(library(ggplot2))) # hide annoying messages
+
+ggplot(data = humanPopulation_df[0:13,],
+                  aes(x = population, 
+                      y = rate)) +
+  geom_point(color='blue') +
+  theme_bw() +
+  theme(axis.title.y = element_text(angle = 0, vjust = 0.5, hjust=1)) +
+  scale_x_continuous(name = expression(paste(italic("N,"), " population in billions")),
+                     breaks = seq(0, 12),
+                     limits = c(0, 12)) +
   scale_y_continuous(name = expression(paste(frac(1, italic("N")), " ", frac(italic("dN"), italic("dt")))),
                      breaks = seq(0, .03, by = 0.01),
                      limits = c(0, 0.03)) +
-  geom_abline(slope = 0.00648, intercept = -0.001185 ) + # plot line with slope and intercept 
-  annotate("text", x = 1, y = 0.02, label = expression(italic("r") == -0.001185)) + # annotate value of r (sleope)
-  annotate("text", x = 0.9, y = 0.018, label = expression(italic("s") == 0.00648))  # annotate value of s (intercept)
+  geom_abline(slope = 0.00648, intercept = -0.001185, colour = "darkgreen") +
+  annotate("text", x = 1, y = 0.028, label = expression(italic("r") == -0.001185)) + 
+  annotate("text", x = 0.9, y = 0.026, label = expression(italic("s") == 0.00648)) +
+  # Arrow pointing at 1962
+  annotate("text", x = 0.5, y = 0.0216, label = "1962", color = "grey", hjust = - .1, fontface = "bold") + 
+  annotate("segment", x = 2.1, y = 0.0216, xend = 3.12, yend = 0.0216, color = "grey",
+           arrow = arrow(type = "closed", length = unit(0.02, "npc"))) +
+  # Arror pointing at 1687
+  annotate("text", x = 0.606, y = 0.002, label = "1687", color = "grey", hjust = - .1, fontface = "bold") + 
+  annotate("segment", x = 0.606, y = 0.002, xend = 0.606, yend = 0.0042, color = "grey",
+           arrow = arrow(type = "closed", length = unit(0.02, "npc"))) 
 
-fig_6_2
 ```
 
+Figure [6.2](#fig_6_2) plots the two green columns of
+Table [6.1](#tab_6_1)  through line 12---the mid-1960s---in blue dots, with
+a green line representing the average trend. A line like this can be drawn
+through the points in various ways---the simplest with a ruler and pen drawing
+what looks right. This one was done using a statistical "regression"
+program, with $r$ the point at which the line intersects the vertical axis
+and $s$ the line's slope---its $\Delta y/\Delta x$. The intrinsic
+growth rate $r$ for modern, global human population is apparently negative
+and the slope $s$ is unmistakably positive.
 
-From the late 1600s to the mid 1960s, then, it's clear that
-the birth rate per family was increasing as the population increased. Greater population was enhancing the population's
-growth. Such growth is orthologistic, meaning that the human population has been heading for a singularity for many centuries. The singularity is not a modern phenomenon, and could conceivably have been known before the 20th century.
 
-The negative value of $r$, if it is real, means there is a
-human Allee point. If the population were to drop below
-the level of the intersection with the horizontal axis - in this
-projection, around two hundred million people|the human
-growth rate would be negative and human populations would
-decline. The Allee point demonstrates our reliance on a
-modern society; it suggests that we couldn't survive with
-our modern systems at low population levels - although perhaps if we went back to hunter-gatherer lifestyles, this would
-change the growth curve. The Allee point thus indicates that
-there is a minimum human population we must sustain to
-avoid extinction. We depend on each other.
+From the late 1600s to the mid 1960s, then, it's clear that the birth rate per
+family was increasing as the population increased. Greater population was
+*enhancing* the population's growth. Such growth is orthologistic, meaning
+that the human population has been heading for a singularity for many centuries.
+The singularity is not a modern phenomenon, and could conceivably have been
+known before the 20th century.
+
+The negative value of $r$, if it is real, means there is a human Allee
+point. If the population were to drop below the level of the intersection with
+the horizontal axis---in this projection, around two hundred million
+people---the human growth rate would be negative and human populations would
+decline. The Allee point demonstrates our reliance on a modern society; it
+suggests that we couldn't survive with our modern systems at low population
+levels---although perhaps if we went back to hunter--gatherer lifestyles, this
+would change the growth curve. The Allee point thus indicates that there is a
+minimum human population we must sustain to avoid extinction. We depend on each
+other.
+
+
+##### Putter picks up here
 
 ## 6.3 A global transition
 
