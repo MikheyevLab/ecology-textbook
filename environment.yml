@@ -10,3 +10,4 @@ dependencies:
   - pip
   - pip:
     - jupyter-book
+    - sphinx-multitoc-numbering
