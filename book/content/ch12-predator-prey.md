@@ -33,23 +33,3 @@ Fulmar chicks,[$^\star$](https://en.wikipedia.org/wiki/Fulmar), for example, can
 damaging the waterproofing of an avian predator's feathers, this ultimately can
 kill the predator. The chick's projectile vomit is thus a lethal weapon.
 
-```{figure} 
----
-tags: ["hide-input"]../img/downer/p101.jpg
-render:
-  image:
-    width: 600px
-    alt: fig_12_1
-    classes: shadow bg-primary
-  figure:
-    caption: |
-      Fig 12.1 Fulmar chick with projectile vomit as predator defense.
-    name: fig_12_1
----
-
-
-<image width=4 height=3.1>../image/downer/p101.jpg</image>
-
-**Figure 12.1.** `<figdef tag="FigFulmarChick">`
-Fulmar chick with projectile vomit as predator defense.
-`</figdef>`
