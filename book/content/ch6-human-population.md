@@ -94,7 +94,7 @@ inherent in the changing density dependence $s$. In other words, we want to
 look at data showing $1/N\,\Delta N/\Delta t$ versus $N$, as in
 Figure 4.4.
 
-Table [6.1](world-pop-table) shows a subset of the original data, $t$ and
+Table [6.1](#tab_6_1) shows a subset of the original data, $t$ and
 $N$, plus calculated values for $\Delta N$, $\Delta t$, and
 $1/N\,\Delta N/\Delta t$. In row 1, for example, $\Delta N$ shows the
 change in $N$ between row 1 and row 2: $ 0.795 - 0.606 = 0.189 $
@@ -133,7 +133,8 @@ humanPopulation_df <- humanPopulation %>%
 # Render as html table
 humanPopulation_df %>%
   kbl(col.names = c("t (years)", "N (billions)", "$\\Delta N$", "$\\Delta t$", "$\\frac{1}{N} \\frac{\\Delta N}{\\Delta t}$"), 
-    digits = c(0, 3, 3, 0, 4)) %>%
+    digits = c(0, 3, 3, 0, 4),
+    caption = "An example table caption.", position = t) %>% 
   as.character() %>%
   display_html()
 
@@ -141,7 +142,7 @@ humanPopulation_df %>%
 
 
 ```{code-cell} r
-:tags: ["output_scroll"]
+:tags: ["hide_output"]
 pop_data <- rbind(
 c(1. ,1687,0.606, 0.189, 63, 0.0050),
 c(2. ,1750,0.795, 0.174, 50, 0.0044),
