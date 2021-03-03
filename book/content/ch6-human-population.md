@@ -31,10 +31,10 @@ through how to it. We'll start by piecing together the parts,
 as in Figure 4.4 - the orthologistic part, if there is one, and
 any exponential and logistic parts as well.
 
-## 6.1 Phenomological graph
+## Phenomological graph
 
 The excerpt of data you have been given includes the world's
-population in billions, by year. That is all. Figure [6.1](figure-6_1) shows
+population in billions, by year. That is all. Figure [6.1](world-population) shows
 the data plotted in a phenomenological way - population
 size versus year, supplemented with a curve going back 2000
 years to provide perspective. The blue dots show the range
@@ -43,37 +43,28 @@ and the black 'X' marks a great demographic transition that
 is not obvious in this graph, but that will become glaringly
 so in Figure [6.3](figure-6_3).
 
-
-```{figure} ../img/fig_6_1.png
----
-name: figure-6_1
-alt: figure-6_1
-width: 600px
-align: center
----
-Global human population over the past 2000 years
-```
-
 ```{code-cell} r
 ---
 tags: ["hide-input"]
 render:
   image:
     width: 600px
-    alt: wold-population
+    alt: world-population
     classes: shadow bg-primary
   figure:
     caption: |
       World population over the past 2000 years
     name: world-population
 ---
-
 suppressPackageStartupMessages({
   library(tidyverse)
 }) # hide annoying messages
 # data from https://ourworldindata.org/world-population-growth
 worldPopulation <- read_csv("../data/WorldPopulationAnnual12000years_interpolated_HYDEandUNto2015.csv", skip = 1, col_names = c("year", "population"), col_types = "nn")
-filter(worldPopulation, year > 0) %>% ggplot(aes(year, population/10^9)) + geom_line() + 
+filter(worldPopulation, year > 0) %>% ggplot(aes(year, population/10^9)) + 
+  geom_point() +
+  geom_line() + 
+  annotate(geom = "text", label = "X", y = 3.350, x = 1965, size = 9, color = "blue") +
   annotate("segment", x = 476, y = 2, xend = 476, yend = .5, colour = "blue", arrow = arrow(type = "closed", length = unit(0.02, "npc"))) +
   annotate("text", x = 476, y = 2, label = "Fall of Rome", color = "blue", angle = 90, hjust = - .1, fontface = "bold") + 
   annotate("segment", x = 476, y = 2, xend = 476, yend = .5, color = "blue", arrow = arrow(type = "closed", length = unit(0.02, "npc"))) +
@@ -83,7 +74,9 @@ filter(worldPopulation, year > 0) %>% ggplot(aes(year, population/10^9)) + geom_
   annotate("text", x = 1666, y = 2, label = "Great Plague of London", color = "blue", angle = 90, hjust = - .1, fontface = "bold") + 
   annotate("segment", x = 1346, y = 2, xend = 1346, yend = .6, colour = "blue", arrow = arrow(type = "closed", length = unit(0.02, "npc"))) +
   annotate("text", x = 1346, y = 2, label = "Black Death", color = "blue", angle = 90, hjust = - .1, fontface = "bold") + 
-  theme_bw() + xlab(expression(paste(italic(t), ", Year"))) + ylab(expression(paste(italic(N), ", World Population (billions)")))
+  theme_bw() + xlab(expression(paste(italic(t), ", Year"))) + ylab(expression(paste(italic(N), ", World Population (billions)"))) +
+  # labs(caption = "Figure 6.1 Global human population over the past 2000 years") +
+  theme(plot.caption = element_text(hjust = 0.5)) 
 ```
 
 Can you project global population by simply extending
@@ -94,28 +87,26 @@ lead to a prediction of more than 11 billion people by the
 middle of the 21th century, and more than 15 billion by the
 century's end.
 
-But such an approach is too simplistic. In one sense, the
-data are all contained in that curve, but are obscured by
-the phenomena themselves. We need to extract the biology
-inherent in the changing growth rate $r$ as well as the ecology 
-inherent in the changing density dependence $s$. In other
-words, we want to look at data showing $1=N$ $ΔN=Δt$ versus
-$N$, as in Figure 4.4.
+But such an approach is too simplistic. In one sense, the data are all contained
+in that curve, but are obscured by the phenomena themselves. We need to extract
+the biology inherent in the changing growth rate $r$ as well as the ecology
+inherent in the changing density dependence $s$. In other words, we want to
+look at data showing $1/N\,\Delta N/\Delta t$ versus $N$, as in
+Figure 4.4.
 
-Table 6.1 shows a subset of the original data, $t$ and $N$, plus
-calculated values for
-$ΔN$, $Δt$ and $1=N$ $ΔN=Δt$.
-In row 1, for example, $ΔN$ shows the change in $N$ between row 1 and
-row 2: $0.795 - 0.606 = 0.189$ billion. Likewise, Δt in row 1
-shows how many years elapse before the time of row 2:
-1750 - 1687 = 63 years. The final column in row 1 shows the value
-of $1=N$ $ΔN=Δt$: 
-$1/0:606$ $x$ $0:189=63 = 0:004950495$...., which
-rounds to $0.0050$. Row 21 has no deltas because it is the last
-row in the table.
+Table [6.1](world-pop-table) shows a subset of the original data, $t$ and
+$N$, plus calculated values for $\Delta N$, $\Delta t$, and
+$1/N\,\Delta N/\Delta t$. In row 1, for example, $\Delta N$ shows the
+change in $N$ between row 1 and row 2: $ 0.795 - 0.606 = 0.189 $
+billion. Likewise, $\Delta t$ in row 1 shows how many years elapse before
+the time of row 2: $ 1750 - 1687 = 63 $ years. The final column in row 1
+shows the value of $1/N\,\Delta N /\Delta t$: $ 1 / 0.606 \times 0.189 /
+63 = 0.004950495 \dots,$ which rounds to $0.0050$. Row 21 has no deltas
+because it is the last row in the table.
 
+<a id='tab_6_1'></a>
 
-### Table 6.1 in R
+#### Table 6.1 in R
 
 ```{code-cell} r
 ---
@@ -123,10 +114,9 @@ tags: ["hide-input"]
 render:
   table:
     width: 600px
-    alt: wold-population
+name: world-pop-tab
 caption: |
-      World population over the past 2000 years
-name: world-population-table
+  World population over the past 2000 years
 ---
 
 suppressPackageStartupMessages({
@@ -134,13 +124,19 @@ suppressPackageStartupMessages({
   library(IRdisplay)
 }) # hide annoying messages
 options(knitr.kable.NA = '') # don't plot missing values
-humanPopulation <- read_tsv("../data/humans.tsv", col_types = "nn") 
-humanPopulation %>% 
-  mutate(dN = c(diff(population), NA), dT = c(diff(year), NA), rate = 1 / population * dN / dT) %>% 
+humanPopulation <- read_tsv("../data/humans.tsv", col_types = "nn") # read in data
+
+# assign values from the table to humanPopulation_df (human population dataframe)
+humanPopulation_df <- humanPopulation %>% 
+  mutate(dN = c(diff(population), NA), dT = c(diff(year), NA), rate = 1 / population * dN / dT) 
+
+# Render as html table
+humanPopulation_df %>%
   kbl(col.names = c("t (years)", "N (billions)", "$\\Delta N$", "$\\Delta t$", "$\\frac{1}{N} \\frac{\\Delta N}{\\Delta t}$"), 
     digits = c(0, 3, 3, 0, 4)) %>%
   as.character() %>%
   display_html()
+
 ```
 
 
