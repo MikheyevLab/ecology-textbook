@@ -317,49 +317,37 @@ tags: [hide-input, remove-stdout, remove-stderr]
     name: continuation-of -->
 ---
 #Data from https://ourworldindata.org/fertility-rate
-owid_birth_income <- read_csv("..data/children-per-woman-fertility-rate-vs-level-of-prosperity.csv")
+owid_birth_income <- read_csv("../data/children-per-woman-fertility-rate-vs-level-of-prosperity.csv")
 
-owid_birth_income %>% distinct(country) %>% View()
-
-birth_income_data <- read_csv("data/ch6_fecundity_by_income.csv", 
-                              col_types = "nn") 
-
+# rename column
 names(owid_birth_income) <- c("country", "code", "year", "total_population", "continent", "fertility", "gdp")
 
-
-representative_countries <- c("Switzerland", "Netherlands", "Sweden","France", "Germany",
+# Representative countries from Our World in Data data set
+representative_countries <- c("United Kingdom", "France", "Germany", "Russia",
                               "Australia", "New Zealand", "United States",
                               "China", "Vietnam", "Thailand", "India",
                               "South Africa", "Nigeria", "Cameroon", "Mauritius"
                               )
 
-
-fig_6_4 <- owid_birth_income %>% 
+# Plot
+fig_6_4 <-  owid_birth_income %>% 
   filter(!is.na(fertility),
          !is.na(gdp),
          country %in% representative_countries) %>% 
   ggplot(data = . ,
-         aes(x = gdp, y = fertility, colour = country)) +
-  geom_point() +
-  geom_line() +
-  theme_bw()
-
+         aes(x = gdp / 1000, # specify by thousands US dollar
+             y = fertility, 
+             colour = country)) +
+  geom_point(size = 1) + geom_line() +
+  theme_bw() +
+  scale_x_continuous(name = "Gross National Income, Thousands Per Capita", 
+                     breaks = seq(0, 50, by = 10),
+                     limits = c(0, 50)) +
+  scale_y_continuous(name = "Lifetime Births per Female")
 
 fig_6_4
-
-
 ```
 
-```{figure} ../img/fig_6_4.png
----
-name: figure-6_4
-alt: figure-6_4
-width: 600px
-align: center
----
-Human fecundity as a function of national per capita
-income.
-```
 Plants and other animals have logistic growth forced upon them because of
 overcrowding. In humans, however, logistic growth has been largely voluntary.
 And there could be further developments in a lifetime. In many nations, birth
