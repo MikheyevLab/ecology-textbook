@@ -87,14 +87,17 @@ The sign of the second derivative is shown in the bottom part of Figure 10.9. Wh
 
 This is easy if there is only one species, as in the models of earlier chapters, with only one direction to consider. But it becomes tricky when two or more species are interacting, for an infinite number of directions become available.
 
-It might seem that a conguration will be a basin if the sur face curves upward in both the x and y directions, as in Conguration C of Figure 10.8. But have a look at the three parts of Figure 10.10. Part A is a surface with a trough aligned with the axes. Looking along the $x$-axis&mdash;which would be the $N_{1} axis showing the abundance of Species 1&mdash;the surface is curving up on both sides of its minimum (white curve). However, looking along the $y$-axis&mdash;the $N_{2}$ axis showing the abundance of Species 2&mdash;reveals that it is exactly level in that direction (green line), meaning the equilibrium is not stable.
+It might seem that a conguration will be a basin if the sur face curves upward in both the x and y directions, as in Conguration C of Figure 10.8. But have a look at the three parts of Figure 10.10. Part A is a surface with a trough aligned with the axes. Looking along the $x$-axis&mdash;which would be the $N_{1}$ axis showing the abundance of Species 1&mdash;the surface is curving up on both sides of its minimum (white curve). However, looking along the $y$-axis&mdash;the $N_{2}$ axis showing the abundance of Species 2&mdash;reveals that it is exactly level in that direction (green line), meaning the equilibrium is not stable.
 
 But suppose the same surface is rotated 45 degrees, as in part B of thefigure. The surface curves upward not only along the $x$-axis (white curve) but also along the $y$-axis (green curve). Yet the surface is the same. Contrary to what might have been expected, curving upward in both the $x$ and $y$ directions does not mean the conguration is a basin! Understanding the structure means looking in the proper directions along the surface, not simply along the axes.
 
-This is what eigenvalues and eigenvectors do. They align with the "proper" axes for the surface, as illustrated in part C. No matter how twisted, skewed, or rescaled the surface is with respect to the axes, the eigenvectors line up with the \"proper" axes of the surface, and the eigenvalues measure whether the slope is increasing or decreasing along those axes at an equilibrium. In short, if all the eigenvalues are positive, the equilibrium is a basin, as in Figures 10.7C and 10.8C. If all the eigenvalues are negative, the equilibrium is a summit, as in Figures 10.7A and 10.8A. And if the eigenvalues are of mixed signs, or if some are zero, then we get one of the other congurations. (See the box below.)
+This is what eigenvalues and eigenvectors do. They align with the "proper" axes for the surface, as illustrated in part C. No matter how twisted, skewed, or rescaled the surface is with respect to the axes, the eigenvectors line up with the "proper" axes of the surface, and the eigenvalues measure whether the slope is increasing or decreasing along those axes at an equilibrium. In short, if all the eigenvalues are positive, the equilibrium is a basin, as in Figures 10.7C and 10.8C. If all the eigenvalues are negative, the equilibrium is a summit, as in Figures 10.7A and 10.8A. And if the eigenvalues are of mixed signs, or if some are zero, then we get one of the other configurations ([Box10_1](box10_1)).
 
-```{admonition} Rules of eigenvalues for hill-climbing systems
-:class: tip
+```{admonition} **Box 10.1** Rules of eigenvalues for hill-climbing systems
+---
+name: box10_1
+class: tip
+---
 1. If all eigenvalues are negative, the equilibrium is stable.
 2. If any eigenvalue is positive, the equilibrium is unstable.
 3. If some or all of the eigenvalues are zero and any remaining eigenvalues are negative, there is not enough information in the eigenvalues to know whether the equilibrium is stable or not. A deeper look at the system is needed.
@@ -107,7 +110,50 @@ In the bottom graph of Figure 10.9, an equilibrium in a hill-climbing system is 
 
 It turns out that the proper axes at each equilibrium point&mdash;the eigenvectors&mdash;can be determined exactly from only four numbers, and how much the slope is increasing or decreasing at each equilibrium point&mdash;the eigenvalues&mdash;can be determined at the same time from the same four numbers. These are the four partial derivatives in what is called the ["Hessian matrix"](https://en.wikipedia.org/wiki/Hessian_matrix) of the surface, or, equivalently in the ["Jacobian matrix"](https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant) of the population growth equations. An understanding of these matrices and their applications has developed in mathematics over the past two centuries.
 
-By expending some effort and attention you can work the eigenvalues out mathematically with pencil and paper. However, you will likely employ computers to evaluate the eigenvalues of ecological systems. This can be done with abstract symbols in computer packages such as Mathematica or Maxima, or numerically in programming languages such as R. For standard two-species systems, we have worked out all equilibria and their corresponding eigenvalues. These are recorded in Table 10.1 in mathematical notation and in Program 10.1 as code, and identify the equilibria and stability for all predation, mutualism, and competition systems represented by Equation 8.1, which is copied into the table for reference.
+$$
+H = \begin{pmatrix}f_{x,x} & f_{x,y}\\\ f_{y,x} & f_{y,y}\end{pmatrix}
+$$
+
+By expending some effort and attention you can work the eigenvalues out mathematically with pencil and paper. However, you will likely employ computers to evaluate the eigenvalues of ecological systems. This can be done with abstract symbols in computer packages such as Mathematica or Maxima, or numerically in programming languages such as R. For standard two-species systems, we have worked out all equilibria and their corresponding eigenvalues. These are recorded in Table 10.1 in mathematical notation and in [Program 10.1](program10_1) as code, and identify the equilibria and stability for all predation, mutualism, and competition systems represented by Equation 8.1, which is copied into the table for reference.
+
+```{list-table} Two-species formulae for Equation 8.1
+:header-rows: 1
+:name: table10_1
+```
+#TO BE FIXED: Table here#
+
+```{code-cell} r
+---
+tags: ["hide-stdout","hide-stderr"]
+render:
+	image:
+		width: 0px
+		alt: program10_1
+		classes: shadow bg-primary
+	figure:
+		caption: |
+		**Program 10.1** The code equivalent to Table 10.1, for use in computer programs. `Sqrt(w)` is a specially written function that returns 0 if w is negative (returns the real part of the complex number $0 + ]sqrt{w}i$).
+	name: program10_1
+---
+
+p = r1*s22 -r2*s12;             # Compute useful sub-formulae
+q = r2*s11 -r1*s21;             
+a = s12*s21 -s11*s22;           
+b = r1*s22*(s21-s11)            
+   +r2*s11*(s12)-s22);          
+c = -p*q;                       
+                                # Compute the equilibria
+x00=0;       y00=0;             # (at the origin)
+x10=-r1/s11; y10=0;             # (on the x-axis)
+x01=0;       y01=-r2/s22;       # (on the y-axis)
+x11=p/a;     y11=q/a;           # (at the interior)
+                                
+v00= r1; w00=r2;                # Compute the corresponding
+v1-=-r1; w10=q/s11;             # four pairs of eigenvalues
+v01=-r2; w01=p/s22;             # (real part only).
+v11=(-b-Sqrt(b^2-4*a*c))/(2*a); 
+w11=(-b+Sqrt(b^2-4*a*c))/(2*a); 
+```
 
 The formulae in Table 10.1 work for any two-species RSN model&mdash;that is, any model of the form $\frac{1}{N_{i}}\frac{dN_{i}}{dt} = r{i} + s{i,i}Ni + s_{i,j}N_{j}$ with constant coefficients&mdash;but formulae for other models must be derived separately, from a software package, or following methods for ["Jacobian matrices"](https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant).
 
@@ -115,16 +161,16 @@ The formulae in Table 10.1 work for any two-species RSN model&mdash;that is, any
 
 For an example ofnding equilibria and stability, consider two competing species with intrinsic growth rates $r_{1} = 1.2$ and $r_{2} = 0.8$. Let each species inhibit itself in such a way that $s_{1,1} = -1$ and $s_{2,2} = -1$, let Species 2 inhibit Species 1 more strongly than it inhibits itself, with $s_{1,2} = -1.2$, and let Species 1 inhibit Species 2 less strongly than it inhibits itself, with $s_{2,1} = -0.5$. These conditions are summarized in Box 10.2 for reference. The question is, what are the equilibria in this particular competitive system, and what will their stability be?
 
-First, there is an equilibrium at the origin $(0,0)$ in these systems, where both species are extinct. This is sometimes called the "trivial equilibrium," and it may or may not be stable. From Table 10.1, the eigenvalues of the equilibrium at the origin are $r1$ and $r2$&mdash;in this case 1.2 and 0.8. These are both positive, so from the rules for eigenvalues in Box 10.1, the equilibrium at the origin in this case is unstable. If no individuals of either species exist in an area, none will arise. But if any individuals of either species somehow arrive in the area, or if both species arrive, the population will increase. This equilibrium is thus unstable. It is shown in the phase space diagram of Figure 10.11, along with the other equilibria in the system.
+First, there is an equilibrium at the origin $(0,0)$ in these systems, where both species are extinct. This is sometimes called the "trivial equilibrium," and it may or may not be stable. From Table 10.1, the eigenvalues of the equilibrium at the origin are $r1$ and $r2$&mdash;in this case 1.2 and 0.8. These are both positive, so from the rules for eigenvalues in [Box 10.1](box10_1), the equilibrium at the origin in this case is unstable. If no individuals of either species exist in an area, none will arise. But if any individuals of either species somehow arrive in the area, or if both species arrive, the population will increase. This equilibrium is thus unstable. It is shown in the phase space diagram of Figure 10.11, along with the other equilibria in the system.
 
-On the horizontal axis, where Species 2 is not present, the equilibrium of Species 1 is $\hat{N}_{1} = -r_{1}=s_{1,1} = 1.2$. That is as expected&mdash;it is just like the equilibrium of $\hat{N} = \frac{-r}{s}$ for a single species&mdash;because it indeed is a single species when Species 2 is not present. As to the stability, one eigenvalue is $-r_{1}$, which is $-1.2$, which is negative, so it will not cause instability. For the other eigenvalue at this equilibrium, you need to calculate q from Table 10.1. You should get $q=-0.2$, and if you divide that by $s_{1.1}$, you should get $0.2$. This is positive, so by the rules of eigenvalues in Box 10.1, the equilibrium on the horizontal axis is unstable. Thus, if Species 1 is at its equilibrium and an increment of Species 2 arrives, Species 2 will increase and the equilibrium will be abandoned.
+On the horizontal axis, where Species 2 is not present, the equilibrium of Species 1 is $\hat{N}_{1} = -r_{1}=s_{1,1} = 1.2$. That is as expected&mdash;it is just like the equilibrium of $\hat{N} = \frac{-r}{s}$ for a single species&mdash;because it indeed is a single species when Species 2 is not present. As to the stability, one eigenvalue is $-r_{1}$, which is $-1.2$, which is negative, so it will not cause instability. For the other eigenvalue at this equilibrium, you need to calculate q from Table 10.1. You should get $q=-0.2$, and if you divide that by $s_{1.1}$, you should get $0.2$. This is positive, so by the rules of eigenvalues in [Box 10.1](box10_1), the equilibrium on the horizontal axis is unstable. Thus, if Species 1 is at its equilibrium and an increment of Species 2 arrives, Species 2 will increase and the equilibrium will be abandoned.
 
-Likewise, on the vertical axis, where Species 1 is not present, the equilibrium of Species 2 is $N_{2} = \frac{-r_{2}}{s_{2,2}} = 0.8$. Calculate the eigenvalues at this equilibrium from Table 10.1 and you should get $p = -0.24$, and dividing by $s_{2,2}$ give eigenvalues of $-0.8$ and $0.24$. With one negative and the other positive, by the rules of eigenvalues in Box 10.1 the equilibrium on the vertical axis is also unstable.
+Likewise, on the vertical axis, where Species 1 is not present, the equilibrium of Species 2 is $N_{2} = \frac{-r_{2}}{s_{2,2}} = 0.8$. Calculate the eigenvalues at this equilibrium from Table 10.1 and you should get $p = -0.24$, and dividing by $s_{2,2}$ give eigenvalues of $-0.8$ and $0.24$. With one negative and the other positive, by the rules of eigenvalues in [Box 10.1](box10_1) the equilibrium on the vertical axis is also unstable.
 
 Finally, for the fourth equilibrium&mdash;the interior equilibirum where both species are present&mdash;calculate $a$, $b$, and $c$ from the table. You should get $a = -0.4$, $b = -0.44$, and $c = -0.048$. Now the interior  equilibrium is $\hat{N}_{1} = \frac{p}{a} = 0.6$ and $\hat{N}_{2} = \frac{q}{a} = 0.5$.
 
-But is it stable? Notice the formula for the eigenvalues of the interior equilibrium in Table 10.1 , in terms of $a$, $b$, and $c$. It is simply [the quadratic formula](https://en.wikipedia.org/wiki/Quadratic_equation)! This is a clue that the eigenvalues are embedded in a quadratic equation, $ax^{2} + bx + c = 0$. And if you start a project to derive the formula for eigenvalues with pencil and paper, you will see that indeed they are. In any case, working it out more simply from the formula in the table, you should get $-0.123$ and $-0.977$. Both are negative, so by the rules of Box 10.1 the interior equilibrium for this set of parameters is stable.
+But is it stable? Notice the formula for the eigenvalues of the interior equilibrium in Table 10.1 , in terms of $a$, $b$, and $c$. It is simply [the quadratic formula](https://en.wikipedia.org/wiki/Quadratic_equation)! This is a clue that the eigenvalues are embedded in a quadratic equation, $ax^{2} + bx + c = 0$. And if you start a project to derive the formula for eigenvalues with pencil and paper, you will see that indeed they are. In any case, working it out more simply from the formula in the table, you should get $-0.123$ and $-0.977$. Both are negative, so by the rules of [Box 10.1](box10_1) the interior equilibrium for this set of parameters is stable.
 
-As anal note, the presence of the square root in the formula suggests that eigenvalues can have imaginary parts, if the square root covers a negative number. The rules of eigenvalues in Box 10.1 still apply in this case, but only to the real part of the eigenvalues. Suppose, for example, that the eigenvalues are $\frac{-1 \pm \sqrt{5}}{2} = -0.5 \pm 1.118i$. These would be stable because the real part, 􀀀0:5, is negative. But it turns out that because the imaginary part, $1.118i$, is not zero, the system would cycle around the equilibrium point, as predator-prey systems do.
+As a final note, the presence of the square root in the formula suggests that eigenvalues can have imaginary parts, if the square root covers a negative number. The rules of eigenvalues in [Box 10.1](box10_1) still apply in this case, but only to the real part of the eigenvalues. Suppose, for example, that the eigenvalues are $\frac{-1 \pm \sqrt{5}}{2} = -0.5 \pm 1.118i$. These would be stable because the real part, $-0.5$, is negative. But it turns out that because the imaginary part, $\pm 1.118i$, is not zero, the system would cycle around the equilibrium point, as predator-prey systems do.
 
 In closing this part of the discussion, we should point out that eigenvectors and eigenvalues have broad applications. They reveal, for instance, electron orbitals inside atoms (right), alignment of multiple variables in statistics, vibrational modes of piano strings, and rates of the spread of disease, and are used for a bounty of other applications. Asking how eigenvalues can be used is a bit like asking how the number seven can be used. Here, however, we simply employ them to evaluate the stability of equilibria.
