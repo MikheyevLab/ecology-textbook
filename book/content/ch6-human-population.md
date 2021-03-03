@@ -106,7 +106,7 @@ because it is the last row in the table.
 
 <a id='tab_6_1'></a>
 
-#### Table 6.1 in R
+**Table 6.1 Human population numbers for analysis.**
 
 ```{code-cell} r
 ---
@@ -133,113 +133,83 @@ humanPopulation_df <- humanPopulation %>%
 # Render as html table
 humanPopulation_df %>%
   kbl(col.names = c("t (years)", "N (billions)", "$\\Delta N$", "$\\Delta t$", "$\\frac{1}{N} \\frac{\\Delta N}{\\Delta t}$"), 
-    digits = c(0, 3, 3, 0, 4),
-    caption = "An example table caption.", position = t) %>% 
+    digits = c(0, 3, 3, 0, 4)) %>% 
   as.character() %>%
   display_html()
-
 ```
-
+## Biological-ecological graph 
 
 ```{code-cell} r
-:tags: ["hide_output"]
-pop_data <- rbind(
-c(1. ,1687,0.606, 0.189, 63, 0.0050),
-c(2. ,1750,0.795, 0.174, 50, 0.0044),
-c(3. ,1800,0.969, 0.296, 50, 0.0061),
-c(4. ,1850,1.265, 0.391, 50, 0.0062),
-c(5. ,1900,1.656, 0.204, 20, 0.0062),
-c(6. ,1920,1.860, 0.210, 10, 0.0113),
-c(7. ,1930,2.070, 0.230, 10, 0.0111),
-c(8. ,1940,2.300, 0.258, 10, 0.0112),
-c(9. ,1950,2.558, 0.224, 5, 0.0175),
-c(10., 1955, 2.782, 0.261, 5, 0.0188),
-c(11., 1960, 3.043, 0.307, 5, 0.0202),
-c(12., 1965, 3.350, 0.362, 5, 0.0216),
-c(13., 1970, 3.712, 0.377, 5, 0.0203),
-c(14., 1975, 4.089, 0.362, 5, 0.0177),
-c(15., 1980, 4.451, 0.405, 5, 0.0182),
-c(16., 1985, 4.856, 0.432, 5, 0.0178),
-c(17., 1990, 5.288, 0.412, 5, 0.0156),
-c(18., 1995, 5.700, 0.390, 5, 0.0137),
-c(19., 2000, 6.090, 0.384, 5, 0.0126),
-c(20., 2005, 6.474, 0.392, 5, 0.0121),
-c(21., 2010, 6.866, NA, NA, NA) )
-
-pop_data <- as.data.frame(pop_data)
-names(pop_data) <- c("Point", "Year_t", "N_billions", "delta_N", "delta_t", "1/N deltaN/deltat")
-```
-
-## 6.2 Biological-ecological graph 
-
-```{figure} ../img/fig_6_2.png
 ---
-name: figure-6_2
-alt: figure-6_2
-width: 600px
-align: center
+tags: [hide-input, remove-stdout, remove-stderr]
+<!-- render:
+  image:
+    width: 600px
+    alt: observed-human
+    classes: shadow bg-primary
+  figure:
+    caption: |
+      Fig 6.2 Observed human growth rate as a function of population density through the mid-1960s (blue dots), based on the data from Table 6.1, with a line representing the average trend (green).
+    name: observed-human -->
 ---
-Observed human growth rate as a function of population density through the mid-1960s (blue dots), based on the data from Table 6.1, with a line representing the average trend (green).
-```
 
-Figure [6.2](figure-6_2) plots the two green columns of Table 6.1 through
-line 12 - the mid-1960s - in blue dots, with a green line representing the average trend. A line like this can be drawn through the points in various ways the simplest with a ruler and pen drawing what looks right. This one was done using a statistical "regression" program, with $r$ the point at which
-the line intersects the vertical axis and $s$ the line's slope - 
-its Δy=Δx. The intrinsic growth rate $r$ for modern, global
-human population is apparently negative and the slope $s$ is
-unmistakably positive. See how Figure 6.2 can be generated with R and ggplot [](code_cell_fig_2).
+suppressWarnings(suppressMessages(library(ggplot2))) # hide annoying messages
 
-(code_cell_fig_2)=
-
-### Code to generate figure 6.2
-```{code-cell} r
-library(ggplot2)
-fig_6_2 <- ggplot(data = pop_data[1:13 ,], # subset rows 1:13 of the data.frame
-       aes(x = N_billions,                 # N_billions in the X-axis
-           y = `1/N deltaN/deltat`)) +     # 1/N deltaN/deltat in the Y-axis
-  geom_point(color='blue') +               # change colour of the points
-  theme_classic() +                        # set theme of the plot to classic
-  scale_x_continuous(name = expression(paste(italic("N,"), " population in billions")), # Name axis with italics text (using expression())
-                     breaks = seq(0, 12, by = 1),  # ticks by 1 
-                     limits = c(0, 12)) +          # limit x-axis from 0 to 12
+ggplot(data = humanPopulation_df[0:13,],
+                  aes(x = population, 
+                      y = rate)) +
+  geom_point(color='blue') +
+  theme_bw() +
+  theme(axis.title.y = element_text(angle = 0, vjust = 0.5, hjust=1)) +
+  scale_x_continuous(name = expression(paste(italic("N,"), " population in billions")),
+                     breaks = seq(0, 12),
+                     limits = c(0, 12)) +
   scale_y_continuous(name = expression(paste(frac(1, italic("N")), " ", frac(italic("dN"), italic("dt")))),
                      breaks = seq(0, .03, by = 0.01),
                      limits = c(0, 0.03)) +
-  geom_abline(slope = 0.00648, intercept = -0.001185 ) + # plot line with slope and intercept 
-  annotate("text", x = 1, y = 0.02, label = expression(italic("r") == -0.001185)) + # annotate value of r (sleope)
-  annotate("text", x = 0.9, y = 0.018, label = expression(italic("s") == 0.00648))  # annotate value of s (intercept)
+  geom_abline(slope = 0.00648, intercept = -0.001185, colour = "darkgreen") +
+  annotate("text", x = 1, y = 0.028, label = expression(italic("r") == -0.001185)) + 
+  annotate("text", x = 0.9, y = 0.026, label = expression(italic("s") == 0.00648)) +
+  # Arrow pointing at 1962
+  annotate("text", x = 0.5, y = 0.0216, label = "1962", color = "grey", hjust = - .1, fontface = "bold") + 
+  annotate("segment", x = 2.1, y = 0.0216, xend = 3.12, yend = 0.0216, color = "grey",
+           arrow = arrow(type = "closed", length = unit(0.02, "npc"))) +
+  # Arror pointing at 1687
+  annotate("text", x = 0.606, y = 0.002, label = "1687", color = "grey", hjust = - .1, fontface = "bold") + 
+  annotate("segment", x = 0.606, y = 0.002, xend = 0.606, yend = 0.0042, color = "grey",
+           arrow = arrow(type = "closed", length = unit(0.02, "npc"))) 
 
-fig_6_2
 ```
 
+Figure [6.2](observed-human) plots the two green columns of
+Table [6.1](#tab_6_1)  through line 12---the mid-1960s---in blue dots, with
+a green line representing the average trend. A line like this can be drawn
+through the points in various ways---the simplest with a ruler and pen drawing
+what looks right. This one was done using a statistical "regression"
+program, with $r$ the point at which the line intersects the vertical axis
+and $s$ the line's slope---its $\Delta y/\Delta x$. The intrinsic
+growth rate $r$ for modern, global human population is apparently negative
+and the slope $s$ is unmistakably positive.
 
-From the late 1600s to the mid 1960s, then, it's clear that
-the birth rate per family was increasing as the population increased. Greater population was enhancing the population's
-growth. Such growth is orthologistic, meaning that the human population has been heading for a singularity for many centuries. The singularity is not a modern phenomenon, and could conceivably have been known before the 20th century.
+From the late 1600s to the mid 1960s, then, it's clear that the birth rate per
+family was increasing as the population increased. Greater population was
+*enhancing* the population's growth. Such growth is orthologistic, meaning
+that the human population has been heading for a singularity for many centuries.
+The singularity is not a modern phenomenon, and could conceivably have been
+known before the 20th century.
 
-The negative value of $r$, if it is real, means there is a
-human Allee point. If the population were to drop below
-the level of the intersection with the horizontal axis - in this
-projection, around two hundred million people|the human
-growth rate would be negative and human populations would
-decline. The Allee point demonstrates our reliance on a
-modern society; it suggests that we couldn't survive with
-our modern systems at low population levels - although perhaps if we went back to hunter-gatherer lifestyles, this would
-change the growth curve. The Allee point thus indicates that
-there is a minimum human population we must sustain to
-avoid extinction. We depend on each other.
+The negative value of $r$, if it is real, means there is a human Allee
+point. If the population were to drop below the level of the intersection with
+the horizontal axis---in this projection, around two hundred million
+people---the human growth rate would be negative and human populations would
+decline. The Allee point demonstrates our reliance on a modern society; it
+suggests that we couldn't survive with our modern systems at low population
+levels---although perhaps if we went back to hunter--gatherer lifestyles, this
+would change the growth curve. The Allee point thus indicates that there is a
+minimum human population we must sustain to avoid extinction. We depend on each
+other.
 
 ## 6.3 A global transition
-
-```{figure} ../img/fig_6_3.png
----
-name: figure-6_3
-alt: figure-6_3
-width: 600px
-align: center
----
-Continuation of Figure 6.2 to the present day.
-```
 
 In Figure [6.3](figure-6_3) we add data from the mid-1960s to the present
 day. People living in the 1960s were completely unaware of
@@ -251,37 +221,79 @@ path.
 
 ### Code to generate figure 6.3
 Figure 6.3 includes the full data frame and additional best fit line. We can [modify the code for figure 2](code_cell_fig_2) as follow.
+
 ```{code-cell} r
-fig_6_3 <- ggplot(data = pop_data, # data frame not subset
-                  aes(x = N_billions, 
-                      y = `1/N deltaN/deltat`)) +
-  geom_point(color='blue') + theme_classic() +
+---
+tags: [hide-input, remove-stdout, remove-stderr]
+<!-- render:
+  image:
+    width: 600px
+    alt: continuation-of
+    classes: shadow bg-primary
+  figure:
+    caption: |
+      Fig 6.2 Continuation of Figure 6.2 to the present day.
+    name: continuation-of -->
+---
+worldPopulation <- read_csv("../data/WorldPopulationAnnual12000years_interpolated_HYDEandUNto2015.csv", skip = 1,
+                            col_names = c("year", "population"), col_types = "nn") %>% 
+  filter(year > 0)
+
+fig_6_3_df <- worldPopulation %>% 
+  filter(year %in% c(humanPopulation_df$year, 1915, 1940, 1960:2000)) %>% 
+  mutate(population = population/1000000000) %>% 
+    mutate(dN = c(diff(population), NA), dT = c(diff(year), NA), rate = 1 / population * dN / dT) 
+
+fig_6_3 <- ggplot(data = fig_6_3_df,
+       aes(x = population, 
+           y = rate)) +
+  geom_point(color='blue') +
+  geom_line() +
+  theme_classic() +
   scale_x_continuous(name = expression(paste(italic("N,"), " population in billions")),
                      breaks = seq(0, 12),
                      limits = c(0, 12)) +
   scale_y_continuous(name = expression(paste(frac(1, italic("N")), " ", frac(italic("dN"), italic("dt")))),
                      breaks = seq(0, .03, by = 0.01),
                      limits = c(0, 0.03)) +
-  geom_abline(slope = 0.00648, intercept = -0.001185 ) +
-  annotate("text", x = 1, y = 0.02, label = expression(italic("r") == -0.001185)) + 
-  annotate("text", x = 0.9, y = 0.018, label = expression(italic("s") == 0.00648)) +
-  geom_abline(slope = -0.00289, intercept = 0.03077, colour = "red" ) +             # the second down-slope best fit line
+  geom_abline(slope = 0.00648, intercept = -0.001185, colour = "darkgreen") +
   annotate("text", x = 6, y = 0.01, label = expression(italic("r") == 0.03077)) + 
-  annotate("text", x = 6, y = 0.007, label = expression(italic("s") == -0.00289))
+  annotate("text", x = 6, y = 0.007, label = expression(italic("s") == -0.00289)) +
+  annotate("text", x = 1, y = 0.028, label = expression(italic("r") == -0.001185)) + 
+  annotate("text", x = 0.9, y = 0.026, label = expression(italic("s") == 0.00648)) +
+  # Arrow pointing at 1962
+  annotate("text", x = 1.5, y = 0.0216, label = "1962", color = "grey", hjust = - .1, fontface = "bold") + 
+  annotate("segment", x = 2.1, y = 0.0216, xend = 3.12, yend = 0.0216, color = "grey",
+           arrow = arrow(type = "closed", length = unit(0.02, "npc"))) +
+  # Arror pointing at 1687
+  annotate("text", x = 0.606, y = 0.002, label = "1687", color = "grey", hjust = - .1, fontface = "bold") + 
+  annotate("segment", x = 0.606, y = 0.002, xend = 0.606, yend = 0.0042, color = "grey",
+           arrow = arrow(type = "closed", length = unit(0.02, "npc"))) +
+  # arrows at different year
+  annotate("text", x = 1.8, y = 0.005, label = "1915", color = "grey", hjust = - .1, fontface = "bold") +
+  annotate("segment", x = 1.8, y = 0.005, xend = 1.8, yend = 0.0065, color = "grey",
+           arrow = arrow(type = "closed", length = unit(0.02, "npc"))) +
+  annotate("text", x = 2.3, y = 0.0095, label = "1940", color = "grey", hjust = - .1, fontface = "bold") +
+  annotate("text", x = 3.02, y = 0.015, label = "1960", color = "grey", hjust = - .1, fontface = "bold") +
+  annotate("segment", x = 3.02, y = 0.015, xend = 3.02, yend = 0.0188, color = "grey",
+           arrow = arrow(type = "closed", length = unit(0.02, "npc"))) +
+  # Arrow down
+  geom_segment(aes(x = 3.350, y = 0.0216, xend = 8, yend = (0.03077 + 8 * -0.00289)), linetype=1, arrow=arrow(length=unit(0.4,"cm"))) + 
+  geom_segment(aes(x = 3.350, y = 0.0216, xend = 10.57, yend = 0),linetype=2)
 
 fig_6_3
+
 ```
 
-
-Where the downward-sloping line crosses the horizontal
-axis is where population growth would cease. From this simple $r$ + $sN$ model, it appears that world's population will
-stabilize between 10 and 12 billion. That is in line with other
+Where the downward-sloping line crosses the horizontal axis is where population
+growth would cease. From this simple $r+sN$ model, it appears that world's
+population will stabilize between 10 and 12 billion. That is in line with other
 recently published projections.
 
-Prior to the 1960s there were dips in the increasing growth,
-with World Wars I and II levelling the rate of increase worldwide, though population continued to grow rapidly. The rate 
-also fell in 1960, corresponding to extreme social disruptions
-in China.
+Prior to the 1960s there were dips in the increasing growth, with World Wars I
+and II levelling the rate of increase worldwide, though population continued to
+grow rapidly. The rate also fell in 1960, corresponding to extreme social
+disruptions in China.
 
 What caused this great demographic transition, averaged
 over the globe? The ["Four Horsemen"](https://www.dictionary.com/browse/four--horsemen) (conquest, war, famine, and plague) commonly expected
@@ -290,6 +302,53 @@ many regions birth control, became more available. Education slowed reproduction
 Modern medicine raised survival rates, making large families unnecessary. The space program looked back at Earth and projected a fragile dot suspended in the black of space, viewed by billions. China's one-child policy had a noticeable
 effect. However, so did HIV, one of the few Horsemen that
 has made a noticeable comeback.
+
+```{code-cell} r 
+---
+tags: [hide-input, remove-stdout, remove-stderr]
+<!-- render:
+  image:
+    width: 600px
+    alt: continuation-of
+    classes: shadow bg-primary
+  figure:
+    caption: |
+      Fig 6.2 Continuation of Figure 6.2 to the present day.
+    name: continuation-of -->
+---
+#Data from https://ourworldindata.org/fertility-rate
+owid_birth_income <- read_csv("..data/children-per-woman-fertility-rate-vs-level-of-prosperity.csv")
+
+owid_birth_income %>% distinct(country) %>% View()
+
+birth_income_data <- read_csv("data/ch6_fecundity_by_income.csv", 
+                              col_types = "nn") 
+
+names(owid_birth_income) <- c("country", "code", "year", "total_population", "continent", "fertility", "gdp")
+
+
+representative_countries <- c("Switzerland", "Netherlands", "Sweden","France", "Germany",
+                              "Australia", "New Zealand", "United States",
+                              "China", "Vietnam", "Thailand", "India",
+                              "South Africa", "Nigeria", "Cameroon", "Mauritius"
+                              )
+
+
+fig_6_4 <- owid_birth_income %>% 
+  filter(!is.na(fertility),
+         !is.na(gdp),
+         country %in% representative_countries) %>% 
+  ggplot(data = . ,
+         aes(x = gdp, y = fertility, colour = country)) +
+  geom_point() +
+  geom_line() +
+  theme_bw()
+
+
+fig_6_4
+
+
+```
 
 ```{figure} ../img/fig_6_4.png
 ---
@@ -301,17 +360,19 @@ align: center
 Human fecundity as a function of national per capita
 income.
 ```
+Plants and other animals have logistic growth forced upon them because of
+overcrowding. In humans, however, logistic growth has been largely voluntary.
+And there could be further developments in a lifetime. In many nations, birth
+rates are presently below replacement rates. In fact, in all nations with a
+gross national income above 16K dollars per person, the birth rate is at or
+below the replacement rate of 2.1 lifetime births per female (Figure [6.4](figure_6-4)).
 
-Plants and other animals have logistic growth forced upon
-them because of overcrowding. In humans, however, logistic
-growth has been largely voluntary. And there could be further developments in a lifetime. In many nations, birth rates are presently below replacement rates. In fact, in all nations with a gross national income above 16K dollars per person, the birth rate is at or below the replacement rate of 2.1 life-time births per female (Figure [6.4](figure_6-4)).
+This change in demographic rates could conceivably allow present and future
+generations to voluntarily adjust the population to whatever is desired. The new
+question just may be: what is the minimum world population we dare have?
 
-This change in demographic rates could conceivably allow
-present and future generations to voluntarily adjust the population to whatever is desired. The new question just may be: what is the minimum world population we dare have?
-
-Returning to your supervisor's questions, you can now
-tell her that, in 2100, the world's population will be between
-10 and 12 billion. And you can say "The other population
-projections are not far off. They are slightly different from
-what we calculate using this method. But they use very
-complicated methods so you have to cut them a little slack!"
+Returning to your supervisor's questions, you can now tell her that, in 2100,
+the world's population will be between 10 and 12 billion. And you can say
+"The other population projections are not far off. They are slightly different
+from what we calculate using this method. But they use very complicated methods
+so you have to cut them a little slack!"
