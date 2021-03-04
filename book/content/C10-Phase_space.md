@@ -122,40 +122,33 @@ By expending some effort and attention you can work the eigenvalues out mathemat
 ```
 #TO BE FIXED: Table here#
 
-```{code-cell} r
+```{code-block} r
 ---
-tags: ["hide-stdout","hide-stderr"]
-render:
-	image:
-		width: 0px
-		alt: program10_1
-		classes: shadow bg-primary
-	figure:
-		caption: |
-		**Program 10.1** The code equivalent to Table 10.1, for use in computer programs. `Sqrt(w)` is a specially written function that returns 0 if w is negative (returns the real part of the complex number $0 + ]sqrt{w}i$).
-	name: program10_1
+name: program10_1
+caption: |
+    **Program 10.1** The code equivalent to Table 10.1, for use in computer programs. `Sqrt(w)` is a specially written function that returns 0 if $w$ is negative (returns the real part of the complex number $0 + \sqrt{w}i$).
 ---
 
 p = r1*s22 -r2*s12;             # Compute useful sub-formulae
-q = r2*s11 -r1*s21;             
-a = s12*s21 -s11*s22;           
-b = r1*s22*(s21-s11)            
-   +r2*s11*(s12)-s22);          
-c = -p*q;                       
+q = r2*s11 -r1*s21;
+a = s12*s21 -s11*s22;
+b = r1*s22*(s21-s11)
+   +r2*s11*(s12)-s22);
+c = -p*q;
                                 # Compute the equilibria
 x00=0;       y00=0;             # (at the origin)
 x10=-r1/s11; y10=0;             # (on the x-axis)
 x01=0;       y01=-r2/s22;       # (on the y-axis)
 x11=p/a;     y11=q/a;           # (at the interior)
-                                
+
 v00= r1; w00=r2;                # Compute the corresponding
 v1-=-r1; w10=q/s11;             # four pairs of eigenvalues
 v01=-r2; w01=p/s22;             # (real part only).
-v11=(-b-Sqrt(b^2-4*a*c))/(2*a); 
-w11=(-b+Sqrt(b^2-4*a*c))/(2*a); 
+v11=(-b-Sqrt(b^2-4*a*c))/(2*a);
+w11=(-b+Sqrt(b^2-4*a*c))/(2*a);
 ```
 
-The formulae in Table 10.1 work for any two-species RSN model&mdash;that is, any model of the form $\frac{1}{N_{i}}\frac{dN_{i}}{dt} = r{i} + s{i,i}Ni + s_{i,j}N_{j}$ with constant coefficients&mdash;but formulae for other models must be derived separately, from a software package, or following methods for ["Jacobian matrices"](https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant).
+The formulae in Table 10.1 work for any two-species $RSN$ model&mdash;that is, any model of the form $\frac{1}{N_{i}}\frac{dN_{i}}{dt} = r{i} + s{i,i}Ni + s_{i,j}N_{j}$ with constant coefficients&mdash;but formulae for other models must be derived separately, from a software package, or following methods for ["Jacobian matrices"](https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant).
 
 ## 10.3 A phase space example
 

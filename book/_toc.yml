@@ -13,6 +13,11 @@
   chapters:
     - file: content/basic_population_model
     - file: content/modeling_single_population
-    - file: content/differential_and_difference_forms
+    - file: content/C05-Differential_and_difference_forms
     - file: content/ch6-human-population
     - file: content/test
+
+- part: Multiple populations
+  chapters:
+    - file: content/C10-Phase_space
+    - file: content/C11-State_space
