@@ -309,43 +309,66 @@ tags: [hide-input, remove-stdout, remove-stderr]
 <!-- render:
   image:
     width: 600px
-    alt: continuation-of
+    alt: figure_6-4
     classes: shadow bg-primary
   figure:
     caption: |
-      Fig 6.2 Continuation of Figure 6.2 to the present day.
-    name: continuation-of -->
+      Fig 6.4 Human fecundity as a function of national per capita income. Red line shows overall trend. Data from World Bank, United Nations, Gapminder, and other contributors.
+    name: figure_6-4 -->
 ---
-#Data from https://ourworldindata.org/fertility-rate
-owid_birth_income <- read_csv("../data/children-per-woman-fertility-rate-vs-level-of-prosperity.csv")
 
-# rename column
-names(owid_birth_income) <- c("country", "code", "year", "total_population", "continent", "fertility", "gdp")
+# Data on fertility, income, population from World Bank, UN, Gapminder.org, and more
+income_fertility_df <- read_csv("../data/ch6_income_fertility_worldbank_data.csv")
 
-# Representative countries from Our World in Data data set
-representative_countries <- c("United Kingdom", "France", "Germany", "Russia",
-                              "Australia", "New Zealand", "United States",
-                              "China", "Vietnam", "Thailand", "India",
-                              "South Africa", "Nigeria", "Cameroon", "Mauritius"
-                              )
+## A few countries to represent different continents
+representative_countries <- c("United Kingdom","France", "Germany", "Russia",
+                              "Australia", "New Zealand", "Papua New Guinea", "Tonga",
+                              # "United States", "Mexico", "Canada", "Jamaica",
+                              "China", "Vietnam", "India", "Thailand",
+                              "South Africa", "Nigeria", "Cameroon", "Sudan")
 
-# Plot
-fig_6_4 <-  owid_birth_income %>% 
-  filter(!is.na(fertility),
-         !is.na(gdp),
-         country %in% representative_countries) %>% 
-  ggplot(data = . ,
-         aes(x = gdp / 1000, # specify by thousands US dollar
-             y = fertility, 
-             colour = country)) +
-  geom_point(size = 1) + geom_line() +
+# Filter data with just representative countries and from 1950 onwards
+income_fer_df <- income_fertility_df %>% 
+  mutate(country = factor(country),
+         year = as.numeric(year),
+         adjusted_gdp = adjusted_gdp/1000) %>% 
+  filter(year %in% 1950:2010)
+
+income_fer_df_rep <- income_fertility_df %>% 
+   filter(country %in% representative_countries)
+
+
+representative_countries <- c("United Kingdom","France", "Germany", "Russia",
+                              "Australia", "New Zealand", "Papua New Guinea", "Tonga",
+                              # "United States", "Mexico", "Canada", "Jamaica",
+                              "China", "Vietnam", "India", "Thailand",
+                              "South Africa", "Nigeria", "Cameroon", "Sudan")
+
+# Best fit line
+fit_data <- read_csv("../data/ch6_fecundity_by_income.csv")
+
+ggplot() +
+  geom_point(data = income_fer_df, aes(x = adjusted_gdp, y = fertility, size = population, colour = Continent), alpha=0.7) +
+  scale_size(range = c(1, 5), name = "Population (M)") +
   theme_bw() +
-  scale_x_continuous(name = "Gross National Income, Thousands Per Capita", 
-                     breaks = seq(0, 50, by = 10),
+  scale_x_continuous(breaks = seq(0, 50, by = 5),
                      limits = c(0, 50)) +
-  scale_y_continuous(name = "Lifetime Births per Female")
+  theme(legend.position="bottom") +
+  ylab("Lifetime Births per Female") +
+  xlab("Gross domestic product, thousands per capita") +
+  geom_line(data = fit_data, aes(x = gni, y = life_births), colour = "red", size = 2)
 
-fig_6_4
+
+# Representative countries 
+ggplot() +
+  geom_point(data = income_fer_df_rep, aes(x = adjusted_gdp, y = fertility, size = population, colour = country), alpha=0.7) +
+  scale_size(range = c(1, 10), name = "Population (M)") +
+  theme_bw() +
+  theme(legend.position="none") +
+  ylab("Lifetime Births per Female") +
+  xlab("Gross domestic product, thousands per capita") +
+  facet_wrap(~ Continent + country) 
+
 ```
 
 Plants and other animals have logistic growth forced upon them because of
@@ -353,7 +376,18 @@ overcrowding. In humans, however, logistic growth has been largely voluntary.
 And there could be further developments in a lifetime. In many nations, birth
 rates are presently below replacement rates. In fact, in all nations with a
 gross national income above 16K dollars per person, the birth rate is at or
-below the replacement rate of 2.1 lifetime births per female (Figure [6.4](figure_6-4)).
+below the replacement rate of 2.1 lifetime births per female (Figure [6.4](figure_6-4)). 
+You can see how this transition happened over time here.
+
+```{figure} ../img/fig6_4.gif
+---
+name: fig6_4_ani
+alt: fig6_4_ani
+width: 600px
+align: center
+---
+Data from figure 6.4 shown through time. 
+```
 
 This change in demographic rates could conceivably allow present and future
 generations to voluntarily adjust the population to whatever is desired. The new
@@ -364,3 +398,13 @@ the world's population will be between 10 and 12 billion. And you can say
 "The other population projections are not far off. They are slightly different
 from what we calculate using this method. But they use very complicated methods
 so you have to cut them a little slack!"
+
+```{figure} ../img/web/EarthriseC4.jpg
+---
+name: fig6_5
+alt: fig6_5
+width: 600px
+align: center
+---
+Earth over Moon, touching the conscience of a world.
+```
