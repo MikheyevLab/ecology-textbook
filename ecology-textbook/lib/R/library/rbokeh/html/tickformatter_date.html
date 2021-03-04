@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: A tick formatter for displaying datetime values nicely across...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for tickformatter_date {rbokeh}"><tr><td>tickformatter_date {rbokeh}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>A tick formatter for displaying datetime values nicely across a range of scales.</h2>
+
+<h3>Description</h3>
+
+<p>A tick formatter for displaying datetime values nicely across a range of scales.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+tickformatter_date(years = c("%Y"), months = c("%m/%Y", "%b%y"),
+  days = c("%m/%d", "%a%d"), hours = c("%Hh", "%H:%M"),
+  hourmin = c("%H:%M"), minutes = c(":%M", "%Mm"),
+  minsec = c(":%M:%S"), seconds = c("%Ss"), milliseconds = c("%3Nms",
+  "%S.%3Ns"), microseconds = c("%fus"), clear = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>years</code></td>
+<td>
+<p>Formats for displaying datetime values in the &quot;years&quot; range. See details.</p>
+</td></tr>
+<tr valign="top"><td><code>months</code></td>
+<td>
+<p>Formats for displaying datetime values in the &quot;months&quot; range. See details.</p>
+</td></tr>
+<tr valign="top"><td><code>days</code></td>
+<td>
+<p>Formats for displaying datetime values in the &quot;days&quot; range. See details.</p>
+</td></tr>
+<tr valign="top"><td><code>hours</code></td>
+<td>
+<p>Formats for displaying datetime values in the &quot;hours&quot; range. See details.</p>
+</td></tr>
+<tr valign="top"><td><code>hourmin</code></td>
+<td>
+<p>Formats for displaying datetime values in the &quot;hourmin&quot; (for combined hours and  minutes) range. See details.</p>
+</td></tr>
+<tr valign="top"><td><code>minutes</code></td>
+<td>
+<p>Formats for displaying datetime values in the &quot;minutes&quot; range. See details.</p>
+</td></tr>
+<tr valign="top"><td><code>minsec</code></td>
+<td>
+<p>Formats for displaying datetime values in the &quot;minsec&quot; (for combined minutes and  seconds) range. See details.</p>
+</td></tr>
+<tr valign="top"><td><code>seconds</code></td>
+<td>
+<p>Formats for displaying datetime values in the &quot;seconds&quot; range. See details.</p>
+</td></tr>
+<tr valign="top"><td><code>milliseconds</code></td>
+<td>
+<p>Formats for displaying datetime values in the &quot;milliseconds&quot; range. See details.</p>
+</td></tr>
+<tr valign="top"><td><code>microseconds</code></td>
+<td>
+<p>Formats for displaying datetime values in the &quot;microseconds&quot; range. See details.</p>
+</td></tr>
+<tr valign="top"><td><code>clear</code></td>
+<td>
+<p>A logical indicating whether all non-specified parameters should be cleared out of any exising specification in the figure. This can be useful when modifying a previously-defined figure.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>This tick formatter has the following properties (listed together with their default values) that can be used to control the formatting of axis ticks at different scales scales:
+</p>
+
+<ul>
+<li><p> microseconds &mdash; <code>['%fus']</code>
+</p>
+</li>
+<li><p> milliseconds &mdash; <code>['%3Nms', '%S.%3Ns']</code>
+</p>
+</li>
+<li><p> seconds &mdash; <code>['%Ss']</code>
+</p>
+</li>
+<li><p> minsec &mdash; <code>[':%M:%S']</code>
+</p>
+</li>
+<li><p> minutes &mdash; <code>[':%M', '%Mm']</code>
+</p>
+</li>
+<li><p> hourmin &mdash; <code>['%H:%M']</code>
+</p>
+</li>
+<li><p> hours &mdash; <code>['%Hh', '%H:%M']</code>
+</p>
+</li>
+<li><p> days &mdash; <code>['%m/%d', '%a%d']</code>
+</p>
+</li>
+<li><p> months &mdash; <code>['%m/%Y', '%b%y']</code>
+</p>
+</li>
+<li><p> years &mdash; <code>['%Y']</code>
+</p>
+</li></ul>
+
+<p>Each scale property can be set to format or list of formats to use for formatting datetime tick values that fall in that &quot;time scale&quot;. By default, only the first format string passed for each time scale will be used. By default, all leading zeros are stripped away from the formatted labels.
+</p>
+<p>This list of supported <a href="http://man7.org/linux/man-pages/man3/strftime.3.html">strftime</a> formats is reproduced below.
+</p>
+
+<ul>
+<li> <p><code>%a</code> &mdash; The abbreviated name of the day of the week according to the current locale.
+</p>
+</li>
+<li> <p><code>%A</code> &mdash; The full name of the day of the week according to the current locale.
+</p>
+</li>
+<li> <p><code>%b</code> &mdash; The abbreviated month name according to the current locale.
+</p>
+</li>
+<li> <p><code>%B</code> &mdash; The full month name according to the current locale.
+</p>
+</li>
+<li> <p><code>%c</code> &mdash; The preferred date and time representation for the current locale.
+</p>
+</li>
+<li> <p><code>%C</code> &mdash; The century number (year/100) as a 2-digit integer.
+</p>
+</li>
+<li> <p><code>%d</code> &mdash; The day of the month as a decimal number (range 01 to 31).
+</p>
+</li>
+<li> <p><code>%D</code> &mdash; Equivalent to %m/%d/%y.  (Americans should note that in many other countries %d/%m/%y is rather common. This means that in international context this format is ambiguous and should not be used.)
+</p>
+</li>
+<li> <p><code>%e</code> &mdash; Like %d, the day of the month as a decimal number, but a leading zero is replaced by a space.
+</p>
+</li>
+<li> <p><code>%f</code> &mdash; Microsecond as a decimal number, zero-padded on the left (range 000000-999999). This is an extension to the set of directives available to 'timezone'_.
+</p>
+</li>
+<li> <p><code>%F</code> &mdash; Equivalent to %Y-%m-%d (the ISO 8601 date format).
+</p>
+</li>
+<li> <p><code>%G</code> &mdash; The ISO 8601 week-based year with century as a decimal number. The 4-digit year corresponding to the ISO week number (see %V). This has the same format and value as %Y, except that if the ISO week number belongs to the previous or next year, that year is used instead.
+</p>
+</li>
+<li> <p><code>%g</code> &mdash; Like %G, but without century, that is, with a 2-digit year (00-99).
+</p>
+</li>
+<li> <p><code>%h</code> &mdash; Equivalent to %b.
+</p>
+</li>
+<li> <p><code>%H</code> &mdash; The hour as a decimal number using a 24-hour clock (range 00 to 23).
+</p>
+</li>
+<li> <p><code>%I</code> &mdash; The hour as a decimal number using a 12-hour clock (range 01 to 12).
+</p>
+</li>
+<li> <p><code>%j</code> &mdash; The day of the year as a decimal number (range 001 to 366).
+</p>
+</li>
+<li> <p><code>%k</code> &mdash; The hour (24-hour clock) as a decimal number (range 0 to 23). Single digits are preceded by a blank.  (See also %H.)
+</p>
+</li>
+<li> <p><code>%l</code> &mdash; The hour (12-hour clock) as a decimal number (range 1 to 12). Single digits are preceded by a blank.  (See also %I.)  (TZ)
+</p>
+</li>
+<li> <p><code>%m</code> &mdash; The month as a decimal number (range 01 to 12).
+</p>
+</li>
+<li> <p><code>%M</code> &mdash; The minute as a decimal number (range 00 to 59).
+</p>
+</li>
+<li> <p><code>%n</code> &mdash; A newline character. Bokeh text does not currently support newline characters.
+</p>
+</li>
+<li> <p><code>%N</code> &mdash; Nanosecond as a decimal number, zero-padded on the left (range 000000000-999999999). Supports a padding width specifier, i.e. %3N displays 3 leftmost digits. However, this is only accurate to the millisecond level of precision due to limitations of 'timezone'_.
+</p>
+</li>
+<li> <p><code>%p</code> &mdash; Either &quot;AM&quot; or &quot;PM&quot; according to the given time value, or the corresponding strings for the current locale.  Noon is treated as &quot;PM&quot; and midnight as &quot;AM&quot;.
+</p>
+</li>
+<li> <p><code>%P</code> &mdash; Like %p but in lowercase: &quot;am&quot; or &quot;pm&quot; or a corresponding string for the current locale.
+</p>
+</li>
+<li> <p><code>%r</code> &mdash; The time in a.m. or p.m. notation.  In the POSIX locale this is equivalent to %I:%M:%S %p.
+</p>
+</li>
+<li> <p><code>%R</code> &mdash; The time in 24-hour notation (%H:%M). For a version including the seconds, see %T below.
+</p>
+</li>
+<li> <p><code>%s</code> &mdash; The number of seconds since the Epoch, 1970-01-01 00:00:00 +0000 (UTC).
+</p>
+</li>
+<li> <p><code>%S</code> &mdash; The second as a decimal number (range 00 to 60).  (The range is up to 60 to allow for occasional leap seconds.)
+</p>
+</li>
+<li> <p><code>%t</code> &mdash; A tab character. Bokeh text does not currently support tab characters.
+</p>
+</li>
+<li> <p><code>%T</code> &mdash; The time in 24-hour notation (%H:%M:%S).
+</p>
+</li>
+<li> <p><code>%u</code> &mdash; The day of the week as a decimal, range 1 to 7, Monday being 1. See also %w.
+</p>
+</li>
+<li> <p><code>%U</code> &mdash; The week number of the current year as a decimal number, range 00 to 53, starting with the first Sunday as the first day of week 01.  See also %V and %W.
+</p>
+</li>
+<li> <p><code>%V</code> &mdash; The ISO 8601 week number (see NOTES) of the current year as a decimal number, range 01 to 53, where week 1 is the first week that has at least 4 days in the new year.  See also %U and %W.
+</p>
+</li>
+<li> <p><code>%w</code> &mdash; The day of the week as a decimal, range 0 to 6, Sunday being 0. See also %u.
+</p>
+</li>
+<li> <p><code>%W</code> &mdash; The week number of the current year as a decimal number, range 00 to 53, starting with the first Monday as the first day of week 01.
+</p>
+</li>
+<li> <p><code>%x</code> &mdash; The preferred date representation for the current locale without the time.
+</p>
+</li>
+<li> <p><code>%X</code> &mdash; The preferred time representation for the current locale without the date.
+</p>
+</li>
+<li> <p><code>%y</code> &mdash; The year as a decimal number without a century (range 00 to 99).
+</p>
+</li>
+<li> <p><code>%Y</code> &mdash; The year as a decimal number including the century.
+</p>
+</li>
+<li> <p><code>%z</code> &mdash; The +hhmm or -hhmm numeric timezone (that is, the hour and minute offset from UTC).
+</p>
+</li>
+<li> <p><code>%Z</code> &mdash; The timezone name or abbreviation.
+</p>
+</li>
+<li> <p><code>%%</code> &mdash; A literal '%' character.
+</p>
+</li></ul>
+
+
+
+<h3>Value</h3>
+
+<p>A specification that is used as the <code>tickformatter</code> argument for <code><a href="axis.html">x_axis</a></code> or <code><a href="axis.html">y_axis</a></code>.
+</p>
+
+
+<h3>Note</h3>
+
+<p>The client library BokehJS uses the <a href="http://bigeasy.github.io/timezone/">timezone</a> library to format datetimes. The inclusion of the list below is based on the claim that timezone makes to support &quot;the full compliment of GNU date format specifiers.&quot; However, this claim has not been tested exhaustively against this list. If you find formats that do not function as expected, please submit a <a href="https://github.com/bokeh/bokeh/issues">github issue</a>, so that the documentation can be updated appropriately.
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>rbokeh</em> version 0.6.3 <a href="00Index.html">Index</a>]</div>
+</body></html>

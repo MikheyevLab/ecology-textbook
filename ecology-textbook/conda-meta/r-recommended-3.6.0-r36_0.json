@@ -1,0 +1,51 @@
+{
+  "build": "r36_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/r/osx-64",
+  "constrains": [],
+  "depends": [
+    "r-base >=3.6,<3.7.0a0",
+    "r-boot",
+    "r-class",
+    "r-cluster",
+    "r-codetools",
+    "r-foreign",
+    "r-kernsmooth",
+    "r-lattice",
+    "r-mass",
+    "r-matrix",
+    "r-mgcv",
+    "r-nlme",
+    "r-nnet",
+    "r-rpart",
+    "r-spatial",
+    "r-survival",
+    "_r-mutex 1.* anacondar_1"
+  ],
+  "extracted_package_dir": "/Users/oliverstuart/miniconda2/pkgs/r-recommended-3.6.0-r36_0",
+  "features": "",
+  "files": [],
+  "fn": "r-recommended-3.6.0-r36_0.conda",
+  "legacy_bz2_md5": "bd38ea7fb85817124a5353f14a04772a",
+  "legacy_bz2_size": 2977,
+  "license": "GPL-3.0",
+  "link": {
+    "source": "/Users/oliverstuart/miniconda2/pkgs/r-recommended-3.6.0-r36_0",
+    "type": 1
+  },
+  "md5": "325b2db35fe8763adff382828763b6b5",
+  "name": "r-recommended",
+  "package_tarball_full_path": "/Users/oliverstuart/miniconda2/pkgs/r-recommended-3.6.0-r36_0.conda",
+  "paths_data": {
+    "paths": [],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "614f82d851168e2c78c81dbde9e9c9046daeb6695e7d8f77433da107309a45c4",
+  "size": 3320,
+  "subdir": "osx-64",
+  "timestamp": 1557967494618,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/r/osx-64/r-recommended-3.6.0-r36_0.conda",
+  "version": "3.6.0"
+}

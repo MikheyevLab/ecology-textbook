@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Display a specific image output</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for display_&amp;lt;image&amp;gt; {IRdisplay}"><tr><td>display_&lt;image&gt; {IRdisplay}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Display a specific image output</h2>
+
+<h3>Description</h3>
+
+<p>Either <code>data</code> or <code>file</code> must be passed.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+display_png(data = NULL, file = NULL, width = NULL, height = NULL)
+
+display_jpeg(data = NULL, file = NULL, width = NULL, height = NULL)
+
+display_pdf(data = NULL, file = NULL, width = NULL, height = NULL)
+
+display_svg(data = NULL, file = NULL, width = NULL, height = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>The data as a <code><a href="../../base/html/raw.html">raw</a></code> vector (<code><a href="../../base/html/character.html">character</a></code> vector for <code>display_svg</code>)</p>
+</td></tr>
+<tr valign="top"><td><code>file</code></td>
+<td>
+<p>The path to a file or a <code><a href="../../base/html/connection.html">connection</a></code> containing the content</p>
+</td></tr>
+<tr valign="top"><td><code>width</code></td>
+<td>
+<p>The width to display the image</p>
+</td></tr>
+<tr valign="top"><td><code>height</code></td>
+<td>
+<p>The height to display the image</p>
+</td></tr>
+</table>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="display_-less-than-text-greater-than.html">display_&lt;text&gt;</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: ## (Run inside of an IRkernel)
+display_png(file = 'image.png')
+display_svg('
+&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 2 2"&gt;
+  &lt;circle r="1"/&gt;
+&lt;/svg&gt;
+')
+display_jpeg(file = url('https://dummyimage.com/600x400.jpg', 'wb'), width = 100)
+## End(Not run)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>IRdisplay</em> version 0.7.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

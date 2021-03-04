@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: &quot;Periodic Table&quot; dataset</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for elements {rbokeh}"><tr><td>elements {rbokeh}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>&quot;Periodic Table&quot; dataset</h2>
+
+<h3>Description</h3>
+
+<p>Data for periodic table of the elements
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+elements
+</pre>
+
+
+<h3>Examples</h3>
+
+<pre>
+figure(title = "Periodic Table", data = elements,
+  xgrid = FALSE, ygrid = FALSE, xlab = "", ylab = "",
+  xlim = as.character(1:18), ylim = c("   ", "  ", " ", as.character(7:1)),
+  height = 700, width = 1200) %&gt;%
+  ly_crect(cat_offset(group, group_offset), period, 0.9, 0.9,
+    color = group_block, fill_alpha = 0.6, legend = FALSE,
+    hover = list(name, atomic_number, group_block, atomic_mass,
+      electronic_configuration)) %&gt;%
+  ly_text(cat_offset(group, sym_offset), period, text = symbol,
+    font_style = "bold", font_size = "15pt",
+    align = "left", baseline = "middle") %&gt;%
+  ly_text(cat_offset(group, sym_offset), cat_offset(period, 0.3), text = atomic_number_p,
+    font_size = "9pt", align = "left", baseline = "middle") %&gt;%
+  ly_text(cat_offset(group, sym_offset), cat_offset(period, -0.2), text = name,
+    font_size = "6pt", align = "left", baseline = "middle") %&gt;%
+  ly_text(cat_offset(group, sym_offset), cat_offset(period, -0.35), text = atomic_mass,
+    font_size = "6pt", align = "left", baseline = "middle") %&gt;%
+  x_axis(axis = axis_spec(visible = FALSE)) %&gt;%
+  y_axis(axis = axis_spec(visible = FALSE))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rbokeh</em> version 0.6.3 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Generate ticks at fixed, explicitly supplied locations.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ticker_fixed {rbokeh}"><tr><td>ticker_fixed {rbokeh}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Generate ticks at fixed, explicitly supplied locations.</h2>
+
+<h3>Description</h3>
+
+<p>Generate ticks at fixed, explicitly supplied locations.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+ticker_fixed(ticks = NULL, num_minor_ticks = 5, clear = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>ticks</code></td>
+<td>
+<p>List of tick locations.</p>
+</td></tr>
+<tr valign="top"><td><code>num_minor_ticks</code></td>
+<td>
+<p>The number of minor tick positions to generate between adjacent major tick values.</p>
+</td></tr>
+<tr valign="top"><td><code>clear</code></td>
+<td>
+<p>A logical indicating whether all non-specified parameters should be cleared out of any exising specification in the figure. This can be useful when modifying a previously-defined figure.</p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+figure() %&gt;%
+  ly_points(1:10) %&gt;%
+  x_axis(ticker = ticker_fixed(c(1, 7, 9)))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rbokeh</em> version 0.6.3 <a href="00Index.html">Index</a>]</div>
+</body></html>

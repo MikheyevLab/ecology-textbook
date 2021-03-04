@@ -1,0 +1,207 @@
+{
+  "build": "h47ead80_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/osx-64",
+  "constrains": [],
+  "depends": [
+    "clang 10.0.0.*",
+    "clangxx 10.0.0.*",
+    "compiler-rt_osx-64 10.0.0.*"
+  ],
+  "extracted_package_dir": "/Users/oliverstuart/miniconda2/pkgs/compiler-rt-10.0.0-h47ead80_0",
+  "features": "",
+  "files": [
+    "lib/clang/10.0.0/include/fuzzer/FuzzedDataProvider.h",
+    "lib/clang/10.0.0/include/profile/InstrProfData.inc",
+    "lib/clang/10.0.0/include/sanitizer/allocator_interface.h",
+    "lib/clang/10.0.0/include/sanitizer/asan_interface.h",
+    "lib/clang/10.0.0/include/sanitizer/common_interface_defs.h",
+    "lib/clang/10.0.0/include/sanitizer/coverage_interface.h",
+    "lib/clang/10.0.0/include/sanitizer/dfsan_interface.h",
+    "lib/clang/10.0.0/include/sanitizer/hwasan_interface.h",
+    "lib/clang/10.0.0/include/sanitizer/linux_syscall_hooks.h",
+    "lib/clang/10.0.0/include/sanitizer/lsan_interface.h",
+    "lib/clang/10.0.0/include/sanitizer/msan_interface.h",
+    "lib/clang/10.0.0/include/sanitizer/netbsd_syscall_hooks.h",
+    "lib/clang/10.0.0/include/sanitizer/scudo_interface.h",
+    "lib/clang/10.0.0/include/sanitizer/tsan_interface.h",
+    "lib/clang/10.0.0/include/sanitizer/tsan_interface_atomic.h",
+    "lib/clang/10.0.0/include/sanitizer/ubsan_interface.h",
+    "lib/clang/10.0.0/include/xray/xray_interface.h",
+    "lib/clang/10.0.0/include/xray/xray_log_interface.h",
+    "lib/clang/10.0.0/include/xray/xray_records.h",
+    "lib/clang/10.0.0/share/asan_blacklist.txt",
+    "lib/clang/10.0.0/share/cfi_blacklist.txt"
+  ],
+  "fn": "compiler-rt-10.0.0-h47ead80_0.conda",
+  "legacy_bz2_md5": "60f41a4d6e4d8a6a445568be96b2df05",
+  "legacy_bz2_size": 78777,
+  "license": "NCSA",
+  "link": {
+    "source": "/Users/oliverstuart/miniconda2/pkgs/compiler-rt-10.0.0-h47ead80_0",
+    "type": 1
+  },
+  "md5": "f3bb858aef2ed296ed6528510a5f1c63",
+  "name": "compiler-rt",
+  "package_tarball_full_path": "/Users/oliverstuart/miniconda2/pkgs/compiler-rt-10.0.0-h47ead80_0.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/clang/10.0.0/include/fuzzer/FuzzedDataProvider.h",
+        "path_type": "hardlink",
+        "sha256": "29c0b01f428cd06ef08eb12af2b00c3c9e3186eced4e9b801adf3aca816c7513",
+        "sha256_in_prefix": "29c0b01f428cd06ef08eb12af2b00c3c9e3186eced4e9b801adf3aca816c7513",
+        "size_in_bytes": 12747
+      },
+      {
+        "_path": "lib/clang/10.0.0/include/profile/InstrProfData.inc",
+        "path_type": "hardlink",
+        "sha256": "3b0624a3392e3325c87fb8614eaedd0b70cd8c2ed9efae7f268d977223d373ed",
+        "sha256_in_prefix": "3b0624a3392e3325c87fb8614eaedd0b70cd8c2ed9efae7f268d977223d373ed",
+        "size_in_bytes": 29145
+      },
+      {
+        "_path": "lib/clang/10.0.0/include/sanitizer/allocator_interface.h",
+        "path_type": "hardlink",
+        "sha256": "f9b29301b5d5f9ddc41f52adcf76e786d9e3c41256c615c9ef093892b33a651b",
+        "sha256_in_prefix": "f9b29301b5d5f9ddc41f52adcf76e786d9e3c41256c615c9ef093892b33a651b",
+        "size_in_bytes": 3932
+      },
+      {
+        "_path": "lib/clang/10.0.0/include/sanitizer/asan_interface.h",
+        "path_type": "hardlink",
+        "sha256": "737d111f8c78c6af8c19dd8081deea5380dfe129e75f5aeb1fd19c61bc09afef",
+        "sha256_in_prefix": "737d111f8c78c6af8c19dd8081deea5380dfe129e75f5aeb1fd19c61bc09afef",
+        "size_in_bytes": 12636
+      },
+      {
+        "_path": "lib/clang/10.0.0/include/sanitizer/common_interface_defs.h",
+        "path_type": "hardlink",
+        "sha256": "49c8e0ab404ce5649962dd2972ee53a7fe8ad8a34fcf88a479994504fc500433",
+        "sha256_in_prefix": "49c8e0ab404ce5649962dd2972ee53a7fe8ad8a34fcf88a479994504fc500433",
+        "size_in_bytes": 15335
+      },
+      {
+        "_path": "lib/clang/10.0.0/include/sanitizer/coverage_interface.h",
+        "path_type": "hardlink",
+        "sha256": "2a8ab95c7efc8ebbbdc54cf2f4fd0d8a090cfc6a0024b9488e9867e0f5d50095",
+        "sha256_in_prefix": "2a8ab95c7efc8ebbbdc54cf2f4fd0d8a090cfc6a0024b9488e9867e0f5d50095",
+        "size_in_bytes": 1054
+      },
+      {
+        "_path": "lib/clang/10.0.0/include/sanitizer/dfsan_interface.h",
+        "path_type": "hardlink",
+        "sha256": "e147c82be19a7ea62934c36a7f6885720c4ce24d85e11ab3a0c1b9b668217b87",
+        "sha256_in_prefix": "e147c82be19a7ea62934c36a7f6885720c4ce24d85e11ab3a0c1b9b668217b87",
+        "size_in_bytes": 4891
+      },
+      {
+        "_path": "lib/clang/10.0.0/include/sanitizer/hwasan_interface.h",
+        "path_type": "hardlink",
+        "sha256": "a337c62e796e0e3a38a272914617f7cab0c40b53c95fff5d45480dd231e5c896",
+        "sha256_in_prefix": "a337c62e796e0e3a38a272914617f7cab0c40b53c95fff5d45480dd231e5c896",
+        "size_in_bytes": 4176
+      },
+      {
+        "_path": "lib/clang/10.0.0/include/sanitizer/linux_syscall_hooks.h",
+        "path_type": "hardlink",
+        "sha256": "6fa6e74cd5be7329edddac69bed339984f83e6197e333bbc07cca1b12109ac52",
+        "sha256_in_prefix": "6fa6e74cd5be7329edddac69bed339984f83e6197e333bbc07cca1b12109ac52",
+        "size_in_bytes": 204546
+      },
+      {
+        "_path": "lib/clang/10.0.0/include/sanitizer/lsan_interface.h",
+        "path_type": "hardlink",
+        "sha256": "010572639c0825e3702ae451a4cdd2fe53db644cf2e27a17dd391ea62c75ea78",
+        "sha256_in_prefix": "010572639c0825e3702ae451a4cdd2fe53db644cf2e27a17dd391ea62c75ea78",
+        "size_in_bytes": 3935
+      },
+      {
+        "_path": "lib/clang/10.0.0/include/sanitizer/msan_interface.h",
+        "path_type": "hardlink",
+        "sha256": "b8f3113a1cbebbfc8d36c6ebc0c3f4cbb54b7fe19776c9c90ea34f1edb1ce308",
+        "sha256_in_prefix": "b8f3113a1cbebbfc8d36c6ebc0c3f4cbb54b7fe19776c9c90ea34f1edb1ce308",
+        "size_in_bytes": 4972
+      },
+      {
+        "_path": "lib/clang/10.0.0/include/sanitizer/netbsd_syscall_hooks.h",
+        "path_type": "hardlink",
+        "sha256": "e9b49b0d7c5c2d78db2cb6d76b37ef72577a447e0257e2d976b7f065fcc45933",
+        "sha256_in_prefix": "e9b49b0d7c5c2d78db2cb6d76b37ef72577a447e0257e2d976b7f065fcc45933",
+        "size_in_bytes": 341099
+      },
+      {
+        "_path": "lib/clang/10.0.0/include/sanitizer/scudo_interface.h",
+        "path_type": "hardlink",
+        "sha256": "bfbc2df2452d6dee2652392d901206aaf4093c84ececbb4ab7d240ec5321c0b4",
+        "sha256_in_prefix": "bfbc2df2452d6dee2652392d901206aaf4093c84ececbb4ab7d240ec5321c0b4",
+        "size_in_bytes": 1491
+      },
+      {
+        "_path": "lib/clang/10.0.0/include/sanitizer/tsan_interface.h",
+        "path_type": "hardlink",
+        "sha256": "4d374630de85e22b70ac2b5a73cf402e122892648d84a176899c9eb85af16884",
+        "sha256_in_prefix": "4d374630de85e22b70ac2b5a73cf402e122892648d84a176899c9eb85af16884",
+        "size_in_bytes": 6997
+      },
+      {
+        "_path": "lib/clang/10.0.0/include/sanitizer/tsan_interface_atomic.h",
+        "path_type": "hardlink",
+        "sha256": "9fc15eed66dc319110f033d2ae69f9d49dd16f4bc6f88394905782a03dc2a6ed",
+        "sha256_in_prefix": "9fc15eed66dc319110f033d2ae69f9d49dd16f4bc6f88394905782a03dc2a6ed",
+        "size_in_bytes": 9715
+      },
+      {
+        "_path": "lib/clang/10.0.0/include/sanitizer/ubsan_interface.h",
+        "path_type": "hardlink",
+        "sha256": "ef166698f72104f4600667b15478e63113bb6c3d187e4020651edfeed6ea2048",
+        "sha256_in_prefix": "ef166698f72104f4600667b15478e63113bb6c3d187e4020651edfeed6ea2048",
+        "size_in_bytes": 1030
+      },
+      {
+        "_path": "lib/clang/10.0.0/include/xray/xray_interface.h",
+        "path_type": "hardlink",
+        "sha256": "83d85011c9d936caad5bfef7d1fe234828482ecfd3a941f24509e553a1475c36",
+        "sha256_in_prefix": "83d85011c9d936caad5bfef7d1fe234828482ecfd3a941f24509e553a1475c36",
+        "size_in_bytes": 5225
+      },
+      {
+        "_path": "lib/clang/10.0.0/include/xray/xray_log_interface.h",
+        "path_type": "hardlink",
+        "sha256": "3efcbcfea596d61511f4e68ddb1932db502edb4a008e0f26d2cf4e7c15154711",
+        "sha256_in_prefix": "3efcbcfea596d61511f4e68ddb1932db502edb4a008e0f26d2cf4e7c15154711",
+        "size_in_bytes": 15991
+      },
+      {
+        "_path": "lib/clang/10.0.0/include/xray/xray_records.h",
+        "path_type": "hardlink",
+        "sha256": "2baf8d0f8097eee53eb5740196e0d33f0be75f8249ac32e2ca1fb2aa37c456db",
+        "sha256_in_prefix": "2baf8d0f8097eee53eb5740196e0d33f0be75f8249ac32e2ca1fb2aa37c456db",
+        "size_in_bytes": 3941
+      },
+      {
+        "_path": "lib/clang/10.0.0/share/asan_blacklist.txt",
+        "path_type": "hardlink",
+        "sha256": "ef4a392b1c674df1c18586d45cf9c9d64ca55c554360ac8cd2f5ca1efaadc0c8",
+        "sha256_in_prefix": "ef4a392b1c674df1c18586d45cf9c9d64ca55c554360ac8cd2f5ca1efaadc0c8",
+        "size_in_bytes": 513
+      },
+      {
+        "_path": "lib/clang/10.0.0/share/cfi_blacklist.txt",
+        "path_type": "hardlink",
+        "sha256": "be8abf240e598b5ede59c02f52901c965746476f0dc5eaabdddb0455bfdeb3b1",
+        "sha256_in_prefix": "be8abf240e598b5ede59c02f52901c965746476f0dc5eaabdddb0455bfdeb3b1",
+        "size_in_bytes": 590
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "5ff6d4c660a80ee8bb7fc401ca88e13c4928ec7f8c36a44d173bd597275686df",
+  "size": 83786,
+  "subdir": "osx-64",
+  "timestamp": 1589540186389,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/osx-64/compiler-rt-10.0.0-h47ead80_0.conda",
+  "version": "10.0.0"
+}

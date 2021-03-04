@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Display tick values from continuous ranges as &quot;basic...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for tickformatter_num {rbokeh}"><tr><td>tickformatter_num {rbokeh}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Display tick values from continuous ranges as &quot;basic numbers&quot;, using scientific notation when appropriate by default.</h2>
+
+<h3>Description</h3>
+
+<p>Display tick values from continuous ranges as &quot;basic numbers&quot;, using scientific notation when appropriate by default.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+tickformatter_num(use_scientific = TRUE, power_limit_low = -3,
+  power_limit_high = 5, precision = "auto", clear = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>use_scientific</code></td>
+<td>
+<p>Whether to ever display scientific notation. If <code>TRUE</code>, then when to use scientific notation is controlled by &quot;power_limit_low&quot; and &quot;power_limit_high&quot;.</p>
+</td></tr>
+<tr valign="top"><td><code>power_limit_low</code></td>
+<td>
+<p>Limit the use of scientific notation to when: log(x) &lt;= power_limit_low</p>
+</td></tr>
+<tr valign="top"><td><code>power_limit_high</code></td>
+<td>
+<p>Limit the use of scientific notation to when: log(x) &gt;= power_limit_high</p>
+</td></tr>
+<tr valign="top"><td><code>precision</code></td>
+<td>
+<p>How many digits of precision to display in tick labels.</p>
+</td></tr>
+<tr valign="top"><td><code>clear</code></td>
+<td>
+<p>A logical indicating whether all non-specified parameters should be cleared out of any exising specification in the figure. This can be useful when modifying a previously-defined figure.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A specification that is used as the <code>tickformatter</code> argument for <code><a href="axis.html">x_axis</a></code> or <code><a href="axis.html">y_axis</a></code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+figure() %&gt;%
+  ly_points(c(1:10) * 1000000, 1:10) %&gt;%
+  x_axis(tickformatter = tickformatter_num(use_scientific = FALSE))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rbokeh</em> version 0.6.3 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Convert Numbers to Factors</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for step_num2factor {recipes}"><tr><td>step_num2factor {recipes}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Convert Numbers to Factors</h2>
+
+<h3>Description</h3>
+
+<p><code>step_num2factor</code> will convert one or more numeric
+vectors to factors (ordered or unordered). This can be useful
+when categories are encoded as integers.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+step_num2factor(recipe, ..., role = NA, transform = function(x) x,
+  trained = FALSE, levels = NULL, ordered = FALSE, skip = FALSE,
+  id = rand_id("num2factor"))
+
+## S3 method for class 'step_num2factor'
+tidy(x, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>recipe</code></td>
+<td>
+<p>A recipe object. The step will be added to the
+sequence of operations for this recipe.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>One or more selector functions to choose which
+variables will converted to factors. See
+<code><a href="selections.html">selections()</a></code> for more details. For the <code>tidy</code>
+method, these are not currently used.</p>
+</td></tr>
+<tr valign="top"><td><code>role</code></td>
+<td>
+<p>Not used by this step since no new variables are
+created.</p>
+</td></tr>
+<tr valign="top"><td><code>transform</code></td>
+<td>
+<p>A function taking a single argument <code>x</code> that
+can be used to modify the numeric values prior to determining
+the levels (perhaps using <code><a href="../../base/html/paste.html">base::paste()</a></code> or <code><a href="../../base/html/format.html">base::format()</a></code>).</p>
+</td></tr>
+<tr valign="top"><td><code>trained</code></td>
+<td>
+<p>A logical to indicate if the quantities for
+preprocessing have been estimated.</p>
+</td></tr>
+<tr valign="top"><td><code>levels</code></td>
+<td>
+<p>A list of values that will be used as the levels.
+These are the numeric data converted to character and ordered.
+This is <code>NULL</code> until computed by <code><a href="prep.html">prep.recipe()</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>ordered</code></td>
+<td>
+<p>A single logical value; should the factor(s) be
+ordered?</p>
+</td></tr>
+<tr valign="top"><td><code>skip</code></td>
+<td>
+<p>A logical. Should the step be skipped when the
+recipe is baked by <code><a href="bake.html">bake.recipe()</a></code>? While all operations are baked
+when <code><a href="prep.html">prep.recipe()</a></code> is run, some operations may not be able to be
+conducted on new data (e.g. processing the outcome variable(s)).
+Care should be taken when using <code>skip = TRUE</code> as it may affect
+the computations for subsequent operations</p>
+</td></tr>
+<tr valign="top"><td><code>id</code></td>
+<td>
+<p>A character string that is unique to this step to identify it.</p>
+</td></tr>
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>A <code>step_num2factor</code> object.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>An updated version of <code>recipe</code> with the new step
+added to the sequence of existing steps (if any). For the
+<code>tidy</code> method, a tibble with columns <code>terms</code> (the
+selectors or variables selected) and <code>ordered</code>.
+</p>
+
+
+<h3>Note</h3>
+
+<p>If <code>bake</code> is used on a data set where a new value is
+in the column being converted, <code>bake</code> will silently give values
+of <code>NA</code> to these rows (see the example below).
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="step_factor2string.html">step_factor2string()</a></code>, <code><a href="step_string2factor.html">step_string2factor()</a></code>,
+<code><a href="step_dummy.html">step_dummy()</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+iris2 &lt;- iris
+iris2$Species &lt;- as.numeric(iris2$Species)
+
+rec &lt;- recipe(~ ., data = iris2)
+
+make_factor &lt;- rec %&gt;% step_num2factor(Species)
+make_factor &lt;- prep(make_factor,
+                    training = iris2,
+                    retain = TRUE)
+
+# note that `diet` is a factor
+juice(make_factor) %&gt;% head
+okc %&gt;% head
+tidy(make_factor, number = 1)
+
+# When novel values are exposed
+with_transform &lt;- rec %&gt;%
+  step_num2factor(Species, transform = function(x) paste0("val_", x))
+
+with_transform &lt;- prep(with_transform,
+                       training = iris2[1:75,])
+new_values &lt;- bake(with_transform, new_data = iris2, Species)
+table(new_values[["Species"]], iris2$Species, useNA = "ifany")
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>recipes</em> version 0.1.5 <a href="00Index.html">Index</a>]</div>
+</body></html>

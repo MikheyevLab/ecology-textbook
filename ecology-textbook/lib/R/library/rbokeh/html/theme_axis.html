@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Override theme parameters for axis attributes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for theme_axis {rbokeh}"><tr><td>theme_axis {rbokeh}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Override theme parameters for axis attributes</h2>
+
+<h3>Description</h3>
+
+<p>Override theme parameters for axis attributes
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+theme_axis(fig, which = c("x", "y"), num_minor_ticks = 5,
+  axis_label_standoff = NULL, axis_label_text_align = "left",
+  axis_label_text_alpha = 1, axis_label_text_baseline = "bottom",
+  axis_label_text_color = "#444444", axis_label_text_font = "Helvetica",
+  axis_label_text_font_size = "12pt", axis_label_text_font_style = "normal",
+  axis_line_alpha = 1, axis_line_cap = "butt", axis_line_color = "black",
+  axis_line_dash = NULL, axis_line_dash_offset = 0,
+  axis_line_join = "miter", axis_line_width = 1,
+  major_label_orientation = "horizontal", major_label_standoff = NULL,
+  major_label_text_align = "left", major_label_text_alpha = 1,
+  major_label_text_baseline = "bottom", major_label_text_color = "#444444",
+  major_label_text_font = "Helvetica", major_label_text_font_size = "12pt",
+  major_label_text_font_style = "normal", major_tick_in = NULL,
+  major_tick_line_alpha = 1, major_tick_line_cap = "butt",
+  major_tick_line_color = "black", major_tick_line_dash = NULL,
+  major_tick_line_dash_offset = 0, major_tick_line_join = "miter",
+  major_tick_line_width = 1, major_tick_out = NULL, minor_tick_in = NULL,
+  minor_tick_line_alpha = 1, minor_tick_line_cap = "butt",
+  minor_tick_line_color = "black", minor_tick_line_dash = NULL,
+  minor_tick_line_dash_offset = 0, minor_tick_line_join = "miter",
+  minor_tick_line_width = 1, minor_tick_out = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>fig</code></td>
+<td>
+<p>Figure to modify.</p>
+</td></tr>
+<tr valign="top"><td><code>which</code></td>
+<td>
+<p>which grids to apply attributes to (&quot;x&quot; and/or &quot;y&quot;)</p>
+</td></tr>
+<tr valign="top"><td><code>num_minor_ticks</code></td>
+<td>
+<p>number of minor ticks</p>
+</td></tr>
+<tr valign="top"><td><code>axis_label_standoff</code></td>
+<td>
+<p>(integer) The distance in pixels that the axis labels should be offset from the tick labels.</p>
+</td></tr>
+<tr valign="top"><td><code>axis_label_text_align</code></td>
+<td>
+<p>('left', 'right', 'center') The text align of the axis label.</p>
+</td></tr>
+<tr valign="top"><td><code>axis_label_text_alpha</code></td>
+<td>
+<p>(numeric) The text alpha of the axis label.</p>
+</td></tr>
+<tr valign="top"><td><code>axis_label_text_baseline</code></td>
+<td>
+<p>('top', 'middle', 'bottom', 'alphabetic', 'hanging') The text baseline of the axis label.</p>
+</td></tr>
+<tr valign="top"><td><code>axis_label_text_color</code></td>
+<td>
+<p>(color) The text color of the axis label.</p>
+</td></tr>
+<tr valign="top"><td><code>axis_label_text_font</code></td>
+<td>
+<p>(string) The text font of the axis label.</p>
+</td></tr>
+<tr valign="top"><td><code>axis_label_text_font_size</code></td>
+<td>
+<p>(string - e.g. '12pt') The text font size of the axis label.</p>
+</td></tr>
+<tr valign="top"><td><code>axis_label_text_font_style</code></td>
+<td>
+<p>('normal', 'italic', 'bold') The text font style of the axis label.</p>
+</td></tr>
+<tr valign="top"><td><code>axis_line_alpha</code></td>
+<td>
+<p>(numeric) The line alpha of the axis line.</p>
+</td></tr>
+<tr valign="top"><td><code>axis_line_cap</code></td>
+<td>
+<p>('butt', 'round', 'square') The line cap of the axis line.</p>
+</td></tr>
+<tr valign="top"><td><code>axis_line_color</code></td>
+<td>
+<p>(color) The line color of the axis line.</p>
+</td></tr>
+<tr valign="top"><td><code>axis_line_dash</code></td>
+<td>
+<p>The line dash of the axis line.</p>
+</td></tr>
+<tr valign="top"><td><code>axis_line_dash_offset</code></td>
+<td>
+<p>(integer) The line dash offset of the axis line.</p>
+</td></tr>
+<tr valign="top"><td><code>axis_line_join</code></td>
+<td>
+<p>('miter', 'round', 'bevel') The line join of the axis line.</p>
+</td></tr>
+<tr valign="top"><td><code>axis_line_width</code></td>
+<td>
+<p>(integer) The line width of the axis line.</p>
+</td></tr>
+<tr valign="top"><td><code>major_label_orientation</code></td>
+<td>
+<p>('horizontal', 'vertical', or angle in degrees) What direction the major label text should be oriented. If a number is supplied, the angle of the text is measured from horizontal.</p>
+</td></tr>
+<tr valign="top"><td><code>major_label_standoff</code></td>
+<td>
+<p>(integer) The distance in pixels that the major tick labels should be offset from the associated ticks.</p>
+</td></tr>
+<tr valign="top"><td><code>major_label_text_align</code></td>
+<td>
+<p>('left', 'right', 'center') The text align of the major tick labels.</p>
+</td></tr>
+<tr valign="top"><td><code>major_label_text_alpha</code></td>
+<td>
+<p>(numeric) The text alpha of the major tick labels.</p>
+</td></tr>
+<tr valign="top"><td><code>major_label_text_baseline</code></td>
+<td>
+<p>('top', 'middle', 'bottom', 'alphabetic', 'hanging') The text baseline of the major tick labels.</p>
+</td></tr>
+<tr valign="top"><td><code>major_label_text_color</code></td>
+<td>
+<p>(color) The text color of the major tick labels.</p>
+</td></tr>
+<tr valign="top"><td><code>major_label_text_font</code></td>
+<td>
+<p>(string - 'Helvetica') The text font of the major tick labels.</p>
+</td></tr>
+<tr valign="top"><td><code>major_label_text_font_size</code></td>
+<td>
+<p>(string - e.g. '12pt') The text font size of the major tick labels.</p>
+</td></tr>
+<tr valign="top"><td><code>major_label_text_font_style</code></td>
+<td>
+<p>('normal', 'italic', 'bold') The text font style of the major tick labels.</p>
+</td></tr>
+<tr valign="top"><td><code>major_tick_in</code></td>
+<td>
+<p>(integer) The distance in pixels that major ticks should extend into the main plot area.</p>
+</td></tr>
+<tr valign="top"><td><code>major_tick_line_alpha</code></td>
+<td>
+<p>(numeric) The line alpha of the major ticks.</p>
+</td></tr>
+<tr valign="top"><td><code>major_tick_line_cap</code></td>
+<td>
+<p>('butt', 'round', 'square') The line cap of the major ticks.</p>
+</td></tr>
+<tr valign="top"><td><code>major_tick_line_color</code></td>
+<td>
+<p>(color) The line color of the major ticks.</p>
+</td></tr>
+<tr valign="top"><td><code>major_tick_line_dash</code></td>
+<td>
+<p>The line dash of the major ticks.</p>
+</td></tr>
+<tr valign="top"><td><code>major_tick_line_dash_offset</code></td>
+<td>
+<p>(integer) The line dash offset of the major ticks.</p>
+</td></tr>
+<tr valign="top"><td><code>major_tick_line_join</code></td>
+<td>
+<p>('miter', 'round', 'bevel') The line join of the major ticks.</p>
+</td></tr>
+<tr valign="top"><td><code>major_tick_line_width</code></td>
+<td>
+<p>(integer) The line width of the major ticks.</p>
+</td></tr>
+<tr valign="top"><td><code>major_tick_out</code></td>
+<td>
+<p>(integer) The distance in pixels that major ticks should extend out of the main plot area.</p>
+</td></tr>
+<tr valign="top"><td><code>minor_tick_in</code></td>
+<td>
+<p>(integer) The distance in pixels that minor ticks should extend into the main plot area.</p>
+</td></tr>
+<tr valign="top"><td><code>minor_tick_line_alpha</code></td>
+<td>
+<p>(numeric) The line alpha of the minor ticks.</p>
+</td></tr>
+<tr valign="top"><td><code>minor_tick_line_cap</code></td>
+<td>
+<p>('butt', 'round', 'square') The line cap of the minor ticks.</p>
+</td></tr>
+<tr valign="top"><td><code>minor_tick_line_color</code></td>
+<td>
+<p>(color) The line color of the minor ticks.</p>
+</td></tr>
+<tr valign="top"><td><code>minor_tick_line_dash</code></td>
+<td>
+<p>The line dash of the minor ticks.</p>
+</td></tr>
+<tr valign="top"><td><code>minor_tick_line_dash_offset</code></td>
+<td>
+<p>(integer) The line dash offset of the minor ticks.</p>
+</td></tr>
+<tr valign="top"><td><code>minor_tick_line_join</code></td>
+<td>
+<p>('miter', 'round', 'bevel') The line join of the minor ticks.</p>
+</td></tr>
+<tr valign="top"><td><code>minor_tick_line_width</code></td>
+<td>
+<p>(integer) The line width of the minor ticks.</p>
+</td></tr>
+<tr valign="top"><td><code>minor_tick_out</code></td>
+<td>
+<p>(integer) The distance in pixels that major ticks should extend out of the main plot area.</p>
+</td></tr>
+</table>
+
+<hr /><div style="text-align: center;">[Package <em>rbokeh</em> version 0.6.3 <a href="00Index.html">Index</a>]</div>
+</body></html>

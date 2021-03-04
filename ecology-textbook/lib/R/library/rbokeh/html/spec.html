@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Provide additional specification information about a Bokeh...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for spec {rbokeh}"><tr><td>spec {rbokeh}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Provide additional specification information about a Bokeh plot attribute.</h2>
+
+<h3>Description</h3>
+
+<p>Provide additional specification information about a Bokeh plot attribute.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+spec(x, domain = NULL, range = NULL, transform = NULL, units = "screen",
+  exponent = 0.5, unknown = "lightgray")
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>Data / variable / expression to add specification information to.</p>
+</td></tr>
+<tr valign="top"><td><code>domain</code></td>
+<td>
+<p>The domain of <code>x</code>. If <code>x</code> is categorical, this is the unique values or levels of the factor. If <code>x</code> is numeric, this is the desired range of the data to map from. If not supplied, this is inferred directly from <code>x</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>range</code></td>
+<td>
+<p>The range of the mapping to be made from <code>x</code> to the associated plot attribute. For example, if <code>x</code> is being mapped to a color attribute and <code>x</code> is categorical, then <code>range</code> can be specified as a vector of colors to map the unique values of <code>x</code> to. See examples below.</p>
+</td></tr>
+<tr valign="top"><td><code>transform</code></td>
+<td>
+<p>An optional string specifying a JavaScript transform to be applied to the data in the browser, the result of which will be the attribute value(s) used in rendering. See examples below.</p>
+</td></tr>
+<tr valign="top"><td><code>units</code></td>
+<td>
+<p>The units according which to treat the attribute. One of 'screen' or 'data'. If 'screen', the value of <code>x</code> will specify the attribute in terms of pixels on the screen. If 'data', the value of <code>x</code> will specify the attribute in terms of the scale of the data on the plot. This is only valid in the case of a numeric <code>x</code> applying to a plot attribute such as <code>size</code>, and is not applicable to all glyphs. It will be ignored if not applicable.</p>
+</td></tr>
+<tr valign="top"><td><code>exponent</code></td>
+<td>
+<p>When <code>x</code> is being mapped to a <code>size</code> attribute, the exponent to use in the transformation.</p>
+</td></tr>
+<tr valign="top"><td><code>unknown</code></td>
+<td>
+<p>The color to use for values of <code>x</code> that cannot be mapped to the specified range.</p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+# no custom spec
+figure() %&gt;%
+  ly_points(x = Sepal.Width, y = Sepal.Length,
+    color = spec(Species, range = c("red", "green", "blue")),
+  data = iris)
+
+# specifying a custom mapping for color
+figure() %&gt;%
+  ly_points(x = Sepal.Width, y = Sepal.Length,
+    color = spec(Species, range = c("red", "green", "blue")),
+  data = iris)
+
+# explicitly specifying which values correspond to which color
+figure() %&gt;%
+  ly_points(x = Sepal.Width, y = Sepal.Length,
+    color = spec(Species, domain = c("virginica", "versicolor", "setosa"),
+      range = c("red", "blue", "green")),
+  data = iris)
+
+# unmapped values are plotted in gray (with default theme)
+iris$Species2 &lt;- as.character(iris$Species)
+iris$Species2[1:20] &lt;- "unknown"
+figure() %&gt;%
+  ly_points(x = Sepal.Width, y = Sepal.Length,
+    color = spec(Species2, domain = c("virginica", "versicolor", "setosa"),
+      range = c("red", "blue", "green")),
+  data = iris)
+
+# specifying "screen" vs. "data" units
+figure() %&gt;%
+  ly_oval(Sepal.Length, Sepal.Width,
+    width = spec(15, units = "screen"),
+    height = spec(30, units = "screen"),
+    angle = pi / 4,
+    data = iris, color = Species)
+
+# example using custom JS transforms for every specified plot attribute
+# random size, line width, and color
+# note that JS transforms are automatically vectorized if provided as a string
+figure() %&gt;%
+  ly_points(rnorm(100), rnorm(100),
+    size = spec(1:100, transform = "return Math.random() * 50 + 10;"),
+    line_width = spec(1:100, transform = "return Math.random() * 10"),
+    color = spec(1:100, transform = "
+      var rnd = function() { return Math.floor(Math.random() * 255); }
+      return '#' + (rnd()).toString(16) + (rnd()).toString(16) + (rnd()).toString(16);
+    "))
+
+# using spec to specify size of points
+# requires google API key
+## Not run: 
+gmap(lat = 40.44, lng = -113.785, zoom = 4,
+  width = 1000, height = 700,
+  map_style = gmap_style("blue_water"), map_type = "roadmap") %&gt;%
+  ly_points(long, lat, data = us.cities, color = factor(capital),
+    size = spec(pop, range = c(2, 50)), hover = us.cities)
+
+## End(Not run)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rbokeh</em> version 0.6.3 <a href="00Index.html">Index</a>]</div>
+</body></html>

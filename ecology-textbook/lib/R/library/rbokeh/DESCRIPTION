@@ -1,0 +1,31 @@
+Package: rbokeh
+Title: R Interface for Bokeh
+Version: 0.6.3
+Authors@R: c(
+    person("Ryan", "Hafen", email = "rhafen@gmail.com", role = c("aut", "cre")),
+    person("Kenton", "Russell", email = "kent.russell@timelyportfolio.com", role = "ctb"),
+    person("Jonathan", "Owen", email = "jonathanro@gmail.com", role = "ctb"),
+    person("Barret", "Schloerke", email = "schloerke@gmail.com", role = "ctb"),
+    person("Saptasrhi", "Guha", email = "saptarshi.guha@gmail.com", role = "ctb"),
+    person("Continuum Analytics, Inc.", role = c("aut", "cph"),
+      comment = "Bokeh library in htmlwidgets/lib, http://bokeh.pydata.org"
+    ))
+Description: A native R plotting library that provides a flexible declarative interface for creating interactive web-based graphics, backed by the Bokeh visualization library <http://bokeh.pydata.org/>.
+URL: https://hafen.github.io/rbokeh https://github.com/bokeh/rbokeh
+BugReports: https://github.com/bokeh/rbokeh/issues
+License: MIT + file LICENSE
+LazyData: true
+NeedsCompilation: no
+Imports: R6, jsonlite, digest, methods, htmlwidgets, magrittr, curl,
+        glue, rlang, scales, hexbin, lattice, maps
+Suggests: testthat, lintr, roxygen2 (>= 5.0.0)
+RoxygenNote: 6.0.1
+Author: Ryan Hafen [aut, cre],
+  Kenton Russell [ctb],
+  Jonathan Owen [ctb],
+  Barret Schloerke [ctb],
+  Saptasrhi Guha [ctb],
+  Continuum Analytics, Inc. [aut, cph] (Bokeh library in htmlwidgets/lib,
+    http://bokeh.pydata.org)
+Maintainer: Ryan Hafen <rhafen@gmail.com>
+Built: R 3.6.0; ; 2019-05-16 08:29:23 UTC; windows

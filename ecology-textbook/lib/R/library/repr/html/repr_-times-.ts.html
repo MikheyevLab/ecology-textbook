@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Time series representations</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for repr_*.ts {repr}"><tr><td>repr_*.ts {repr}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Time series representations</h2>
+
+<h3>Description</h3>
+
+<p>HTML, LaTeX, and Markdown representations of <a href="../../stats/html/ts.html">ts</a> objects.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S3 method for class 'ts'
+repr_html(obj, ...)
+
+## S3 method for class 'ts'
+repr_latex(obj, ...,
+  colspec = getOption("repr.matrix.latex.colspec"))
+
+## S3 method for class 'ts'
+repr_markdown(obj, ...)
+
+## S3 method for class 'ts'
+repr_text(obj, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>obj</code></td>
+<td>
+<p>The <a href="../../stats/html/ts.html">ts</a> object to create a representation for</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>ignored</p>
+</td></tr>
+<tr valign="top"><td><code>colspec</code></td>
+<td>
+<p>The colspec for the LaTeX table. The default is given by the option <code>repr.matrix.latex.colspec</code></p>
+</td></tr>
+</table>
+
+
+<h3>See Also</h3>
+
+<p><a href="repr-options.html">repr-options</a> for <code>repr.matrix.latex.colspec</code>
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>repr</em> version 0.19.2 <a href="00Index.html">Index</a>]</div>
+</body></html>

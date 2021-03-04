@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: IRdisplay options</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for IRdisplay-options {IRdisplay}"><tr><td>IRdisplay-options {IRdisplay}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>IRdisplay options</h2>
+
+<h3>Description</h3>
+
+<p>Some <a href="../../base/html/options.html">options</a> to control the formats <code><a href="display.html">display</a></code> and <code><a href="display.html">prepare_mimebundle</a></code> emit,
+and the function they use to display them.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+irdisplay_option_defaults
+</pre>
+
+
+<h3>Format</h3>
+
+<p>An object of class <code>list</code> of length 2.</p>
+
+
+<h3>Options</h3>
+
+
+<dl>
+<dt><code>jupyter.display_mimetypes</code></dt><dd>
+<p>The default is all MIME types supported by Jupyter.
+</p>
+</dd>
+<dt><code>jupyter.base_display_func</code></dt><dd>
+<p>Function used by <code><a href="display.html">display</a></code> and all <code><a href="display_-less-than-text-greater-than.html">display_&lt;text&gt;</a></code> / <code><a href="display_-less-than-image-greater-than.html">display_&lt;image&gt;</a></code> functions.
+Has the signature <code>function(data, metadata = NULL)</code>.
+Per default emits a <code><a href="../../base/html/warning.html">warning</a></code>, and is set when running an <code>IRkernel</code>.
+</p>
+</dd>
+</dl>
+
+
+<hr /><div style="text-align: center;">[Package <em>IRdisplay</em> version 0.7.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

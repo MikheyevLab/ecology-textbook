@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Add a &quot;density&quot; layer to a Bokeh figure</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ly_density {rbokeh}"><tr><td>ly_density {rbokeh}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Add a &quot;density&quot; layer to a Bokeh figure</h2>
+
+<h3>Description</h3>
+
+<p>Draws a kernel density estimate
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+ly_density(fig, x, data = figure_data(fig), bw = "nrd0", adjust = 1,
+  kernel = c("gaussian", "epanechnikov", "rectangular", "triangular",
+  "biweight", "cosine", "optcosine"), weights = NULL, window = kernel,
+  n = 512, cut = 3, na.rm = FALSE, color = "black", alpha = 1,
+  width = 1, type = 1, hov_color = NULL, hov_alpha = NULL,
+  ns_color = NULL, ns_alpha = NULL, sel_color = NULL, sel_alpha = NULL,
+  legend = NULL, lname = NULL, lgroup = NULL, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>fig</code></td>
+<td>
+<p>Figure to modify.</p>
+</td></tr>
+<tr valign="top"><td><code>x, bw, adjust, kernel, weights, window, n, cut, na.rm</code></td>
+<td>
+<p>Parameters passed to <code><a href="../../stats/html/density.html">density</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>An optional data frame, providing the source for x.</p>
+</td></tr>
+<tr valign="top"><td><code>color</code></td>
+<td>
+<p>Color to use to stroke lines with - a hex code (with no alpha) or any of the 147 named CSS colors, e.g 'green', 'indigo'.</p>
+</td></tr>
+<tr valign="top"><td><code>alpha</code></td>
+<td>
+<p>Transparency value for the line between 0 (transparent) and 1 (opaque).</p>
+</td></tr>
+<tr valign="top"><td><code>width</code></td>
+<td>
+<p>Stroke width in units of pixels.</p>
+</td></tr>
+<tr valign="top"><td><code>type</code></td>
+<td>
+<p>An integer between 1 and 6 matching the <code>lty</code> property in <code><a href="../../graphics/html/par.html">par</a></code> or an array of integer pixel distances that describe the on-off pattern of dashing to use.</p>
+</td></tr>
+<tr valign="top"><td><code>hov_color</code></td>
+<td>
+<p>Color to use to stroke lines when they are hovered.</p>
+</td></tr>
+<tr valign="top"><td><code>hov_alpha</code></td>
+<td>
+<p>Transparency value for the line when it is hovered.</p>
+</td></tr>
+<tr valign="top"><td><code>ns_color</code></td>
+<td>
+<p>Color to use to stroke lines when they are not selected.</p>
+</td></tr>
+<tr valign="top"><td><code>ns_alpha</code></td>
+<td>
+<p>Transparency value for the line when it is not selected.</p>
+</td></tr>
+<tr valign="top"><td><code>sel_color</code></td>
+<td>
+<p>Color to use to stroke lines when they are selected.</p>
+</td></tr>
+<tr valign="top"><td><code>sel_alpha</code></td>
+<td>
+<p>Transparency value for the line when it is selected.</p>
+</td></tr>
+<tr valign="top"><td><code>legend</code></td>
+<td>
+<p>Text to display in the legend entry for the density line.</p>
+</td></tr>
+<tr valign="top"><td><code>lname</code></td>
+<td>
+<p>Layer name.</p>
+</td></tr>
+<tr valign="top"><td><code>lgroup</code></td>
+<td>
+<p>Layer group.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Additional parameters for fine control over line properties. See &quot;Additional parameters&quot; below.</p>
+</td></tr>
+</table>
+
+
+<h3>Additional parameters</h3>
+
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;">
+  <code>line_join</code> </td><td style="text-align: left;"> How path segments should be joined together. One of 'miter' 'round' 'bevel'. </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+  <code>line_cap</code> </td><td style="text-align: left;"> How path segments should be terminated. One of 'butt' 'round' 'square'. </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+  <code>line_dash</code> </td><td style="text-align: left;"> An integer between 1 and 6 matching the <code>lty</code> property in <code><a href="../../graphics/html/par.html">par</a></code> or an array of integer pixel distances that describe the on-off pattern of dashing to use. </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+  <code>line_dash_offset</code> </td><td style="text-align: left;"> The distance in pixels into the line_dash that the pattern should start from.
+ </td>
+</tr>
+
+</table>
+
+
+
+<h3>See Also</h3>
+
+<p>Other layer functions: <code><a href="ly_annular_wedge.html">ly_annular_wedge</a></code>,
+<code><a href="ly_annulus.html">ly_annulus</a></code>, <code><a href="ly_arc.html">ly_arc</a></code>,
+<code><a href="ly_bar.html">ly_bar</a></code>, <code><a href="ly_bezier.html">ly_bezier</a></code>,
+<code><a href="ly_boxplot.html">ly_boxplot</a></code>, <code><a href="ly_contour.html">ly_contour</a></code>,
+<code><a href="ly_crect.html">ly_crect</a></code>, <code><a href="ly_curve.html">ly_curve</a></code>,
+<code><a href="ly_hist.html">ly_hist</a></code>, <code><a href="ly_image_url.html">ly_image_url</a></code>,
+<code><a href="ly_image.html">ly_image</a></code>, <code><a href="ly_lines.html">ly_lines</a></code>,
+<code><a href="ly_multi_line.html">ly_multi_line</a></code>, <code><a href="ly_oval.html">ly_oval</a></code>,
+<code><a href="ly_patch.html">ly_patch</a></code>, <code><a href="ly_points.html">ly_points</a></code>,
+<code><a href="ly_polygons.html">ly_polygons</a></code>, <code><a href="ly_quadratic.html">ly_quadratic</a></code>,
+<code><a href="ly_quantile.html">ly_quantile</a></code>, <code><a href="ly_ray.html">ly_ray</a></code>,
+<code><a href="ly_rect.html">ly_rect</a></code>, <code><a href="ly_segments.html">ly_segments</a></code>,
+<code><a href="ly_text.html">ly_text</a></code>, <code><a href="ly_wedge.html">ly_wedge</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+figure(width = 600, height = 400) %&gt;%
+  ly_hist(eruptions, data = faithful, breaks = 40, freq = FALSE) %&gt;%
+  ly_density(eruptions, data = faithful)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rbokeh</em> version 0.6.3 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,247 @@
+{
+  "build": "hbcc88fd_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/noarch",
+  "constrains": [
+    "compiler-rt 10.0.0"
+  ],
+  "depends": [
+    "clang 10.0.0.*",
+    "clangxx 10.0.0.*",
+    "libcxx >=9.0.1"
+  ],
+  "extracted_package_dir": "/Users/oliverstuart/miniconda2/pkgs/compiler-rt_osx-64-10.0.0-hbcc88fd_0",
+  "features": "",
+  "files": [
+    "lib/clang/10.0.0/lib/darwin/libclang_rt.asan_osx_dynamic.dylib",
+    "lib/clang/10.0.0/lib/darwin/libclang_rt.cc_kext.a",
+    "lib/clang/10.0.0/lib/darwin/libclang_rt.fuzzer_no_main_osx.a",
+    "lib/clang/10.0.0/lib/darwin/libclang_rt.fuzzer_osx.a",
+    "lib/clang/10.0.0/lib/darwin/libclang_rt.lsan_osx_dynamic.dylib",
+    "lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a",
+    "lib/clang/10.0.0/lib/darwin/libclang_rt.profile_osx.a",
+    "lib/clang/10.0.0/lib/darwin/libclang_rt.stats_client_osx.a",
+    "lib/clang/10.0.0/lib/darwin/libclang_rt.stats_osx_dynamic.dylib",
+    "lib/clang/10.0.0/lib/darwin/libclang_rt.tsan_osx_dynamic.dylib",
+    "lib/clang/10.0.0/lib/darwin/libclang_rt.ubsan_minimal_osx.a",
+    "lib/clang/10.0.0/lib/darwin/libclang_rt.ubsan_minimal_osx_dynamic.dylib",
+    "lib/clang/10.0.0/lib/darwin/libclang_rt.ubsan_osx.a",
+    "lib/clang/10.0.0/lib/darwin/libclang_rt.ubsan_osx_dynamic.dylib",
+    "lib/clang/10.0.0/lib/darwin/libclang_rt.xray-basic_osx.a",
+    "lib/clang/10.0.0/lib/darwin/libclang_rt.xray-fdr_osx.a",
+    "lib/clang/10.0.0/lib/darwin/libclang_rt.xray-profiling_osx.a",
+    "lib/clang/10.0.0/lib/darwin/libclang_rt.xray_osx.a",
+    "lib/clang/10.0.0/lib/libclang_rt.builtins_i386_osx.a",
+    "lib/clang/10.0.0/lib/libclang_rt.builtins_x86_64_osx.a",
+    "lib/clang/10.0.0/lib/libclang_rt.builtins_x86_64h_osx.a",
+    "lib/clang/10.0.0/lib/libclang_rt.cc_kext_i386_osx.a",
+    "lib/clang/10.0.0/lib/libclang_rt.cc_kext_x86_64_osx.a",
+    "lib/clang/10.0.0/lib/libclang_rt.cc_kext_x86_64h_osx.a"
+  ],
+  "fn": "compiler-rt_osx-64-10.0.0-hbcc88fd_0.conda",
+  "legacy_bz2_md5": "d399cbde1115927d5b406fa1621dbaf8",
+  "legacy_bz2_size": 3228707,
+  "license": "NCSA",
+  "link": {
+    "source": "/Users/oliverstuart/miniconda2/pkgs/compiler-rt_osx-64-10.0.0-hbcc88fd_0",
+    "type": 1
+  },
+  "md5": "61967ca41c008e9d5a85875485a13b4d",
+  "name": "compiler-rt_osx-64",
+  "noarch": "generic",
+  "package_tarball_full_path": "/Users/oliverstuart/miniconda2/pkgs/compiler-rt_osx-64-10.0.0-hbcc88fd_0.conda",
+  "package_type": "noarch_generic",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/clang/10.0.0/lib/darwin/libclang_rt.asan_osx_dynamic.dylib",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/concourse/worker/volumes/live/079a9ea4-64b6-4fc7-6c14-dca8c9240820/volume/compiler-rt-packages_1589539988004/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_plac",
+        "sha256": "2d7d39c5575da7b675cb2fe1dfa9fbfa65d84a09d447a58984cbf78ddab9c6e5",
+        "sha256_in_prefix": "aa484877db9d6374d5046f14b9144716415d97824c134c46f3174f5c2cf76ede",
+        "size_in_bytes": 988316
+      },
+      {
+        "_path": "lib/clang/10.0.0/lib/darwin/libclang_rt.cc_kext.a",
+        "path_type": "hardlink",
+        "sha256": "4ea5e6002dc866e605f58e9084386daed55ea2d3cf385332254dea3f84d17069",
+        "sha256_in_prefix": "4ea5e6002dc866e605f58e9084386daed55ea2d3cf385332254dea3f84d17069",
+        "size_in_bytes": 334924
+      },
+      {
+        "_path": "lib/clang/10.0.0/lib/darwin/libclang_rt.fuzzer_no_main_osx.a",
+        "path_type": "hardlink",
+        "sha256": "c5436dfd0f247e86b429f1a99f2204e664eb25862390eebb212ef05ee4d7a26c",
+        "sha256_in_prefix": "c5436dfd0f247e86b429f1a99f2204e664eb25862390eebb212ef05ee4d7a26c",
+        "size_in_bytes": 2444880
+      },
+      {
+        "_path": "lib/clang/10.0.0/lib/darwin/libclang_rt.fuzzer_osx.a",
+        "path_type": "hardlink",
+        "sha256": "c6672ca84374a2886af6b0d02ce59e197f80e4c283826f4fa61dfed276bc9d1d",
+        "sha256_in_prefix": "c6672ca84374a2886af6b0d02ce59e197f80e4c283826f4fa61dfed276bc9d1d",
+        "size_in_bytes": 2447280
+      },
+      {
+        "_path": "lib/clang/10.0.0/lib/darwin/libclang_rt.lsan_osx_dynamic.dylib",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/concourse/worker/volumes/live/079a9ea4-64b6-4fc7-6c14-dca8c9240820/volume/compiler-rt-packages_1589539988004/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_plac",
+        "sha256": "2756632533b73dab5945625f67ad426dd9bd0d51b8e445a85196e3ffae28bcaa",
+        "sha256_in_prefix": "b40d4c68d44c050a0c1e61a7dfe1f9422a4cef61bd6f25951120b041bb496740",
+        "size_in_bytes": 426044
+      },
+      {
+        "_path": "lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a",
+        "path_type": "hardlink",
+        "sha256": "ed4bd70f7cd1ba2a6a539baceb1b076f8a85db0b0873d5607204c49b43001c2a",
+        "sha256_in_prefix": "ed4bd70f7cd1ba2a6a539baceb1b076f8a85db0b0873d5607204c49b43001c2a",
+        "size_in_bytes": 355908
+      },
+      {
+        "_path": "lib/clang/10.0.0/lib/darwin/libclang_rt.profile_osx.a",
+        "path_type": "hardlink",
+        "sha256": "9bae5d946d1c2a4484e6d637a77f462072b210916cdda490cba190b32d67d5a0",
+        "sha256_in_prefix": "9bae5d946d1c2a4484e6d637a77f462072b210916cdda490cba190b32d67d5a0",
+        "size_in_bytes": 98376
+      },
+      {
+        "_path": "lib/clang/10.0.0/lib/darwin/libclang_rt.stats_client_osx.a",
+        "path_type": "hardlink",
+        "sha256": "1a6e555666811689361989c2c0ce79b693a08900880f5d4fcea8beacd7d9c646",
+        "sha256_in_prefix": "1a6e555666811689361989c2c0ce79b693a08900880f5d4fcea8beacd7d9c646",
+        "size_in_bytes": 5096
+      },
+      {
+        "_path": "lib/clang/10.0.0/lib/darwin/libclang_rt.stats_osx_dynamic.dylib",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/concourse/worker/volumes/live/079a9ea4-64b6-4fc7-6c14-dca8c9240820/volume/compiler-rt-packages_1589539988004/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_plac",
+        "sha256": "d4be721161ff58229dba7482b4a14b56df5e423e2f53df93733ef91d8c296c50",
+        "sha256_in_prefix": "c4f239f22a14d5f3047697f98ac60ad69f5fd095e8d8bca223a0cf19b8914684",
+        "size_in_bytes": 308452
+      },
+      {
+        "_path": "lib/clang/10.0.0/lib/darwin/libclang_rt.tsan_osx_dynamic.dylib",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/concourse/worker/volumes/live/079a9ea4-64b6-4fc7-6c14-dca8c9240820/volume/compiler-rt-packages_1589539988004/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_plac",
+        "sha256": "3e07527ca8b070deabcdad9d254885ec0911da8e5446ddf514b009f9fbfadab1",
+        "sha256_in_prefix": "fc6c094eae38da08769166d73d3ad3656cb0ec3ab121b64a10cc5ed7f1eaf2ae",
+        "size_in_bytes": 1071008
+      },
+      {
+        "_path": "lib/clang/10.0.0/lib/darwin/libclang_rt.ubsan_minimal_osx.a",
+        "path_type": "hardlink",
+        "sha256": "61f31f91370dab25cf2b7e93f95339525eed0447494c45f73d4b35286506a29f",
+        "sha256_in_prefix": "61f31f91370dab25cf2b7e93f95339525eed0447494c45f73d4b35286506a29f",
+        "size_in_bytes": 26296
+      },
+      {
+        "_path": "lib/clang/10.0.0/lib/darwin/libclang_rt.ubsan_minimal_osx_dynamic.dylib",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/concourse/worker/volumes/live/079a9ea4-64b6-4fc7-6c14-dca8c9240820/volume/compiler-rt-packages_1589539988004/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_plac",
+        "sha256": "7ff2814a2c32a5fbbce61f3702e431d5bcc5a9b69d43365425f270687b9bae24",
+        "sha256_in_prefix": "ba369f1a7c3aa4bd31c5e33dfea172ccf72e05ed1ce985b4ce2db00b2258be60",
+        "size_in_bytes": 22136
+      },
+      {
+        "_path": "lib/clang/10.0.0/lib/darwin/libclang_rt.ubsan_osx.a",
+        "path_type": "hardlink",
+        "sha256": "0aef996d093bf4ed39fc8574998b937d981a7b1e14996d6122fd57ae8a8b00c7",
+        "sha256_in_prefix": "0aef996d093bf4ed39fc8574998b937d981a7b1e14996d6122fd57ae8a8b00c7",
+        "size_in_bytes": 976640
+      },
+      {
+        "_path": "lib/clang/10.0.0/lib/darwin/libclang_rt.ubsan_osx_dynamic.dylib",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/concourse/worker/volumes/live/079a9ea4-64b6-4fc7-6c14-dca8c9240820/volume/compiler-rt-packages_1589539988004/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_plac",
+        "sha256": "4417ccaefcb3599d19d845898acfa783d0bc1eae826d88df38520fb0095d947d",
+        "sha256_in_prefix": "c329a776d44d5b5e7804d3a607559115bb73e3c8fb15a50aaf19d2c690458c5b",
+        "size_in_bytes": 383580
+      },
+      {
+        "_path": "lib/clang/10.0.0/lib/darwin/libclang_rt.xray-basic_osx.a",
+        "path_type": "hardlink",
+        "sha256": "de24edfc4553f2e4e80d9217d121b5cb8b5f726eaaaefa21ae65dd4d66463b26",
+        "sha256_in_prefix": "de24edfc4553f2e4e80d9217d121b5cb8b5f726eaaaefa21ae65dd4d66463b26",
+        "size_in_bytes": 41896
+      },
+      {
+        "_path": "lib/clang/10.0.0/lib/darwin/libclang_rt.xray-fdr_osx.a",
+        "path_type": "hardlink",
+        "sha256": "10efbbe1409303e8bd3e938cdb28732129d314b7fe4636d574c010ba89d18727",
+        "sha256_in_prefix": "10efbbe1409303e8bd3e938cdb28732129d314b7fe4636d574c010ba89d18727",
+        "size_in_bytes": 74024
+      },
+      {
+        "_path": "lib/clang/10.0.0/lib/darwin/libclang_rt.xray-profiling_osx.a",
+        "path_type": "hardlink",
+        "sha256": "e3f828a8ca940d3d0d04c80661a44d850bbaf69fc7d885f4c1c5e8392e4b6e7e",
+        "sha256_in_prefix": "e3f828a8ca940d3d0d04c80661a44d850bbaf69fc7d885f4c1c5e8392e4b6e7e",
+        "size_in_bytes": 135848
+      },
+      {
+        "_path": "lib/clang/10.0.0/lib/darwin/libclang_rt.xray_osx.a",
+        "path_type": "hardlink",
+        "sha256": "9b628e18613845dc71a68c3c19acb74a79c33f0028e8e256a5fa287867f5a860",
+        "sha256_in_prefix": "9b628e18613845dc71a68c3c19acb74a79c33f0028e8e256a5fa287867f5a860",
+        "size_in_bytes": 979128
+      },
+      {
+        "_path": "lib/clang/10.0.0/lib/libclang_rt.builtins_i386_osx.a",
+        "path_type": "hardlink",
+        "sha256": "04874f2a4d405ddf812d387b54319fc5c1efd4aa2db5bb37c5cdfc7eb666a105",
+        "sha256_in_prefix": "04874f2a4d405ddf812d387b54319fc5c1efd4aa2db5bb37c5cdfc7eb666a105",
+        "size_in_bytes": 95744
+      },
+      {
+        "_path": "lib/clang/10.0.0/lib/libclang_rt.builtins_x86_64_osx.a",
+        "path_type": "hardlink",
+        "sha256": "8f53a4419272c02961ac1a704b8b4e23a92d769d044d96227b196c41f13987e0",
+        "sha256_in_prefix": "8f53a4419272c02961ac1a704b8b4e23a92d769d044d96227b196c41f13987e0",
+        "size_in_bytes": 130088
+      },
+      {
+        "_path": "lib/clang/10.0.0/lib/libclang_rt.builtins_x86_64h_osx.a",
+        "path_type": "hardlink",
+        "sha256": "fac8cdcfead112fcb2e5f95f3fef0be6951f3e3145e6cdba8a58c62854432e69",
+        "sha256_in_prefix": "fac8cdcfead112fcb2e5f95f3fef0be6951f3e3145e6cdba8a58c62854432e69",
+        "size_in_bytes": 130008
+      },
+      {
+        "_path": "lib/clang/10.0.0/lib/libclang_rt.cc_kext_i386_osx.a",
+        "path_type": "hardlink",
+        "sha256": "83af0987c99e2dfa84b7fb29fda37dfa27c139f192b0f0eec823c380da64f249",
+        "sha256_in_prefix": "83af0987c99e2dfa84b7fb29fda37dfa27c139f192b0f0eec823c380da64f249",
+        "size_in_bytes": 93432
+      },
+      {
+        "_path": "lib/clang/10.0.0/lib/libclang_rt.cc_kext_x86_64_osx.a",
+        "path_type": "hardlink",
+        "sha256": "d0e469d06e6df625fae869ac8e0595627b75651d140a541b84be3b88a09eb9f8",
+        "sha256_in_prefix": "d0e469d06e6df625fae869ac8e0595627b75651d140a541b84be3b88a09eb9f8",
+        "size_in_bytes": 120648
+      },
+      {
+        "_path": "lib/clang/10.0.0/lib/libclang_rt.cc_kext_x86_64h_osx.a",
+        "path_type": "hardlink",
+        "sha256": "c799756388e9e667ad42562a05c528bf7273b04365cb62b9ae1190b566468eaa",
+        "sha256_in_prefix": "c799756388e9e667ad42562a05c528bf7273b04365cb62b9ae1190b566468eaa",
+        "size_in_bytes": 120776
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "70a948a083f5220d9fc057ff5a814a539894d21f42943cda1c45e8d6f0fbdfb2",
+  "size": 1467603,
+  "subdir": "noarch",
+  "timestamp": 1589540173659,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/noarch/compiler-rt_osx-64-10.0.0-hbcc88fd_0.conda",
+  "version": "10.0.0"
+}

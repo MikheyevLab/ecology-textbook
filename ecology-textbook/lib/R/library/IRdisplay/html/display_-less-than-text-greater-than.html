@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Display a specific textual output</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for display_&amp;lt;text&amp;gt; {IRdisplay}"><tr><td>display_&lt;text&gt; {IRdisplay}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Display a specific textual output</h2>
+
+<h3>Description</h3>
+
+<p>Either <code>data</code> or <code>file</code> must be passed.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+display_json(data = NULL, file = NULL)
+
+display_javascript(data = NULL, file = NULL)
+
+display_html(data = NULL, file = NULL)
+
+display_markdown(data = NULL, file = NULL)
+
+display_latex(data = NULL, file = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>The code or markup content as a <code><a href="../../base/html/character.html">character</a></code> vector</p>
+</td></tr>
+<tr valign="top"><td><code>file</code></td>
+<td>
+<p>The path to a file or a <code><a href="../../base/html/connection.html">connection</a></code> containing the content</p>
+</td></tr>
+</table>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="display_-less-than-image-greater-than.html">display_&lt;image&gt;</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: ## (Run inside of an IRkernel)
+display_text('Just text')
+display_markdown('[MD](http://commonmark.org) *formatted*')
+display_javascript('execute(this)')
+## End(Not run)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>IRdisplay</em> version 0.7.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

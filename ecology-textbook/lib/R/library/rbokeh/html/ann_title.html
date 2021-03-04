@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Add or update the &quot;title&quot; annotation to a Bokeh figure</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ann_title {rbokeh}"><tr><td>ann_title {rbokeh}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Add or update the &quot;title&quot; annotation to a Bokeh figure</h2>
+
+<h3>Description</h3>
+
+<p>Add or update the &quot;title&quot; annotation to a Bokeh figure
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+ann_title(fig, text = NULL, align = NULL, text_color = NULL,
+  text_alpha = NULL, text_font_size = NULL, text_font = NULL,
+  text_font_style = NULL, offset = NULL, background_fill_color = NULL,
+  background_fill_alpha = NULL, border_line_color = NULL,
+  border_line_alpha = NULL, border_line_width = NULL,
+  border_line_join = NULL, border_line_cap = NULL,
+  border_line_dash = NULL, border_line_dash_offset = NULL,
+  render_mode = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>fig</code></td>
+<td>
+<p>Figure to modify.</p>
+</td></tr>
+<tr valign="top"><td><code>text</code></td>
+<td>
+<p>The text value to render.</p>
+</td></tr>
+<tr valign="top"><td><code>align</code></td>
+<td>
+<p>Location to align the title text.</p>
+</td></tr>
+<tr valign="top"><td><code>text_color</code></td>
+<td>
+<p>Color to use to render text with - a hex code (with no alpha) or any of the 147 named CSS colors, e.g 'green', 'indigo'.</p>
+</td></tr>
+<tr valign="top"><td><code>text_alpha</code></td>
+<td>
+<p>An alpha value to use to fill text with. Acceptable values are floating point numbers between 0 (transparent) and 1 (opaque).</p>
+</td></tr>
+<tr valign="top"><td><code>text_font_size</code></td>
+<td>
+<p>Font size in px, em, or pt, e.g., '12pt', '1.5em'.</p>
+</td></tr>
+<tr valign="top"><td><code>text_font</code></td>
+<td>
+<p>Name of a font to use for rendering text, e.g., 'times', 'helvetica'.</p>
+</td></tr>
+<tr valign="top"><td><code>text_font_style</code></td>
+<td>
+<p>A style to use for rendering text. One of 'normal' 'italic' 'bold'.</p>
+</td></tr>
+<tr valign="top"><td><code>offset</code></td>
+<td>
+<p>Offset the text by a number of pixels (can be positive or negative). Shifts the text in different directions based on the location of the title. Possible values are &quot;above&quot;, &quot;below&quot;, &quot;right&quot;, &quot;left&quot;.</p>
+</td></tr>
+<tr valign="top"><td><code>background_fill_color</code></td>
+<td>
+<p>The fill color values for the text bounding box.</p>
+</td></tr>
+<tr valign="top"><td><code>background_fill_alpha</code></td>
+<td>
+<p>The fill alpha values for the text bounding box.</p>
+</td></tr>
+<tr valign="top"><td><code>border_line_color</code></td>
+<td>
+<p>The line color values for the text bounding box.</p>
+</td></tr>
+<tr valign="top"><td><code>border_line_alpha</code></td>
+<td>
+<p>The line alpha values for the text bounding box.</p>
+</td></tr>
+<tr valign="top"><td><code>border_line_width</code></td>
+<td>
+<p>The line width values for the text bounding box.</p>
+</td></tr>
+<tr valign="top"><td><code>border_line_join</code></td>
+<td>
+<p>The line join values for the text bounding box.</p>
+</td></tr>
+<tr valign="top"><td><code>border_line_cap</code></td>
+<td>
+<p>The line cap values for the text bounding box.</p>
+</td></tr>
+<tr valign="top"><td><code>border_line_dash</code></td>
+<td>
+<p>The line dash values for the text bounding box.</p>
+</td></tr>
+<tr valign="top"><td><code>border_line_dash_offset</code></td>
+<td>
+<p>The line dash offset values for the text bounding box.</p>
+</td></tr>
+<tr valign="top"><td><code>render_mode</code></td>
+<td>
+<p>Specifies whether the text is rendered as a canvas element or as an css element overlaid on the canvas. The default mode is &quot;canvas&quot;. Note: The CSS labels won't be present in the output using the &quot;save&quot; tool. Warning: Not all visual styling properties are supported if the render_mode is set to &quot;css&quot;. The border_line_dash property isn't fully supported and border_line_dash_offset isn't supported at all. Setting text_alpha will modify the opacity of the entire background box and border in addition to the text. Finally, clipping Label annotations inside of the plot area isn't supported in &quot;css&quot; mode.</p>
+</td></tr>
+</table>
+
+
+<h3>See Also</h3>
+
+<p>Other annotation functions: <code><a href="ann_arrow.html">ann_arrow</a></code>,
+<code><a href="ann_band.html">ann_band</a></code>, <code><a href="ann_box.html">ann_box</a></code>,
+<code><a href="ann_labels.html">ann_labels</a></code>, <code><a href="ann_poly.html">ann_poly</a></code>,
+<code><a href="ann_span.html">ann_span</a></code>, <code><a href="ann_whisker.html">ann_whisker</a></code>,
+<code><a href="arrow.html">arrow</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# note title can also be specified in figure() but more control with ann_title()
+figure() %&gt;%
+  ly_points(1:10, 1:10) %&gt;%
+  ann_title("title example")
+
+# more control over title annotation
+figure(title = "title example") %&gt;%
+  ly_points(1:10, 1:10) %&gt;%
+  ann_title(text_font = "Courier", text_font_size = 20)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rbokeh</em> version 0.6.3 <a href="00Index.html">Index</a>]</div>
+</body></html>

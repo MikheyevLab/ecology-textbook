@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Add an &quot;image_url&quot; layer to a Bokeh figure</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ly_image_url {rbokeh}"><tr><td>ly_image_url {rbokeh}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Add an &quot;image_url&quot; layer to a Bokeh figure</h2>
+
+<h3>Description</h3>
+
+<p>Renders raster images from URLs at provided coordinates
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+ly_image_url(fig, x = NULL, y = NULL, url, w = 10, h = 10,
+  data = figure_data(fig), dilate = TRUE, anchor = "top_left",
+  angle = 0, w_units = "screen", h_units = "screen", global_alpha = 1,
+  retry_attempts = 0, retry_timeout = 0, lgroup = NULL, lname = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>fig</code></td>
+<td>
+<p>Figure to modify.</p>
+</td></tr>
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>The image x coordinates.</p>
+</td></tr>
+<tr valign="top"><td><code>y</code></td>
+<td>
+<p>The image y coordinates.</p>
+</td></tr>
+<tr valign="top"><td><code>url</code></td>
+<td>
+<p>Values or field name of image URLs.</p>
+</td></tr>
+<tr valign="top"><td><code>w, h</code></td>
+<td>
+<p>Values or field names of width and height of image.</p>
+</td></tr>
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>An optional data frame, providing the source for inputs x, y, and other properties.</p>
+</td></tr>
+<tr valign="top"><td><code>dilate</code></td>
+<td>
+<p>Logical indicating whether to always round fractional pixel locations in such a way as to make the images bigger. This setting may be useful if pixel rounding errors are causing images to have a gap between them, when they should appear flush.</p>
+</td></tr>
+<tr valign="top"><td><code>anchor</code></td>
+<td>
+<p>Where the image is anchored to with respect to <code>x</code> and <code>y</code>. One of 'top_left', 'top_center', 'top_right', 'center_left', 'center', 'center_right', 'bottom_left', 'bottom_center', 'bottom_right'.</p>
+</td></tr>
+<tr valign="top"><td><code>angle</code></td>
+<td>
+<p>Values or field name / expression indicating the angle to rotate the image, in radians.</p>
+</td></tr>
+<tr valign="top"><td><code>w_units, h_units</code></td>
+<td>
+<p>One of &quot;screen&quot;, &quot;data&quot;.</p>
+</td></tr>
+<tr valign="top"><td><code>global_alpha</code></td>
+<td>
+<p>An overall opacity that each image is rendered with (in addition to any inherent alpha values in the image itself).</p>
+</td></tr>
+<tr valign="top"><td><code>retry_attempts</code></td>
+<td>
+<p>Number of attempts to retry loading the images from the specified URL.</p>
+</td></tr>
+<tr valign="top"><td><code>retry_timeout</code></td>
+<td>
+<p>Timeout (in ms) between retry attempts to load the image from the specified URL.</p>
+</td></tr>
+<tr valign="top"><td><code>lgroup</code></td>
+<td>
+<p>Layer group.</p>
+</td></tr>
+<tr valign="top"><td><code>lname</code></td>
+<td>
+<p>Layer name.</p>
+</td></tr>
+</table>
+
+
+<h3>See Also</h3>
+
+<p>Other layer functions: <code><a href="ly_annular_wedge.html">ly_annular_wedge</a></code>,
+<code><a href="ly_annulus.html">ly_annulus</a></code>, <code><a href="ly_arc.html">ly_arc</a></code>,
+<code><a href="ly_bar.html">ly_bar</a></code>, <code><a href="ly_bezier.html">ly_bezier</a></code>,
+<code><a href="ly_boxplot.html">ly_boxplot</a></code>, <code><a href="ly_contour.html">ly_contour</a></code>,
+<code><a href="ly_crect.html">ly_crect</a></code>, <code><a href="ly_curve.html">ly_curve</a></code>,
+<code><a href="ly_density.html">ly_density</a></code>, <code><a href="ly_hist.html">ly_hist</a></code>,
+<code><a href="ly_image.html">ly_image</a></code>, <code><a href="ly_lines.html">ly_lines</a></code>,
+<code><a href="ly_multi_line.html">ly_multi_line</a></code>, <code><a href="ly_oval.html">ly_oval</a></code>,
+<code><a href="ly_patch.html">ly_patch</a></code>, <code><a href="ly_points.html">ly_points</a></code>,
+<code><a href="ly_polygons.html">ly_polygons</a></code>, <code><a href="ly_quadratic.html">ly_quadratic</a></code>,
+<code><a href="ly_quantile.html">ly_quantile</a></code>, <code><a href="ly_ray.html">ly_ray</a></code>,
+<code><a href="ly_rect.html">ly_rect</a></code>, <code><a href="ly_segments.html">ly_segments</a></code>,
+<code><a href="ly_text.html">ly_text</a></code>, <code><a href="ly_wedge.html">ly_wedge</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+url &lt;- c("  http://bokeh.pydata.org/en/latest/_static/images/logo.png",
+  "http://developer.r-project.org/Logo/Rlogo-4.png")
+ss &lt;- seq(0, 2 * pi, length = 13)[-1]
+ws &lt;- runif(12, 2.5, 5) * rep(c(1, 0.8), 6)
+imgdat &lt;- data.frame(
+  x = sin(ss) * 10, y = cos(ss) * 10,
+  w = ws, h = ws * rep(c(1, 0.76), 6),
+  url = rep(url, 6),
+  angle = runif(12, 0, 2 * pi))
+
+figure(xlab = "x", ylab = "y", xlim = c(-12, 12), ylim = c(-12, 12)) %&gt;%
+  ly_image_url(x, y, w = w, h = h, url = url, data = imgdat,
+    anchor = "center", global_alpha = 0.5)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rbokeh</em> version 0.6.3 <a href="00Index.html">Index</a>]</div>
+</body></html>

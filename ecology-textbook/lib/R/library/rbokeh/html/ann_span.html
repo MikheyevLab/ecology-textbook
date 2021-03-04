@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Add a &quot;span&quot; (horizontal or vertical line) annotation to a...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ann_span {rbokeh}"><tr><td>ann_span {rbokeh}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Add a &quot;span&quot; (horizontal or vertical line) annotation to a Bokeh figure</h2>
+
+<h3>Description</h3>
+
+<p>Add a &quot;span&quot; (horizontal or vertical line) annotation to a Bokeh figure
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+ann_span(fig, location = NULL, dimension = c("height", "width"),
+  location_units = NULL, line_color = NULL, line_alpha = NULL,
+  line_width = NULL, line_cap = NULL, line_join = NULL,
+  line_dash = NULL, line_dash_offset = NULL, render_mode = NULL,
+  lgroup = NULL, lname = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>fig</code></td>
+<td>
+<p>Figure to modify.</p>
+</td></tr>
+<tr valign="top"><td><code>location</code></td>
+<td>
+<p>The location of the span, along &quot;dimension&quot;.</p>
+</td></tr>
+<tr valign="top"><td><code>dimension</code></td>
+<td>
+<p>The direction of the span.</p>
+</td></tr>
+<tr valign="top"><td><code>location_units</code></td>
+<td>
+<p>The unit type for the location attribute. Interpreted as &quot;data space&quot; units by default.</p>
+</td></tr>
+<tr valign="top"><td><code>line_color</code></td>
+<td>
+<p>The line color values for the span.</p>
+</td></tr>
+<tr valign="top"><td><code>line_alpha</code></td>
+<td>
+<p>The line alpha values for the span.</p>
+</td></tr>
+<tr valign="top"><td><code>line_width</code></td>
+<td>
+<p>The line width values for the span.</p>
+</td></tr>
+<tr valign="top"><td><code>line_cap</code></td>
+<td>
+<p>The line cap values for the span.</p>
+</td></tr>
+<tr valign="top"><td><code>line_join</code></td>
+<td>
+<p>The line join values for the span.</p>
+</td></tr>
+<tr valign="top"><td><code>line_dash</code></td>
+<td>
+<p>The line dash values for the span.</p>
+</td></tr>
+<tr valign="top"><td><code>line_dash_offset</code></td>
+<td>
+<p>The line dash offset values for the span.</p>
+</td></tr>
+<tr valign="top"><td><code>render_mode</code></td>
+<td>
+<p>Specifies whether the span is rendered as a canvas element or as a css element overlaid on the canvas. The default mode is &quot;canvas&quot;. Warning: The line_dash and line_dash_offset attributes aren't supported if the render_mode is set to &quot;css&quot;.</p>
+</td></tr>
+<tr valign="top"><td><code>lgroup</code></td>
+<td>
+<p>Layer group.</p>
+</td></tr>
+<tr valign="top"><td><code>lname</code></td>
+<td>
+<p>Layer name.</p>
+</td></tr>
+</table>
+
+
+<h3>See Also</h3>
+
+<p>Other annotation functions: <code><a href="ann_arrow.html">ann_arrow</a></code>,
+<code><a href="ann_band.html">ann_band</a></code>, <code><a href="ann_box.html">ann_box</a></code>,
+<code><a href="ann_labels.html">ann_labels</a></code>, <code><a href="ann_poly.html">ann_poly</a></code>,
+<code><a href="ann_title.html">ann_title</a></code>, <code><a href="ann_whisker.html">ann_whisker</a></code>,
+<code><a href="arrow.html">arrow</a></code>
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>rbokeh</em> version 0.6.3 <a href="00Index.html">Index</a>]</div>
+</body></html>

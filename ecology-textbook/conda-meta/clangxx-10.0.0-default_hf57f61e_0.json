@@ -1,0 +1,43 @@
+{
+  "build": "default_hf57f61e_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/osx-64",
+  "constrains": [],
+  "depends": [
+    "clang 10.0.0 default_hf57f61e_0"
+  ],
+  "extracted_package_dir": "/Users/oliverstuart/miniconda2/pkgs/clangxx-10.0.0-default_hf57f61e_0",
+  "features": "",
+  "files": [
+    "bin/clang++"
+  ],
+  "fn": "clangxx-10.0.0-default_hf57f61e_0.tar.bz2",
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "license_family": "Apache",
+  "link": {
+    "source": "/Users/oliverstuart/miniconda2/pkgs/clangxx-10.0.0-default_hf57f61e_0",
+    "type": 1
+  },
+  "md5": "eca32fd09df33d0f848ebf4cbd83d26f",
+  "name": "clangxx",
+  "package_tarball_full_path": "/Users/oliverstuart/miniconda2/pkgs/clangxx-10.0.0-default_hf57f61e_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/clang++",
+        "path_type": "softlink",
+        "sha256": "e4a3abf78d4a7e9a839fb8168ee699eafb2d904099402c9de956df8caac2ec19",
+        "size_in_bytes": 146924
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "1683255a92cc98527615612a7def6b6b8e272d426cd6e74c8ef345b6682a229c",
+  "size": 125656,
+  "subdir": "osx-64",
+  "timestamp": 1589539340176,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/osx-64/clangxx-10.0.0-default_hf57f61e_0.tar.bz2",
+  "version": "10.0.0"
+}

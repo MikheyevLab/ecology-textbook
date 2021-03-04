@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Specify an Ajax data source.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ajax_data {rbokeh}"><tr><td>ajax_data {rbokeh}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Specify an Ajax data source.</h2>
+
+<h3>Description</h3>
+
+<p>Specify an Ajax data source.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+ajax_data(data_url, polling_interval = 100, method = "GET",
+  mode = "replace", max_size = NULL, content_type = NULL,
+  if_modified = NULL, http_headers = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data_url</code></td>
+<td>
+<p>The URL to the endpoint for the data.</p>
+</td></tr>
+<tr valign="top"><td><code>polling_interval</code></td>
+<td>
+<p>Polling interval for updating data source in milliseconds.</p>
+</td></tr>
+<tr valign="top"><td><code>method</code></td>
+<td>
+<p>HTTP method - &quot;GET&quot; or &quot;POST&quot;.</p>
+</td></tr>
+<tr valign="top"><td><code>mode</code></td>
+<td>
+<p>Whether to append new data to existing data (up to &quot;max_size&quot;), or to replace existing data entirely. Must be one of &quot;replace&quot; or &quot;append&quot;.</p>
+</td></tr>
+<tr valign="top"><td><code>max_size</code></td>
+<td>
+<p>Maximum size of the data array being kept after each pull requests. Larger than that size, the data will be right shifted.</p>
+</td></tr>
+<tr valign="top"><td><code>content_type</code></td>
+<td>
+<p>Set the &quot;contentType&quot; parameter for the Ajax request.</p>
+</td></tr>
+<tr valign="top"><td><code>if_modified</code></td>
+<td>
+<p>Whether to include an &quot;If-Modified-Since&quot; header in AJAX requests to the server. If this header is supported by the server, then only new data since the last request will be returned. Either 'replace' or 'append'.</p>
+</td></tr>
+<tr valign="top"><td><code>http_headers</code></td>
+<td>
+<p>Named list of HTTP headers to set for the Ajax request.</p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+d &lt;- ajax_data("http://127.0.0.1:8080")
+## Not run: 
+figure() %&gt;%
+  ly_points(x, y, data = d)
+
+## End(Not run)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rbokeh</em> version 0.6.3 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Partial Least Squares Feature Extraction</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for step_pls {recipes}"><tr><td>step_pls {recipes}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Partial Least Squares Feature Extraction</h2>
+
+<h3>Description</h3>
+
+<p><code>step_pls</code> creates a <em>specification</em> of a recipe step that will
+convert numeric data into one or more new dimensions.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+step_pls(recipe, ..., role = "predictor", trained = FALSE,
+  num_comp = 2, outcome = NULL, options = NULL, res = NULL,
+  num = NULL, prefix = "PLS", skip = FALSE, id = rand_id("pls"))
+
+## S3 method for class 'step_pls'
+tidy(x, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>recipe</code></td>
+<td>
+<p>A recipe object. The step will be added to the
+sequence of operations for this recipe.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>One or more selector functions to choose which
+variables will be used to compute the dimensions. See
+<code><a href="selections.html">selections()</a></code> for more details. For the <code>tidy</code> method, these
+are not currently used.</p>
+</td></tr>
+<tr valign="top"><td><code>role</code></td>
+<td>
+<p>For model terms created by this step, what analysis
+role should they be assigned?. By default, the function assumes
+that the new dimension columns created by the original variables
+will be used as predictors in a model.</p>
+</td></tr>
+<tr valign="top"><td><code>trained</code></td>
+<td>
+<p>A logical to indicate if the quantities for
+preprocessing have been estimated.</p>
+</td></tr>
+<tr valign="top"><td><code>num_comp</code></td>
+<td>
+<p>The number of pls dimensions to retain as new
+predictors. If <code>num_comp</code> is greater than the number of columns
+or the number of possible dimensions, a smaller value will be
+used.</p>
+</td></tr>
+<tr valign="top"><td><code>outcome</code></td>
+<td>
+<p>When a single outcome is available, character
+string or call to <code><a href="../../dplyr/html/vars.html">dplyr::vars()</a></code> can be used to specify the
+variable. When there are multipole outcomes, <code><a href="../../dplyr/html/vars.html">dplyr::vars()</a></code>
+must be used. This that can include specific variable names
+separated by commas or different selectors (see <code><a href="selections.html">selections()</a></code>).</p>
+</td></tr>
+<tr valign="top"><td><code>options</code></td>
+<td>
+<p>A list of options to <code><a href="../../pls/html/plsr.html">pls::plsr()</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>res</code></td>
+<td>
+<p>The <code><a href="../../pls/html/plsr.html">pls::plsr()</a></code> object is stored
+here once this preprocessing step has be trained by
+<code><a href="prep.html">prep.recipe()</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>num</code></td>
+<td>
+<p>The number of components to retain (this will be
+deprecated in factor of <code>num_comp</code> in version 0.1.5). <code>num_comp</code>
+will override this option.</p>
+</td></tr>
+<tr valign="top"><td><code>prefix</code></td>
+<td>
+<p>A character string that will be the prefix to the
+resulting new variables. See notes below.</p>
+</td></tr>
+<tr valign="top"><td><code>skip</code></td>
+<td>
+<p>A logical. Should the step be skipped when the
+recipe is baked by <code><a href="bake.html">bake.recipe()</a></code>? While all operations are baked
+when <code><a href="prep.html">prep.recipe()</a></code> is run, some operations may not be able to be
+conducted on new data (e.g. processing the outcome variable(s)).
+Care should be taken when using <code>skip = TRUE</code> as it may affect
+the computations for subsequent operations</p>
+</td></tr>
+<tr valign="top"><td><code>id</code></td>
+<td>
+<p>A character string that is unique to this step to identify it.</p>
+</td></tr>
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>A <code>step_pls</code> object</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>PLS is a supervised version of principal component
+analysis that requires one or more numeric outcomes to compute
+the new features. The data should be scaled (and perhaps
+centered) prior to running these calculations.
+</p>
+<p>This step requires the <span class="pkg">pls</span> package. If not installed, the
+step will stop with a note about installing the package.
+</p>
+<p>The argument <code>num_comp</code> controls the number of components that will
+be retained (the original variables that are used to derive the
+components are removed from the data). The new components will
+have names that begin with <code>prefix</code> and a sequence of numbers.
+The variable names are padded with zeros. For example, if <code>num_comp &lt; 10</code>, their names will be <code>PLS1</code> - <code>PLS9</code>. If <code>num_comp = 101</code>, the
+names would be <code>PLS001</code> - <code>PLS101</code>.
+</p>
+
+
+<h3>Value</h3>
+
+<p>An updated version of <code>recipe</code> with the new step
+added to the sequence of existing steps (if any). For the
+<code>tidy</code> method, a tibble with columns <code>terms</code> (the
+selectors or variables selected).
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="step_pca.html">step_pca()</a></code> <code><a href="step_kpca.html">step_kpca()</a></code>
+<code><a href="step_ica.html">step_ica()</a></code> <code><a href="recipe.html">recipe()</a></code> <code><a href="prep.html">prep.recipe()</a></code>
+<code><a href="bake.html">bake.recipe()</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(biomass)
+
+biomass_tr &lt;- biomass[biomass$dataset == "Training",]
+biomass_te &lt;- biomass[biomass$dataset == "Testing",]
+
+pls_rec &lt;- recipe(HHV ~ ., data = biomass_tr) %&gt;%
+  step_rm(sample, dataset) %&gt;%
+  step_center(all_predictors()) %&gt;%
+  step_scale(all_predictors()) %&gt;%
+  # If the outcome(s) need standardization, do it in separate
+  # steps with skip = FALSE so that new data where the
+  # outcome is missing can be processed.
+  step_center(all_outcomes(), skip = TRUE) %&gt;%
+  step_scale(all_outcomes(), skip = TRUE) %&gt;%
+  step_pls(all_predictors(), outcome = "HHV")
+
+pls_rec &lt;- prep(pls_rec, training = biomass_tr, retain = TRUE)
+
+pls_test_scores &lt;- bake(pls_rec, new_data = biomass_te[, -8])
+
+tidy(pls_rec, number = 6)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>recipes</em> version 0.1.5 <a href="00Index.html">Index</a>]</div>
+</body></html>

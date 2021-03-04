@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Add an offset to a categorical variable for Bokeh plotting.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for cat_offset {rbokeh}"><tr><td>cat_offset {rbokeh}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Add an offset to a categorical variable for Bokeh plotting.</h2>
+
+<h3>Description</h3>
+
+<p>Add an offset to a categorical variable for Bokeh plotting.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+cat_offset(x, offset)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>The categorical data to offset, a vector of categorical / factor data.</p>
+</td></tr>
+<tr valign="top"><td><code>offset</code></td>
+<td>
+<p>A numeric vector of matching length of <code>x</code> that specifies the categorical offset. Typically these are values between -0.5 and 0.5.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>This function allows specification of plotting values in between two categorical values. Suppose, for example, a categorical axis has axis ticks ordered &quot;a&quot;, &quot;b&quot;, &quot;c&quot;. Then plotting <code>cat_offset("a", -0.5)</code> will plot a value halfway between &quot;a&quot; and &quot;b&quot;, while plotting <code>cat_offset("a", 0.5)</code> will plot a value halfway between &quot;b&quot; and &quot;c&quot;.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+figure(title = "Periodic Table", data = elements,
+  xgrid = FALSE, ygrid = FALSE, xlab = "", ylab = "",
+  xlim = as.character(1:18), ylim = c("   ", "  ", " ", as.character(7:1)),
+  height = 700, width = 1200) %&gt;%
+  ly_crect(cat_offset(group, group_offset), period, 0.9, 0.9,
+    color = group_block, fill_alpha = 0.6, legend = FALSE,
+    hover = list(name, atomic_number, group_block, atomic_mass,
+      electronic_configuration)) %&gt;%
+  ly_text(cat_offset(group, sym_offset), period, text = symbol,
+    font_style = "bold", font_size = "15pt",
+    align = "left", baseline = "middle") %&gt;%
+  ly_text(cat_offset(group, sym_offset), cat_offset(period, 0.3), text = atomic_number_p,
+    font_size = "9pt", align = "left", baseline = "middle") %&gt;%
+  ly_text(cat_offset(group, sym_offset), cat_offset(period, -0.2), text = name,
+    font_size = "6pt", align = "left", baseline = "middle") %&gt;%
+  ly_text(cat_offset(group, sym_offset), cat_offset(period, -0.35), text = atomic_mass,
+    font_size = "6pt", align = "left", baseline = "middle") %&gt;%
+  x_axis(axis = axis_spec(visible = FALSE)) %&gt;%
+  y_axis(axis = axis_spec(visible = FALSE))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rbokeh</em> version 0.6.3 <a href="00Index.html">Index</a>]</div>
+</body></html>

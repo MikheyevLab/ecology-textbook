@@ -1,0 +1,123 @@
+%>%                     Pipe figures
+add_tiles               Add map tiles to a Bokeh figure.
+ajax_data               Specify an Ajax data source.
+ann_arrow               Add an "arrow" annotation to a Bokeh figure
+ann_band                Add a "band" annotation (filled area band) to a
+                        Bokeh figure
+ann_box                 Add a "box" annotation (rectangular shaded
+                        region) to a Bokeh figure
+ann_labels              Add a "label" annotation to a Bokeh figure
+ann_poly                Add a "polygon" annotation to a Bokeh figure
+ann_span                Add a "span" (horizontal or vertical line)
+                        annotation to a Bokeh figure
+ann_title               Add or update the "title" annotation to a Bokeh
+                        figure
+ann_whisker             Add a "whisker" annotation to a Bokeh figure
+arrow                   Specify details of an arrow head.
+asis                    Specify that a plot variable should be treated
+                        "as-is" instead of being mapped.
+axis                    Customize x or y axis of a Bokeh figure.
+axis_spec               Specify axis parameters for an axis.
+bk_default_theme        Themes
+bokeh_render_json       Plot a Bokeh JSON specification
+cat_offset              Add an offset to a categorical variable for
+                        Bokeh plotting.
+co2_df                  "co2" dataset
+custom_js_transform     Specify a custom JavaScript transformation.
+elements                "Periodic Table" dataset
+figure                  Instantiate an rbokeh figure.
+get_ajax_sample         Get a Sample of Data from Ajax Data Source
+gmap                    Initialize a Bokeh Google Map plot
+gmap_style              Get a Google Map Style
+grid_spec               Specify parameters for displaying a horizontal
+                        or vertical grid for an axis.
+hov                     Create a hover specification.
+jitter_cat              Add a small amount of (rbokeh-compatible) noise
+                        to a character vector or factor.
+ly_annular_wedge        Add an "annular_wedge" layer to a Bokeh figure
+ly_annulus              Add an "annulus" layer to a Bokeh figure
+ly_arc                  Add an "arc" layer to a Bokeh figure
+ly_bar                  Add a "barchart" layer to a Bokeh figure
+ly_bezier               Add a "bezier" layer to a Bokeh figure
+ly_boxplot              Add a "boxplot" layer to a Bokeh figure
+ly_contour              Add a "contour" layer to a Bokeh figure
+ly_crect                Add a "crect" (centered rectangle) layer to a
+                        Bokeh figure
+ly_curve                Add a "curve" layer to a Bokeh figure
+ly_density              Add a "density" layer to a Bokeh figure
+ly_hexbin               Add a "hexbin" layer to a Bokeh figure
+ly_hist                 Add a "hist" layer to a Bokeh figure
+ly_image                Add an "image" layer to a Bokeh figure
+ly_image_url            Add an "image_url" layer to a Bokeh figure
+ly_lines                Add a "lines" layer to a Bokeh figure Draws
+                        lines with the given coordinates.
+ly_multi_line           Add a "multi_line" layer to a Bokeh figure
+ly_oval                 Add an "oval" layer to a Bokeh figure
+ly_patch                Add a "patch" layer to a Bokeh figure
+ly_points               Add a "points" layer to a Bokeh figure
+ly_polygons             Add a "polygons" layer to a Bokeh figure
+ly_quadratic            Add a "quadratic" layer to a Bokeh figure
+ly_quantile             Add a "quantile" layer to a Bokeh figure
+ly_ray                  Add a "ray" layer to a Bokeh figure
+ly_rect                 Add a "rect" layer to a Bokeh figure
+ly_segments             Add a "segments" layer to a Bokeh figure
+ly_text                 Add a "text" layer to a Bokeh figure
+ly_wedge                Add a "wedge" layer to a Bokeh figure
+pal_color               Palettes for themes.
+print_model_json        Print the JSON of a Bokeh figure
+range                   Update x and y axis range in a Bokeh figure
+rbokeh-package          rbokeh: R interface for Bokeh
+rbokehOutput            Widget output function for use in Shiny.
+renderRbokeh            Widget render function for use in Shiny
+set_theme               Set the theme for a figure
+spec                    Provide additional specification information
+                        about a Bokeh plot attribute.
+theme_axis              Override theme parameters for axis attributes
+theme_grid              Override theme parameters for grid attributes
+theme_legend            Override theme parameters for legend attributes
+theme_plot              Override theme parameters for general plot
+                        attributes
+theme_title             Override theme parameters for general plot
+                        attributes
+ticker_cat              Generate ticks for categorical ranges.
+ticker_date             Generate nice ticks across different date and
+                        time scales.
+ticker_fixed            Generate ticks at fixed, explicitly supplied
+                        locations.
+ticker_interval         Generate evenly spaced ticks at a fixed
+                        interval regardless of scale.
+ticker_log              Generate ticks on a log scale.
+ticker_num              Generate ticks on a linear / numeric scale.
+tickformatter_cat       Display tick values from categorical ranges as
+                        string values.
+tickformatter_date      A tick formatter for displaying datetime values
+                        nicely across a range of scales.
+tickformatter_func      Display tick values that are formatted by a
+                        user-defined function.
+tickformatter_log       Display tick values from continuous ranges as
+                        powers of some base. Most often useful in
+                        conjunction with a "LogTicker".
+tickformatter_num       Display tick values from continuous ranges as
+                        "basic numbers", using scientific notation when
+                        appropriate by default.
+tickformatter_numeral   Tick formatter based on a human-readable format
+                        string.
+tickformatter_printf    Tick formatter based on a printf-style format
+                        string.
+tile_spec               Specify a tile provider for a tile map plot.
+to_epoch                Convert a date or POSIXct to Unix epoch time.
+tool_box_select         Add "box_select" tool to a Bokeh figure
+tool_box_zoom           Add "box_zoom" tool to a Bokeh figure
+tool_crosshair          Add "crosshair" tool to a Bokeh figure
+tool_help               Add "help" tool to a Bokeh figure
+tool_lasso_select       Add "lasso_select" tool to a Bokeh figure
+tool_pan                Add "pan" tool to a Bokeh figure
+tool_poly_select        Add "poly_select" tool to a Bokeh figure
+tool_redo               Add "redo" tool to a Bokeh figure
+tool_reset              Add "reset" tool to a Bokeh figure
+tool_save               Add "save" tool to a Bokeh figure
+tool_undo               Add "undo" tool to a Bokeh figure
+tool_wheel_pan          Add "wheel_pan" tool to a Bokeh figure
+tool_wheel_zoom         Add "wheel_zoom" tool to a Bokeh figure
+tool_zoom_in            Add "zoom_in" tool to a Bokeh figure
+tool_zoom_out           Add "zoom_out" tool to a Bokeh figure

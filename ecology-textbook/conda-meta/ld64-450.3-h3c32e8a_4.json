@@ -1,0 +1,132 @@
+{
+  "build": "h3c32e8a_4",
+  "build_number": 4,
+  "channel": "https://repo.anaconda.com/pkgs/main/osx-64",
+  "constrains": [
+    "clang >=10.0.0,<11.0a0"
+  ],
+  "depends": [
+    "libcxx",
+    "libllvm10 >=10.0.0,<10.1.0a0",
+    "tapi >=1000.10.8,<1001.0a0"
+  ],
+  "extracted_package_dir": "/Users/oliverstuart/miniconda2/pkgs/ld64-450.3-h3c32e8a_4",
+  "features": "",
+  "files": [
+    "bin/x86_64-apple-darwin13.4.0-ObjectDump",
+    "bin/x86_64-apple-darwin13.4.0-dyldinfo",
+    "bin/x86_64-apple-darwin13.4.0-ld",
+    "bin/x86_64-apple-darwin13.4.0-machocheck",
+    "bin/x86_64-apple-darwin13.4.0-unwinddump",
+    "share/man/man1/x86_64-apple-darwin13.4.0-dyldinfo.1",
+    "share/man/man1/x86_64-apple-darwin13.4.0-ld.1",
+    "share/man/man1/x86_64-apple-darwin13.4.0-ld64.1",
+    "share/man/man1/x86_64-apple-darwin13.4.0-rebase.1",
+    "share/man/man1/x86_64-apple-darwin13.4.0-unwinddump.1"
+  ],
+  "fn": "ld64-450.3-h3c32e8a_4.conda",
+  "legacy_bz2_md5": "72aec7d6e96458d06922ef2fa6d1462b",
+  "legacy_bz2_size": 1283806,
+  "license": "APSL-2.0",
+  "license_family": "Other",
+  "link": {
+    "source": "/Users/oliverstuart/miniconda2/pkgs/ld64-450.3-h3c32e8a_4",
+    "type": 1
+  },
+  "md5": "2083ffd826cdb0ef8195c5fa3bc2ac70",
+  "name": "ld64",
+  "package_tarball_full_path": "/Users/oliverstuart/miniconda2/pkgs/ld64-450.3-h3c32e8a_4.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/x86_64-apple-darwin13.4.0-ObjectDump",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/concourse/worker/volumes/live/d7cfffa8-1583-4d8f-7c16-e5976a0d8523/volume/cctools-and-ld64_1589528033814/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehol",
+        "sha256": "4993f4dfe4771186f4b6be69b56fa4e17ed0eafa21848c2dc2f981e5ba191c51",
+        "sha256_in_prefix": "f2bc9f62ce0538e3d0c3d78bf468a87f44382e88367b8ad1ae61aa785845fd00",
+        "size_in_bytes": 907980
+      },
+      {
+        "_path": "bin/x86_64-apple-darwin13.4.0-dyldinfo",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/concourse/worker/volumes/live/d7cfffa8-1583-4d8f-7c16-e5976a0d8523/volume/cctools-and-ld64_1589528033814/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehol",
+        "sha256": "6976972d0e2b88ca657f491d1234a38fca281f1fbc7d0b32bb57466e1b76fa3e",
+        "sha256_in_prefix": "2fdc35bd30412ecca421249c05831a4b7be0cfa98d8ba1216ae2e63eee9a59f7",
+        "size_in_bytes": 262524
+      },
+      {
+        "_path": "bin/x86_64-apple-darwin13.4.0-ld",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/concourse/worker/volumes/live/d7cfffa8-1583-4d8f-7c16-e5976a0d8523/volume/cctools-and-ld64_1589528033814/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehol",
+        "sha256": "7f19367e41f6b2071a6db12309d0141b0360be131aa648a5c153d87bd74144a7",
+        "sha256_in_prefix": "18d9d1ba37f0637e68bb13c752b2c744af2e80afaede2c5cc8952c902a73b4a6",
+        "size_in_bytes": 3623060
+      },
+      {
+        "_path": "bin/x86_64-apple-darwin13.4.0-machocheck",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/concourse/worker/volumes/live/d7cfffa8-1583-4d8f-7c16-e5976a0d8523/volume/cctools-and-ld64_1589528033814/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehol",
+        "sha256": "3a4d37875038a7a82f794efc834a7bde2eb028718b41316c0dd96dfd3684d2fd",
+        "sha256_in_prefix": "54b786f1c40191ea141c72712011ca7455c6685bd6d5cadf5c048ee3087718bd",
+        "size_in_bytes": 148100
+      },
+      {
+        "_path": "bin/x86_64-apple-darwin13.4.0-unwinddump",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/concourse/worker/volumes/live/d7cfffa8-1583-4d8f-7c16-e5976a0d8523/volume/cctools-and-ld64_1589528033814/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehol",
+        "sha256": "50ff23dc939f72697e068eaeb13fdd077e23a8a57bff5c99f59895ed92fadaf1",
+        "sha256_in_prefix": "128b9b7e4b10b65af90ee499d3e4468e09cc7d55882d62ebb39727fa9c198259",
+        "size_in_bytes": 54060
+      },
+      {
+        "_path": "share/man/man1/x86_64-apple-darwin13.4.0-dyldinfo.1",
+        "path_type": "hardlink",
+        "sha256": "65bf015e0eceb28a634a41b9ab529fc38845430dad99fca14b2d4bd3545a72b8",
+        "sha256_in_prefix": "65bf015e0eceb28a634a41b9ab529fc38845430dad99fca14b2d4bd3545a72b8",
+        "size_in_bytes": 1780
+      },
+      {
+        "_path": "share/man/man1/x86_64-apple-darwin13.4.0-ld.1",
+        "path_type": "hardlink",
+        "sha256": "f20808da0ff17bd1292bd0d6a387bc7893835902e51435cb03d933a8a9af02bc",
+        "sha256_in_prefix": "f20808da0ff17bd1292bd0d6a387bc7893835902e51435cb03d933a8a9af02bc",
+        "size_in_bytes": 52428
+      },
+      {
+        "_path": "share/man/man1/x86_64-apple-darwin13.4.0-ld64.1",
+        "path_type": "hardlink",
+        "sha256": "5087a7a3829b727a623fde146c812041bb9cd08fe41b28425bbbcde45c05e9d9",
+        "sha256_in_prefix": "5087a7a3829b727a623fde146c812041bb9cd08fe41b28425bbbcde45c05e9d9",
+        "size_in_bytes": 14
+      },
+      {
+        "_path": "share/man/man1/x86_64-apple-darwin13.4.0-rebase.1",
+        "path_type": "hardlink",
+        "sha256": "fac5d24ceecc8ad91d419c7762d681a3b8c662cbe2ddff5c16c6bc171098b1a7",
+        "sha256_in_prefix": "fac5d24ceecc8ad91d419c7762d681a3b8c662cbe2ddff5c16c6bc171098b1a7",
+        "size_in_bytes": 1424
+      },
+      {
+        "_path": "share/man/man1/x86_64-apple-darwin13.4.0-unwinddump.1",
+        "path_type": "hardlink",
+        "sha256": "758829d66a892f6af26ab9cdf14d754df4bdad7dcc40ea51021b9fde9bc90147",
+        "sha256_in_prefix": "758829d66a892f6af26ab9cdf14d754df4bdad7dcc40ea51021b9fde9bc90147",
+        "size_in_bytes": 770
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "8a452010f26993ccabb17ec6bed71c146b67ddcd8342046557ac9ab4008392a7",
+  "size": 878423,
+  "subdir": "osx-64",
+  "timestamp": 1589528569918,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/osx-64/ld64-450.3-h3c32e8a_4.conda",
+  "version": "450.3"
+}

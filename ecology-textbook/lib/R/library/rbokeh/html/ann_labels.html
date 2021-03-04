@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Add a &quot;label&quot; annotation to a Bokeh figure</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ann_labels {rbokeh}"><tr><td>ann_labels {rbokeh}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Add a &quot;label&quot; annotation to a Bokeh figure</h2>
+
+<h3>Description</h3>
+
+<p>Add a &quot;label&quot; annotation to a Bokeh figure
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+ann_labels(fig, x = NULL, y = NULL, text = NULL, angle = NULL,
+  data = figure_data(fig), x_units = NULL, y_units = NULL,
+  angle_units = NULL, x_offset = NULL, y_offset = NULL,
+  text_align = NULL, text_color = NULL, text_alpha = NULL,
+  text_font = NULL, text_font_size = NULL, text_font_style = NULL,
+  text_baseline = NULL, background_fill_color = NULL,
+  background_fill_alpha = NULL, border_line_color = NULL,
+  border_line_alpha = NULL, border_line_width = NULL,
+  border_line_join = NULL, border_line_dash = NULL,
+  border_line_dash_offset = NULL, border_line_cap = NULL,
+  render_mode = NULL, lgroup = NULL, lname = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>fig</code></td>
+<td>
+<p>Figure to modify.</p>
+</td></tr>
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>The x-coordinates to locate the text anchors.</p>
+</td></tr>
+<tr valign="top"><td><code>y</code></td>
+<td>
+<p>The y-coordinates to locate the text anchors.</p>
+</td></tr>
+<tr valign="top"><td><code>text</code></td>
+<td>
+<p>The text values to render.</p>
+</td></tr>
+<tr valign="top"><td><code>angle</code></td>
+<td>
+<p>The angles to rotate the text, as measured from the horizontal. Warning: The center of rotation for canvas and css render_modes is different. For <code>render_mode="canvas"</code> the label is rotated from the top-left corner of the annotation, while for <code>render_mode="css"</code> the annotation is rotated around it's center.</p>
+</td></tr>
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>An optional data frame supplying data to which other parameters can refer.</p>
+</td></tr>
+<tr valign="top"><td><code>x_units</code></td>
+<td>
+<p>The unit type for the xs attribute. Interpreted as &quot;data space&quot; units by default. One of &quot;data&quot; or &quot;screen&quot;.</p>
+</td></tr>
+<tr valign="top"><td><code>y_units</code></td>
+<td>
+<p>The unit type for the ys attribute. Interpreted as &quot;data space&quot; units by default. One of &quot;data&quot; or &quot;screen&quot;.</p>
+</td></tr>
+<tr valign="top"><td><code>angle_units</code></td>
+<td>
+<p>One of &quot;rad&quot; or &quot;deg&quot;.</p>
+</td></tr>
+<tr valign="top"><td><code>x_offset</code></td>
+<td>
+<p>Offset values to apply to the x-coordinates. This is useful, for instance, if it is desired to &quot;float&quot; text a fixed distance in screen units from a given data position.</p>
+</td></tr>
+<tr valign="top"><td><code>y_offset</code></td>
+<td>
+<p>Offset values to apply to the y-coordinates. This is useful, for instance, if it is desired to &quot;float&quot; text a fixed distance in screen units from a given data position.</p>
+</td></tr>
+<tr valign="top"><td><code>text_align</code></td>
+<td>
+<p>The text align values for the text.</p>
+</td></tr>
+<tr valign="top"><td><code>text_color</code></td>
+<td>
+<p>The text color values for the text.</p>
+</td></tr>
+<tr valign="top"><td><code>text_alpha</code></td>
+<td>
+<p>The text alpha values for the text.</p>
+</td></tr>
+<tr valign="top"><td><code>text_font</code></td>
+<td>
+<p>The text font values for the text.</p>
+</td></tr>
+<tr valign="top"><td><code>text_font_size</code></td>
+<td>
+<p>The text font size values for the text.</p>
+</td></tr>
+<tr valign="top"><td><code>text_font_style</code></td>
+<td>
+<p>The text font style values for the text.</p>
+</td></tr>
+<tr valign="top"><td><code>text_baseline</code></td>
+<td>
+<p>The text baseline values for the text.</p>
+</td></tr>
+<tr valign="top"><td><code>background_fill_color</code></td>
+<td>
+<p>The fill color values for the text bounding box.</p>
+</td></tr>
+<tr valign="top"><td><code>background_fill_alpha</code></td>
+<td>
+<p>The fill alpha values for the text bounding box.</p>
+</td></tr>
+<tr valign="top"><td><code>border_line_color</code></td>
+<td>
+<p>The line color values for the text bounding box.</p>
+</td></tr>
+<tr valign="top"><td><code>border_line_alpha</code></td>
+<td>
+<p>The line alpha values for the text bounding box.</p>
+</td></tr>
+<tr valign="top"><td><code>border_line_width</code></td>
+<td>
+<p>The line width values for the text bounding box.</p>
+</td></tr>
+<tr valign="top"><td><code>border_line_join</code></td>
+<td>
+<p>The line join values for the text bounding box.</p>
+</td></tr>
+<tr valign="top"><td><code>border_line_dash</code></td>
+<td>
+<p>The line dash values for the text bounding box.</p>
+</td></tr>
+<tr valign="top"><td><code>border_line_dash_offset</code></td>
+<td>
+<p>The line dash offset values for the text bounding box.</p>
+</td></tr>
+<tr valign="top"><td><code>border_line_cap</code></td>
+<td>
+<p>The line cap values for the text bounding box.</p>
+</td></tr>
+<tr valign="top"><td><code>render_mode</code></td>
+<td>
+<p>Specifies whether the text is rendered as a canvas element or as an css element overlaid on the canvas. The default mode is &quot;canvas&quot;. Note: The CSS labels won't be present in the output using the &quot;save&quot; tool. Warning: Not all visual styling properties are supported if the render_mode is set to &quot;css&quot;. The border_line_dash property isn't fully supported and border_line_dash_offset isn't supported at all. Setting text_alpha will modify the opacity of the entire background box and border in addition to the text. Finally, clipping label annotations inside of the plot area isn't supported in &quot;css&quot; mode.</p>
+</td></tr>
+<tr valign="top"><td><code>lgroup</code></td>
+<td>
+<p>Layer group.</p>
+</td></tr>
+<tr valign="top"><td><code>lname</code></td>
+<td>
+<p>Layer name.</p>
+</td></tr>
+</table>
+
+
+<h3>See Also</h3>
+
+<p>Other annotation functions: <code><a href="ann_arrow.html">ann_arrow</a></code>,
+<code><a href="ann_band.html">ann_band</a></code>, <code><a href="ann_box.html">ann_box</a></code>,
+<code><a href="ann_poly.html">ann_poly</a></code>, <code><a href="ann_span.html">ann_span</a></code>,
+<code><a href="ann_title.html">ann_title</a></code>, <code><a href="ann_whisker.html">ann_whisker</a></code>,
+<code><a href="arrow.html">arrow</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+d &lt;- data.frame(x = 1:10, y = rnorm(10), txt = letters[1:10])
+figure(data = d) %&gt;%
+  ly_points(x, y) %&gt;%
+  ann_labels(x, y, txt)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rbokeh</em> version 0.6.3 <a href="00Index.html">Index</a>]</div>
+</body></html>

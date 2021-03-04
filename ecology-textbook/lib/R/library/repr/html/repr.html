@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Dynamic representation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for repr {repr}"><tr><td>repr {repr}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Dynamic representation</h2>
+
+<h3>Description</h3>
+
+<p>Specify an object and a format to represent it in. Will <a href="../../base/html/stop.html">stop</a><code>()</code> if no such format is known.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+repr(obj, format = "text", ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>obj</code></td>
+<td>
+<p>The object to create a representation for</p>
+</td></tr>
+<tr valign="top"><td><code>format</code></td>
+<td>
+<p>The representation format. <code>repr_&lt;format&gt;</code> is then called. (default: Call <a href="repr_text.html">repr_text</a>)</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>delegated to the specific <code>repr_&lt;format&gt;</code> function</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A character or raw vector of that format or NULL if none is defined.
+Only the <code>'text'</code> format is defined for everything (via <a href="../../base/html/print.html">print</a><code>()</code>)
+</p>
+
+
+<h3>See Also</h3>
+
+<p><a href="repr_text.html">repr_text</a>, <a href="repr-generics.html">repr-generics</a>
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>repr</em> version 0.19.2 <a href="00Index.html">Index</a>]</div>
+</body></html>

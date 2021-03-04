@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Tick formatter based on a human-readable format string.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for tickformatter_numeral {rbokeh}"><tr><td>tickformatter_numeral {rbokeh}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Tick formatter based on a human-readable format string.</h2>
+
+<h3>Description</h3>
+
+<p>Tick formatter based on a human-readable format string.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+tickformatter_numeral(format = "0,0", rounding = "round", language = "en",
+  clear = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>format</code></td>
+<td>
+<p>The number format, as defined in the tables described in the details. For the complete specification, see <a href="http://numbrojs.com/format.html">http://numbrojs.com/format.html</a>.</p>
+</td></tr>
+<tr valign="top"><td><code>rounding</code></td>
+<td>
+<p>Rounding functions (round, floor, ceil) and their synonyms (nearest, rounddown, roundup).</p>
+</td></tr>
+<tr valign="top"><td><code>language</code></td>
+<td>
+<p>The language to use for formatting language-specific features (e.g. thousands separator).</p>
+</td></tr>
+<tr valign="top"><td><code>clear</code></td>
+<td>
+<p>A logical indicating whether all non-specified parameters should be cleared out of any exising specification in the figure. This can be useful when modifying a previously-defined figure.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Possible values for <code>format</code> are defined in the following tables:
+</p>
+<p><strong>NUMBERS</strong>
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;">
+<strong>Number</strong>    </td><td style="text-align: left;">  <strong>Format</strong>      </td><td style="text-align: right;">  <strong>String</strong></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>10000</code>       </td><td style="text-align: left;">  <code>'0,0.0000'</code>    </td><td style="text-align: right;">  <code>10,000.0000</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>10000.23</code>    </td><td style="text-align: left;">  <code>'0,0'</code>         </td><td style="text-align: right;">  <code>10,000</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>10000.23</code>    </td><td style="text-align: left;">  <code>'+0,0'</code>        </td><td style="text-align: right;">  <code>+10,000</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>-10000</code>      </td><td style="text-align: left;">  <code>'0,0.0'</code>       </td><td style="text-align: right;">  <code>-10,000.0</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>10000.1234</code>  </td><td style="text-align: left;">  <code>'0.000'</code>       </td><td style="text-align: right;">  <code>10000.123</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>10000.1234</code>  </td><td style="text-align: left;">  <code>'0[.]00000'</code>   </td><td style="text-align: right;">  <code>10000.12340</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>-10000</code>      </td><td style="text-align: left;">  <code>'(0,0.0000)'</code>  </td><td style="text-align: right;">  <code>(10,000.0000)</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>-0.23</code>       </td><td style="text-align: left;">  <code>'.00'</code>         </td><td style="text-align: right;">  <code>-.23</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>-0.23</code>       </td><td style="text-align: left;">  <code>'(.00)'</code>       </td><td style="text-align: right;">  <code>(.23)</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>0.23</code>        </td><td style="text-align: left;">  <code>'0.00000'</code>     </td><td style="text-align: right;">  <code>0.23000</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>0.23</code>        </td><td style="text-align: left;">  <code>'0.0[0000]'</code>   </td><td style="text-align: right;">  <code>0.23</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>1230974</code>     </td><td style="text-align: left;">  <code>'0.0a'</code>        </td><td style="text-align: right;">  <code>1.2m</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>1460</code>        </td><td style="text-align: left;">  <code>'0 a'</code>         </td><td style="text-align: right;">  <code>1 k</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>-104000</code>     </td><td style="text-align: left;">  <code>'0a'</code>          </td><td style="text-align: right;">  <code>-104k</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>1</code>           </td><td style="text-align: left;">  <code>'0o'</code>          </td><td style="text-align: right;">  <code>1st</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>52</code>          </td><td style="text-align: left;">  <code>'0o'</code>          </td><td style="text-align: right;">  <code>52nd</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>23</code>          </td><td style="text-align: left;">  <code>'0o'</code>          </td><td style="text-align: right;">  <code>23rd</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>100</code>         </td><td style="text-align: left;">  <code>'0o'</code>          </td><td style="text-align: right;">  <code>100th</code>
+</td>
+</tr>
+
+</table>
+
+<p><strong>CURRENCY</strong>
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;">
+<strong>Number</strong>   </td><td style="text-align: left;">  <strong>Format</strong>      </td><td style="text-align: right;">   <strong>String</strong></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>1000.234</code>   </td><td style="text-align: left;">  <code>'$0,0.00'</code>     </td><td style="text-align: right;">  <code> $1,000.23</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>1000.2</code>     </td><td style="text-align: left;">  <code>'0,0[.]00 $'</code>  </td><td style="text-align: right;">  <code> 1,000.20 $</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>1001</code>       </td><td style="text-align: left;">  <code>'$ 0,0[.]00'</code>  </td><td style="text-align: right;">  <code> $ 1,001</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>-1000.234</code>  </td><td style="text-align: left;">  <code>'($0,0)'</code>      </td><td style="text-align: right;">  <code> ($1,000)</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>-1000.234</code>  </td><td style="text-align: left;">  <code>'$0.00'</code>       </td><td style="text-align: right;">  <code> -$1000.23</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>1230974</code>    </td><td style="text-align: left;">  <code>'($ 0.00 a)'</code>  </td><td style="text-align: right;">  <code> $ 1.23 m</code>
+</td>
+</tr>
+
+</table>
+
+<p><strong>BYTES</strong>
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;">
+<strong>Number</strong>       </td><td style="text-align: left;"> <strong>Format</strong>   </td><td style="text-align: right;"> <strong>String</strong></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>100</code>            </td><td style="text-align: left;"> <code>'0b'</code>       </td><td style="text-align: right;"> <code>100B</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>2048</code>           </td><td style="text-align: left;"> <code>'0 b'</code>      </td><td style="text-align: right;"> <code>2 KB</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>7884486213</code>     </td><td style="text-align: left;"> <code>'0.0b'</code>     </td><td style="text-align: right;"> <code>7.3GB</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>3467479682787</code>  </td><td style="text-align: left;"> <code>'0.000 b'</code>  </td><td style="text-align: right;"> <code>3.154 TB</code>
+</td>
+</tr>
+
+</table>
+
+<p><strong>PERCENTAGES</strong>
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;">
+<strong>Number</strong>     </td><td style="text-align: left;">  <strong>Format</strong>      </td><td style="text-align: right;">  <strong>String</strong></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>1</code>            </td><td style="text-align: left;">  <code>'0%'</code>         </td><td style="text-align: right;">  <code>100%</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>0.974878234</code>  </td><td style="text-align: left;">  <code>'0.000%'</code>     </td><td style="text-align: right;">  <code>97.488%</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>-0.43</code>        </td><td style="text-align: left;">  <code>'0 %'</code>        </td><td style="text-align: right;">  <code>-43 %</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>0.43</code>         </td><td style="text-align: left;">  <code>'(0.000 %)'</code>  </td><td style="text-align: right;">  <code>43.000 %</code>
+</td>
+</tr>
+
+</table>
+
+<p><strong>TIME</strong>
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;">
+<strong>Number</strong>  </td><td style="text-align: left;"> <strong>Format</strong>    </td><td style="text-align: right;">   <strong>String</strong></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>25</code>        </td><td style="text-align: left;"> <code>'00:00:00'</code>  </td><td style="text-align: right;">   <code>0:00:25</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>238</code>       </td><td style="text-align: left;"> <code>'00:00:00'</code>  </td><td style="text-align: right;">   <code>0:03:58</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>63846</code>     </td><td style="text-align: left;"> <code>'00:00:00'</code>  </td><td style="text-align: right;">   <code>17:44:06</code>
+</td>
+</tr>
+
+</table>
+
+
+
+<h3>Value</h3>
+
+<p>A specification that is used as the <code>tickformatter</code> argument for <code><a href="axis.html">x_axis</a></code> or <code><a href="axis.html">y_axis</a></code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+figure() %&gt;%
+  ly_points(1:10) %&gt;%
+  x_axis(tickformatter = tickformatter_numeral(format = "0o"))
+
+figure() %&gt;%
+  ly_points((1:10) ^ 4, 1:10) %&gt;%
+  x_axis(tickformatter = tickformatter_numeral(format = "($0,0)", language = "it"))
+
+figure() %&gt;%
+  ly_points((1:11) ^ 6, 1:11) %&gt;%
+  x_axis(tickformatter = tickformatter_numeral(format = "0.0b"))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rbokeh</em> version 0.6.3 <a href="00Index.html">Index</a>]</div>
+</body></html>

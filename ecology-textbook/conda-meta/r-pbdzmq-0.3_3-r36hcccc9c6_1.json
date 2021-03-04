@@ -1,0 +1,437 @@
+{
+  "build": "r36hcccc9c6_1",
+  "build_number": 1,
+  "channel": "https://repo.anaconda.com/pkgs/r/osx-64",
+  "constrains": [],
+  "depends": [
+    "libcxx >=10.0.0",
+    "r-base >=3.6,<3.7.0a0",
+    "zeromq >=4.3.1,<4.4.0a0",
+    "_r-mutex 1.* anacondar_1"
+  ],
+  "extracted_package_dir": "/Users/oliverstuart/miniconda2/pkgs/r-pbdzmq-0.3_3-r36hcccc9c6_1",
+  "features": "",
+  "files": [
+    "lib/R/library/pbdZMQ/CITATION",
+    "lib/R/library/pbdZMQ/DESCRIPTION",
+    "lib/R/library/pbdZMQ/INDEX",
+    "lib/R/library/pbdZMQ/Meta/Rd.rds",
+    "lib/R/library/pbdZMQ/Meta/demo.rds",
+    "lib/R/library/pbdZMQ/Meta/features.rds",
+    "lib/R/library/pbdZMQ/Meta/hsearch.rds",
+    "lib/R/library/pbdZMQ/Meta/links.rds",
+    "lib/R/library/pbdZMQ/Meta/nsInfo.rds",
+    "lib/R/library/pbdZMQ/Meta/package.rds",
+    "lib/R/library/pbdZMQ/Meta/vignette.rds",
+    "lib/R/library/pbdZMQ/NAMESPACE",
+    "lib/R/library/pbdZMQ/R/pbdZMQ",
+    "lib/R/library/pbdZMQ/R/pbdZMQ.rdb",
+    "lib/R/library/pbdZMQ/R/pbdZMQ.rdx",
+    "lib/R/library/pbdZMQ/demo/check_eintr.r",
+    "lib/R/library/pbdZMQ/demo/hwclient.r",
+    "lib/R/library/pbdZMQ/demo/hwserver.r",
+    "lib/R/library/pbdZMQ/demo/iter_next.r",
+    "lib/R/library/pbdZMQ/demo/iter_try.r",
+    "lib/R/library/pbdZMQ/demo/mpclient.r",
+    "lib/R/library/pbdZMQ/demo/mpserver.r",
+    "lib/R/library/pbdZMQ/demo/mspoller.r",
+    "lib/R/library/pbdZMQ/demo/msreader.r",
+    "lib/R/library/pbdZMQ/demo/tasksink.r",
+    "lib/R/library/pbdZMQ/demo/taskvent.r",
+    "lib/R/library/pbdZMQ/demo/taskwork.r",
+    "lib/R/library/pbdZMQ/demo/wuclient.r",
+    "lib/R/library/pbdZMQ/demo/wuserver.r",
+    "lib/R/library/pbdZMQ/doc/index.html",
+    "lib/R/library/pbdZMQ/doc/pbdZMQ-guide.Rnw",
+    "lib/R/library/pbdZMQ/doc/pbdZMQ-guide.pdf",
+    "lib/R/library/pbdZMQ/etc/Makeconf",
+    "lib/R/library/pbdZMQ/examples/README",
+    "lib/R/library/pbdZMQ/examples/reqrep/client.r",
+    "lib/R/library/pbdZMQ/examples/reqrep/rzmq_client.r",
+    "lib/R/library/pbdZMQ/examples/reqrep/rzmq_server.r",
+    "lib/R/library/pbdZMQ/examples/reqrep/server.r",
+    "lib/R/library/pbdZMQ/help/AnIndex",
+    "lib/R/library/pbdZMQ/help/aliases.rds",
+    "lib/R/library/pbdZMQ/help/paths.rds",
+    "lib/R/library/pbdZMQ/help/pbdZMQ.rdb",
+    "lib/R/library/pbdZMQ/help/pbdZMQ.rdx",
+    "lib/R/library/pbdZMQ/html/00Index.html",
+    "lib/R/library/pbdZMQ/html/R.css",
+    "lib/R/library/pbdZMQ/libs/pbdZMQ.dylib",
+    "lib/R/library/pbdZMQ/zmq_copyright/AUTHORS",
+    "lib/R/library/pbdZMQ/zmq_copyright/COPYING",
+    "lib/R/library/pbdZMQ/zmq_copyright/COPYING.LESSER"
+  ],
+  "fn": "r-pbdzmq-0.3_3-r36hcccc9c6_1.conda",
+  "legacy_bz2_md5": "d46004b6798e195e39f3079ea3423721",
+  "legacy_bz2_size": 405135,
+  "license": "GPL-3",
+  "license_family": "GPL3",
+  "link": {
+    "source": "/Users/oliverstuart/miniconda2/pkgs/r-pbdzmq-0.3_3-r36hcccc9c6_1",
+    "type": 1
+  },
+  "md5": "c60acfa00ddf964a15f28537d8e21c74",
+  "name": "r-pbdzmq",
+  "package_tarball_full_path": "/Users/oliverstuart/miniconda2/pkgs/r-pbdzmq-0.3_3-r36hcccc9c6_1.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/R/library/pbdZMQ/CITATION",
+        "path_type": "hardlink",
+        "sha256": "fef4ce9226ae4e42b8df0310f943db0abe091552507daa51c3522a62db804373",
+        "sha256_in_prefix": "fef4ce9226ae4e42b8df0310f943db0abe091552507daa51c3522a62db804373",
+        "size_in_bytes": 1146
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/DESCRIPTION",
+        "path_type": "hardlink",
+        "sha256": "53a27e815ab3dfad1060cb74d5629340b5ddb8a83e70c6302351d86101558ad8",
+        "sha256_in_prefix": "53a27e815ab3dfad1060cb74d5629340b5ddb8a83e70c6302351d86101558ad8",
+        "size_in_bytes": 2877
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/INDEX",
+        "path_type": "hardlink",
+        "sha256": "7169ca458a8cbe7aa6d5e12ed0e6ea98fa3ae1a5c1e492f28aa0b554ad0e474c",
+        "sha256_in_prefix": "7169ca458a8cbe7aa6d5e12ed0e6ea98fa3ae1a5c1e492f28aa0b554ad0e474c",
+        "size_in_bytes": 1139
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/Meta/Rd.rds",
+        "path_type": "hardlink",
+        "sha256": "732e9d1a3cab68ee460cd9428dfcce0fb5400d3ced5d897759bde1da877869f8",
+        "sha256_in_prefix": "732e9d1a3cab68ee460cd9428dfcce0fb5400d3ced5d897759bde1da877869f8",
+        "size_in_bytes": 1251
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/Meta/demo.rds",
+        "path_type": "hardlink",
+        "sha256": "efd73edbfbffa0b8a1cef7257f2affd43e917754933031a43fc227f4734210ba",
+        "sha256_in_prefix": "efd73edbfbffa0b8a1cef7257f2affd43e917754933031a43fc227f4734210ba",
+        "size_in_bytes": 374
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/Meta/features.rds",
+        "path_type": "hardlink",
+        "sha256": "2be501af3bb473d6ec652a8d185cb3448eff628d7bf2ce5f3d750b720e28f016",
+        "sha256_in_prefix": "2be501af3bb473d6ec652a8d185cb3448eff628d7bf2ce5f3d750b720e28f016",
+        "size_in_bytes": 126
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/Meta/hsearch.rds",
+        "path_type": "hardlink",
+        "sha256": "ae1d0d1f48a4772e4ed063213dada1092a3d048ab307036424175808756ab6ee",
+        "sha256_in_prefix": "ae1d0d1f48a4772e4ed063213dada1092a3d048ab307036424175808756ab6ee",
+        "size_in_bytes": 1318
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/Meta/links.rds",
+        "path_type": "hardlink",
+        "sha256": "b9ff1bee247ac20539cbba8bbfd1ca0a709fddcefb3d51ea6527c112b0ded0cc",
+        "sha256_in_prefix": "b9ff1bee247ac20539cbba8bbfd1ca0a709fddcefb3d51ea6527c112b0ded0cc",
+        "size_in_bytes": 890
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/Meta/nsInfo.rds",
+        "path_type": "hardlink",
+        "sha256": "3f169e9f942d7356e742f57f0bdc1fc8546dd6c9ac5bd77d54364cb68332e314",
+        "sha256_in_prefix": "3f169e9f942d7356e742f57f0bdc1fc8546dd6c9ac5bd77d54364cb68332e314",
+        "size_in_bytes": 530
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/Meta/package.rds",
+        "path_type": "hardlink",
+        "sha256": "e591a24300dc59de32688872e335d24a4b9252ed23127dc9b3f2dfa1f95144e1",
+        "sha256_in_prefix": "e591a24300dc59de32688872e335d24a4b9252ed23127dc9b3f2dfa1f95144e1",
+        "size_in_bytes": 1708
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/Meta/vignette.rds",
+        "path_type": "hardlink",
+        "sha256": "04a59a4aca25108c38d9b20bfff062133613c620fded36d332ba6f10d21606fc",
+        "sha256_in_prefix": "04a59a4aca25108c38d9b20bfff062133613c620fded36d332ba6f10d21606fc",
+        "size_in_bytes": 201
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/NAMESPACE",
+        "path_type": "hardlink",
+        "sha256": "f02034a3c76fa3a71e0ae9ed742aad6d488d6e612f1e43880a5fe8917eca4ba5",
+        "sha256_in_prefix": "f02034a3c76fa3a71e0ae9ed742aad6d488d6e612f1e43880a5fe8917eca4ba5",
+        "size_in_bytes": 1041
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/R/pbdZMQ",
+        "path_type": "hardlink",
+        "sha256": "2fb8b16be23c820daf2e51b7ddfef61ca4978e561b1d228d546d1b356041f79e",
+        "sha256_in_prefix": "2fb8b16be23c820daf2e51b7ddfef61ca4978e561b1d228d546d1b356041f79e",
+        "size_in_bytes": 1056
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/R/pbdZMQ.rdb",
+        "path_type": "hardlink",
+        "sha256": "c57d134819f1a247bdd36b3bc46b3e7ae1e7927991082216f15e115de2635b51",
+        "sha256_in_prefix": "c57d134819f1a247bdd36b3bc46b3e7ae1e7927991082216f15e115de2635b51",
+        "size_in_bytes": 49949
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/R/pbdZMQ.rdx",
+        "path_type": "hardlink",
+        "sha256": "340e832b1c2648649eae457bb13a9b4345aab2b26186032a63081b851a614f22",
+        "sha256_in_prefix": "340e832b1c2648649eae457bb13a9b4345aab2b26186032a63081b851a614f22",
+        "size_in_bytes": 1077
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/demo/check_eintr.r",
+        "path_type": "hardlink",
+        "sha256": "8b5d50f31994a1baa1ecfa43c95625d42ee37c087479a0a5a5b3fbf1611d04d8",
+        "sha256_in_prefix": "8b5d50f31994a1baa1ecfa43c95625d42ee37c087479a0a5a5b3fbf1611d04d8",
+        "size_in_bytes": 744
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/demo/hwclient.r",
+        "path_type": "hardlink",
+        "sha256": "4fe0c12841d4635518b97df5b403a9a531ba381b530ff8f4d3e38e67bdc9d0e5",
+        "sha256_in_prefix": "4fe0c12841d4635518b97df5b403a9a531ba381b530ff8f4d3e38e67bdc9d0e5",
+        "size_in_bytes": 530
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/demo/hwserver.r",
+        "path_type": "hardlink",
+        "sha256": "8da6a47cb48c6a238dbf57494fd60ba7745542cef11bb560862c830ba806e38c",
+        "sha256_in_prefix": "8da6a47cb48c6a238dbf57494fd60ba7745542cef11bb560862c830ba806e38c",
+        "size_in_bytes": 481
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/demo/iter_next.r",
+        "path_type": "hardlink",
+        "sha256": "d70ac19c069f691329fb1a26f04d6fff46e2101845ac39073ebbce8fb038e9c9",
+        "sha256_in_prefix": "d70ac19c069f691329fb1a26f04d6fff46e2101845ac39073ebbce8fb038e9c9",
+        "size_in_bytes": 593
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/demo/iter_try.r",
+        "path_type": "hardlink",
+        "sha256": "663529911c8fafd452b5c4823a550c51577419ba80bb094028f134851a66d7d8",
+        "sha256_in_prefix": "663529911c8fafd452b5c4823a550c51577419ba80bb094028f134851a66d7d8",
+        "size_in_bytes": 558
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/demo/mpclient.r",
+        "path_type": "hardlink",
+        "sha256": "e08eccd87e1ce0f6c3e276bbae75ed5260e8997157ea60b83cff3bdb93d27e50",
+        "sha256_in_prefix": "e08eccd87e1ce0f6c3e276bbae75ed5260e8997157ea60b83cff3bdb93d27e50",
+        "size_in_bytes": 530
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/demo/mpserver.r",
+        "path_type": "hardlink",
+        "sha256": "a93f215e8f9974343b7f5e00c8246a80b7ff2b80e77b151b38ab99fa501718fb",
+        "sha256_in_prefix": "a93f215e8f9974343b7f5e00c8246a80b7ff2b80e77b151b38ab99fa501718fb",
+        "size_in_bytes": 492
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/demo/mspoller.r",
+        "path_type": "hardlink",
+        "sha256": "e1505b8d923810b7d6fdc7a77d7b9bf11108983dd011c275a00293baf29ea718",
+        "sha256_in_prefix": "e1505b8d923810b7d6fdc7a77d7b9bf11108983dd011c275a00293baf29ea718",
+        "size_in_bytes": 1404
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/demo/msreader.r",
+        "path_type": "hardlink",
+        "sha256": "d556f2881b87d03c2aae314e8d437d762f3debb6d2e112f02c9222d817f43dd8",
+        "sha256_in_prefix": "d556f2881b87d03c2aae314e8d437d762f3debb6d2e112f02c9222d817f43dd8",
+        "size_in_bytes": 1045
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/demo/tasksink.r",
+        "path_type": "hardlink",
+        "sha256": "1c38898387881ce007d83d0b3b6eb5c3f68ed7f13445393b2f98a2f4392980e3",
+        "sha256_in_prefix": "1c38898387881ce007d83d0b3b6eb5c3f68ed7f13445393b2f98a2f4392980e3",
+        "size_in_bytes": 746
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/demo/taskvent.r",
+        "path_type": "hardlink",
+        "sha256": "3bdc3b887a0f04054d35744b1cc1305dd3025c4c36d72fa50d0c34e8339ba437",
+        "sha256_in_prefix": "3bdc3b887a0f04054d35744b1cc1305dd3025c4c36d72fa50d0c34e8339ba437",
+        "size_in_bytes": 1028
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/demo/taskwork.r",
+        "path_type": "hardlink",
+        "sha256": "36765c05422c7f5a1d079703a348722ee927e46d8e2d86597afd6d86da6d7687",
+        "sha256_in_prefix": "36765c05422c7f5a1d079703a348722ee927e46d8e2d86597afd6d86da6d7687",
+        "size_in_bytes": 816
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/demo/wuclient.r",
+        "path_type": "hardlink",
+        "sha256": "a2c208b54bf678a5f093e2970b804dfaa8b573bf9725bb9c6ccf914e14fcbc5b",
+        "sha256_in_prefix": "a2c208b54bf678a5f093e2970b804dfaa8b573bf9725bb9c6ccf914e14fcbc5b",
+        "size_in_bytes": 1487
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/demo/wuserver.r",
+        "path_type": "hardlink",
+        "sha256": "f5f5e56f7923056aa895182f0f03793070d78928c925f09db73f958baaa7879e",
+        "sha256_in_prefix": "f5f5e56f7923056aa895182f0f03793070d78928c925f09db73f958baaa7879e",
+        "size_in_bytes": 982
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/doc/index.html",
+        "path_type": "hardlink",
+        "sha256": "e3140368ec5f5f0379faa2d1d23b159f0218bebd3a21355cc320433239aa2ea5",
+        "sha256_in_prefix": "e3140368ec5f5f0379faa2d1d23b159f0218bebd3a21355cc320433239aa2ea5",
+        "size_in_bytes": 1278
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/doc/pbdZMQ-guide.Rnw",
+        "path_type": "hardlink",
+        "sha256": "f4e0a5326ccf981f38a2cfd1df2df9899c60199b2042f9e59abc783d8e36c56a",
+        "sha256_in_prefix": "f4e0a5326ccf981f38a2cfd1df2df9899c60199b2042f9e59abc783d8e36c56a",
+        "size_in_bytes": 2493
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/doc/pbdZMQ-guide.pdf",
+        "path_type": "hardlink",
+        "sha256": "8aea10a32c77bd743e997a62b5828201892046b51ac605ba1596f6dbb0daf6f6",
+        "sha256_in_prefix": "8aea10a32c77bd743e997a62b5828201892046b51ac605ba1596f6dbb0daf6f6",
+        "size_in_bytes": 213768
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/etc/Makeconf",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "86a48e218d900e68d6408e57aa3a9ca6eb521d091c39e47c4b026fb82daa46ef",
+        "sha256_in_prefix": "3ed069892532ce448d31188b1f86eee6cf4d5f31a4300c56eb03972562083ce3",
+        "size_in_bytes": 908
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/examples/README",
+        "path_type": "hardlink",
+        "sha256": "4b20ae7911a584bad5b3152c0562ab39ce45594e97c54927530d86a748ec4d24",
+        "sha256_in_prefix": "4b20ae7911a584bad5b3152c0562ab39ce45594e97c54927530d86a748ec4d24",
+        "size_in_bytes": 1250
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/examples/reqrep/client.r",
+        "path_type": "hardlink",
+        "sha256": "8733bdc1bfaa8d501786314ac19b738c5116dfb2ed602aeca16759aff0d96d50",
+        "sha256_in_prefix": "8733bdc1bfaa8d501786314ac19b738c5116dfb2ed602aeca16759aff0d96d50",
+        "size_in_bytes": 533
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/examples/reqrep/rzmq_client.r",
+        "path_type": "hardlink",
+        "sha256": "967e377bcfa5f795ea7c02145902909861c6e41104ffea3b1e67819db0f1123f",
+        "sha256_in_prefix": "967e377bcfa5f795ea7c02145902909861c6e41104ffea3b1e67819db0f1123f",
+        "size_in_bytes": 529
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/examples/reqrep/rzmq_server.r",
+        "path_type": "hardlink",
+        "sha256": "cf90868437a187352d3351d3ae22de7c20c7f96fa7eb61ffbae8eb6a6f84bbb7",
+        "sha256_in_prefix": "cf90868437a187352d3351d3ae22de7c20c7f96fa7eb61ffbae8eb6a6f84bbb7",
+        "size_in_bytes": 501
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/examples/reqrep/server.r",
+        "path_type": "hardlink",
+        "sha256": "ddb11be263c6f91d7a8f169495e3f70e14f79f5fe9f61cd175bcd975a2a537b1",
+        "sha256_in_prefix": "ddb11be263c6f91d7a8f169495e3f70e14f79f5fe9f61cd175bcd975a2a537b1",
+        "size_in_bytes": 550
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/help/AnIndex",
+        "path_type": "hardlink",
+        "sha256": "8460e3831e67d9f470be30f0b6427e53eef552bdcd10d289ea3bf40585de5ff8",
+        "sha256_in_prefix": "8460e3831e67d9f470be30f0b6427e53eef552bdcd10d289ea3bf40585de5ff8",
+        "size_in_bytes": 1892
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/help/aliases.rds",
+        "path_type": "hardlink",
+        "sha256": "d0f6b1ec1821b38a7a898192d06b545168a5a146e692ff84cee7e70387db9673",
+        "sha256_in_prefix": "d0f6b1ec1821b38a7a898192d06b545168a5a146e692ff84cee7e70387db9673",
+        "size_in_bytes": 864
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/help/paths.rds",
+        "path_type": "hardlink",
+        "sha256": "b9310362a8e43e794db9a96855b57cdde0b6053d4b2318cffcadf9c786fa6ae4",
+        "sha256_in_prefix": "b9310362a8e43e794db9a96855b57cdde0b6053d4b2318cffcadf9c786fa6ae4",
+        "size_in_bytes": 413
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/help/pbdZMQ.rdb",
+        "path_type": "hardlink",
+        "sha256": "029d54306b21930d9010e1e5e31cc19502513449fdfabce20985cc29ae9b4e10",
+        "sha256_in_prefix": "029d54306b21930d9010e1e5e31cc19502513449fdfabce20985cc29ae9b4e10",
+        "size_in_bytes": 62462
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/help/pbdZMQ.rdx",
+        "path_type": "hardlink",
+        "sha256": "ba07cd9d93a515733d8703a80f79512826fdd4966f5ea9c484563249a7177012",
+        "sha256_in_prefix": "ba07cd9d93a515733d8703a80f79512826fdd4966f5ea9c484563249a7177012",
+        "size_in_bytes": 666
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/html/00Index.html",
+        "path_type": "hardlink",
+        "sha256": "d633890606e8463d4d441506de0772f323baf95140b8037ae3ea068c68bb93e8",
+        "sha256_in_prefix": "d633890606e8463d4d441506de0772f323baf95140b8037ae3ea068c68bb93e8",
+        "size_in_bytes": 8624
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/html/R.css",
+        "path_type": "hardlink",
+        "sha256": "0f4849ab1757247808d54da2c371e992364371c942ad7d629dae8d62327ed068",
+        "sha256_in_prefix": "0f4849ab1757247808d54da2c371e992364371c942ad7d629dae8d62327ed068",
+        "size_in_bytes": 1335
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/libs/pbdZMQ.dylib",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/concourse/worker/volumes/live/17c14419-eb53-4f70-6bbb-e95df822a81c/volume/r-pbdzmq_1589989622881/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeh",
+        "sha256": "de8cb1848dc311de361a4b4c1507c9ae46216eb7a30ee0d9b81527f8abd0b6e7",
+        "sha256_in_prefix": "8d551c6423c8954360520311bc13f168a9cc7a79654e031b44547dfa3b967683",
+        "size_in_bytes": 26228
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/zmq_copyright/AUTHORS",
+        "path_type": "hardlink",
+        "sha256": "efb0e725ec42dba62132f29e9f1fb32f83460cff6eb2c21ca9a26527d0d8f51f",
+        "sha256_in_prefix": "efb0e725ec42dba62132f29e9f1fb32f83460cff6eb2c21ca9a26527d0d8f51f",
+        "size_in_bytes": 2279
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/zmq_copyright/COPYING",
+        "path_type": "hardlink",
+        "sha256": "4fd86507c9b486764343065a9e035222869a27b5789efeb4fd93edc85412d7a3",
+        "sha256_in_prefix": "4fd86507c9b486764343065a9e035222869a27b5789efeb4fd93edc85412d7a3",
+        "size_in_bytes": 35149
+      },
+      {
+        "_path": "lib/R/library/pbdZMQ/zmq_copyright/COPYING.LESSER",
+        "path_type": "hardlink",
+        "sha256": "83f32abe61ee58ffb1b007412c08415168c052501dbf56d7a47aaaac52b03ef6",
+        "sha256_in_prefix": "83f32abe61ee58ffb1b007412c08415168c052501dbf56d7a47aaaac52b03ef6",
+        "size_in_bytes": 8504
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "679ef9b750791937536462828dcf17f93b9cde931cd4ad9d521f92ecbcce00b8",
+  "size": 389837,
+  "subdir": "osx-64",
+  "timestamp": 1589989726916,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/r/osx-64/r-pbdzmq-0.3_3-r36hcccc9c6_1.conda",
+  "version": "0.3_3"
+}

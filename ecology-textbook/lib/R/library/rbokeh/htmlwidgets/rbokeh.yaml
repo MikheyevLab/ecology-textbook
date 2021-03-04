@@ -1,0 +1,16 @@
+dependencies:
+- name: bokehjs
+  version: 0.12.9
+  src: htmlwidgets/lib/bokehjs
+  script:
+    - bokeh.min.js
+    - bokeh-widgets.min.js
+    - bokeh-gl.min.js
+  stylesheet:
+    - bokeh.min.css
+    - bokeh-widgets.min.css
+- name: rbokeh_scales
+  version: 0.0.1
+  src: htmlwidgets/lib/rbokeh_scales
+  script:
+    - rbokeh_scales.min.js

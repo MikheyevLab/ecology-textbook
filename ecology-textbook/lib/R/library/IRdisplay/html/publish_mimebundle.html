@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Display data by mimetype, with optional alternative...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for publish_mimebundle {IRdisplay}"><tr><td>publish_mimebundle {IRdisplay}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Display data by mimetype, with optional alternative representations.</h2>
+
+<h3>Description</h3>
+
+<p>Calls the function stored as option value of <code>jupyter.base_display_func</code>. (see: <a href="IRdisplay-options.html">IRdisplay-options</a>)
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+publish_mimebundle(data, metadata = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>A named list mapping mimetypes to content (<code><a href="../../base/html/character.html">character</a></code> or <code><a href="../../base/html/raw.html">raw</a> vectors</code>)</p>
+</td></tr>
+<tr valign="top"><td><code>metadata</code></td>
+<td>
+<p>A named list mapping mimetypes to named lists of metadata, e.g. <code>list('image/png' = list(width = 5))</code></p>
+</td></tr>
+</table>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="display.html">prepare_mimebundle</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: ## (Run inside of an IRkernel)
+publish_mimebundle(list('text/html' = '&lt;h1&gt;Hi!&lt;/h1&gt;'))
+publish_mimebundle(
+  list('image/svg+xml' = '&lt;svg xmlns="http://www.w3.org/2000/svg"&gt;&lt;circle r="100"/&gt;&lt;/svg&gt;'),
+  list('image/svg+xml' = list(width = 100, height = 100)))
+## End(Not run)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>IRdisplay</em> version 0.7.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

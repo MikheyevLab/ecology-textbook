@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Add a &quot;text&quot; layer to a Bokeh figure</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ly_text {rbokeh}"><tr><td>ly_text {rbokeh}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Add a &quot;text&quot; layer to a Bokeh figure</h2>
+
+<h3>Description</h3>
+
+<p>Add a &quot;text&quot; layer to a Bokeh figure
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+ly_text(fig, x, y = NULL, text = NULL, color = NULL, alpha = NULL,
+  angle = NULL, data = figure_data(fig), x_offset = NULL,
+  y_offset = NULL, font = NULL, font_size = NULL, font_style = NULL,
+  align = NULL, baseline = NULL, legend = TRUE, hov_color = NULL,
+  hov_alpha = NULL, ns_color = NULL, ns_alpha = NULL, sel_color = NULL,
+  sel_alpha = NULL, lgroup = NULL, lname = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>fig</code></td>
+<td>
+<p>Figure to modify.</p>
+</td></tr>
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>The x coordinates of text anchors.</p>
+</td></tr>
+<tr valign="top"><td><code>y</code></td>
+<td>
+<p>The y coordinates of text anchors.</p>
+</td></tr>
+<tr valign="top"><td><code>text</code></td>
+<td>
+<p>Text values to render.</p>
+</td></tr>
+<tr valign="top"><td><code>color</code></td>
+<td>
+<p>Text color values for the text.</p>
+</td></tr>
+<tr valign="top"><td><code>alpha</code></td>
+<td>
+<p>Text alpha values for the text.</p>
+</td></tr>
+<tr valign="top"><td><code>angle</code></td>
+<td>
+<p>Angle to rotate the text in radians.</p>
+</td></tr>
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>An optional data frame, providing the source for inputs x, y, text, and other glyph properties.</p>
+</td></tr>
+<tr valign="top"><td><code>x_offset</code></td>
+<td>
+<p>Offset values to apply to the x-coordinates.</p>
+</td></tr>
+<tr valign="top"><td><code>y_offset</code></td>
+<td>
+<p>Offset values to apply to the y-coordinates.</p>
+</td></tr>
+<tr valign="top"><td><code>font</code></td>
+<td>
+<p>Text font values for the text.</p>
+</td></tr>
+<tr valign="top"><td><code>font_size</code></td>
+<td>
+<p>Text font size values for the text.</p>
+</td></tr>
+<tr valign="top"><td><code>font_style</code></td>
+<td>
+<p>Text font style values for the text (&quot;normal&quot;, &quot;italic&quot;, &quot;bold&quot;).</p>
+</td></tr>
+<tr valign="top"><td><code>align</code></td>
+<td>
+<p>Text align values for the text. One of (&quot;left&quot;, &quot;right&quot;, &quot;center&quot;).</p>
+</td></tr>
+<tr valign="top"><td><code>baseline</code></td>
+<td>
+<p>Text baseline values for the text. One of (&quot;top&quot;, &quot;middle&quot;, &quot;bottom&quot;, &quot;alphabetic&quot;, &quot;hanging&quot;).</p>
+</td></tr>
+<tr valign="top"><td><code>legend</code></td>
+<td>
+<p>Either a logical specifying not to plot a legend for this layer (FALSE) or a string indicating the name of the legend entry for this layer. Note that when mapping plot attributes to variables in <code>data</code>, a legend is automatically created and does not need to be specified. See &quot;Mapped plot attributes and legends&quot; below.</p>
+</td></tr>
+<tr valign="top"><td><code>hov_color</code></td>
+<td>
+<p>Text color values for the text when hovered.</p>
+</td></tr>
+<tr valign="top"><td><code>hov_alpha</code></td>
+<td>
+<p>Text alpha values for the text when hovered.</p>
+</td></tr>
+<tr valign="top"><td><code>ns_color</code></td>
+<td>
+<p>Text color values for the text when not selected.</p>
+</td></tr>
+<tr valign="top"><td><code>ns_alpha</code></td>
+<td>
+<p>Text alpha values for the text when not selected.</p>
+</td></tr>
+<tr valign="top"><td><code>sel_color</code></td>
+<td>
+<p>Text color values for the text when selected.</p>
+</td></tr>
+<tr valign="top"><td><code>sel_alpha</code></td>
+<td>
+<p>Text alpha values for the text when selected.</p>
+</td></tr>
+<tr valign="top"><td><code>lgroup</code></td>
+<td>
+<p>Layer group.</p>
+</td></tr>
+<tr valign="top"><td><code>lname</code></td>
+<td>
+<p>Layer name.</p>
+</td></tr>
+</table>
+
+
+<h3>Mapped plot attributes and legends</h3>
+
+<p>When specifying an input data frame for a layer through the <code>data</code> argument, columns of <code>data</code> can be used to specify various plot attributes such as <code>color</code>, etc. For example, with <code>ly_points(..., data = iris, color = Species)</code>, the <code>Species</code> variable is used to determine how to color the points.  Here, <code>Species</code> is &quot;mapped&quot; to the <code>color</code> attribute.  Both continuous and categorical variables can be mapped.  In the case of continuous variables, the range is cut into slices and attributes are applied to each interval.  The mapping from the values of the variable to the actual plot attributes is determined based on the theme. When attributes are mapped, legend entries are automatically created for the mappings (when possible).
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other layer functions: <code><a href="ly_annular_wedge.html">ly_annular_wedge</a></code>,
+<code><a href="ly_annulus.html">ly_annulus</a></code>, <code><a href="ly_arc.html">ly_arc</a></code>,
+<code><a href="ly_bar.html">ly_bar</a></code>, <code><a href="ly_bezier.html">ly_bezier</a></code>,
+<code><a href="ly_boxplot.html">ly_boxplot</a></code>, <code><a href="ly_contour.html">ly_contour</a></code>,
+<code><a href="ly_crect.html">ly_crect</a></code>, <code><a href="ly_curve.html">ly_curve</a></code>,
+<code><a href="ly_density.html">ly_density</a></code>, <code><a href="ly_hist.html">ly_hist</a></code>,
+<code><a href="ly_image_url.html">ly_image_url</a></code>, <code><a href="ly_image.html">ly_image</a></code>,
+<code><a href="ly_lines.html">ly_lines</a></code>, <code><a href="ly_multi_line.html">ly_multi_line</a></code>,
+<code><a href="ly_oval.html">ly_oval</a></code>, <code><a href="ly_patch.html">ly_patch</a></code>,
+<code><a href="ly_points.html">ly_points</a></code>, <code><a href="ly_polygons.html">ly_polygons</a></code>,
+<code><a href="ly_quadratic.html">ly_quadratic</a></code>, <code><a href="ly_quantile.html">ly_quantile</a></code>,
+<code><a href="ly_ray.html">ly_ray</a></code>, <code><a href="ly_rect.html">ly_rect</a></code>,
+<code><a href="ly_segments.html">ly_segments</a></code>, <code><a href="ly_wedge.html">ly_wedge</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+figure(title = "Periodic Table", data = elements,
+  xgrid = FALSE, ygrid = FALSE, xlab = "", ylab = "",
+  xlim = as.character(1:18), ylim = c("   ", "  ", " ", as.character(7:1)),
+  height = 700, width = 1200) %&gt;%
+  ly_crect(cat_offset(group, group_offset), period, 0.9, 0.9,
+    color = group_block, fill_alpha = 0.6, legend = FALSE,
+    hover = list(name, atomic_number, group_block, atomic_mass,
+      electronic_configuration)) %&gt;%
+  ly_text(cat_offset(group, sym_offset), period, text = symbol,
+    font_style = "bold", font_size = "15pt",
+    align = "left", baseline = "middle") %&gt;%
+  ly_text(cat_offset(group, sym_offset), cat_offset(period, 0.3), text = atomic_number_p,
+    font_size = "9pt", align = "left", baseline = "middle") %&gt;%
+  ly_text(cat_offset(group, sym_offset), cat_offset(period, -0.2), text = name,
+    font_size = "6pt", align = "left", baseline = "middle") %&gt;%
+  ly_text(cat_offset(group, sym_offset), cat_offset(period, -0.35), text = atomic_mass,
+    font_size = "6pt", align = "left", baseline = "middle") %&gt;%
+  x_axis(axis = axis_spec(visible = FALSE)) %&gt;%
+  y_axis(axis = axis_spec(visible = FALSE))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rbokeh</em> version 0.6.3 <a href="00Index.html">Index</a>]</div>
+</body></html>

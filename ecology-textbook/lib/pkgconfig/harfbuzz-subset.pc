@@ -1,0 +1,12 @@
+prefix=/Users/oliverstuart/Desktop/QuantEcologyTextbook/ecology-textbook/ecology-textbook/ecology-textbook
+exec_prefix=/Users/oliverstuart/Desktop/QuantEcologyTextbook/ecology-textbook/ecology-textbook/ecology-textbook
+libdir=/Users/oliverstuart/Desktop/QuantEcologyTextbook/ecology-textbook/ecology-textbook/ecology-textbook/lib
+includedir=/Users/oliverstuart/Desktop/QuantEcologyTextbook/ecology-textbook/ecology-textbook/ecology-textbook/include
+
+Name: harfbuzz
+Description: HarfBuzz font subsetter
+Version: 2.4.0
+
+Requires: harfbuzz
+Libs: -L${libdir} -lharfbuzz-subset
+Cflags: -I${includedir}/harfbuzz

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Generate ticks on a linear / numeric scale.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ticker_num {rbokeh}"><tr><td>ticker_num {rbokeh}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Generate ticks on a linear / numeric scale.</h2>
+
+<h3>Description</h3>
+
+<p>Generate ticks on a linear / numeric scale.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+ticker_num(min_interval = 0, max_interval = NULL, desired_num_ticks = 6,
+  num_minor_ticks = 5, mantissas = c(1, 2, 5), base = 10, clear = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>min_interval</code></td>
+<td>
+<p>The smallest allowable interval between two adjacent ticks.</p>
+</td></tr>
+<tr valign="top"><td><code>max_interval</code></td>
+<td>
+<p>The largest allowable interval between two adjacent ticks. Note: To specify an unbounded interval, set to <code>NULL</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>desired_num_ticks</code></td>
+<td>
+<p>A desired target number of major tick positions to generate across the plot range. Note: This value is a suggestion, and ticker subclasses may ignore it entirely, or use it only as an ideal goal to approach as well as can be, in the context of a specific ticking strategy.</p>
+</td></tr>
+<tr valign="top"><td><code>num_minor_ticks</code></td>
+<td>
+<p>The number of minor tick positions to generate between adjacent major tick values.</p>
+</td></tr>
+<tr valign="top"><td><code>mantissas</code></td>
+<td>
+<p>The acceptable list numbers to generate multiples of.</p>
+</td></tr>
+<tr valign="top"><td><code>base</code></td>
+<td>
+<p>The multiplier to use for scaling mantissas.</p>
+</td></tr>
+<tr valign="top"><td><code>clear</code></td>
+<td>
+<p>A logical indicating whether all non-specified parameters should be cleared out of any exising specification in the figure. This can be useful when modifying a previously-defined figure.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A specification that is used as the <code>ticker</code> argument for <code><a href="axis.html">x_axis</a></code> or <code><a href="axis.html">y_axis</a></code>.
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>rbokeh</em> version 0.6.3 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Specify parameters for displaying a horizontal or vertical...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for grid_spec {rbokeh}"><tr><td>grid_spec {rbokeh}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Specify parameters for displaying a horizontal or vertical grid for an axis.</h2>
+
+<h3>Description</h3>
+
+<p>Specify parameters for displaying a horizontal or vertical grid for an axis.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+grid_spec(visible = TRUE, level = "underlay", bounds = "auto",
+  band_fill_alpha = NULL, band_fill_color = NULL, grid_line_alpha = NULL,
+  grid_line_cap = NULL, grid_line_color = NULL, grid_line_dash = NULL,
+  grid_line_dash_offset = NULL, grid_line_join = NULL,
+  grid_line_width = NULL, minor_grid_line_alpha = NULL,
+  minor_grid_line_cap = NULL, minor_grid_line_color = NULL,
+  minor_grid_line_dash = NULL, minor_grid_line_dash_offset = NULL,
+  minor_grid_line_join = NULL, minor_grid_line_width = NULL,
+  clear = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>visible</code></td>
+<td>
+<p>Is the renderer visible.</p>
+</td></tr>
+<tr valign="top"><td><code>level</code></td>
+<td>
+<p>Specifies the level in which to paint this renderer.</p>
+</td></tr>
+<tr valign="top"><td><code>bounds</code></td>
+<td>
+<p>Bounds for the rendered grid lines. If unset, the grid lines will span the entire plot in the given dimension.</p>
+</td></tr>
+<tr valign="top"><td><code>band_fill_alpha</code></td>
+<td>
+<p>The fill alpha of alternating bands between Grid lines.</p>
+</td></tr>
+<tr valign="top"><td><code>band_fill_color</code></td>
+<td>
+<p>The fill color of alternating bands between Grid lines.</p>
+</td></tr>
+<tr valign="top"><td><code>grid_line_alpha</code></td>
+<td>
+<p>The line alpha of the Grid lines.</p>
+</td></tr>
+<tr valign="top"><td><code>grid_line_cap</code></td>
+<td>
+<p>The line cap of the Grid lines.</p>
+</td></tr>
+<tr valign="top"><td><code>grid_line_color</code></td>
+<td>
+<p>The line color of the Grid lines.</p>
+</td></tr>
+<tr valign="top"><td><code>grid_line_dash</code></td>
+<td>
+<p>The line dash of the Grid lines.</p>
+</td></tr>
+<tr valign="top"><td><code>grid_line_dash_offset</code></td>
+<td>
+<p>The line dash offset of the Grid lines.</p>
+</td></tr>
+<tr valign="top"><td><code>grid_line_join</code></td>
+<td>
+<p>The line join of the Grid lines.</p>
+</td></tr>
+<tr valign="top"><td><code>grid_line_width</code></td>
+<td>
+<p>The line width of the Grid lines.</p>
+</td></tr>
+<tr valign="top"><td><code>minor_grid_line_alpha</code></td>
+<td>
+<p>The line alpha of the minor Grid lines.</p>
+</td></tr>
+<tr valign="top"><td><code>minor_grid_line_cap</code></td>
+<td>
+<p>The line cap of the minor Grid lines.</p>
+</td></tr>
+<tr valign="top"><td><code>minor_grid_line_color</code></td>
+<td>
+<p>The line color of the minor Grid lines.</p>
+</td></tr>
+<tr valign="top"><td><code>minor_grid_line_dash</code></td>
+<td>
+<p>The line dash of the minor Grid lines.</p>
+</td></tr>
+<tr valign="top"><td><code>minor_grid_line_dash_offset</code></td>
+<td>
+<p>The line dash offset of the minor Grid lines.</p>
+</td></tr>
+<tr valign="top"><td><code>minor_grid_line_join</code></td>
+<td>
+<p>The line join of the minor Grid lines.</p>
+</td></tr>
+<tr valign="top"><td><code>minor_grid_line_width</code></td>
+<td>
+<p>The line width of the minor Grid lines.</p>
+</td></tr>
+<tr valign="top"><td><code>clear</code></td>
+<td>
+<p>A logical indicating whether all non-specified parameters should be cleared out of any exising specification in the figure. This can be useful when modifying a previously-defined figure.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A specification that is used as the <code>grid</code> argument for <code><a href="axis.html">x_axis</a></code> or <code><a href="axis.html">y_axis</a></code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+figure() %&gt;%
+  ly_points(1:10) %&gt;%
+  x_axis(grid = grid_spec(grid_line_color = NA)) %&gt;%
+  y_axis(grid = grid_spec(
+    band_fill_alpha = 0.1,
+    band_fill_color = "navy"
+  ))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rbokeh</em> version 0.6.3 <a href="00Index.html">Index</a>]</div>
+</body></html>

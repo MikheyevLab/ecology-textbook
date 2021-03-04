@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Plot representations</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for repr_*.recordedplot {repr}"><tr><td>repr_*.recordedplot {repr}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Plot representations</h2>
+
+<h3>Description</h3>
+
+<p><code>repr_text.recordedplot</code> only returns a small info string containing the title (if any)
+while the others return a character vector (SVG) or a raw vector (the rest) containing the image data.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S3 method for class 'recordedplot'
+repr_text(obj, ...)
+
+## S3 method for class 'recordedplot'
+repr_png(obj,
+  width = getOption("repr.plot.width"),
+  height = getOption("repr.plot.height"),
+  bg = getOption("repr.plot.bg"),
+  pointsize = getOption("repr.plot.pointsize"),
+  antialias = getOption("repr.plot.antialias"),
+  res = getOption("repr.plot.res"), ...)
+
+## S3 method for class 'recordedplot'
+repr_jpg(obj,
+  width = getOption("repr.plot.width"),
+  height = getOption("repr.plot.height"),
+  bg = getOption("repr.plot.bg"),
+  pointsize = getOption("repr.plot.pointsize"),
+  antialias = getOption("repr.plot.antialias"),
+  res = getOption("repr.plot.res"),
+  quality = getOption("repr.plot.quality"), ...)
+
+## S3 method for class 'recordedplot'
+repr_svg(obj,
+  width = getOption("repr.plot.width"),
+  height = getOption("repr.plot.height"),
+  bg = getOption("repr.plot.bg"),
+  pointsize = getOption("repr.plot.pointsize"),
+  antialias = getOption("repr.plot.antialias"),
+  family = getOption("repr.plot.family"), ...)
+
+## S3 method for class 'recordedplot'
+repr_pdf(obj,
+  width = getOption("repr.plot.width"),
+  height = getOption("repr.plot.height"),
+  bg = getOption("repr.plot.bg"),
+  pointsize = getOption("repr.plot.pointsize"),
+  antialias = getOption("repr.plot.antialias"),
+  family = getOption("repr.plot.family"), ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>obj</code></td>
+<td>
+<p>The plot to create a representation for</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>ignored</p>
+</td></tr>
+<tr valign="top"><td><code>width</code></td>
+<td>
+<p>Plot area width in inches (default: 7)</p>
+</td></tr>
+<tr valign="top"><td><code>height</code></td>
+<td>
+<p>Plot area height in inches (default: 7)</p>
+</td></tr>
+<tr valign="top"><td><code>bg</code></td>
+<td>
+<p>Background color (default: white)</p>
+</td></tr>
+<tr valign="top"><td><code>pointsize</code></td>
+<td>
+<p>Text height in pt (default: 12)</p>
+</td></tr>
+<tr valign="top"><td><code>antialias</code></td>
+<td>
+<p>Which kind of antialiasing to use for for lines and text? 'gray', 'subpixel' or 'none'? (default: gray)</p>
+</td></tr>
+<tr valign="top"><td><code>res</code></td>
+<td>
+<p>For PNG and JPEG, specifies the PPI for rasterization (default: 120)</p>
+</td></tr>
+<tr valign="top"><td><code>quality</code></td>
+<td>
+<p>For JPEG, determines the compression quality in % (default: 90)</p>
+</td></tr>
+<tr valign="top"><td><code>family</code></td>
+<td>
+<p>Font family for SVG and PDF. 'sans', 'serif', 'mono' or a specific one (default: sans)</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>All parameters can also be specified using the eponymous <code>repr.plot.*</code> <a href="repr-options.html">repr-options</a>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+dev.new()
+dev.control(displaylist = 'enable')
+plot(sqrt, main = 'Square root')
+p &lt;- recordPlot()
+dev.off()
+
+repr_text(p)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>repr</em> version 0.19.2 <a href="00Index.html">Index</a>]</div>
+</body></html>

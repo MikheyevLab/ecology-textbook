@@ -1,0 +1,234 @@
+{
+  "build": "r36hfffe0aa_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/r/osx-64",
+  "constrains": [],
+  "depends": [
+    "libgfortran >=3.0.1,<4.0.0.a0",
+    "r-base >=3.6,<3.7.0a0",
+    "_r-mutex 1.* anacondar_1"
+  ],
+  "extracted_package_dir": "/Users/oliverstuart/miniconda2/pkgs/r-randomforest-4.6_14-r36hfffe0aa_0",
+  "features": "",
+  "files": [
+    "lib/R/library/randomForest/CITATION",
+    "lib/R/library/randomForest/DESCRIPTION",
+    "lib/R/library/randomForest/INDEX",
+    "lib/R/library/randomForest/Meta/Rd.rds",
+    "lib/R/library/randomForest/Meta/data.rds",
+    "lib/R/library/randomForest/Meta/features.rds",
+    "lib/R/library/randomForest/Meta/hsearch.rds",
+    "lib/R/library/randomForest/Meta/links.rds",
+    "lib/R/library/randomForest/Meta/nsInfo.rds",
+    "lib/R/library/randomForest/Meta/package.rds",
+    "lib/R/library/randomForest/NAMESPACE",
+    "lib/R/library/randomForest/NEWS",
+    "lib/R/library/randomForest/R/randomForest",
+    "lib/R/library/randomForest/R/randomForest.rdb",
+    "lib/R/library/randomForest/R/randomForest.rdx",
+    "lib/R/library/randomForest/data/imports85.rda",
+    "lib/R/library/randomForest/help/AnIndex",
+    "lib/R/library/randomForest/help/aliases.rds",
+    "lib/R/library/randomForest/help/paths.rds",
+    "lib/R/library/randomForest/help/randomForest.rdb",
+    "lib/R/library/randomForest/help/randomForest.rdx",
+    "lib/R/library/randomForest/html/00Index.html",
+    "lib/R/library/randomForest/html/R.css",
+    "lib/R/library/randomForest/libs/randomForest.dylib"
+  ],
+  "fn": "r-randomforest-4.6_14-r36hfffe0aa_0.conda",
+  "legacy_bz2_md5": "930ef345649bec9698540052dc6c1814",
+  "legacy_bz2_size": 236841,
+  "license": "GPL (>= 2)",
+  "license_family": "GPL3",
+  "link": {
+    "source": "/Users/oliverstuart/miniconda2/pkgs/r-randomforest-4.6_14-r36hfffe0aa_0",
+    "type": 1
+  },
+  "md5": "afcb7717d8369c45e776838f61560ebc",
+  "name": "r-randomforest",
+  "package_tarball_full_path": "/Users/oliverstuart/miniconda2/pkgs/r-randomforest-4.6_14-r36hfffe0aa_0.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/R/library/randomForest/CITATION",
+        "path_type": "hardlink",
+        "sha256": "da26223c1a77cb42a9c21839d21c2faadf6491048b459dc56f88e554f8cc65fd",
+        "sha256_in_prefix": "da26223c1a77cb42a9c21839d21c2faadf6491048b459dc56f88e554f8cc65fd",
+        "size_in_bytes": 709
+      },
+      {
+        "_path": "lib/R/library/randomForest/DESCRIPTION",
+        "path_type": "hardlink",
+        "sha256": "e6182740388ffcc27dc9cb870bd623e7a64fcea07028e2a02c699968af25a6ca",
+        "sha256_in_prefix": "e6182740388ffcc27dc9cb870bd623e7a64fcea07028e2a02c699968af25a6ca",
+        "size_in_bytes": 762
+      },
+      {
+        "_path": "lib/R/library/randomForest/INDEX",
+        "path_type": "hardlink",
+        "sha256": "8455c46e82c6d0af53e471d70e81510564ffba9d97d0dac1ed900c704252a593",
+        "sha256_in_prefix": "8455c46e82c6d0af53e471d70e81510564ffba9d97d0dac1ed900c704252a593",
+        "size_in_bytes": 1335
+      },
+      {
+        "_path": "lib/R/library/randomForest/Meta/Rd.rds",
+        "path_type": "hardlink",
+        "sha256": "d150f019fbf3144943812ec49bea41e3d3c0275640557fbcb473632f70c5586b",
+        "sha256_in_prefix": "d150f019fbf3144943812ec49bea41e3d3c0275640557fbcb473632f70c5586b",
+        "size_in_bytes": 1134
+      },
+      {
+        "_path": "lib/R/library/randomForest/Meta/data.rds",
+        "path_type": "hardlink",
+        "sha256": "8572d0b486fb8d039fbc0ad2554d16f13c8490339cdcac1223711a5b60a04df3",
+        "sha256_in_prefix": "8572d0b486fb8d039fbc0ad2554d16f13c8490339cdcac1223711a5b60a04df3",
+        "size_in_bytes": 107
+      },
+      {
+        "_path": "lib/R/library/randomForest/Meta/features.rds",
+        "path_type": "hardlink",
+        "sha256": "1bfc9e14b6f0d2a42e0152e48cfc3e1f55c2457b620f6020dcd1b549c52c2699",
+        "sha256_in_prefix": "1bfc9e14b6f0d2a42e0152e48cfc3e1f55c2457b620f6020dcd1b549c52c2699",
+        "size_in_bytes": 125
+      },
+      {
+        "_path": "lib/R/library/randomForest/Meta/hsearch.rds",
+        "path_type": "hardlink",
+        "sha256": "9ed0eb0fc11b00aaf65d16a308ef1451bea351fbf003f79d5abbda402f63e2a3",
+        "sha256_in_prefix": "9ed0eb0fc11b00aaf65d16a308ef1451bea351fbf003f79d5abbda402f63e2a3",
+        "size_in_bytes": 1231
+      },
+      {
+        "_path": "lib/R/library/randomForest/Meta/links.rds",
+        "path_type": "hardlink",
+        "sha256": "75b38ac494430ce295377bbf4ded9a20b7e0fa0141fe1e419d768662f4725300",
+        "sha256_in_prefix": "75b38ac494430ce295377bbf4ded9a20b7e0fa0141fe1e419d768662f4725300",
+        "size_in_bytes": 513
+      },
+      {
+        "_path": "lib/R/library/randomForest/Meta/nsInfo.rds",
+        "path_type": "hardlink",
+        "sha256": "661b6b856515f8740fc2fd4650ae7cfc9e9c6c66dd7e690c148d7c2ff9faa562",
+        "sha256_in_prefix": "661b6b856515f8740fc2fd4650ae7cfc9e9c6c66dd7e690c148d7c2ff9faa562",
+        "size_in_bytes": 683
+      },
+      {
+        "_path": "lib/R/library/randomForest/Meta/package.rds",
+        "path_type": "hardlink",
+        "sha256": "06e57c8cb83ea7377ca4e19f4906606f7dbf77b4a34d95e766184f079baee12d",
+        "sha256_in_prefix": "06e57c8cb83ea7377ca4e19f4906606f7dbf77b4a34d95e766184f079baee12d",
+        "size_in_bytes": 881
+      },
+      {
+        "_path": "lib/R/library/randomForest/NAMESPACE",
+        "path_type": "hardlink",
+        "sha256": "fa0e17e2195c8785238a22d8dd318f73ab07e2639e28c686b94204c1bce23e50",
+        "sha256_in_prefix": "fa0e17e2195c8785238a22d8dd318f73ab07e2639e28c686b94204c1bce23e50",
+        "size_in_bytes": 1198
+      },
+      {
+        "_path": "lib/R/library/randomForest/NEWS",
+        "path_type": "hardlink",
+        "sha256": "a4345cc3f1c54d8fcbea6966f97189269c4948c676805251fc6b62da798afcc4",
+        "sha256_in_prefix": "a4345cc3f1c54d8fcbea6966f97189269c4948c676805251fc6b62da798afcc4",
+        "size_in_bytes": 19764
+      },
+      {
+        "_path": "lib/R/library/randomForest/R/randomForest",
+        "path_type": "hardlink",
+        "sha256": "2fb8b16be23c820daf2e51b7ddfef61ca4978e561b1d228d546d1b356041f79e",
+        "sha256_in_prefix": "2fb8b16be23c820daf2e51b7ddfef61ca4978e561b1d228d546d1b356041f79e",
+        "size_in_bytes": 1056
+      },
+      {
+        "_path": "lib/R/library/randomForest/R/randomForest.rdb",
+        "path_type": "hardlink",
+        "sha256": "c0f805acbe26579705471da8ae28ac9bef6fbd271ee1c686f1879a703cd4ed4f",
+        "sha256_in_prefix": "c0f805acbe26579705471da8ae28ac9bef6fbd271ee1c686f1879a703cd4ed4f",
+        "size_in_bytes": 95968
+      },
+      {
+        "_path": "lib/R/library/randomForest/R/randomForest.rdx",
+        "path_type": "hardlink",
+        "sha256": "64601833be268db6a8936506a2817327c865aee86f368964c7ceb74e1a3dd9cf",
+        "sha256_in_prefix": "64601833be268db6a8936506a2817327c865aee86f368964c7ceb74e1a3dd9cf",
+        "size_in_bytes": 792
+      },
+      {
+        "_path": "lib/R/library/randomForest/data/imports85.rda",
+        "path_type": "hardlink",
+        "sha256": "039c836709d64521c98109ab9576b537cfe4cabcf5de23185232a62e63f594a8",
+        "sha256_in_prefix": "039c836709d64521c98109ab9576b537cfe4cabcf5de23185232a62e63f594a8",
+        "size_in_bytes": 6133
+      },
+      {
+        "_path": "lib/R/library/randomForest/help/AnIndex",
+        "path_type": "hardlink",
+        "sha256": "f52e47d4f1bf3019fb2fc9728f0607573661b794a9aa8fab95b1c1fc45dcc987",
+        "sha256_in_prefix": "f52e47d4f1bf3019fb2fc9728f0607573661b794a9aa8fab95b1c1fc45dcc987",
+        "size_in_bytes": 933
+      },
+      {
+        "_path": "lib/R/library/randomForest/help/aliases.rds",
+        "path_type": "hardlink",
+        "sha256": "d7ae5295cbc3fcf9125dfc18a96a25d904e17e58be3e83e09e0f691cd4d7973a",
+        "sha256_in_prefix": "d7ae5295cbc3fcf9125dfc18a96a25d904e17e58be3e83e09e0f691cd4d7973a",
+        "size_in_bytes": 385
+      },
+      {
+        "_path": "lib/R/library/randomForest/help/paths.rds",
+        "path_type": "hardlink",
+        "sha256": "d7a2238a79a5a614b3b30c92edc37e48459a2d989507e6648b2bcbbeac96f227",
+        "sha256_in_prefix": "d7a2238a79a5a614b3b30c92edc37e48459a2d989507e6648b2bcbbeac96f227",
+        "size_in_bytes": 346
+      },
+      {
+        "_path": "lib/R/library/randomForest/help/randomForest.rdb",
+        "path_type": "hardlink",
+        "sha256": "bf1ae19c01ea9b9d56cbb0f6b717e350a8718b171d8b2238bbeaf97f5de291ea",
+        "sha256_in_prefix": "bf1ae19c01ea9b9d56cbb0f6b717e350a8718b171d8b2238bbeaf97f5de291ea",
+        "size_in_bytes": 68325
+      },
+      {
+        "_path": "lib/R/library/randomForest/help/randomForest.rdx",
+        "path_type": "hardlink",
+        "sha256": "0b223ce1bf429a2fca4ebb7fd91e4b98fb7d5c8ff32f4236fcc7d8cb0e92b005",
+        "sha256_in_prefix": "0b223ce1bf429a2fca4ebb7fd91e4b98fb7d5c8ff32f4236fcc7d8cb0e92b005",
+        "size_in_bytes": 623
+      },
+      {
+        "_path": "lib/R/library/randomForest/html/00Index.html",
+        "path_type": "hardlink",
+        "sha256": "e0513b759ac38f955e6e8d9284110acfd2cc677b5a5a78d0c08f0b34d37f68e1",
+        "sha256_in_prefix": "e0513b759ac38f955e6e8d9284110acfd2cc677b5a5a78d0c08f0b34d37f68e1",
+        "size_in_bytes": 5934
+      },
+      {
+        "_path": "lib/R/library/randomForest/html/R.css",
+        "path_type": "hardlink",
+        "sha256": "0f4849ab1757247808d54da2c371e992364371c942ad7d629dae8d62327ed068",
+        "sha256_in_prefix": "0f4849ab1757247808d54da2c371e992364371c942ad7d629dae8d62327ed068",
+        "size_in_bytes": 1335
+      },
+      {
+        "_path": "lib/R/library/randomForest/libs/randomForest.dylib",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/builder/ktietz/conda/conda-bld/r-randomforest_1557941017369/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p",
+        "sha256": "abd49bd051d07b291698d025f676f4b989d176554e85a54b119e20b33ad1e29c",
+        "sha256_in_prefix": "4f3c730989b488577ace76661d1bc2e35829d9b2a414df483e0887d44045de2e",
+        "size_in_bytes": 60124
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "394dbc4df8fbfd04cc2d2778a13a0a0cb3b5d689eb5b94a8a56bb1a5008d44a2",
+  "size": 227699,
+  "subdir": "osx-64",
+  "timestamp": 1557941076883,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/r/osx-64/r-randomforest-4.6_14-r36hfffe0aa_0.conda",
+  "version": "4.6_14"
+}

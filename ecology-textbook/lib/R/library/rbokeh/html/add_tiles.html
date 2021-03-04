@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Add map tiles to a Bokeh figure.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for add_tiles {rbokeh}"><tr><td>add_tiles {rbokeh}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Add map tiles to a Bokeh figure.</h2>
+
+<h3>Description</h3>
+
+<p>Add map tiles to a Bokeh figure.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+add_tiles(fig, tile_spec, hi_res = TRUE, y_origin_offset = NULL,
+  x_origin_offset = NULL, min_zoom = NULL, max_zoom = NULL,
+  extra_url_vars = NULL, initial_resolution = NULL, tile_size = NULL,
+  alpha = NULL, render_parents = NULL, visible = NULL, level = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>fig</code></td>
+<td>
+<p>figure to modify</p>
+</td></tr>
+<tr valign="top"><td><code>tile_spec</code></td>
+<td>
+<p>A character string indicating to use one of the pre-defined tile specifications (see details) or a custom tile specification from calling <code><a href="tile_spec.html">tile_spec</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>hi_res</code></td>
+<td>
+<p>When using a pre-defined tile specification, should a high-resolution (if available) version of the tiles be served? Boolean.</p>
+</td></tr>
+<tr valign="top"><td><code>y_origin_offset</code></td>
+<td>
+<p>A y-offset in plot coordinates</p>
+</td></tr>
+<tr valign="top"><td><code>x_origin_offset</code></td>
+<td>
+<p>An x-offset in plot coordinates</p>
+</td></tr>
+<tr valign="top"><td><code>min_zoom</code></td>
+<td>
+<p>A minimum zoom level for the tile layer. This is the most zoomed-out level.</p>
+</td></tr>
+<tr valign="top"><td><code>max_zoom</code></td>
+<td>
+<p>A maximum zoom level for the tile layer. This is the most zoomed-in level.</p>
+</td></tr>
+<tr valign="top"><td><code>extra_url_vars</code></td>
+<td>
+<p>A dictionary that maps url variable template keys to values. These variables are useful for parts of tile urls which do not change from tile to tile (e.g. server host name, or layer name).</p>
+</td></tr>
+<tr valign="top"><td><code>initial_resolution</code></td>
+<td>
+<p>Resolution (plot_units / pixels) of minimum zoom level of tileset projection. NULL to auto-compute.</p>
+</td></tr>
+<tr valign="top"><td><code>tile_size</code></td>
+<td>
+<p>Tile size in pixels (e.g. 256)</p>
+</td></tr>
+<tr valign="top"><td><code>alpha</code></td>
+<td>
+<p>Tile opacity 0.0 - 1.0.</p>
+</td></tr>
+<tr valign="top"><td><code>render_parents</code></td>
+<td>
+<p>Flag enable/disable drawing of parent tiles while waiting for new tiles to arrive. Default value is TRUE.</p>
+</td></tr>
+<tr valign="top"><td><code>visible</code></td>
+<td>
+<p>Is the renderer visible?</p>
+</td></tr>
+<tr valign="top"><td><code>level</code></td>
+<td>
+<p>Specifies the level in which to paint this renderer. One of 'image', 'underlay', 'glyph', 'annotation', 'overlay'.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Here is a list of pre-defined tile specifications from different sources:
+</p>
+<p><strong>Stamen</strong> (<a href="http://maps.stamen.com/">http://maps.stamen.com/</a>)
+</p>
+
+<ul>
+<li><p> toner &mdash;<a href="http://maps.stamen.com/toner/#12/37.7706/-122.3782">http://maps.stamen.com/toner/#12/37.7706/-122.3782</a>
+</p>
+</li>
+<li><p> toner-hybrid &mdash;<a href="http://maps.stamen.com/toner-hybrid/#12/37.7706/-122.3782">http://maps.stamen.com/toner-hybrid/#12/37.7706/-122.3782</a>
+</p>
+</li>
+<li><p> toner-labels &mdash;<a href="http://maps.stamen.com/toner-labels/#12/37.7706/-122.3782">http://maps.stamen.com/toner-labels/#12/37.7706/-122.3782</a>
+</p>
+</li>
+<li><p> toner-lines &mdash;<a href="http://maps.stamen.com/toner-lines/#12/37.7706/-122.3782">http://maps.stamen.com/toner-lines/#12/37.7706/-122.3782</a>
+</p>
+</li>
+<li><p> toner-background &mdash;<a href="http://maps.stamen.com/toner-background/#12/37.7706/-122.3782">http://maps.stamen.com/toner-background/#12/37.7706/-122.3782</a>
+</p>
+</li>
+<li><p> toner-lite &mdash;<a href="http://maps.stamen.com/toner-lite/#12/37.7706/-122.3782">http://maps.stamen.com/toner-lite/#12/37.7706/-122.3782</a>
+</p>
+</li>
+<li><p> terrain &mdash;<a href="http://maps.stamen.com/terrain/#12/37.7706/-122.3782">http://maps.stamen.com/terrain/#12/37.7706/-122.3782</a>
+</p>
+</li>
+<li><p> terrain-labels &mdash;<a href="http://maps.stamen.com/terrain-labels/#12/37.7706/-122.3782">http://maps.stamen.com/terrain-labels/#12/37.7706/-122.3782</a>
+</p>
+</li>
+<li><p> terrain-lines &mdash;<a href="http://maps.stamen.com/terrain-lines/#12/37.7706/-122.3782">http://maps.stamen.com/terrain-lines/#12/37.7706/-122.3782</a>
+</p>
+</li>
+<li><p> terrain-background &mdash;<a href="http://maps.stamen.com/terrain-background/#12/37.7706/-122.3782">http://maps.stamen.com/terrain-background/#12/37.7706/-122.3782</a>
+</p>
+</li></ul>
+
+<p><strong>Carto</strong> (<a href="https://carto.com/location-data-services/basemaps/">https://carto.com/location-data-services/basemaps/</a>)
+</p>
+
+<ul>
+<li><p> carto_light_all
+</p>
+</li>
+<li><p> carto_dark_all
+</p>
+</li>
+<li><p> carto_light_nolabels
+</p>
+</li>
+<li><p> carto_light_only_labels
+</p>
+</li>
+<li><p> carto_dark_nolabels
+</p>
+</li>
+<li><p> carto_dark_only_labels
+</p>
+</li></ul>
+
+<p><strong>Wikipedia</strong>
+</p>
+
+<ul>
+<li><p> wikepedia
+</p>
+</li></ul>
+
+
+
+<h3>Examples</h3>
+
+<pre>
+figure(width = 800) %&gt;%
+  add_tiles("stamen_toner")
+
+figure(width = 800) %&gt;%
+  add_tiles("carto_light_all")
+
+figure(width = 800) %&gt;%
+  add_tiles("wikipedia")
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rbokeh</em> version 0.6.3 <a href="00Index.html">Index</a>]</div>
+</body></html>

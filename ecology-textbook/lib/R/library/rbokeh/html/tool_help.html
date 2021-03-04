@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Add &quot;help&quot; tool to a Bokeh figure</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for tool_help {rbokeh}"><tr><td>tool_help {rbokeh}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Add &quot;help&quot; tool to a Bokeh figure</h2>
+
+<h3>Description</h3>
+
+<p>Add &quot;help&quot; tool to a Bokeh figure
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+tool_help(fig, redirect = NULL, help_tooltip = NULL, remove = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>fig</code></td>
+<td>
+<p>Figure to modify.</p>
+</td></tr>
+<tr valign="top"><td><code>redirect</code></td>
+<td>
+<p>Site to be redirected through upon click.</p>
+</td></tr>
+<tr valign="top"><td><code>help_tooltip</code></td>
+<td>
+<p>Tooltip displayed when hovering over the help icon.</p>
+</td></tr>
+<tr valign="top"><td><code>remove</code></td>
+<td>
+<p>Logical indicating whether the tool should be removed.</p>
+</td></tr>
+</table>
+
+
+<h3>See Also</h3>
+
+<p>Other tools: <code><a href="tool_box_select.html">tool_box_select</a></code>,
+<code><a href="tool_box_zoom.html">tool_box_zoom</a></code>,
+<code><a href="tool_crosshair.html">tool_crosshair</a></code>,
+<code><a href="tool_lasso_select.html">tool_lasso_select</a></code>, <code><a href="tool_pan.html">tool_pan</a></code>,
+<code><a href="tool_poly_select.html">tool_poly_select</a></code>, <code><a href="tool_redo.html">tool_redo</a></code>,
+<code><a href="tool_reset.html">tool_reset</a></code>, <code><a href="tool_save.html">tool_save</a></code>,
+<code><a href="tool_undo.html">tool_undo</a></code>, <code><a href="tool_wheel_pan.html">tool_wheel_pan</a></code>,
+<code><a href="tool_wheel_zoom.html">tool_wheel_zoom</a></code>,
+<code><a href="tool_zoom_in.html">tool_zoom_in</a></code>, <code><a href="tool_zoom_out.html">tool_zoom_out</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+figure(tools = NULL) %&gt;%
+  ly_points(1:10, 1:10) %&gt;%
+  tool_help(help_tooltip = "you can do it!")
+
+# help tool specified but then later removed
+figure(tools = "help") %&gt;%
+  ly_points(1:10, 1:10) %&gt;%
+  tool_help(remove = TRUE)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rbokeh</em> version 0.6.3 <a href="00Index.html">Index</a>]</div>
+</body></html>

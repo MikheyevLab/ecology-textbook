@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Lump together least/most common factor levels into &quot;other&quot;</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for fct_lump {forcats}"><tr><td>fct_lump {forcats}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Lump together least/most common factor levels into &quot;other&quot;</h2>
+
+<h3>Description</h3>
+
+<p>Lump together least/most common factor levels into &quot;other&quot;
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+fct_lump(f, n, prop, w = NULL, other_level = "Other",
+  ties.method = c("min", "average", "first", "last", "random", "max"))
+
+fct_lump_min(f, min, w = NULL, other_level = "Other")
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>f</code></td>
+<td>
+<p>A factor (or character vector).</p>
+</td></tr>
+<tr valign="top"><td><code>n, prop</code></td>
+<td>
+<p>If both <code>n</code> and <code>prop</code> are missing, <code>fct_lump</code> lumps
+together the least frequent levels into &quot;other&quot;, while ensuring that
+&quot;other&quot; is still the smallest level. It's particularly useful in
+conjunction with <code><a href="fct_inorder.html">fct_inorder</a>()</code>.
+</p>
+<p>Positive <code>n</code> preserves the most common <code>n</code> values.
+Negative <code>n</code> preserves the least common <code>-n</code> values.
+It there are ties, you will get at least <code>abs(n)</code> values.
+</p>
+<p>Positive <code>prop</code> preserves values that appear at least
+<code>prop</code> of the time. Negative <code>prop</code> preserves values that
+appear at most <code>-prop</code> of the time.</p>
+</td></tr>
+<tr valign="top"><td><code>w</code></td>
+<td>
+<p>An optional numeric vector giving weights for frequency of
+each value (not level) in f.</p>
+</td></tr>
+<tr valign="top"><td><code>other_level</code></td>
+<td>
+<p>Value of level used for &quot;other&quot; values. Always
+placed at end of levels.</p>
+</td></tr>
+<tr valign="top"><td><code>ties.method</code></td>
+<td>
+<p>A character string specifying how ties are
+treated. See <code><a href="../../base/html/rank.html">rank()</a></code> for details.</p>
+</td></tr>
+<tr valign="top"><td><code>min</code></td>
+<td>
+<p>Preserves values that appear at least <code>min</code> number of times.</p>
+</td></tr>
+</table>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="fct_other.html">fct_other()</a></code> to convert specified levels to other.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+x &lt;- factor(rep(LETTERS[1:9], times = c(40, 10, 5, 27, 1, 1, 1, 1, 1)))
+x %&gt;% table()
+x %&gt;% fct_lump() %&gt;% table()
+x %&gt;% fct_lump() %&gt;% fct_inorder() %&gt;% table()
+
+x &lt;- factor(letters[rpois(100, 5)])
+x
+table(x)
+table(fct_lump(x))
+
+# Use positive values to collapse the rarest
+fct_lump(x, n = 3)
+fct_lump(x, prop = 0.1)
+
+# Use negative values to collapse the most common
+fct_lump(x, n = -3)
+fct_lump(x, prop = -0.1)
+
+# Use weighted frequencies
+w &lt;- c(rep(2, 50), rep(1, 50))
+fct_lump(x, n = 5, w = w)
+
+# Use ties.method to control how tied factors are collapsed
+fct_lump(x, n = 6)
+fct_lump(x, n = 6, ties.method = "max")
+
+x &lt;- factor(letters[rpois(100, 5)])
+fct_lump_min(x, min = 10)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>forcats</em> version 0.4.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

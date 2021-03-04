@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Display tick values that are formatted by a user-defined...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for tickformatter_func {rbokeh}"><tr><td>tickformatter_func {rbokeh}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Display tick values that are formatted by a user-defined function.</h2>
+
+<h3>Description</h3>
+
+<p>Display tick values that are formatted by a user-defined function.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+tickformatter_func(code = "", args = NULL, clear = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>code</code></td>
+<td>
+<p>A snippet of JavaScript code that reformats a single tick to the desired format. The variable &quot;tick&quot; will contain the unformatted tick value and can be expected to be present in the code snippet namespace at render time.</p>
+</td></tr>
+<tr valign="top"><td><code>args</code></td>
+<td>
+<p>A mapping of names to Bokeh plot objects. These objects are made available to the formatter code snippet as the values of named parameters to the callback.</p>
+</td></tr>
+<tr valign="top"><td><code>clear</code></td>
+<td>
+<p>A logical indicating whether all non-specified parameters should be cleared out of any exising specification in the figure. This can be useful when modifying a previously-defined figure.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A specification that is used as the <code>tickformatter</code> argument for <code><a href="axis.html">x_axis</a></code> or <code><a href="axis.html">y_axis</a></code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+figure() %&gt;%
+  ly_points(1:26, letters) %&gt;%
+  x_axis(
+    ticker = ticker_num(desired_num_ticks = 20),
+    tickformatter = tickformatter_func(code = "return tick + 'm';"))
+
+figure(width = 1000) %&gt;%
+  ly_lines(date, co2, data = co2_df) %&gt;%
+  x_axis(tickformatter = tickformatter_func("
+var cur = new Date();
+var diff = (cur.getTime() - tick) / (1000 * 60 * 60 * 24 * 365);
+return diff.toFixed(2) + ' years ago'"))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rbokeh</em> version 0.6.3 <a href="00Index.html">Index</a>]</div>
+</body></html>
