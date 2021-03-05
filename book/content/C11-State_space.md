@@ -36,7 +36,7 @@ $$
 
 The above is a common way to write difference equations, but subtracting $N_{i}$ from each side, dividing by $N_{i}$, and making $p = 0$ for simplicity gives the standard form we have been using.
 
-$$t
+$$
 \frac{1}{N_{1}}\frac{\Delta N_{1}}{\Delta t} &= (r-1) - rN_{2} &= r_{1} + s_{1,2}N_{2} \\
 \frac{1}{N_{2}}\frac{\Delta N_{2}}{\Delta t} &= -1 + \frac{1}{N_{2}}N_{1} &= r_{2} + s_{2,1}N_{1}
 $$
