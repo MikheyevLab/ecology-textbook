@@ -386,7 +386,7 @@ alt: fig6_4_ani
 width: 600px
 align: center
 ---
-Data from figure 6.4 shown through time. 
+Data from figure 6.4 shown through time. Each bubble represents a country, the size of the bubble is the countries population, and the colour of the bubble represents its continent. Learn more about these data at [ourworldindata.org](https://ourworldindata.org/fertility-rate)
 ```
 
 This change in demographic rates could conceivably allow present and future
