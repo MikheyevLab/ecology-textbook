@@ -44,15 +44,15 @@ This means the population change in each time unit is equal to the population si
 10. $\frac{1}{N}$$\frac{\Delta N}{\Delta t}$ = 1.
 This is just dividing both sides of the previous equation by $N$, and perhaps look even more confusing. However, in what follows, it turns out to be the most useful of all.
 
-To move forward, let's focus on the last equation, with its parts bolded below.
-
-
+To move forward, let's focus on the last equation, with its parts colored below.
 
 $$
+\require{color}
 \begin{align*}
-\frac{1}{N}\frac{\boldsymbol{\Delta N}}{\Delta t}=&\boldsymbol{1} \qquad \text{There is one new individual . . .} \\ \\
-\frac{1}{N}\frac{\Delta N}{\boldsymbol{\Delta t}} =& 1 \qquad \text{every hour . . .} \\ \\
-\frac{\boldsymbol{1}}{\boldsymbol{N}} \frac{\Delta N}{\Delta t}=&1 \qquad \text{for every member of the population.}
+\definecolor{red}{RGB}{251,0,29}
+\frac{1}{N}\frac{\color{red}{\Delta N}}{\Delta t}\color{red}=&\color{red}{1} \qquad \color{black}\text{There is one new individual . . .} \\ \\
+\frac{1}{N}\frac{\Delta N}{\color{red}{\Delta t}} =& 1 \qquad \text{every hour . . .} \\ \\
+\color{red}\frac{\boldsymbol{1}}{\boldsymbol{N}} \color{black}\frac{\Delta N}{\Delta t}=&1 \qquad \text{for every member of the population.}
 \end{align*}
 $$
 
@@ -151,8 +151,21 @@ populations2
 ```
 Graph these, and you will see the numbers expand past all bounds, vertically off the page.
 
+<a id ='fig_4_2'></a>
+
 ```{code-cell} r
-library(ggplot2)
+---
+#tags:["hide-input"]
+#render:
+#  image:
+#    width:600px
+#    alt: fig_4_2
+#    classes: shadow bg-primary
+#  figure:
+#    caption: |
+#        Fig 4.2 Orthologistic growth (red) contrasted with exponential growth (blue).
+#    name: fig_4_2
+---
 #EXPONENTIAL
 r <- 1
 s <- 0
@@ -203,12 +216,6 @@ fig_4_2 <- ggplot() +
 fig_4_2
 ```
 
-```{glue:figure} fig_4_2
-:figwidth: 600px
-:name: "fig_4_2"
-
-Orthologistic growth (red) contrasted with exponential growth (blue).
-```
 The blue line shows the unlimited bacterial growth (exponential growth) that helped lead Darwin to his idea of natural selection. The red line illustrates the new "density-enhanced growth" just being considered, where growth rate increases with density.
 
 Because it approaches a line that is orthogonal to the line   approached by the logistic model, described later, we call   this an "orthologistic model." It runs away to infinity so quickly that it essentially gets there in a finite amount of time. In physics and mathematics this situation is called a "singularity" - a place where the rules break down. To understand this, it is important to remember that all models are simplifications and therefore approximations, and apply in their specific range. The orthologistic model applies well at low densities, where greater densities mean greater growth. But a different model will take over when the densities get too high. In fact, if a population is following an orthologistic model, the model predicts that there will be some great change that will occur in the near future before the time of the singularity.
@@ -228,7 +235,7 @@ $$
 
 Again, $r$ is the number of offspring each will produce if it is alone in the world, but with $s$ negative, $s$ is the number each plant will be _unable to produce_ for each additional plant that appears in its vicinity.
 
-Suppose we have $r=1$ and $s=-1/1000$, and we start with three plants, so $N(0)=3$. Here is the code, with the new negative $s$.
+Suppose we have $r=1$ and $s=-1/1000$, and we start with three plants, so $N(0)=3$. Here is the code, with the new negative $s$ commented.
 
 ```{code-cell}r
 r <- 1
@@ -247,8 +254,21 @@ for(i in time) {
 }
 ```
 Now, because $s$ is negative, the growth rate $1/N \ ΔN/Δt$ will drop as the population increases, so you might surmise that the rate will eventually reach zero and the population will level off. In fact, it levels off to 1000.
+
+<a id ='fig_4_3'></a>
+
 ```{code-cell} r
-library(ggplot2)
+#tags:["hide-input"]
+#render:
+#  image:
+#    width:600px
+#    alt: fig_4_3
+#    classes: shadow bg-primary
+#  figure:
+#    caption: |
+#      Fig 4.3 Logistic growth (green) contrasted with orthologistic growth (red) and exponential growth (blue).
+#    name: fig_4_3
+
 #EXPONENTIAL
 r <- 1
 s <- 0
@@ -257,7 +277,6 @@ t <- 0
 N <- 3
 time <- 1:(20)
 populations1 <- data.frame(size = integer())
-
 for(i in time)
 {
   populations1[i, "size"] = N
@@ -265,7 +284,6 @@ for(i in time)
   N=N+dN
   t=t+dt
 }
-
 #ORTHOLOGISTIC
 r <- 0
 s <- 0.05
@@ -274,7 +292,6 @@ t <- 0
 N <- 3
 time <- 1:(20)
 populations2 <- data.frame(size = integer())
-
 for(i in time)
 {
   populations2[i, "size"] = N
@@ -282,7 +299,6 @@ for(i in time)
   N=N+dN;
   t=t+dt;
 }
-
 #to save the logistic growth into a dataframe
 #LOGISTIC
 r <- 1
@@ -292,7 +308,6 @@ t <- 0
 N <- 3
 time <- 1:(20)
 populations3 <- data.frame(size = integer())
-
 for(i in time)
 {
   populations3[i, "size"] = N
@@ -300,8 +315,8 @@ for(i in time)
   N=N+dN
   t=t+dt
 }
-
 #PLOTTING
+library(ggplot2)
 fig_4_3 <- ggplot() +
   geom_point(data=populations1, aes(x=0:19, y=size), color="blue") +
   geom_line(data=populations1, aes(x=0:19, y=size), color="blue") +
@@ -314,15 +329,7 @@ fig_4_3 <- ggplot() +
   ylab("N(t)") +
   scale_x_continuous(breaks=c(0,1,2,3,4,5,6,7,8,9,10,11,12)) +
   scale_y_continuous(breaks=c(0,250,500,750,1000))
-
 fig_4_3
-```
-
-```{glue:figure} fig_4_3
-:figwidth: 600px
-:name: "fig_4_3"
-
-Logistic growth (green) contrasted with orthologistic growth (red) and exponential growth (blue).
 ```
 
 The value at which it levels off is called an "equilibrium," a value where the dynamical system becomes quiescent and stops changing. In the case of the logistic equation, it is also called the "carrying capacity," a level at which the environment cannot "carry" any larger population.
@@ -338,7 +345,7 @@ N&=-r/s
 \end{align*}
 $$
 
-So the carrying capacity is $-r/s$. In {ref}`Figure 4.3 <fig_4_3>` , $-r/s=-1/(-0.001) = 1000$. Exactly where it ended up! This is the celebrated logistic equation," published in 1838 by [Pierre Verhulst](https://en.wikipedia.org/wiki/Pierre_Fran%C3%A7ois_Verhulst). It is commonly written
+So the carrying capacity is $-r/s$. In [Figure 4.3](#fig_4_3) , $-r/s=-1/(-0.001) = 1000$. Exactly where it ended up! This is the celebrated logistic equation," published in 1838 by [Pierre Verhulst](https://en.wikipedia.org/wiki/Pierre_Fran%C3%A7ois_Verhulst). It is commonly written
 
 $$
 \frac{1}{N}\frac{\Delta N}{\Delta t}=rN \left(1-\frac{N}{K} \right)
