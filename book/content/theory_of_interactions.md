@@ -160,6 +160,18 @@ Below is computer code for two-species dynamics - a logical expansion of the cod
 The code here produced the graph in {ref}`Figure 8.2 <fig_8_2>` and with other values for $N_i$, $r_i$, $s_{i,j}$, also produced the graphs in {ref}`Figure 8.4 <fig_8_4>` and {ref}`Figure 8.6 <fig_8_6>`
 
 ```{code-cell} r
+---
+#tags:["hide-input"]
+#render:
+#  image:
+#    width:600px
+#    alt: fig_8_2
+#    classes: shadow bg-primary
+#  figure:
+#    caption: |
+#      Fig 8.2 Time course of competition, one example.
+#    name: fig_8_2
+---
 #FIG 8.2
 N1=.01; N2=.01;
 r1=0.5; r2=0.8;
@@ -186,6 +198,7 @@ t=t+dt; step=step+1;
 
 #PLOTTING
 library(ggplot2)
+fig_8_2 <- 
 ggplot() +
   geom_line(data=finalpop, aes(x=t, y=N1), color="blue") + #N1 line
   geom_line(data=finalpop, aes(x=t, y=N2), color="red") + #N2 line
@@ -193,6 +206,7 @@ ggplot() +
   ylab(bquote(' ' ~N[1]~ ',' ~N[2]~' ')) +
   theme(axis.text.x=element_blank(),
         axis.text.y=element_blank()) #no tick marks
+fig_8_2
 ```
 
 This code uses a time step `dt` of 1/10,000 but displays only every 1000th time step, using the varibale named `step`. This is a reliable way to display output periodically, because `step` takes on only integer values 0, 1, 2 ... Watching variable `t` for the same purpose may not be reliable; `t` has rounding errors in its fractional portion, which typically is represented only approximately by the computer.
