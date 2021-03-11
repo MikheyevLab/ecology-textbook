@@ -34,14 +34,16 @@ any exponential and logistic parts as well.
 ## Phenomological graph
 
 The excerpt of data you have been given includes the world's
-population in billions, by year. That is all. Figure [6.1](world-population) shows
+population in billions, by year. That is all. Figure [6.1](#fig_6_1_tag) shows
 the data plotted in a phenomenological way - population
 size versus year, supplemented with a curve going back 2000
 years to provide perspective. The blue dots show the range
 of data you will be using to project the future population,
 and the black 'X' marks a great demographic transition that 
 is not obvious in this graph, but that will become glaringly
-so in Figure [6.3](figure-6_3).
+so in Figure [6.3](#fig_6_3_tag).
+
+<a name="fig_6_1_tag"></a>
 
 ```{code-cell} r
 ---
@@ -51,9 +53,10 @@ render:
     width: 600px
     alt: world-population
     classes: shadow bg-primary
+    align: center
   figure:
     caption: |
-      World population over the past 2000 years
+      <!-- World population over the past 2000 years -->
     name: world-population
 ---
 suppressPackageStartupMessages({
@@ -77,6 +80,16 @@ filter(worldPopulation, year > 0) %>% ggplot(aes(year, population/10^9)) +
   theme_bw() + xlab(expression(paste(italic(t), ", Year"))) + ylab(expression(paste(italic(N), ", World Population (billions)"))) +
   # labs(caption = "Figure 6.1 Global human population over the past 2000 years") +
   theme(plot.caption = element_text(hjust = 0.5)) 
+```
+
+```{figure} ../img/blank.png
+---
+name: fig_6_1
+alt: fig_6_1
+width: 0px
+align: center
+---
+World population over the past 2000 years
 ```
 
 Can you project global population by simply extending
@@ -139,6 +152,8 @@ humanPopulation_df %>%
 ```
 ## Biological-ecological graph 
 
+<a name="fig_6_2_tag"></a>
+
 ```{code-cell} r
 ---
 tags: [hide-input, remove-stdout, remove-stderr]
@@ -155,7 +170,7 @@ tags: [hide-input, remove-stdout, remove-stderr]
 
 suppressWarnings(suppressMessages(library(ggplot2))) # hide annoying messages
 
-ggplot(data = humanPopulation_df[0:13,],
+ggplot(data = humanPopulation_df[0:13,],          ## Plotting the subset of data (shown in table up until ~ 1965)
                   aes(x = population, 
                       y = rate)) +
   geom_point(color='blue') +
@@ -181,7 +196,18 @@ ggplot(data = humanPopulation_df[0:13,],
 
 ```
 
-Figure [6.2](observed-human) plots the two green columns of
+```{figure} ../img/blank.png
+---
+name: fig_6_2
+alt: fig_6_2
+width: 0px
+align: center
+---
+Observed human growth rate as a function of population density through the mid-1960s (blue dots), based on the data from Table [6.1](#tab_6_1), with a line representing the average trend (green).
+```
+
+
+Figure [6.2](#fig_6_2_tag) plots the two green columns of
 Table [6.1](#tab_6_1)  through line 12---the mid-1960s---in blue dots, with
 a green line representing the average trend. A line like this can be drawn
 through the points in various ways---the simplest with a ruler and pen drawing
@@ -190,6 +216,7 @@ program, with $r$ the point at which the line intersects the vertical axis
 and $s$ the line's slope---its $\Delta y/\Delta x$. The intrinsic
 growth rate $r$ for modern, global human population is apparently negative
 and the slope $s$ is unmistakably positive.
+
 
 From the late 1600s to the mid 1960s, then, it's clear that the birth rate per
 family was increasing as the population increased. Greater population was
@@ -209,18 +236,19 @@ would change the growth curve. The Allee point thus indicates that there is a
 minimum human population we must sustain to avoid extinction. We depend on each
 other.
 
-## 6.3 A global transition
+## A global transition
 
-In Figure [6.3](figure-6_3) we add data from the mid-1960s to the present
+In Figure [6.3](#fig_6_3_tag) we add ([Gapminder](https://www.gapminder.org/data/) and [ourworldindata.org](https://ourworldindata.org/fertility-rate)) 
+data from the mid-1960s to the present
 day. People living in the 1960s were completely unaware of
 the great demographic transition that was developing. For
 hundreds of years prior to this time, human populations were
-stuck on an orthologistic path, with a singularity ever looming and guaranteed by the positive slope. In most of the world, however, the slope abruptly turned about and negative. Not all countries of the world turned about, but on 
+stuck on an orthologistic path, with a singularity ever looming and guaranteed by the positive slope. In most of the world, however, the slope abruptly turned about and negative. 
+Not all countries of the world turned about, but on 
 average the world did. Humanity started down a logistic-like
 path.
 
-### Code to generate figure 6.3
-Figure 6.3 includes the full data frame and additional best fit line. We can [modify the code for figure 2](code_cell_fig_2) as follow.
+<a name="fig_6_3_tag"></a>
 
 ```{code-cell} r
 ---
@@ -235,14 +263,17 @@ tags: [hide-input, remove-stdout, remove-stderr]
       Fig 6.2 Continuation of Figure 6.2 to the present day.
     name: continuation-of -->
 ---
+
+## Now we are using data from external sources
 worldPopulation <- read_csv("../data/WorldPopulationAnnual12000years_interpolated_HYDEandUNto2015.csv", skip = 1,
                             col_names = c("year", "population"), col_types = "nn") %>% 
   filter(year > 0)
 
+# Specify parameters we want to show
 fig_6_3_df <- worldPopulation %>% 
-  filter(year %in% c(humanPopulation_df$year, 1915, 1940, 1960:2000)) %>% 
-  mutate(population = population/1000000000) %>% 
-    mutate(dN = c(diff(population), NA), dT = c(diff(year), NA), rate = 1 / population * dN / dT) 
+  filter(year %in% c(humanPopulation_df$year, 1915, 1940, 1960:2000)) %>%   ## Years
+  mutate(population = population/1000000000) %>%                            ## Divide by million population
+    mutate(dN = c(diff(population), NA), dT = c(diff(year), NA), rate = 1 / population * dN / dT) ## Make new columns to match table 6.1
 
 fig_6_3 <- ggplot(data = fig_6_3_df,
        aes(x = population, 
@@ -285,6 +316,16 @@ fig_6_3
 
 ```
 
+```{figure} ../img/blank.png
+---
+name: fig_6_3
+alt: fig_6_3
+width: 0px
+align: center
+---
+Continuation of Figure 6.2 to the present day
+```
+
 Where the downward-sloping line crosses the horizontal axis is where population
 growth would cease. From this simple $r+sN$ model, it appears that world's
 population will stabilize between 10 and 12 billion. That is in line with other
@@ -303,6 +344,8 @@ Modern medicine raised survival rates, making large families unnecessary. The sp
 effect. However, so did HIV, one of the few Horsemen that
 has made a noticeable comeback.
 
+<a name="fig_6_4_tag"></a>
+
 ```{code-cell} r 
 ---
 tags: [hide-input, remove-stdout, remove-stderr]
@@ -313,7 +356,7 @@ tags: [hide-input, remove-stdout, remove-stderr]
     classes: shadow bg-primary
   figure:
     caption: |
-      Fig 6.4 Human fecundity as a function of national per capita income. Red line shows overall trend. Data from World Bank, United Nations, Gapminder, and other contributors.
+      Fig 6.4 Human fecundity as a function of national per capita income. Red line shows overall trend. Data downloaded from: [Gapminder](https://www.gapminder.org/data/). Sources of data include [World Bank](https://data.worldbank.org/), [IMF](https://www.imf.org/en/Data), [United Nations](https://population.un.org/wpp2019/Download/Standard/Fertility/), and other contributors.
     name: figure_6-4 -->
 ---
 
@@ -334,41 +377,45 @@ income_fer_df <- income_fertility_df %>%
          adjusted_gdp = adjusted_gdp/1000) %>% 
   filter(year %in% 1950:2010)
 
+## Filter only data associated with representative countries
 income_fer_df_rep <- income_fertility_df %>% 
-   filter(country %in% representative_countries)
-
-
-representative_countries <- c("United Kingdom","France", "Germany", "Russia",
-                              "Australia", "New Zealand", "Papua New Guinea", "Tonga",
-                              # "United States", "Mexico", "Canada", "Jamaica",
-                              "China", "Vietnam", "India", "Thailand",
-                              "South Africa", "Nigeria", "Cameroon", "Sudan")
+   filter(country %in% representative_countries)                                          ## Statement to match country column with representative countries
 
 # Best fit line
 fit_data <- read_csv("../data/ch6_fecundity_by_income.csv")
 
+# Plot bubbles and trend line
 ggplot() +
-  geom_point(data = income_fer_df, aes(x = adjusted_gdp, y = fertility, size = population, colour = Continent), alpha=0.7) +
-  scale_size(range = c(1, 5), name = "Population (M)") +
-  theme_bw() +
-  scale_x_continuous(breaks = seq(0, 50, by = 5),
+  geom_point(data = income_fer_df, aes(x = adjusted_gdp, y = fertility,                   ## Points represents fertility and income
+  size = population, colour = Continent), alpha=0.7) +     
+  scale_size(range = c(1, 5), name = "Population (M)") +                                  ## Add population scale
+  theme_bw() + 
+  scale_x_continuous(breaks = seq(0, 50, by = 5),                                         ## Adjust x-axis
                      limits = c(0, 50)) +
   theme(legend.position="bottom") +
-  ylab("Lifetime Births per Female") +
-  xlab("Gross domestic product, thousands per capita") +
-  geom_line(data = fit_data, aes(x = gni, y = life_births), colour = "red", size = 2)
+  ylab("Lifetime Births per Female") +  xlab("Gross domestic product, thousands per capita") +     ## Axes labels
+  geom_line(data = fit_data, aes(x = gni, y = life_births), colour = "red", size = 2)              ## Trend line
 
 
-# Representative countries 
+# Show trends in different representative countries 
 ggplot() +
   geom_point(data = income_fer_df_rep, aes(x = adjusted_gdp, y = fertility, size = population, colour = country), alpha=0.7) +
   scale_size(range = c(1, 10), name = "Population (M)") +
   theme_bw() +
   theme(legend.position="none") +
-  ylab("Lifetime Births per Female") +
-  xlab("Gross domestic product, thousands per capita") +
-  facet_wrap(~ Continent + country) 
+  ylab("Lifetime Births per Female") + xlab("Gross domestic product, thousands per capita") +
+  facet_wrap(~ Continent + country) # allow multiple panels to show '~' (means by) continent and country
 
+```
+
+```{figure} ../img/blank.png
+---
+name: fig_6_4
+alt: fig_6_4
+width: 0px
+align: center
+---
+(Top) Human fecundity as a function of national per capita income. Red line shows overall trend. (Bottom) Trend from different representative countries from four continents individually shown. Size of line indicates population size. Data downloaded from: [Gapminder](https://www.gapminder.org/data/) and [ourworldindata.org](https://ourworldindata.org/fertility-rate). Sources of data include [World Bank](https://data.worldbank.org/), [IMF](https://www.imf.org/en/Data), [United Nations](https://population.un.org/wpp2019/Download/Standard/Fertility/), and other contributors.
 ```
 
 Plants and other animals have logistic growth forced upon them because of
@@ -376,18 +423,8 @@ overcrowding. In humans, however, logistic growth has been largely voluntary.
 And there could be further developments in a lifetime. In many nations, birth
 rates are presently below replacement rates. In fact, in all nations with a
 gross national income above 16K dollars per person, the birth rate is at or
-below the replacement rate of 2.1 lifetime births per female (Figure [6.4](figure_6-4)). 
-You can see how this transition happened over time here.
-
-```{figure} ../img/fig6_4.gif
----
-name: fig6_4_ani
-alt: fig6_4_ani
-width: 600px
-align: center
----
-Data from figure 6.4 shown through time. Each bubble represents a country, the size of the bubble is the countries population, and the colour of the bubble represents its continent. Learn more about these data at [ourworldindata.org](https://ourworldindata.org/fertility-rate)
-```
+below the replacement rate of 2.1 lifetime births per female (Figure [6.4](#fig_6_4_tag)). 
+You can see how this transition happened over time here in Figure [6.6](fig6_4_ani).
 
 This change in demographic rates could conceivably allow present and future
 generations to voluntarily adjust the population to whatever is desired. The new
@@ -407,4 +444,15 @@ width: 600px
 align: center
 ---
 Earth over Moon, touching the conscience of a world.
+```
+
+
+```{figure} ../img/fig6_4.gif
+---
+name: fig6_4_ani
+alt: fig6_4_ani
+width: 600px
+align: center
+---
+Data from figure 6.4 shown through time. Each bubble represents a country, the size of the bubble is the countries population, and the colour of the bubble represents its continent. Learn more about these data at [ourworldindata.org](https://ourworldindata.org/fertility-rate)
 ```
