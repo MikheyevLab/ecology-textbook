@@ -48,15 +48,15 @@ With these parameters in mind, here are the two-species equations. The new inter
 $$
 \begin{align*}
 \frac{1}{N_1}\frac{dN_1}{dt}=r_1+s_{1,1}N_1+\color{blue}s_{1,2}N_2 \\
-\frac{1}{N_2}\frac{dN_2}{dt}=r_2+s_{2,2}N_2+\color{blue}s_{2,1}N_1
+\frac{1}{N_2}\frac{dN_2}{dt}=r_2+s_{2,2}N_2+\color{blue}s_{2,1}N_1  
 \end{align*}
-$$ (Equation_8.1)
+$$ (equation_8_1)
 
 In the single-species equations, the sign of the $s$ term separates the two main kinds of population dynamics - positive for orthologistic, negative for logistic. Similarly, in the two-species equations, the signs of the interaction parameters $s_{1,2}$ and $s_{2,1}$ determine the population dynamics.
 
 Two parameters allow three main possibilities - (1) both parameters can be negative, (2) both can be positive, or (3) one can be positive and the other negative. These are the main possibilities that natural selection has to work with.
 
-**Competitition.** First consider the case where $s_{1,2}$ and $s_{2,1}$ are both negative, as in {ref}`Figure 8.1 <fig_8_1>`.
+**Competitition.** First consider the case where $s_{1,2}$ and $s_{2,1}$ are both negative, as in {numref}`Figure %s <fig_8_1>`.
 
 ```{figure} ../img/fig_8_1.png
 ---
@@ -65,12 +65,11 @@ alt: Figure 8.1
 width: 600px
 align: center
 ---
-Figure 8.1. Both interaction parameters negative, competition.
+Both interaction parameters negative, competition.
 ```
-
 For a single species, parameter $s$ being negative causes the population to approach a carrying capacity. The same could be expected when parameters $s_{1,2}$ and $s_{2,1}$ are both negative - one or both species approach a carrying capacity at which the population remains constant, or as constant as external environmental conditions allow.
 
-One example is shown in {ref}`Figure 8.2 <fig_8_2>`, where the population of each species is plotted on the vertical axis and time on the horizontal axis.
+One example is shown in {numref}`Figure %s <fig_8_2>`, where the population of each species is plotted on the vertical axis and time on the horizontal axis.
 
 ```{figure} ../img/fig_8_2.png
 ---
@@ -79,7 +78,7 @@ alt: Figure 8.2
 width: 600px
 align: center
 ---
-Figure 8.2. Time course of competition, one example
+Time course of competition, one example
 ```
 
 Here, species 2, in red, grows faster, gains the advantage early, and rises to a high level. Species 1, in blue, grows more slowly but eventually rises and, because of the mutual inhibition between species in competition, drives back the population of Species 2. The two species eventually approach a joint carrying capacity.
@@ -97,14 +96,14 @@ alt: Figure 8.3
 width: 600px
 align: center
 ---
-Figure 8.3. Both interaction parameters positive, mutualism.
+Both interaction parameters positive, mutualism.
 ```
 
-Depicted in {ref}`Figure 8.3 <fig_8_3>` is a form of "obligate mutalism," where both species decline to extinction if either is not present. This is analogous to a joint Allee point, where the growth curves cross the horizontal axis and become negative below certain critical population levels. If this is not the case and the growth curves cross the vertical axis, each species can survive alone; this is called "facultative mutualism," and we'll learn more about it in later chapters.
+Depicted in {numref}`Figure %s <8.3>` is a form of "obligate mutalism," where both species decline to extinction if either is not present. This is analogous to a joint Allee point, where the growth curves cross the horizontal axis and become negative below certain critical population levels. If this is not the case and the growth curves cross the vertical axis, each species can survive alone; this is called "facultative mutualism," and we'll learn more about it in later chapters.
 
 For now, the important point is how mutualistic populations grow or decline over time. A single species whose density somehow enhances its own rate of growth becomes orthologistic, increasing ever more rapidly toward a singularity, before which it will grow so numerous that it will be checked by some other inevitable limit, such as space, predation, or disease.
 
-It turns out that the dynamics of the two species enhancing each other's growth are similar to those of a single species enhancing its own growth. Both move to a singularity at ever increasing rates as illustrated earlier in {ref}`Figure 4.2 <fig_4_2>` and below in {ref}`Figure 8.4 <fig_8_4>`. Of course, such growth cannot continue forever. It will eventually be checked by some force beyond the scope of the equations, just as human population growth was abruptly checked in the mid-twentieth century - so clearly visible earlier in {ref}`Figure 6.3 <fig_6_3>`.
+It turns out that the dynamics of the two species enhancing each other's growth are similar to those of a single species enhancing its own growth. Both move to a singularity at ever increasing rates as illustrated earlier in {numref}`Figure %s <fig_4_2>` and below in {numref}`Figure %s <fig_8_4>`. Of course, such growth cannot continue forever. It will eventually be checked by some force beyond the scope of the equations, just as human population growth was abruptly checked in the mid-twentieth century - so clearly visible earlier in {numref}`Figure %s <fig_6_3>`.
 
 ```{figure} ../img/fig_8_4.png
 ---
@@ -113,12 +112,12 @@ alt: Figure 8.4
 width: 600px
 align: center
 ---
-Figure 8.4. Time course of unchecked mutualism
+Time course of unchecked mutualism
 ```
 
 **Predation.** The remaining possibility for these two-species equations is when one interaction parameter $s_{i,j}$ is positive and the other is negative. In other words, when the first species enhanves the growth of the second while the second species inhibits the growth of the first. Or vice versa. This is "predation," also manifested as parasitism, disease, and other forms.
 
-Think about a predator and its prey. The more prey, the easier it is for predators to catch them, hence the easier it is for predators to feed their young and the greater the predator's population growth. This is the right part of {ref}`Figure 8.5 <fig_8_5>`. The more predators there are, however, the more prey are captured; hence the lower the growth rate of the prey, as shown on the left figure. $N_1$ here, then, represents the prey, and $N_2$ represents the predator.
+Think about a predator and its prey. The more prey, the easier it is for predators to catch them, hence the easier it is for predators to feed their young and the greater the predator's population growth. This is the right part of {numref}`Figure %s <fig_8_5>`. The more predators there are, however, the more prey are captured; hence the lower the growth rate of the prey, as shown on the left figure. $N_1$ here, then, represents the prey, and $N_2$ represents the predator.
 
 ```{figure} ../img/fig_8_5.png
 ---
@@ -127,14 +126,14 @@ alt: Figure 8.5
 width: 600px
 align: center
 ---
-Figure 8.5. Interaction terms of opposite signs, predation.
+Interaction terms of opposite signs, predation.
 ```
 
 Prey can survive on their own, without predators, as reflected on the left in positive growth for $N_1$ when $N_2$ is 0. Predators, however, cannot survive without prey, as reflected on the right in the negative growth for $N_2$ when $N_1$ is 0. This is like an Alle point for predators, which will start to die out if the prey population falls below this point.
 
 The question here is this: what will be the population dynamics of predator and prey through time? Will the populations grow logistically and level off at a steady state, as suggestive by the negative parameter $s_{1,2}$, or increase orthologistically, as suggested by the positive parameter $s_{2,1}$?
 
-Actually, they do both. Sometimes they increase faster than exponentially, when predator populations are low and growing prey populations provide ever increasing per capita growth rates for the predator, according to the right part of {ref}`Figure 8.5 <fig_8_5>`. In due time, however, predators become abundant and depress prey populations, in turn reducing growth of the predator populations. As shwon in {ref}`Figure 8.6 <fig_8_6>`, the populations oscillate in ongoing tensions between predator (red line) and prey (blue line).
+Actually, they do both. Sometimes they increase faster than exponentially, when predator populations are low and growing prey populations provide ever increasing per capita growth rates for the predator, according to the right part of {numref}`Figure %s <fig_8_5>`. In due time, however, predators become abundant and depress prey populations, in turn reducing growth of the predator populations. As shwon in {numref}`Figure %s <fig_8_6>`, the populations oscillate in ongoing tensions between predator (red line) and prey (blue line).
 
 ```{figure} ../img/fig_8_6.png
 ---
@@ -143,7 +142,7 @@ alt: Figure 8.6
 width: 600px
 align: center
 ---
-Figure 8.6. Time course of predation
+Time course of predation
 ```
 
 Examine this figure in detail. At the start, labeled A, the prey population is low and predators are declining for lack of food. A steady decline in the number of predators creates better and better conditions for prey, whose populations then increase orthologistically at ever accelerating per capita rates as predators die out and conditions for prey improve accordingly.
@@ -152,12 +151,12 @@ But then the situation turns. Prey grow abundant, with the population rising abo
 
 Then predators become abundant and drive the growth rate of the prey negative. The situation turns again, at C. Prey starts to decline and predator growth becomes approximately logistic, levelling off and starting to decline at D. By E it has come full circle and the process repeats, ad infinitum.
 
-While {ref}`Figure 8.6 <fig_8_6>` illustrates the classifcal form for predator-prey interactions, other forms are possible. When conditions are right, the osciallations can dampen out and both predator and prey populations can reach steady states. Or the oscillations can become so wild that predators kill all the prey and then vanish themselves. This assumes some effectively-zero value for $N_1$ and $N_2$ below which they "snap" to zero. Or prey pouplations can become so low that predators all die out, leaving the prey in peace. Or both can go extinct. Or in the case of  human predators, the prey can be domesticated and transformed into mutualists. More on all such dynamics in later chapters.
+While {numref}`Figure %s <fig_8_6>` illustrates the classifcal form for predator-prey interactions, other forms are possible. When conditions are right, the osciallations can dampen out and both predator and prey populations can reach steady states. Or the oscillations can become so wild that predators kill all the prey and then vanish themselves. This assumes some effectively-zero value for $N_1$ and $N_2$ below which they "snap" to zero. Or prey pouplations can become so low that predators all die out, leaving the prey in peace. Or both can go extinct. Or in the case of  human predators, the prey can be domesticated and transformed into mutualists. More on all such dynamics in later chapters.
 
 ## Code for two species
 Below is computer code for two-species dynamics - a logical expansion of the code for one-species dynamics you saw earlier on previous chapters.
 
-The code here produced the graph in {ref}`Figure 8.2 <fig_8_2>` and with other values for $N_i$, $r_i$, $s_{i,j}$, also produced the graphs in {ref}`Figure 8.4 <fig_8_4>` and {ref}`Figure 8.6 <fig_8_6>`
+The code here produced the graph in {numref}`Figure %s <fig_8_2>` and with other values for $N_i$, $r_i$, $s_{i,j}$, also produced the graphs in {numref}`Figure %s <fig_8_4>` and {numref}`Figure %s <fig_8_6>`. 
 
 ```{code-cell} r
 ---
@@ -169,7 +168,6 @@ The code here produced the graph in {ref}`Figure 8.2 <fig_8_2>` and with other v
 #    classes: shadow bg-primary
 #  figure:
 #    caption: |
-#      Fig 8.2 Time course of competition, one example.
 #    name: fig_8_2
 ---
 #FIG 8.2
@@ -223,7 +221,7 @@ This shortened code, however, contains a serious bug that could be difficult to 
 Careful code reviews with experienced colleagues are one way to help avoid such bugs. If the problem is important enough, having the code written independently by two or more people not communicating with each other, except by accepting the same specifications and comparing the final results, is a way to approach correctness. This is like independent replicaiton of scientific experiments. Other methods of ensuring that code is correct are addressed later.
 
 ## Summary of Interactions
-In summary, based on the effects of each population on the other, two species can interact mainly in three different ways, as shown in {ref}`Figure 8.7 <fig_8_7>`. Competiion is a '- -' combination, mutualism is '+ +', and predation is '+ -', in either order.
+In summary, based on the effects of each population on the other, two species can interact mainly in three different ways, as shown in {numref}`Figure %s <fig_8_7>`. Competiion is a '- -' combination, mutualism is '+ +', and predation is '+ -', in either order.
 
 ```{figure} ../img/fig_8_7.png
 ---
@@ -232,7 +230,7 @@ alt: Figure 8.7
 width: 600px
 align: center
 ---
-Figure 8.7. Summary of species interactions based on signs of their interaction parameters.
+Summary of species interactions based on signs of their interaction parameters.
 ```
 
 Sandwiched between the boxes above are special cases where one of the interaction terms is zero, or very close to zero. These are called ["commensalism"](https://en.wikipedia.org/wiki/Symbiosis), when one parameter is positive and the other is zero, or ["amensalism"](https://en.wikipedia.org/wiki/Biological_interaction), when one parameter is negative and the other is zero. We won't focus further on these special cases.
