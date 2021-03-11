@@ -11,7 +11,6 @@ kernelspec:
 
 # Embodied by natural selection
 
-Mutualisms among pollinators and flowers are an ingenious arrangement for the fertilization of immobile organisms. A bee, for example collects pollen as a food source and in the process spreads pollen from plant to plant. Plants advertise the pollen with bright flowers, and provide sweet nectar as an additional attraction ([Figure 9.1](#fig_9_1_1), left).
 
 <a id='fig_9_1'></a>
 <center>
@@ -22,15 +21,19 @@ Mutualisms among pollinators and flowers are an ingenious arrangement for the fe
     </tr>
 </center>
 
-<center>
-<p style="font-size:13.5px">
-Figure 9.1. Pollination Mutualism.
-</p>
-</center>
+```{figure} ../img/blank.png
+---
+name: fig_9_1
+alt: Figure 9.1
+width: 1px
+align: center
+---
+Pollination Mutualism.
+```
 
-A small mammal can act similarly, drinking nectar from one plant, getting pollen on its whiskers, and transferring the pollen when it drinks from another plant, in turn pollinating that plant ([Figure 9.1](#fig_9_1), middle).
+A small mammal can act similarly, drinking nectar from one plant, getting pollen on its whiskers, and transferring the pollen when it drinks from another plant, in turn pollinating that plant ({numref}`Figure %s <fig_9_1>`, middle).
 
-A fascinating pollination mutualism extends across the wetlands of the North American Upper Midwest, in marsh milkweed, _Asclepias incarnata_ ([Figure 9.1](#fig_9_1), right). Mutualisms are not necessarily perfect, and each member can be exploited in some small way. In this case, pollinators land on the milkweed flower and stand on "landing platforms" while taking nectar. But the platforms are not secure; they are curved and slightly difficult footholds. A pollinator's legs slip into cracks between the platforms and, when the pollinator pulls its leg out, there are "saddle bags" of pollen (pollinia) wrapped around its leg, which can't be dislodged. As it flies to another flower, the saddle bags rotate forward so they easily dislodge, and they're pulled off when the pollinator slips on another insecure landing platform of the corresponding species.
+A fascinating pollination mutualism extends across the wetlands of the North American Upper Midwest, in marsh milkweed, _Asclepias incarnata_ ({numref}`Figure %s <fig_9_1>`, right). Mutualisms are not necessarily perfect, and each member can be exploited in some small way. In this case, pollinators land on the milkweed flower and stand on "landing platforms" while taking nectar. But the platforms are not secure; they are curved and slightly difficult footholds. A pollinator's legs slip into cracks between the platforms and, when the pollinator pulls its leg out, there are "saddle bags" of pollen (pollinia) wrapped around its leg, which can't be dislodged. As it flies to another flower, the saddle bags rotate forward so they easily dislodge, and they're pulled off when the pollinator slips on another insecure landing platform of the corresponding species.
 
 <a id='fig_9_2'></a>
 <center>
@@ -41,16 +44,19 @@ A fascinating pollination mutualism extends across the wetlands of the North Ame
     </tr>
 </center>
 
-   
-<center>
-<p style="font-size:13.5px">
-Figure 9.2. Mutualisms through a third species.
-</p>
-</center>
+```{figure} ../img/blank.png
+---
+name: fig_9_2
+alt: Figure 9.2
+width: 1px
+align: center
+---
+Mutualisms through a third species.
+```   
 
-In another example, water buffalos ([Figure 9.2](#fig_9_2), left) attract abundant ticks. What better place, then for Oxpeckers to find morsels of food than in the bristly fur of a water buffalo? A little blood in the tick is probably a bonus. This is god for the water buffalo, good for the oxpecker, and not good for the tick. This three-species interaction is (1) predation on the water buffalo by the tick, (2) predation on the tick by the oxpecker, and thus (3) mutualism between water buffalo and oxpecker. It is an "enemy of my enemy is my friend" interaction, one of the forty kinds of three-species interactions you will see in upcoming chapters.
+In another example, water buffalos ({numref}`Figure %s <fig_9_2>`, left) attract abundant ticks. What better place, then for Oxpeckers to find morsels of food than in the bristly fur of a water buffalo? A little blood in the tick is probably a bonus. This is god for the water buffalo, good for the oxpecker, and not good for the tick. This three-species interaction is (1) predation on the water buffalo by the tick, (2) predation on the tick by the oxpecker, and thus (3) mutualism between water buffalo and oxpecker. It is an "enemy of my enemy is my friend" interaction, one of the forty kinds of three-species interactions you will see in upcoming chapters.
 
-Likewise, ants ward off potential predators from aphids [Figure 9.2](#fig_9_2), middle) and "cleaner fish" swim freely within the mouth of a large fish ([Figure 9.2](#fig_9_2), right) while they remove the fish's parasites.
+Likewise, ants ward off potential predators from aphids{numref}`Figure %s <fig_9_2>`, middle) and "cleaner fish" swim freely within the mouth of a large fish ({numref}`Figure %s <fig_9_2>`, right) while they remove the fish's parasites.
 
 <a id='fig_9_3'></a>
 <center>
@@ -60,16 +66,19 @@ Likewise, ants ward off potential predators from aphids [Figure 9.2](#fig_9_2), 
     </tr>
 </center>
 
-   
-<center>
-<p style="font-size:13.5px">
-Figure 9.3. Mutualisms with a dangerous partner.
-</p>
-</center>
+```{figure} ../img/blank.png
+---
+name: fig_9_3
+alt: Figure 9.3
+width: 1px
+align: center
+---
+Mutualisms with a dangerous partner.
+```   
 
 Sea anemones have stinging tentacles that other fish must avoid, but clown fish can resist the sting ([Figure 9.3](#fig_9_3), left). This mutualism is more complex. The clown fish protect themselves from predators by living among the anemones, and their bright colors may attract predators who become prey for the anemone. Clown fish eat scraps of food missed by the anemone, plus their own food from the water column, and provide nitrogen to the anemone from their digested waste. These are intricate mutualisms, in which specifically matched species of clown fish and anemone have become permanent partners.
 
-[Pom-pom crabs](https://en.wikipedia.org/wiki/Lybia_edmondsoni) employ sea anemones as weapons ([Figure 9.3](#fig_9_3), right), carrying two anemones and waving them in a dance to dissuade approaching predators. Crabs are sloppy eaters, so the sea anemones get the benefit of the mess as payment.
+[Pom-pom crabs](https://en.wikipedia.org/wiki/Lybia_edmondsoni) employ sea anemones as weapons ({numref}`Figure %s <fig_9_3>`, right), carrying two anemones and waving them in a dance to dissuade approaching predators. Crabs are sloppy eaters, so the sea anemones get the benefit of the mess as payment.
 
 <a id='fig_9_4'></a>
 <center>
@@ -79,16 +88,19 @@ Sea anemones have stinging tentacles that other fish must avoid, but clown fish 
     </tr>
 </center>
 
-   
-<center>
-<p style="font-size:13.5px">
-Figure 9.4. Mutualisms with people.
-</p>
-</center>
+```{figure} ../img/blank.png
+---
+name: fig_9_4
+alt: Figure 9.4
+width: 1px
+align: center
+---
+Mutualisms with people.
+```      
 
-Early on, our hunter-gatherer predecessors were predators, but later they domesticated some of their prey, changing some predator-prey interactions to mutualisms. From the point of view of domesticated sheep ([Figure 9.4](#fig_9_4), left), humans may not be ideal mutualists. We protect them from wolves, harbor them from disease, and shield them from the worst vagaries of weather. But we also confine them to pens, shear off their wool, and kill and eat their lambs. Yet as agriculture advanced, the more people there were on the planet, and the more sheep there were, and vice versa. This is the ecological making of a mutualism.
+Early on, our hunter-gatherer predecessors were predators, but later they domesticated some of their prey, changing some predator-prey interactions to mutualisms. From the point of view of domesticated sheep ({numref}`Figure %s <fig_9_4>`, left), humans may not be ideal mutualists. We protect them from wolves, harbor them from disease, and shield them from the worst vagaries of weather. But we also confine them to pens, shear off their wool, and kill and eat their lambs. Yet as agriculture advanced, the more people there were on the planet, and the more sheep there were, and vice versa. This is the ecological making of a mutualism.
 
-It is similar with crops. Instead of gathering grain and fruit from forest and field, we cleared areas specifically for domesticated plants. We protect the crops from competition with other plants, work to keep them free of disease, and add water and nutrients to the soil to help them grow. For thousands of years we used beasts of burden to accelerate cultivation, also in mutualisms with those beasts. Now we are entering a wholly synthetic phase, in which teams of satellite-guided tractors navigate fields with the power of a thousand horses ([Figure 9.4](#fig_9_4), right).
+It is similar with crops. Instead of gathering grain and fruit from forest and field, we cleared areas specifically for domesticated plants. We protect the crops from competition with other plants, work to keep them free of disease, and add water and nutrients to the soil to help them grow. For thousands of years we used beasts of burden to accelerate cultivation, also in mutualisms with those beasts. Now we are entering a wholly synthetic phase, in which teams of satellite-guided tractors navigate fields with the power of a thousand horses ({numref}`Figure %s <fig_9_4>`, right).
 
 For a thought exercise, you may want to ponder our relationship with machines. If we were mutualists with draft horses, are we now mutualists with the machines that have replaced them? As you proceed through the next chapters, consider whether our relationships with our machines meet the ecological requirements of mutualisms.
 
@@ -100,18 +112,22 @@ For a thought exercise, you may want to ponder our relationship with machines. I
     <td> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Bison_herd_at_Genesee_Park-2012_03_10_0603.jpg/1200px-Bison_herd_at_Genesee_Park-2012_03_10_0603.jpg" alt="bison" width="250px" height="170" title="Bison by Postdlf (CC BY-SA 3.0)"> </td>
     </tr>
 </center>
-   
-<center>
-<p style="font-size:13.5px">
-Figure 9.5. Herbivory.
-</p>
-</center>
 
-Herbivory is a kind of predation in which the prey is a plant. Upon detecting herbivory, the plant may pump toxins into the leaf to dissuade the herbivore. In response, the herbivore may quickly chew out a pattern to isolate part of the leaf from the toxins and then dine in relative salubrity ([Figure 9.5](#fig_9_5), left).
+```{figure} ../img/blank.png
+---
+name: fig_9_5
+alt: Figure 9.5
+width: 1px
+align: center
+---
+Herbivory.
+```     
 
-Multitudes of leaf cutter ants can be formidable herbivores ([Figure 9.5](#fig_9_5), middle), cutting luggable-sized pieces of leaves to take back to their nests. The ants do not eat the leaves, but chew them further, feed them to fungus, and then eat the fungus—creating an ant-fungus mutualism, with ants being predators on the trees.
+Herbivory is a kind of predation in which the prey is a plant. Upon detecting herbivory, the plant may pump toxins into the leaf to dissuade the herbivore. In response, the herbivore may quickly chew out a pattern to isolate part of the leaf from the toxins and then dine in relative salubrity ({numref}`Figure %s <fig_9_5>`, left).
 
-At a larger scale, multitudes of bison were formidable herbivores of the prairie ([Figure 9.5](#fig_9_5), right). The native tallgrass prairies were wildflower gardens, with a few dozen species of grasses but hundreds of species of flowers—said to bloom a different color each week.
+Multitudes of leaf cutter ants can be formidable herbivores ({numref}`Figure %s <fig_9_5>`, middle), cutting luggable-sized pieces of leaves to take back to their nests. The ants do not eat the leaves, but chew them further, feed them to fungus, and then eat the fungus—creating an ant-fungus mutualism, with ants being predators on the trees.
+
+At a larger scale, multitudes of bison were formidable herbivores of the prairie ({numref}`Figure %s <fig_9_5>`, right). The native tallgrass prairies were wildflower gardens, with a few dozen species of grasses but hundreds of species of flowers—said to bloom a different color each week.
 
 <a id='fig_9_6'></a>
 <center>
@@ -121,16 +137,20 @@ At a larger scale, multitudes of bison were formidable herbivores of the prairie
     <td> <img src="http://www.starfred.com/ebook-ecology/CAL11592.jpg" alt="beaverdam" width="250px" height="180" title="http://www.starfred.com/ebook-ecology/CAL11592.html"> </td>
     </tr>
 </center>
-   
-<center>
-<p style="font-size:13.5px">
-Figure 9.6. Beaver-aspen herbivory. Or is it mutualism?
-</p>
-</center>
 
-Beavers fell whole aspen trees ([Figure 9.6](#fig_9_6) left) to make their dams and lodges (middle and right), and also for food. This sounds like herbivory. At the same time, however, they girdle and kill other species of trees that they do not use as food, clearing the way for new aspen. This is mutualism.
+```{figure} ../img/blank.png
+---
+name: fig_9_6
+alt: Figure 9.6
+width: 1px
+align: center
+---
+Beaver-aspen herbivory. Or is it mutualism?
+```     
 
-The photo on the right in [Figure 9.6](#fig_9_6) shows a pond colonized by beaver after an absence of more than a century. Though it is midsummer, a few of the trees are defoliated—including one giant bur oak—because beaver have chewed off the cambium layer all around the trees, girdling and killing them. Judiciously followed, this practice would keep the forest in an early successional stage, a condition which favors staple aspen.
+Beavers fell whole aspen trees ({numref}`Figure %s <fig_9_6>`, left) to make their dams and lodges (middle and right), and also for food. This sounds like herbivory. At the same time, however, they girdle and kill other species of trees that they do not use as food, clearing the way for new aspen. This is mutualism.
+
+The photo on the right in {numref}`Figure %s <fig_9_6>` shows a pond colonized by beaver after an absence of more than a century. Though it is midsummer, a few of the trees are defoliated—including one giant bur oak—because beaver have chewed off the cambium layer all around the trees, girdling and killing them. Judiciously followed, this practice would keep the forest in an early successional stage, a condition which favors staple aspen.
 
 <a id='fig_9_7'></a>
 <center>
@@ -140,14 +160,18 @@ The photo on the right in [Figure 9.6](#fig_9_6) shows a pond colonized by beave
     <td> <img src="https://cdn.pixabay.com/photo/2016/03/31/19/27/stone-fish-1295032_1280.jpg" alt="stonefish" width="300px" height="180" title="Stonefish by Andrea Bohl (CC0)"> </td>
     </tr>
 </center>
-   
-<center>
-<p style="font-size:13.5px">
-Figure 9.7. Predation.
-</p>
-</center>
 
-Bears catching fish and a kookaburra ambushing a frog ([Figure 9.7](#fig_9_7), left and middle ) are simple kinds of predation. Other ambush strategies are also common. The stonefish ([Figure 9.7](#fig_9_7), right) is disguised to match its background and waves a lure to attract other fish, who are then instantly swallowed whole. Despite hundreds of millions of years of evolution, the trick still works.
+```{figure} ../img/blank.png
+---
+name: fig_9_7
+alt: Figure 9.7
+width: 1px
+align: center
+---
+Predation.
+```    
+
+Bears catching fish and a kookaburra ambushing a frog ({numref}`Figure %s <fig_9_7>`, left and middle ) are simple kinds of predation. Other ambush strategies are also common. The stonefish ({numref}`Figure %s <fig_9_7>`, right) is disguised to match its background and waves a lure to attract other fish, who are then instantly swallowed whole. Despite hundreds of millions of years of evolution, the trick still works.
 
 <a id='fig_9_8'></a>
 <center>
@@ -157,16 +181,19 @@ Bears catching fish and a kookaburra ambushing a frog ([Figure 9.7](#fig_9_7), l
     </tr>
 </center>
 
-   
-<center>
-<p style="font-size:13.5px">
-Figure 9.8. Ambush predation.
-</p>
-</center>
+```{figure} ../img/blank.png
+---
+name: fig_9_8
+alt: Figure 9.8
+width: 1px
+align: center
+---
+Ambush predation.
+```   
 
-Cats typically pursue ambush strategies, lying in wait ([Figure 9.8](#fig_9_8), left), whereas dogs typically pursue sustained chasing strategies. This means that cats must be relatively odorless to avoid detection, but dogs need not be.
+Cats typically pursue ambush strategies, lying in wait ({numref}`Figure %s <fig_9_8>`, left), whereas dogs typically pursue sustained chasing strategies. This means that cats must be relatively odorless to avoid detection, but dogs need not be.
 
-In a curious ambush strategy only recently achieved, herons wave gathered feathers to attract fish, then drop the feathers and grab the fish ([Figure 9.8](#fig_9_8)). Such use of feathers is apparently an animal "meme" that has spread rapidly
+In a curious ambush strategy only recently achieved, herons wave gathered feathers to attract fish, then drop the feathers and grab the fish ({numref}`Figure %s <fig_9_8>`). Such use of feathers is apparently an animal "meme" that has spread rapidly
 through heron populations after being discovered by some Einstein-heron.
 
 <a id='fig_9_9'></a>
@@ -177,15 +204,19 @@ through heron populations after being discovered by some Einstein-heron.
     </tr>
 </center>
 
-<center>
-<p style="font-size:13.5px">
-Figure 9.9. Predation and parasitoidism.
-</p>
-</center>
+```{figure} ../img/blank.png
+---
+name: fig_9_9
+alt: Figure 9.9
+width: 1px
+align: center
+---
+Predation and parasitoidism.
+```   
 
-Species interactions can lead to remarkable evolutionary adaptations, including the non-messy way of eating an egg ([Figure 9.9](#fig_9_9), left). 
+Species interactions can lead to remarkable evolutionary adaptations, including the non-messy way of eating an egg ({numref}`Figure %s <fig_9_9>`, left). 
 
-Nature acknowledges neither kindness nor cruelty, but parasitoidism seems one of the cruelest strategies ([Figure 9.9](#fig_9_9), right). Here an Ammophilia wasp is carrying a caterpillar not to kill and eat, but as a living hatchery for her eggs. Young wasps developing from these eggs consume the caterpillar from within as the catepiller remains alive, transforming it into wasp larvae. Parasitoidism is widespread.
+Nature acknowledges neither kindness nor cruelty, but parasitoidism seems one of the cruelest strategies ({numref}`Figure %s <fig_9_9>`, right). Here an Ammophilia wasp is carrying a caterpillar not to kill and eat, but as a living hatchery for her eggs. Young wasps developing from these eggs consume the caterpillar from within as the catepiller remains alive, transforming it into wasp larvae. Parasitoidism is widespread.
 
 <a id='fig_9_10'></a>
 <center>
@@ -195,15 +226,18 @@ Nature acknowledges neither kindness nor cruelty, but parasitoidism seems one of
     </tr>
 </center>
 
-   
-<center>
-<p style="font-size:13.5px">
-Figure 9.10. Parasitism.
-</p>
-</center>
+```{figure} ../img/blank.png
+---
+name: fig_9_10
+alt: Figure 9.10
+width: 1px
+align: center
+---
+Parasitism.
+```   
 
-When the predator is small relative to the prey, predator—prey interactions are called "parasitism." At left in [Figure 9.10](#fig_9_10) is a blood-sucking mosquito attached to an unfortunate human. At right is a beetle seemingly overwhelmed with mites. When the predator is much smaller still, it is called
-a "pathogen" and the interactions are called "infection" and "disease."
+
+When the predator is small relative to the prey, predator—prey interactions are called "parasitism." At left in {numref}`Figure %s <fig_9_10>` is a blood-sucking mosquito attached to an unfortunate human. At right is a beetle seemingly overwhelmed with mites. When the predator is much smaller still, it is called a "pathogen" and the interactions are called "infection" and disease."
 
 <a id='fig_9_11'></a>
 <center>
@@ -214,16 +248,19 @@ a "pathogen" and the interactions are called "infection" and "disease."
     </tr>
 </center>
 
-<center>
-<p style="font-size:13.5px">
-Figure 9.11. Plants as predators.
-</p>
-</center>
+```{figure} ../img/blank.png
+---
+name: fig_9_11
+alt: Figure 9.11
+width: 1px
+align: center
+---
+Plants as predators.
+```   
 
-Peatlands can form over vast areas where the habitat is isolated from a normal supply of nutrients ([Figure 9.11](#fig_9_11), left) and life there must endure low levels of nitrogen. In this situation, some plants become predators.
+Peatlands can form over vast areas where the habitat is isolated from a normal supply of nutrients ({numref}`Figure %s <fig_9_11>`, left) and life there must endure low levels of nitrogen. In this situation, some plants become predators.
 
-The pitcher plant ([Figure 9.11](#fig_9_11), middle), for example, attracts insects with nectar and then eats them to obtain nitrogen, trapping them in a pool of digestive fluid at the bottom of a tall green vase with slippery, unidirectional sides of downward-pointing hairs. The sundew ([Figure 9.11](#fig_9_11), right) seems simpler, capturing unwary insects in sticky droplets
-and then consuming them.
+The pitcher plant ({numref}`Figure %s <fig_9_11>`, middle), for example, attracts insects with nectar and then eats them to obtain nitrogen, trapping them in a pool of digestive fluid at the bottom of a tall green vase with slippery, unidirectional sides of downward-pointing hairs. The sundew ({numref}`Figure %s <fig_9_11>`, right) seems simpler, capturing unwary insects in sticky droplets and then consuming them.
 
 <a id='fig_9_12'></a>
 <center>
@@ -236,14 +273,17 @@ and then consuming them.
     </tr>
 </center>
 
-   
-<center>
-<p style="font-size:13.5px">
-Figure 9.12. Predation, warnings, and deception.
-</p>
-</center>
+```{figure} ../img/blank.png
+---
+name: fig_9_12
+alt: Figure 9.12
+width: 1px
+align: center
+---
+Predation, warnings, and deception.
+```   
 
-Prey develop remarkable defenses against predators, following the processes of evolution, and provide warnings of the existence of their defenses. Some such defenses and advertisements are real, like the fetid fluid sprayed by skunks ([Figure 9.12](#fig_9_12), left) that can deter even large bears from attacking. The fire-bellied toad (next to left) is filled with toxins and its bright color advertises, "Do not eat me!" 
+Prey develop remarkable defenses against predators, following the processes of evolution, and provide warnings of the existence of their defenses. Some such defenses and advertisements are real, like the fetid fluid sprayed by skunks ({numref}`Figure %s <fig_9_12>`, left) that can deter even large bears from attacking. The fire-bellied toad (next to left) is filled with toxins and its bright color advertises, "Do not eat me!" 
 
 Others species benefit from complex deception to keep predators away, such as the harmless clear-winged moth colored to look anything but harmless (next to right), and an edible caterpillar in disguise with a viper-like tail (right).
 
@@ -255,16 +295,19 @@ Others species benefit from complex deception to keep predators away, such as th
     </tr>
 </center>
 
-   
-<center>
-<p style="font-size:13.5px">
-Figure 9.13. Predation, camouflage, and temptation.
-</p>
-</center>
+```{figure} ../img/blank.png
+---
+name: fig_9_13
+alt: Figure 9.13
+width: 1px
+align: center
+---
+Predation, camouflage, and temptation.
+```   
 
-Hiding is a simple, common strategy for escaping predators. On the left in [Figure 9.13](#fig_9_13) is a young grasshopper on pebbles. Can you see it? Zoom in and look just a little below and to the left of center. 
+Hiding is a simple, common strategy for escaping predators. On the left in {numref}`Figure %s <fig_9_13>` is a young grasshopper on pebbles. Can you see it? Zoom in and look just a little below and to the left of center. 
 
-The killdeer ([Figure 9.13](#fig_9_13), right) tempts predators who get too close by stumbling away from the nest, feigning an injured wing and making itself look like an easy catch. Once it has lured the predator far from the nest, it lifts quite competently into the air and flies off.
+The killdeer ({numref}`Figure %s <fig_9_13>`, right) tempts predators who get too close by stumbling away from the nest, feigning an injured wing and making itself look like an easy catch. Once it has lured the predator far from the nest, it lifts quite competently into the air and flies off.
 
 <a id='fig_9_14'></a>
 <center>
@@ -274,14 +317,18 @@ The killdeer ([Figure 9.13](#fig_9_13), right) tempts predators who get too clos
     </tr>
 </center>
 
-<center>
-<p style="font-size:13.5px">
-Figure 9.14. Competition at the North American triple ecotone.
-</p>
-</center>
+```{figure} ../img/blank.png
+---
+name: fig_9_14
+alt: Figure 9.14
+width: 1px
+align: center
+---
+Competition at the North American triple ecotone.
+```   
 
 Examples of competition seem both more subtle and more ordinary than examples of mutualism and predation. But competition is pervasive.
 
-North America has many ecosystems—the tundra of the Arctic, the deserts of the Southwest, the giant conifers of the Pacific Northwest—but the three largest ecosystems merge in a triple ecotone in the Upper Midwest, an area which exemplifies competition among plants. Here, the needle-leaf forests stretch north to the artic, the broad-leaf forests extend east to the Atlantic, and the prairies' amber waves of grain flow west to the Rockies. [Figure 9.14](#fig_9_14) shows a whirlpool of competition at this broad triple ecotone. White pines stand tall above the deciduous trees in the background, with Big Bluestem and other native prairie grasses setting seed in the foreground. Staghorn Sumac in red fall colors tries to hold its own in the middle, with pines invading behind it. Leaves of Bur Oak are browning for the oncoming winter.
+North America has many ecosystems—the tundra of the Arctic, the deserts of the Southwest, the giant conifers of the Pacific Northwest—but the three largest ecosystems merge in a triple ecotone in the Upper Midwest, an area which exemplifies competition among plants. Here, the needle-leaf forests stretch north to the artic, the broad-leaf forests extend east to the Atlantic, and the prairies' amber waves of grain flow west to the Rockies. {numref}`Figure %s <fig_9_14>` shows a whirlpool of competition at this broad triple ecotone. White pines stand tall above the deciduous trees in the background, with Big Bluestem and other native prairie grasses setting seed in the foreground. Staghorn Sumac in red fall colors tries to hold its own in the middle, with pines invading behind it. Leaves of Bur Oak are browning for the oncoming winter.
 
-While it may seem a peaceful scene, for the plants it is a scene of intense competition for their very existence. Fire is a foe of trees ([Figure 9.14](#fig_9_14) right), killing many instantly, and thus favoring grasses and prairie flowers. Times of moister conditions allow trees to reenter the grasslands, eventually shading the grassland vegetation to death if the moisture persists. But complexities of weather and climate have kept this competitive tension zone intact for thousands of years, with no group permanently gaining the competitive advantage.
+While it may seem a peaceful scene, for the plants it is a scene of intense competition for their very existence. Fire is a foe of trees ({numref}`Figure %s <fig_9_14>` right), killing many instantly, and thus favoring grasses and prairie flowers. Times of moister conditions allow trees to reenter the grasslands, eventually shading the grassland vegetation to death if the moisture persists. But complexities of weather and climate have kept this competitive tension zone intact for thousands of years, with no group permanently gaining the competitive advantage.
