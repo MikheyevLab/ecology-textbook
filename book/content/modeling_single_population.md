@@ -335,6 +335,7 @@ fig_4_3 <- ggplot() +
   scale_y_continuous(breaks=c(0,250,500,750,1000))
 fig_4_3
 ```
+
 ```{figure} ../img/blank.png
 ---
 name: fig_4_3
@@ -344,6 +345,7 @@ align: center
 ---
 Logistic growth (green) contrasted with orthologistic growth (red) and exponential growth (blue).
 ```
+
 The value at which it levels off is called an "equilibrium," a value where the dynamical system becomes quiescent and stops changing. In the case of the logistic equation, it is also called the "carrying capacity," a level at which the environment cannot "carry" any larger population.
 
 But why 1000? What value of $1/N / ΔN/Δt$ will make the population level off? When $ΔN$ is $0$, that means "the change in $N$ is zero." And that means $N$ stops growing. And when $ΔN$ is zero, the entire term on the left is zero and algebra proceeds as follows.
