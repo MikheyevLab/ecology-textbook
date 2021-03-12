@@ -10,7 +10,28 @@ kernelspec:
 ---
 
 # Embodied by natural selection
+The absolute simplicity of the three plus--minus combinations for two-species
+dynamics, explored in the previous chapter, is converted by natural selection
+into physical forms of splendid complexity---unexpected and subtle, spectacular
+and sublime, stunning and beautiful.
 
+From our human perspective, some details appear to embody timeless altruism and
+kindness, others unbounded horror and cruelty. But nature seems to implement
+material possibilities without regard to human values, and we are left merely to
+observe and wonder, and strive to understand.
+
+At this point, to gain perspective before proceeding further, it is well to
+examine at least a tiny subset of ecological reality. The range of examples of
+multi-species interactions looks endless, and even within individual organisms
+are interactions among multiple species.
+
+At the deepest level, the eukaryotic cell seems to have been created of
+interactions among separate prokaryotic species one or two billion years ago.
+Mitochondrial genomes are separate genomes within the cell with parallels to
+bacterial genomes, but mitochondria are no longer able to live on their own
+except under very special circumstances. Chloroplasts are similar. These are
+mutualisms at the very basis of complex life. Other mutualisms, like those with
+gut bacteria, form higher levels.
 
 <a id='fig_9_1'></a>
 <center>
@@ -30,6 +51,12 @@ align: center
 ---
 Pollination Mutualism.
 ```
+
+Mutualisms among pollinators and flowers are an ingenious arrangement for the
+fertilization of immobile organisms. A bee, for example, collects pollen as a
+food source and in the process spreads pollen from plant to plant. Plants
+advertise the pollen with bright flowers, and provide sweet nectar as an
+additional attraction ({numref}`Figure %s <fig_9_1>`, left).
 
 A small mammal can act similarly, drinking nectar from one plant, getting pollen on its whiskers, and transferring the pollen when it drinks from another plant, in turn pollinating that plant ({numref}`Figure %s <fig_9_1>`, middle).
 
