@@ -19,5 +19,5 @@
 
 - part: Multiple populations
   chapters:
-    - file: content/C10-Phase_space
-    - file: content/C11-State_space
+    - file: content/phase_space
+    - file: content/state_space
