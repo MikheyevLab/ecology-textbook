@@ -1,0 +1,11 @@
+Sync folder for images...
+
+rsync -a /mnt/c/Users/u6841845/Documents/repo/quant_ecol_textbook/img ..
+
+## Build book
+jupyter-book build book
+
+
+Sync data to windows
+
+rsync -a /mnt/c/Users/u6841845/Documents/repo/quant_ecol_textbook/img ..
