@@ -69,9 +69,9 @@ alt: Differential and discrete growth
 width: 600px
 align: center
 ---
-**Figure 5.1** Differential logistic growth (maroon) compared with discrete (green). No dots appear on the differential form, since that represents infinitesimal time steps, whereas the difference form has a dot at each point calculated.
+Differential logistic growth (maroon) compared with discrete (green). No dots appear on the differential form, since that represents infinitesimal time steps, whereas the difference form has a dot at each point calculated.
 ```
-[Figure 5.1](fig_5_1) shows the results of running the differential equation version of the program (the second one above, in maroon) versus the difference equation version (the first above, in  green). The differential equation has the same parameters and general shape, but the population approaches its carrying capacity more quickly. Because the differential time steps produce offspring earlier—not waiting for the end of the step—offspring are available to reproduce earlier, and so forth.
+{numref}`Figure %s <fig_5_1>` shows the results of running the differential equation version of the program (the second one above, in maroon) versus the difference equation version (the first above, in  green). The differential equation has the same parameters and general shape, but the population approaches its carrying capacity more quickly. Because the differential time steps produce offspring earlier—not waiting for the end of the step—offspring are available to reproduce earlier, and so forth.
 
 This particular method for differential equations is called “Euler’s method” (pronounced “Oiler’s”), a basic approach not often used in the twentieth century because computers not so long ago were millions of times slower than they are now. Today this method is often fast enough, and is desirable because of its relative simplicity.
 
