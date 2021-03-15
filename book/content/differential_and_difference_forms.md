@@ -11,17 +11,12 @@ kernelspec:
 
 # Differential and difference forms
 
-Difference equation model:
-
-$$
-\frac{1}{N}\frac{\Delta N}{\Delta t} = r + sN
-$$
-
-Differential equation model:
-
-$$
-\frac{1}{N}\frac{dN}{dt} = r + sN
-$$
+\begin{align*}
+  \frac{1}{N}\frac{\Delta N}{\Delta t} = r + sN && \text{&larr; Difference equation model}
+\end{align*}
+\begin{align*}
+  \frac{1}{N}\frac{dN}{dt} = r + sN && \text{&larr; Differential equation model}
+\end{align*}
 
 Recall that the delta sign ($\Delta$) means *change in* or the *difference*. Compare the difference equation with the differential form, which uses the terminology $dN$ and $dt$. These represent infinitesimally small time steps, corresponding to our common-sense perception of time as divisible ever more finely without limit. In differential equations populations change smoothly rather than in finite steps—growth approximating that of organisms that can reproduce at any time, such as bacterial or human populations.
 
@@ -81,13 +76,13 @@ Differential equations can be amenable to mathematical analysis. To repeat, here
 
 $$
 \frac{1}{N}\frac{dN}{dt} = r + sN
-$$
+$$ (eq_5_1)
 
 It turns out there is something simple about infinity, and when time steps are infinitely small the methods of calculus developed over the centuries can solve this differential equation exactly, mathematically. If you apply a symbolic mathematics computer package, or the methods for integration of functions developed in calculus, you can find the population value N for any future time t. This is called the “solution” to the differential equation.
 
 $$
 N(t) = \frac{1}{(\frac{s}{r}+\frac{1}{N_0})e^{-rt}-\frac{s}{r}}
-$$
+$$ (eq_5_2)
 
 Most differential equations cannot be solved this way but, fortunately, the basic equations of ecology can. This solution becomes useful in projecting forward or otherwise understanding the behavior of a population. If you know the starting N, s, and r, you can plug them into the formula to find the population size at every time in the future, without stepping through the differential equation.
 
@@ -107,7 +102,7 @@ A measure often used for exponential growth, and that we will apply later in thi
 
 $$
 N(t) = N_0e^{rt}
-$$
+$$ (eq_5_3)
 
 $N_0$ is the starting population at time 0, $N(t)$ is the population at any time $t$, and $r$ is the constant growth rate—the “intrinsic rate of natural increase.” How much time, $\tau$, will elapse before the population doubles? At some time $t$, the population will be $N(t)$, and at the later time $t+\tau$, the population will be $N(t+\tau)$. The question to be answered is this: for what $τ$ will the ratio of those two populations be 2?
 
@@ -115,7 +110,7 @@ $$
 \frac{N(t+\tau)}{N(t)} = 2
 $$
 
-Substituting the right-hand side of the exponential growth equation from above gives:
+Substituting the right-hand side of Equation {eq}`eq_5_3` from above gives:
 
 $$
 \frac{N_0e^{r(t+\tau)}}{N_0e^{rt}} = 2
@@ -146,7 +141,7 @@ And finally, the doubling time, $\tau$, is:
 
 $$
 \tau = \frac{\ln 2}{r}
-$$
+$$ (eq_5_4)
 
 In other words, the doubling time for exponential growth, where $r$ is positive and $s$ is 0, is just the natural logarithm of 2 (0.69314718...) divided by the growth rate $r$.
 
@@ -171,13 +166,7 @@ Finally, let $s$ be positive. This creates a vertical asymptote and orthologisti
 
 What must happen to the denominator for the population to grow to unbounded values? It has to get closer and closer to 0, for then the $N(t)$ will grow closer and closer to infinity. So to find the singularity, you only have to set the denominator to 0, and then solve for the time $t$. You can go through the intermediate steps in the algebra below, or use a mathematical equation solver on your computer to do it for you.
 
-Recall the equation from above for solving the differential equation:
-
-$$
-N(t) = \frac{1}{(\frac{s}{r}+\frac{1}{N_0})e^{-rt}-\frac{s}{r}}
-$$
-
-Setting the denominator to 0 will lead along this algebraic path:
+Setting the denominator in Equation {eq}`eq_5_2` to 0 will lead along this algebraic path:
 
 $$
 \frac{s}{r} = (\frac{s}{r}+\frac{1}{N_0})e^{-rt}
