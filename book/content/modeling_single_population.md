@@ -44,22 +44,22 @@ This means the population change in each time unit is equal to the population si
 10. $\frac{1}{N}$$\frac{\Delta N}{\Delta t}$ = 1.
 This is just dividing both sides of the previous equation by $N$, and perhaps look even more confusing. However, in what follows, it turns out to be the most useful of all.
 
-To move forward, let's focus on the last equation, with its parts bolded below.
-
-
+To move forward, let's focus on the last equation, with its parts colored below.
 
 $$
+\require{color}
 \begin{align*}
-\frac{1}{N}\frac{\boldsymbol{\Delta N}}{\Delta t}=&\boldsymbol{1} \qquad \text{There is one new individual . . .} \\ \\
-\frac{1}{N}\frac{\Delta N}{\boldsymbol{\Delta t}} =& 1 \qquad \text{every hour . . .} \\ \\
-\frac{\boldsymbol{1}}{\boldsymbol{N}} \frac{\Delta N}{\Delta t}=&1 \qquad \text{for every member of the population.}
+\definecolor{red}{RGB}{251,0,29}
+\frac{1}{N}\frac{\color{red}{\Delta N}}{\Delta t}\color{red}=&\color{red}{1} \qquad \color{black}\text{There is one new individual . . .} \\ \\
+\frac{1}{N}\frac{\Delta N}{\color{red}{\Delta t}} =& 1 \qquad \text{every hour . . .} \\ \\
+\color{red}\frac{\boldsymbol{1}}{\boldsymbol{N}} \color{black}\frac{\Delta N}{\Delta t}=&1 \qquad \text{for every member of the population.}
 \end{align*}
 $$
 
 
 In the first row, the "$\Delta N =1$" refers to a change in the population of one individual, because delta $\Delta$ means change. In the second row, the "$\Delta t$" in the denominator modifies this to the change in each time step - in this, case each hour. In the third row, the $1/N$ modifies it drastically to mean the change in the population _per individual_ in the population.
 
-This could mean that one new individual is born while the parent lives on, or that two new individuals are born and the parent dies, or that the parent divides in two, or other equivalent events. In this model, these details are abstractions that do not matter for purposes of projecting the population. The model simply records the number of offspring produced by each member of the population and surviving to reproduce. Multiplied by 100, this becomes the percentage growth of the population. For humans, this is like the number of children per family who survive to adulthood. (Though it has to be divided by two if there are two parents per family.) You have seen how rapidly that blows up, from the calculation on [Chapter 3](...\basic_population_model.md).
+This could mean that one new individual is born while the parent lives on, or that two new individuals are born and the parent dies, or that the parent divides in two, or other equivalent events. In this model, these details are abstractions that do not matter for purposes of projecting the population. The model simply records the number of offspring produced by each member of the population and surviving to reproduce. Multiplied by 100, this becomes the percentage growth of the population. For humans, this is like the number of children per family who survive to adulthood. (Though it has to be divided by two if there are two parents per family.) You have seen how rapidly that blows up, from the calculation on [Chapter 3](.../basic_population_model.md).
 
 ## Density-enhanced growth
 ```{figure} https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Rudbeckia_hirta%2C_%28_black-eyed-susans%2C%29_%2818978433569%29.jpg/1200px-Rudbeckia_hirta%2C_%28_black-eyed-susans%2C%29_%2818978433569%29.jpg
@@ -68,7 +68,7 @@ alt: Black_Eyed_Susans
 width: 600px
 align: center
 ---
-<span class="ttooltip"> [Black-Eyed Susans, _Rudbeckia hirta_](https://commons.wikimedia.org/wiki/File:Rudbeckia_hirta,_(_black-eyed-susans,)_(18978433569).jpg) <span class="ttooltiptext">
+<span class="ttooltip"> Black-Eyed Susans, _Rudbeckia hirta_ <span class="ttooltiptext">
   Black-Eyed Susans (<i>Rudbeckiahirta</i>) <b>by</b> Bernard Spragg (CC0)
   </span> </span>
 
@@ -152,7 +152,17 @@ populations2
 Graph these, and you will see the numbers expand past all bounds, vertically off the page.
 
 ```{code-cell} r
-library(ggplot2)
+---
+#tags:["hide-input"]
+#render:
+#  image:
+#    width:600px
+#    alt: fig_4_2
+#    classes: shadow bg-primary
+#  figure:
+#    caption: |      
+#    name: fig_4_2
+---
 #EXPONENTIAL
 r <- 1
 s <- 0
@@ -202,11 +212,13 @@ fig_4_2 <- ggplot() +
 
 fig_4_2
 ```
-
-```{glue:figure} fig_4_2
-:figwidth: 600px
-:name: "fig_4_2"
-
+```{figure} ../img/blank.png
+---
+name: fig_4_2
+alt: Figure 4.2
+width: 1px
+align: center
+---
 Orthologistic growth (red) contrasted with exponential growth (blue).
 ```
 The blue line shows the unlimited bacterial growth (exponential growth) that helped lead Darwin to his idea of natural selection. The red line illustrates the new "density-enhanced growth" just being considered, where growth rate increases with density.
@@ -228,7 +240,7 @@ $$
 
 Again, $r$ is the number of offspring each will produce if it is alone in the world, but with $s$ negative, $s$ is the number each plant will be _unable to produce_ for each additional plant that appears in its vicinity.
 
-Suppose we have $r=1$ and $s=-1/1000$, and we start with three plants, so $N(0)=3$. Here is the code, with the new negative $s$.
+Suppose we have $r=1$ and $s=-1/1000$, and we start with three plants, so $N(0)=3$. Here is the code, with the new negative $s$ commented.
 
 ```{code-cell}r
 r <- 1
@@ -247,8 +259,20 @@ for(i in time) {
 }
 ```
 Now, because $s$ is negative, the growth rate $1/N \ ΔN/Δt$ will drop as the population increases, so you might surmise that the rate will eventually reach zero and the population will level off. In fact, it levels off to 1000.
+
+<a id ='fig_4_3'></a>
+
 ```{code-cell} r
-library(ggplot2)
+#tags:["hide-input"]
+#render:
+#  image:
+#    width:600px
+#    alt: fig_4_3
+#    classes: shadow bg-primary
+#  figure:
+#    caption: |
+#    name: fig_4_3
+
 #EXPONENTIAL
 r <- 1
 s <- 0
@@ -257,7 +281,6 @@ t <- 0
 N <- 3
 time <- 1:(20)
 populations1 <- data.frame(size = integer())
-
 for(i in time)
 {
   populations1[i, "size"] = N
@@ -265,7 +288,6 @@ for(i in time)
   N=N+dN
   t=t+dt
 }
-
 #ORTHOLOGISTIC
 r <- 0
 s <- 0.05
@@ -274,7 +296,6 @@ t <- 0
 N <- 3
 time <- 1:(20)
 populations2 <- data.frame(size = integer())
-
 for(i in time)
 {
   populations2[i, "size"] = N
@@ -282,7 +303,6 @@ for(i in time)
   N=N+dN;
   t=t+dt;
 }
-
 #to save the logistic growth into a dataframe
 #LOGISTIC
 r <- 1
@@ -292,7 +312,6 @@ t <- 0
 N <- 3
 time <- 1:(20)
 populations3 <- data.frame(size = integer())
-
 for(i in time)
 {
   populations3[i, "size"] = N
@@ -300,8 +319,8 @@ for(i in time)
   N=N+dN
   t=t+dt
 }
-
 #PLOTTING
+library(ggplot2)
 fig_4_3 <- ggplot() +
   geom_point(data=populations1, aes(x=0:19, y=size), color="blue") +
   geom_line(data=populations1, aes(x=0:19, y=size), color="blue") +
@@ -314,14 +333,16 @@ fig_4_3 <- ggplot() +
   ylab("N(t)") +
   scale_x_continuous(breaks=c(0,1,2,3,4,5,6,7,8,9,10,11,12)) +
   scale_y_continuous(breaks=c(0,250,500,750,1000))
-
 fig_4_3
 ```
 
-```{glue:figure} fig_4_3
-:figwidth: 600px
-:name: "fig_4_3"
-
+```{figure} ../img/blank.png
+---
+name: fig_4_3
+alt: Figure 4.3
+width: 1px
+align: center
+---
 Logistic growth (green) contrasted with orthologistic growth (red) and exponential growth (blue).
 ```
 
@@ -338,7 +359,7 @@ N&=-r/s
 \end{align*}
 $$
 
-So the carrying capacity is $-r/s$. In {ref}`Figure 4.3 <fig_4_3>` , $-r/s=-1/(-0.001) = 1000$. Exactly where it ended up! This is the celebrated logistic equation," published in 1838 by [Pierre Verhulst](https://en.wikipedia.org/wiki/Pierre_Fran%C3%A7ois_Verhulst). It is commonly written
+So the carrying capacity is $-r/s$. In {numref}`Figure {number}<fig_4_3>`, $-r/s=-1/(-0.001) = 1000$. Exactly where it ended up! This is the celebrated logistic equation," published in 1838 by [Pierre Verhulst](https://en.wikipedia.org/wiki/Pierre_Fran%C3%A7ois_Verhulst). It is commonly written
 
 $$
 \frac{1}{N}\frac{\Delta N}{\Delta t}=rN \left(1-\frac{N}{K} \right)
@@ -356,9 +377,9 @@ Before moving further, consider all possible combinations of the parameters, as 
 5. $r<0, s<0 \qquad$ Inviable population declining to extinction.
 6. $r<0, s=0 \qquad$ Same as above.
 
-{ref}`Figure 4.4 <fig_4_4>` shows three of these possibilities pieced to gether to form a complete population model. On the left in the figure, number 2 above, orthologistic growth with an [Allee point](https://en.wikipedia.org/wiki/Allee_effect), prevails at low densities, where larger numbers of other members of the species in the vicinity enhance growth. In the middle, number 3 above, exponential growth, occurs as a transition phase. Finally on the right, number 4 above, logistic growth with a carrying capacity, takes over when crowding and other limitations reduce growth rates as larger numbers of other members of the species in the vicinity appear.
+{numref}`Figure %s <fig_4_4>` shows three of these possibilities pieced to gether to form a complete population model. On the left in the figure, number 2 above, orthologistic growth with an [Allee point](https://en.wikipedia.org/wiki/Allee_effect), prevails at low densities, where larger numbers of other members of the species in the vicinity enhance growth. In the middle, number 3 above, exponential growth, occurs as a transition phase. Finally on the right, number 4 above, logistic growth with a carrying capacity, takes over when crowding and other limitations reduce growth rates as larger numbers of other members of the species in the vicinity appear.
 
-The vertical axis in {ref}`Figure 4.4 <fig_4_4>` shows the individual growth rate, and the horizontal axis shows the population density. On the right, where the slope is negative, as the density approaches $-r/s$ from the left the growth rate on the vertical axis drops to zero, so the population stops growing.
+The vertical axis in {numref}`Figure %s <fig_4_4>` shows the individual growth rate, and the horizontal axis shows the population density. On the right, where the slope is negative, as the density approaches $-r/s$ from the left the growth rate on the vertical axis drops to zero, so the population stops growing.
 
 
 ```{figure} ../img/fig_4_4.png
@@ -378,7 +399,7 @@ The carrying capacity is "stable." A value is said to be stable if it tends to r
 The situation is entirely different on the left in the figure, where the slope is positive. As on the right, when the density is $-r/s$, the growth rate on the vertical axis reaches zero, meaning the population does not change. This is an equilibrium too - not a carrying capacity, but an [Allee point](https://en.wikipedia.org/wiki/Allee_effect). However, if the population here drifts below $-r/s$, the growth rate on the vertical axis becomes negative and the population declines further still. It is unstable. In this model the population continues to decline until eventual extinction. Above the Allee point, however, the growth rate on the vertical axis
 is positive, so the population increases until it reaches some other limitation.
 
-A species thus becomes endangered when its population drops below its Allee point, and if it is to be saved something must be done to change that point. The parameter `r` must somehow be increased - by restoring habitat, reducing predation by humans, or using artificial reintroductions or other conservation programs (e.g., {ref}`Figure 4.5 <Trumpeter_swan>`).
+A species thus becomes endangered when its population drops below its Allee point, and if it is to be saved something must be done to change that point. The parameter `r` must somehow be increased - by restoring habitat, reducing predation by humans, or using artificial reintroductions or other conservation programs (e.g., {numref}`Figure %s <Trumpeter_swan>`.)
 
 ##Generalization
 In summary the macroscale model for population dynamics of a single species, in its simplest form, is
@@ -399,7 +420,7 @@ $$
 \frac{1}{N}\frac{\Delta N}{\Delta t}=f(N)
 $$ (Equation_4.3)
 
-The higher-order terms in Equation {eq}`Equation_4.2` could refine population projections if there were enough data to determine them. They are not really needed, however, because straight-line parts can be pieced together to form a general population growth curve, as in {ref}`Figure 4.4 <fig_4_4>`. And as human population growth in {ref}`Figure 6.3 <fig-6_3>` will show, a piecewise approach can more closely approximate the real situation.
+The higher-order terms in Equation {eq}`Equation_4.2` could refine population projections if there were enough data to determine them. They are not really needed, however, because straight-line parts can be pieced together to form a general population growth curve, as in {numref}`Figure %s <fig_4_4>`. And as human population growth in {numref}`Figure %s <fig_6_3>` will show, a piecewise approach can more closely approximate the real situation.
 
 Moreover, blending separate versions of Equation {eq}`Equation_4.1` can generalize to either the Hutchinson or Kolomorgov forms, {eq}`Equation_4.2` and {eq}`Equation_4.3`, as you will see in [Chapter 18]().
 
