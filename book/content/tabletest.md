@@ -41,6 +41,7 @@ $ $
 
 ```{list-table}
 :header-rows: 1
+:align: center
 
 * - Location
   - Equilibiurm
@@ -61,18 +62,18 @@ $ $
 with:
 
 $$
-   a = s_{1,2}s_{2,1} - s_{1,1}s_{2,2} \\
-   b = r_{1}s_{2,2}(s_{2,1}-s_{1,1})+r_{2}s_{1,1}(s_{1,2}-s_{2,2}) \\
-   c = -pq \\
-   p = r_{1}s_{2,2}-r_{2}s_{1,2} \\
-   q = r_{2}s_{1,1}-r_{1}s_{2,1}
+   a &= s_{1,2}s_{2,1} - s_{1,1}s_{2,2} \\
+   b &= r_{1}s_{2,2}(s_{2,1}-s_{1,1})+r_{2}s_{1,1}(s_{1,2}-s_{2,2}) \\
+   c &= -pq \\
+   p &= r_{1}s_{2,2}-r_{2}s_{1,2} \\
+   q &= r_{2}s_{1,1}-r_{1}s_{2,1}
 $$
 
 in the ecological equations for two interacting species:
 
 $$
-   \frac{1}{N_{1}}\frac{dN_{1}}{dt}=r_{1}+s_{1,1}N_{1}+s_{1,2}N_{2} \\
-   \frac{1}{N_{2}}\frac{dN_{2}}{dt}=r_{2}+s_{2,2}N_{2}+s_{2,1}N_{1}
+   \frac{1}{N_{1}}\frac{dN_{1}}{dt}&=r_{1}+s_{1,1}N_{1}+s_{1,2}N_{2} \\
+   \frac{1}{N_{2}}\frac{dN_{2}}{dt}&=r_{2}+s_{2,2}N_{2}+s_{2,1}N_{1}
 $$
 
 where:

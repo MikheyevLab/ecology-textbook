@@ -220,13 +220,61 @@ In the bottom graph of {numref}`Figure %s <fig_10_9>`, an equilibrium in a hill-
 ```
 It turns out that the proper axes at each equilibrium point&mdash;the eigenvectors&mdash;can be determined exactly from only four numbers, and how much the slope is increasing or decreasing at each equilibrium point&mdash;the eigenvalues&mdash;can be determined at the same time from the same four numbers. These are the four partial derivatives in what is called the ["Hessian matrix"](https://en.wikipedia.org/wiki/Hessian_matrix) of the surface, or, equivalently in the ["Jacobian matrix"](https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant) of the population growth equations. An understanding of these matrices and their applications has developed in mathematics over the past two centuries.
 
-By expending some effort and attention you can work the eigenvalues out mathematically with pencil and paper. However, you will likely employ computers to evaluate the eigenvalues of ecological systems. This can be done with abstract symbols in computer packages such as Mathematica or Maxima, or numerically in programming languages such as R. For standard two-species systems, we have worked out all equilibria and their corresponding eigenvalues. These are recorded in Table 10.1 in mathematical notation and in {numref}`Program %s <program_10_1>` as code, and identify the equilibria and stability for all predation, mutualism, and competition systems represented by Equation {eq}`eq_8_1`, which is copied into the table for reference.
+By expending some effort and attention you can work the eigenvalues out mathematically with pencil and paper. However, you will likely employ computers to evaluate the eigenvalues of ecological systems. This can be done with abstract symbols in computer packages such as Mathematica or Maxima, or numerically in programming languages such as R. For standard two-species systems, we have worked out all equilibria and their corresponding eigenvalues. These are recorded in {numref}`Table %s <table_10_1>` in mathematical notation and in {numref}`Program %s <program_10_1>` as code, and identify the equilibria and stability for all predation, mutualism, and competition systems represented by Equation {eq}`eq_8_1`, which is copied into the table for reference.
+
+```{list-table} Two-species formulae for Equation 8.1
+:header-rows: 1
+:align: center
+:name: table_10_1
+
+* - Location
+  - Equilibiurm
+  - Eigenvalues
+* - Origin<br>(Both species extinct)
+  - $(0,0)$
+  - $(r_{1},r_{2})$
+* - Horizontal axis<br>(Species 1 at $K_{1}$)
+  - $(-\frac{r_{1}}{s_{1,1}},0)$
+  - $(-r_{1},\frac{q}{s_{1,1}})$
+* - Vertical axis<br>(Species 2 at $K_{2}$)
+  - $(0,-\frac{r_{2}}{s_{2,2}})$
+  - $(-r_{2},\frac{p}{s_{2,2}})$
+* - Interior<br>(Coexistence)
+  - $(\frac{p}{a}\frac{q}{a})$
+  - $(\frac{-b \pm \sqrt{b^{2}-4ac}}{2a})$
+```
+The variables in the above table are defined as:
+
+$$
+   a &= s_{1,2}s_{2,1} - s_{1,1}s_{2,2} \\
+   b &= r_{1}s_{2,2}(s_{2,1}-s_{1,1})+r_{2}s_{1,1}(s_{1,2}-s_{2,2}) \\
+   c &= -pq \\
+   p &= r_{1}s_{2,2}-r_{2}s_{1,2} \\
+   q &= r_{2}s_{1,1}-r_{1}s_{2,1}
+$$
+
+These relate to our ecological equations for interaction species like so:
+
+$$
+   \frac{1}{N_{1}}\frac{dN_{1}}{dt}&=r_{1}+s_{1,1}N_{1}+s_{1,2}N_{2} \\
+   \frac{1}{N_{2}}\frac{dN_{2}}{dt}&=r_{2}+s_{2,2}N_{2}+s_{2,1}N_{1}
+$$
+
+And finally, the terms in our ecological equations are defined thus:
+
+$$
+   N_{1}, N_{2} && \text{ are population abundances of Species 1 and 2} \\
+   r_{1}, r_{2} && \text{ are intrinsic growth rates} \\
+   s_{1,1}, s_{2,2} && \text{ measure species' effects on themselves} \\
+   s_{1,2}, s_{2,1} && \text{ measure effects between species}
+$$
+
 
 ```{code-block} r
 ---
 name: program_10_1
 caption: |
-    The code equivalent to Table 10.1, for use in computer programs. `Sqrt(w)` is a specially written function that returns 0 if $w$ is negative (returns the real part of the complex number $0 + \sqrt{w}i$).
+    The code equivalent to {numref}`Table %s <table_10_1>`, for use in computer programs. `Sqrt(w)` is a specially written function that returns 0 if $w$ is negative (returns the real part of the complex number $0 + \sqrt{w}i$).
 ---
 
 p = r1*s22 -r2*s12;             # Compute useful sub-formulae
@@ -247,7 +295,7 @@ v01=-r2; w01=p/s22;             # (real part only).
 v11=(-b-Sqrt(b^2-4*a*c))/(2*a);
 w11=(-b+Sqrt(b^2-4*a*c))/(2*a);
 ```
-The formulae in Table 10.1 work for any two-species $RSN$ model&mdash;that is, any model of the form $\frac{1}{N_{i}}\frac{dN_{i}}{dt} = r_{i} + s_{i,i}N_{i} + s_{i,j}N_{j}$ with constant coefficients&mdash;but formulae for other models must be derived separately, from a software package, or following methods for ["Jacobian matrices"](https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant).
+The formulae in {numref}`Table %s <table_10_1>` work for any two-species $RSN$ model&mdash;that is, any model of the form $\frac{1}{N_{i}}\frac{dN_{i}}{dt} = r_{i} + s_{i,i}N_{i} + s_{i,j}N_{j}$ with constant coefficients&mdash;but formulae for other models must be derived separately, from a software package, or following methods for ["Jacobian matrices"](https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant).
 ```{admonition} Parameters for a sample competitive system.
 ---
 name: box_10_2
@@ -300,7 +348,7 @@ class: tip
 
 For an example ofnding equilibria and stability, consider two competing species with intrinsic growth rates $r_{1} = 1.2$ and $r_{2} = 0.8$. Let each species inhibit itself in such a way that $s_{1,1} = -1$ and $s_{2,2} = -1$, let Species 2 inhibit Species 1 more strongly than it inhibits itself, with $s_{1,2} = -1.2$, and let Species 1 inhibit Species 2 less strongly than it inhibits itself, with $s_{2,1} = -0.5$. These conditions are summarized in {numref}`Box %s <box_10_2>` for reference. The question is, what are the equilibria in this particular competitive system, and what will their stability be?
 
-First, there is an equilibrium at the origin $(0,0)$ in these systems, where both species are extinct. This is sometimes called the "trivial equilibrium," and it may or may not be stable. From Table 10.1, the eigenvalues of the equilibrium at the origin are $r1$ and $r2$&mdash;in this case 1.2 and 0.8. These are both positive, so from the rules for eigenvalues in {numref}`Box %s <box_10_1>`, the equilibrium at the origin in this case is unstable. If no individuals of either species exist in an area, none will arise. But if any individuals of either species somehow arrive in the area, or if both species arrive, the population will increase. This equilibrium is thus unstable. It is shown in the phase space diagram of {numref}`Figure %s <fig_10_11>`, along with the other equilibria in the system.
+First, there is an equilibrium at the origin $(0,0)$ in these systems, where both species are extinct. This is sometimes called the "trivial equilibrium," and it may or may not be stable. From {numref}`Table %s <table_10_1>`, the eigenvalues of the equilibrium at the origin are $r1$ and $r2$&mdash;in this case 1.2 and 0.8. These are both positive, so from the rules for eigenvalues in {numref}`Box %s <box_10_1>`, the equilibrium at the origin in this case is unstable. If no individuals of either species exist in an area, none will arise. But if any individuals of either species somehow arrive in the area, or if both species arrive, the population will increase. This equilibrium is thus unstable. It is shown in the phase space diagram of {numref}`Figure %s <fig_10_11>`, along with the other equilibria in the system.
 
 ```{figure} ../img/fig_10_11.png
 ---
@@ -311,13 +359,13 @@ align: center
 ---
 Phase space for the example of competition with stable coexistence summarized in {numref}`Box %s <box_10_2>` and {numref}`%s <box_10_2>`. The arrows are calculated by code like that of {numref}`Program %s <program_10_2>`, included for reference.
 ```
-On the horizontal axis, where Species 2 is not present, the equilibrium of Species 1 is $\hat{N}_{1} = -r_{1}=s_{1,1} = 1.2$. That is as expected&mdash;it is just like the equilibrium of $\hat{N} = \frac{-r}{s}$ for a single species&mdash;because it indeed is a single species when Species 2 is not present. As to the stability, one eigenvalue is $-r_{1}$, which is $-1.2$, which is negative, so it will not cause instability. For the other eigenvalue at this equilibrium, you need to calculate q from Table 10.1. You should get $q=-0.2$, and if you divide that by $s_{1.1}$, you should get $0.2$. This is positive, so by the rules of eigenvalues in {numref}`Box %s <box_10_1>`, the equilibrium on the horizontal axis is unstable. Thus, if Species 1 is at its equilibrium and an increment of Species 2 arrives, Species 2 will increase and the equilibrium will be abandoned.
+On the horizontal axis, where Species 2 is not present, the equilibrium of Species 1 is $\hat{N}_{1} = -r_{1}=s_{1,1} = 1.2$. That is as expected&mdash;it is just like the equilibrium of $\hat{N} = \frac{-r}{s}$ for a single species&mdash;because it indeed is a single species when Species 2 is not present. As to the stability, one eigenvalue is $-r_{1}$, which is $-1.2$, which is negative, so it will not cause instability. For the other eigenvalue at this equilibrium, you need to calculate q from {numref}`Table %s <table_10_1>`. You should get $q=-0.2$, and if you divide that by $s_{1.1}$, you should get $0.2$. This is positive, so by the rules of eigenvalues in {numref}`Box %s <box_10_1>`, the equilibrium on the horizontal axis is unstable. Thus, if Species 1 is at its equilibrium and an increment of Species 2 arrives, Species 2 will increase and the equilibrium will be abandoned.
 
-Likewise, on the vertical axis, where Species 1 is not present, the equilibrium of Species 2 is $N_{2} = \frac{-r_{2}}{s_{2,2}} = 0.8$. Calculate the eigenvalues at this equilibrium from Table 10.1 and you should get $p = -0.24$, and dividing by $s_{2,2}$ give eigenvalues of $-0.8$ and $0.24$. With one negative and the other positive, by the rules of eigenvalues in {numref}`Box %s <box_10_1>` the equilibrium on the vertical axis is also unstable.
+Likewise, on the vertical axis, where Species 1 is not present, the equilibrium of Species 2 is $N_{2} = \frac{-r_{2}}{s_{2,2}} = 0.8$. Calculate the eigenvalues at this equilibrium from {numref}`Table %s <table_10_1>` and you should get $p = -0.24$, and dividing by $s_{2,2}$ give eigenvalues of $-0.8$ and $0.24$. With one negative and the other positive, by the rules of eigenvalues in {numref}`Box %s <box_10_1>` the equilibrium on the vertical axis is also unstable.
 
 Finally, for the fourth equilibrium&mdash;the interior equilibirum where both species are present&mdash;calculate $a$, $b$, and $c$ from the table. You should get $a = -0.4$, $b = -0.44$, and $c = -0.048$. Now the interior  equilibrium is $\hat{N}_{1} = \frac{p}{a} = 0.6$ and $\hat{N}_{2} = \frac{q}{a} = 0.5$.
 
-But is it stable? Notice the formula for the eigenvalues of the interior equilibrium in Table 10.1 , in terms of $a$, $b$, and $c$. It is simply [the quadratic formula](https://en.wikipedia.org/wiki/Quadratic_equation)! This is a clue that the eigenvalues are embedded in a quadratic equation, $ax^{2} + bx + c = 0$. And if you start a project to derive the formula for eigenvalues with pencil and paper, you will see that indeed they are. In any case, working it out more simply from the formula in the table, you should get $-0.123$ and $-0.977$. Both are negative, so by the rules of {numref}`Box %s <box_10_1>` the interior equilibrium for this set of parameters is stable.
+But is it stable? Notice the formula for the eigenvalues of the interior equilibrium in {numref}`Table %s <table_10_1>`, in terms of $a$, $b$, and $c$. It is simply [the quadratic formula](https://en.wikipedia.org/wiki/Quadratic_equation)! This is a clue that the eigenvalues are embedded in a quadratic equation, $ax^{2} + bx + c = 0$. And if you start a project to derive the formula for eigenvalues with pencil and paper, you will see that indeed they are. In any case, working it out more simply from the formula in the table, you should get $-0.123$ and $-0.977$. Both are negative, so by the rules of {numref}`Box %s <box_10_1>` the interior equilibrium for this set of parameters is stable.
 
 As a final note, the presence of the square root in the formula suggests that eigenvalues can have imaginary parts, if the square root covers a negative number. The rules of eigenvalues in {numref}`Box %s <box_10_1>` still apply in this case, but only to the real part of the eigenvalues. Suppose, for example, that the eigenvalues are $\frac{-1 \pm \sqrt{5}}{2} = -0.5 \pm 1.118i$. These would be stable because the real part, $-0.5$, is negative. But it turns out that because the imaginary part, $\pm 1.118i$, is not zero, the system would cycle around the equilibrium point, as predator-prey systems do.
 ```{image} ../img/Orbital-Wiki-D4M0-C.jpg
