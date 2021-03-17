@@ -2,9 +2,17 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
 - file: intro
+  numbered: true
+
+- part: Introduction
+  chapters:
+  - file: content/C01-Definitions
+  - file: content/C02-Theory
+
 - part: Single populations
   chapters:
     - file: content/basic_population_model
     - file: content/modeling_single_population
-    - file: content/differential_and_difference_forms
-    - file: content/ch6-human-population.md
+    - file: content/C05-Differential_and_difference_forms
+    - file: content/ch6-human-population
+    - file: content/ch12-predator-prey.md

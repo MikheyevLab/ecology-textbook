@@ -25,49 +25,53 @@ $$
 
 Recall that the delta sign ($\Delta$) means *change in* or the *difference*. Compare the difference equation with the differential form, which uses the terminology $dN$ and $dt$. These represent infinitesimally small time steps, corresponding to our common-sense perception of time as divisible ever more finely without limit. In differential equations populations change smoothly rather than in finite steps—growth approximating that of organisms that can reproduce at any time, such as bacterial or human populations.
 
-It turns out that differential equations are harder for com- puters to solve than difference equations. Computers cannot make infinitely fine time steps, but have to approximate by using very small time steps instead. On the other hand, difference equations can be harder to solve mathematically.
+It turns out that differential equations are harder for computers to solve than difference equations. Computers cannot make infinitely fine time steps, but have to approximate by using very small time steps instead. On the other hand, difference equations can be harder to solve mathematically.
 
-```r
-r = 1; s = -0.001; N = 1;
-dt = 1; print(N);
+```{code-block} r
+---
+emphasize-lines: 6
+---
+dt = 1
+print(N);
 time = seq(from=0,to=20,by=dt);
 for(t in time){
-  dN = (r + s * N) * N; N = N + dN; if(N < 0) N = 0;
+  dN = (r + s * N) * N; N = N + dN;
+  if(N < 0) N = 0;
   print(N)
 }
 ```
 
-Above is computer code for a difference equation presented earlier, which levelled off at 1000, but with an addition in red. If the population is far above its carrying capacity, the calculation could show such a strong decline that the next year’s population would be negative—meaning that the population would die out completely. The addition in red just avoids projecting negative populations. Below is similar code for the corresponding *differential* equation, with the differences again in red.
-
-```r
-r = 1; s = -0.001; N = 1;
-dt = 1 / (365 * 24 * 60 * 60); print(N);
-time = seq(from=0,to=20,by=dt)
+Above is computer code for a difference equation presented earlier, which levelled off at 1000, but with an additional `if()` statement to catch negative population size. If the population is far above its carrying capacity, the calculation could show such a strong decline that the next year’s population would be negative—meaning that the population would die out completely. The highlighted addition just avoids projecting negative populations, which are mathematically possible but biologically meaningless. Below is similar code for the corresponding *differential* equation, with differences highlighted.
+```{code-block} r
+---
+emphasize-lines: 1,3,5
+---
+dt = 1 / (20 * 24 * 60 * 60);
+print(N);
+time = seq(from=0,to=20,by=dt);
 for(t in time){
-  dN = (r + s * N) * N * dt; N = N + dN; if(N < 0) N = 0;
+  dN = (r + s * N) * N * dt; N = N + dN;
+  if(N < 0) N = 0;
   print(N)
-  }
+}
 ```
-
-This intends to model *infinitely small* time steps. Of course it cannot do that exactly, but must settle for very small time steps. Instead of $dt = 1$, for example, representing one year, it is set here to about one second, dividing 1 year by 365 days and each day by 24 hours, 60 minutes, and 60 seconds. This is hardly infinitely small, but for populations of bacteria and humans it is close enough for practical purposes. Still, it is important to check for negative populations in case the time step is not small enough.
-
+This intends to model *infinitely small* time steps. Of course it cannot do that exactly, but must settle for very small time steps. Instead of $dt = 1$, for example, representing one year, it is set here to about one second, dividing the time period (20 days) by 24 hours, 60 minutes, and 60 seconds, creating `20 * 24 * 60 * 60` time steps. This is hardly infinitely small, but for populations of bacteria and humans it is close enough for practical purposes. Still, it is important to check for negative populations in case the time step is not small enough.
 ```{warning}
-Feel free to run the above loop on your own machines, but note that we have defined our  `time` vector to contain every single second from the beginning of day 0 to the end of day 20. It will take some time for R to print all the time steps. The calculation is fast, but printing out 31,536,000 lines of text is not.
+Feel free to run the above loop on your own machines, but note that we have defined our  `time` vector to contain every single second from the beginning of day 0 to the end of day 20. It will take some time for R to print all the time steps. The calculation is fast, but printing out 1,728,000 lines of text is not.
 ```
 
 How small is close enough to infinitely small? is the question. To find out, you can set the time step to something small and run the code, which will produce a set of population values through time. Then set the step smaller still and run the code again. It will run more slowly because it is calculating more steps, but if essentially the same answer appears—if the answer “converges”—then you can make the step larger again, speeding the calculation. With a few trials you can find a time step that is small enough to give accurate answers but large enough to allow your code to run reasonably fast.
 
-```{figure} ../img/Fig5_1.png
+```{figure} ../img/fig_5_1.png
 ---
-name: Fig5_1
-alt: Fig5_1
-width: 400px
+name: fig_5_1
+alt: Differential and discrete growth
+width: 600px
 align: center
 ---
-Differential logistic growth (maroon) compared with discrete (green). No dots appear on the differential form, since that represents infinitesimal time steps, whereas the difference form has a dot at each point calculated.
+**Figure 5.1** Differential logistic growth (maroon) compared with discrete (green). No dots appear on the differential form, since that represents infinitesimal time steps, whereas the difference form has a dot at each point calculated.
 ```
-
-[Figure 5.1](Fig5_1) shows the results of running the differential equation version of the program (the second one above, in maroon) versus the difference equation version (the first above, in green). The differential equation has the same parameters and general shape, but the population approaches its carrying capacity more quickly. Because the differential time steps produce offspring earlier—not waiting for the end of the step—offspring are available to reproduce earlier, and so forth.
+[Figure 5.1](fig_5_1) shows the results of running the differential equation version of the program (the second one above, in maroon) versus the difference equation version (the first above, in  green). The differential equation has the same parameters and general shape, but the population approaches its carrying capacity more quickly. Because the differential time steps produce offspring earlier—not waiting for the end of the step—offspring are available to reproduce earlier, and so forth.
 
 This particular method for differential equations is called “Euler’s method” (pronounced “Oiler’s”), a basic approach not often used in the twentieth century because computers not so long ago were millions of times slower than they are now. Today this method is often fast enough, and is desirable because of its relative simplicity.
 
@@ -105,7 +109,7 @@ $$
 N(t) = N_0e^{rt}
 $$
 
-$N_0$ is the starting population at time 0, $N(t)$ is the population at any time $t$, and $r$ is the constant growth rate—the “intrinsic rate of natural increase.” How much time, $\tau$, will elapse before the population doubles? At some time $t$, the population will be $N(t)$, and at the later time $t+\tau$, the pop- ulation will be $N(t+\tau)$. The question to be answered is this: for what $τ$ will the ratio of those two populations be 2?
+$N_0$ is the starting population at time 0, $N(t)$ is the population at any time $t$, and $r$ is the constant growth rate—the “intrinsic rate of natural increase.” How much time, $\tau$, will elapse before the population doubles? At some time $t$, the population will be $N(t)$, and at the later time $t+\tau$, the population will be $N(t+\tau)$. The question to be answered is this: for what $τ$ will the ratio of those two populations be 2?
 
 $$
 \frac{N(t+\tau)}{N(t)} = 2

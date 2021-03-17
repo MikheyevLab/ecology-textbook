@@ -1,0 +1,887 @@
+## Chapter 12
+
+## Predator and prey
+
+Competition and mutualism can be understood without much attention to the sizes
+of the species involved. But predation is quite different. Think of a producer,
+the prey, and a consumer, the predator. When the consumer is extremely large and
+the producer very small, as with a whale and krill, the relationship is called
+filter feeding. There the predator kills the prey. When the producer and
+consumer are roughly matched in size, they are called predators and prey. When
+the producer is much smaller than the consumer, but still independently mobile,
+the relationship is called parasitism. And when the consumer is much smaller
+still, and has difficulty moving around on its own, the relationship is called
+infection and disease. Symptoms of disease are part of the ecology of disease.
+In parasitism and disease, the consumer often does not kill the producer.
+
+### 12.1 Further examples of predation
+
+Amazing mechanisms for both capturing prey and avoiding predators have
+been discovered through evolution.
+Fulmar chicks,[$^\star$](https://en.wikipedia.org/wiki/Fulmar), for example, can direct
+"projectile vomit" at predators approaching the nest too closely
+(Figure *FigFulmarChick*). This is not just icky for the predator. By
+damaging the waterproofing of an avian predator's feathers, this ultimately can
+kill the predator. The chick's projectile vomit is thus a lethal weapon.
+
+<image width=4 height=3.1>../image/downer/p101.jpg</image>
+
+**Figure 12.1.** `<figdef tag="FigFulmarChick">`
+Fulmar chick with projectile vomit as predator defense.
+`</figdef>`
+
+One of the most remarkable predatory weapons is that of
+pistol shrimp.[$^\star$](https://en.wikipedia.org/wiki/Alpheidae) These shrimp have one
+special claw adapted to cavitation, and are capable of shooting bullets at their
+prey; colonies of these shrimp are loud from the sound of these bullets. But
+where does an underwater crustacean get bullets? Actually, it creates them from
+nothing at all---from cavitation. If you've ever piloted a powerful motorboat
+and pushed the throttle too hard, or watched a pilot do so, you've seen the
+propellers start kicking out bubbles, which look like air bubbles. But the
+propellers are well below the water line, where there is no air. The propellers
+are in fact creating bubbles of vacuum---separating the water so instantly that
+there is nothing left in between, except perhaps very low density water vapor.
+Such bubbles collapse back with numerous blasts, each so powerful that it rips
+off pieces of bronze off the propeller itself, leaving a rough surface that is
+the telltale sign of cavitation.
+
+<image width=1.9 height=1.4>../image/fairuse/PistolShrimp.jpg</image>
+**Figure 12.2.** `<figdef tag="FigPistolShrimp">`
+Pistol-packing shrimp shoot cavitation bullets.
+`</figdef>`
+
+A pistol crab snap its pistol claw together so quickly that it creates a vacuum
+where water used to be. With the right circulation of water around the vacuum
+bubble, the bubble can move, and a crab can actually project its bullet of
+vacuum toward its prey. When the bubble collapses, the effect is like thunder
+attending a lightning bolt, when air snaps together after the lightning has
+created a column of near-vacuum. But the consequences are quite different in
+water. While a loud sound might hurt the ears of a terrestrial animal, the sound
+does not rip apart the fabric of the animal's body. This is, however, what
+intense sounds in water can do, traveling through water and through the
+water-filled bodies of animals. In effect, pistol shrimp shoot bullets that
+explode near their prey and numb them into immobility. Somehow evolution
+discovered and perfected this amazing mechanism!
+
+<imagerow height=1.4>../image/sciencem/09222000/p2056.jpg(1.78),../image/fairuse/bison.jpg(2.1)</imagerow>
+**Figure 12.3.** `<figdef tag="FigBisonBonesHerd">`
+Rifle-carrying humans shoot lead bullets---bison bones and remnant herd.
+`</figdef>`
+
+The ultimate weapons of predation, however, are those of our own species.
+Figure *FigBisonBonesHerd*  (right) shows a remnant bison herd, a few
+hundred of the hundreds of millions of bison that migrated the plains not many
+generations ago. No matter how vast their numbers, they were no match for
+gunpowder and lead bullets, and they dropped to near extinction by the beginning
+of the twentieth century. The image at the left illustrates the epic efficiency
+of lead bullets by showing a nineteenth-century pile of bison bones, with
+members of the predator species positioned atop and aside.
+
+### 12.2 Ecological communities are complex
+
+Before proceeding with simplified models of predation, we want to stress that
+ecological communities are complex (Figure *FigFoodWebMitchell*).
+Fortunately, progress in understanding them comes piece by piece. Complex food
+webs, like the one illustrated in the figure, can be examined in simpler
+"motifs."
+
+<image width=4 height=3.423 border=no>../image/web/foodweb9.jpg</image>
+**Figure 12.4.** `<figdef tag="FigFoodWebMitchell">`
+Cretaceous terrestrial food web,
+Mitchell et al.\ 2012 PNAS.
+`</figdef>`
+
+You have seen in earlier chapters that there are two motifs for a single
+Species: logistic and orthologistic, with exponential growth forming a fine
+dividing line between them.
+And in the prior chapter, you saw three motifs for two species:
+predation, competition, and mutualism.
+    |\raise.6ex\hbox{%
+    |\beginpicture
+    |\setcoordinatesystem units < 0.2 in, 0.346410161514 in> point at -3.7 0
+    |\setplotarea x from 0 to 2, y from 0 to .001
+    |\twentyfourpoint
+    |\multiput{\gray{$\circ$}}        at 0 0 2 0 /
+    |\setplotsymbol ({\twelvepoint.})
+    |\green{\arrow <8pt> [.2,.67] from 0 0 to 2 0 }%
+    |\green{\arrow <8pt> [.2,.67] from 2 0 to 0 0 }%
+    |\endpicture}
+
+Later you will see that there are exactly forty distinct three-species motifs,
+one of which is two prey pursued by one predator. This is called "apparent
+competition" because it has properties of competition.
+    |\vskip-4pt
+    |$$\beginpicture
+    |\setcoordinatesystem units < 0.2 in, 0.346410161514 in> point at -3.7 0
+    |\setplotarea x from 0 to 2, y from 0 to 1
+    |\twentyfourpoint
+    |\multiput{\gray{$\circ$}}        at 1 1 0 0 2 0 /
+    |\setplotsymbol ({\twelvepoint.})
+    |\red{\arrow <8pt> [.2,.67] from 0 0 to 1 1 }%
+    |\red{\arrow <8pt> [.2,.67] from 2 0 to 1 1 }%
+    |\endpicture $$
+
+### 12.3 Predator--prey model
+
+For the next several chapters we will consider two species, starting with one
+predator and one prey. Figure *FigPredPreyA*  depicts this situation,
+with one line sloping down and the other up.
+
+    |{\tenpoint
+    |$$ \beginpicture
+    |\setcoordinatesystem units <1.0 in, 1.0 in> point at 0 0
+    |\setplotarea x from 0 to 1, y from 0 to 1
+    |\axis bottom label {$N_2$}
+    |  ticks withvalues {0} {1} {2} / at 0 .5 1 /
+    |  unlabeled quantity 11 /
+    |\axis left label {$\displaystyle{1\over N_1}{dN_1\over dt}$}
+    |  ticks withvalues {0} {1} {2} / at 0 .5 1 /
+    |  unlabeled quantity 11 /
+    |\plot 0 .5  .75 -.25 /
+    |\put {$N_1$ is the prey} [l] at .1 .85
+    |%
+    |\setcoordinatesystem units <1.0 in, 1.0 in> point at -1.65 0
+    |\setplotarea x from 0 to 1, y from 0 to 1
+    |\axis bottom label {$N_1$}
+    |  ticks withvalues {0} {1} {2} / at 0 .5 1 /
+    |  unlabeled quantity 11 /
+    |\axis left label {$\displaystyle{1\over N_2}{dN_2\over dt}$}
+    |  ticks withvalues {0} {1} {2} / at 0 .5 1 /
+    |  unlabeled quantity 11 /
+    |\plot 0 -.25  1 .25 /
+    |\put {$N_2$ is the predator} [l] at .1 .85
+    |\endpicture $$
+    |}
+    |\vskip-26pt
+    |<M> \hbox{\kern0.7in}   {1\over N_1}{dN_1\over dt} =  1.0 - 1.0 N_2
+    |    \hbox{\kern0.3in}   {1\over N_2}{dN_2\over dt} = -0.5 + 0.5 N_1 </M>
+**Figure 12.5.** `<figdef tag="FigPredPreyA">`
+Predator--prey interactions with corresponding equations.
+`</figdef>`
+
+The graph on the left describes the prey, because its numbers $N_1$ are
+reduced when the numbers of predator, $N_2$, increase. Likewise, the graph on
+the right describes the predator, because its numbers, $N_2$, increase with the
+density of its prey, $N_1$. The equations of growth are revealed by the slopes
+and intercepts of the two lines.
+
+Since these are both straight lines, $y=mx+b$, the equations can be written down
+simply from the geometry. The intercept on the left is $+1$ and the slope is
+$-1$. The intercept on the right is $-1/2$ and its slope is $+1/2$. The
+equivalent equations of the two lines appear below the graphs.
+
+These specific equations can be generalized using symbols in place of actual
+numbers, writing $r_1$, $s_{1,2}$, $r_2$, and $s_{2,1}$ for the intercept $+1.0$
+and slope $-1.0$ on the left and the intercept $-0.5$ and slope $+0.5$ on the
+right, as follows.
+    |<M> {1\over N_1}{dN_1\over dt} = r_1 + s_{1,2} N_2 \hskip1em\hbox{ with } r_1=+1.0,\,\, s_{1,2}=-1.0 </M>
+    |<M> {1\over N_2}{dN_2\over dt} = r_2 + s_{2,1} N_1 \hskip1em\hbox{ with } r_2=-0.5,\,\, s_{2,1}=+0.5 </M>
+
+Merely by writing down the form of these geometric graphs, the classic
+Lotka--Volterra predator--prey equations have appeared:
+    |<M> {1\over N_1}{dN_1\over dt} = r_1 + s_{1,2} N_2, \hskip1em r_1>0,\,\,s_{1,2}<0</M>
+    |<M> {1\over N_2}{dN_2\over dt} = r_2 + s_{2,1} N_1, \hskip1em r_2<0,\,\,s_{2,1}>0</M>
+
+Here is how the equations look in many textbooks, with $V$ for prey density and
+$P$ for predator density:
+    |<M> {dV\over dt} = r V - \alpha V P </M>
+    |<M> {dP\over dt} = \beta V P  - q P </M>
+
+Volterra[$^\star$](https://en.wikipedia.org/wiki/Vito_Volterra) arrived at the equation
+rather differently than we did, with a growth rate $r$ for the prey, reduced by
+a rate $\alpha$ for each encounter between predator and prey, $V\!\cdot\!P$, and
+with a natural death rate $q$ for predators and compensatory growth rate $\beta$
+for each encounter, $V\!\cdot\!P$, between predator and prey.
+
+To see the equivalence, divide the first equation through by $V$ and the
+second by $P$, then set $V=N_1$, $P=N_2$, $r=r_1$,
+$q=-r_2$, $\alpha=-s_{1,2}$, $\beta=s_{2,1}$. The Lotka--Volterra
+formulation will be revealed to be just the $r+sN$ equations in disguise.
+
+Figure *FigPredPreyA*  exposes the basic predator--prey equations from
+geometry, which reveal the unity of the equations of ecology, as you saw on
+Page *PageOrthologistic*. That analysis revealed a form of
+one-dimensional equation not considered in ecological textbooks---the
+orthologistic equation---and which is needed for understanding human and other
+rapidly growing populations.
+
+Now analyze these equations a bit. Suppose predator and prey densities are both
+1, say 1 individual per hectare ($N_1=N_2=1$). Substitute 1 for both $N_1$
+and $N_2$. What are the growth rates?
+    |<M> {1\over 1}{dN_1\over dt} =\phantom{-}1.0 - 1.0 \times 1  = 0 </M>
+    |<M> {1\over 1}{dN_2\over dt} =          -0.5 + 0.5 \times 1  = 0 </M>
+
+The population growth is zero for both species, so the populations do not
+change. This is an equilibrium.
+
+This can be seen in the graphs below. The fact that both growth rates,
+$1/N_1\,dN_1/dt$ and $1/N_1\,dN_2/dt$, cross the horizontal axis at $N_1=N_2=1$
+(position of the dots) means that growth stops for both. This is called an
+equilibrium, a steady state, or, sometimes, a fixed point.
+    |{\tenpoint
+    |$$ \beginpicture %\linethickness.8pt
+    |\setcoordinatesystem units <1.0 in, 1.0 in> point at 0 0
+    |\setplotarea x from 0 to 1, y from 0 to 1
+    |\axis bottom label {$N_2$}
+    | ticks withvalues {0} {1} {2} / at 0 .5 1 /
+    | unlabeled quantity 11 /
+    |\axis left label {$\displaystyle{1\over N_1}{dN_1\over dt}$}
+    | ticks withvalues {0} {1} {2} / at 0 .5 1 /
+    | unlabeled quantity 11 /
+    |\plot 0 .5 .75 -.25 /
+    |\put {\fourteenpoint$\bullet$} at .5 0
+    |\put {$N_1$ is the prey} [l] at .1 .85
+    |%
+    |\setcoordinatesystem units <1.0 in, 1.0 in> point at -1.65 0
+    |\setplotarea x from 0 to 1, y from 0 to 1
+    |\axis bottom label {$N_1$}
+    | ticks withvalues {0} {1} {2} / at 0 .5 1 /
+    | unlabeled quantity 11 /
+    |\axis left label {$\displaystyle{1\over N_2}{dN_2\over dt}$}
+    | ticks withvalues {0} {1} {2} / at 0 .5 1 /
+    | unlabeled quantity 11 /
+    |\plot 0 -.25 1 .25 /
+    |\put {$\fourteenpoint\bullet$} at .5 0
+    |\put {$N_2$ is the predator} [l] at .1 .85
+    |\endpicture $$
+    |}
+
+But what will happen if both populations are 2, say 2 individuals per hectare?
+    |{\tenpoint
+    |$$ \beginpicture
+    |\setcoordinatesystem units <1.0 in, 1.0 in> point at 0 0
+    |\setplotarea x from 0 to 1, y from 0 to 1
+    |\axis bottom label {$N_2$}
+    | ticks withvalues {0} {1} {2} / at 0 .5 1 /
+    | unlabeled quantity 11 /
+    |\axis left label {$\displaystyle{1\over N_1}{dN_1\over dt}$}
+    | ticks withvalues {0} {1} {2} / at 0 .5 1 /
+    | unlabeled quantity 11 /
+    |\plot 0 .5 1 -.5 /
+    |\put {\fourteenpoint$\bullet$} at 1 0
+    |\put {$N_1$ is the prey} [l] at .1 .85
+    |%
+    |\setcoordinatesystem units <1.0 in, 1.0 in> point at -1.65 0
+    |\setplotarea x from 0 to 1, y from 0 to 1
+    |\axis bottom label {$N_1$}
+    | ticks withvalues {0} {1} {2} / at 0 .5 1 /
+    | unlabeled quantity 11 /
+    |\axis left label {$\displaystyle{1\over N_2}{dN_2\over dt}$}
+    | ticks withvalues {0} {1} {2} / at 0 .5 1 /
+    | unlabeled quantity 11 /
+    |\plot 0 -.25 1 .25 /
+    |\put {\fourteenpoint$\bullet$} at 1 0
+    |\put {$N_2$ is the predator} [l] at .1 .85
+    |\endpicture $$
+    |}
+
+The prey growth rate, $1/N_1\,dN_1/dt$, is negative at $N_2=2$ (the line is
+below the horizontal axis) and the predator growth rate, $1/N_1\,dN_2/dt$, is
+positive at $N_1=2$ (the line is above the horizontal axis). So the prey
+population will decrease and the predator population will increase. Exactly how
+the populations will develop over time can be worked out by putting these
+parameters into the program on Page *PageProgramG*.
+Here it what it shows.
+    |{\tenpoint
+    |$$ \beginpicture
+    |\setcoordinatesystem units < 0.115 in, 0.3125 in>
+    |\setplotarea x from 0 to 30, y from 0 to 3.65
+    |\put{\white{.}} at -4.5 0
+    |\axis bottom label {Day ($t$)}
+    |  ticks  numbered from 0 to 30 by 5
+    |  unlabeled short from 0 to 30 by 1 /
+    |\axis left
+    |  ticks numbered  from 0 to 3 by 1
+    |  unlabeled short from 0 to 3.5 by 0.5 /
+    |\put {\vertical{\lines{Population Density\cr(per ml)}}} <-26pt,0pt> at 0 1.8
+    |\axis right / \axis top /
+    |\black{\plot %"lvpp3a.1"
+    | 0. 2. 0.3125 1.405333219802965 0.46875 1.154642689797533 0.625 0.944528452369905 0.78125 0.773771256591686 0.9375 0.6377918744285124 1.09375 0.5308226452763693 1.25 0.4472070684089048 1.40625 0.3819992352583741 1.5625 0.3311513294683303 1.71875 0.2914692322374794 1.875 0.2604895241736032 2.03125 0.2363363917427816 2.1875 0.2175925466020031 2.34375 0.2031915034257809 2.5 0.1923334048784709 2.578125 0.1880397520312312 2.65625 0.1844207651193824 2.734375 0.1814254280593618 2.8125 0.1790103082859906 2.890625 0.1771382730904001 2.9296875 0.1763958583299406 2.96875 0.1757778594761905 3.0078125 0.1752811938368667 3.046875 0.1749029789825707 3.0859375 0.1746406034286913 3.125 0.1744917492754216 3.1640625 0.1744543534964533 3.203125 0.1745266019420334 3.2421875 0.1747068531751429 3.28125 0.174993654908777 3.3203125 0.1753857914253948 3.359375 0.1758822475687364 3.4375 0.1771850046440353 3.515625 0.1788972534077611 3.59375 0.1810170477223234 3.75 0.1864839545678331 3.90625 0.1936181062206777 4.0625 0.2024872577598385 4.375 0.2258704247612568 4.6875 0.2578521033562993 5. 0.3002197421322693 5.3125 0.355398495155978 5.625 0.4265475297431065 5.9375 0.5176661965298282 6.25 0.6336787194977819 6.5625 0.7804393369696817 6.875 0.964533301825454 7.5 1.470089497371319 8.125 2.165675080712526 8.4375 2.543642837372386 8.59375 2.717671438616708 8.75 2.866297827744953 8.828125 2.926501613887347 8.90625 2.974615644689609 8.9453125 2.993492535128361 8.984375 3.008577649217804 9.0234375 3.019623527244366 9.0625 3.026397885532783 9.1015625 3.028682990891356 9.140625 3.026280317080551 9.1796875 3.019019650223152 9.21875 3.006758551347613 9.2578125 2.9893892434941 9.296875 2.96684393342315 9.375 2.906170429819172 9.453125 2.825105050531906 9.53125 2.724816872676544 9.6875 2.475128589633567 10. 1.869104003993591 10.3125 1.295278255308105 10.46875 1.061444737517445 10.625 0.868257536001243 10.78125 0.7127675828953194 10.9375 0.5896847675086915 11.09375 0.4931757210782972 11.25 0.4178400037212501 11.40625 0.3591031022232741 11.5625 0.3132869425264259 11.71875 0.2775216235686957 11.875 0.2496078083381471 12.03125 0.2278765700932667 12.1875 0.2110694350897441 12.34375 0.1982408615781291 12.5 0.1886827469824555 12.578125 0.1849593783901678 12.65625 0.1818675024494945 12.734375 0.1793622205098382 12.8125 0.177405620657871 12.8515625 0.1766227332744548 12.890625 0.1759653113109012 12.9296875 0.175430173489984 12.96875 0.1750143697326466 13.0078125 0.1747151984963963 13.046875 0.1745302714939851 13.0859375 0.174457467273375 13.125 0.1744948540374333 13.1640625 0.174640704710334 13.203125 0.1748935556606199 13.2421875 0.1752521637700518 13.28125 0.1757154332134362 13.359375 0.1769524001740497 13.4375 0.1785993752373887 13.59375 0.1831166185458824 13.75 0.1892778552733767 13.90625 0.1971306045612654 14.0625 0.2067569695667594 14.375 0.2318269245494071 14.6875 0.2658221026068992 15. 0.3106567517954899 15.3125 0.3689015471074952 15.625 0.4438834342026591 15.9375 0.5397904454735521 16.25 0.6617455856658639 16.5625 0.81578421992572 16.875 1.008584864201115 17.5 1.534846646666213 18.125 2.245793992017352 18.4375 2.618969501135089 18.59375 2.78398646480758 18.671875 2.855665836874189 18.75 2.917609385508547 18.828125 2.967792321368006 18.8671875 2.987827226205409 18.90625 3.00415028766776 18.9453125 3.016513109338668 18.984375 3.024676155991967 19.0234375 3.028417971144106 19.0625 3.027533507345653 19.1015625 3.02184189159259 19.140625 3.011192298153101 19.1796875 2.995465176570242 19.21875 2.974579245586982 19.296875 2.917219876311167 19.375 2.839356456245918 19.53125 2.627078535253356 19.6875 2.355168383174973 20. 1.739990904983655 20.3125 1.192079958704964 20.46875 0.975432267888942 20.625 0.7986286415406574 20.78125 0.6574600176776856 20.9375 0.5462408921297839 21.09375 0.4592405578059103 21.25 0.3913824067954517 21.40625 0.3384715267423461 21.5625 0.2971849079332542 21.71875 0.2649517554234584 21.875 0.2398120167549443 22.03125 0.2202824507587503 22.1875 0.2052465302361632 22.34375 0.1938664825662915 22.421875 0.1893449087201498 22.5 0.1855160370836007 22.578125 0.1823263488397832 22.65625 0.1797300670422584 22.734375 0.1776880316105562 22.7734375 0.1768643445256975 22.8125 0.1761671963115041 22.8515625 0.1755932830334479 22.890625 0.1751396306717757 22.9296875 0.1748034786224766 22.96875 0.1745823054158169 23.0078125 0.1744738734528479 23.046875 0.1744762359826519 23.0859375 0.1745876172068336 23.125 0.1748064401656465 23.1640625 0.1751313534636107 23.203125 0.1755612646546986 23.28125 0.1767323990371021 23.359375 0.1783141225593304 23.4375 0.180303784315187 23.59375 0.185508307550545 23.75 0.192372507571872 24.0625 0.2113629633862814 24.375 0.2381790333105314 24.6875 0.2742724736837446 25. 0.321688056059344 25.3125 0.3831465060316534 25.625 0.462147356953069 25.9375 0.5630709705684646 26.25 0.691238992666872 26.5625 0.852855683300822 26.875 1.054662351055206 27.5 1.601845755372241 28.125 2.326062798986916 28.4375 2.691197040913347 28.59375 2.844811092034717 28.671875 2.908438342269441 28.75 2.960632075038681 28.7890625 2.981797100428099 28.828125 2.999329877557793 28.8671875 3.012981166432116 28.90625 3.022508042756476 28.9453125 3.02768193018236 28.984375 3.028293234863641 29.0234375 3.02415205397028 29.0625 3.015097680372717 29.1015625 3.001000424331398 29.140625 2.981766030768263 29.21875 2.927718329908636 29.296875 2.853076816384468 29.375 2.758753896540571 29.6875 2.229255639008588 30. 1.614289102402949 /
+    |\put {$\downarrow$ $N_1$ (prey)}     [l] <-2.5pt, 6pt> at 9.10156 3.028683 }%
+    |\brightred{\plot %"lvpp3a.2"
+    | 0. 2. 0.078125 2.073342617914894 0.15625 2.136452319235293 0.234375 2.188620614174906 0.3125 2.229546076238222 0.3515625 2.245802470919189 0.390625 2.259300683937081 0.4296875 2.270097568323794 0.46875 2.278265457595439 0.5078125 2.283889793101685 0.546875 2.287066300691416 0.5859375 2.287899722942674 0.625 2.286500934575718 0.6640625 2.282984887542641 0.703125 2.277470591716194 0.78125 2.260927339572543 0.859375 2.237826065651348 0.9375 2.209091383315491 1.25 2.05418512852717 2.5 1.309462446879855 3.125 1.013605724790338 3.75 0.784057839230481 4.375 0.6113342967652366 4.6875 0.5429747404004979 5. 0.4850553153144304 5.3125 0.4366132221601759 5.625 0.3968885555807229 5.9375 0.3653598637093267 6.09375 0.3525842843669686 6.25 0.3417990135534248 6.40625 0.3330367560892771 6.484375 0.3294332330329555 6.5625 0.3263631863459182 6.640625 0.3238410323521095 6.6796875 0.3227906869737098 6.71875 0.321884183589406 6.7578125 0.3211243141675312 6.796875 0.3205140827617631 6.8359375 0.3200567421078904 6.875 0.3197558058990642 6.9140625 0.3196151336293233 6.953125 0.3196388838334036 6.9921875 0.3198315044970263 7.03125 0.3201977678184232 7.0703125 0.3207427829263929 7.109375 0.3214721588168143 7.1875 0.3235086974795751 7.265625 0.3263608062393526 7.34375 0.3300899316619636 7.421875 0.3347673341111888 7.5 0.3404745135202334 7.65625 0.3553662850139063 7.8125 0.3756885998647157 7.96875 0.4026461393560462 8.125 0.4377964729074437 8.28125 0.4831250644644979 8.4375 0.5411038638670022 8.59375 0.6146952633608146 8.75 0.7072143459812804 9.0625 0.96140045338424 9.375 1.312687273380833 9.6875 1.715651144488779 9.84375 1.903560857845423 10. 2.062251204281333 10.078125 2.127056974241245 10.15625 2.18100815760729 10.234375 2.223740016761792 10.2734375 2.240889782578415 10.3125 2.255266790167924 10.3515625 2.266922473412928 10.390625 2.275924683639561 10.4296875 2.28235453710183 10.46875 2.286304843437497 10.5078125 2.287877474725644 10.546875 2.28718154965576 10.5859375 2.284331451137508 10.625 2.279444748524531 10.6640625 2.272641432498447 10.703125 2.264041384780699 10.78125 2.241928257989038 10.9375 2.181247117650452 11.25 2.016283538317703 11.875 1.630306620957223 12.5 1.275146138458567 13.125 0.986524494806375 13.75 0.7634450135246915 14.375 0.5960632525699458 14.6875 0.5299846619876169 15. 0.4741288597515174 15.3125 0.4275731234879804 15.625 0.3896041876368865 15.9375 0.3597567809958265 16.09375 0.3478157034508566 16.25 0.3378745102250733 16.40625 0.3299792839622253 16.484375 0.3268229175811085 16.5625 0.3242121092396647 16.640625 0.3221638279660301 16.6796875 0.32135678546309 16.71875 0.3206983632675075 16.7578125 0.3201917635953191 16.796875 0.3198404338925404 16.8359375 0.319648097163988 16.875 0.3196187735730978 16.9140625 0.319756861599946 16.953125 0.320067065615185 16.9921875 0.3205544243336053 17.03125 0.3212243340559784 17.0703125 0.3220825862643872 17.109375 0.3231355864592971 17.1875 0.3258534850831223 17.265625 0.329438092781825 17.34375 0.333958805741579 17.5 0.3461398350889771 17.65625 0.3631859227387623 17.8125 0.3861304529924769 17.96875 0.416317162636157 18.125 0.4554745654528078 18.28125 0.5057874515168553 18.4375 0.5699384527984668 18.59375 0.6510660866307481 18.75 0.7525417622822803 19.0625 1.027572983020061 19.375 1.395954636453659 19.6875 1.79723677945464 19.84375 1.974514941262252 19.921875 2.0509162359304 20. 2.117393498137138 20.078125 2.173113893646739 20.15625 2.217646195083389 20.1953125 2.235690085464793 20.234375 2.250948488056632 20.2734375 2.263467284851432 20.3125 2.273309432719475 20.3515625 2.280552000234749 20.390625 2.285284302940465 20.4296875 2.287605566641787 20.46875 2.287622743727642 20.5078125 2.285448825739384 20.546875 2.281200481732211 20.5859375 2.274997036325875 20.625 2.266958722447693 20.703125 2.245855242288776 20.78125 2.218827229420082 20.9375 2.150494380001944 21.25 1.97723934370264 21.875 1.590379422567714 22.5 1.241571163243669 23.125 0.960158588682292 23.75 0.7434369603689114 24.375 0.5812850403864302 24.6875 0.5174400060488681 25. 0.4636080552020487 25.3125 0.4189079070870111 25.625 0.3826746754964156 25.9375 0.3545018654645545 26.09375 0.3433979719742255 26.25 0.3343091071698873 26.328125 0.3305378062817852 26.40625 0.327295771337172 26.484375 0.3245967835798165 26.5625 0.3224575445528972 26.6015625 0.3216038629018749 26.640625 0.3208977625279379 26.6796875 0.320342388798854 26.71875 0.3199411536618723 26.7578125 0.3196976979503272 26.796875 0.3196159507260783 26.8359375 0.3197001444713558 26.875 0.3199548991717858 26.9140625 0.320385177065442 26.953125 0.3209962825649311 26.9921875 0.3217938957518006 27.03125 0.3227840980564812 27.109375 0.3253695250794961 27.1875 0.3288116883217759 27.265625 0.3331781339620264 27.34375 0.3385471437414598 27.5 0.3526641962920604 27.65625 0.3720472971784504 27.8125 0.3978516260784559 27.96875 0.4315732943924976 28.125 0.4751247259300605 28.28125 0.5308979582629839 28.4375 0.6017806646059561 28.59375 0.6910493200087698 28.75 0.802039628599182 29.0625 1.098130588851298 29.375 1.480949058462186 30. 2.164952297238095 /
+    |\put {$\downarrow$ $N_2$ (predator)} [l] <-2.5pt, 6pt> at 10.5078 2.287877 }%
+    |\put {$\circ$} at 0 2
+    |\endpicture $$
+    |}
+    |%Here is the Mathematica program for these graphs:
+    |%
+    |%dn1dt = (r1 + s1 n2[t]) n1[t]
+    |%dn2dt = (r2 + s2 n1[t]) n2[t]
+    |%
+    |%r1 =  1;  s1 = -1
+    |%r2 =  -.5;  s2 =  .5
+    |%
+    |%Print["hat N2 = ", -r1/s1, ", hat N1 = ",  -r2/s2]
+    |%
+    |%tmax = 30
+    |%
+    |%s = NDSolve[{n1'[t]==dn1dt, n2'[t]==dn2dt, n1[0]==2, n2[0]==2},
+    |%      {n1, n2}, {t,0,tmax}]
+    |%
+    |%Plot[Evaluate[{n1[t]/.s[[1]], n2[t]/.s[[1]]}, {t,0,tmax}],
+    |%     PlotRange->{0,3}] >>lvpp3-1.out
+    |%
+    |%st = Evaluate[{n1[t]/.s[[1]], n2[t]/.s[[1]]}, {t,0,tmax/3}]
+    |%ParametricPlot[st[[1]][[1]], {t,0,tmax}] >>lvpp3-2.out
+    |%
+    |%For[i=0, i<=tmax/3, i++, Print[" ", (n1/.s[[1]])[i], " ", (n2/.s[[1]])[i]] ]
+
+**Figure 12.6.** `<figdef tag="FigPredPreyTime">`
+Dynamics of the predator--prey system of Figure *FigPredPreyA* as
+calculated by Program *PageProgramG*.
+`</figdef>`
+
+For comparison, here is what early experimenters such as Gause and Huffaker
+showed for populations of protozoa, mites, and other small systems in the middle
+of the twentieth century:
+<image width=3.75 height=1.4>../image/fairuse/huffaker.jpg</image>
+
+**Figure 12.7.** `<figdef tag="FigPredPreyHuffaker">`
+Dynamics in an experimental predator--prey system conducted by
+C. B. Huffaker[$^\star$](https://en.wikipedia.org/wiki/Huffaker's_mite_experiment)
+in the 1950s with two species of mite.
+`</figdef>`
+
+The dynamics here are much the same as those shown in the calculated version of
+Figure *FigPredPreyTime*  and the experimental version of
+Figure *FigPredPreyHuffaker*, but with stochasticity overlayed on the
+experimental system. Experimenters, however, had difficulty achieving continual
+cycling. In simple conditions, the predators would find the prey and eat every
+last one, and then the predators themselves would all die. Continual cycling
+could be achieved by providing the prey with places to escape, or making it
+difficult for the predators to move around the environment.
+
+### 12.4 Phase space
+
+The cycling can be understood better in phase space, where the densities of the
+two species are represented as two-dimensional points.
+    |{\tenpoint
+    |$$ \beginpicture
+    |\setcoordinatesystem units < .6 in, .6 in> point at 0 0
+    |\setplotarea x from 0 to 3.5, y from 0 to 2.5
+    |\axis bottom label {$N_1$ (Prey)}
+    |  ticks numbered from 0 to 3 by 1
+    |  unlabeled short quantity 8 /
+    |\axis left label {\vertical{$N_2$ (Predator)}}
+    |  ticks numbered from 0 to 2 by 1
+    |  unlabeled short quantity 6 /
+    |\setsolid
+    |\put {$\circ$} at 1 1
+    |\put {\sixteenpoint\blue{$+$}} at 1.5 0.5
+    |\endpicture $$ }
+
+**Figure 12.8.** `<figdef tag="FigPredPreyPhaseA">`
+Predator--prey phase space. The circle marks an equilibrium where growth of both
+predator and prey stops. The plus sign marks a population value of
+$N_1=1.5$, $N_2=0.5$.
+`</figdef>`
+
+For example, as explained in Chapter *ChPhaseSpace*, if the prey
+population is 1.5 and the predator population is 0.5, the population will be 1.5
+units to the right on the horizontal axis and 0.5 units up on the vertical axis,
+at the location of the blue plus sign in the graph.
+
+Where does the predator population cease to grow? In the equation
+$$ {1\over N_2}{dN_2\over dt} = r_2 + s_{2,1} N_1 $$
+it ceases to grow where $0 = r_2 + s_{2,1} N_1$, or
+$\,N_1=-r_2/s_{2,1}$. With $r_2=-0.5$ and $s_{2,1}=0.5$, this is a vertical
+line---the predator isocline---at $N_1=1$, as in
+Figure *FigPredIsocline*.
+
+    |{\tenpoint
+    |$$ \beginpicture
+    |\setcoordinatesystem units < .6 in, .6 in> point at 0 0
+    |\setplotarea x from 0 to 3.5, y from 0 to 2.5
+    |\axis bottom label {$N_1$ (Prey)}
+    |  ticks numbered from 0 to 3 by 1
+    |  unlabeled short quantity 8 /
+    |\axis left label {\vertical{$N_2$ (Predator)}}
+    |  ticks numbered from 0 to 2 by 1
+    |  unlabeled short quantity 6 /
+    |\setsolid
+    |\put {$\circ$} at 1 1
+    |\putrule from 1 0 to 1 2.5
+    |\put {$\uparrow$}   [b] at 1.5 1.5
+    |\put {$\uparrow$}   [b] at 1.5 0.5
+    |\put {$\downarrow$} [t] at 0.5 1.5
+    |\put {$\downarrow$} [t] at 0.5 0.5
+    |\endpicture $$ }
+
+**Figure 12.9.** `<figdef tag="FigPredIsocline">`
+The predator isocline, at which the predator population ceases to grow.
+`</figdef>`
+
+To the left of the isocline, prey are sparse and predators decline, as indicated
+by the downward arrows. To the right of the isocline, in contrast, prey are
+abundant and predators can increase, as indicated by the upward arrows.
+
+Likewise, where does the prey population cease to grow? In the equation
+
+$$ {1\over N_1}{dN_1\over dt} = r_1 + s_{1,2} N_2 $$
+it ceases to grow where $0 = r_1 + s_{1,2} N_2$, which means $\,N_2=-r_1/s_{1,2}$.
+With $r_1=1$ and $s_{1,2}=-1$, this is a horizontal line---the prey isocline---at $N_2=1$.
+
+    |{\tenpoint
+    |$$ \beginpicture
+    |\setcoordinatesystem units < .6 in, .6 in> point at 0 0
+    |\setplotarea x from 0 to 3.5, y from 0 to 2.5
+    |%\plotheading {}
+    |\axis bottom label {$N_1$ (Prey)}
+    |  ticks numbered from 0 to 3 by 1
+    |  unlabeled short quantity 8 /
+    |\axis left label {\vertical{$N_2$ (Predator)}}
+    |  ticks numbered from 0 to 2 by 1
+    |  unlabeled short quantity 6 /
+    |\setsolid
+    |\put {$\circ$} at 1 1
+    |\putrule from 0 1 to 3.5 1
+    |\put {$\leftarrow$}  [r] at 1.5 1.5
+    |\put {$\rightarrow$} [l] at 1.5 0.5
+    |\put {$\leftarrow$}  [r] at 0.5 1.5
+    |\put {$\rightarrow$} [l] at 0.5 0.5
+    |\endpicture $$ }
+
+**Figure 12.10.** `<figdef tag="FigPreyIsocline">`
+The prey isocline, at which the prey population ceases to grow.
+`</figdef>`
+
+Below the isocline, predators are sparse so prey can increase, as indicated by
+the arrows pointing right. Above the isocline, in contrast, predators are
+abundant and prey decrease, as indicated by the arrows pointing left. Putting
+Figures *FigPredIsocline*  and  *FigPreyIsocline*  together
+gives Figure *FigPredPreyIsocline*, which shows rotation in the
+combined arrows.
+
+    |{\tenpoint
+    |$$ \beginpicture
+    |\setcoordinatesystem units < .6 in, .6 in> point at 0 0
+    |\setplotarea x from 0 to 3.5, y from 0 to 2.5
+    |%\plotheading {}
+    |\axis bottom label {$N_1$ (Prey)}
+    |  ticks numbered from 0 to 3 by 1
+    |  unlabeled short quantity 8 /
+    |\axis left label {\vertical{$N_2$ (Predator)}}
+    |  ticks numbered from 0 to 2 by 1
+    |  unlabeled short quantity 6 /
+    |\setsolid
+    |\put {$\circ$} at 1 1
+    |\putrule from 0 1 to 3.5 1
+    |\putrule from 1 0 to 1 2.5
+    |\put {$\uparrow$}    [b] at 1.5 1.5
+    |\put {$\leftarrow$}  [r] at 1.5 1.5
+    |\put {$\uparrow$}    [b] at 1.5 0.5
+    |\put {$\rightarrow$} [l] at 1.5 0.5
+    |\put {$\downarrow$}  [t] at 0.5 1.5
+    |\put {$\leftarrow$}  [r] at 0.5 1.5
+    |\put {$\downarrow$}  [t] at 0.5 0.5
+    |\put {$\rightarrow$} [l] at 0.5 0.5
+    |\put {$\nwarrow$}   [br] at 1.5 1.5
+    |\put {$\nearrow$}   [bl] at 1.5 0.5
+    |\put {$\swarrow$}   [tr] at 0.5 1.5
+    |\put {$\searrow$}   [tl] at 0.5 0.5
+    |\endpicture $$ }
+
+**Figure 12.11.** `<figdef tag="FigPredPreyIsocline">`
+Both isoclines, with both sets of arrows combined, showing the cycling.
+`</figdef>`
+
+Here the rotation can be deduced by thinking about the dynamics of predator and
+prey. The rotation is corroborated by using
+Table *TabEquilibriaEigenvalues* to calculate the eigenvalues. The
+eigenvalues of the interior equilibrium turn out to be $0\pm0.707i$, a
+number with both real and imaginary parts. The existence of an imaginary part,
+$\pm0.707i$, implies cycling. The real part, 0, means that eigenvalues
+alone cannot determine the stability---it could be stable, unstable, or neutral.
+In fact, for this particular case with no self-limitation, deeper mathematical
+examination shows that the stability is neutral. The dynamics will rotate
+indefinitely, maintaining whatever cycle it started on.
+
+    |$$ \beginpicture
+    |\setcoordinatesystem units < .6 in, .6 in> point at 0 0
+    |\setplotarea x from 0 to 3.5, y from 0 to 2.5
+    |\axis bottom label {$N_1$ (Prey)}
+    |  ticks numbered from 0 to 3 by 1
+    |  unlabeled short quantity 8 /
+    |\axis left label {\vertical{$N_2$ (Predator)}}
+    |  ticks numbered from 0 to 2 by 1
+    |  unlabeled short quantity 6 /
+    |\setsolid
+    |\blue{\plot %"lvpp3a.3"
+    | 2. 2. 1.691647255696846 2.136452319235293 1.544664071753644 2.188620614174906 1.405333219802965 2.229546076238222 1.338994469732187 2.245802470919189 1.275046203003119 2.259300683937081 1.213576403855731 2.270097568323794 1.154642689797533 2.278265457595439 1.098275144776369 2.283889793101685 1.044480200201934 2.287066300691416 0.99324231912494 2.287899722942674 0.944528452369905 2.286500934575718 0.898290726946999 2.282984887542641 0.854467486883543 2.277470591716194 0.812987404075435 2.270078033344544 0.773771256591686 2.260927339572543 0.7017862484007131 2.237826065651348 0.6377918744285124 2.209091383315491 0.5810460636747538 2.175594940655011 0.5308226452763693 2.138138198759204 0.4472070684089048 2.05418512852717 0.3819992352583741 1.962147340612888 0.3311513294683303 1.865799543791013 0.2914692322374794 1.767952090863107 0.2604895241736032 1.670641649306549 0.2363363917427816 1.575307809835983 0.2175925466020031 1.482938978752649 0.2031915034257809 1.394188344762687 0.1923334048784709 1.309462446879855 0.1844207651193824 1.22898808274709 0.1814254280593618 1.190379595499382 0.1790103082859906 1.152862257908371 0.1771382730904001 1.116433967203326 0.1763958583299406 1.098626477305962 0.1757778594761905 1.081088665917268 0.1752811938368667 1.063819192641704 0.1749029789825707 1.046816631761071 0.1746406034286913 1.03007939832304 0.1744917492754216 1.013605724790338 0.1744543534964533 0.99739370223903 0.1745266019420334 0.981441287237379 0.1747068531751429 0.96574638174012 0.174993654908777 0.950306816724429 0.1753857914253948 0.935120303649385 0.1758822475687364 0.92018447272163 0.1771850046440353 0.891055036561774 0.1788972534077611 0.862898556080008 0.1810170477223234 0.835694351162142 0.1864839545678331 0.784057839230481 0.1936181062206777 0.7359738094746669 0.2024872577598385 0.6912702647497392 0.2131929250246342 0.6497783400561345 0.2258704247612568 0.6113342967652366 0.2406886940990946 0.5757822053841658 0.2578521033562993 0.5429747404004979 0.2776020884173453 0.5127745898757043 0.3002197421322693 0.4850553153144304 0.3260287474933683 0.4597021984815412 0.355398495155978 0.4366132221601759 0.3887476514313424 0.4156999062326384 0.4265475297431065 0.3968885555807229 0.4693252212284894 0.3801216846721937 0.5176661965298282 0.3653598637093267 0.5722152448247145 0.3525842843669686 0.6336787194977819 0.3417990135534248 0.6672387592226841 0.3371617874052081 0.7028168455853412 0.3330367560892771 0.7405155755224694 0.3294332330329555 0.7804393369696817 0.3263631863459182 0.822695308679364 0.3238410323521095 0.844731887644847 0.3227906869737098 0.867391953319239 0.321884183589406 0.89068881802594 0.3211243141675312 0.914635832549938 0.3205140827617631 0.939246271984147 0.3200567421078904 0.964533301825454 0.3197558058990642 0.990509606273911 0.3196151336293233 1.017187629131871 0.3196388838334036 1.044579641678879 0.3198315044970263 1.072697604096737 0.3201977678184232 1.101553129587109 0.3207427829263929 1.131156844057093 0.3214721588168143 1.192647427441937 0.3235086974795751 1.257241018453968 0.3263608062393526 1.324994010250683 0.3300899316619636 1.470089497371319 0.3404745135202334 1.62787238313987 0.3553662850139063 1.797662182589713 0.3756885998647157 1.977877290228438 0.4026461393560462 2.165675080712526 0.4377964729074437 2.356510537927578 0.4831250644644979 2.543642837372386 0.5411038638670022 2.6329958665509 0.5757462178705248 2.717671438616708 0.6146952633608146 2.796040727351127 0.6583750422154555 2.866297827744953 0.7072143459812804 2.926501613887347 0.7616197215424463 2.95219951500709 0.791025121730892 2.974615644689609 0.821952517824679 2.993492535128361 0.854434069721315 3.008577649217804 0.888493949965208 3.019623527244366 0.924148036965924 3.026397885532783 0.96140045338424 3.028682990891356 1.000243274073673 3.026280317080551 1.040654875856636 3.019019650223152 1.082597357839463 3.006758551347613 1.126015846528324 2.9893892434941 1.170837208795545 2.96684393342315 1.216968778273731 2.906170429819172 1.312687273380833 2.825105050531906 1.412017015506743 2.724816872676544 1.513483358678514 2.475128589633567 1.715651144488779 2.1803837297529 1.903560857845423 1.869104003993591 2.062251204281333 / }% 1.715786705147344 2.127056974241245 %1.56774957874501 2.18100815760729 %1.427084037501583 2.223740016761792 %1.295278255308105 2.255266790167924 %1.233006717420905 2.266922473412928 %1.17325544131105 2.275924683639561 %1.116063685370503 2.28235453710183 %1.061444737517445 2.286304843437497 %1.009390272874888 2.287877474725644 %0.959872436397297 2.28718154965576 %0.912847331297974 2.284331451137508 %0.868257536001243 2.279444748524531 %0.826034511751571 2.272641432498447 %0.7861016814050733 2.264041384780699 %0.7127675828953194 2.241928257989038 %0.647542075363928 2.214036558604791 %0.5896847675086915 2.181247117650452 %0.5384630047608005 2.14437488088837 %0.4931757210782972 2.104160524431422 %0.4178400037212501 2.016283538317703 %0.3591031022232741 1.922036271919086 %0.3132869425264259 1.824765524447695 %0.2775216235686957 1.72693366751884 %0.2496078083381471 1.630306620957223 %0.2278765700932667 1.536118572719461 %0.2110694350897441 1.445204997730207 %0.1982408615781291 1.358106183376889 %0.1886827469824555 1.275146138458567 %0.1849593783901678 1.235275219813235 %0.1818675024494945 1.196491789976356 %0.1793622205098382 1.158799601098343 %0.177405620657871 1.122197060291604 %0.1766227332744548 1.104302869252849 %0.1759653113109012 1.086678751070086 %0.175430173489984 1.069323430119174 %0.1750143697326466 1.05223551068279 %0.1747151984963963 1.035413460109534 %0.1745302714939851 1.018855544535508 %0.174457467273375 1.002559876703269 %0.1744948540374333 0.986524494806375 %0.174640704710334 0.970747348296352 %0.1748935556606199 0.955226240722484 %0.1752521637700518 0.939958873679989 %0.1757154332134362 0.924942920884573 %0.1769524001740497 0.89565573052546 %0.1785993752373887 0.867344808701245 %0.1806540991923787 0.839989458362453 %0.1831166185458824 0.813568708588391 %0.1892778552733767 0.7634450135246915 %0.1971306045612654 0.7168014200963272 %0.2067569695667594 0.6734668363161639 %0.2182726439487919 0.6332743128726625 %0.2318269245494071 0.5960632525699458 %0.2476036350068797 0.5616810343574458 %0.2658221026068992 0.5299846619876169 %0.2867402819852495 0.5008411341420769 %0.3106567517954899 0.4741288597515174 %0.3379139182630491 0.449738348847606 %0.3689015471074952 0.4275731234879804 %0.4040598989829583 0.4075507744074617 %0.4438834342026591 0.3896041876368865 %0.4889234538800986 0.3736832476688178 %0.5397904454735521 0.3597567809958265 %0.5971540025102537 0.3478157034508566 %0.6617455856658639 0.3378745102250733 %0.6969942261717989 0.3336669563126934 %0.7343469619552875 0.3299792839622253 %0.7739083549199178 0.3268229175811085 %0.81578421992572 0.3242121092396647 %0.837623787784594 0.3231164766771455 %0.860082617325141 0.3221638279660301 %0.883174344456966 0.32135678546309 %0.906912038578201 0.3206983632675075 %0.931308890033684 0.3201917635953191 %0.956378029848711 0.3198404338925404 %0.982132438599508 0.319648097163988 %1.008584864201115 0.3196187735730978 %1.035747422590974 0.319756861599946 %1.063632016136501 0.320067065615185 %1.092250214931739 0.3205544243336053 %1.121613165842635 0.3212243340559784 %1.182614253445295 0.3231355864592971 %1.246707169832783 0.3258534850831223 %1.384385105360923 0.333958805741579 %1.534846646666213 0.3461398350889771 %1.697799345756584 0.3631859227387623 %1.872222764942941 0.3861304529924769 %2.056054311067141 0.416317162636157 %2.245793992017352 0.4554745654528078 %2.436035136430594 0.5057874515168553 %2.618969501135089 0.5699384527984668 %2.704495558916148 0.6081708560408808 %2.78398646480758 0.6510660866307481 %2.855665836874189 0.6990520858126977 %2.917609385508547 0.7525417622822803 %2.944299653479041 0.7814687166117874 %2.967792321368006 0.811905417020736 %2.987827226205409 0.843886903406417 %3.00415028766776 0.877439954164193 %3.016513109338668 0.912582914062126 %3.024676155991967 0.949324382101231 %3.028417971144106 0.987660116732903 %3.027533507345653 1.027572983020061 %3.02184189159259 1.069030678934709 %3.011192298153101 1.111983869418455 %2.995465176570242 1.156365152654426 %2.974579245586982 1.202088394273935 %2.917219876311167 1.297112354560523 %2.839356456245918 1.395954636453659 %2.627078535253356 1.599107980081706 %2.355168383174973 1.79723677945464 %2.049967963324566 1.974514941262252 %1.739990904983655 2.117393498137138 %1.590956310246056 2.173113893646739 %1.449000311826076 2.217646195083389 %1.315704918514939 2.250948488056632 %1.252641446856101 2.263467284851432 %1.192079958704964 2.273309432719475 %1.134068310368901 2.280552000234749 %1.078627642856393 2.285284302940465 %1.025756278261875 2.287605566641787 %0.975432267888942 2.287622743727642 %0.927616516984916 2.285448825739384 %0.882255690981025 2.281200481732211 %0.839284527581242 2.274997036325875 %0.7986286415406574 2.266958722447693 %0.7602067188537523 2.257205175999753 %0.7239316275090114 2.245855242288776 %0.6574600176776856 2.218827229420082 %0.5984750266706456 2.186764875021097 %0.5462408921297839 2.150494380001944 %0.4592405578059103 2.068263348174435 %0.3913824067954517 1.97723934370264 %0.3384715267423461 1.88137137374586 %0.2971849079332542 1.783610676190933 %0.2649517554234584 1.686105292219881 %0.2398120167549443 1.590379422567714 %0.2202824507587503 1.497485273241772 %0.2052465302361632 1.408123317003231 %0.1938664825662915 1.322734681580757 %0.1855160370836007 1.241571163243669 %0.1823263488397832 1.202613934094108 %0.1797300670422584 1.164747587730528 %0.1776880316105562 1.127971521068225 %0.1768643445256975 1.109990885343805 %0.1761671963115041 1.09228069510277 %0.1755932830334479 1.074839763032577 %0.1751396306717757 1.057666681152001 %0.1748034786224766 1.040759939990225 %0.1745823054158169 1.024117903283724 %0.1744738734528479 1.007738763942073 %0.1744762359826519 0.991620538046934 %0.1745876172068336 0.975761186644173 %0.1748064401656465 0.960158588682292 %0.1751313534636107 0.944810515741189 %0.1755612646546986 0.929714600150271 %0.1767323990371021 0.900269684041416 %0.1783141225593304 0.871804306532339 %0.180303784315187 0.84429784717197 %0.185508307550545 0.792077373907582 %0.192372507571872 0.7434369603689114 %0.2009586353901426 0.6982043984085924 %0.2113629633862814 0.6562100365556735 %0.2237152170585997 0.6172893886501634 %0.2381790333105314 0.5812850403864302 %0.2549530774844603 0.5480481815374172 %0.2742724736837446 0.5174400060488681 %0.2964119100506119 0.4893321696335751 %0.321688056059344 0.4636080552020487 %0.3504627073337465 0.4401635367234838 %0.3831465060316534 0.4189079070870111 %0.4202020239661296 0.3997650314731696 %0.462147356953069 0.3826746754964156 %0.5095584406386214 0.3675944364668293 %0.5630709705684646 0.3545018654645545 %0.6233794244863186 0.3433979719742255 %0.6563162745356684 0.3385987280674894 %0.691238992666872 0.3343091071698873 %0.7282491136720197 0.3305378062817852 %0.7674512165019039 0.327295771337172 %0.808951046248775 0.3245967835798165 %0.830596000742794 0.3234560382471924 %0.852855683300822 0.3224575445528972 %0.875743704049086 0.3216038629018749 %0.899273711374819 0.3208977625279379 %0.923458833782326 0.320342388798854 %0.948312062124357 0.3199411536618723 %0.973846387751675 0.3196976979503272 %1.000074611072754 0.3196159507260783 %1.027009294634494 0.3197001444713558 %1.054662351055206 0.3199548991717858 %1.083045316473613 0.320385177065442 %1.112169384564735 0.3209962825649311 %1.172683082345788 0.3227840980564812 %1.236278548111076 0.3253695250794961 %1.303015980616058 0.3288116883217759 %1.446064896976971 0.3385471437414598 %1.601845755372241 0.3526641962920604 %1.769793639715096 0.3720472971784504 %1.948492800271156 0.3978516260784559 %2.135329503032507 0.4315732943924976 %2.326062798986916 0.4751247259300605 %2.514335485265689 0.5308979582629839 %2.604863751815771 0.564252282956 %2.691197040913347 0.6017806646059561 %2.771761973938842 0.6439039643885976 %2.844811092034717 0.6910493200087698 %2.908438342269441 0.7436350041669502 %2.936092815989878 0.7720885608418532 %2.960632075038681 0.802039628599182 %2.981797100428099 0.833524723273007 %2.999329877557793 0.866573992617963 %3.012981166432116 0.901208195346628 %3.022508042756476 0.937439234402643 %3.02768193018236 0.975267392096782 %3.028293234863641 1.014679551153797 %3.02415205397028 1.055648518163427 %3.015097680372717 1.098130588851298 %3.001000424331398 1.142064287637446 %2.981766030768263 1.18736926304291 %2.927718329908636 1.281672585855298 %2.853076816384468 1.379991437991699 %2.758753896540571 1.480949058462186 %2.518657732807544 1.68389866439781 %2.229255639008588 1.875143443081189 %1.614289102402949 2.164952297238095 /
+    |\putrule from 0 1 to 3.5 1
+    |\putrule from 1 0 to 1 2.5
+    |\put {$\circ$} at 1 1
+    |\put {\red{\stack{$\uparrow$,\bf Day}}} [t] <0pt,-6pt> at 2 2
+    |\put {\bf\red{0}} at 2. 2.
+    |\put {\bf\red{1}} at 0.591851 2.18264
+    |\put {\bf\red{2}} at 0.240695 1.59416
+    |\put {\bf\red{3}} at 0.175371 1.06725
+    |\put {\bf\red{4}} at 0.198726 0.708757
+    |\put {\bf\red{5}} at 0.30022 0.485055
+    |\put {\bf\red{6}} at 0.538703 0.360012
+    |\put {\bf\red{7}} at 1.05014 0.319891
+    |\put {\bf\red{8}} at 2.01495 0.408964
+    |\put {\bf\red{9}} at 3.01349 0.902564
+    |\put {\bf\red{10}} [r] at 1.8691 2.06225
+    |\endpicture $$
+
+**Figure 12.12.** `<figdef tag="FigPredPreyCycle">`
+Days 1 through 10 marked on the cycle of Figure *FigPredPreyTime*.
+`</figdef>`
+
+Taking all the data from Figure *FigPredPreyTime*  and plotting $N_1$
+versus $N_2$ gives Figure *FigPredPreyCycle*. The process starts at day
+0 with $N_1=N_2=2$. One day later, prey have dropped to $N_1\approx0.5$ and
+predators have increased to $N_2\approx2.2$, marked by the red numeral 1 on the
+cycle. (By the symbol '$\approx$', we mean "approximately equal to.")
+Two days later, prey have dropped to $N_1\approx0.2$ and predators have dropped
+to $N_2\approx1.0$, marked by the numeral 3. With predators at relatively low
+levels, prey then start to increase and, four days later, have reached
+$N_1\approx1.0$, while predators have dropped further to $N_2\approx0.3$, marked
+by the numeral 7. Two days later, prey have increased to $N_1\approx3.0$ and
+predators have increased to $N_2\approx1.0$, marked by the numeral 9. Finally,
+one day later the cycle begins to repeat, as marked with the numeral 10. This is
+another way of showing the cycling of Figure *FigPredPreyTime*.
+
+    |$$ \beginpicture
+    |\setcoordinatesystem units < .6 in, .6 in> point at 0 0
+    |\setplotarea x from 0 to 3.5, y from 0 to 2.5
+    |\axis bottom label {$N_1$ (Prey)}
+    |  ticks numbered from 0 to 3 by 1
+    |  unlabeled short quantity 8 /
+    |\axis left label {\vertical{$N_2$ (Predator)}}
+    |  ticks numbered from 0 to 2 by 1
+    |  unlabeled short quantity 6 /
+    |\putrule from 0 1 to 3.5 1
+    |\putrule from 1 0 to 1 2.5
+    |\put {$\circ$} at 1 1
+    |\blue{\setplotsymbol ({.}) \plot %"lvpp3a.3"
+    | 2. 2. 1.691647255696846 2.136452319235293 1.544664071753644 2.188620614174906 1.405333219802965 2.229546076238222 1.338994469732187 2.245802470919189 1.275046203003119 2.259300683937081 1.213576403855731 2.270097568323794 1.154642689797533 2.278265457595439 1.098275144776369 2.283889793101685 1.044480200201934 2.287066300691416 0.99324231912494 2.287899722942674 0.944528452369905 2.286500934575718 0.898290726946999 2.282984887542641 0.854467486883543 2.277470591716194 0.812987404075435 2.270078033344544 0.773771256591686 2.260927339572543 0.7017862484007131 2.237826065651348 0.6377918744285124 2.209091383315491 0.5810460636747538 2.175594940655011 0.5308226452763693 2.138138198759204 0.4472070684089048 2.05418512852717 0.3819992352583741 1.962147340612888 0.3311513294683303 1.865799543791013 0.2914692322374794 1.767952090863107 0.2604895241736032 1.670641649306549 0.2363363917427816 1.575307809835983 0.2175925466020031 1.482938978752649 0.2031915034257809 1.394188344762687 0.1923334048784709 1.309462446879855 0.1844207651193824 1.22898808274709 0.1814254280593618 1.190379595499382 0.1790103082859906 1.152862257908371 0.1771382730904001 1.116433967203326 0.1763958583299406 1.098626477305962 0.1757778594761905 1.081088665917268 0.1752811938368667 1.063819192641704 0.1749029789825707 1.046816631761071 0.1746406034286913 1.03007939832304 0.1744917492754216 1.013605724790338 0.1744543534964533 0.99739370223903 0.1745266019420334 0.981441287237379 0.1747068531751429 0.96574638174012 0.174993654908777 0.950306816724429 0.1753857914253948 0.935120303649385 0.1758822475687364 0.92018447272163 0.1771850046440353 0.891055036561774 0.1788972534077611 0.862898556080008 0.1810170477223234 0.835694351162142 0.1864839545678331 0.784057839230481 0.1936181062206777 0.7359738094746669 0.2024872577598385 0.6912702647497392 0.2131929250246342 0.6497783400561345 0.2258704247612568 0.6113342967652366 0.2406886940990946 0.5757822053841658 0.2578521033562993 0.5429747404004979 0.2776020884173453 0.5127745898757043 0.3002197421322693 0.4850553153144304 0.3260287474933683 0.4597021984815412 0.355398495155978 0.4366132221601759 0.3887476514313424 0.4156999062326384 0.4265475297431065 0.3968885555807229 0.4693252212284894 0.3801216846721937 0.5176661965298282 0.3653598637093267 0.5722152448247145 0.3525842843669686 0.6336787194977819 0.3417990135534248 0.6672387592226841 0.3371617874052081 0.7028168455853412 0.3330367560892771 0.7405155755224694 0.3294332330329555 0.7804393369696817 0.3263631863459182 0.822695308679364 0.3238410323521095 0.844731887644847 0.3227906869737098 0.867391953319239 0.321884183589406 0.89068881802594 0.3211243141675312 0.914635832549938 0.3205140827617631 0.939246271984147 0.3200567421078904 0.964533301825454 0.3197558058990642 0.990509606273911 0.3196151336293233 1.017187629131871 0.3196388838334036 1.044579641678879 0.3198315044970263 1.072697604096737 0.3201977678184232 1.101553129587109 0.3207427829263929 1.131156844057093 0.3214721588168143 1.192647427441937 0.3235086974795751 1.257241018453968 0.3263608062393526 1.324994010250683 0.3300899316619636 1.470089497371319 0.3404745135202334 1.62787238313987 0.3553662850139063 1.797662182589713 0.3756885998647157 1.977877290228438 0.4026461393560462 2.165675080712526 0.4377964729074437 2.356510537927578 0.4831250644644979 2.543642837372386 0.5411038638670022 2.6329958665509 0.5757462178705248 2.717671438616708 0.6146952633608146 2.796040727351127 0.6583750422154555 2.866297827744953 0.7072143459812804 2.926501613887347 0.7616197215424463 2.95219951500709 0.791025121730892 2.974615644689609 0.821952517824679 2.993492535128361 0.854434069721315 3.008577649217804 0.888493949965208 3.019623527244366 0.924148036965924 3.026397885532783 0.96140045338424 3.028682990891356 1.000243274073673 3.026280317080551 1.040654875856636 3.019019650223152 1.082597357839463 3.006758551347613 1.126015846528324 2.9893892434941 1.170837208795545 2.96684393342315 1.216968778273731 2.906170429819172 1.312687273380833 2.825105050531906 1.412017015506743 2.724816872676544 1.513483358678514 2.475128589633567 1.715651144488779 2.1803837297529 1.903560857845423 1.869104003993591 2.062251204281333 / }% 1.715786705147344 2.127056974241245 %1.56774957874501 2.18100815760729 %1.427084037501583 2.223740016761792 %1.295278255308105 2.255266790167924 %1.233006717420905 2.266922473412928 %1.17325544131105 2.275924683639561 %1.116063685370503 2.28235453710183 %1.061444737517445 2.286304843437497 %1.009390272874888 2.287877474725644 %0.959872436397297 2.28718154965576 %0.912847331297974 2.284331451137508 %0.868257536001243 2.279444748524531 %0.826034511751571 2.272641432498447 %0.7861016814050733 2.264041384780699 %0.7127675828953194 2.241928257989038 %0.647542075363928 2.214036558604791 %0.5896847675086915 2.181247117650452 %0.5384630047608005 2.14437488088837 %0.4931757210782972 2.104160524431422 %0.4178400037212501 2.016283538317703 %0.3591031022232741 1.922036271919086 %0.3132869425264259 1.824765524447695 %0.2775216235686957 1.72693366751884 %0.2496078083381471 1.630306620957223 %0.2278765700932667 1.536118572719461 %0.2110694350897441 1.445204997730207 %0.1982408615781291 1.358106183376889 %0.1886827469824555 1.275146138458567 %0.1849593783901678 1.235275219813235 %0.1818675024494945 1.196491789976356 %0.1793622205098382 1.158799601098343 %0.177405620657871 1.122197060291604 %0.1766227332744548 1.104302869252849 %0.1759653113109012 1.086678751070086 %0.175430173489984 1.069323430119174 %0.1750143697326466 1.05223551068279 %0.1747151984963963 1.035413460109534 %0.1745302714939851 1.018855544535508 %0.174457467273375 1.002559876703269 %0.1744948540374333 0.986524494806375 %0.174640704710334 0.970747348296352 %0.1748935556606199 0.955226240722484 %0.1752521637700518 0.939958873679989 %0.1757154332134362 0.924942920884573 %0.1769524001740497 0.89565573052546 %0.1785993752373887 0.867344808701245 %0.1806540991923787 0.839989458362453 %0.1831166185458824 0.813568708588391 %0.1892778552733767 0.7634450135246915 %0.1971306045612654 0.7168014200963272 %0.2067569695667594 0.6734668363161639 %0.2182726439487919 0.6332743128726625 %0.2318269245494071 0.5960632525699458 %0.2476036350068797 0.5616810343574458 %0.2658221026068992 0.5299846619876169 %0.2867402819852495 0.5008411341420769 %0.3106567517954899 0.4741288597515174 %0.3379139182630491 0.449738348847606 %0.3689015471074952 0.4275731234879804 %0.4040598989829583 0.4075507744074617 %0.4438834342026591 0.3896041876368865 %0.4889234538800986 0.3736832476688178 %0.5397904454735521 0.3597567809958265 %0.5971540025102537 0.3478157034508566 %0.6617455856658639 0.3378745102250733 %0.6969942261717989 0.3336669563126934 %0.7343469619552875 0.3299792839622253 %0.7739083549199178 0.3268229175811085 %0.81578421992572 0.3242121092396647 %0.837623787784594 0.3231164766771455 %0.860082617325141 0.3221638279660301 %0.883174344456966 0.32135678546309 %0.906912038578201 0.3206983632675075 %0.931308890033684 0.3201917635953191 %0.956378029848711 0.3198404338925404 %0.982132438599508 0.319648097163988 %1.008584864201115 0.3196187735730978 %1.035747422590974 0.319756861599946 %1.063632016136501 0.320067065615185 %1.092250214931739 0.3205544243336053 %1.121613165842635 0.3212243340559784 %1.182614253445295 0.3231355864592971 %1.246707169832783 0.3258534850831223 %1.384385105360923 0.333958805741579 %1.534846646666213 0.3461398350889771 %1.697799345756584 0.3631859227387623 %1.872222764942941 0.3861304529924769 %2.056054311067141 0.416317162636157 %2.245793992017352 0.4554745654528078 %2.436035136430594 0.5057874515168553 %2.618969501135089 0.5699384527984668 %2.704495558916148 0.6081708560408808 %2.78398646480758 0.6510660866307481 %2.855665836874189 0.6990520858126977 %2.917609385508547 0.7525417622822803 %2.944299653479041 0.7814687166117874 %2.967792321368006 0.811905417020736 %2.987827226205409 0.843886903406417 %3.00415028766776 0.877439954164193 %3.016513109338668 0.912582914062126 %3.024676155991967 0.949324382101231 %3.028417971144106 0.987660116732903 %3.027533507345653 1.027572983020061 %3.02184189159259 1.069030678934709 %3.011192298153101 1.111983869418455 %2.995465176570242 1.156365152654426 %2.974579245586982 1.202088394273935 %2.917219876311167 1.297112354560523 %2.839356456245918 1.395954636453659 %2.627078535253356 1.599107980081706 %2.355168383174973 1.79723677945464 %2.049967963324566 1.974514941262252 %1.739990904983655 2.117393498137138 %1.590956310246056 2.173113893646739 %1.449000311826076 2.217646195083389 %1.315704918514939 2.250948488056632 %1.252641446856101 2.263467284851432 %1.192079958704964 2.273309432719475 %1.134068310368901 2.280552000234749 %1.078627642856393 2.285284302940465 %1.025756278261875 2.287605566641787 %0.975432267888942 2.287622743727642 %0.927616516984916 2.285448825739384 %0.882255690981025 2.281200481732211 %0.839284527581242 2.274997036325875 %0.7986286415406574 2.266958722447693 %0.7602067188537523 2.257205175999753 %0.7239316275090114 2.245855242288776 %0.6574600176776856 2.218827229420082 %0.5984750266706456 2.186764875021097 %0.5462408921297839 2.150494380001944 %0.4592405578059103 2.068263348174435 %0.3913824067954517 1.97723934370264 %0.3384715267423461 1.88137137374586 %0.2971849079332542 1.783610676190933 %0.2649517554234584 1.686105292219881 %0.2398120167549443 1.590379422567714 %0.2202824507587503 1.497485273241772 %0.2052465302361632 1.408123317003231 %0.1938664825662915 1.322734681580757 %0.1855160370836007 1.241571163243669 %0.1823263488397832 1.202613934094108 %0.1797300670422584 1.164747587730528 %0.1776880316105562 1.127971521068225 %0.1768643445256975 1.109990885343805 %0.1761671963115041 1.09228069510277 %0.1755932830334479 1.074839763032577 %0.1751396306717757 1.057666681152001 %0.1748034786224766 1.040759939990225 %0.1745823054158169 1.024117903283724 %0.1744738734528479 1.007738763942073 %0.1744762359826519 0.991620538046934 %0.1745876172068336 0.975761186644173 %0.1748064401656465 0.960158588682292 %0.1751313534636107 0.944810515741189 %0.1755612646546986 0.929714600150271 %0.1767323990371021 0.900269684041416 %0.1783141225593304 0.871804306532339 %0.180303784315187 0.84429784717197 %0.185508307550545 0.792077373907582 %0.192372507571872 0.7434369603689114 %0.2009586353901426 0.6982043984085924 %0.2113629633862814 0.6562100365556735 %0.2237152170585997 0.6172893886501634 %0.2381790333105314 0.5812850403864302 %0.2549530774844603 0.5480481815374172 %0.2742724736837446 0.5174400060488681 %0.2964119100506119 0.4893321696335751 %0.321688056059344 0.4636080552020487 %0.3504627073337465 0.4401635367234838 %0.3831465060316534 0.4189079070870111 %0.4202020239661296 0.3997650314731696 %0.462147356953069 0.3826746754964156 %0.5095584406386214 0.3675944364668293 %0.5630709705684646 0.3545018654645545 %0.6233794244863186 0.3433979719742255 %0.6563162745356684 0.3385987280674894 %0.691238992666872 0.3343091071698873 %0.7282491136720197 0.3305378062817852 %0.7674512165019039 0.327295771337172 %0.808951046248775 0.3245967835798165 %0.830596000742794 0.3234560382471924 %0.852855683300822 0.3224575445528972 %0.875743704049086 0.3216038629018749 %0.899273711374819 0.3208977625279379 %0.923458833782326 0.320342388798854 %0.948312062124357 0.3199411536618723 %0.973846387751675 0.3196976979503272 %1.000074611072754 0.3196159507260783 %1.027009294634494 0.3197001444713558 %1.054662351055206 0.3199548991717858 %1.083045316473613 0.320385177065442 %1.112169384564735 0.3209962825649311 %1.172683082345788 0.3227840980564812 %1.236278548111076 0.3253695250794961 %1.303015980616058 0.3288116883217759 %1.446064896976971 0.3385471437414598 %1.601845755372241 0.3526641962920604 %1.769793639715096 0.3720472971784504 %1.948492800271156 0.3978516260784559 %2.135329503032507 0.4315732943924976 %2.326062798986916 0.4751247259300605 %2.514335485265689 0.5308979582629839 %2.604863751815771 0.564252282956 %2.691197040913347 0.6017806646059561 %2.771761973938842 0.6439039643885976 %2.844811092034717 0.6910493200087698 %2.908438342269441 0.7436350041669502 %2.936092815989878 0.7720885608418532 %2.960632075038681 0.802039628599182 %2.981797100428099 0.833524723273007 %2.999329877557793 0.866573992617963 %3.012981166432116 0.901208195346628 %3.022508042756476 0.937439234402643 %3.02768193018236 0.975267392096782 %3.028293234863641 1.014679551153797 %3.02415205397028 1.055648518163427 %3.015097680372717 1.098130588851298 %3.001000424331398 1.142064287637446 %2.981766030768263 1.18736926304291 %2.927718329908636 1.281672585855298 %2.853076816384468 1.379991437991699 %2.758753896540571 1.480949058462186 %2.518657732807544 1.68389866439781 %2.229255639008588 1.875143443081189 %1.614289102402949 2.164952297238095 / }%
+    |\gray{\arrow <4pt> [.2,.67] from 0.197078 0.17033 to 0.381592 0.0931646 \arrow <4pt> [.2,.67] from 0.426986 0.194573 to 0.624409 0.162571 \arrow <4pt> [.2,.67] from 0.668032 0.15852 to 0.867813 0.149169 \arrow <4pt> [.2,.67] from 0.86678 0.19276 to 1.06675 0.189091 \arrow <4pt> [.2,.67] from 1.09667 0.179905 to 1.29666 0.181838 \arrow <4pt> [.2,.67] from 1.34198 0.184399 to 1.54189 0.190158 \arrow <4pt> [.2,.67] from 1.56855 0.177471 to 1.7684 0.185285 \arrow <4pt> [.2,.67] from 1.83713 0.201638 to 2.0368 0.213128 \arrow <4pt> [.2,.67] from 2.05148 0.189704 to 2.25112 0.201683 \arrow <4pt> [.2,.67] from 2.25516 0.183085 to 2.45477 0.195534 \arrow <4pt> [.2,.67] from 2.48098 0.16124 to 2.68065 0.172696 \arrow <4pt> [.2,.67] from 2.72157 0.194917 to 2.92098 0.210187 \arrow <4pt> [.2,.67] from 2.95607 0.170723 to 3.15561 0.184315 \arrow <4pt> [.2,.67] from 3.18779 0.153195 to 3.3874 0.165587 \arrow <4pt> [.2,.67] from 3.47327 0.159762 to 3.67281 0.173271 \arrow <4pt> [.2,.67] from 0.177443 0.430347 to 0.276628 0.256674 \arrow <4pt> [.2,.67] from 0.416758 0.397762 to 0.598308 0.313858 \arrow <4pt> [.2,.67] from 0.651586 0.411457 to 0.848182 0.374711 \arrow <4pt> [.2,.67] from 0.876282 0.438367 to 1.07598 0.427363 \arrow <4pt> [.2,.67] from 1.09755 0.426281 to 1.29744 0.432882 \arrow <4pt> [.2,.67] from 1.34494 0.426195 to 1.54404 0.445158 \arrow <4pt> [.2,.67] from 1.57068 0.433492 to 1.76878 0.461029 \arrow <4pt> [.2,.67] from 1.797 0.401148 to 1.99483 0.430534 \arrow <4pt> [.2,.67] from 2.0618 0.435142 to 2.25797 0.474056 \arrow <4pt> [.2,.67] from 2.25085 0.43696 to 2.44636 0.479119 \arrow <4pt> [.2,.67] from 2.51156 0.385163 to 2.7081 0.422213 \arrow <4pt> [.2,.67] from 2.72487 0.419794 to 2.91982 0.464438 \arrow <4pt> [.2,.67] from 3.00008 0.400934 to 3.19528 0.444481 \arrow <4pt> [.2,.67] from 3.18385 0.381201 to 3.37953 0.422544 \arrow <4pt> [.2,.67] from 3.4408 0.383786 to 3.63609 0.426926 \arrow <4pt> [.2,.67] from 0.160963 0.671571 to 0.197848 0.475002 \arrow <4pt> [.2,.67] from 0.434132 0.664389 to 0.556656 0.506312 \arrow <4pt> [.2,.67] from 0.629333 0.645719 to 0.805554 0.551133 \arrow <4pt> [.2,.67] from 0.869179 0.658948 to 1.0671 0.630171 \arrow <4pt> [.2,.67] from 1.11075 0.653397 to 1.30987 0.672111 \arrow <4pt> [.2,.67] from 1.34523 0.61569 to 1.54113 0.655962 \arrow <4pt> [.2,.67] from 1.57292 0.669243 to 1.76059 0.738397 \arrow <4pt> [.2,.67] from 1.83585 0.65659 to 2.01923 0.736408 \arrow <4pt> [.2,.67] from 2.03039 0.657645 to 2.21017 0.745275 \arrow <4pt> [.2,.67] from 2.28507 0.634576 to 2.46478 0.722332 \arrow <4pt> [.2,.67] from 2.52127 0.623292 to 2.70022 0.712615 \arrow <4pt> [.2,.67] from 2.73974 0.666138 to 2.90869 0.773168 \arrow <4pt> [.2,.67] from 2.99642 0.633154 to 3.1698 0.732844 \arrow <4pt> [.2,.67] from 3.19374 0.666936 to 3.35853 0.780266 \arrow <4pt> [.2,.67] from 3.43435 0.654534 to 3.6004 0.766027 \arrow <4pt> [.2,.67] from 0.204055 0.881985 to 0.217744 0.682454 \arrow <4pt> [.2,.67] from 0.419438 0.898187 to 0.451765 0.700817 \arrow <4pt> [.2,.67] from 0.639707 0.902105 to 0.711623 0.715482 \arrow <4pt> [.2,.67] from 0.870573 0.895553 to 1.03923 0.788058 \arrow <4pt> [.2,.67] from 1.12105 0.901325 to 1.30043 0.989786 \arrow <4pt> [.2,.67] from 1.34228 0.859616 to 1.49993 0.982694 \arrow <4pt> [.2,.67] from 1.60368 0.901874 to 1.70377 1.07503 \arrow <4pt> [.2,.67] from 1.78886 0.89953 to 1.87924 1.07795 \arrow <4pt> [.2,.67] from 2.0518 0.872584 to 2.1508 1.04636 \arrow <4pt> [.2,.67] from 2.28384 0.86353 to 2.38186 1.03786 \arrow <4pt> [.2,.67] from 2.52716 0.865114 to 2.61887 1.04285 \arrow <4pt> [.2,.67] from 2.74016 0.860233 to 2.83126 1.03828 \arrow <4pt> [.2,.67] from 2.95792 0.863241 to 3.04427 1.04364 \arrow <4pt> [.2,.67] from 3.21339 0.871657 to 3.29201 1.05556 \arrow <4pt> [.2,.67] from 3.42351 0.901075 to 3.48276 1.0921 \arrow <4pt> [.2,.67] from 0.152857 1.08756 to 0.147048 0.887649 \arrow <4pt> [.2,.67] from 0.409727 1.12563 to 0.379104 0.927987 \arrow <4pt> [.2,.67] from 0.672418 1.1361 to 0.584154 0.95663 \arrow <4pt> [.2,.67] from 0.887733 1.10299 to 0.722132 0.990848 \arrow <4pt> [.2,.67] from 1.12499 1.10212 to 0.953451 1.20496 \arrow <4pt> [.2,.67] from 1.33098 1.09394 to 1.21733 1.2585 \arrow <4pt> [.2,.67] from 1.58174 1.09466 to 1.49662 1.27565 \arrow <4pt> [.2,.67] from 1.78914 1.12393 to 1.6997 1.30282 \arrow <4pt> [.2,.67] from 2.02086 1.12761 to 1.93909 1.31013 \arrow <4pt> [.2,.67] from 2.25651 1.1247 to 2.18252 1.31051 \arrow <4pt> [.2,.67] from 2.48447 1.13701 to 2.40966 1.32249 \arrow <4pt> [.2,.67] from 2.71649 1.11129 to 2.65605 1.30194 \arrow <4pt> [.2,.67] from 2.95724 1.0944 to 2.90679 1.28794 \arrow <4pt> [.2,.67] from 3.22787 1.12396 to 3.16698 1.31447 \arrow <4pt> [.2,.67] from 3.45273 1.13804 to 3.38809 1.32731 \arrow <4pt> [.2,.67] from 0.185034 1.35892 to 0.161218 1.16034 \arrow <4pt> [.2,.67] from 0.385609 1.32143 to 0.327204 1.13015 \arrow <4pt> [.2,.67] from 0.644546 1.31803 to 0.512839 1.16752 \arrow <4pt> [.2,.67] from 0.850861 1.32561 to 0.662492 1.2584 \arrow <4pt> [.2,.67] from 1.10769 1.36251 to 0.910942 1.39846 \arrow <4pt> [.2,.67] from 1.34773 1.35867 to 1.16804 1.44648 \arrow <4pt> [.2,.67] from 1.54978 1.3228 to 1.388 1.44039 \arrow <4pt> [.2,.67] from 1.84 1.32559 to 1.6935 1.46174 \arrow <4pt> [.2,.67] from 2.06673 1.32086 to 1.92965 1.46649 \arrow <4pt> [.2,.67] from 2.30653 1.31658 to 2.17709 1.46904 \arrow <4pt> [.2,.67] from 2.53223 1.31767 to 2.40759 1.47409 \arrow <4pt> [.2,.67] from 2.71358 1.36872 to 2.58377 1.52087 \arrow <4pt> [.2,.67] from 2.9823 1.32416 to 2.86369 1.48519 \arrow <4pt> [.2,.67] from 3.18979 1.33683 to 3.07144 1.49806 \arrow <4pt> [.2,.67] from 3.46811 1.36252 to 3.34835 1.52269 \arrow <4pt> [.2,.67] from 0.168212 1.57982 to 0.138846 1.38198 \arrow <4pt> [.2,.67] from 0.414766 1.57382 to 0.322943 1.39615 \arrow <4pt> [.2,.67] from 0.654577 1.55265 to 0.493907 1.43354 \arrow <4pt> [.2,.67] from 0.878515 1.5921 to 0.681885 1.55555 \arrow <4pt> [.2,.67] from 1.09826 1.6062 to 0.899648 1.62974 \arrow <4pt> [.2,.67] from 1.34795 1.59932 to 1.15885 1.66445 \arrow <4pt> [.2,.67] from 1.59154 1.5844 to 1.41292 1.67439 \arrow <4pt> [.2,.67] from 1.78213 1.59153 to 1.6099 1.69322 \arrow <4pt> [.2,.67] from 2.06333 1.60219 to 1.89837 1.71528 \arrow <4pt> [.2,.67] from 2.29906 1.59653 to 2.13953 1.71715 \arrow <4pt> [.2,.67] from 2.53877 1.5913 to 2.38378 1.7177 \arrow <4pt> [.2,.67] from 2.76754 1.60568 to 2.61489 1.73491 \arrow <4pt> [.2,.67] from 2.98668 1.5765 to 2.83872 1.71107 \arrow <4pt> [.2,.67] from 3.18984 1.59647 to 3.04256 1.73178 \arrow <4pt> [.2,.67] from 3.46667 1.55129 to 3.32533 1.69279 \arrow <4pt> [.2,.67] from 0.185649 1.79488 to 0.146064 1.59884 \arrow <4pt> [.2,.67] from 0.417769 1.79375 to 0.310554 1.62491 \arrow <4pt> [.2,.67] from 0.655371 1.79901 to 0.483267 1.69713 \arrow <4pt> [.2,.67] from 0.866393 1.79389 to 0.669361 1.75956 \arrow <4pt> [.2,.67] from 1.08445 1.81798 to 0.885194 1.83523 \arrow <4pt> [.2,.67] from 1.32675 1.81907 to 1.13384 1.87183 \arrow <4pt> [.2,.67] from 1.57731 1.83829 to 1.3917 1.91278 \arrow <4pt> [.2,.67] from 1.7968 1.81277 to 1.61753 1.90142 \arrow <4pt> [.2,.67] from 2.05649 1.7868 to 1.88373 1.88757 \arrow <4pt> [.2,.67] from 2.27496 1.81555 to 2.10526 1.92141 \arrow <4pt> [.2,.67] from 2.53666 1.80706 to 2.37113 1.91931 \arrow <4pt> [.2,.67] from 2.73351 1.83086 to 2.56957 1.94541 \arrow <4pt> [.2,.67] from 2.97274 1.78019 to 2.81328 1.90092 \arrow <4pt> [.2,.67] from 3.2007 1.81591 to 3.04186 1.93744 \arrow <4pt> [.2,.67] from 3.46333 1.79403 to 3.30742 1.91931 \arrow <4pt> [.2,.67] from 0.187195 2.04231 to 0.141427 1.84762 \arrow <4pt> [.2,.67] from 0.408916 2.03163 to 0.293941 1.86798 \arrow <4pt> [.2,.67] from 0.656059 2.02429 to 0.478473 1.93229 \arrow <4pt> [.2,.67] from 0.883976 2.01579 to 0.685651 1.98996 \arrow <4pt> [.2,.67] from 1.10484 2.05509 to 0.905688 2.0735 \arrow <4pt> [.2,.67] from 1.35377 2.05159 to 1.15997 2.10099 \arrow <4pt> [.2,.67] from 1.56749 2.02441 to 1.37918 2.09178 \arrow <4pt> [.2,.67] from 1.81655 2.05096 to 1.63339 2.1313 \arrow <4pt> [.2,.67] from 2.05718 2.03304 to 1.8787 2.12329 \arrow <4pt> [.2,.67] from 2.29109 2.02547 to 2.11633 2.12272 \arrow <4pt> [.2,.67] from 2.53525 2.05442 to 2.363 2.15604 \arrow <4pt> [.2,.67] from 2.75252 2.02877 to 2.58313 2.13511 \arrow <4pt> [.2,.67] from 2.97861 2.01859 to 2.81155 2.12855 \arrow <4pt> [.2,.67] from 3.19563 2.06598 to 3.02915 2.17682 \arrow <4pt> [.2,.67] from 3.4545 2.01896 to 3.29096 2.13408 \arrow <4pt> [.2,.67] from 0.153343 2.26836 to 0.113641 2.07234 \arrow <4pt> [.2,.67] from 0.414601 2.28226 to 0.290061 2.12577 \arrow <4pt> [.2,.67] from 0.653327 2.26399 to 0.472686 2.17815 \arrow <4pt> [.2,.67] from 0.893213 2.26397 to 0.694349 2.24268 \arrow <4pt> [.2,.67] from 1.09978 2.25805 to 0.900438 2.27428 \arrow <4pt> [.2,.67] from 1.3724 2.24688 to 1.17812 2.29438 \arrow <4pt> [.2,.67] from 1.59631 2.26656 to 1.40663 2.32996 \arrow <4pt> [.2,.67] from 1.79129 2.27286 to 1.60524 2.34623 \arrow <4pt> [.2,.67] from 2.07085 2.3018 to 1.88896 2.38496 \arrow <4pt> [.2,.67] from 2.29256 2.28861 to 2.11372 2.37815 \arrow <4pt> [.2,.67] from 2.48727 2.28781 to 2.31064 2.38163 \arrow <4pt> [.2,.67] from 2.73636 2.29312 to 2.56206 2.39119 \arrow <4pt> [.2,.67] from 3.00325 2.30164 to 2.83098 2.40324 \arrow <4pt> [.2,.67] from 3.23172 2.25888 to 3.0617 2.36421 \arrow <4pt> [.2,.67] from 0.164504 2.5343 to 0.118123 2.33975 \arrow <4pt> [.2,.67] from 0.434579 2.53244 to 0.298361 2.386 \arrow <4pt> [.2,.67] from 0.643222 2.51457 to 0.461555 2.43092 \arrow <4pt> [.2,.67] from 0.856432 2.49643 to 0.658359 2.46874 \arrow <4pt> [.2,.67] from 1.13187 2.50954 to 0.932806 2.52882 \arrow <4pt> [.2,.67] from 1.34115 2.53094 to 1.14543 2.57209 \arrow <4pt> [.2,.67] from 1.57643 2.49746 to 1.38512 2.5558 \arrow <4pt> [.2,.67] from 1.79083 2.52105 to 1.60301 2.58978 \arrow <4pt> [.2,.67] from 2.05699 2.48834 to 1.87322 2.56728 \arrow <4pt> [.2,.67] from 2.28285 2.50955 to 2.10165 2.59419 \arrow <4pt> [.2,.67] from 2.53029 2.52346 to 2.35147 2.61302 }%
+    |\endpicture $$
+**Figure 12.13.** `<figdef tag="FigPredPreyArrows">`
+The flow across the phase space.
+`</figdef>`
+
+In Figure *FigPredPreyArrows*---a flow diagram, the entire phase space
+can be filled with arrows to show how cycling proceeds everywhere. The path of
+Figure *FigPredPreyTime*, displayed in
+Figure *FigPredPreyCycle*, is overlayed in blue.
+
+### 12.5 Assumptions of the basic model
+
+This basic model of interacting predators and prey reveals the tension between
+population growth and decline, and shows the kind of cycling that characterizes
+predator--prey systems. It has, however, a number of simplifying assumptions
+that can be relaxed in more detailed studies, including the following:
+
+<ol indentation="1.4em">
+  - The predator lives only on this prey, and perishes without it.
+  - The prey has no carrying capacity of its own---only that imposed by the
+    predator.
+  - The environment is homogeneous and prey have no hiding places.
+  - Growth is continuous, with no age structure, maturation periods, and so forth.
+  - The number of prey taken is proportional to the number of prey present.
+    In other words, predators are never satiated.
+  - Genetics are uniform within each species, and there is no evolution.
+
+Relaxing all of these assumptions is a book in itself, but we will relax some of
+them in sections ahead.
+
+### 12.6 Independent carrying capacities
+
+Self-limitation or self-enhancement of population growth are within the $r+sN$
+framework. Below these terms are in red.
+    |<M> {1\over N_1}{dN_1\over dt} = r_1 +s_{1,2}N_2 \brightred{{} + s_{1,1}N_1} </M>
+    |<M> {1\over N_2}{dN_2\over dt} = r_2 +s_{2,1}N_1 \brightred{{} + s_{2,2}N_2} </M>
+
+The self-feedback term for the prey, $s_{1,1}$, is typically negative,
+reflecting a carrying capacity for the prey in the absence of predators,
+$K_1=-r_1/s_{1,1}$. This tends to stabilize the system, dampening oscillations
+and leading to a joint equilibrium of predator and prey.
+
+On the other hand, the self-feedback term for the predator, $s_{2,2}$, is
+typically zero, meaning the predators vanish in the absence of prey. But it
+could be positive, indicating benefits from group hunting and the like. A
+positive value for $s_{2,2}$ tends to destabilize the system, leading to
+enlarging oscillations.
+
+<imagerow height=1.4>../image/packer/lion2.jpg(2.128),../image/fairuse/SickTiger.jpg(0.87)</imagerow>
+**Figure 12.14.** `<figdef tag="FigSatiatedStarving">`
+Predators satiated versus sick and starving.
+`</figdef>`
+
+### 12.7 Predator satiation and starvation
+
+In the original Lotka--Volterra formulation, doubling the number of prey in the
+environment doubles the number of prey taken. The same is true in the equivalent
+$r+sN$ formulation explored above. While this may be reasonable at low prey
+densities, eventually the predators become satiated and stop hunting, as in the
+image at left in Figure *FigSatiatedStarving*. Satiation will therefor
+truncate the predator growth curve at some maximum rate, as at right in Figure
+*FigPredPreyTruncation*.
+
+    |{\tenpoint
+    |$$ \beginpicture
+    |\setcoordinatesystem units <1.0 in, 1.0 in> point at 0 0
+    |\setplotarea x from 0 to 1, y from 0 to 1
+    |\axis bottom label {$N_2$}
+    |  ticks unlabeled quantity 11 /
+    |\axis left label {$\displaystyle{1\over N_1}{dN_1\over dt}$}
+    |  ticks unlabeled quantity 11 /
+    |\plot 0 .5  .75 -.25 /
+    |\put {$N_1$ is the prey} [l] at .1 .85
+    |%
+    |\setcoordinatesystem units <1.0 in, 1.0 in> point at -1.65 0
+    |\setplotarea x from 0 to 1, y from 0 to 1
+    |\axis bottom label {\kern1em$N_1$}
+    |  ticks unlabeled quantity 11 /
+    |\axis left label {$\displaystyle{1\over N_2}{dN_2\over dt}$}
+    |  ticks unlabeled quantity 11 /
+    |\plot 0 -.25   .5 .5  1.15 .5 /
+    |\put {$N_2$ is the predator} [l] at .1 .85
+    |\endpicture $$
+    |}
+
+**Figure 12.15.** `<figdef tag="FigPredPreyTruncation">`
+Predator growth truncated at a maximum number of prey taken
+per predator per unit of time.
+`</figdef>`
+
+In the opposite direction, if prey are not available, the predator population
+starves, as in the sad image at right in Figure *FigSatiatedStarving*.
+As indicated by a negative vertical intercept in Figures *FigPredPreyA*
+and elsewhere, the population does not reach a maximum rate of decline. In the
+complete absence of prey, vertebrate predators decline more and more rapidly,
+reaching extinction at a definite time in the future, as induced by the
+increasingly large rates of decline shown in the right part of
+Figure *FigPredPreyLevelling*. This is a different kind of singularity
+that can actually occur in a finite time.
+
+    |{\tenpoint
+    |$$ \beginpicture
+    |\setcoordinatesystem units <1.0 in, 1.0 in> point at 0 0
+    |\setplotarea x from 0 to 1, y from 0 to 1
+    |\axis bottom label {$N_2$}
+    |  ticks unlabeled quantity 11 /
+    |\axis left label {$\displaystyle{1\over N_1}{dN_1\over dt}$}
+    |  ticks unlabeled quantity 11 /
+    |\plot 0 .5  .75 -.25 /
+    |\put {$N_1$ is the prey} [l] at .1 .85
+    |%
+    |\setcoordinatesystem units <1.0 in, 1.0 in> point at -1.65 0
+    |\setplotarea x from 0 to 1, y from 0 to 1
+    |\axis bottom label {\kern1em$N_1$}
+    |  ticks unlabeled quantity 11 /
+    |\axis left label {$\displaystyle{1\over N_2}{dN_2\over dt}$}
+    |  ticks unlabeled quantity 11 /
+    |\plot % "tau.out"
+    |0.411849 -0.250960 0.424340 -0.091298 0.437009 0.032698 0.450885 0.136092 0.463216 0.206739 0.476406 0.265737 0.489828 0.312427 0.502516 0.347132 0.526717 0.395070 0.539215 0.413019 0.552463 0.428370 0.576299 0.448910 0.588527 0.456809 0.601681 0.463810 0.614098 0.469266 0.627652 0.474191 0.652668 0.481121 0.678275 0.486124 0.702927 0.489571 0.729123 0.492218 0.754365 0.494073 0.778652 0.495400 0.804484 0.496457 0.829361 0.497223 0.853284 0.497788 0.878751 0.498252 0.903263 0.498597 0.929321 0.498883 0.954423 0.499097 0.978571 0.499261 1.15 0.499378 /
+    |\arrow  <4pt> [.2,.67] from 0.424340 -0.091298 to 0.411849 -0.250960
+    |\put {$N_2$ is the predator} [l] at .1 .85
+    |\endpicture $$
+    |}
+
+**Figure 12.16.** `<figdef tag="FigPredPreyLevelling">`
+Vertebrate predators with asymptotic rates of consumption.
+`</figdef>`
+
+As an exercise and illustration, let us create a predator--prey system in which
+the predators become satiated and reach a maximum growth rate, but for which
+there is no maximum death rate in the absence of prey, and see where it leads.
+
+For predators, we want to mimic the shape at right in
+Figure *FigPredPreyLevelling*. This has the shape of a hyperbola,
+$y=1/x$, but reflected about the horizontal axis and shifted upwards. The
+equation would be $y=a-b/x$, where $a$ and $b$ are positive constants. When $x$
+approaches infinity, the term $b/x$ goes to zero and $y$ therefore approaches
+$a$. It crosses the horizontal axis where $x=b/a$, then heads downward toward
+minus infinity as $x$ declines to zero. Such a curve has the right general
+properties.
+
+The predator equation can therefore be the following, with $r_1$ for
+$a$, $s_{1,2}$ for $-b$, and $N_1$ for $x$.
+$$\eqalign{
+  {1\over N_2}{dN_2\over dt} &= r_2 +s_{2,1}{1  \over N_1}             \cr}
+$$
+When there are ample prey $N_1$ will be large, so the term $s_{2,1}/N_1$ will be
+small and the predator growth rate will be near $r_2$. As prey decline, the term
+$s_{2,1}/N_1$ will grow larger and larger without limit and, since $s_{2,1}$ is
+less than zero, the predator growth rate will get more and more negative, also
+without limit.
+
+What about the prey equation? The important point here is that predators become
+satiated, so the chance of an individual prey being caught goes down as the
+number of prey in the environment goes up. So instead of a term like
+$s_{1,2}\,N_2$ for the chance that an individual prey will be taken, it would be
+more like $s_{1,2}\,N_2/N_1$.
+
+$${1\over N_1}{dN_1\over dt} = r_1 +s_{1,2}{N_2\over N_1} +s_{1,1}N_1$$
+
+In other words, the rate of prey being taken increases with the number of
+predators in the environment, but is diluted as there are more and more prey and
+predators become satiated. Eventually, with an extremely large number of prey in
+the area relative to the number of predators, the effect of predators on each
+individual prey becomes negligible. This creates the following predator--prey
+system, which takes satiation and starvation into account:
+
+$$\eqalign{
+  {1\over N_1}{dN_1\over dt} &= r_1 +s_{1,2}{N_2\over N_1} +s_{1,1}N_1 \cr\noalign{\vskip4pt}
+  {1\over N_2}{dN_2\over dt} &= r_2 +s_{2,1}{1  \over N_1}             \cr}
+$$
+
+This system could be criticized because it is not "mass balanced." In other
+words, one unit of mass of prey does not turn directly into a specific amount of
+mass of predators. But this is not a simple molecular system, and it at least
+fits more closely the realities of predator and prey behavior.
+
+In any case, keep in mind that
+$s_{1,1}$ is less than 0, to reflect limitation of prey due to crowding and
+          other effects;
+$s_{2,2}$ is equal to  0, assuming the predator is limited only by the abundance
+          of prey;
+$s_{1,2}$ is less than 0 because the abundance of predators decreases the growth
+          of prey; and
+$s_{2,1}$ is also less than 0 because as the number of prey decreases there is
+          an increasingly negative effect on the growth of the predator.
+
+The next step is to examine the isoclines for this new set of equations, making
+a phase-space graph with $N_1$ on the horizontal axis versus $N_2$ on the
+vertical. Where does the prey growth, $1/N_1\,\,dN_1/dt$, cease? Working through
+some algebra, it is as follows:
+
+    |$$\eqalign{
+    |  {1\over N_1}{dN_1\over dt} &= 0 = r_1 -s_{1,2}{N_2\over N_1} -s_{1,1}N_1   \cr
+    |  &\Rightarrow s_{1,2}{N_2\over N_1} = r_1 -s_{1,1}N_1                       \cr
+    |  &\Rightarrow N_2 = {r_1\over s_{1,2}}N_1 -{s_{1,1}\over s_{1,2}} N_1^{\,2} \cr } $$
+
+Similarly, where does the predator growth, $1/N_2\,\,dN_2/dt$, cease for the
+same phase-plane? Let's follow similar algebra:
+
+    |$$\eqalign{
+    | {1\over N_2}{dN_2\over dt} &= 0 = r_2 +s_{2,1}{1\over N_1}           \cr
+    |  &\Rightarrow -r_2 = s_{2,1}{1\over N_1}                             \cr
+    |  &\Rightarrow N_1 = -{s_{2,1}\over r_2}                              \cr } $$
+This predator isocline is simply a vertical line, as before in
+Figures *FigPredIsocline*  and following figures. But note that the
+prey curve has the form of an inverted parabola---a hump, as graphed for two
+cases in Figure *FigParadoxEnrichment*.
+
+Remarkably, this formulation of predator--prey equations closely matches what
+earlier researchers deduced logically and graphically, when computers were slow
+or not yet available. If you want to better understand the shape of the prey
+curve, read Rosenzweig's 1969 paper entitled "Why the prey curve has a
+hump." For interest, his hand-drawn published figure with experimental data
+points is reproduced in Figure *FigRosenzweigGraph*.
+
+    |{\tenpoint
+    |$$ \beginpicture
+    |\setcoordinatesystem units < 1.5 in, 1.5 in> point at 0 0
+    |\setplotarea x from 0 to 1.1, y from 0 to .9
+    |\axis bottom label {$N_1 (prey)$}
+    |  ticks withvalues 0 {$-r_1/s_{1,1}$} / at 0 .5 / unlabeled quantity 12 /
+    |\axis left label {\vertical{$N_2$ (predator)}}
+    |  ticks unlabeled quantity 10 /
+    |\putrule from .4 0 to .4 .75
+    |\put {$\leftarrow$ Predator}           [l] <2pt, -2pt> at .4 .7
+    |\put {$\phantom{\leftarrow}$ isocline} [l] <2pt,-13pt> at .4 .7
+    |\put {$\leftarrow$ Prey}               [l] <2pt, -2pt> at .45 .25
+    |\put {$\phantom{\leftarrow}$ isocline} [l] <2pt,-13pt> at .45 .25
+    |\put {\sl Stable equilibrium} at .5 .88
+    |\put {$\circ$}   at .0 0
+    |\put {$\bullet$} at .5 0
+    |\put {\brightred{$\bullet$}} at .4 .32
+    |\plot .000 .000 .025 .096 .050 .180 .075 .256 .100 .320 .125 .376 .150 .420 .175 .456 .200 .480 .225 .496 .250 .500 .275 .496 .300 .480 .325 .456 .350 .420 .375 .376 .400 .320 .425 .256 .450 .180 .475 .096 .500 .000 /
+    |
+    |\setcoordinatesystem units < 1.5 in, 1.5 in> point at -1.4 0
+    |\setplotarea x from 0 to 1.1, y from 0 to .9
+    |\axis bottom label {$N_1 (prey)$}
+    |  ticks withvalues 0 $-r_1/s_{1,1}$ / at 0 1 / unlabeled quantity 12 /
+    |\axis left label {\vertical{$N_2$ (predator)}}
+    |  ticks unlabeled quantity 10 /
+    |\putrule from .4 0 to .4 .75
+    |\put {$\leftarrow$ Predator}           [l] <2pt, -2pt> at .4 .7
+    |\put {$\phantom{\leftarrow}$ isocline} [l] <2pt,-13pt> at .4 .7
+    |\put {Prey}                            [l] <2pt, -2pt> at .45 .25
+    |\put {isocline $\rightarrow$}          [l] <2pt,-13pt> at .45 .25
+    |\put {\sl Unstable equilibrium} at .5 .88
+    |\put {$\circ$}   at 0 0
+    |\put {$\bullet$} at 1 0
+    |\put {\brightred{\fourteenpoint$\circ$}} at .4 .48
+    |\plot .00 .000 .05 .095 .10 .180 .15 .255 .20 .320 .25 .375 .30 .420 .35 .455 .40 .480 .45 .495 .50 .500 .55 .495 .60 .480 .65 .455 .70 .420 .75 .375 .80 .320 .85 .255 .90 .180 .95 .095 1.00 .000 /
+    |\endpicture $$
+    |}
+
+**Figure 12.17.** `<figdef tag="FigParadoxEnrichment">`
+The paradox of enrichment, Rosenzweig, AmNat 1969.
+`</figdef>`
+
+<image width=2.38 height=3 border=no>../image/amnat/Rosenzweig1969-PreyCurveHump-S.jpg</image>
+
+**Figure 12.18.** `<figdef tag="FigRosenzweigGraph">`
+Rosenzweig's original 1969 graph with phase-space arrows, interpreting
+Huffaker's 1958 experiments with mites.
+`</figdef>`
+
+Rosenzweig pointed out a paradoxical effect, which he called "the paradox of
+enrichment." At left in Figure *FigParadoxEnrichment*,
+the prey have a relatively low carrying capacity, with $K=-r_1/s_{1,1}$ about
+halfway along the horizontal axis. If you analyze the flow around the red dot
+that marks the equilibrium point to the right of the hump, or run a program to
+simulate the equations we just derived, you will find that the populations
+spiral inward. The equilibrium is stable.
+
+The paradox is this: if you try to improve conditions for the prey by increasing
+their carrying capacity---by artificially providing additional food, for
+example---you can drive the equilibrium to the left of the hump, as in the right
+part of Figure *FigParadoxEnrichment*. Around the equilibrium marked by
+the red circle, the populations spiral outward. The system has become unstable.
+
+This is a warning from ecological theory. In conservation efforts where
+predators are present, trying to enhance a prey population by increasing its
+carrying capacity could have the opposite effect. This is not to say that
+efforts to enhance prey populations should not be undertaken, only that they
+should proceed with appropriate caution and study.
+
+### 12.8 Effects of space
+
+In predator--prey systems, especially in confined areas, the predator tends to
+capture all the prey and then starve, so the systems "crash." But over
+large areas it is conceivable that a predator can completely wipe out its prey
+in one area and not go extinct, because it can simply move to another area where
+the prey still exist. Prey can then repopulate the area from which they had been
+depleted.
+
+Imagine a series of interconnected cells where, with some restrictions, predator
+and prey can migrate between adjacent cells. Now, even though the system may be
+locally unstable and crash in individual cells, the entire system across all
+cells could be stable and persist indefinitely.
+
+In the 1930 the Russian ecologist Gause conducted a very famous set of early
+experiments on competition among protozoa, but he also studied predation of {\it
+Didinium} on {\it Paramecium}. The populations he set up would commonly crash
+and go extinct, with the Didinium eating all the Paramecia and then finding
+themselves without food. If he made places for the Paramecium prey to hide,
+however, the systems could persist for many cycles.
+
+In the 1960s Krebs noticed that populations of fenced mice, even those with a
+full half-acre within the fence, would crash and disappear after grossly
+overgrazing their habitat. But in areas where they were allowed to disperse, the
+populations would persist.
+
+Huffaker also ran extensive experiments, again in the 1960s, with mites and
+oranges. A single population of mites on a single orange would crash and the
+whole population would disappear. Using multiple oranges with limited migration
+paths between them, however, allowed the system to persist for many generations.
+
+And in the 1970s Lukinbill did similar work with protozoa in aquatic
+tubs---larger and larger tubs holding miniature predator--prey systems. He found
+that the larger the tub, the longer the system persisted.
+
+The point to remember here is that the mere presence of spatial structure, in
+one form or another, can allow a let predator--prey system to persist. The basic
+reason is simply that species can go extinct in some areas while continually
+recolonizing other areas, always maintaining a population that blinks in and out
+locally, but persists globally.
+
