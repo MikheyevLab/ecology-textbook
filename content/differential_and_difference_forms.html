@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Differential and difference forms &#8212; Quantitative Ecology</title>
+    <title>5. Differential and difference forms &#8212; Quantitative Ecology</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -26,7 +26,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -45,9 +45,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}})</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
@@ -55,10 +53,12 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Human population growth" href="ch6-human-population.html" />
-    <link rel="prev" title="Modeling a single population" href="modeling_single_population.html" />
+    <link rel="next" title="6. Human population growth" href="ch6-human-population.html" />
+    <link rel="prev" title="4. Modeling a single population" href="modeling_single_population.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -97,28 +97,50 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="C01-Definitions.html">
+   1. What is ecology?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="C02-Theory.html">
+   2. Ecological theory
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Single populations
  </span>
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="basic_population_model.html">
-   A basic population model
+   3. A basic population model
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="modeling_single_population.html">
-   Modeling a single population
+   4. Modeling a single population
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Differential and difference forms
+   5. Differential and difference forms
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch6-human-population.html">
-   Human population growth
+   6. Human population growth
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch12-predator-prey.html">
+   7. Predator and prey
   </a>
  </li>
 </ul>
@@ -138,21 +160,21 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -173,7 +195,7 @@
     </div>
 </div>
 
-        <!-- Source interaction buttons -->
+            <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -192,13 +214,13 @@
 </div>
 
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -220,40 +242,42 @@
     </div>
 </div>
 
-    </div>
+        </div>
 
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
+            <i class="fas fa-list"></i>
+            Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#a-mathematical-view">
-   A mathematical view
+   5.1. A mathematical view
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exponential-solution">
-   Exponential solution
+   5.2. Exponential solution
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#logistic-solution">
-   Logistic solution
+   5.3. Logistic solution
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#orthologistic-solution">
-   Orthologistic solution
+   5.4. Orthologistic solution
   </a>
  </li>
 </ul>
 
         </nav>
         
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -262,7 +286,7 @@
               <div>
                 
   <div class="section" id="differential-and-difference-forms">
-<h1>Differential and difference forms<a class="headerlink" href="#differential-and-difference-forms" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5. </span>Differential and difference forms<a class="headerlink" href="#differential-and-difference-forms" title="Permalink to this headline">¶</a></h1>
 <p>Difference equation model:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -312,12 +336,12 @@
 <p>How small is close enough to infinitely small? is the question. To find out, you can set the time step to something small and run the code, which will produce a set of population values through time. Then set the step smaller still and run the code again. It will run more slowly because it is calculating more steps, but if essentially the same answer appears—if the answer “converges”—then you can make the step larger again, speeding the calculation. With a few trials you can find a time step that is small enough to give accurate answers but large enough to allow your code to run reasonably fast.</p>
 <div class="figure align-center" id="fig5-1">
 <a class="reference internal image-reference" href="../_images/Fig5_1.png"><img alt="Fig5_1" src="../_images/Fig5_1.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Differential logistic growth (maroon) compared with discrete (green). No dots appear on the differential form, since that represents infinitesimal time steps, whereas the difference form has a dot at each point calculated.</span><a class="headerlink" href="#fig5-1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5.1 </span><span class="caption-text">Differential logistic growth (maroon) compared with discrete (green). No dots appear on the differential form, since that represents infinitesimal time steps, whereas the difference form has a dot at each point calculated.</span><a class="headerlink" href="#fig5-1" title="Permalink to this image">¶</a></p>
 </div>
 <p><a class="reference internal" href="#fig5-1"><span class="std std-ref">Figure 5.1</span></a> shows the results of running the differential equation version of the program (the second one above, in maroon) versus the difference equation version (the first above, in green). The differential equation has the same parameters and general shape, but the population approaches its carrying capacity more quickly. Because the differential time steps produce offspring earlier—not waiting for the end of the step—offspring are available to reproduce earlier, and so forth.</p>
 <p>This particular method for differential equations is called “Euler’s method” (pronounced “Oiler’s”), a basic approach not often used in the twentieth century because computers not so long ago were millions of times slower than they are now. Today this method is often fast enough, and is desirable because of its relative simplicity.</p>
 <div class="section" id="a-mathematical-view">
-<h2>A mathematical view<a class="headerlink" href="#a-mathematical-view" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1. </span>A mathematical view<a class="headerlink" href="#a-mathematical-view" title="Permalink to this headline">¶</a></h2>
 <p>Differential equations can be amenable to mathematical analysis. To repeat, here is the differential population model.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -331,7 +355,7 @@ N(t) = \frac{1}{(\frac{s}{r}+\frac{1}{N_0})e^{-rt}-\frac{s}{r}}
 <p>Most differential equations cannot be solved this way but, fortunately, the basic equations of ecology can. This solution becomes useful in projecting forward or otherwise understanding the behavior of a population. If you know the starting N, s, and r, you can plug them into the formula to find the population size at every time in the future, without stepping through the differential equation.</p>
 </div>
 <div class="section" id="exponential-solution">
-<h2>Exponential solution<a class="headerlink" href="#exponential-solution" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.2. </span>Exponential solution<a class="headerlink" href="#exponential-solution" title="Permalink to this headline">¶</a></h2>
 <p>To think about this mathematically, first set <span class="math notranslate nohighlight">\(s\)</span> to zero, meaning no density dependence. The differential equation then reduces to <span class="math notranslate nohighlight">\(\frac{dN}{dt} = r\)</span>, and if you replace <span class="math notranslate nohighlight">\(s\)</span> in the equation above with 0 you get this:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -382,7 +406,7 @@ r\tau &amp;= \ln 2
 <p>In other words, the doubling time for exponential growth, where <span class="math notranslate nohighlight">\(r\)</span> is positive and <span class="math notranslate nohighlight">\(s\)</span> is 0, is just the natural logarithm of 2 (0.69314718…) divided by the growth rate <span class="math notranslate nohighlight">\(r\)</span>.</p>
 </div>
 <div class="section" id="logistic-solution">
-<h2>Logistic solution<a class="headerlink" href="#logistic-solution" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.3. </span>Logistic solution<a class="headerlink" href="#logistic-solution" title="Permalink to this headline">¶</a></h2>
 <p>Recall that the carrying capacity is <span class="math notranslate nohighlight">\(-\frac{s}{r}\)</span>, also called <span class="math notranslate nohighlight">\(K\)</span>. So, wherever <span class="math notranslate nohighlight">\(-\frac{s}{r}\)</span> appears, substitue <span class="math notranslate nohighlight">\(K\)</span> as follows:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -396,7 +420,7 @@ N(t) &amp;= \frac{1}{(\frac{s}{r}+\frac{1}{N_0})e^{-rt}-\frac{s}{r}} \\
 <p>This is the solution given in textbooks for logistic growth. There are slight variations in ways it is written, but they are equivalent.</p>
 </div>
 <div class="section" id="orthologistic-solution">
-<h2>Orthologistic solution<a class="headerlink" href="#orthologistic-solution" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.4. </span>Orthologistic solution<a class="headerlink" href="#orthologistic-solution" title="Permalink to this headline">¶</a></h2>
 <p>Finally, let <span class="math notranslate nohighlight">\(s\)</span> be positive. This creates a vertical asymptote and orthologistic growth. The position in time of the vertical asymptote is the “singularity” mentioned earlier. The interesting question is, when <span class="math notranslate nohighlight">\(s\)</span> is positive, what is the time of the singularity? That is, when will the population grow beyond all bounds in this model?</p>
 <p>What must happen to the denominator for the population to grow to unbounded values? It has to get closer and closer to 0, for then the <span class="math notranslate nohighlight">\(N(t)\)</span> will grow closer and closer to infinity. So to find the singularity, you only have to set the denominator to 0, and then solve for the time <span class="math notranslate nohighlight">\(t\)</span>. You can go through the intermediate steps in the algebra below, or use a mathematical equation solver on your computer to do it for you.</p>
 <p>Recall the equation from above for solving the differential equation:</p>
@@ -451,15 +475,15 @@ t = \frac{1}{r} \ln (1+\frac{r}{s}\frac{1}{N_0})
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="modeling_single_population.html" title="previous page">Modeling a single population</a>
-    <a class='right-next' id="next-link" href="ch6-human-population.html" title="next page">Human population growth</a>
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="modeling_single_population.html" title="previous page"><span class="section-number">4. </span>Modeling a single population</a>
+    <a class='right-next' id="next-link" href="ch6-human-population.html" title="next page"><span class="section-number">6. </span>Human population growth</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -478,7 +502,7 @@ t = \frac{1}{r} \ln (1+\frac{r}{s}\frac{1}{N_0})
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

@@ -1,0 +1,487 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8. 10 Phase space &#8212; Quantitative Ecology</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tooltip.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="C11-State_space.html" />
+    <link rel="prev" title="7. Code highlighting" href="test.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Quantitative Ecology</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Quantiative Ecology
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="C01-Definitions.html">
+   1. What is ecology?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="C02-Theory.html">
+   2. Ecological theory
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Single populations
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="basic_population_model.html">
+   3. A basic population model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modeling_single_population.html">
+   4. Modeling a single population
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="C05-Differential_and_difference_forms.html">
+   5. Differential and difference forms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch6-human-population.html">
+   6. Human population growth
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="test.html">
+   7. Code highlighting
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Multiple populations
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   8. 10 Phase space
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/content/C10-Phase_space.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/C10-Phase_space.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/MikheyevLab/ecology-textbook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/MikheyevLab/ecology-textbook/issues/new?title=Issue%20on%20page%20%2Fcontent/C10-Phase_space.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/MikheyevLab/ecology-textbook/main?urlpath=tree/book/content/C10-Phase_space.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#surface-generating-the-flow">
+   8.1. 10.1 Surface generating the flow
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eigenvectors-and-eigenvalues">
+   8.2. 10.2 Eigenvectors and eigenvalues
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-phase-space-example">
+   8.3. 10.3 A phase space example
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="phase-space">
+<h1><span class="section-number">8. </span>10 Phase space<a class="headerlink" href="#phase-space" title="Permalink to this headline">¶</a></h1>
+<p>In differential equation models, the basic population dynamics among species become visible as a glance in <a class="reference external" href="https://en.wikipedia.org/wiki/Phase_space">“phase space.”</a> The concepts and applications of phase spaces were orignally worked out in the late nineteenth century by Henri Poincaré and others for the dyanmics systems of physics, but the mathematical foundations also apply to the theories of ecology. (Below is Poincaré seated with Marie Curie at the initial solvay conference in 1911. As a point of interest, Marie Curie is the onlt person to have twiwce won the Nobel Prize for science—and she wasnominated the first time before her doctoral defense!).</p>
+<p>IMAGE GOES HERE</p>
+<p>In a phase space with two species interacting—in competition, predation, or mutualism—the abundance of one species occupies the horizontal axis and that of the other occupies the vertical axis. This makes each possible pair of population values (<span class="math notranslate nohighlight">\(N_{1}\)</span>,<span class="math notranslate nohighlight">\(N_{2}\)</span>) into a point in the phase space.</p>
+<p>For example, a measured average abundance of 1.55 individuals per square meter for Species 1 and of 1.1 individuals per square meter for Species 2 corresponds to the point marked with an ‘×’ in Figure 10.1—1.55 units to the right on the horizontal axis and 1.1 units up the vertical axis. If Species 1 is rare, at 0.05 individuals per square meter, and Species 2 is at 0.85 individuals per square meter, the point is that marked with a ‘+’, near the left in Figure 10.1.</p>
+<p>FIGURE GOES HERE</p>
+<p>A phase space, however, is not about the size of populations, but rather about how the populations are changing over time. That change (<span class="math notranslate nohighlight">\(\frac{dN_{1}}{dt}=f1(N_{1},N_{2})\)</span>, <span class="math notranslate nohighlight">\(\frac{dN_{2}}{dt}=
+f2(N_{1},N_{2})\)</span>) is made visible as arrows emerging from each point.</p>
+<p>Suppose that, at the time of the measurement of the populations marked by ×, Species 1 is decreasing slightly and Species 2 is increasing relatively strongly. Decreasing for Species 1 means moving to the left in the phase space, while increasing for Species 2 means moving up, as shown in the inset of Figure 10.1. The net direction of change would thus be north-northwest. In the opposite direction, for the populations marked by +, if Species 1 is increasing slightly and Species 2 is decreasing relatively strongly, the direction of change would be south-southeast.</p>
+<p>Arrows in the phase space point in the direction of immediate population change. But as the populations change, ecological conditions also change and the paths curve. Figure 10.2 shows in green how the populations change in this example as time passes. The pair of abundances starting from × moves up, with Species 1 decreasing at
+first and then both species increasing and nally coming to rest at the green dot, which marks a joint carrying capacity.</p>
+<p>From the +, on the other hand, Species 2 decreases uniformly but Species 1 increases at
+first and then reverses direction. In this case both species go extinct by arriving at the origin (0,0). Something signi
+cant separates the + from the ×.</p>
+<p>What separates them can be judged by calculating an arrow at many points throughout the phase space (Figure 10.3). Following the arrows from any pair of abundances (<span class="math notranslate nohighlight">\(N_{1}\)</span>,<span class="math notranslate nohighlight">\(N_{2}\)</span>) traces the future abundances that will arise as time progresses, and following the arrows backwards shows how the populations could have developed in the past. Note that the arrows seem to be avoiding the open circle near the lower left (at about 0.5, 0.3). That is an Allee point.</p>
+<p>Some points in the phase space are exceptional: along certain special curves, the arrows aim exactly horizontally or exactly vertically. This means that one of the two populations is not changing|Species 1 is not changing along the vertical arrows, and Species 2 is unchanged along the horizontal arrows. These special curves are the isoclines—from the roots ‘<em>iso-</em>,’ meaning ‘same’ or ‘equal,’ and ‘<em>-cline</em>’, meaning ‘slope’ or ‘direction’.)</p>
+<p>The two isoclines of Species 2 are shown in red in Figure 10.4, one along the horizontal axis and the other rising and curving to the right. On the horizontal axis, the abundance of Species 2 is zero. Therefore it will always stay zero, meaning it will not change and making that entire axis an isocline. Along the other red isocline, the arrows emerging exactly from the isocline point exactly right or left, because the system is exactly balanced such that the abundance of Species 2 does not change—it has no vertical movement.</p>
+<p>The situation is similar for the two isoclines of Species 1, shown in blue in Figures 10.4 and 10.5—one along the vertical axis and the other rising and curving upward. Along the blue
+curves, the arrows emerging exactly from the isocline point exactly up or down. Again, along the blue isocline the system is exactly balanced such that the abundance of Species 1 does not change—it has no horizontal movement.</p>
+<p>Understanding the isoclines of a system goes a long ways toward understanding the dynamics of the system. Where an isocline of one species meets an isocline of the other, the population of neither species changes and therefore an equilibrium forms. These are marked with circles. Notice that the arrows converge on the
+lled circles (stable equilibria) and judiciously avoid the open circle (unstable equilibrium). And notice that wherever a population (<span class="math notranslate nohighlight">\(N_{1}\)</span>,<span class="math notranslate nohighlight">\(N_{2}\)</span>) starts, the arrows carry it to one of two outcomes (except, technically, starting on the Allee point itself, where it would delicately remain until perturbed).</p>
+<p>For further illustration, four population growth curves are traced in green in Figure 10.5and marked as A, B, C, and D. All start with one of the populations at 2.0 and the other at a low or moderate level. And they head to one of the two stable equilibria, avoiding the unstable equilibrium in between. You can view these four growth curves plotted in the usual way, as species abundances versus time, in Figure 10.6 . Blue indicates Species 1, while red indicates Species 2.</p>
+<div class="section" id="surface-generating-the-flow">
+<h2><span class="section-number">8.1. </span>10.1 Surface generating the flow<a class="headerlink" href="#surface-generating-the-flow" title="Permalink to this headline">¶</a></h2>
+<p>A good way to understand the arrows of phase spaces is to imagine raindrops falling on a curvilinear rooftop and owing across its surface. Figure 10.7 shows such a surface.</p>
+<p>Why should thinking of raindrops on rooftops help us understand phase spaces? It is because the differential equations themselves are situated on mathematically surfaces—albeit sometimes higher-dimensional surfaces—with points flowing dynamically across the surfaces, just like raindrops owing across a roof. It is not completely the same, of course, but is a useful aid to thought.</p>
+<p>Instead of raindrops, it can also be useful to think of a marble rolling on the surface. At the bottom of the basin at Point C in Figure 10.7, a marble is trapped. The surface goes up in every direction from this point, so after any small disturbance the marble will roll to the bottom again.</p>
+<p>Point B corresponds to the equilibrium at the origin, stable in this case, where both species are extinct. A marble resting on this surface and experiencing a small positive disturbance away from the origin must roll uphill in every direction, so it will return to that equilibrium as well. It is below the two-species Allee point.</p>
+<p>For example, Point A divides rain flowing to the left and rain flowing to the right. The basin at Point C corresponds to the carrying capacity, Point B corresponds to extinction at the origin, and Point A corresponds to the unstable Allee point.</p>
+<p>Point A, on the other hand, corresponds to the Allee point. A marble could be balanced precariously at that place, with the slightest breath of air sending it to extinction at B or carrying capacity in the basin at C, depending on miniscule variations in the breath. Marbles starting close to either of the axes roll to the origin, equilibrium B. Marbles starting farther from the axes are on the other side of a long ridge and roll to the carrying capacity at C.</p>
+</div>
+<div class="section" id="eigenvectors-and-eigenvalues">
+<h2><span class="section-number">8.2. </span>10.2 Eigenvectors and eigenvalues<a class="headerlink" href="#eigenvectors-and-eigenvalues" title="Permalink to this headline">¶</a></h2>
+<p>Think about shapes on which a marble could remain stationary, possibly balanced precariously, on a complicated two dimensional surface in three-dimensional space, with peaks and valleys in their structure. Figure 10.8 shows seven possible con
+gurations for remaining stationary.</p>
+<p>Con
+guration A is a summit, a high point with respect to its surroundings. It curves downward in every direction. It is therefore unstable—a marble perched on top can roll away in any direction.</p>
+<p>Con
+guration C is the opposite, a basin. The surface curves upward in every direction. It is stable because a marble resting at the bottom rolls back from a disturbance in any direction.</p>
+<p>Con
+guration B is like a combination of A and C. It is called a “saddle” for its once-ubiquitous shape (right). It curves upward in some directions and downward in others. A marble resting at its very center is unstable because it can roll away in many directions.</p>
+<p>Con
+gurations D, E, and F are related to A, B, and C, but are level in at least one direction. A “ridge,” Con
+guration D, has equilibria all along its very top. A marble balanced precariously there and nudged could conceivably move to a new equilibrium along the ridge, if the nudge were aligned with infinite exactitude; almost certainly, however, the marble would roll off. This con
+guration has an infinite number of equilibria—all along the ridge—but none of them are stable.</p>
+<p>A “trough,” Con
+guration F, is the opposite of a ridge, with equilibria all along its lowest levels. A marble resting there and nudged will move to a new equilibrium position at the base of the trough. Again there are an infinite number of equilibria—all along the base—but none are stable because, pushed along the trough, the marble does not return to its previous location. The equilibria are neutrally stable, how ever, in the ecological view.</p>
+<p>An “inection,” Con
+guration E, is like a combination of D and F, changing slope and becoming level, but then resuming the same direction as before and not changing to the opposite slope. It too has a level line with an infinite number of equilibria, all unstable, with marbles rolling away from the slightest nudge in half of the possible directions.</p>
+<p>Con
+guration G, a perfectly at “plain,” is perhaps easiest to understand. A marble can rest anywhere, so every point on the at surface is an equilibrium. But a marble will not return to its former position if nudged, so no equilibrium on the at surface is stable. In ecology this situation is sometimes called “neutrally stable;” in mathematics it is called “unstable.”</p>
+<p>With three-dimensional images and human cognitive power, it is possible to visualize a surface at a glance, such as in Figure 10.7, and judge the implications for populations growing according to equations that correspond to that surface. You can see at a glance if it is curving up everywhere or down everywhere, if it combines upward and downward directions, or if it has level spots. You can classify each equilibrium into the con
+gurations of Figure 10.8 . But how can that judgement be quanti
+ed, made automatic?</p>
+<p>The method of <a class="reference external" href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors"><em>eigenvectors</em> and <em>eigenvalues</em></a> accomplishes this. Think of the pre
+x eigen- as meaning “proper,” as in “proper vector” or “proper value.” The idea will become clear shortly. The method of eigenvectors and eigenvalues was developed in stages over the course of more than two centuries by some of the best mathematical minds, and now we can apply it intact to ecology.</p>
+<p>Think of a one-dimensional slice through the surface of Figure 10.7 , successively passing through points B, A, C, and beyond. It would look like the top of Figure 10.9. As before, a marble balanced precisely at A would be unstable, ready to roll either toward B or C. The equilibrium points are level points where the slope is zero, as they are on the surface of Figure 10.7. From calculus, this is where the derivative is zero, where <span class="math notranslate nohighlight">\(\frac{dy}{dx}=0\)</span>. Those slopes of zero are marked by green horizontal lines in the fi
+gure.</p>
+<p>The middle graph of Figure 10.9 shows sign of the derivative, <span class="math notranslate nohighlight">\(\frac{dy}{dx}\)</span>, plus or minus. The sign function on the vertical axis, <a class="reference external" href="https://en.wikipedia.org/wiki/Sign_function"><span class="math notranslate nohighlight">\(sgn(u)\)</span></a>, is equal to zero if u is zero but is equal to plus or minus one if <span class="math notranslate nohighlight">\(u\)</span> is positive or negative, respectively. Whether an equilibrium is in a trough or at a summit is determined by how the slope is changing exactly at the equilibrium point. From calculus, that is the second derivative, <span class="math notranslate nohighlight">\(\frac{d^{2}y}{dx^{2}}\)</span>, recording changes in the
+first derivative, <span class="math notranslate nohighlight">\(\frac{dy}{dx}\)</span>—just as the fi
+rst derivative records changes in the surface itself.</p>
+<p>The sign of the second derivative is shown in the bottom part of Figure 10.9. Wherever the slope is increasing at an equilibrium point|that is, changing from sloping down on the left to sloping up on the right|that is a basin. Wherever it is decreasing at an equilibrium point—changing from sloping up at the left to sloping down at the right—that is a summit. Whether an equilibrium point is stable or not can thus be determined mathematically merely from the sign of the second derivative of surface at that point!</p>
+<p>This is easy if there is only one species, as in the models of earlier chapters, with only one direction to consider. But it becomes tricky when two or more species are interacting, for an in
+finite number of directions become available.</p>
+<p>It might seem that a con
+guration will be a basin if the sur face curves upward in both the x and y directions, as in Con
+guration C of Figure 10.8. But have a look at the three parts of Figure 10.10. Part A is a surface with a trough aligned with the axes. Looking along the <span class="math notranslate nohighlight">\(x\)</span>-axis—which would be the <span class="math notranslate nohighlight">\(N_{1}\)</span> axis showing the abundance of Species 1—the surface is curving up on both sides of its minimum (white curve). However, looking along the <span class="math notranslate nohighlight">\(y\)</span>-axis—the <span class="math notranslate nohighlight">\(N_{2}\)</span> axis showing the abundance of Species 2—reveals that it is exactly level in that direction (green line), meaning the equilibrium is not stable.</p>
+<p>But suppose the same surface is rotated 45 degrees, as in part B of the
+figure. The surface curves upward not only along the <span class="math notranslate nohighlight">\(x\)</span>-axis (white curve) but also along the <span class="math notranslate nohighlight">\(y\)</span>-axis (green curve). Yet the surface is the same. Contrary to what might have been expected, curving upward in both the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> directions does not mean the con
+guration is a basin! Understanding the structure means looking in the proper directions along the surface, not simply along the axes.</p>
+<p>This is what eigenvalues and eigenvectors do. They align with the “proper” axes for the surface, as illustrated in part C. No matter how twisted, skewed, or rescaled the surface is with respect to the axes, the eigenvectors line up with the “proper” axes of the surface, and the eigenvalues measure whether the slope is increasing or decreasing along those axes at an equilibrium. In short, if all the eigenvalues are positive, the equilibrium is a basin, as in Figures 10.7C and 10.8C. If all the eigenvalues are negative, the equilibrium is a summit, as in Figures 10.7A and 10.8A. And if the eigenvalues are of mixed signs, or if some are zero, then we get one of the other configurations (<a class="reference internal" href="#box10-1"><span class="std std-ref">Box10_1</span></a>).</p>
+<div class="tip admonition" id="box10-1">
+<p class="admonition-title"><strong>Box 10.1</strong> Rules of eigenvalues for hill-climbing systems</p>
+<ol class="simple">
+<li><p>If all eigenvalues are negative, the equilibrium is stable.</p></li>
+<li><p>If any eigenvalue is positive, the equilibrium is unstable.</p></li>
+<li><p>If some or all of the eigenvalues are zero and any remaining eigenvalues are negative, there is not enough information in the eigenvalues to know whether the equilibrium is stable or not. A deeper look at the system is needed.</p></li>
+</ol>
+</div>
+<p><strong>Climbing up versus sliding down</strong>. All considerations thus far apply to systems that travel downhill to lower states of energy, such as raindrops  owing or marbles rolling under
+the in uence of gravity. Dynamical systems can do the opposite—they can climb to the highest level in the locality. For example, natural selection is commonly described as climbing “fi
+tness peaks” on abstract “adaptive landscapes.” Of course, for mathematical surfaces rather than real mountain ranges, this is just a point of view. Whether a system climbs up or slides down depends arbitrarily on whether the mathematical surface is affixed with a plus or a minus sign in the equations.</p>
+<p>In the bottom graph of Figure 10.9, an equilibrium in a hill-climbing system is stable if the slope is decreasing (negative sign) rather than increasing (positive sign). Because human intuition applies so well to marbles rolling off heights and settling into shallows, we have chosen to explain it intuitively that way
+first, but it is important to understand both ways.</p>
+<p>It turns out that the proper axes at each equilibrium point—the eigenvectors—can be determined exactly from only four numbers, and how much the slope is increasing or decreasing at each equilibrium point—the eigenvalues—can be determined at the same time from the same four numbers. These are the four partial derivatives in what is called the <a class="reference external" href="https://en.wikipedia.org/wiki/Hessian_matrix">“Hessian matrix”</a> of the surface, or, equivalently in the <a class="reference external" href="https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant">“Jacobian matrix”</a> of the population growth equations. An understanding of these matrices and their applications has developed in mathematics over the past two centuries.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+H = \begin{pmatrix}f_{x,x} &amp; f_{x,y}\\\ f_{y,x} &amp; f_{y,y}\end{pmatrix}
+\end{split}\]</div>
+<p>By expending some effort and attention you can work the eigenvalues out mathematically with pencil and paper. However, you will likely employ computers to evaluate the eigenvalues of ecological systems. This can be done with abstract symbols in computer packages such as Mathematica or Maxima, or numerically in programming languages such as R. For standard two-species systems, we have worked out all equilibria and their corresponding eigenvalues. These are recorded in Table 10.1 in mathematical notation and in <a class="reference internal" href="#program10-1"><span class="std std-ref">Program 10.1</span></a> as code, and identify the equilibria and stability for all predation, mutualism, and competition systems represented by Equation 8.1, which is copied into the table for reference.</p>
+<p>#TO BE FIXED: Table here#</p>
+<div class="literal-block-wrapper docutils container" id="program10-1">
+<div class="code-block-caption"><span class="caption-number">Listing 8.1 </span><span class="caption-text"><strong>Program 10.1</strong> The code equivalent to Table 10.1, for use in computer programs. <code class="docutils literal notranslate"><span class="pre">Sqrt(w)</span></code> is a specially written function that returns 0 if <span class="math notranslate nohighlight">\(w\)</span> is negative (returns the real part of the complex number <span class="math notranslate nohighlight">\(0 + \sqrt{w}i\)</span>).</span><a class="headerlink" href="#program10-1" title="Permalink to this code">¶</a></div>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">r1</span><span class="o">*</span><span class="n">s22</span> <span class="o">-</span><span class="n">r2</span><span class="o">*</span><span class="n">s12</span><span class="p">;</span>             <span class="c1"># Compute useful sub-formulae</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">r2</span><span class="o">*</span><span class="n">s11</span> <span class="o">-</span><span class="n">r1</span><span class="o">*</span><span class="n">s21</span><span class="p">;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">s12</span><span class="o">*</span><span class="n">s21</span> <span class="o">-</span><span class="n">s11</span><span class="o">*</span><span class="n">s22</span><span class="p">;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">r1</span><span class="o">*</span><span class="n">s22</span><span class="o">*</span><span class="p">(</span><span class="n">s21</span><span class="o">-</span><span class="n">s11</span><span class="p">)</span>
+   <span class="o">+</span><span class="n">r2</span><span class="o">*</span><span class="n">s11</span><span class="o">*</span><span class="p">(</span><span class="n">s12</span><span class="p">)</span><span class="o">-</span><span class="n">s22</span><span class="p">);</span>
+<span class="n">c</span> <span class="o">=</span> <span class="o">-</span><span class="n">p</span><span class="o">*</span><span class="n">q</span><span class="p">;</span>
+                                <span class="c1"># Compute the equilibria</span>
+<span class="n">x00</span><span class="o">=</span><span class="m">0</span><span class="p">;</span>       <span class="n">y00</span><span class="o">=</span><span class="m">0</span><span class="p">;</span>             <span class="c1"># (at the origin)</span>
+<span class="n">x10</span><span class="o">=-</span><span class="n">r1</span><span class="o">/</span><span class="n">s11</span><span class="p">;</span> <span class="n">y10</span><span class="o">=</span><span class="m">0</span><span class="p">;</span>             <span class="c1"># (on the x-axis)</span>
+<span class="n">x01</span><span class="o">=</span><span class="m">0</span><span class="p">;</span>       <span class="n">y01</span><span class="o">=-</span><span class="n">r2</span><span class="o">/</span><span class="n">s22</span><span class="p">;</span>       <span class="c1"># (on the y-axis)</span>
+<span class="n">x11</span><span class="o">=</span><span class="n">p</span><span class="o">/</span><span class="n">a</span><span class="p">;</span>     <span class="n">y11</span><span class="o">=</span><span class="n">q</span><span class="o">/</span><span class="n">a</span><span class="p">;</span>           <span class="c1"># (at the interior)</span>
+
+<span class="n">v00</span><span class="o">=</span> <span class="n">r1</span><span class="p">;</span> <span class="n">w00</span><span class="o">=</span><span class="n">r2</span><span class="p">;</span>                <span class="c1"># Compute the corresponding</span>
+<span class="n">v1</span><span class="o">-=-</span><span class="n">r1</span><span class="p">;</span> <span class="n">w10</span><span class="o">=</span><span class="n">q</span><span class="o">/</span><span class="n">s11</span><span class="p">;</span>             <span class="c1"># four pairs of eigenvalues</span>
+<span class="n">v01</span><span class="o">=-</span><span class="n">r2</span><span class="p">;</span> <span class="n">w01</span><span class="o">=</span><span class="n">p</span><span class="o">/</span><span class="n">s22</span><span class="p">;</span>             <span class="c1"># (real part only).</span>
+<span class="n">v11</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="o">-</span><span class="nf">Sqrt</span><span class="p">(</span><span class="n">b</span><span class="o">^</span><span class="m">2-4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="m">2</span><span class="o">*</span><span class="n">a</span><span class="p">);</span>
+<span class="n">w11</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="o">+</span><span class="nf">Sqrt</span><span class="p">(</span><span class="n">b</span><span class="o">^</span><span class="m">2-4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="m">2</span><span class="o">*</span><span class="n">a</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<p>The formulae in Table 10.1 work for any two-species <span class="math notranslate nohighlight">\(RSN\)</span> model—that is, any model of the form <span class="math notranslate nohighlight">\(\frac{1}{N_{i}}\frac{dN_{i}}{dt} = r{i} + s{i,i}Ni + s_{i,j}N_{j}\)</span> with constant coefficients—but formulae for other models must be derived separately, from a software package, or following methods for <a class="reference external" href="https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant">“Jacobian matrices”</a>.</p>
+</div>
+<div class="section" id="a-phase-space-example">
+<h2><span class="section-number">8.3. </span>10.3 A phase space example<a class="headerlink" href="#a-phase-space-example" title="Permalink to this headline">¶</a></h2>
+<p>For an example of
+nding equilibria and stability, consider two competing species with intrinsic growth rates <span class="math notranslate nohighlight">\(r_{1} = 1.2\)</span> and <span class="math notranslate nohighlight">\(r_{2} = 0.8\)</span>. Let each species inhibit itself in such a way that <span class="math notranslate nohighlight">\(s_{1,1} = -1\)</span> and <span class="math notranslate nohighlight">\(s_{2,2} = -1\)</span>, let Species 2 inhibit Species 1 more strongly than it inhibits itself, with <span class="math notranslate nohighlight">\(s_{1,2} = -1.2\)</span>, and let Species 1 inhibit Species 2 less strongly than it inhibits itself, with <span class="math notranslate nohighlight">\(s_{2,1} = -0.5\)</span>. These conditions are summarized in Box 10.2 for reference. The question is, what are the equilibria in this particular competitive system, and what will their stability be?</p>
+<p>First, there is an equilibrium at the origin <span class="math notranslate nohighlight">\((0,0)\)</span> in these systems, where both species are extinct. This is sometimes called the “trivial equilibrium,” and it may or may not be stable. From Table 10.1, the eigenvalues of the equilibrium at the origin are <span class="math notranslate nohighlight">\(r1\)</span> and <span class="math notranslate nohighlight">\(r2\)</span>—in this case 1.2 and 0.8. These are both positive, so from the rules for eigenvalues in <a class="reference internal" href="#box10-1"><span class="std std-ref">Box 10.1</span></a>, the equilibrium at the origin in this case is unstable. If no individuals of either species exist in an area, none will arise. But if any individuals of either species somehow arrive in the area, or if both species arrive, the population will increase. This equilibrium is thus unstable. It is shown in the phase space diagram of Figure 10.11, along with the other equilibria in the system.</p>
+<p>On the horizontal axis, where Species 2 is not present, the equilibrium of Species 1 is <span class="math notranslate nohighlight">\(\hat{N}_{1} = -r_{1}=s_{1,1} = 1.2\)</span>. That is as expected—it is just like the equilibrium of <span class="math notranslate nohighlight">\(\hat{N} = \frac{-r}{s}\)</span> for a single species—because it indeed is a single species when Species 2 is not present. As to the stability, one eigenvalue is <span class="math notranslate nohighlight">\(-r_{1}\)</span>, which is <span class="math notranslate nohighlight">\(-1.2\)</span>, which is negative, so it will not cause instability. For the other eigenvalue at this equilibrium, you need to calculate q from Table 10.1. You should get <span class="math notranslate nohighlight">\(q=-0.2\)</span>, and if you divide that by <span class="math notranslate nohighlight">\(s_{1.1}\)</span>, you should get <span class="math notranslate nohighlight">\(0.2\)</span>. This is positive, so by the rules of eigenvalues in <a class="reference internal" href="#box10-1"><span class="std std-ref">Box 10.1</span></a>, the equilibrium on the horizontal axis is unstable. Thus, if Species 1 is at its equilibrium and an increment of Species 2 arrives, Species 2 will increase and the equilibrium will be abandoned.</p>
+<p>Likewise, on the vertical axis, where Species 1 is not present, the equilibrium of Species 2 is <span class="math notranslate nohighlight">\(N_{2} = \frac{-r_{2}}{s_{2,2}} = 0.8\)</span>. Calculate the eigenvalues at this equilibrium from Table 10.1 and you should get <span class="math notranslate nohighlight">\(p = -0.24\)</span>, and dividing by <span class="math notranslate nohighlight">\(s_{2,2}\)</span> give eigenvalues of <span class="math notranslate nohighlight">\(-0.8\)</span> and <span class="math notranslate nohighlight">\(0.24\)</span>. With one negative and the other positive, by the rules of eigenvalues in <a class="reference internal" href="#box10-1"><span class="std std-ref">Box 10.1</span></a> the equilibrium on the vertical axis is also unstable.</p>
+<p>Finally, for the fourth equilibrium—the interior equilibirum where both species are present—calculate <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, and <span class="math notranslate nohighlight">\(c\)</span> from the table. You should get <span class="math notranslate nohighlight">\(a = -0.4\)</span>, <span class="math notranslate nohighlight">\(b = -0.44\)</span>, and <span class="math notranslate nohighlight">\(c = -0.048\)</span>. Now the interior  equilibrium is <span class="math notranslate nohighlight">\(\hat{N}_{1} = \frac{p}{a} = 0.6\)</span> and <span class="math notranslate nohighlight">\(\hat{N}_{2} = \frac{q}{a} = 0.5\)</span>.</p>
+<p>But is it stable? Notice the formula for the eigenvalues of the interior equilibrium in Table 10.1 , in terms of <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, and <span class="math notranslate nohighlight">\(c\)</span>. It is simply <a class="reference external" href="https://en.wikipedia.org/wiki/Quadratic_equation">the quadratic formula</a>! This is a clue that the eigenvalues are embedded in a quadratic equation, <span class="math notranslate nohighlight">\(ax^{2} + bx + c = 0\)</span>. And if you start a project to derive the formula for eigenvalues with pencil and paper, you will see that indeed they are. In any case, working it out more simply from the formula in the table, you should get <span class="math notranslate nohighlight">\(-0.123\)</span> and <span class="math notranslate nohighlight">\(-0.977\)</span>. Both are negative, so by the rules of <a class="reference internal" href="#box10-1"><span class="std std-ref">Box 10.1</span></a> the interior equilibrium for this set of parameters is stable.</p>
+<p>As a final note, the presence of the square root in the formula suggests that eigenvalues can have imaginary parts, if the square root covers a negative number. The rules of eigenvalues in <a class="reference internal" href="#box10-1"><span class="std std-ref">Box 10.1</span></a> still apply in this case, but only to the real part of the eigenvalues. Suppose, for example, that the eigenvalues are <span class="math notranslate nohighlight">\(\frac{-1 \pm \sqrt{5}}{2} = -0.5 \pm 1.118i\)</span>. These would be stable because the real part, <span class="math notranslate nohighlight">\(-0.5\)</span>, is negative. But it turns out that because the imaginary part, <span class="math notranslate nohighlight">\(\pm 1.118i\)</span>, is not zero, the system would cycle around the equilibrium point, as predator-prey systems do.</p>
+<p>In closing this part of the discussion, we should point out that eigenvectors and eigenvalues have broad applications. They reveal, for instance, electron orbitals inside atoms (right), alignment of multiple variables in statistics, vibrational modes of piano strings, and rates of the spread of disease, and are used for a bounty of other applications. Asking how eigenvalues can be used is a bit like asking how the number seven can be used. Here, however, we simply employ them to evaluate the stability of equilibria.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "MikheyevLab/ecology-textbook",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="test.html" title="previous page"><span class="section-number">7. </span>Code highlighting</a>
+    <a class='right-next' id="next-link" href="C11-State_space.html" title="next page">&lt;no title&gt;</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Lehman, Loberg and Clark<br/>
+        
+            &copy; Copyright 2019.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'G-8SXREGQC46', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

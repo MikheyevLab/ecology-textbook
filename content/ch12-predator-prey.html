@@ -1,0 +1,512 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7. Predator and prey &#8212; Quantitative Ecology</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tooltip.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="6. Human population growth" href="ch6-human-population.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Quantitative Ecology</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Quantiative Ecology
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="C01-Definitions.html">
+   1. What is ecology?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="C02-Theory.html">
+   2. Ecological theory
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Single populations
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="basic_population_model.html">
+   3. A basic population model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modeling_single_population.html">
+   4. Modeling a single population
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="C05-Differential_and_difference_forms.html">
+   5. Differential and difference forms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch6-human-population.html">
+   6. Human population growth
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   7. Predator and prey
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/content/ch12-predator-prey.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/ch12-predator-prey.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/MikheyevLab/ecology-textbook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/MikheyevLab/ecology-textbook/issues/new?title=Issue%20on%20page%20%2Fcontent/ch12-predator-prey.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/MikheyevLab/ecology-textbook/main?urlpath=tree/book/content/ch12-predator-prey.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-examples-of-predation">
+   7.1. Further examples of predation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ecological-communities-are-complex">
+   7.2. Ecological communities are complex
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#predator-prey-model">
+   7.3. Predator–prey model
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="predator-and-prey">
+<h1><span class="section-number">7. </span>Predator and prey<a class="headerlink" href="#predator-and-prey" title="Permalink to this headline">¶</a></h1>
+<p>Competition and mutualism can be understood without much attention to the sizes
+of the species involved. But predation is quite different. Think of a producer,
+the prey, and a consumer, the predator. When the consumer is extremely large and
+the producer very small, as with a whale and krill, the relationship is called
+filter feeding. There the predator kills the prey. When the producer and
+consumer are roughly matched in size, they are called predators and prey. When
+the producer is much smaller than the consumer, but still independently mobile,
+the relationship is called parasitism. And when the consumer is much smaller
+still, and has difficulty moving around on its own, the relationship is called
+infection and disease. Symptoms of disease are part of the ecology of disease.
+In parasitism and disease, the consumer often does not kill the producer.</p>
+<div class="section" id="further-examples-of-predation">
+<h2><span class="section-number">7.1. </span>Further examples of predation<a class="headerlink" href="#further-examples-of-predation" title="Permalink to this headline">¶</a></h2>
+<p>Amazing mechanisms for both capturing prey and avoiding predators have
+been discovered through evolution.
+Fulmar chicks,<a class="reference external" href="https://en.wikipedia.org/wiki/Fulmar">*</a>, for example, can direct
+“projectile vomit” at predators approaching the nest too closely
+(Figure 12.1[fig_12_1]). This is not just icky for the predator. By
+damaging the waterproofing of an avian predator’s feathers, this ultimately can
+kill the predator. The chick’s projectile vomit is thus a lethal weapon.</p>
+<div class="figure align-center" id="fig12-1">
+<a class="reference internal image-reference" href="../_images/p101.jpg"><img alt="fig12_1" src="../_images/p101.jpg" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 7.1 </span><span class="caption-text">Fulmer chick with projectile vomit as predator defense.</span><a class="headerlink" href="#fig12-1" title="Permalink to this image">¶</a></p>
+</div>
+<p>One of the most remarkable predatory weapons is that of
+<a class="reference external" href="https://en.wikipedia.org/wiki/Alpheidae">pistol shrimp</a> (Figure 12.2[fig12_2]).
+These shrimp have one special claw adapted to cavitation, and are capable of shooting bullets at their
+prey; colonies of these shrimp are loud from the sound of these bullets. But
+where does an underwater crustacean get bullets? Actually, it creates them from
+nothing at all—from cavitation. If you’ve ever piloted a powerful motorboat
+and pushed the throttle too hard, or watched a pilot do so, you’ve seen the
+propellers start kicking out bubbles, which look like air bubbles. But the
+propellers are well below the water line, where there is no air. The propellers
+are in fact creating bubbles of vacuum—separating the water so instantly that
+there is nothing left in between, except perhaps very low density water vapor.
+Such bubbles collapse back with numerous blasts, each so powerful that it rips
+off pieces of bronze off the propeller itself, leaving a rough surface that is
+the telltale sign of cavitation.</p>
+<div class="figure align-center" id="fig12-2">
+<a class="reference internal image-reference" href="../_images/PistolShrimp.jpg"><img alt="fig12_2" src="../_images/PistolShrimp.jpg" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 7.2 </span><span class="caption-text">Pistol-packing shrimp shoot cavitation bullets.</span><a class="headerlink" href="#fig12-2" title="Permalink to this image">¶</a></p>
+</div>
+<p>A pistol shrimp snap its pistol claw together so quickly that it creates a vacuum
+where water used to be. With the right circulation of water around the vacuum
+bubble, the bubble can move, and a shrimp can actually project its bullet of
+vacuum toward its prey. When the bubble collapses, the effect is like thunder
+attending a lightning bolt, when air snaps together after the lightning has
+created a column of near-vacuum (NatGeo video[<a class="reference external" href="https://www.youtube.com/watch?v=KkY_mSwboMQ">https://www.youtube.com/watch?v=KkY_mSwboMQ</a>]). But the consequences are quite different in
+water. While a loud sound might hurt the ears of a terrestrial animal, the sound
+does not rip apart the fabric of the animal’s body. This is, however, what
+intense sounds in water can do, traveling through water and through the
+water-filled bodies of animals. In effect, pistol shrimp shoot bullets that
+explode near their prey and numb them into immobility. Somehow evolution
+discovered and perfected this amazing mechanism!</p>
+<div class="figure align-center" id="fig12-3">
+<a class="reference internal image-reference" href="../_images/fig12_3.png"><img alt="fig12_3" src="../_images/fig12_3.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 7.3 </span><span class="caption-text">Rifle-carrying humans shoot lead bullets—bison bones and remnant herd.</span><a class="headerlink" href="#fig12-3" title="Permalink to this image">¶</a></p>
+</div>
+<p>The ultimate weapons of predation, however, are those of our own species.
+Figure 12.3[fig12_3] (right) shows a remnant bison herd, a few
+hundred of the hundreds of millions of bison that migrated the plains not many
+generations ago. No matter how vast their numbers, they were no match for
+gunpowder and lead bullets, and they dropped to near extinction by the beginning
+of the twentieth century. The image at the left illustrates the epic efficiency
+of lead bullets by showing a nineteenth-century pile of bison bones, with
+members of the predator species positioned atop and aside.</p>
+</div>
+<div class="section" id="ecological-communities-are-complex">
+<h2><span class="section-number">7.2. </span>Ecological communities are complex<a class="headerlink" href="#ecological-communities-are-complex" title="Permalink to this headline">¶</a></h2>
+<p>Before proceeding with simplified models of predation, we want to stress that
+ecological communities are complex (Figure <em>FigFoodWebMitchell</em>).
+Fortunately, progress in understanding them comes piece by piece. Complex food
+webs, like the one illustrated in the figure, can be examined in simpler
+“motifs.”</p>
+<div class="figure align-center" id="fig12-4">
+<a class="reference internal image-reference" href="../_images/foodweb9.jpg"><img alt="fig12_4" src="../_images/foodweb9.jpg" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 7.4 </span><span class="caption-text">Cretaceous terrestrial food web, Mitchell et al. 2012
+PNAS.</span><a class="headerlink" href="#fig12-4" title="Permalink to this image">¶</a></p>
+</div>
+<p>You have seen in earlier chapters that there are two motifs for a single
+Species: logistic and orthologistic, with exponential growth forming a fine
+dividing line between them.
+And in the prior chapter, you saw three motifs for two species:
+predation, competition, and mutualism. <img alt="motif_1" src="../_images/ch12_motif_1.png" /></p>
+<p>Later you will see that there are exactly forty distinct three-species motifs,
+one of which is two prey pursued by one predator. This is called “apparent
+competition” because it has properties of competition.<img alt="motif_2" src="../_images/ch12_motif_2.png" /></p>
+</div>
+<div class="section" id="predator-prey-model">
+<h2><span class="section-number">7.3. </span>Predator–prey model<a class="headerlink" href="#predator-prey-model" title="Permalink to this headline">¶</a></h2>
+<p>For the next several chapters we will consider two species, starting with one
+predator and one prey. Figure <em>FigPredPreyA</em>  depicts this situation,
+with one line sloping down and the other up.</p>
+<div class="figure align-center" id="fig12-5">
+<a class="reference internal image-reference" href="../_images/fig12_5.png"><img alt="fig12_5" src="../_images/fig12_5.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 7.5 </span><span class="caption-text">Predator{prey interactions with corresponding equations.</span><a class="headerlink" href="#fig12-5" title="Permalink to this image">¶</a></p>
+</div>
+<p>The graph on the left describes the prey, because its numbers <span class="math notranslate nohighlight">\(N_1\)</span> are
+reduced when the numbers of predator, <span class="math notranslate nohighlight">\(N_2\)</span>, increase. Likewise, the graph on
+the right describes the predator, because its numbers, <span class="math notranslate nohighlight">\(N_2\)</span>, increase with the
+density of its prey, <span class="math notranslate nohighlight">\(N_1\)</span>. The equations of growth are revealed by the slopes
+and intercepts of the two lines.</p>
+<p>Since these are both straight lines, <span class="math notranslate nohighlight">\(y=mx+b\)</span>, the equations can be written down
+simply from the geometry. The intercept on the left is <span class="math notranslate nohighlight">\(+1\)</span> and the slope is
+<span class="math notranslate nohighlight">\(-1\)</span>. The intercept on the right is <span class="math notranslate nohighlight">\(-1/2\)</span> and its slope is <span class="math notranslate nohighlight">\(+1/2\)</span>. The
+equivalent equations of the two lines appear below the graphs.</p>
+<p>These specific equations can be generalized using symbols in place of actual
+numbers, writing <span class="math notranslate nohighlight">\(r_1\)</span>, <span class="math notranslate nohighlight">\(s_{1,2}\)</span>, <span class="math notranslate nohighlight">\(r_2\)</span>, and <span class="math notranslate nohighlight">\(s_{2,1}\)</span> for the intercept <span class="math notranslate nohighlight">\(+1.0\)</span>
+and slope <span class="math notranslate nohighlight">\(-1.0\)</span> on the left and the intercept <span class="math notranslate nohighlight">\(-0.5\)</span> and slope <span class="math notranslate nohighlight">\(+0.5\)</span> on the
+right, as follows.</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{N_1} \frac{dN_1}{dt} = r_1 + s_{1,2}N_1, ... r_1 = + 1.0, s_{1,2} = -1.0\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{1}{N_2} \frac{dN_2}{dt} = r_1 + s_{2,1}N_1, ... r_2 = + 1.0, s_{2,1} = + 0.5\]</div>
+<p>Merely by writing down the form of these geometric graphs, the classic
+Lotka–Volterra predator–prey equations have appeared:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{N_1} \frac{dN_1}{dt} = r_1 + s_{1,2}N_1, r_1 &gt; 0, s_{1,2} &lt; 0\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{1}{N_2} \frac{dN_2}{dt} = r_1 + s_{2,1}N_1, r_2 &lt;&gt; 0, s_{2,1} &gt; 0\]</div>
+<p>Here is how the equations look in many textbooks, with <span class="math notranslate nohighlight">\(V\)</span> for prey density and
+<span class="math notranslate nohighlight">\(P\)</span> for predator density:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dv}{dt} = rV - \alpha VP\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{dP}{dt} = \beta VP - qP\]</div>
+<p>Volterra<a class="reference external" href="https://en.wikipedia.org/wiki/Vito_Volterra">*</a> arrived at the equation
+rather differently than we did, with a growth rate <span class="math notranslate nohighlight">\(r\)</span> for the prey, reduced by
+a rate <span class="math notranslate nohighlight">\(\alpha\)</span> for each encounter between predator and prey, <span class="math notranslate nohighlight">\(V\!\cdot\!P\)</span>, and
+with a natural death rate <span class="math notranslate nohighlight">\(q\)</span> for predators and compensatory growth rate <span class="math notranslate nohighlight">\(\beta\)</span>
+for each encounter, <span class="math notranslate nohighlight">\(V\!\cdot\!P\)</span>, between predator and prey.</p>
+<p>To see the equivalence, divide the first equation through by <span class="math notranslate nohighlight">\(V\)</span> and the
+second by <span class="math notranslate nohighlight">\(P\)</span>, then set <span class="math notranslate nohighlight">\(V=N_1\)</span>, <span class="math notranslate nohighlight">\(P=N_2\)</span>, <span class="math notranslate nohighlight">\(r=r_1\)</span>,
+<span class="math notranslate nohighlight">\(q=-r_2\)</span>, <span class="math notranslate nohighlight">\(\alpha=-s_{1,2}\)</span>, <span class="math notranslate nohighlight">\(\beta=s_{2,1}\)</span>. The Lotka–Volterra
+formulation will be revealed to be just the <span class="math notranslate nohighlight">\(r+sN\)</span> equations in disguise.</p>
+<p>Figure 12.5[fig12_5]  exposes the basic predator–prey equations from
+geometry, which reveal the unity of the equations of ecology, as you saw in Equation 5.2 (Ch 5). That analysis revealed a form of
+one-dimensional equation not considered in ecological textbooks—the
+orthologistic equation—and which is needed for understanding human and other
+rapidly growing populations.</p>
+<p>Now analyze these equations a bit. Suppose predator and prey densities are both
+1, say 1 individual per hectare (<span class="math notranslate nohighlight">\(N_1=N_2=1\)</span>). Substitute 1 for both <span class="math notranslate nohighlight">\(N_1\)</span>
+and <span class="math notranslate nohighlight">\(N_2\)</span>. What are the growth rates?</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{1} \frac{dN_1}{dt} = 1.0 - 1.0 \times 1 = 0\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{1}{1} \frac{dN_2}{dt} = -0.5 + 0.5 \times 1 = 0\]</div>
+<p>The population growth is zero for both species, so the populations do not
+change. This is an equilibrium.</p>
+<p>This can be seen in the graphs below. The fact that both growth rates,
+<span class="math notranslate nohighlight">\(1/N_1\,dN_1/dt\)</span> and <span class="math notranslate nohighlight">\(1/N_1\,dN_2/dt\)</span>, cross the horizontal axis at <span class="math notranslate nohighlight">\(N_1=N_2=1\)</span>
+(position of the dots) means that growth stops for both. This is called an
+equilibrium, a steady state, or, sometimes, a fixed point.</p>
+<p><img alt="fixed_point_equation" src="../_images/fig12_5_image.png" /></p>
+<p>But what will happen if both populations are 2, say 2 individuals per hectare?</p>
+<p><img alt="2_individuals_per_hectare" src="../_images/fig12_5_image2_2.png" /></p>
+<p>The prey growth rate, <span class="math notranslate nohighlight">\(1/N_1\,dN_1/dt\)</span>, is negative at <span class="math notranslate nohighlight">\(N_2=2\)</span> (the line is
+below the horizontal axis) and the predator growth rate, <span class="math notranslate nohighlight">\(1/N_1\,dN_2/dt\)</span>, is
+positive at <span class="math notranslate nohighlight">\(N_1=2\)</span> (the line is above the horizontal axis). So the prey
+population will decrease and the predator population will increase. Exactly how
+the populations will develop over time can be worked out by putting these
+parameters into the program in Chapter 8.2. Here it what it shows.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "MikheyevLab/ecology-textbook",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="ch6-human-population.html" title="previous page"><span class="section-number">6. </span>Human population growth</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Lehman, Loberg and Clark<br/>
+        
+            &copy; Copyright 2019.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'G-8SXREGQC46', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>
