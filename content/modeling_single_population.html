@@ -53,6 +53,8 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="5. Differential and difference forms" href="C05-Differential_and_difference_forms.html" />
@@ -245,6 +247,41 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#density-independent-growth">
+   4.1. Density-independent growth
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#density-enhanced-growth">
+   4.2. Density-enhanced growth
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#density-limited-growth">
+   4.3. Density-limited growth
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameter-combinations">
+   4.4. Parameter combinations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   4.5. Exercises
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -255,6 +292,86 @@
                 
   <div class="section" id="modeling-a-single-population">
 <h1><span class="section-number">4. </span>Modeling a single population<a class="headerlink" href="#modeling-a-single-population" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="density-independent-growth">
+<h2><span class="section-number">4.1. </span>Density-independent growth<a class="headerlink" href="#density-independent-growth" title="Permalink to this headline">¶</a></h2>
+<p>Density, in the sense of population density, refers to how many individuals are present on average per unit area. One could say, “The density of elk in Yellowstone National Park during the summer is about 3 to 6 per square mile.” Sometimes, however, you will see density used as the total number
+in a place. You may see, “The density of elk in Yellowstone National Park during the summer is about 10 to 20 thousand.” The symbol <span class="math notranslate nohighlight">\(N\)</span> is often used for population density.</p>
+<p>In the first case above, you would write <span class="math notranslate nohighlight">\(N = 4.5\)</span>, the midpoint between 3 and 6. In the second case you would write <span class="math notranslate nohighlight">\(N = 15000\)</span>. It should be clear from context what the area is.</p>
+<p>With this in mind, all of the following statements are equivalent:</p>
+<ol class="simple">
+<li><p>The population doubles each hour.
+(As in the bacterial example of the previous chapter.)</p></li>
+<li><p>The population <span class="math notranslate nohighlight">\(N(t)\)</span> doubles each hour.
+Here the number of individuals is represented by the letter <span class="math notranslate nohighlight">\(N\)</span>, and <span class="math notranslate nohighlight">\(N(t)\)</span> means population at time <span class="math notranslate nohighlight">\(t\)</span>. In the bacterial example, there was one bacterium at the beginning of the experiment when the clock started running, so yould write <span class="math notranslate nohighlight">\(N(0) = 1\)</span>. One hour later, the hypothetical population had doubled, so you would write <span class="math notranslate nohighlight">\(N(1) = 2\)</span>. Doubling successively then gives<span class="math notranslate nohighlight">\(N(2) = 4\)</span>, <span class="math notranslate nohighlight">\(N(3) = 8\)</span>, and so forth until after five days, or 120 hours, <span class="math notranslate nohighlight">\(N(120) = 10^{36}\)</span>, or slightly more - enough to fill all the oceans of the world.</p></li>
+<li><p>The population <span class="math notranslate nohighlight">\(N\)</span> doubles each hour.
+Often the “(<span class="math notranslate nohighlight">\(t\)</span>)” is left off for simplicity, it being understood that the population <span class="math notranslate nohighlight">\(N\)</span> is a function of time.</p></li>
+<li><p><span class="math notranslate nohighlight">\(N\)</span> doubles each hour.
+Since <span class="math notranslate nohighlight">\(N\)</span> represents a population in this case, the word “population” will often be dropped for conciseness.</p></li>
+<li><p><span class="math notranslate nohighlight">\(N(t+1) = 2N(t)\)</span>.
+In English this would read “<span class="math notranslate nohighlight">\(N\)</span> of <span class="math notranslate nohighlight">\(t\)</span> plus 1 equals two times <span class="math notranslate nohighlight">\(N\)</span> of <span class="math notranslate nohighlight">\(t\)</span>.” That simply means that the population at some time, anytime, <span class="math notranslate nohighlight">\(t\)</span>, when multipled by 2, is the population in the next time step, <span class="math notranslate nohighlight">\(t\)</span> plus one.</p></li>
+<li><p>The change in population each hour is equal to the size of the population that hour.
+This may sound pretty confusing. But it means that the amount that the population increases in the time step
+is equal in size to the whole population. Usually the in-
+crease is much less than that, perhaps a few percent, but
+here we are dealing with a rapidly increasing bacterial
+population.</p></li>
+<li><p>The change in the population each hour is <span class="math notranslate nohighlight">\(N(t+1)\)</span> minus <span class="math notranslate nohighlight">\(N(t)\)</span>, which is to say <span class="math notranslate nohighlight">\(N(t+1)-N(t)=2N(t)-N(t)=N(t)\)</span>.</p></li>
+<li><p>The change in the pulation each hour, call it “Delta <span class="math notranslate nohighlight">\(N\)</span>” or <span class="math notranslate nohighlight">\(\Delta\)</span><span class="math notranslate nohighlight">\(N\)</span>, is <span class="math notranslate nohighlight">\(\Delta\)</span><span class="math notranslate nohighlight">\(N\)</span>/<span class="math notranslate nohighlight">\(\Delta\)</span><span class="math notranslate nohighlight">\(t\)</span> = 2 <span class="math notranslate nohighlight">\(N(t)-N(t)=N(t)\)</span>.
+Here the symbol delta (<span class="math notranslate nohighlight">\(\Delta\)</span>) means <em>change in</em> or the <em>difference</em>. So <span class="math notranslate nohighlight">\(\Delta\)</span><span class="math notranslate nohighlight">\(N\)</span> means the change in <span class="math notranslate nohighlight">\(N\)</span>, and <span class="math notranslate nohighlight">\(\Delta\)</span><span class="math notranslate nohighlight">\(t\)</span> means the change in <span class="math notranslate nohighlight">\(t\)</span>. So the change in <span class="math notranslate nohighlight">\(N\)</span> per unit of time is written <span class="math notranslate nohighlight">\(\Delta\)</span><span class="math notranslate nohighlight">\(N\)</span>/<span class="math notranslate nohighlight">\(\Delta\)</span><span class="math notranslate nohighlight">\(t\)</span>, where delta <span class="math notranslate nohighlight">\(t\)</span> is the time unit being used, such as hour or day. This statement is thus the same as the previous one, but with symbols to shorten it.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta\)</span><span class="math notranslate nohighlight">\(N\)</span>/<span class="math notranslate nohighlight">\(\Delta\)</span><span class="math notranslate nohighlight">\(t=N\)</span>.
+This means the population change in each time unit is equal to the population size itself. That is just because the population is doubling each time step.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{1}{N}\)</span><span class="math notranslate nohighlight">\(\frac{\Delta N}{\Delta t}\)</span> = 1.
+This is just dividing both sides of the previous equation by <span class="math notranslate nohighlight">\(N\)</span>, and perhaps look even more confusing. However, in what follows, it turns out to be the most useful of all.</p></li>
+</ol>
+<p>To move forward, let’s focus on the last equation, with its parts colored below.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\require{color}
+\begin{align*}
+\definecolor{red}{RGB}{251,0,29}
+\frac{1}{N}\frac{\color{red}{\Delta N}}{\Delta t}\color{red}=&amp;\color{red}{1} \qquad \color{black}\text{There is one new individual . . .} \\ \\
+\frac{1}{N}\frac{\Delta N}{\color{red}{\Delta t}} =&amp; 1 \qquad \text{every hour . . .} \\ \\
+\color{red}\frac{\boldsymbol{1}}{\boldsymbol{N}} \color{black}\frac{\Delta N}{\Delta t}=&amp;1 \qquad \text{for every member of the population.}
+\end{align*}
+\end{split}\]</div>
+<p>In the first row, the “<span class="math notranslate nohighlight">\(\Delta N =1\)</span>” refers to a change in the population of one individual, because delta <span class="math notranslate nohighlight">\(\Delta\)</span> means change. In the second row, the “<span class="math notranslate nohighlight">\(\Delta t\)</span>” in the denominator modifies this to the change in each time step - in this, case each hour. In the third row, the <span class="math notranslate nohighlight">\(1/N\)</span> modifies it drastically to mean the change in the population <em>per individual</em> in the population.</p>
+<p>This could mean that one new individual is born while the parent lives on, or that two new individuals are born and the parent dies, or that the parent divides in two, or other equivalent events. In this model, these details are abstractions that do not matter for purposes of projecting the population. The model simply records the number of offspring produced by each member of the population and surviving to reproduce. Multiplied by 100, this becomes the percentage growth of the population. For humans, this is like the number of children per family who survive to adulthood. (Though it has to be divided by two if there are two parents per family.) You have seen how rapidly that blows up, from the calculation on <span class="xref myst">Chapter 3</span>.</p>
+</div>
+<div class="section" id="density-enhanced-growth">
+<h2><span class="section-number">4.2. </span>Density-enhanced growth<a class="headerlink" href="#density-enhanced-growth" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Rudbeckia_hirta%2C_%28_black-eyed-susans%2C%29_%2818978433569%29.jpg/1200px-Rudbeckia_hirta%2C_%28_black-eyed-susans%2C%29_%2818978433569%29.jpg"><img alt="Black_Eyed_Susans" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Rudbeckia_hirta%2C_%28_black-eyed-susans%2C%29_%2818978433569%29.jpg/1200px-Rudbeckia_hirta%2C_%28_black-eyed-susans%2C%29_%2818978433569%29.jpg" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.1 </span><span class="caption-text"><span class="ttooltip"> Black-Eyed Susans, <em>Rudbeckia hirta</em> <span class="ttooltiptext">
+Black-Eyed Susans (<i>Rudbeckiahirta</i>) <b>by</b> Bernard Spragg (CC0)
+</span> </span></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Darwin made unparalleled use of a model that failed, but how can the model be improved so that it does not fail?</p>
+<p>Think of only three Black-Eyed Susan plants (<em>Rudbeckia hirta</em>) becoming established in Yellowstone National Park, one near the north-east entrance, one in the center, and a third near the south entrance|the plants thus separated by over 30 miles. How often would the same pollinator be able to visit two of the plants so the plants could reproduce? Rarely or never, because these pollinators travel limited distances. The plant’s growth rate will thus be 0. (In fact, it will be negative, since the three plants will eventually die.)</p>
+<p>Suppose instead that 1000 of these plants were scattered about the park, making them about 2 miles apart. Occasionally a pollinator might happen by, though the chance of it visiting one of the other Black-Eyed Susans would be very low. Still, with 1000 plants in the area, the growth rate could be slightly positive.</p>
+<p>Now consider 1,000,000 of those plants, making them about 100 meters apart. Pollination would now become relatively frequent. The growth rate of the population thus depends on the number of plants in the vicinity, meaning that this number must be part of the equation used to calculate the population growth rate.</p>
+<p>We can use the equation introduced earlier to calculate this rate. First, put a parameter in place of the 1, like this.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\frac{1}{N}\frac{\Delta N}{\Delta t}=r, \quad \text{where} \ r \ \text{formerly was 1} \\
+\end{align*}
+\end{split}\]</div>
+<p>Then attach a term that recognises the density of other members of the population, <span class="math notranslate nohighlight">\(N\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align*}
+\frac{1}{N}\frac{\Delta N}{\Delta t}=r+sN
+\end{align*}
+\]</div>
+<p>Here <span class="math notranslate nohighlight">\(r\)</span> is related to the number of offspring each plant will produce if it is alone in the world or in the area, and <span class="math notranslate nohighlight">\(s\)</span> is the number of additional offspring it will produce for each additional plant that appears in its vicinity.</p>
+<p>Suppose <span class="math notranslate nohighlight">\(r=0\)</span> and <span class="math notranslate nohighlight">\(s=1/20\)</span>, just for illustration, and start with three plants, so <span class="math notranslate nohighlight">\(N(0)=3\)</span>. That is</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align*}
+\frac{1}{N}\frac{\Delta N}{\Delta t}=0+0.05N
+\end{align*}
+\]</div>
+<p>and convert the model to computer code, like this.</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">&lt;-</span> <span class="m">1</span>
@@ -361,13 +478,38 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="figure" id="fig-4-2">
+<div class="figure" id="id2">
 <a class="shadow bg-primary reference internal image-reference" href="../_images/modeling_single_population_4_0.png"><img alt="fig_4_2" class="shadow bg-primary" src="../_images/modeling_single_population_4_0.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-text"><p>Orthologistic growth contrasted with exponential growth.</p>
-</span><a class="headerlink" href="#fig-4-2" title="Permalink to this image">¶</a></p>
+</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">/Users/sasha/Documents/repos/ecology-textbook/book/content/modeling_single_population.md</span>, line 151); <em><a href="#id2">backlink</a></em></p>
+<p>Duplicate explicit target name: &quot;fig_4_2&quot;.</p>
 </div>
 </div>
 </div>
+</div>
+<div class="figure align-center" id="fig-4-2">
+<a class="reference internal image-reference" href="../_images/blank.png"><img alt="Figure 4.2" src="../_images/blank.png" style="width: 1px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.2 </span><span class="caption-text">Orthologistic growth contrasted with exponential growth</span><a class="headerlink" href="#fig-4-2" title="Permalink to this image">¶</a></p>
+</div>
+<p>The blue line shows the unlimited bacterial growth (exponential growth) that helped lead Darwin to his idea of natural selection. The red line illustrates the new “density-enhanced growth” just being considered, where growth rate increases with density.</p>
+<p>Because it approaches a line that is orthogonal to the line   approached by the logistic model, described later, we call this an “orthologistic model.” It runs away to infinity so quickly that it essentially gets there in a finite amount of time. In physics and mathematics this situation is called a “singularity” - a place where the rules break down. To understand this, it is important to remember that all models are simplifications and therefore approximations, and apply in their specific range. The orthologistic model applies well at low densities, where greater densities mean greater growth. But a different model will take over when the densities get too high. In fact, if a population is following an orthologistic model, the model predicts that there will be some great change that will occur in the near future before the time of the singularity.</p>
+<p>In physics, models with singularities command special attention, for they can reveal previously unknown phenomena. Black holes are one example, while a more mundane one from  physics is familiar to all. Consider a spinning coin with one point touching the table, spinning ever more rapidly as friction and gravity compel the angle between the coin and the table to shrink with time. It turns out that the physical equations that quite accurately model this spinning coin include a singularity - a place where the spinning of the coin becomes infinitely fast at a definite calculable time. Of course, the spinning cannot actually become infinitely fast. As the coin gets too close to the singularity - as its angle dips too near the table - it merely switches to a different model. That different model is a stationary coin. The exact nature of the transition between the spinning and stationary states is complex and debated, but the inevitability of the transition is not.</p>
+<p>It is no different in ecology. Reasonable models leading to singularities are not to be discounted, but rather considered admissible where they apply. They arise inescapably in human population growth, considered in the next chapter.</p>
+</div>
+<div class="section" id="density-limited-growth">
+<h2><span class="section-number">4.3. </span>Density-limited growth<a class="headerlink" href="#density-limited-growth" title="Permalink to this headline">¶</a></h2>
+<p>What about outside of the range of the orthologistic model? Think of the same Black-Eyed Susans, not only close enough that pollinators can flit fluently from one to another, but also crowded so that they start to shade one another, and their roots start to compete for water and nutrients. What is a suitable model for this?</p>
+<p>The growth rate will again depend on the number of plants, but now more plants will <em>reduce</em> the growth rate. That just means a minus sign on s.</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{N}\frac{\Delta N}{\Delta t}=r+sN, \qquad \boldsymbol{s&lt;0}
+\]</div>
+<p>Again, <span class="math notranslate nohighlight">\(r\)</span> is the number of offspring each will produce if it is alone in the world, but with <span class="math notranslate nohighlight">\(s\)</span> negative, <span class="math notranslate nohighlight">\(s\)</span> is the number each plant will be <em>unable to produce</em> for each additional plant that appears in its vicinity.</p>
+<p>Suppose we have <span class="math notranslate nohighlight">\(r=1\)</span> and <span class="math notranslate nohighlight">\(s=-1/1000\)</span>, and we start with three plants, so <span class="math notranslate nohighlight">\(N(0)=3\)</span>. Here is the code, with the new negative <span class="math notranslate nohighlight">\(s\)</span> commented.</p>
+<p>Now, because <span class="math notranslate nohighlight">\(s\)</span> is negative, the growth rate <span class="math notranslate nohighlight">\(1/N \ ΔN/Δt\)</span> will drop as the population increases, so you might surmise that the rate will eventually reach zero and the population will level off. In fact, it levels off to 1000.</p>
+<p><a id ='fig_4_3'></a></p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">&lt;-</span> <span class="m">1</span>
@@ -428,8 +570,93 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/modeling_single_population_6_0.png" src="../_images/modeling_single_population_6_0.png" />
+<img alt="../_images/modeling_single_population_7_0.png" src="../_images/modeling_single_population_7_0.png" />
 </div>
+</div>
+<!-- ---
+render:
+  image:
+    width: 600px
+    alt: fig_4_3
+    classes: shadow bg-primary
+  figure:
+    caption: |      
+      Logistic growth contrasted with orthologistic growth and exponential growth. 
+    name: fig_4_2 
+tags: ["hide_input"]  
+--- -->
+<div class="figure align-center" id="fig-4-3">
+<a class="reference internal image-reference" href="../_images/blank.png"><img alt="Figure 4.3" src="../_images/blank.png" style="width: 1px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.3 </span><span class="caption-text">Logistic growth contrasted with orthologistic growth and exponential growth</span><a class="headerlink" href="#fig-4-3" title="Permalink to this image">¶</a></p>
+</div>
+<p>The value at which it levels off is called an “equilibrium,” a value where the dynamical system becomes quiescent and stops changing. In the case of the logistic equation, it is also called the “carrying capacity,” a level at which the environment cannot “carry” any larger population.</p>
+<p>But why 1000? What value of <span class="math notranslate nohighlight">\(1/N / ΔN/Δt\)</span> will make the population level off? When <span class="math notranslate nohighlight">\(ΔN\)</span> is <span class="math notranslate nohighlight">\(0\)</span>, that means “the change in <span class="math notranslate nohighlight">\(N\)</span> is zero.” And that means <span class="math notranslate nohighlight">\(N\)</span> stops growing. And when <span class="math notranslate nohighlight">\(ΔN\)</span> is zero, the entire term on the left is zero and algebra proceeds as follows.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\frac{1}{N}\frac{\Delta N}{\Delta t}&amp;=r+sN \\
+0&amp;=r+sN \\
+-sN&amp;=r \\
+N&amp;=-r/s
+\end{align*}
+\end{split}\]</div>
+<p>So the carrying capacity is <span class="math notranslate nohighlight">\(-r/s\)</span>. In <a class="reference internal" href="#fig-4-3"><span class="std std-numref">Figure 4.3</span></a>, <span class="math notranslate nohighlight">\(-r/s=-1/(-0.001) = 1000\)</span>. Exactly where it ended up! This is the celebrated logistic equation,” published in 1838 by <a class="reference external" href="https://en.wikipedia.org/wiki/Pierre_Fran%C3%A7ois_Verhulst">Pierre Verhulst</a>. It is commonly written</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{N}\frac{\Delta N}{\Delta t}=rN \left(1-\frac{N}{K} \right)
+\]</div>
+<p>Notice that when <span class="math notranslate nohighlight">\(N\)</span> is equal to <span class="math notranslate nohighlight">\(K\)</span>, the factor in parentheses on the right becomes <span class="math notranslate nohighlight">\(1-N/N=1-1=0\)</span>, so the whole growth term <span class="math notranslate nohighlight">\(ΔN/Δt\)</span> becomes zero and the population stops growing. Thus <span class="math notranslate nohighlight">\(K\)</span> is carrying capacity, and therefore <span class="math notranslate nohighlight">\(K=-r/s\)</span>. As an exercise, you might want substitute <span class="math notranslate nohighlight">\(-r/s\)</span> for <span class="math notranslate nohighlight">\(K\)</span> in the equation above, then simplify and see if you get the <span class="math notranslate nohighlight">\(r + sN\)</span> formulation.</p>
+</div>
+<div class="section" id="parameter-combinations">
+<h2><span class="section-number">4.4. </span>Parameter combinations<a class="headerlink" href="#parameter-combinations" title="Permalink to this headline">¶</a></h2>
+<p>Before moving further, consider all possible combinations of the parameters, as determined by their signs. There are six possibilities, ignoring growth rates of exactly zero as infinitely unlikely.</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(r&gt;0, s&gt;0 \qquad\)</span> Orthologistic growth.</p></li>
+<li><p><span class="math notranslate nohighlight">\(r&lt;0, s&gt;0 \qquad\)</span> Orthologistic growth with an Allee point.</p></li>
+<li><p><span class="math notranslate nohighlight">\(r&gt;0, s=0 \qquad\)</span> Exponential growth.</p></li>
+<li><p><span class="math notranslate nohighlight">\(r&gt;0, s&lt;0 \qquad\)</span> Logistic growth with a carrying capacity.</p></li>
+<li><p><span class="math notranslate nohighlight">\(r&lt;0, s&lt;0 \qquad\)</span> Inviable population declining to extinction.</p></li>
+<li><p><span class="math notranslate nohighlight">\(r&lt;0, s=0 \qquad\)</span> Same as above.</p></li>
+</ol>
+<p><a class="reference internal" href="#fig-4-4"><span class="std std-numref">Figure 4.4</span></a> shows three of these possibilities pieced to gether to form a complete population model. On the left in the figure, number 2 above, orthologistic growth with an <a class="reference external" href="https://en.wikipedia.org/wiki/Allee_effect">Allee point</a>, prevails at low densities, where larger numbers of other members of the species in the vicinity enhance growth. In the middle, number 3 above, exponential growth, occurs as a transition phase. Finally on the right, number 4 above, logistic growth with a carrying capacity, takes over when crowding and other limitations reduce growth rates as larger numbers of other members of the species in the vicinity appear.</p>
+<p>The vertical axis in <a class="reference internal" href="#fig-4-4"><span class="std std-numref">Figure 4.4</span></a> shows the individual growth rate, and the horizontal axis shows the population density. On the right, where the slope is negative, as the density approaches <span class="math notranslate nohighlight">\(-r/s\)</span> from the left the growth rate on the vertical axis drops to zero, so the population stops growing.</p>
+<div class="figure align-center" id="fig-4-4">
+<a class="reference internal image-reference" href="../_images/fig_4_4.png"><img alt="Figure 4.4" src="../_images/fig_4_4.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.4 </span><span class="caption-text">A general population growth model can be assembled from piecewise linear components</span><a class="headerlink" href="#fig-4-4" title="Permalink to this image">¶</a></p>
+</div>
+<p>This is the equilibrium value called the “carrying capacity.” If something pushes the population above that value- immigration of animals from another region, for example- then the growth rate on the vertical axis drops below zero. The growth rate then is negative, and therefore the population declines. On the other hand, if something drops the population below that value - such as emigration of animals to another place - the growth rate on the vertical axis rises above zero. That growth rate is positive, and therefore the population grows.</p>
+<p>The carrying capacity is “stable.” A value is said to be stable if it tends to restore itself when it is pushed away by some outside force.</p>
+<p>The situation is entirely different on the left in the figure, where the slope is positive. As on the right, when the density is <span class="math notranslate nohighlight">\(-r/s\)</span>, the growth rate on the vertical axis reaches zero, meaning the population does not change. This is an equilibrium too - not a carrying capacity, but an <a class="reference external" href="https://en.wikipedia.org/wiki/Allee_effect">Allee point</a>. However, if the population here drifts below <span class="math notranslate nohighlight">\(-r/s\)</span>, the growth rate on the vertical axis becomes negative and the population declines further still. It is unstable. In this model the population continues to decline until eventual extinction. Above the Allee point, however, the growth rate on the vertical axis
+is positive, so the population increases until it reaches some other limitation.</p>
+<p>A species thus becomes endangered when its population drops below its Allee point, and if it is to be saved something must be done to change that point. The parameter <code class="docutils literal notranslate"><span class="pre">r</span></code> must somehow be increased - by restoring habitat, reducing predation by humans, or using artificial reintroductions or other conservation programs (e.g., <a class="reference internal" href="#trumpeter-swan"><span class="std std-numref">Figure 4.5</span></a>.)</p>
+<p>##Generalization
+In summary the macroscale model for population dynamics of a single species, in its simplest form, is</p>
+<div class="math notranslate nohighlight" id="equation-equation-4-1">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-equation-4-1" title="Permalink to this equation">¶</a></span>\[
+\frac{1}{N}\frac{\Delta N}{\Delta t}=r+sN
+\]</div>
+<p>This is a straight-line form of a more general form presented by <a class="reference external" href="https://en.wikipedia.org/wiki/G._Evelyn_Hutchinson">Hutchinson</a>,</p>
+<div class="math notranslate nohighlight" id="equation-equation-4-2">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-equation-4-2" title="Permalink to this equation">¶</a></span>\[
+\frac{1}{N}\frac{\Delta N}{\Delta t}=r+sN+s_{2}N^2+s_{3}N^3+s_{4}N^4+...
+\]</div>
+<p>and of the most general form proposed by <a class="reference external" href="https://en.wikipedia.org/wiki/Andrey_Kolmogorov">Kolomogorov</a>, where <span class="math notranslate nohighlight">\(f(N)\)</span> can be any function of the population density <span class="math notranslate nohighlight">\(N\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-equation-4-3">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-equation-4-3" title="Permalink to this equation">¶</a></span>\[
+\frac{1}{N}\frac{\Delta N}{\Delta t}=f(N)
+\]</div>
+<p>The higher-order terms in Equation <a class="reference internal" href="#equation-equation-4-2">(4.2)</a> could refine population projections if there were enough data to determine them. They are not really needed, however, because straight-line parts can be pieced together to form a general population growth curve, as in <a class="reference internal" href="#fig-4-4"><span class="std std-numref">Figure 4.4</span></a>. And as human population growth in <code class="xref std std-numref docutils literal notranslate"><span class="pre">Figure</span> <span class="pre">%s</span></code> will show, a piecewise approach can more closely approximate the real situation.</p>
+<p>Moreover, blending separate versions of Equation <a class="reference internal" href="#equation-equation-4-1">(4.1)</a> can generalize to either the Hutchinson or Kolomorgov forms, <a class="reference internal" href="#equation-equation-4-2">(4.2)</a> and <a class="reference internal" href="#equation-equation-4-3">(4.3)</a>, as you will see in <span class="xref myst">Chapter 18</span>.</p>
+<div class="figure align-center" id="trumpeter-swan">
+<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Trumpeter_swans_in_winter.jpg/800px-Trumpeter_swans_in_winter.jpg"><img alt="Trumpeter_swan" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Trumpeter_swans_in_winter.jpg/800px-Trumpeter_swans_in_winter.jpg" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.5 </span><span class="caption-text"><span class="ttooltip"> Trumpeter swans - the largest North American birds, with wingspans reaching ten feet - were nearing extinction until deliberate protection and reintroduction programs brought their r-values back to viable levels <span class="ttooltiptext">
+Trumpeter Swans <b>by</b> Jakub Fryš (CC BY-SA 4.0)
+</span> </span></span><a class="headerlink" href="#trumpeter-swan" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="exercises">
+<h2><span class="section-number">4.5. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference external" href="https://github.com/adamtclark/QuantitativeEcologyBook/blob/master/pdf/Ebook_Chapter04.pdf">here</a>.</p>
 </div>
 </div>
 
