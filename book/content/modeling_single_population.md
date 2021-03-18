@@ -225,17 +225,7 @@ population[,c("time", "logistic")]
 ```
 
 ```{code-cell} r
-pivot_longer(population, !time, names_to = "growth type", values_to = "N") %>%
-  ggplot(aes(x=time, y=N, color=`growth type`)) + geom_point() + geom_line() + 
-  coord_cartesian(ylim=c(0, 1100), xlim=c(0,11)) + #limits of x and y axis, allows for out of bounds line
-  scale_color_manual(values = c("blue", "yellow","red")) +
-  xlab("t") + #label for x axis
-  ylab("N(t)") + #label for y axis
-  scale_x_continuous(breaks=c(0,1,2,3,4,5,6,7,8,9,10)) + #tick labels for x axis
-  scale_y_continuous(breaks=c(0,250,500,750,1000)) #tick labels for y axis
-```
-
-<!-- ---
+---
 render:
   image:
     width: 600px
@@ -246,8 +236,16 @@ render:
       Logistic growth contrasted with orthologistic growth and exponential growth. 
     name: fig_4_2 
 tags: ["hide_input"]  
---- -->
-
+---
+pivot_longer(population, !time, names_to = "growth type", values_to = "N") %>%
+  ggplot(aes(x=time, y=N, color=`growth type`)) + geom_point() + geom_line() + 
+  coord_cartesian(ylim=c(0, 1100), xlim=c(0,11)) + #limits of x and y axis, allows for out of bounds line
+  scale_color_manual(values = c("blue", "yellow","red")) +
+  xlab("t") + #label for x axis
+  ylab("N(t)") + #label for y axis
+  scale_x_continuous(breaks=c(0,1,2,3,4,5,6,7,8,9,10)) + #tick labels for x axis
+  scale_y_continuous(breaks=c(0,250,500,750,1000)) #tick labels for y axis
+```
 
 ```{figure} ../img/blank.png
 ---
