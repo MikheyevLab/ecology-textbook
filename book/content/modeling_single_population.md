@@ -109,109 +109,67 @@ $$
 
 and convert the model to computer code, like this.
 
-```r
-r <- 0
-s <- 0.05
-dt <- 1
-t <- 0
-N <- 3
-time <- 1:(15)
-print(N)
-
-for(i in time)
-{
-  populations2[i, "size"] = N
-  dN=(r+s*N)*N*dt;
-  N=N+dN
-  t=t+dt
-  print(N)
-}
-```
-If you run this model in `R` (or other languages in which this code works, like `C` or `AWK`), you will see the numbers below.
-
 ```{code-cell} r
 :tags: ["output_scroll"]
-r <- 0
-s <- 0.05
-dt <- 1
-t <- 0
-N <- 3
-time <- 1:(15)
-populations2 <- data.frame(size = integer())
-
-for(i in time)
-{
-  populations2[i, "size"] = N
-  dN=(r+s*N)*N*dt;
-  N=N+dN
-  t=t+dt
-}
-
-populations2
-```
-Graph these, and you will see the numbers expand past all bounds, vertically off the page.
-
-```{code-cell} r
----
-#tags:["hide-input"]
-#render:
-#  image:
-#    width:600px
-#    alt: fig_4_2
-#    classes: shadow bg-primary
-#  figure:
-#    caption: |      
-#    name: fig_4_2
----
-#EXPONENTIAL
 r <- 1
 s <- 0
 dt <- 1
 t <- 0
 N <- 3
-time <- 1:(20)
-populations1 <- data.frame(size = integer())
+timeSteps <- 14
+population <- data.frame(time = integer(), exponential = integer())
 
-for(i in time)
-{
-  populations1[i, "size"] = N
-  dN=(r+s*N)*N*dt;
-  N=N+dN
-  t=t+dt
+for(i in 1:timeSteps) {
+  population[i, ] = c(t, N)
+  dN <- (r + s * N) * N * dt
+  N <- N + dN
+  t <- t + dt
+  
 }
+population
+```
 
-#ORTHOLOGISTIC
-r <- 0
-s <- 0.05
-dt <- 1
+Orthologistic:
+
+```{code-cell} r
+:tags: ["output_scroll"]
+N <- 3      # re-initialize population size
 t <- 0
-N <- 3
-time <- 1:(20)
-populations2 <- data.frame(size = integer())
+s <- 0.05   # note: s has changed and the other values are the same
 
-for(i in time)
+for(i in 1:timeSteps)
 {
-  populations2[i, "size"] = N
-  dN=(r+s*N)*N*dt;
-  N=N+dN;
-  t=t+dt;
+  population[i, "orthologistic"] <- N
+  dN <- (r + s * N) * N * dt
+  N <- N + dN
+  t <- t + dt
 }
-
-#PLOTTING
-library(ggplot2)
-fig_4_2 <- ggplot() +
-  geom_point(data=populations1, aes(x=0:19, y=size), color="blue") + #data points of exponential
-  geom_line(data=populations1, aes(x=0:19, y=size), color="blue") + #line for exponential growth
-  geom_point(data=populations2, aes(x=0:(19), y=size), color="red") + #data points of orthologistic
-  geom_line(data=populations2, aes(x=0:(19), y=size), color="red") + #line for orthologistic growth
+population[,c("time", "orthologistic")]
+```
+```{code-cell} r
+---
+render:
+  image:
+    width: 600px
+    alt: fig_4_2
+    classes: shadow bg-primary
+  figure:
+    caption: |      
+      Orthologistic growth contrasted with exponential growth.
+    name: fig_4_2 
+tags: ["hide_input"]  
+---
+suppressPackageStartupMessages(library(tidyverse))
+pivot_longer(population, !time, names_to = "growth type", values_to = "N") %>%
+  ggplot(aes(x=time, y=N, color=`growth type`)) + geom_point() + geom_line() + 
   coord_cartesian(ylim=c(0, 1100), xlim=c(0,11)) + #limits of x and y axis, allows for out of bounds line
+  scale_color_manual(values = c("blue", "red")) +
   xlab("t") + #label for x axis
   ylab("N(t)") + #label for y axis
   scale_x_continuous(breaks=c(0,1,2,3,4,5,6,7,8,9,10)) + #tick labels for x axis
   scale_y_continuous(breaks=c(0,250,500,750,1000)) #tick labels for y axis
-
-fig_4_2
 ```
+
 ```{figure} ../img/blank.png
 ---
 name: fig_4_2
@@ -219,11 +177,12 @@ alt: Figure 4.2
 width: 1px
 align: center
 ---
-Orthologistic growth (red) contrasted with exponential growth (blue).
+Orthologistic growth contrasted with exponential growth
 ```
+
 The blue line shows the unlimited bacterial growth (exponential growth) that helped lead Darwin to his idea of natural selection. The red line illustrates the new "density-enhanced growth" just being considered, where growth rate increases with density.
 
-Because it approaches a line that is orthogonal to the line   approached by the logistic model, described later, we call   this an "orthologistic model." It runs away to infinity so quickly that it essentially gets there in a finite amount of time. In physics and mathematics this situation is called a "singularity" - a place where the rules break down. To understand this, it is important to remember that all models are simplifications and therefore approximations, and apply in their specific range. The orthologistic model applies well at low densities, where greater densities mean greater growth. But a different model will take over when the densities get too high. In fact, if a population is following an orthologistic model, the model predicts that there will be some great change that will occur in the near future before the time of the singularity.
+Because it approaches a line that is orthogonal to the line   approached by the logistic model, described later, we call this an "orthologistic model." It runs away to infinity so quickly that it essentially gets there in a finite amount of time. In physics and mathematics this situation is called a "singularity" - a place where the rules break down. To understand this, it is important to remember that all models are simplifications and therefore approximations, and apply in their specific range. The orthologistic model applies well at low densities, where greater densities mean greater growth. But a different model will take over when the densities get too high. In fact, if a population is following an orthologistic model, the model predicts that there will be some great change that will occur in the near future before the time of the singularity.
 
 In physics, models with singularities command special attention, for they can reveal previously unknown phenomena. Black holes are one example, while a more mundane one from  physics is familiar to all. Consider a spinning coin with one point touching the table, spinning ever more rapidly as friction and gravity compel the angle between the coin and the table to shrink with time. It turns out that the physical equations that quite accurately model this spinning coin include a singularity - a place where the spinning of the coin becomes infinitely fast at a definite calculable time. Of course, the spinning cannot actually become infinitely fast. As the coin gets too close to the singularity - as its angle dips too near the table - it merely switches to a different model. That different model is a stationary coin. The exact nature of the transition between the spinning and stationary states is complex and debated, but the inevitability of the transition is not.
 
@@ -242,99 +201,53 @@ Again, $r$ is the number of offspring each will produce if it is alone in the wo
 
 Suppose we have $r=1$ and $s=-1/1000$, and we start with three plants, so $N(0)=3$. Here is the code, with the new negative $s$ commented.
 
-```{code-cell}r
-r <- 1
-s <- -0.001 #This is the new negative s
-dt <- 1
-t <- 0
-N <- 3
-time <- 1:(20)
-print(N)
-
-for(i in time) {
-  dN=(r+s*N)*N*dt;   
-  N=N+dN;   
-  t=t+dt;   
-  print(N);
-}
-```
 Now, because $s$ is negative, the growth rate $1/N \ ΔN/Δt$ will drop as the population increases, so you might surmise that the rate will eventually reach zero and the population will level off. In fact, it levels off to 1000.
 
 <a id ='fig_4_3'></a>
 
 ```{code-cell} r
-#tags:["hide-input"]
-#render:
-#  image:
-#    width:600px
-#    alt: fig_4_3
-#    classes: shadow bg-primary
-#  figure:
-#    caption: |
-#    name: fig_4_3
-
-#EXPONENTIAL
-r <- 1
-s <- 0
-dt <- 1
-t <- 0
-N <- 3
-time <- 1:(20)
-populations1 <- data.frame(size = integer())
-for(i in time)
-{
-  populations1[i, "size"] = N
-  dN=(r+s*N)*N*dt;
-  N=N+dN
-  t=t+dt
-}
-#ORTHOLOGISTIC
-r <- 0
-s <- 0.05
-dt <- 1
-t <- 0
-N <- 3
-time <- 1:(20)
-populations2 <- data.frame(size = integer())
-for(i in time)
-{
-  populations2[i, "size"] = N
-  dN=(r+s*N)*N*dt;
-  N=N+dN;
-  t=t+dt;
-}
-#to save the logistic growth into a dataframe
-#LOGISTIC
+:tags: ["output_scroll"]
 r <- 1
 s <- -0.001
 dt <- 1
 t <- 0
 N <- 3
-time <- 1:(20)
-populations3 <- data.frame(size = integer())
-for(i in time)
+
+
+for(i in 1:timeSteps)
 {
-  populations3[i, "size"] = N
-  dN=(r+s*N)*N*dt;
-  N=N+dN
-  t=t+dt
+  population[i, "logistic"] <- N
+  dN <- (r + s * N) * N * dt
+  N <- N + dN
+  t <- t + dt
 }
-#PLOTTING
-library(ggplot2)
-fig_4_3 <- ggplot() +
-  geom_point(data=populations1, aes(x=0:19, y=size), color="blue") +
-  geom_line(data=populations1, aes(x=0:19, y=size), color="blue") +
-  geom_point(data=populations2, aes(x=0:(19), y=size), color="red") +
-  geom_line(data=populations2, aes(x=0:(19), y=size), color="red") +
-  geom_point(data=populations3, aes(x=0:(19), y=size), color="green") + #new points for logistic model
-  geom_line(data=populations3, aes(x=0:(19), y=size), color="green") + #lines for logistic growth
-  coord_cartesian(ylim=c(0, 1100), xlim=c(0,13)) +
-  xlab("t") +
-  ylab("N(t)") +
-  scale_x_continuous(breaks=c(0,1,2,3,4,5,6,7,8,9,10,11,12)) +
-  scale_y_continuous(breaks=c(0,250,500,750,1000))
-fig_4_3
+population[,c("time", "logistic")]
 ```
+
+```{code-cell} r
+pivot_longer(population, !time, names_to = "growth type", values_to = "N") %>%
+  ggplot(aes(x=time, y=N, color=`growth type`)) + geom_point() + geom_line() + 
+  coord_cartesian(ylim=c(0, 1100), xlim=c(0,11)) + #limits of x and y axis, allows for out of bounds line
+  scale_color_manual(values = c("blue", "yellow","red")) +
+  xlab("t") + #label for x axis
+  ylab("N(t)") + #label for y axis
+  scale_x_continuous(breaks=c(0,1,2,3,4,5,6,7,8,9,10)) + #tick labels for x axis
+  scale_y_continuous(breaks=c(0,250,500,750,1000)) #tick labels for y axis
+```
+
+<!-- ---
+render:
+  image:
+    width: 600px
+    alt: fig_4_3
+    classes: shadow bg-primary
+  figure:
+    caption: |      
+      Logistic growth contrasted with orthologistic growth and exponential growth. 
+    name: fig_4_2 
+tags: ["hide_input"]  
+--- -->
+
 
 ```{figure} ../img/blank.png
 ---
@@ -343,7 +256,7 @@ alt: Figure 4.3
 width: 1px
 align: center
 ---
-Logistic growth (green) contrasted with orthologistic growth (red) and exponential growth (blue).
+Logistic growth contrasted with orthologistic growth and exponential growth
 ```
 
 The value at which it levels off is called an "equilibrium," a value where the dynamical system becomes quiescent and stops changing. In the case of the logistic equation, it is also called the "carrying capacity," a level at which the environment cannot "carry" any larger population.
@@ -436,3 +349,7 @@ align: center
   </span> </span>
 
 ```
+
+## Exercises
+
+See [here](https://github.com/adamtclark/QuantitativeEcologyBook/blob/master/pdf/Ebook_Chapter04.pdf).
