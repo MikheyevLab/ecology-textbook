@@ -1,13 +1,24 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: r
+  language: r
+  name: ir
+---
+
 # What is ecology?
 
-Winston Churchill[$^\star$](https://en.wikipedia.org/wiki/Winston_Churchill) pointed out
+[Winston Churchill](https://en.wikipedia.org/wiki/Winston_Churchill) pointed out
 that |10| "All the great things are simple, and many can be expressed in a
 single word---freedom, justice, honor, duty, mercy, hope."
 Should we try to define these? Can we define them?
 
 We should at least try to define our subject, ecology; many textbooks start with
 definitions. But first, for background, consider how we might define life.
-Marvin Minsky[$^\star$](https://en.wikipedia.org/wiki/Marvin_Minsky) was an artificial
+[Marvin Minsky](https://en.wikipedia.org/wiki/Marvin_Minsky) was an artificial
 intelligence researcher and computer scientist who thought about definitions.
 When is an object alive? Think about viruses, genes, self-reproducing
 machines---no one has really been able to give a good definition of
@@ -25,32 +36,30 @@ conditions are dropped, (4) will admit the frankfurter. One can go on to extend
 the list with more careful qualifications, but questions remain until the list
 grows to include special mention of everything we can think of.
 
-## 1.1 Definitions of ecology
+## Definitions of ecology
 
-With caveats in mind, consider definitions of ecology. In the 1860s, Ernst
-Haeckel,[$^\star$](https://en.wikipedia.org/wiki/Ernst_Haeckel) combined the term
+With caveats in mind, consider definitions of ecology. In the 1860s, [Ernst
+Haeckel](https://en.wikipedia.org/wiki/Ernst_Haeckel) combined the term
 *oikos*---a place to live, home, habitat---with *logia*---discourse,
-study---to coin the word "ecology." In the 1890s Ellen
-Richards[$^\star$](https://en.wikipedia.org/wiki/Ellen_Swallow_Richards) included humans
-and harmony,
-quite a modern view. Variations over the years are shown in
-Table *ViewsEcology*.
+study---to coin the word "ecology." In the 1890s [Ellen
+Richards](https://en.wikipedia.org/wiki/Ellen_Swallow_Richards) included humans
+and harmony, quite a modern view. Variations over the years are shown in {numref}`ViewsEcology`.
 
-$$
-    |\BeginTable\BeginFormat|l|l|l|\EndFormat\_
-    ||Haeckel     |1860s|\vtop{\hsize=160pt\noindent\baselineskip=10.5pt The total relations of an organism to its organic and inorganic environment}|\\+40
-    ||Richards    |1890s|\vtop{\hsize=160pt\noindent\baselineskip=10.5pt Living in harmony with the environment, first including family, then community, then the world and its resources}|\\+40
-    ||Elton       |1920s|\vtop{\hsize=160pt\noindent\baselineskip=10.5pt Scientific natural history}|\\+40
-    ||Odum        |1960s|\vtop{\hsize=160pt\noindent\baselineskip=10.5pt The study of the structure and function of nature, including the human species}|\\+40
-    ||Andrewartha |1960s|\vtop{\hsize=160pt\noindent\baselineskip=10.5pt The scientific study of the distribution and abundance of organisms}|\\+40
-    ||Krebs       |     |\vtop{\hsize=160pt\noindent\baselineskip=10.5pt The scientific study of the interactions that determine the distribution and abundance of organisms}|\\+40
-    ||Molles      |1990s|\vtop{\hsize=160pt\noindent\baselineskip=10.5pt The study of relationships between organisms and the environment}|\\+40
-    ||Eilts       |2010s|\vtop{\hsize=160pt\noindent\baselineskip=10.5pt Life in context}|\\+40
-    ||Pope Francis|2015 |\vtop{\hsize=160pt\noindent\baselineskip=10.5pt The relationship between living organisms and the environment in which they develop}|\\+4{22} \_
-    |\EndTable
-$$
+```{table} Various views of ecology
+:name: ViewsEcology
+| Author       | Date     | Definition     |
+| :------------- | :----------: | -----------: |
+|Haeckel     |1860s| The total relations of an organism to its organic and inorganic environment|
+|Richards    |1890s| Living in harmony with the environment, first including family, then community, then the world and its resources|
+|Elton       |1920s| Scientific natural history|
+|Odum        |1960s| The study of the structure and function of nature, including the human species|
+|Andrewartha |1960s| The scientific study of the distribution and abundance of organisms|
+|Krebs       |     | The scientific study of the interactions that determine the distribution and abundance of organisms|
+|Molles      |1990s| The study of relationships between organisms and the environment|
+|Eilts       |2010s| Life in context|
+|Pope Francis|2015 | The relationship between living organisms and the environment in which they develop|
+```
 
-<tabdef tag="ViewsEcology">Various views of ecology.</tabdef>
 
 Each of these definitions has merit, but the first two and the last two are
 closest to the way the term is applied in this book. We humans have become
@@ -74,11 +83,17 @@ the remainder of this book to define a theoretical form of ecology through
 examples and demonstrations, representative models and symbols, patterns and
 explanations, and lessons and caveats.
 
-<image height=2.5 width=4 border=no>../image/fairuse/RhindMathematicalPapyrus.jpg</image>
-**Figure 1.1.** `<figdef tag="FigRhind">`
-The Rhind Papyrus, c.\ 1640 BC. One of the oldest known documents---and
-containing exercises from theoretical ecology!
-`</figdef>`
+```{figure} https://upload.wikimedia.org/wikipedia/commons/d/d9/Rhind_Mathematical_Papyrus.jpg
+---
+alt: RhindPapyrus
+name: RhindPapyrus 
+width: 600px
+align: center
+---
+<span class="ttooltip">The Rhind Papyrus, c. 1640 BC. One of the oldest known documents -- and containing exercises from theoretical ecology!<span class="ttooltiptext">
+  Rhind Mathematical Papyrus <b>by</b> Paul James Cowie (Public Domain)
+  </span> </span>
+```
 
 ## Ecology then and now
 
@@ -89,13 +104,19 @@ part of life for hundreds of thousands of years. Ecology is connected with our
 species.
 
 Some elements of the field of ecology were formalized more than 3000 years ago.
-The Rhind Papyrus (Figure *FigRhind*) lists a number of ecological
+The Rhind Papyrus ({numref}`RhindPapyrus`) lists a number of ecological
 exercises for students---mathematics from ancient Egypt. Among these oldest
 ecological problems is this:
 
-{\sl Number 27. If a mouse eat 521 ikats of grain each year and a cat kills 96
+
+```{epigraph}
+Number 27. If a mouse eat 521 ikats of grain each year and a cat kills 96
 mice a year, in each of 24 barns, how many cats are required to control the
-destruction of stored grain? }
+destruction of stored grain?
+
+-- The scribe Ahmes, 1640 BC
+```
+
 
 This is a little problem in quantitative ecology! Even 36 centuries ago,
 mathematical ecology was part of life. Knowing how many grain bins determined
@@ -112,7 +133,7 @@ it means a collection of companies, customers, and products and their
 interconnections. For better or worse, ecological terminology is expanding to
 other domains.
 
-### 1.3 Methods of ecology
+## Methods of ecology
 
 How do ecologists do ecology? Often, they start with observation, then move to
 theory---trying to fit observations together to make sense as a whole. Theory
@@ -148,21 +169,26 @@ before. Then he suggests that "it may be an efficient antiseptic." One of
 the greatest discoveries of all time and only, "it may be an efficient
 antiseptic."
 
-<+>Cedar Creek[$^\star$](https://en.wikipedia.org/wiki/Cedar_Creek_Ecosystem_Science_Reserve)
+[Cedar Creek](https://en.wikipedia.org/wiki/Cedar_Creek_Ecosystem_Science_Reserve)
 is a University of Minnesota research site about thirty miles north of the
 University's Saint Paul campus, and is one of the classic ecological research
-sites in the world. Pictured in Figure *FigCCexpA*  is an experiment
-set up by Prof.\ David Tilman[$^\star$](https://en.wikipedia.org/wiki/G._David_Tilman).
-While very carefully designed, it came about because of serendipity---the chance
+sites in the world. Pictured in {numref}`CedarCreek`  is an experiment
+set up by [Prof. David Tilman](https://en.wikipedia.org/wiki/G._David_Tilman).
+While very carefully designed, it came about because of serendipity -- the chance
 event of a deep two-year drought that altered the abundances of species in a
 particular way and triggered the idea for this experiment.
 
 Keep your eyes open for such chance events; they can crop up anywhere.
 
-<image width=4 height=2.9>../image/cc/e120cg.jpg</image>
 
-**Figure 1.2.** `<figdef tag="FigCCexpA">`  Observations and experiments testing theory at Cedar
-Creek[$^\star$](https://en.wikipedia.org/wiki/Cedar_Creek_Ecosystem_Science_Reserve). This
-entire experiment was established following up on serendipity.
-`</figdef>`
-
+```{figure} ../img/cc/e120cg.jpg 
+---
+alt: CedarCreek
+name: CedarCreek 
+width: 600px
+align: center
+---
+<span class="ttooltip">Observations and experiments testing theory at [Cedar Creek](https://en.wikipedia.org/wiki/Cedar_Creek_Ecosystem_Science_Reserve). This entire experiment was established following up on serendipity.
+<span class="ttooltiptext">
+  Rhind Mathematical Papyrus <b>by</b> Clarence Lehman (CC-BY-NC 4.0)</span> </span>
+```

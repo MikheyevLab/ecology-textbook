@@ -29,7 +29,7 @@ It turns out that differential equations are harder for computers to solve than 
 
 ```{code-block} r
 ---
-emphasize-lines: 6
+emphasize-lines: "6"
 ---
 dt = 1
 print(N);
@@ -55,10 +55,12 @@ for(t in time){
   print(N)
 }
 ```
-This intends to model *infinitely small* time steps. Of course it cannot do that exactly, but must settle for very small time steps. Instead of $dt = 1$, for example, representing one year, it is set here to about one second, dividing the time period (20 days) by 24 hours, 60 minutes, and 60 seconds, creating `20 * 24 * 60 * 60` time steps. This is hardly infinitely small, but for populations of bacteria and humans it is close enough for practical purposes. Still, it is important to check for negative populations in case the time step is not small enough.
+
 ```{warning}
 Feel free to run the above loop on your own machines, but note that we have defined our  `time` vector to contain every single second from the beginning of day 0 to the end of day 20. It will take some time for R to print all the time steps. The calculation is fast, but printing out 1,728,000 lines of text is not.
 ```
+
+This intends to model *infinitely small* time steps. Of course it cannot do that exactly, but must settle for very small time steps. Instead of $dt = 1$, for example, representing one year, it is set here to about one second, dividing the time period (20 days) by 24 hours, 60 minutes, and 60 seconds, creating `20 * 24 * 60 * 60` time steps. This is hardly infinitely small, but for populations of bacteria and humans it is close enough for practical purposes. Still, it is important to check for negative populations in case the time step is not small enough.
 
 How small is close enough to infinitely small? is the question. To find out, you can set the time step to something small and run the code, which will produce a set of population values through time. Then set the step smaller still and run the code again. It will run more slowly because it is calculating more steps, but if essentially the same answer appears—if the answer “converges”—then you can make the step larger again, speeding the calculation. With a few trials you can find a time step that is small enough to give accurate answers but large enough to allow your code to run reasonably fast.
 
@@ -204,3 +206,15 @@ $$
 In the 1960s, [Heinz von Foerster](https://en.wikipedia.org/wiki/Heinz_von_Foerster) wrote about this in the journal *Science*. Though the consequences he suggested were deadly serious, his work was not taken very seriously at the time, perhaps in part because the time was so far away (about a human lifetime), but perhaps also because he put the date of the singularity on Friday the 13th, 2026, his 115th birthday. In the title of his paper he called this “doomsday”, when the human population would have demolished itself.
 
 Von Foerster used a more complicated model than the $r+sN$ model we are using, but it led to the same result. Some of the ideas were picked up by [Paul Ehrlich](https://en.wikipedia.org/wiki/Paul_R._Ehrlich) and others, and became the late-1960s concept of the “population bomb”—which was taken seriously by many.
+
+
+```{figure} https://upload.wikimedia.org/wikipedia/en/d/da/The_Population_Bomb.jpg
+---
+alt: Population_Bomb
+name: Population_Bomb 
+width: 200px
+align: center
+---
+*[The Population Bomb](https://en.wikipedia.org/wiki/The_Population_Bomb)*
+```
+

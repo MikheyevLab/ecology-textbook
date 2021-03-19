@@ -1,6 +1,17 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: r
+  language: r
+  name: ir
+---
+
 # Ecological theory
 
-### 2.1 Levels of ecology
+## Levels of ecology
 
 Ecology covers a vast range of topics and can be viewed on multiple levels. One
 level is that of the *individual organism*---a single bacterium, an
@@ -16,20 +27,32 @@ ecology*---ecology of the planetary ecosystem.
 
 <image width=2.8 height=5 border=no>../image/fairuse/LevelsOfEcology.jpg</image>
 
-**Figure 2.1.** `<figdef tag="FigLevelsComplexity">` Levels of complexity.
-`</figdef>`
 
-$$
-    |\BeginTable\BeginFormat|l|l|\EndFormat\_
-    ||Individual ecology |Single organisms, behavior, and physiology |\\+40
-    ||Population ecology |Groups of organisms from a single species |\\
-    ||Community ecology  |Populations of interacting species |\\
-    ||Ecosystem ecology  |Multiple communities and the environment |\\
-    ||Global ecology     |The planet as a biosphere |\\+04 \_
-    |\EndTable
-$$
+```{table} Levels of complexity
+:name: complexity
+| Level | Description |
+| :------ | :------ |
+| Individual ecology |Single organisms, behavior, and physiology |
+| Population ecology |Groups of organisms from a single species |
+| Community ecology  |Populations of interacting species |
+| Ecosystem ecology  |Multiple communities and the environment |
+| Global ecology     |The planet as a biosphere |
+```
 
-### 2.2 Role of theory
+
+```{figure} ../img/fairuse/LevelsOfEcology.jpg
+---
+alt: LevelsOfEcology
+name: LevelsOfEcology 
+width: 600px
+align: center
+---
+<span class="ttooltip">Levels of complexity<span class="ttooltiptext">
+  Levels of complexity <b>by</b> Multiple authors see Quantitative Ecology for licensing
+  </span> </span>
+```
+
+## Role of theory
 
 From its early days, ecology has been in part a theoretical--mathematical
 science, and it is now also a
@@ -39,7 +62,7 @@ systems, though creating computations on complex systems that satisfy the basic
 tenets of science is still problematic. For very complex systems, narrative is
 all we have available.
 
-Examine the levels in Figure *FigLevelsComplexity*  to think about
+Examine the levels in {numref}`LevelsOfEcology` to think about
 where theory applies. Subatomic particles and atoms are the realm of quantum
 mechanics, one of the most sublime and successful theories. Theory applies
 nicely to the hydrogen atom, a two-particle object. And while it applies to
@@ -48,7 +71,7 @@ grows, so computation comes into play. At higher levels like the molecular one,
 theory is harder to apply. Organic chemistry, for example, is not a strongly
 mathematical science, and at the level of protoplasm and cells there is no
 comprehensive mathematical theory or computational equivalent. This level is far
-too complex---with minuscule molecular machines running along tubules and
+too complex -- with minuscule molecular machines running along tubules and
 carrying mitochondria on their backs at high speed relative to their size, it is
 more complex than any industrial factory. At the level of tissues and organs
 systems, we have only narratives to guide our understanding.
@@ -57,7 +80,7 @@ What happens, then, at the level of organisms, at the entry to ecology?
 Individual organisms are exceedingly complex. There is no complete mathematical
 theory for the internal operation of individual organisms. But externally,
 organisms behave as a unit and populations become simpler than
-individuals---glossing over heartbeat, neuron firing rates, white blood cell
+individuals -- glossing over heartbeat, neuron firing rates, white blood cell
 replication, and so on, with all their enormous complexity. Details disappear.
 Populations can be described with basic mathematics. Communities are more
 complex, but are still within the reach of mathematics and, particularly, within
@@ -89,7 +112,7 @@ reflection.
 But we try to find simplicity among this complexity, to let us feel we
 understand, and to let us predict what can happen.
 
-### 2.3 What is a model?
+## What is a model?
 
 Science strives for simplicity, and models are part of the process. What is a
 model? It is just a simplified view of something more complex.
@@ -115,31 +138,35 @@ This book focuses on computational and mathematical models of ecological
 systems. What is left out of these models is as important as what is put in.
 Simplification is key.
 
-<shaded height=1.5>
+```{epigraph}
 If you have a complex natural system you don't understand, and you construct a
 computer model incorporating everything you can about that natural system, you
 now have two systems you don't understand.
-*---after Chris Payola, UMN*
 
+-- after Chris Payola, UMN
+```
+
+```{epigraph}
 A designer knows he has achieved perfection not when there is nothing left to
 add, but when there is nothing left to take away.
-*---Antoine de Saint-Exupery*
-</shaded>
+
+-- Antoine de Saint-Exupery
+```
 
 Two different simplifications of time are commonly used in ecological models:
 
-  - *Discrete time[$^\star$](https://en.wikipedia.org/wiki/Discrete_time_and_continuous_time)*\kern-.2em---Events
+  - *[Discrete time](https://en.wikipedia.org/wiki/Discrete_time_and_continuous_time)*: Events
 happen at periodic time steps, as if time is non-existent in between.
 
-  - *Continuous time[$^\star$](https://en.wikipedia.org/wiki/Discrete_time_and_continuous_time)*\kern-.2em---Events
+  - *[Continuous time](https://en.wikipedia.org/wiki/Discrete_time_and_continuous_time)*: Events
 happen smoothly and at all times.
 
 In addition, there are two different classes of models:
 
-  - *Macroscale[$^\star$](https://en.wikipedia.org/wiki/Microscale_and_macroscale_models)*\kern-.2em---Individual
+  - *[Macroscale](https://en.wikipedia.org/wiki/Microscale_and_macroscale_models)*: Individual
 organisms are not tracked, but are measured in aggregate and represented by
 composite variables such as $N$.
-  - *Microscale[$^\star$](https://en.wikipedia.org/wiki/Microscale_and_macroscale_models)*\kern-.2em---Individual
+  - *[Microscale](https://en.wikipedia.org/wiki/Microscale_and_macroscale_models)*: Individual
 organisms are tracked separately. These are also known as agent-based or
 individual-based models.
 
@@ -150,21 +177,26 @@ four categories are only approximations of reality.
 Later in this book we will also explore mechanistic versus phenomenological
 models.
 
-### 2.4 Present state
+## Present state
 
 As a surprising side note, the standard models commonly taught in ecology
 courses are not complete, and a main purpose of this book is to help make them
-more so. One aspect of theory related to simple species, for instance---called
-orthologistic population growth---is rarely even studied, much less taught, yet
+more so. One aspect of theory related to simple species, for instance -- called
+orthologistic population growth -- is rarely even studied, much less taught, yet
 is essential for understanding rapidly growing populations, including human
 populations in millennia past. For two-species interactions, another theory
 concerning mutualisms and a related kind of population growth is highly
 under-developed, and the theory of three-species interactions is even less
 complete.
 
-<image width=2.5 height=3.7>../image/fairuse/AlbertEinstein.jpg</image>
-
-**Figure 2.2.** `<figdef tag="FigEinsteinPatentOffice">`
-The eternal mystery of the universe is its comprehensibility. ---A. Einstein
-`</figdef>`
-
+```{figure} https://upload.wikimedia.org/wikipedia/commons/8/87/Einstein_patentoffice_full.jpg
+---
+alt: Einstein
+name: Einstein 
+width: 600px
+align: center
+---
+<span class="ttooltip"> The eternal mystery of the universe is its comprehensibility -- Albert Einstain<span class="ttooltiptext">
+  Einstein <b>by</b> Lucien Chavan (Public Domain)
+  </span> </span>
+```
