@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2. Ecological theory &#8212; Quantitative Ecology</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
     
   <link rel="stylesheet"
@@ -26,7 +26,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -45,7 +45,9 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
@@ -53,8 +55,6 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="3. A basic population model" href="basic_population_model.html" />
@@ -129,7 +129,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="C05-Differential_and_difference_forms.html">
+  <a class="reference internal" href="differential_and_difference_forms.html">
    5. Differential and difference forms
   </a>
  </li>
@@ -160,28 +160,31 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../_sources/content/C02-Theory.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../_sources/content/C02-Theory.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -192,7 +195,7 @@
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
+        <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -211,50 +214,68 @@
 </div>
 
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
+        <!-- Launch buttons -->
 
-        </div>
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/MikheyevLab/ecology-textbook/main?urlpath=tree/book/content/C02-Theory.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#levels-of-ecology">
-   2.1. 2.1 Levels of ecology
+   2.1. Levels of ecology
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#role-of-theory">
-   2.2. 2.2 Role of theory
+   2.2. Role of theory
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-is-a-model">
-   2.3. 2.3 What is a model?
+   2.3. What is a model?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#present-state">
-   2.4. 2.4 Present state
+   2.4. Present state
   </a>
  </li>
 </ul>
 
         </nav>
         
-        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -265,7 +286,7 @@
   <div class="section" id="ecological-theory">
 <h1><span class="section-number">2. </span>Ecological theory<a class="headerlink" href="#ecological-theory" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="levels-of-ecology">
-<h2><span class="section-number">2.1. </span>2.1 Levels of ecology<a class="headerlink" href="#levels-of-ecology" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1. </span>Levels of ecology<a class="headerlink" href="#levels-of-ecology" title="Permalink to this headline">¶</a></h2>
 <p>Ecology covers a vast range of topics and can be viewed on multiple levels. One
 level is that of the <em>individual organism</em>—a single bacterium, an
 individual wolf pup. This includes individual behavior and physiology, with
@@ -278,21 +299,40 @@ Above this level is <em>ecosystem ecology</em>, which examines how different
 communities interact with their environments. Finally, there is <em>global
 ecology</em>—ecology of the planetary ecosystem.</p>
 <p><image width=2.8 height=5 border=no>../image/fairuse/LevelsOfEcology.jpg</image></p>
-<p><strong>Figure 2.1.</strong> <code class="docutils literal notranslate"><span class="pre">&lt;figdef</span> <span class="pre">tag=&quot;FigLevelsComplexity&quot;&gt;</span></code> Levels of complexity.
-<code class="docutils literal notranslate"><span class="pre">&lt;/figdef&gt;</span></code></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-    |\BeginTable\BeginFormat|l|l|\EndFormat\_
-    ||Individual ecology |Single organisms, behavior, and physiology |\\+40
-    ||Population ecology |Groups of organisms from a single species |\\
-    ||Community ecology  |Populations of interacting species |\\
-    ||Ecosystem ecology  |Multiple communities and the environment |\\
-    ||Global ecology     |The planet as a biosphere |\\+04 \_
-    |\EndTable
-\end{split}\]</div>
+<table class="colwidths-auto table" id="complexity">
+<caption><span class="caption-number">Table 2.1 </span><span class="caption-text">Levels of complexity</span><a class="headerlink" href="#complexity" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Level</p></th>
+<th class="text-align:left head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Individual ecology</p></td>
+<td class="text-align:left"><p>Single organisms, behavior, and physiology</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Population ecology</p></td>
+<td class="text-align:left"><p>Groups of organisms from a single species</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Community ecology</p></td>
+<td class="text-align:left"><p>Populations of interacting species</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Ecosystem ecology</p></td>
+<td class="text-align:left"><p>Multiple communities and the environment</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Global ecology</p></td>
+<td class="text-align:left"><p>The planet as a biosphere</p></td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-center" id="levelsofecology">
+<a class="reference internal image-reference" href="../_images/LevelsOfEcology.jpg"><img alt="LevelsOfEcology" src="../_images/LevelsOfEcology.jpg" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text"><span class="ttooltip">Levels of complexity<span class="ttooltiptext">
+Levels of complexity <b>by</b> Multiple authors see Quantitative Ecology for licensing
+</span> </span></span><a class="headerlink" href="#levelsofecology" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="section" id="role-of-theory">
-<h2><span class="section-number">2.2. </span>2.2 Role of theory<a class="headerlink" href="#role-of-theory" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2. </span>Role of theory<a class="headerlink" href="#role-of-theory" title="Permalink to this headline">¶</a></h2>
 <p>From its early days, ecology has been in part a theoretical–mathematical
 science, and it is now also a
 computational science. Mathematical theory arises where systems are relatively
@@ -300,7 +340,7 @@ simple. In our modern era, computation can address somewhat more complex
 systems, though creating computations on complex systems that satisfy the basic
 tenets of science is still problematic. For very complex systems, narrative is
 all we have available.</p>
-<p>Examine the levels in Figure <em>FigLevelsComplexity</em>  to think about
+<p>Examine the levels in <a class="reference internal" href="#levelsofecology"><span class="std std-numref">Fig. 2.1</span></a> to think about
 where theory applies. Subatomic particles and atoms are the realm of quantum
 mechanics, one of the most sublime and successful theories. Theory applies
 nicely to the hydrogen atom, a two-particle object. And while it applies to
@@ -309,7 +349,7 @@ grows, so computation comes into play. At higher levels like the molecular one,
 theory is harder to apply. Organic chemistry, for example, is not a strongly
 mathematical science, and at the level of protoplasm and cells there is no
 comprehensive mathematical theory or computational equivalent. This level is far
-too complex—with minuscule molecular machines running along tubules and
+too complex – with minuscule molecular machines running along tubules and
 carrying mitochondria on their backs at high speed relative to their size, it is
 more complex than any industrial factory. At the level of tissues and organs
 systems, we have only narratives to guide our understanding.</p>
@@ -317,7 +357,7 @@ systems, we have only narratives to guide our understanding.</p>
 Individual organisms are exceedingly complex. There is no complete mathematical
 theory for the internal operation of individual organisms. But externally,
 organisms behave as a unit and populations become simpler than
-individuals—glossing over heartbeat, neuron firing rates, white blood cell
+individuals – glossing over heartbeat, neuron firing rates, white blood cell
 replication, and so on, with all their enormous complexity. Details disappear.
 Populations can be described with basic mathematics. Communities are more
 complex, but are still within the reach of mathematics and, particularly, within
@@ -345,7 +385,7 @@ reflection.</p>
 understand, and to let us predict what can happen.</p>
 </div>
 <div class="section" id="what-is-a-model">
-<h2><span class="section-number">2.3. </span>2.3 What is a model?<a class="headerlink" href="#what-is-a-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.3. </span>What is a model?<a class="headerlink" href="#what-is-a-model" title="Permalink to this headline">¶</a></h2>
 <p>Science strives for simplicity, and models are part of the process. What is a
 model? It is just a simplified view of something more complex.</p>
 <p>The word “model” is used here essentially as it’s used in everyday English.
@@ -365,28 +405,30 @@ realistic way to display fashions.</p>
 <p>This book focuses on computational and mathematical models of ecological
 systems. What is left out of these models is as important as what is put in.
 Simplification is key.</p>
-<shaded height=1.5>
-If you have a complex natural system you don't understand, and you construct a
+<blockquote class="epigraph">
+<div><p>If you have a complex natural system you don’t understand, and you construct a
 computer model incorporating everything you can about that natural system, you
-now have two systems you don't understand.
-*---after Chris Payola, UMN*
-<p>A designer knows he has achieved perfection not when there is nothing left to
-add, but when there is nothing left to take away.
-<em>—Antoine de Saint-Exupery</em>
-</shaded></p>
+now have two systems you don’t understand.</p>
+<p class="attribution">—after Chris Payola, UMN</p>
+</div></blockquote>
+<blockquote class="epigraph">
+<div><p>A designer knows he has achieved perfection not when there is nothing left to
+add, but when there is nothing left to take away.</p>
+<p class="attribution">—Antoine de Saint-Exupery</p>
+</div></blockquote>
 <p>Two different simplifications of time are commonly used in ecological models:</p>
 <ul class="simple">
-<li><p><em>Discrete time<a class="reference external" href="https://en.wikipedia.org/wiki/Discrete_time_and_continuous_time"><span class="math notranslate nohighlight">\(^\star\)</span></a></em>\kern-.2em—Events
+<li><p><em><a class="reference external" href="https://en.wikipedia.org/wiki/Discrete_time_and_continuous_time">Discrete time</a></em>: Events
 happen at periodic time steps, as if time is non-existent in between.</p></li>
-<li><p><em>Continuous time<a class="reference external" href="https://en.wikipedia.org/wiki/Discrete_time_and_continuous_time"><span class="math notranslate nohighlight">\(^\star\)</span></a></em>\kern-.2em—Events
+<li><p><em><a class="reference external" href="https://en.wikipedia.org/wiki/Discrete_time_and_continuous_time">Continuous time</a></em>: Events
 happen smoothly and at all times.</p></li>
 </ul>
 <p>In addition, there are two different classes of models:</p>
 <ul class="simple">
-<li><p><em>Macroscale<a class="reference external" href="https://en.wikipedia.org/wiki/Microscale_and_macroscale_models"><span class="math notranslate nohighlight">\(^\star\)</span></a></em>\kern-.2em—Individual
+<li><p><em><a class="reference external" href="https://en.wikipedia.org/wiki/Microscale_and_macroscale_models">Macroscale</a></em>: Individual
 organisms are not tracked, but are measured in aggregate and represented by
 composite variables such as <span class="math notranslate nohighlight">\(N\)</span>.</p></li>
-<li><p><em>Microscale<a class="reference external" href="https://en.wikipedia.org/wiki/Microscale_and_macroscale_models"><span class="math notranslate nohighlight">\(^\star\)</span></a></em>\kern-.2em—Individual
+<li><p><em><a class="reference external" href="https://en.wikipedia.org/wiki/Microscale_and_macroscale_models">Microscale</a></em>: Individual
 organisms are tracked separately. These are also known as agent-based or
 individual-based models.</p></li>
 </ul>
@@ -397,20 +439,22 @@ four categories are only approximations of reality.</p>
 models.</p>
 </div>
 <div class="section" id="present-state">
-<h2><span class="section-number">2.4. </span>2.4 Present state<a class="headerlink" href="#present-state" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4. </span>Present state<a class="headerlink" href="#present-state" title="Permalink to this headline">¶</a></h2>
 <p>As a surprising side note, the standard models commonly taught in ecology
 courses are not complete, and a main purpose of this book is to help make them
-more so. One aspect of theory related to simple species, for instance—called
-orthologistic population growth—is rarely even studied, much less taught, yet
+more so. One aspect of theory related to simple species, for instance – called
+orthologistic population growth – is rarely even studied, much less taught, yet
 is essential for understanding rapidly growing populations, including human
 populations in millennia past. For two-species interactions, another theory
 concerning mutualisms and a related kind of population growth is highly
 under-developed, and the theory of three-species interactions is even less
 complete.</p>
-<p><image width=2.5 height=3.7>../image/fairuse/AlbertEinstein.jpg</image></p>
-<p><strong>Figure 2.2.</strong> <code class="docutils literal notranslate"><span class="pre">&lt;figdef</span> <span class="pre">tag=&quot;FigEinsteinPatentOffice&quot;&gt;</span></code>
-The eternal mystery of the universe is its comprehensibility. —A. Einstein
-<code class="docutils literal notranslate"><span class="pre">&lt;/figdef&gt;</span></code></p>
+<div class="figure align-center" id="einstein">
+<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/8/87/Einstein_patentoffice_full.jpg"><img alt="Einstein" src="https://upload.wikimedia.org/wikipedia/commons/8/87/Einstein_patentoffice_full.jpg" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text"><span class="ttooltip"> The eternal mystery of the universe is its comprehensibility – Albert Einstain<span class="ttooltiptext">
+Einstein <b>by</b> Lucien Chavan (Public Domain)
+</span> </span></span><a class="headerlink" href="#einstein" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 </div>
 
@@ -423,28 +467,28 @@ The eternal mystery of the universe is its comprehensibility. —A. Einstein
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "r"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "ir",
             path: "./content"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'ir'</script>
 
               </div>
               
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
         
-        <div class='prev-next-bottom'>
-            
     <a class='left-prev' id="prev-link" href="C01-Definitions.html" title="previous page"><span class="section-number">1. </span>What is ecology?</a>
     <a class='right-next' id="next-link" href="basic_population_model.html" title="next page"><span class="section-number">3. </span>A basic population model</a>
 
-        </div>
-        
-        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -463,7 +507,7 @@ The eternal mystery of the universe is its comprehensibility. —A. Einstein
     </div>
 
     
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
     

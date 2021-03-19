@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>1. What is ecology? &#8212; Quantitative Ecology</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
     
   <link rel="stylesheet"
@@ -26,7 +26,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -45,7 +45,9 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
@@ -53,8 +55,6 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2. Ecological theory" href="C02-Theory.html" />
@@ -129,7 +129,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="C05-Differential_and_difference_forms.html">
+  <a class="reference internal" href="differential_and_difference_forms.html">
    5. Differential and difference forms
   </a>
  </li>
@@ -160,28 +160,31 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../_sources/content/C01-Definitions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../_sources/content/C01-Definitions.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -192,7 +195,7 @@
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
+        <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -211,47 +214,63 @@
 </div>
 
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
+        <!-- Launch buttons -->
 
-        </div>
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/MikheyevLab/ecology-textbook/main?urlpath=tree/book/content/C01-Definitions.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#definitions-of-ecology">
-   1.1. 1.1 Definitions of ecology
+   1.1. Definitions of ecology
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ecology-then-and-now">
    1.2. Ecology then and now
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#methods-of-ecology">
-     1.2.1. 1.3 Methods of ecology
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methods-of-ecology">
+   1.3. Methods of ecology
+  </a>
  </li>
 </ul>
 
         </nav>
         
-        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -261,13 +280,13 @@
                 
   <div class="section" id="what-is-ecology">
 <h1><span class="section-number">1. </span>What is ecology?<a class="headerlink" href="#what-is-ecology" title="Permalink to this headline">¶</a></h1>
-<p>Winston Churchill<a class="reference external" href="https://en.wikipedia.org/wiki/Winston_Churchill"><span class="math notranslate nohighlight">\(^\star\)</span></a> pointed out
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Winston_Churchill">Winston Churchill</a> pointed out
 that |10| “All the great things are simple, and many can be expressed in a
 single word—freedom, justice, honor, duty, mercy, hope.”
 Should we try to define these? Can we define them?</p>
 <p>We should at least try to define our subject, ecology; many textbooks start with
 definitions. But first, for background, consider how we might define life.
-Marvin Minsky<a class="reference external" href="https://en.wikipedia.org/wiki/Marvin_Minsky"><span class="math notranslate nohighlight">\(^\star\)</span></a> was an artificial
+<a class="reference external" href="https://en.wikipedia.org/wiki/Marvin_Minsky">Marvin Minsky</a> was an artificial
 intelligence researcher and computer scientist who thought about definitions.
 When is an object alive? Think about viruses, genes, self-reproducing
 machines—no one has really been able to give a good definition of
@@ -283,30 +302,60 @@ conditions are dropped, (4) will admit the frankfurter. One can go on to extend
 the list with more careful qualifications, but questions remain until the list
 grows to include special mention of everything we can think of.</p>
 <div class="section" id="definitions-of-ecology">
-<h2><span class="section-number">1.1. </span>1.1 Definitions of ecology<a class="headerlink" href="#definitions-of-ecology" title="Permalink to this headline">¶</a></h2>
-<p>With caveats in mind, consider definitions of ecology. In the 1860s, Ernst
-Haeckel,<a class="reference external" href="https://en.wikipedia.org/wiki/Ernst_Haeckel"><span class="math notranslate nohighlight">\(^\star\)</span></a> combined the term
+<h2><span class="section-number">1.1. </span>Definitions of ecology<a class="headerlink" href="#definitions-of-ecology" title="Permalink to this headline">¶</a></h2>
+<p>With caveats in mind, consider definitions of ecology. In the 1860s, <a class="reference external" href="https://en.wikipedia.org/wiki/Ernst_Haeckel">Ernst
+Haeckel</a> combined the term
 <em>oikos</em>—a place to live, home, habitat—with <em>logia</em>—discourse,
-study—to coin the word “ecology.” In the 1890s Ellen
-Richards<a class="reference external" href="https://en.wikipedia.org/wiki/Ellen_Swallow_Richards"><span class="math notranslate nohighlight">\(^\star\)</span></a> included humans
-and harmony,
-quite a modern view. Variations over the years are shown in
-Table <em>ViewsEcology</em>.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-    |\BeginTable\BeginFormat|l|l|l|\EndFormat\_
-    ||Haeckel     |1860s|\vtop{\hsize=160pt\noindent\baselineskip=10.5pt The total relations of an organism to its organic and inorganic environment}|\\+40
-    ||Richards    |1890s|\vtop{\hsize=160pt\noindent\baselineskip=10.5pt Living in harmony with the environment, first including family, then community, then the world and its resources}|\\+40
-    ||Elton       |1920s|\vtop{\hsize=160pt\noindent\baselineskip=10.5pt Scientific natural history}|\\+40
-    ||Odum        |1960s|\vtop{\hsize=160pt\noindent\baselineskip=10.5pt The study of the structure and function of nature, including the human species}|\\+40
-    ||Andrewartha |1960s|\vtop{\hsize=160pt\noindent\baselineskip=10.5pt The scientific study of the distribution and abundance of organisms}|\\+40
-    ||Krebs       |     |\vtop{\hsize=160pt\noindent\baselineskip=10.5pt The scientific study of the interactions that determine the distribution and abundance of organisms}|\\+40
-    ||Molles      |1990s|\vtop{\hsize=160pt\noindent\baselineskip=10.5pt The study of relationships between organisms and the environment}|\\+40
-    ||Eilts       |2010s|\vtop{\hsize=160pt\noindent\baselineskip=10.5pt Life in context}|\\+40
-    ||Pope Francis|2015 |\vtop{\hsize=160pt\noindent\baselineskip=10.5pt The relationship between living organisms and the environment in which they develop}|\\+4{22} \_
-    |\EndTable
-\end{split}\]</div>
-<p><tabdef tag="ViewsEcology">Various views of ecology.</tabdef></p>
+study—to coin the word “ecology.” In the 1890s <a class="reference external" href="https://en.wikipedia.org/wiki/Ellen_Swallow_Richards">Ellen
+Richards</a> included humans
+and harmony, quite a modern view. Variations over the years are shown in <a class="reference internal" href="#viewsecology"><span class="std std-numref">Table 1.1</span></a>.</p>
+<table class="colwidths-auto table" id="viewsecology">
+<caption><span class="caption-number">Table 1.1 </span><span class="caption-text">Various views of ecology</span><a class="headerlink" href="#viewsecology" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Author</p></th>
+<th class="text-align:center head"><p>Date</p></th>
+<th class="text-align:right head"><p>Definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Haeckel</p></td>
+<td class="text-align:center"><p>1860s</p></td>
+<td class="text-align:right"><p>The total relations of an organism to its organic and inorganic environment</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Richards</p></td>
+<td class="text-align:center"><p>1890s</p></td>
+<td class="text-align:right"><p>Living in harmony with the environment, first including family, then community, then the world and its resources</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Elton</p></td>
+<td class="text-align:center"><p>1920s</p></td>
+<td class="text-align:right"><p>Scientific natural history</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Odum</p></td>
+<td class="text-align:center"><p>1960s</p></td>
+<td class="text-align:right"><p>The study of the structure and function of nature, including the human species</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Andrewartha</p></td>
+<td class="text-align:center"><p>1960s</p></td>
+<td class="text-align:right"><p>The scientific study of the distribution and abundance of organisms</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Krebs</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:right"><p>The scientific study of the interactions that determine the distribution and abundance of organisms</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Molles</p></td>
+<td class="text-align:center"><p>1990s</p></td>
+<td class="text-align:right"><p>The study of relationships between organisms and the environment</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Eilts</p></td>
+<td class="text-align:center"><p>2010s</p></td>
+<td class="text-align:right"><p>Life in context</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Pope Francis</p></td>
+<td class="text-align:center"><p>2015</p></td>
+<td class="text-align:right"><p>The relationship between living organisms and the environment in which they develop</p></td>
+</tr>
+</tbody>
+</table>
 <p>Each of these definitions has merit, but the first two and the last two are
 closest to the way the term is applied in this book. We humans have become
 prominent in ecology, locally to globally. No modern treatment of ecology is
@@ -326,11 +375,12 @@ perhaps “Ecology is what ecologists do.” With these in mind, we strive in
 the remainder of this book to define a theoretical form of ecology through
 examples and demonstrations, representative models and symbols, patterns and
 explanations, and lessons and caveats.</p>
-<p><image height=2.5 width=4 border=no>../image/fairuse/RhindMathematicalPapyrus.jpg</image>
-<strong>Figure 1.1.</strong> <code class="docutils literal notranslate"><span class="pre">&lt;figdef</span> <span class="pre">tag=&quot;FigRhind&quot;&gt;</span></code>
-The Rhind Papyrus, c.\ 1640 BC. One of the oldest known documents—and
-containing exercises from theoretical ecology!
-<code class="docutils literal notranslate"><span class="pre">&lt;/figdef&gt;</span></code></p>
+<div class="figure align-center" id="rhindpapyrus">
+<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/d/d9/Rhind_Mathematical_Papyrus.jpg"><img alt="RhindPapyrus" src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Rhind_Mathematical_Papyrus.jpg" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.1 </span><span class="caption-text"><span class="ttooltip">The Rhind Papyrus, c. 1640 BC. One of the oldest known documents – and containing exercises from theoretical ecology!<span class="ttooltiptext">
+Rhind Mathematical Papyrus <b>by</b> Paul James Cowie (Public Domain)
+</span> </span></span><a class="headerlink" href="#rhindpapyrus" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="section" id="ecology-then-and-now">
 <h2><span class="section-number">1.2. </span>Ecology then and now<a class="headerlink" href="#ecology-then-and-now" title="Permalink to this headline">¶</a></h2>
@@ -340,12 +390,15 @@ grew—their distribution and abundance. These parts of ecology have thus been
 part of life for hundreds of thousands of years. Ecology is connected with our
 species.</p>
 <p>Some elements of the field of ecology were formalized more than 3000 years ago.
-The Rhind Papyrus (Figure <em>FigRhind</em>) lists a number of ecological
+The Rhind Papyrus (<a class="reference internal" href="#rhindpapyrus"><span class="std std-numref">Fig. 1.1</span></a>) lists a number of ecological
 exercises for students—mathematics from ancient Egypt. Among these oldest
 ecological problems is this:</p>
-<p>{\sl Number 27. If a mouse eat 521 ikats of grain each year and a cat kills 96
+<blockquote class="epigraph">
+<div><p>Number 27. If a mouse eat 521 ikats of grain each year and a cat kills 96
 mice a year, in each of 24 barns, how many cats are required to control the
-destruction of stored grain? }</p>
+destruction of stored grain?</p>
+<p class="attribution">—The scribe Ahmes, 1640 BC</p>
+</div></blockquote>
 <p>This is a little problem in quantitative ecology! Even 36 centuries ago,
 mathematical ecology was part of life. Knowing how many grain bins determined
 how many cats were to be employed.</p>
@@ -358,8 +411,9 @@ consumers respond positively to the term.</p>
 it means a collection of companies, customers, and products and their
 interconnections. For better or worse, ecological terminology is expanding to
 other domains.</p>
+</div>
 <div class="section" id="methods-of-ecology">
-<h3><span class="section-number">1.2.1. </span>1.3 Methods of ecology<a class="headerlink" href="#methods-of-ecology" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">1.3. </span>Methods of ecology<a class="headerlink" href="#methods-of-ecology" title="Permalink to this headline">¶</a></h2>
 <p>How do ecologists do ecology? Often, they start with observation, then move to
 theory—trying to fit observations together to make sense as a whole. Theory
 then leads to expectations, which in turn lead to experiments. Commonly,
@@ -389,20 +443,20 @@ filtrates of broth cultures of the mould.” No one had heard of the word
 before. Then he suggests that “it may be an efficient antiseptic.” One of
 the greatest discoveries of all time and only, “it may be an efficient
 antiseptic.”</p>
-<p>&lt;+&gt;Cedar Creek<a class="reference external" href="https://en.wikipedia.org/wiki/Cedar_Creek_Ecosystem_Science_Reserve"><span class="math notranslate nohighlight">\(^\star\)</span></a>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Cedar_Creek_Ecosystem_Science_Reserve">Cedar Creek</a>
 is a University of Minnesota research site about thirty miles north of the
 University’s Saint Paul campus, and is one of the classic ecological research
-sites in the world. Pictured in Figure <em>FigCCexpA</em>  is an experiment
-set up by Prof.\ David Tilman<a class="reference external" href="https://en.wikipedia.org/wiki/G._David_Tilman"><span class="math notranslate nohighlight">\(^\star\)</span></a>.
-While very carefully designed, it came about because of serendipity—the chance
+sites in the world. Pictured in <a class="reference internal" href="#cedarcreek"><span class="std std-numref">Fig. 1.2</span></a>  is an experiment
+set up by <a class="reference external" href="https://en.wikipedia.org/wiki/G._David_Tilman">Prof. David Tilman</a>.
+While very carefully designed, it came about because of serendipity – the chance
 event of a deep two-year drought that altered the abundances of species in a
 particular way and triggered the idea for this experiment.</p>
 <p>Keep your eyes open for such chance events; they can crop up anywhere.</p>
-<p><image width=4 height=2.9>../image/cc/e120cg.jpg</image></p>
-<p><strong>Figure 1.2.</strong> <code class="docutils literal notranslate"><span class="pre">&lt;figdef</span> <span class="pre">tag=&quot;FigCCexpA&quot;&gt;</span></code>  Observations and experiments testing theory at Cedar
-Creek<a class="reference external" href="https://en.wikipedia.org/wiki/Cedar_Creek_Ecosystem_Science_Reserve"><span class="math notranslate nohighlight">\(^\star\)</span></a>. This
-entire experiment was established following up on serendipity.
-<code class="docutils literal notranslate"><span class="pre">&lt;/figdef&gt;</span></code></p>
+<div class="figure align-center" id="cedarcreek">
+<a class="reference internal image-reference" href="../_images/e120cg.jpg"><img alt="CedarCreek" src="../_images/e120cg.jpg" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.2 </span><span class="caption-text"><span class="ttooltip">Observations and experiments testing theory at <a class="reference external" href="https://en.wikipedia.org/wiki/Cedar_Creek_Ecosystem_Science_Reserve">Cedar Creek</a>. This entire experiment was established following up on serendipity.
+<span class="ttooltiptext">
+Rhind Mathematical Papyrus <b>by</b> Clarence Lehman (CC-BY-NC 4.0)</span> </span></span><a class="headerlink" href="#cedarcreek" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -416,28 +470,28 @@ entire experiment was established following up on serendipity.
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "r"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "ir",
             path: "./content"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'ir'</script>
 
               </div>
               
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
         
-        <div class='prev-next-bottom'>
-            
     <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">Quantiative Ecology</a>
     <a class='right-next' id="next-link" href="C02-Theory.html" title="next page"><span class="section-number">2. </span>Ecological theory</a>
 
-        </div>
-        
-        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -456,7 +510,7 @@ entire experiment was established following up on serendipity.
     </div>
 
     
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
     

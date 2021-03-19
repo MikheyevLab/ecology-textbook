@@ -59,7 +59,7 @@ $$
 
 In the first row, the "$\Delta N =1$" refers to a change in the population of one individual, because delta $\Delta$ means change. In the second row, the "$\Delta t$" in the denominator modifies this to the change in each time step - in this, case each hour. In the third row, the $1/N$ modifies it drastically to mean the change in the population _per individual_ in the population.
 
-This could mean that one new individual is born while the parent lives on, or that two new individuals are born and the parent dies, or that the parent divides in two, or other equivalent events. In this model, these details are abstractions that do not matter for purposes of projecting the population. The model simply records the number of offspring produced by each member of the population and surviving to reproduce. Multiplied by 100, this becomes the percentage growth of the population. For humans, this is like the number of children per family who survive to adulthood. (Though it has to be divided by two if there are two parents per family.) You have seen how rapidly that blows up, from the calculation on [Chapter 3](.../basic_population_model.md).
+This could mean that one new individual is born while the parent lives on, or that two new individuals are born and the parent dies, or that the parent divides in two, or other equivalent events. In this model, these details are abstractions that do not matter for purposes of projecting the population. The model simply records the number of offspring produced by each member of the population and surviving to reproduce. Multiplied by 100, this becomes the percentage growth of the population. For humans, this is like the number of children per family who survive to adulthood. (Though it has to be divided by two if there are two parents per family.) You have seen how rapidly that blows up, from the calculation on [Chapter 3](basic_population_model.md).
 
 ## Density-enhanced growth
 ```{figure} https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Rudbeckia_hirta%2C_%28_black-eyed-susans%2C%29_%2818978433569%29.jpg/1200px-Rudbeckia_hirta%2C_%28_black-eyed-susans%2C%29_%2818978433569%29.jpg
@@ -156,7 +156,7 @@ render:
   figure:
     caption: |      
       Orthologistic growth contrasted with exponential growth.
-    name: fig_4_2 
+    name: fig_4_2_main 
 tags: ["hide_input"]  
 ---
 suppressPackageStartupMessages(library(tidyverse))
@@ -228,7 +228,7 @@ population[,c("time", "logistic")]
 pivot_longer(population, !time, names_to = "growth type", values_to = "N") %>%
   ggplot(aes(x=time, y=N, color=`growth type`)) + geom_point() + geom_line() + 
   coord_cartesian(ylim=c(0, 1100), xlim=c(0,11)) + #limits of x and y axis, allows for out of bounds line
-  scale_color_manual(values = c("blue", "yellow","red")) +
+  scale_color_manual(values = c("blue", "orange","red")) +
   xlab("t") + #label for x axis
   ylab("N(t)") + #label for y axis
   scale_x_continuous(breaks=c(0,1,2,3,4,5,6,7,8,9,10)) + #tick labels for x axis
@@ -345,7 +345,7 @@ width: 600px
 align: center
 ---
 <span class="ttooltip"> Trumpeter swans - the largest North American birds, with wingspans reaching ten feet - were nearing extinction until deliberate protection and reintroduction programs brought their r-values back to viable levels <span class="ttooltiptext">
-  Trumpeter Swans <b>by</b> Jakub Fryš (CC BY-SA 4.0)
+  Rhind Mathematical Papyrus <b>by</b> Jakub Fryš (CC BY-SA 4.0)
   </span> </span>
 
 ```

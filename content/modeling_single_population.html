@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>4. Modeling a single population &#8212; Quantitative Ecology</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
     
   <link rel="stylesheet"
@@ -26,7 +26,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -45,7 +45,9 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
@@ -53,11 +55,9 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. Differential and difference forms" href="C05-Differential_and_difference_forms.html" />
+    <link rel="next" title="5. Differential and difference forms" href="differential_and_difference_forms.html" />
     <link rel="prev" title="3. A basic population model" href="basic_population_model.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -129,7 +129,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="C05-Differential_and_difference_forms.html">
+  <a class="reference internal" href="differential_and_difference_forms.html">
    5. Differential and difference forms
   </a>
  </li>
@@ -160,21 +160,21 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -195,7 +195,7 @@
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
+        <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -214,13 +214,13 @@
 </div>
 
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
+        <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -242,14 +242,13 @@
     </div>
 </div>
 
-        </div>
+    </div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -282,7 +281,6 @@
 
         </nav>
         
-        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -335,7 +333,7 @@ This is just dividing both sides of the previous equation by <span class="math n
 \end{align*}
 \end{split}\]</div>
 <p>In the first row, the “<span class="math notranslate nohighlight">\(\Delta N =1\)</span>” refers to a change in the population of one individual, because delta <span class="math notranslate nohighlight">\(\Delta\)</span> means change. In the second row, the “<span class="math notranslate nohighlight">\(\Delta t\)</span>” in the denominator modifies this to the change in each time step - in this, case each hour. In the third row, the <span class="math notranslate nohighlight">\(1/N\)</span> modifies it drastically to mean the change in the population <em>per individual</em> in the population.</p>
-<p>This could mean that one new individual is born while the parent lives on, or that two new individuals are born and the parent dies, or that the parent divides in two, or other equivalent events. In this model, these details are abstractions that do not matter for purposes of projecting the population. The model simply records the number of offspring produced by each member of the population and surviving to reproduce. Multiplied by 100, this becomes the percentage growth of the population. For humans, this is like the number of children per family who survive to adulthood. (Though it has to be divided by two if there are two parents per family.) You have seen how rapidly that blows up, from the calculation on <span class="xref myst">Chapter 3</span>.</p>
+<p>This could mean that one new individual is born while the parent lives on, or that two new individuals are born and the parent dies, or that the parent divides in two, or other equivalent events. In this model, these details are abstractions that do not matter for purposes of projecting the population. The model simply records the number of offspring produced by each member of the population and surviving to reproduce. Multiplied by 100, this becomes the percentage growth of the population. For humans, this is like the number of children per family who survive to adulthood. (Though it has to be divided by two if there are two parents per family.) You have seen how rapidly that blows up, from the calculation on <a class="reference internal" href="basic_population_model.html"><span class="doc std std-doc">Chapter 3</span></a>.</p>
 </div>
 <div class="section" id="density-enhanced-growth">
 <h2><span class="section-number">4.2. </span>Density-enhanced growth<a class="headerlink" href="#density-enhanced-growth" title="Permalink to this headline">¶</a></h2>
@@ -478,14 +476,10 @@ Black-Eyed Susans (<i>Rudbeckiahirta</i>) <b>by</b> Bernard Spragg (CC0)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="figure" id="id2">
+<div class="figure" id="fig-4-2-main">
 <a class="shadow bg-primary reference internal image-reference" href="../_images/modeling_single_population_4_0.png"><img alt="fig_4_2" class="shadow bg-primary" src="../_images/modeling_single_population_4_0.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-text"><p>Orthologistic growth contrasted with exponential growth.</p>
-</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">/Users/sasha/Documents/repos/ecology-textbook/book/content/modeling_single_population.md</span>, line 151); <em><a href="#id2">backlink</a></em></p>
-<p>Duplicate explicit target name: &quot;fig_4_2&quot;.</p>
-</div>
+</span><a class="headerlink" href="#fig-4-2-main" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -561,7 +555,7 @@ Black-Eyed Susans (<i>Rudbeckiahirta</i>) <b>by</b> Bernard Spragg (CC0)
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">pivot_longer</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="o">!</span><span class="n">time</span><span class="p">,</span> <span class="n">names_to</span> <span class="o">=</span> <span class="s">&quot;growth type&quot;</span><span class="p">,</span> <span class="n">values_to</span> <span class="o">=</span> <span class="s">&quot;N&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span>
   <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">time</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">N</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">`growth type`</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_point</span><span class="p">()</span> <span class="o">+</span> <span class="nf">geom_line</span><span class="p">()</span> <span class="o">+</span> 
   <span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">ylim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1100</span><span class="p">),</span> <span class="n">xlim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">11</span><span class="p">))</span> <span class="o">+</span> <span class="c1">#limits of x and y axis, allows for out of bounds line</span>
-  <span class="nf">scale_color_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;blue&quot;</span><span class="p">,</span> <span class="s">&quot;yellow&quot;</span><span class="p">,</span><span class="s">&quot;red&quot;</span><span class="p">))</span> <span class="o">+</span>
+  <span class="nf">scale_color_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;blue&quot;</span><span class="p">,</span> <span class="s">&quot;orange&quot;</span><span class="p">,</span><span class="s">&quot;red&quot;</span><span class="p">))</span> <span class="o">+</span>
   <span class="nf">xlab</span><span class="p">(</span><span class="s">&quot;t&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="c1">#label for x axis</span>
   <span class="nf">ylab</span><span class="p">(</span><span class="s">&quot;N(t)&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="c1">#label for y axis</span>
   <span class="nf">scale_x_continuous</span><span class="p">(</span><span class="n">breaks</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">9</span><span class="p">,</span><span class="m">10</span><span class="p">))</span> <span class="o">+</span> <span class="c1">#tick labels for x axis</span>
@@ -650,7 +644,7 @@ In summary the macroscale model for population dynamics of a single species, in 
 <div class="figure align-center" id="trumpeter-swan">
 <a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Trumpeter_swans_in_winter.jpg/800px-Trumpeter_swans_in_winter.jpg"><img alt="Trumpeter_swan" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Trumpeter_swans_in_winter.jpg/800px-Trumpeter_swans_in_winter.jpg" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.5 </span><span class="caption-text"><span class="ttooltip"> Trumpeter swans - the largest North American birds, with wingspans reaching ten feet - were nearing extinction until deliberate protection and reintroduction programs brought their r-values back to viable levels <span class="ttooltiptext">
-Trumpeter Swans <b>by</b> Jakub Fryš (CC BY-SA 4.0)
+Rhind Mathematical Papyrus <b>by</b> Jakub Fryš (CC BY-SA 4.0)
 </span> </span></span><a class="headerlink" href="#trumpeter-swan" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -682,15 +676,15 @@ Trumpeter Swans <b>by</b> Jakub Fryš (CC BY-SA 4.0)
 
               </div>
               
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
         
-        <div class='prev-next-bottom'>
-            
     <a class='left-prev' id="prev-link" href="basic_population_model.html" title="previous page"><span class="section-number">3. </span>A basic population model</a>
-    <a class='right-next' id="next-link" href="C05-Differential_and_difference_forms.html" title="next page"><span class="section-number">5. </span>Differential and difference forms</a>
+    <a class='right-next' id="next-link" href="differential_and_difference_forms.html" title="next page"><span class="section-number">5. </span>Differential and difference forms</a>
 
-        </div>
-        
-        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -709,7 +703,7 @@ Trumpeter Swans <b>by</b> Jakub Fryš (CC BY-SA 4.0)
     </div>
 
     
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
     

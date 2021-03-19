@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>5. Differential and difference forms &#8212; Quantitative Ecology</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
     
   <link rel="stylesheet"
@@ -26,7 +26,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -45,7 +45,9 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
@@ -53,8 +55,6 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="6. Human population growth" href="ch6-human-population.html" />
@@ -160,21 +160,21 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -195,7 +195,7 @@
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
+        <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -214,13 +214,13 @@
 </div>
 
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
+        <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -242,14 +242,13 @@
     </div>
 </div>
 
-        </div>
+    </div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -277,7 +276,6 @@
 
         </nav>
         
-        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -299,46 +297,38 @@
 \]</div>
 <p>Recall that the delta sign (<span class="math notranslate nohighlight">\(\Delta\)</span>) means <em>change in</em> or the <em>difference</em>. Compare the difference equation with the differential form, which uses the terminology <span class="math notranslate nohighlight">\(dN\)</span> and <span class="math notranslate nohighlight">\(dt\)</span>. These represent infinitesimally small time steps, corresponding to our common-sense perception of time as divisible ever more finely without limit. In differential equations populations change smoothly rather than in finite steps—growth approximating that of organisms that can reproduce at any time, such as bacterial or human populations.</p>
 <p>It turns out that differential equations are harder for computers to solve than difference equations. Computers cannot make infinitely fine time steps, but have to approximate by using very small time steps instead. On the other hand, difference equations can be harder to solve mathematically.</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="m">1</span><span class="p">;</span> <span class="n">s</span> <span class="o">=</span> <span class="m">-0.001</span><span class="p">;</span> <span class="n">N</span> <span class="o">=</span> <span class="m">1</span><span class="p">;</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="m">1</span><span class="p">;</span>
-<span class="c1">#our time step here is just 1 day</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="m">1</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">N</span><span class="p">);</span>
 <span class="n">time</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="n">from</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="n">to</span><span class="o">=</span><span class="m">20</span><span class="p">,</span><span class="n">by</span><span class="o">=</span><span class="n">dt</span><span class="p">);</span>
-<span class="c1">#the above line makes a sequence of time values from day 0 to 20, going up by 1 day each time</span>
 <span class="nf">for</span><span class="p">(</span><span class="n">t</span> <span class="n">in</span> <span class="n">time</span><span class="p">){</span>
   <span class="n">dN</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="n">s</span> <span class="o">*</span> <span class="n">N</span><span class="p">)</span> <span class="o">*</span> <span class="n">N</span><span class="p">;</span> <span class="n">N</span> <span class="o">=</span> <span class="n">N</span> <span class="o">+</span> <span class="n">dN</span><span class="p">;</span>
-  <span class="nf">if</span><span class="p">(</span><span class="n">N</span> <span class="o">&lt;</span> <span class="m">0</span><span class="p">)</span> <span class="n">N</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span>
-  <span class="c1">#here, we check to see if the population size has become negative</span>
-  <span class="c1">#this is mathematically possible, but biologically impossible</span>
-  <span class="c1">#so if this is this the case, we set N to 0</span>
+<span class="hll">  <span class="nf">if</span><span class="p">(</span><span class="n">N</span> <span class="o">&lt;</span> <span class="m">0</span><span class="p">)</span> <span class="n">N</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span>
+</span>  <span class="nf">print</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Above is computer code for a difference equation presented earlier, which levelled off at 1000, but with an additional <code class="docutils literal notranslate"><span class="pre">if()</span></code> statement to catch negative population size. If the population is far above its carrying capacity, the calculation could show such a strong decline that the next year’s population would be negative—meaning that the population would die out completely. The highlighted addition just avoids projecting negative populations, which are mathematically possible but biologically meaningless. Below is similar code for the corresponding <em>differential</em> equation, with differences highlighted.</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="n">dt</span> <span class="o">=</span> <span class="m">1</span> <span class="o">/</span> <span class="p">(</span><span class="m">20</span> <span class="o">*</span> <span class="m">24</span> <span class="o">*</span> <span class="m">60</span> <span class="o">*</span> <span class="m">60</span><span class="p">);</span>
+</span><span class="nf">print</span><span class="p">(</span><span class="n">N</span><span class="p">);</span>
+<span class="hll"><span class="n">time</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="n">from</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="n">to</span><span class="o">=</span><span class="m">20</span><span class="p">,</span><span class="n">by</span><span class="o">=</span><span class="n">dt</span><span class="p">);</span>
+</span><span class="nf">for</span><span class="p">(</span><span class="n">t</span> <span class="n">in</span> <span class="n">time</span><span class="p">){</span>
+<span class="hll">  <span class="n">dN</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="n">s</span> <span class="o">*</span> <span class="n">N</span><span class="p">)</span> <span class="o">*</span> <span class="n">N</span> <span class="o">*</span> <span class="n">dt</span><span class="p">;</span> <span class="n">N</span> <span class="o">=</span> <span class="n">N</span> <span class="o">+</span> <span class="n">dN</span><span class="p">;</span>
+</span>  <span class="nf">if</span><span class="p">(</span><span class="n">N</span> <span class="o">&lt;</span> <span class="m">0</span><span class="p">)</span> <span class="n">N</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span>
   <span class="nf">print</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Above is computer code for a difference equation presented earlier, which levelled off at 1000, but with an additional <code class="docutils literal notranslate"><span class="pre">if()</span></code> statement to catch negative population size. If the population is far above its carrying capacity, the calculation could show such a strong decline that the next year’s population would be negative—meaning that the population would die out completely. Below is similar code for the corresponding <em>differential</em> equation.</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="m">1</span><span class="p">;</span> <span class="n">s</span> <span class="o">=</span> <span class="m">-0.001</span><span class="p">;</span> <span class="n">N</span> <span class="o">=</span> <span class="m">1</span><span class="p">;</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="m">1</span> <span class="o">/</span> <span class="p">(</span><span class="m">20</span> <span class="o">*</span> <span class="m">24</span> <span class="o">*</span> <span class="m">60</span> <span class="o">*</span> <span class="m">60</span><span class="p">);</span>
-<span class="c1">#the above line makes a time step value corresponding to a single second in the 20 day period</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">N</span><span class="p">);</span>
-<span class="n">time</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="n">from</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="n">to</span><span class="o">=</span><span class="m">20</span><span class="p">,</span><span class="n">by</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
-<span class="c1">#the time period, 0 to 20 days, is now divided up by the number of seconds in that period</span>
-<span class="nf">for</span><span class="p">(</span><span class="n">t</span> <span class="n">in</span> <span class="n">time</span><span class="p">){</span>
-  <span class="n">dN</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="n">s</span> <span class="o">*</span> <span class="n">N</span><span class="p">)</span> <span class="o">*</span> <span class="n">N</span> <span class="o">*</span> <span class="n">dt</span><span class="p">;</span> <span class="n">N</span> <span class="o">=</span> <span class="n">N</span> <span class="o">+</span> <span class="n">dN</span><span class="p">;</span> <span class="nf">if</span><span class="p">(</span><span class="n">N</span> <span class="o">&lt;</span> <span class="m">0</span><span class="p">)</span> <span class="n">N</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span>
-  <span class="nf">print</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
-  <span class="p">}</span>
-</pre></div>
-</div>
-<p>This intends to model <em>infinitely small</em> time steps. Of course it cannot do that exactly, but must settle for very small time steps. Instead of <span class="math notranslate nohighlight">\(dt = 1\)</span>, for example, representing one year, it is set here to about one second, dividing the time period (20 days) by 24 hours, 60 minutes, and 60 seconds, creating <code class="docutils literal notranslate"><span class="pre">20</span> <span class="pre">*</span> <span class="pre">24</span> <span class="pre">*</span> <span class="pre">60</span> <span class="pre">*</span> <span class="pre">60</span></code> time steps. This is hardly infinitely small, but for populations of bacteria and humans it is close enough for practical purposes. Still, it is important to check for negative populations in case the time step is not small enough.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Feel free to run the above loop on your own machines, but note that we have defined our  <code class="docutils literal notranslate"><span class="pre">time</span></code> vector to contain every single second from the beginning of day 0 to the end of day 20. It will take some time for R to print all the time steps. The calculation is fast, but printing out 1,728,000 lines of text is not.</p>
 </div>
+<p>This intends to model <em>infinitely small</em> time steps. Of course it cannot do that exactly, but must settle for very small time steps. Instead of <span class="math notranslate nohighlight">\(dt = 1\)</span>, for example, representing one year, it is set here to about one second, dividing the time period (20 days) by 24 hours, 60 minutes, and 60 seconds, creating <code class="docutils literal notranslate"><span class="pre">20</span> <span class="pre">*</span> <span class="pre">24</span> <span class="pre">*</span> <span class="pre">60</span> <span class="pre">*</span> <span class="pre">60</span></code> time steps. This is hardly infinitely small, but for populations of bacteria and humans it is close enough for practical purposes. Still, it is important to check for negative populations in case the time step is not small enough.</p>
 <p>How small is close enough to infinitely small? is the question. To find out, you can set the time step to something small and run the code, which will produce a set of population values through time. Then set the step smaller still and run the code again. It will run more slowly because it is calculating more steps, but if essentially the same answer appears—if the answer “converges”—then you can make the step larger again, speeding the calculation. With a few trials you can find a time step that is small enough to give accurate answers but large enough to allow your code to run reasonably fast.</p>
-<div class="figure align-center" id="fig5-1">
-<a class="reference internal image-reference" href="../_images/Fig5_1.png"><img alt="Fig5_1" src="../_images/Fig5_1.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.1 </span><span class="caption-text">Differential logistic growth (maroon) compared with discrete (green). No dots appear on the differential form, since that represents infinitesimal time steps, whereas the difference form has a dot at each point calculated.</span><a class="headerlink" href="#fig5-1" title="Permalink to this image">¶</a></p>
+<div class="figure align-center" id="fig-5-1">
+<a class="reference internal image-reference" href="../_images/fig_5_1.png"><img alt="Differential and discrete growth" src="../_images/fig_5_1.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.1 </span><span class="caption-text"><strong>Figure 5.1</strong> Differential logistic growth (maroon) compared with discrete (green). No dots appear on the differential form, since that represents infinitesimal time steps, whereas the difference form has a dot at each point calculated.</span><a class="headerlink" href="#fig-5-1" title="Permalink to this image">¶</a></p>
 </div>
-<p><a class="reference internal" href="#fig5-1"><span class="std std-ref">Figure 5.1</span></a> shows the results of running the differential equation version of the program (the second one above, in maroon) versus the difference equation version (the first above, in green). The differential equation has the same parameters and general shape, but the population approaches its carrying capacity more quickly. Because the differential time steps produce offspring earlier—not waiting for the end of the step—offspring are available to reproduce earlier, and so forth.</p>
+<p><a class="reference internal" href="#fig-5-1"><span class="std std-ref">Figure 5.1</span></a> shows the results of running the differential equation version of the program (the second one above, in maroon) versus the difference equation version (the first above, in  green). The differential equation has the same parameters and general shape, but the population approaches its carrying capacity more quickly. Because the differential time steps produce offspring earlier—not waiting for the end of the step—offspring are available to reproduce earlier, and so forth.</p>
 <p>This particular method for differential equations is called “Euler’s method” (pronounced “Oiler’s”), a basic approach not often used in the twentieth century because computers not so long ago were millions of times slower than they are now. Today this method is often fast enough, and is desirable because of its relative simplicity.</p>
 <div class="section" id="a-mathematical-view">
 <h2><span class="section-number">5.1. </span>A mathematical view<a class="headerlink" href="#a-mathematical-view" title="Permalink to this headline">¶</a></h2>
@@ -450,6 +440,10 @@ t = \frac{1}{r} \ln (1+\frac{r}{s}\frac{1}{N_0})
 \]</div>
 <p>In the 1960s, <a class="reference external" href="https://en.wikipedia.org/wiki/Heinz_von_Foerster">Heinz von Foerster</a> wrote about this in the journal <em>Science</em>. Though the consequences he suggested were deadly serious, his work was not taken very seriously at the time, perhaps in part because the time was so far away (about a human lifetime), but perhaps also because he put the date of the singularity on Friday the 13th, 2026, his 115th birthday. In the title of his paper he called this “doomsday”, when the human population would have demolished itself.</p>
 <p>Von Foerster used a more complicated model than the <span class="math notranslate nohighlight">\(r+sN\)</span> model we are using, but it led to the same result. Some of the ideas were picked up by <a class="reference external" href="https://en.wikipedia.org/wiki/Paul_R._Ehrlich">Paul Ehrlich</a> and others, and became the late-1960s concept of the “population bomb”—which was taken seriously by many.</p>
+<div class="figure align-center" id="population-bomb">
+<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/en/d/da/The_Population_Bomb.jpg"><img alt="Population_Bomb" src="https://upload.wikimedia.org/wikipedia/en/d/da/The_Population_Bomb.jpg" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.2 </span><span class="caption-text"><em><a class="reference external" href="https://en.wikipedia.org/wiki/The_Population_Bomb">The Population Bomb</a></em></span><a class="headerlink" href="#population-bomb" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 </div>
 
@@ -475,15 +469,15 @@ t = \frac{1}{r} \ln (1+\frac{r}{s}\frac{1}{N_0})
 
               </div>
               
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
         
-        <div class='prev-next-bottom'>
-            
     <a class='left-prev' id="prev-link" href="modeling_single_population.html" title="previous page"><span class="section-number">4. </span>Modeling a single population</a>
     <a class='right-next' id="next-link" href="ch6-human-population.html" title="next page"><span class="section-number">6. </span>Human population growth</a>
 
-        </div>
-        
-        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -502,7 +496,7 @@ t = \frac{1}{r} \ln (1+\frac{r}{s}\frac{1}{N_0})
     </div>
 
     
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
     
