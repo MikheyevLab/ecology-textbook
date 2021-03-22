@@ -880,7 +880,7 @@ tubs---larger and larger tubs holding miniature predator--prey systems. He found
 that the larger the tub, the longer the system persisted.
 
 The point to remember here is that the mere presence of spatial structure, in
-one form or another, can allow a let predator--prey system to persist. The basic
+one form or another, can allow a predator--prey system to persist. The basic
 reason is simply that species can go extinct in some areas while continually
 recolonizing other areas, always maintaining a population that blinks in and out
 locally, but persists globally.
