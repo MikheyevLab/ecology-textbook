@@ -297,32 +297,72 @@
 \]</div>
 <p>Recall that the delta sign (<span class="math notranslate nohighlight">\(\Delta\)</span>) means <em>change in</em> or the <em>difference</em>. Compare the difference equation with the differential form, which uses the terminology <span class="math notranslate nohighlight">\(dN\)</span> and <span class="math notranslate nohighlight">\(dt\)</span>. These represent infinitesimally small time steps, corresponding to our common-sense perception of time as divisible ever more finely without limit. In differential equations populations change smoothly rather than in finite steps—growth approximating that of organisms that can reproduce at any time, such as bacterial or human populations.</p>
 <p>It turns out that differential equations are harder for computers to solve than difference equations. Computers cannot make infinitely fine time steps, but have to approximate by using very small time steps instead. On the other hand, difference equations can be harder to solve mathematically.</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="m">1</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">N</span><span class="p">);</span>
-<span class="n">time</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="n">from</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="n">to</span><span class="o">=</span><span class="m">20</span><span class="p">,</span><span class="n">by</span><span class="o">=</span><span class="n">dt</span><span class="p">);</span>
-<span class="nf">for</span><span class="p">(</span><span class="n">t</span> <span class="n">in</span> <span class="n">time</span><span class="p">){</span>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="p">;</span> <span class="n">s</span> <span class="o">&lt;-</span> <span class="m">-0.001</span><span class="p">;</span> <span class="n">N</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="p">;</span> <span class="n">t</span> <span class="o">&lt;-</span> <span class="m">0</span><span class="p">;</span> <span class="n">dt</span> <span class="o">&lt;-</span> <span class="m">1</span>
+<span class="n">population</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">time</span> <span class="o">=</span> <span class="nf">integer</span><span class="p">(),</span> <span class="n">size</span> <span class="o">=</span> <span class="nf">integer</span><span class="p">())</span>
+<span class="n">time</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="n">from</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="n">dt</span><span class="p">)</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">t</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="p">(</span><span class="m">1</span> <span class="o">+</span> <span class="nf">length</span><span class="p">(</span><span class="n">time</span><span class="p">)))</span> <span class="p">{</span>
+  <span class="n">population</span><span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="p">]</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
   <span class="n">dN</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="n">s</span> <span class="o">*</span> <span class="n">N</span><span class="p">)</span> <span class="o">*</span> <span class="n">N</span><span class="p">;</span> <span class="n">N</span> <span class="o">=</span> <span class="n">N</span> <span class="o">+</span> <span class="n">dN</span><span class="p">;</span>
-<span class="hll">  <span class="nf">if</span><span class="p">(</span><span class="n">N</span> <span class="o">&lt;</span> <span class="m">0</span><span class="p">)</span> <span class="n">N</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span>
-</span>  <span class="nf">print</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+  <span class="nf">if</span><span class="p">(</span><span class="n">N</span> <span class="o">&lt;</span> <span class="m">0</span><span class="p">)</span> <span class="n">N</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span>
 <span class="p">}</span>
+<span class="n">population</span>
 </pre></div>
 </div>
-<p>Above is computer code for a difference equation presented earlier, which levelled off at 1000, but with an additional <code class="docutils literal notranslate"><span class="pre">if()</span></code> statement to catch negative population size. If the population is far above its carrying capacity, the calculation could show such a strong decline that the next year’s population would be negative—meaning that the population would die out completely. The highlighted addition just avoids projecting negative populations, which are mathematically possible but biologically meaningless. Below is similar code for the corresponding <em>differential</em> equation, with differences highlighted.</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="n">dt</span> <span class="o">=</span> <span class="m">1</span> <span class="o">/</span> <span class="p">(</span><span class="m">20</span> <span class="o">*</span> <span class="m">24</span> <span class="o">*</span> <span class="m">60</span> <span class="o">*</span> <span class="m">60</span><span class="p">);</span>
-</span><span class="nf">print</span><span class="p">(</span><span class="n">N</span><span class="p">);</span>
-<span class="hll"><span class="n">time</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="n">from</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="n">to</span><span class="o">=</span><span class="m">20</span><span class="p">,</span><span class="n">by</span><span class="o">=</span><span class="n">dt</span><span class="p">);</span>
-</span><span class="nf">for</span><span class="p">(</span><span class="n">t</span> <span class="n">in</span> <span class="n">time</span><span class="p">){</span>
-<span class="hll">  <span class="n">dN</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="n">s</span> <span class="o">*</span> <span class="n">N</span><span class="p">)</span> <span class="o">*</span> <span class="n">N</span> <span class="o">*</span> <span class="n">dt</span><span class="p">;</span> <span class="n">N</span> <span class="o">=</span> <span class="n">N</span> <span class="o">+</span> <span class="n">dN</span><span class="p">;</span>
-</span>  <span class="nf">if</span><span class="p">(</span><span class="n">N</span> <span class="o">&lt;</span> <span class="m">0</span><span class="p">)</span> <span class="n">N</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span>
-  <span class="nf">print</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 22 × 2</caption>
+<thead>
+	<tr><th></th><th scope=col>time</th><th scope=col>size</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td> 1</td><td>   1.000000</td></tr>
+	<tr><th scope=row>2</th><td> 2</td><td>   1.999000</td></tr>
+	<tr><th scope=row>3</th><td> 3</td><td>   3.994004</td></tr>
+	<tr><th scope=row>4</th><td> 4</td><td>   7.972056</td></tr>
+	<tr><th scope=row>5</th><td> 5</td><td>  15.880558</td></tr>
+	<tr><th scope=row>6</th><td> 6</td><td>  31.508924</td></tr>
+	<tr><th scope=row>7</th><td> 7</td><td>  62.025036</td></tr>
+	<tr><th scope=row>8</th><td> 8</td><td> 120.202967</td></tr>
+	<tr><th scope=row>9</th><td> 9</td><td> 225.957181</td></tr>
+	<tr><th scope=row>10</th><td>10</td><td> 400.857715</td></tr>
+	<tr><th scope=row>11</th><td>11</td><td> 641.028522</td></tr>
+	<tr><th scope=row>12</th><td>12</td><td> 871.139478</td></tr>
+	<tr><th scope=row>13</th><td>13</td><td> 983.394966</td></tr>
+	<tr><th scope=row>14</th><td>14</td><td> 999.724273</td></tr>
+	<tr><th scope=row>15</th><td>15</td><td> 999.999924</td></tr>
+	<tr><th scope=row>16</th><td>16</td><td>1000.000000</td></tr>
+	<tr><th scope=row>17</th><td>17</td><td>1000.000000</td></tr>
+	<tr><th scope=row>18</th><td>18</td><td>1000.000000</td></tr>
+	<tr><th scope=row>19</th><td>19</td><td>1000.000000</td></tr>
+	<tr><th scope=row>20</th><td>20</td><td>1000.000000</td></tr>
+	<tr><th scope=row>21</th><td>21</td><td>1000.000000</td></tr>
+	<tr><th scope=row>22</th><td>22</td><td>1000.000000</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>Above is computer code for a difference equation presented earlier, which leveled off at 1000, but with an additional <code class="docutils literal notranslate"><span class="pre">if()</span></code> statement to catch negative population size. If the population is far above its carrying capacity, the calculation could show such a strong decline that the next year’s population would be negative—meaning that the population would die out completely. The highlighted addition just avoids projecting negative populations, which are mathematically possible but biologically meaningless. Below is similar code for the corresponding <em>differential</em> equation, with differences highlighted.</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="p">;</span> <span class="n">t</span> <span class="o">&lt;-</span> <span class="m">0</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="m">1</span> <span class="o">/</span> <span class="p">(</span><span class="m">20</span> <span class="o">*</span> <span class="m">24</span> <span class="o">*</span> <span class="m">60</span><span class="p">)</span>
+<span class="n">time</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="n">from</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="n">dt</span><span class="p">)</span>
+<span class="n">population</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">time</span> <span class="o">=</span> <span class="nf">integer</span><span class="p">(),</span> <span class="n">exponential</span> <span class="o">=</span> <span class="nf">integer</span><span class="p">())</span>
+<span class="nf">for</span><span class="p">(</span><span class="n">t</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="p">(</span><span class="m">1</span> <span class="o">+</span> <span class="nf">length</span><span class="p">(</span><span class="n">time</span><span class="p">))){</span>
+  <span class="n">population</span><span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="p">]</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+  <span class="n">dN</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="n">s</span> <span class="o">*</span> <span class="n">N</span><span class="p">)</span> <span class="o">*</span> <span class="n">N</span> <span class="o">*</span> <span class="n">dt</span><span class="p">;</span> <span class="n">N</span> <span class="o">=</span> <span class="n">N</span> <span class="o">+</span> <span class="n">dN</span>
+  <span class="nf">if</span><span class="p">(</span><span class="n">N</span> <span class="o">&lt;</span> <span class="m">0</span><span class="p">)</span> <span class="n">N</span> <span class="o">=</span> <span class="m">0</span>
 <span class="p">}</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">population</span><span class="p">,</span><span class="m">100</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Feel free to run the above loop on your own machines, but note that we have defined our  <code class="docutils literal notranslate"><span class="pre">time</span></code> vector to contain every single second from the beginning of day 0 to the end of day 20. It will take some time for R to print all the time steps. The calculation is fast, but printing out 1,728,000 lines of text is not.</p>
+<p>Feel free to run the above loop on your own machines, but note that we have defined our  <code class="docutils literal notranslate"><span class="pre">time</span></code> vector to contain every single second from the beginning of day 0 to the end of day 20. It will take some time for R calculate all the time steps.</p>
 </div>
-<p>This intends to model <em>infinitely small</em> time steps. Of course it cannot do that exactly, but must settle for very small time steps. Instead of <span class="math notranslate nohighlight">\(dt = 1\)</span>, for example, representing one year, it is set here to about one second, dividing the time period (20 days) by 24 hours, 60 minutes, and 60 seconds, creating <code class="docutils literal notranslate"><span class="pre">20</span> <span class="pre">*</span> <span class="pre">24</span> <span class="pre">*</span> <span class="pre">60</span> <span class="pre">*</span> <span class="pre">60</span></code> time steps. This is hardly infinitely small, but for populations of bacteria and humans it is close enough for practical purposes. Still, it is important to check for negative populations in case the time step is not small enough.</p>
+<p>This intends to model <em>infinitely small</em> time steps. Of course it cannot do that exactly, but must settle for very small time steps. Instead of <span class="math notranslate nohighlight">\(dt = 1\)</span>, for example, representing one year, it is set here to about one second, dividing the time period (20 days) by 24 hours, creating <code class="docutils literal notranslate"><span class="pre">20</span> <span class="pre">*</span> <span class="pre">24</span> <span class="pre">*</span> <span class="pre">60</span> </code> time steps. This is hardly infinitely small, but for populations of bacteria and humans it is close enough for practical purposes. Still, it is important to check for negative populations in case the time step is not small enough.</p>
 <p>How small is close enough to infinitely small? is the question. To find out, you can set the time step to something small and run the code, which will produce a set of population values through time. Then set the step smaller still and run the code again. It will run more slowly because it is calculating more steps, but if essentially the same answer appears—if the answer “converges”—then you can make the step larger again, speeding the calculation. With a few trials you can find a time step that is small enough to give accurate answers but large enough to allow your code to run reasonably fast.</p>
 <div class="figure align-center" id="fig-5-1">
 <a class="reference internal image-reference" href="../_images/fig_5_1.png"><img alt="Differential and discrete growth" src="../_images/fig_5_1.png" style="width: 600px;" /></a>

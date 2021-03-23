@@ -27,40 +27,39 @@ Recall that the delta sign ($\Delta$) means *change in* or the *difference*. Com
 
 It turns out that differential equations are harder for computers to solve than difference equations. Computers cannot make infinitely fine time steps, but have to approximate by using very small time steps instead. On the other hand, difference equations can be harder to solve mathematically.
 
-```{code-block} r
----
-emphasize-lines: "6"
----
-dt = 1
-print(N);
-time = seq(from=0,to=20,by=dt);
-for(t in time){
+```{code-cell} r
+:tags: ["output_scroll"]
+r <- 1; s <- -0.001; N <- 1; t <- 0; dt <- 1
+population <- data.frame(time = integer(), size = integer())
+time = seq(from = t, to = 20, by = dt)
+for (t in 1:(1 + length(time))) {
+  population[t, ] = c(t, N)
   dN = (r + s * N) * N; N = N + dN;
   if(N < 0) N = 0;
-  print(N)
 }
+population
 ```
 
-Above is computer code for a difference equation presented earlier, which levelled off at 1000, but with an additional `if()` statement to catch negative population size. If the population is far above its carrying capacity, the calculation could show such a strong decline that the next year’s population would be negative—meaning that the population would die out completely. The highlighted addition just avoids projecting negative populations, which are mathematically possible but biologically meaningless. Below is similar code for the corresponding *differential* equation, with differences highlighted.
+Above is computer code for a difference equation presented earlier, which leveled off at 1000, but with an additional `if()` statement to catch negative population size. If the population is far above its carrying capacity, the calculation could show such a strong decline that the next year’s population would be negative—meaning that the population would die out completely. The highlighted addition just avoids projecting negative populations, which are mathematically possible but biologically meaningless. Below is similar code for the corresponding *differential* equation, with differences highlighted.
+
 ```{code-block} r
----
-emphasize-lines: 1,3,5
----
-dt = 1 / (20 * 24 * 60 * 60);
-print(N);
-time = seq(from=0,to=20,by=dt);
-for(t in time){
-  dN = (r + s * N) * N * dt; N = N + dN;
-  if(N < 0) N = 0;
-  print(N)
+N <- 1; t <- 0
+dt = 1 / (20 * 24 * 60)
+time = seq(from = 0, to = 20, by = dt)
+population <- data.frame(time = integer(), exponential = integer())
+for(t in 1:(1 + length(time))){
+  population[t, ] = c(t, N)
+  dN = (r + s * N) * N * dt; N = N + dN
+  if(N < 0) N = 0
 }
+head(population,100)
 ```
 
 ```{warning}
-Feel free to run the above loop on your own machines, but note that we have defined our  `time` vector to contain every single second from the beginning of day 0 to the end of day 20. It will take some time for R to print all the time steps. The calculation is fast, but printing out 1,728,000 lines of text is not.
+Feel free to run the above loop on your own machines, but note that we have defined our  `time` vector to contain every single second from the beginning of day 0 to the end of day 20. It will take some time for R calculate all the time steps. 
 ```
 
-This intends to model *infinitely small* time steps. Of course it cannot do that exactly, but must settle for very small time steps. Instead of $dt = 1$, for example, representing one year, it is set here to about one second, dividing the time period (20 days) by 24 hours, 60 minutes, and 60 seconds, creating `20 * 24 * 60 * 60` time steps. This is hardly infinitely small, but for populations of bacteria and humans it is close enough for practical purposes. Still, it is important to check for negative populations in case the time step is not small enough.
+This intends to model *infinitely small* time steps. Of course it cannot do that exactly, but must settle for very small time steps. Instead of $dt = 1$, for example, representing one year, it is set here to about one second, dividing the time period (20 days) by 24 hours, creating `20 * 24 * 60 ` time steps. This is hardly infinitely small, but for populations of bacteria and humans it is close enough for practical purposes. Still, it is important to check for negative populations in case the time step is not small enough.
 
 How small is close enough to infinitely small? is the question. To find out, you can set the time step to something small and run the code, which will produce a set of population values through time. Then set the step smaller still and run the code again. It will run more slowly because it is calculating more steps, but if essentially the same answer appears—if the answer “converges”—then you can make the step larger again, speeding the calculation. With a few trials you can find a time step that is small enough to give accurate answers but large enough to allow your code to run reasonably fast.
 

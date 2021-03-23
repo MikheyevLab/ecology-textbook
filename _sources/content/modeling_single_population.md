@@ -345,11 +345,11 @@ width: 600px
 align: center
 ---
 <span class="ttooltip"> Trumpeter swans - the largest North American birds, with wingspans reaching ten feet - were nearing extinction until deliberate protection and reintroduction programs brought their r-values back to viable levels <span class="ttooltiptext">
-  Rhind Mathematical Papyrus <b>by</b> Jakub Fryš (CC BY-SA 4.0)
+  Trumpeter Swans <b>by</b> Jakub Fryš (CC BY-SA 4.0)
   </span> </span>
 
 ```
 
 ## Exercises
 
-See [here](https://github.com/adamtclark/QuantitativeEcologyBook/blob/master/pdf/Ebook_Chapter04.pdf).
+See [here](https://anu365-my.sharepoint.com/:b:/g/personal/u5611203_anu_edu_au/EeBSky3V3VlHm3oStBicaesBNzRoomjPkX4sAp1Nisj-qQ?e=O7U4c7)
