@@ -11,7 +11,17 @@ kernelspec:
 
 # Humans as prey
 
-Our species no longer suffers large predators as so many species do (Figure 13.1 ). But dangerous predators remain part of the human condition. We call them diseases. By analogy, think of visible organisms living in a pond&mdash;from birds, fish, frogs, insects, and plankton to aquatic plants (Figure 14.1, left). To be successful across a region, the organisms must gain resources in the pond while competing with other species, survive predators, and enable their offspring to disperse to another pond. To be successful they must not destroy the pond in which they live, at least until they or their offspring have dispersed to another pond.
+Our species no longer suffers large predators as so many species do ({numref}`Figure %s <fig_13_1>`). But dangerous predators remain part of the human condition. We call them diseases. By analogy, think of visible organisms living in a pond&mdash;from birds, fish, frogs, insects, and plankton to aquatic plants ({numref}`Figure %s <fig_14_1>`, left). To be successful across a region, the organisms must gain resources in the pond while competing with other species, survive predators, and enable their offspring to disperse to another pond. To be successful they must not destroy the pond in which they live, at least until they or their offspring have dispersed to another pond.
+
+```{figure} ../img/fig_14_1.png
+---
+name: fig_14_1
+alt: Macroscopic and microsopic
+width: 600px
+align: center
+---
+Macroscopic organisms living in a pond are analogous to microscopic pathogens living in a body.
+```
 
 What is the body of a plant or animal to an infectious virus or bacterium? It is like a pond. There may be other pathogens in the body competing for its metabolic resources. There are predators in the body in the form of an immune system. And to be successful the pathogen must disperse to another body without destroying the body in which it lives, at least until it or its offspring has orchestrated a way to disperse into and colonize another body.
 
@@ -33,7 +43,7 @@ Each &nbsp; is used to force some extra whitespace and mimic indentation
 * - **Portals of exit:**<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Breath<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Droplets (sneezing, coughing)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Saliva<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sweat<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tears<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Feces<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Urine<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seminal fluids<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vaginal fluids<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blisters, boils, zits (via scratching, breaking the skin)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blood (mosquitoes, ticks, hemmorraghe)
 * - **Portals of entry:**<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blood (cuts, wounds, insects, needles)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lungs<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nose<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eyes (conjunctiva)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mouth (mucosa)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mouth (tooth/gingival junction)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gut<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Skin (scabs, triconosis, warts, etc.)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Urinary tract<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rectum<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vagina (mucosa)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Penis (mucosa)
 ```
-Animals must also eat frequently and periodically, so exploiting the oral pathway&mdash;leaving through urine and feces and getting back through the alimentary canal&mdash;is another reliable path, at least under conditions in the wild or with animals that live on and eat grass (Figure 14.1, right).
+Animals must also eat frequently and periodically, so exploiting the oral pathway&mdash;leaving through urine and feces and getting back through the alimentary canal&mdash;is another reliable path, at least under conditions in the wild or with animals that live on and eat grass ({numref}`Figure %s <fig_14_1>`, right).
 
 Animals must reproduce, so exploiting the genital pathway&mdash;where many animals come into direct bodily contact&mdash;is a third reliable path. This can be especially productive, as mucosal tissues of high surface area are touching and infected fluids can be transferred from one sex to another. A pathogen that can get into seminal fluid of a mammal, for example, has a direct path for transmission.
 
@@ -43,15 +53,45 @@ Finally, many animals care for young, so exploiting parental care can be a fourt
 
 While microscopic pathogens are not independently mobile, their hosts are, and pathogens have evolved ingenious ways of modifying the behavior of a host to enable their transferal to another host.
 
-Sneezing and coughing reflexes, for instance, are ancient responses for clearing obstructions from the nose and throat, and some pathogens deceptively induce those responses for a pathway out (Figure 14.2).
+```{figure} ../img/fairuse/sneeze.jpg
+---
+name: fig_14_2
+alt: Sneeze
+width: 600px
+align: center
+---
+Tiny predators getting from one host to another.
+```
+
+Sneezing and coughing reflexes, for instance, are ancient responses for clearing obstructions from the nose and throat, and some pathogens deceptively induce those responses for a pathway out ({numref}`Figure %s <fig_14_2>`).
 
 What we call “symptoms of disease” are not, then, random effects of a disease, but can often be a pathogen’s way of getting out of one pond, so to speak, and into another. Any of the pathways of {numref}`Table %s <table_14_1>` can be exploited by a pathogen, which in doing so may upset these pathways and cause the host great distress.
 
-Some pathogens, for example, get into your eyes and tears and deceptively cause itching and soreness (Figure 14.3, left),inducing you to rub your eyes and transfer the pathogens to your fingers. This in turn can successfully move them to other locations like food, from which they can enter anotherhost by the oral pathway.
+```{figure} ../img/fig_14_3.png
+---
+name: fig_14_3
+alt: Pink eye and cold sores
+width: 600px
+align: center
+---
+Pink eye and cold sores.
+```
 
-Other pathogens are able to break the skin and get out of the body on their own. Cold sores (Figure 14.3, right), a form of oral herpes, form around the mouth and nose, transmitting to what touches the sore. A related genital herpes is transmitted sexually, though evolution has been proceeding and the genital form is now able to infect orally and the oral form genitally. This and other sexually transmitted diseases have been increasing since about the middle of the twentieth century.
+Some pathogens, for example, get into your eyes and tears and deceptively cause itching and soreness ({numref}`Figure %s <fig_5_1>`, left),inducing you to rub your eyes and transfer the pathogens to your fingers. This in turn can successfully move them to other locations like food, from which they can enter anotherhost by the oral pathway.
 
-One of the most successful pathogens to use the lungs and skin as pathways out of the body is [smallpox](https://en.wikipedia.org/wiki/Smallpox) (Figure14.4). It leaves its host with permanent scars, often over the entire body. Smallpox is an ancient disease, dating from the time before the pyramids, that can kill a majority of those it infects and at times can infect a majority of the population.
+Other pathogens are able to break the skin and get out of the body on their own. Cold sores ({numref}`Figure %s <fig_14_3>`, right), a form of oral herpes, form around the mouth and nose, transmitting to what touches the sore. A related genital herpes is transmitted sexually, though evolution has been proceeding and the genital form is now able to infect orally and the oral form genitally. This and other sexually transmitted diseases have been increasing since about the middle of the twentieth century.
+
+One of the most successful pathogens to use the lungs and skin as pathways out of the body is [smallpox](https://en.wikipedia.org/wiki/Smallpox) ({numref}`Figure %s <fig_14_4>`). It leaves its host with permanent scars, often over the entire body. Smallpox is an ancient disease, dating from the time before the pyramids, that can kill a majority of those it infects and at times can infect a majority of the population.
+
+```{figure} ../img/fairuse/smallpox1.jpg
+---
+name: fig_14_4
+alt: Pink eye and cold sores
+width: 200px
+align: center
+---
+Smallpox, the first disease consciously driven extinct from the natural world.
+```
 
 The very success and horror of smallpox was part of its ultimate destruction&mdash;its eradication was the first complete victory in the conquest of disease. Thanks to prolonged diligent attention throughout the world, and of course to the invention of vaccine, smallpox has been made extinct in the natural world. (We say “natural world” because laboratory samples are being retained.)
 
@@ -61,11 +101,31 @@ This may be startling to hear, given that our physiological evolution is much sl
 
 [Rinderpest](https://en.wikipedia.org/wiki/Rinderpest), a viral disease causing high rates of mortality in cattle and wild mammals, was the second disease declared extinct in the natural world. Others&mdash;such as [polio](https://en.wikipedia.org/wiki/Polio) and [Guinea-worm disease](https://en.wikipedia.org/wiki/Dracunculiasis)&mdash;may soon follow, though the latter may simply be eradicated from human populations by our continual isolation from sources of infection.
 
-Diseases can exploit blood-sucking parasites to move directly from the blood stream of one host to that of another. Lyme disease (Figure 14.5, left), for example, is spread by ticks, which puncture the skin to obtain a blood meal for themselves but in the process can transfer pathogens. And Ebola (Figure 14.5, right) leaves by almost every exit portal listed in {numref}`Table %s <table_14_1>`, destroying those portals by carrying not just the pathogen but chunks of lung, intestine, or skin in the process.
+Diseases can exploit blood-sucking parasites to move directly from the blood stream of one host to that of another. Lyme disease ({numref}`Figure %s <fig_14_5>`, left), for example, is spread by ticks, which puncture the skin to obtain a blood meal for themselves but in the process can transfer pathogens. And Ebola ({numref}`Figure %s <fig_14_5>`, right) leaves by almost every exit portal listed in {numref}`Table %s <table_14_1>`, destroying those portals by carrying not just the pathogen but chunks of lung, intestine, or skin in the process.
+
+```{figure} ../img/fig_14_5.png
+---
+name: fig_14_5
+alt: Lyme and ebola
+width: 600px
+align: center
+---
+Lyme disease (left) and one form of Ebola (right).
+```
 
 Human populations are so large and dense that even relatively inefficient pathogens can be successful. And diseases, of course, also affect wild and domestic animals as well as crops and other plants.
 
-As the next chapter illustrates, many diseases can evolve to be relatively harmless to their hosts, promoting transmission and allowing the disease to become widespread. Rust fungus infections, for example, are common in many plant species, but seldom lead to the death of the host. Powder mildew on the prairie plant *Monarda fistulosa* is so widespread that it is used in plant identification books as a way to identify the species (Figure 14.6 right).
+As the next chapter illustrates, many diseases can evolve to be relatively harmless to their hosts, promoting transmission and allowing the disease to become widespread. Rust fungus infections, for example, are common in many plant species, but seldom lead to the death of the host. Powder mildew on the prairie plant *Monarda fistulosa* is so widespread that it is used in plant identification books as a way to identify the species ({numref}`Figure %s <fig_14_6>`, right).
+
+```{figure} ../img/fig_14_6.png
+---
+name: fig_14_6
+alt: Clover and fistulosa
+width: 600px
+align: center
+---
+Prairie Bush Clover and *Monarda fistulosa*.
+```
 
 Pathogens can dramatically alter animal behavior. Rabies firsts gets through the salivary glands and into the saliva of an infected host. Physiological changes then make the host animal salivate profusely&mdash;foaming at the mouth&mdash;while psychological changes make it appear crazy and angry. The animal then bites through the skin of another animals, transferring the pathogen to that animal’s bloodstream, and the cycle continues. Both the physiological and psychological changes are caused by the pathogen and allow it to spread, even after the death of the initial host.
 
@@ -99,7 +159,17 @@ This seems a strange question, with industrialist Henry Ford under consideration
 
 As the horsedrawn era closed, manure generally vanished, running water arrived and flush toilets arrived, hygiene improved, sealed screen doors became common, and flies died in vast numbers. Without intending it, Henry Ford became the greatest fly killer of all time. The availability of the fecal–oral pathway diminished, and the infectivity of related diseases fell.
 
-Figure 14.7 shows the horse population declining slowly until World War I, then falling rather steadily as the number of cars increased in stages. The first increase in the number of cars ended around 1930 with the Great Depression, when many people could not afford cars. The end of World War II in 1945 brought another boom in car purchases, and by 1975 society had replaced almost every horse per capita with a car.
+{numref}`Figure %s <fig_14_7>` shows the horse population declining slowly until World War I, then falling rather steadily as the number of cars increased in stages. The first increase in the number of cars ended around 1930 with the Great Depression, when many people could not afford cars. The end of World War II in 1945 brought another boom in car purchases, and by 1975 society had replaced almost every horse per capita with a car.
+
+```{figure} ../img/fig_14_7.png
+---
+name: fig_14_7
+alt: Cars and horses
+width: 600px
+align: center
+---
+Horses and estimated cars in the United States, the source of Henry Ford's public legacy. *Cars per person calculated from yearly data for U.S. car production, assuming and eight-year average life for a car.
+```
 
 As the chance of catching polio fell, the average age of catching it increased. To understand this, consider residents of the northern hemisphere living at various latitudes. Because residents of the High Arctic have a chance to see the northern lights&mdash;[the aurora borealis](https://en.wikipedia.org/wiki/Aurora)&mdash;every week, children living there will likely see the aurora before their first birthday. Farther south, at 50 degrees north latitude, the aurora may appear only once every few years, especially near the lights of cities, so a child could be 5 or 10 years old before ever seeing it. And finally, say at 35 degrees north latitude, the aurora may appear but once or twice in a lifetime, so many people could be in middle age before viewing them, and others might go an entire lifetime without being touched by their hypnotic display.
 
@@ -109,23 +179,73 @@ Polio is like some other diseases that are not usually virulent in infants and y
 
 [Albert Sabin](https://en.wikipedia.org/wiki/Albert_Sabin), of polio vaccine fame, suspected a connection with flies. In 1941 he and his colleagues reported in Science on a study they performed in areas of the United States where polio had struck. They captured flies, pureed them in sterile fluid, and gave them to monkeys in feedings, nosedrops, or injections. As they put it, “Down came the monkeys with polio.”
 
-With further improvements in hygiene and broad use of vaccines, rates of polio have dropped to nearly zero. Figure 14.8 shows a moderate number of cases of polio before the late 1940s, an outbreak lasting until the early 1960s, nearly nothing in the years following.
+With further improvements in hygiene and broad use of vaccines, rates of polio have dropped to nearly zero. {numref}`Figure %s <fig_14_8>` shows a moderate number of cases of polio before the late 1940s, an outbreak lasting until the early 1960s, nearly nothing in the years following.
+
+```{figure} ../img/fairuse/polio.jpg
+---
+name: fig_14_8
+alt: Polio
+width: 600px
+align: center
+---
+The recent course of polio in the United States.
+```
+
+```{figure} ../img/lehman/COL12830-1920-TillieAndOscarsLogCabin-Sepia-Small.jpg
+---
+name: fig_14_9
+alt: Tillie and Oscar Lehman
+width: 600px
+align: center
+---
+Tillie and Oscar Lehman’s adz-hewn log cabin with frame addition, circa 1930s&mdash;the end of the horse-drawn era. They raised ten children in this cabin, all of whom likely had polio unnoticed as infants.
+```
 
 ## Modern disease trends
 
-Many ordinary diseases have been subdued since the last half of the twentieth century, some to the point of extinction from the natural world. Smallpox and rinderpest are gone, and polio nearly so&mdash;as we are writing this (2016–17), polio workers are anticipating its extinction in the foreseeable future. Diptheria is on a similar path (Figure 14.10), with no cases at all in the United States during the twentieth century.
+Many ordinary diseases have been subdued since the last half of the twentieth century, some to the point of extinction from the natural world. Smallpox and rinderpest are gone, and polio nearly so&mdash;as we are writing this (2016–17), polio workers are anticipating its extinction in the foreseeable future. Diptheria is on a similar path ({numref}`Figure %s <fig_14_10>`), with no cases at all in the United States during the twentieth century.
 
-Diseases such as whooping cough and measles (Figure 14.10) have been subdued but remain with us, with some cycling through periodic outbreaks. The rates of many ordinary diseases are being reduced, and infectious disease is no longer the major cause of deaths in human populations.
+Diseases such as whooping cough and measles ({numref}`Figure %s <fig_14_10>`) have been subdued but remain with us, with some cycling through periodic outbreaks. The rates of many ordinary diseases are being reduced, and infectious disease is no longer the major cause of deaths in human populations.
 
-Rates of various sexually transmitted diseases, however, are on a different course (Figure 14.11). Gonorrhea rates have declined but remain considerably above zero, and it is a commonly reported disease in the United States. The appearance of syphilis appears to be cyclic, as rates had declined but are now rising again. Rates of chlamydia&mdash;which can lead to serious outcomes, including infertility in women&mdash;have been increasing steadily, without an end in sight, and rates of genital herpes and other sexually transmitted dis- eases are rising similarly. Sexually transmitted diseases are a prominent problem to be solved in the twentieth century.
+```{figure} ../img/fairuse/DiseasesOverTime.jpg
+---
+name: fig_14_10
+alt: Modern disease trends
+width: 600px
+align: center
+---
+Paths of four diseases. Vertical axis shows cases in thousands.
+```
+
+Rates of various sexually transmitted diseases, however, are on a different course ({numref}`Figure %s <fig_14_11>`). Gonorrhea rates have declined but remain considerably above zero, and it is a commonly reported disease in the United States. The appearance of syphilis appears to be cyclic, as rates had declined but are now rising again. Rates of chlamydia&mdash;which can lead to serious outcomes, including infertility in women&mdash;have been increasing steadily, without an end in sight, and rates of genital herpes and other sexually transmitted dis- eases are rising similarly. Sexually transmitted diseases are a prominent problem to be solved in the twentieth century.
+
+```{figure} ../img/fairuse/sexdisease.jpg
+---
+name: fig_14_11
+alt: Modern sexually-transmitted disease trends
+width: 600px
+align: center
+---
+Sexually transmitted diseases in the U.S. The vertical axis shows the rate per 100,000 population.
+```
 
 ## An ancient plague perhaps vanishing
 
-We close this chapter with a graph to ponder. Examine Figure 14.12, an epidemiological view of annual deaths per 1000 population during the twentieth century, from a widespread and ancient cause. Imagine what it represents. Is it a sexually transmitted disease, an ordinary disease with an effective treatment introduced around 1946, or something else entirely?
+We close this chapter with a graph to ponder. Examine {numref}`Figure %s <fig_14_12>`, an epidemiological view of annual deaths per 1000 population during the twentieth century, from a widespread and ancient cause. Imagine what it represents. Is it a sexually transmitted disease, an ordinary disease with an effective treatment introduced around 1946, or something else entirely?
 
 The solid blue regression line goes through the average number of deaths over time from 1946 forward, projected back on the dashed line through the outbreaks earlier in the century.
 
-Figure 14.12 is actually an epidemiological view of deaths from warfare, which have been declining per capita over the past 70 years. The vertical line marks the beginning of the atomic era, and the numbers in parenthesis indicate (1) World War I, (2) World War II, (3) Korea, (4) Vietnam, (5) Cambodia and Ethiopia, (6) USSR–Afghanistan and Iran–Iraq, and (7) Rwanda.
+```{figure} ../img/fig_14_12.png
+---
+name: fig_14_12
+alt: Mysterious worldwide deaths
+width: 600px
+align: center
+---
+Worldwide deaths per year from an ancient human malady.
+```
+
+{numref}`Figure %s <fig_14_12>` is actually an epidemiological view of deaths from warfare, which have been declining per capita over the past 70 years. The vertical line marks the beginning of the atomic era, and the numbers in parenthesis indicate (1) World War I, (2) World War II, (3) Korea, (4) Vietnam, (5) Cambodia and Ethiopia, (6) USSR–Afghanistan and Iran–Iraq, and (7) Rwanda.
 
 Why include a chart of war deaths in a book on ecology, and in a chapter on the ecology of disease? First, war is directly connected with ecology and the environment. Throughout human history, warfare has been caused by environmental change, as existing territories became unproductive and new territories were sought, and in turn it has caused environmental change through habitat alteration and other forces. Second, humans are a dominant ecological force, whose impact we examine in this book, and warfare has been a prominent theme in the human condition. And third, warfare has some of the properties of a disease. It can spread from places of origin like a disease, and has analogs of competitors and mutualists in addition to obvious roles of predators and prey. Moreover, it involves an infectious agent—replicating not as biological agents spread between bodies of their hosts, but abstractly, like ideas&mdash;as seen by [Richard Dawkins](https://en.wikipedia.org/wiki/Richard_Dawkins)&mdash;replicate as memes between minds of their hosts.
 
@@ -142,8 +262,18 @@ From discussions with students and colleagues thus far, and from parts of the li
  - *Improved medicine*. Serious wounds once meant infection and death, but now victims can recover. And mortality from diseases which can spread rapidly in wartime—like influenza—has been reduced. The same level of warfare now manifests fewer deaths, making part of the decline an artifact.
  - *Reduced overkill*. The percentage of a population killed during a war decreased from nearly 100% in some ancient times to “what is necessary” in more recent cases. Has the development of precision weaponry contributed to continuing decrease in war deaths? This would also make part of the decline an artifact.
 
-Humanity has already unexpectedly broken the millennia-long rush of ever-accelerating population levels (Figure 6.3). Could something similar be happening with the millennia-long scourge of war? According to projections along the regression line, and for whatever the reasons, if the trends of Figure 14.12 are real and can be understood and continued, humanity may be on a path toward the elimination of background warfare, even before the end of this century.
+Humanity has already unexpectedly broken the millennia-long rush of ever-accelerating population levels ({numref}`Figure %s <fig_6_3>`). Could something similar be happening with the millennia-long scourge of war? According to projections along the regression line, and for whatever the reasons, if the trends of {numref}`Figure %s <fig_14_12>` are real and can be understood and continued, humanity may be on a path toward the elimination of background warfare, even before the end of this century.
 
 This material is a partial encapsulation of [Steven Pinker’s](https://en.wikipedia.org/wiki/Steven_Pinker) 800-page book, “The Better Angels of our Nature” (2011). That downward slope indicates a plausible goal to understand and a plausible hope to maintain. It is plausible, but we cannot know if it is practical without dedicating ourselves to it.
 
 There is a level of self-fulfillment in such things, for if we collectively do not believe a goal like this can be achieved, it likely will not, but if we believe in it and work toward it, we might succeed. Along present trends, you can work with reasonable, rational, data-based hope to make background warfare vanish in your lifetime. And regardless of the outcome, all will be ennobled by the effort.
+
+```{figure} ../img/fairuse/Arlington.jpg
+---
+name: fig_14_13
+alt: Arlington cemetery
+width: 400px
+align: center
+---
+Arlington National Cemetery, Virginia.
+```
