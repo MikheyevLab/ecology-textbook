@@ -11,9 +11,14 @@ kernelspec:
 
 # Competition
 
+<<<<<<< Updated upstream
 Ecological competition is a potent force driving organic evolution.
 When [Charles Darwin](https://en.wikipedia.org/wiki/Charles_Darwin)
 reached the [Galapagos Islands](https://en.wikipedia.org/wiki/Galápagos_Islands at age 26, he studied an assortment of fifteen similar species that are now called ["Darwin's Finches"](https://en.wikipedia.org/wiki/Darwin's_finches)({numref}`Figure %s <fig_16_2>`). His observation that various species had different beak structures, specialized for different foods, led him to question the stability of species. Indeed, such "character displacement" is one of several consequences of ecological competition.
+=======
+Ecological competition is a potent force driving organic evolution. When [Charles Darwin](https://en.wikipedia.org/wiki/Charles_Darwin)
+reached the [Galapagos Islands](https://en.wikipedia.org/wiki/Galápagos_Islands) at age 26, he studied an assortment of fifteen similar species that are now called ["Darwin's Finches"](https://en.wikipedia.org/wiki/Darwin's_finches)({numref}`Figure %s <fig_16_2>`). His observation that various species had different beak structures, specialized for different foods, led him to question the stability of species. Indeed, such "character displacement" is one of several consequences of ecological competition.
+>>>>>>> Stashed changes
 
 ```{figure} https://live.staticflickr.com/2914/32905506520_29393f7a17_b.jpg
 ---
@@ -27,6 +32,26 @@ The Galapagos Archipelago <b>by</b> Antti Lipponen (CC BY 2.0)
 
 ```
 
+<<<<<<< Updated upstream
+=======
+<center>
+<tr>
+    <td> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Geospiza_difficilis_-_Hessisches_Landesmuseum_Darmstadt_-_Darmstadt%2C_Germany_-_DSC00096.jpg/1024px-Geospiza_difficilis_-_Hessisches_Landesmuseum_Darmstadt_-_Darmstadt%2C_Germany_-_DSC00096.jpg" alt="geospiza_difficilis" width="250px" height="180" title="Sharp-beaked Ground Finch by Daderot (CC0)"></td>
+    <td> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Geospiza_scandens_-_Hessisches_Landesmuseum_Darmstadt_-_Darmstadt%2C_Germany_-_DSC00109.jpg/789px-Geospiza_scandens_-_Hessisches_Landesmuseum_Darmstadt_-_Darmstadt%2C_Germany_-_DSC00109.jpg" alt="geospiza_scandens" width="250px" height="180" title="Cactus Ground Finch by Daderot (CC0 1.0)"> </td>
+    <td> <img src="https://commons.wikimedia.org/wiki/File:Geospiza_magnirostris_-_Hessisches_Landesmuseum_Darmstadt_-_Darmstadt,_Germany_-_DSC00101.jpg" alt="geospiza_magnirostris" width="250px" height="180" title="Large Ground Finch by Daderot (CC0 1.0)"> </td>
+    </tr>
+</center>
+
+```{figure} ../img/blank.png
+---
+name: fig_16.2
+alt: Figure 16.2
+width: 1px
+align: center
+---
+Three species of Darwin's finches: Sharp-beaked ground finch, _Geospiza difficilis_ (left); cactus ground finch, _G. scandens_ (middle); and large ground finch, _G. magnirostris_ (right).
+```
+>>>>>>> Stashed changes
 <imagerow height=1>../image/fairuse/Gdifficilis.jpg(1.26),../image/fairuse/Gscandens.jpg(0.88),../image/fairuse/Gmagnirostris.jpg(1.68)</imagerow>
 **Figure 16.2.** `<figdef tag="FigDarwinsFinches">`
 Three species of Darwin's finches:
@@ -60,10 +85,20 @@ Consider latitude on the earth's surface, which is connected to several paramete
 thrive anywhere between $40^\circ$ and $60^\circ$ latitude, and whose
 density drops slowly with increasing latitude ({numref}`Figure %s <fig_16_3>`).
 
+<<<<<<< Updated upstream
 **Figure 16.3.** `<figdef tag="FigLatitudeCrossover">`
 Species living apart along a spatial gradient (above) and living together
 along the same gradient (below).
 `</figdef>`
+=======
+```{figure} ../img/fig_16_3.PNG
+alt: fig_16_3
+width: 600px
+align: center
+---
+Species living apart along a spatial gradient (above) and living together along the same gradient (below).
+```
+>>>>>>> Stashed changes
 
 At the top of the figure are two nearly horizontal lines representing the
 abundance you might observe of the two species as you travel north. If free of Species 2 (its competitor), Species 1 (blue line) declines slowly in abundance in more northerly climates. Species 2 similarly declines in abundance (red line), but compared with Species 1 fares a little better in the north and a little worse in the south.
@@ -73,19 +108,35 @@ suppressing the other. Using competition equations like those presented in this 
 
 You see that there can be a sharp change in abundance even with only very slight changes in species characteristics. A range of one species can end and that of a new species can begin, even though you may not be able to discover anything from either species alone as to why they switch their dominance. And the switch-over point need not correspond to the exact place in which their dominance switches. Here the actual switch-over point is a few degrees to the north because of the migration simulated in the model. This phenomenon is called "competitive exclusion" and, when it occurs over space like this, "zonation."
 
+<<<<<<< Updated upstream
 <image width=4 height=2.71>../image/bloms/zonesb.jpg</image>
 
 **Figure 16.4.** `<figdef tag="FigZonationBlueBirdPrairie">`
 Zonation on a three-year-old fen, Bluebird Prairie, Upper Midwest.
 `</figdef>`
+=======
+
+```{figure} ../img/fig_16_4.PNG
+alt: fig_16_4
+width: 600px
+align: center
+---
+Zonation on a three-year-old fen, Bluebird Prairie, Upper Midwest.
+```
+>>>>>>> Stashed changes
 
 Any environmental gradient can induce zonation. {numref}`Figure %s <fig_16_4>`  illustrates this on a restored prairie in the North American Upper Midwest. Though less than ten meters, the variation in elevation is enough to induce a mild moisture gradient. The entire area had been converted from a corn field to a restored prairie and seeded uniformly with a mixture of prairie grasses and prairie flowers, but distinct boundaries arose only three years after restoration.
 
 All the upland areas, labeled 1, contained standard restored prairie flora such as [*Andropogon gerardi*](https://en.wikipedia.org/wiki/Andropogon_gerardi) (Big Bluestem grass) and rapidly emerging flowers such as [*Rudbekia hirta*](https://en.wikipedia.org/wiki/Rudbeckia) (Black-eyed Susan). But in successive zones surrounding mild depressions in the landscape, labeled 2 to 4, there were sharp transitions to moisture-loving genera such as [*Typha latifolia*](https://en.wikipedia.org/wiki/Typha_latifolia) (cattail) and [*Stachys palustris*](https://en.wikipedia.org/wiki/Stachys_palustris)
 (Smartweed).
 
+<<<<<<< Updated upstream
 ```{admonition}
 *Fundamental niche*: The conditions under which a species can live,
+=======
+```{note}
+<i>Fundamental niche</i>: The conditions under which a species can live,
+>>>>>>> Stashed changes
    absent interference from other species.
 
 *Realized niche*: The conditions to which a species is restricted by
@@ -95,7 +146,11 @@ All the upland areas, labeled 1, contained standard restored prairie flora such 
 ## 16.2 Resource competition
 
 Competition among two species occurs when the interaction terms $s_{1,2}$
+<<<<<<< Updated upstream
 and $s_{2,1}$ in Equation {eq}`eq_16_1` are both negative. This rather abstract approach does lead to broad insights, but for other kinds of insights let us proceed to a more *mechanistic* view. Instead of abstract coefficients representing inhibition among species, let us consider *resources* which species need to thrive and survive. The species will not
+=======
+and $s_{2,1}$ in Equation {eq}`Equation_16.1` are both negative. This rather abstract approach does lead to broad insights, but for other kinds of insights let us proceed to a more *mechanistic* view. Instead of abstract coefficients representing inhibition among species, let us consider *resources* which species need to thrive and survive. The species will not
+>>>>>>> Stashed changes
 interact directly---they never even need to come into contact---but will
 influence each other through their use of a common resource, which they both
 need for maintenance and growth of their populations.
@@ -103,10 +158,20 @@ need for maintenance and growth of their populations.
 Resource competition is one of the oldest parts of ecological theory, introduced in the late 1920s by mathematician [Vivo Volterra.](https://en.wikipedia.org/wiki/Vito_Volterra) We will start where he
 started, considering what have been called "abiotic resources".
 
+<<<<<<< Updated upstream
 **Figure 16.5.** `<figdef tag="FigResourceLowMediumHigh">`
 Growth curve generalized for any resource, with a piece-wise linear
 approximation sketched as dashed lines.
 `</figdef>`
+=======
+```{figure} ../img/fig_16_5.PNG
+alt: fig_16_5
+width: 600px
+align: center
+---
+Growth curve generalized for any resource, with a piece-wise linear approximation sketched as dashed lines.
+```
+>>>>>>> Stashed changes
 
 Species require sunlight, space, nitrogen, phosphorous, and other resources in various amounts. If a resource is too rare, populations cannot grow, and in fact will decline. In {numref}`Figure %s <fig_16_5>` this is shown in the region to the left of the arrow marked A, in which the individual growth rate $1/N\,dN/dt$ is negative.
 
@@ -119,11 +184,21 @@ Once resources are abundant---approximately above B in the figure---needs are sa
 
 At very high levels, too much resource can actually harm the population. Too much sunlight can burn leaves, for example, while too much nitrogen can damage roots. At this point, above C in Figure {numref}`Figure %s <fig_16_5>`, the growth rate starts falling. By D the species can again just barely hold its own, and to the right of D the species is killed by an overabundance of resources.
 
+<<<<<<< Updated upstream
 **Figure 16.6.** `<figdef tag="FigResourceLowOnly">`
 Growth curve with only the left linear piece of
 Figure *FigResourceLowMediumHigh*, usable because species tend to keep
 resources low.
 `</figdef>`
+=======
+```{figure} ../img/fig_16_6.PNG
+alt: fig_16_6
+width: 600px
+align: center
+---
+Growth curve with only the left linear piece of {numref}`Figure %s <fig_16_5>`, usable because species tend to keep resources low.
+```
+>>>>>>> Stashed changes
 
 Such high resource levels, however, are not usually observed, because species draw resources concentrations down by using them up. Unless extreme environments are being modelled, only the left dashed linear piece of {numref}`Figure %s <fig_16_5>`  needs to be modelled, as shown in
 {numref}`Figure %s <fig_16_6>`.
@@ -134,6 +209,7 @@ $y$-intercept form---is not as useful here. It's the $x$-intercept form,
 $y=m(x-a)$, that comesinto play for writing a mechanistic resource model
 for single species population growth.
 
+<<<<<<< Updated upstream
     |{\def\q{\hbox to 1.4em{}}
     |$$ \BeginTable
     |\BeginFormat |l|l| \EndFormat \_
@@ -148,6 +224,18 @@ for single species population growth.
     ||\q ($b=-m/a$)                                "                     |\\+08
     |\_
     |\EndTable $$ }
+=======
+```{note}
+$1.\ Slope-intercept form: \ \ \ \ \ \ \ y= mx+b$
+$\text{(slope } m \text{, } y \text{-intercept } b \text{)}$
+$2.\ Intercept-intercept form:\ \ \ \ \ \ \ y = b(1-x/a)$
+$x \text{-intercept }a \text{, } y \text{-intercept } b \text{)}$
+$\text{(}m =-b/a \text{)}$
+$3.\ Slope-x-intercept form:\ \ \ \ \ \ \ y =m(x-a)$
+$\text{(slope } m \text{, } x \text{-intercept } a \text{)}$
+$text{(}m =-b/a \text{)}$
+```
+>>>>>>> Stashed changes
 
 The zero-growth point, $R^\star$, is important in the theory of resource
 competition. It is the amount of resource that just barely sustains the species.If the resource level is less than $R^\star$, the species dies out; if it is greater, the species grows and expands. The resource level in the environment therefore is expected to be at or near the $R^\star$ value of the dominant species. If it is above that level, the population grows, new individuals use more resource, and the resource level is consequently reduced until growth stops.
@@ -171,16 +259,26 @@ models.
 Start with the above statements in algebraic form,
 
 $$
+<<<<<<< Updated upstream
 {1\over N}{dN\over dt} = m(R-R^\star) \hbox{\hskip1em and \hskip1em}
                         R = R_{\rm max}-u N
 $$
+=======
+{1\over N}{dN\over dt} = m(R-R^\star) \ \ \text{and} \ \ R = R_{\rm max}-uN
+$$ (Equation_16.1)
+>>>>>>> Stashed changes
 
 then substitute the equation on the right above into the one on the left.
 This gives
 
 $$
+<<<<<<< Updated upstream
 {1\over N}{dN\over dt} = m\bigg( \underbrace{R_{\rm max}-\phantom{_{I_\scriptstyle J}}\kern-.7em u N}_{\displaystyle R}-R^\star \bigg)
 $$
+=======
+{1\over N}{dN\over dt} = m \left( \underbrace{R_{max}-uN}_{\text R} - R^\star \right)
+$$ (Equation_16.2)
+>>>>>>> Stashed changes
 
 Multiplying through on the right by $m$ and rearranging terms gives
 
@@ -191,13 +289,18 @@ $$
 Notice that the first term on the right is a constant and the second term is a constant times $N$. Does this look familiar? This is just density-regulated population growth in disguise---the $r+sN$ model again!
 
 $$
+<<<<<<< Updated upstream
 {1\over N}{dN\over dt} = r + s N,
 \hskip1em r=m(R_{\rm max}-R^\star),
 \hskip1em s=-u m
+=======
+{1\over N}{dN\over dt} = r + s N, \ \ r=m(R_{\rm max}-R^\star), \ \ s=-u m
+>>>>>>> Stashed changes
 $$
 
 Recall that this also happened for the epidemiological $I$ model. And it will arise occur again in future models.
 
+<<<<<<< Updated upstream
 ### 16.3 Competitive exclusion
 
 Consider what will happen with two species using the same resource, such  light or space or nitrogen fertilizer. The amount of resource available will be the maximum amount, $R_{\rm max}$, minus what is tied up in all individuals of all species. With $u_i$ being the amount of resource tied up in each individual
@@ -206,12 +309,37 @@ $$ R = R_{\rm max} - u_1 N_1 - u_2 N_2 $$
 Or for many species
 $$ R = R_{\rm max} - u_1 N_1 - u_2 N_2 - u_3 N_3 - \cdots - u_h N_h $$
 $$ R = R_{\rm max} - \sum_{i=1}^h {u_i N_i} $$
+=======
+## 16.3 Competitive exclusion
+
+Consider what will happen with two species using the same resource, such  light or space or nitrogen fertilizer. The amount of resource available will be the maximum amount, $R_{\rm max}$, minus what is tied up in all individuals of all species. With $u_i$ being the amount of resource tied up in each individual of species $i$, the resource remaining at any time will be
+
+$$
+R = R_{\rm max} - u_1 N_1 - u_2 N_2
+$$
+
+Or for many species
+
+$$
+R = R_{\rm max} - u_1 N_1 - u_2 N_2 - u_3 N_3 - \cdots - u_h N_h
+$$
+
+$$
+R = R_{\rm max} - \sum_{i=1}^h {u_i N_i}
+$$ (Equation_16.3)
+>>>>>>> Stashed changes
 
 Each species has its own growth equation, identical in form for all species, but
 different in the critical level of resource, $R_i^\star$, and the growth
 coefficient, $m_i$:
 
+<<<<<<< Updated upstream
 $$ {1\over N_i}{dN_i\over dt} = m_i(R-R_i^\star) $$
+=======
+$$
+{1\over N_i}{dN_i\over dt} = m_i(R-R_i^\star)
+$$ (Equation_16.4)
+>>>>>>> Stashed changes
 
 What remains is to consider how the growth coefficient $m_i$ relates to the
 minimal level of resource tolerated, $R^\star_i$. It turns out to be a tradeoff
@@ -228,19 +356,39 @@ abundant seed, are poorer *competitors* for resources, having a higher
 value of $R^\star$. This idea is illustrated by measurements reported in
 {numref}`Figure %s <fig_16_7>`.
 
+<<<<<<< Updated upstream
 **Figure 16.7.** `<figdef tag="FigTradeoffYT">`
 Tradeoff measured between colonization and ability to exploit nitrogen
 (Tilman 1994, {\sl Ecology} 75:2--16).
 `</figdef>`
+=======
+```{figure} ../img/fig_16_7.PNG
+alt: fig_16_7
+width: 600px
+align: center
+---
+Tradeoff measured between colonization and ability to exploit nitrogen (Tilman 1994, Ecology 75:2--16).
+```
+>>>>>>> Stashed changes
 
 In {numref}`Figure %s <fig_16_8>`, tradeoffs are formulated for modelling.
 Species 2 grows more rapidly when resources are abundant. This is the case at
 time 0, marked with $t_0$ on the top axis.
 
+<<<<<<< Updated upstream
 **Figure 16.8.** `<figdef tag="FigTradeoffTwoSPP">`
 Two species individual growth rate versus resource level, whose time-course is
 illustrated in Figure *FigTradeoffTwoSPPtime*.
 `</figdef>`
+=======
+```{figure} ../img/fig_16_8.PNG
+alt: fig_16_8
+width: 600px
+align: center
+---
+Two species individual growth rate versus resource level, whose time-course is illustrated in the next figure.
+```
+>>>>>>> Stashed changes
 
 As the populations grow they reduce the amount of resource available in the
 environment. At time 1, marked with $t_1$ on the upper axis, Species 2 can
@@ -265,9 +413,19 @@ down to its $R^\star$ of 2. In the middle, Species 1 alone also does just fine,
 rapidly rising to its carrying capacity of 60 and pulling the resource down to
 its $R^\star$ of 1.
 
+<<<<<<< Updated upstream
 **Figure 16.9.** `<figdef tag="FigTradeoffTwoSPPtime">`
 Competitive exclusion based on the tradeoffs of Figure *FigTradeoffTwoSPP*.
 `</figdef>`
+=======
+```{figure} ../img/fig_16_9.PNG
+alt: fig_16_9
+width: 600px
+align: center
+---
+Competitive exclusion based on the tradeoffs of the previous figure.
+```
+>>>>>>> Stashed changes
 
 But grown together, Species 2 makes an initial splash and then declines. This is
 due to the incessant growth of Species 1, which outcompetes it. Species 1 simply
@@ -284,10 +442,20 @@ A similar process for more than two species results in a succession of species
 taking over, one after the other, in an ecological process known as
 "succession."
 
+<<<<<<< Updated upstream
 **Figure 16.10.** `<figdef tag="FigTradeoffFiveSPP">`
 Multi-species individual growth rate versus resource level, whose time-course is
 illustrated in Figure *FigTradeoffFiveSPPtime*.
 `</figdef>`
+=======
+```{figure} ../img/fig_16_10.PNG
+alt: fig_16_10
+width: 600px
+align: center
+---
+Multi-species individual growth rate versus resource level, whose time-course is illustrated in the next figure.
+```
+>>>>>>> Stashed changes
 
 In natural systems many species compete, with tradeoffs between their $R^\star$
 values and their growth rates, as in {numref}`Figure %s <fig_16_10>`. The
@@ -297,6 +465,10 @@ competing for the same resource and producing the curves of
 program can produce the curves of {numref}`Figure %s <fig_16_9>`.
 
 ```{code-cell} r
+<<<<<<< Updated upstream
+=======
+:tags: ["output_scroll"]
+>>>>>>> Stashed changes
     # SIMULATE ONE YEAR
     #
     # This routine simulates competition differential equations through
@@ -364,9 +536,19 @@ own existence simply do not persist, and hence are not observed.
 
 When the program runs, it produces a file excerpted below, which is graphed in Figure {numref}`Figure %s <fig_16_11>`.
 
+<<<<<<< Updated upstream
 **Figure 16.11.** `<figdef tag="FigTradeoffFiveSPPtime">`
 Succession based on the tradeoffs of Figure *FigTradeoffFiveSPP*.
 `</figdef>`
+=======
+```{figure} ../img/fig_16_11.PNG
+alt: fig_16_11
+width: 600px
+align: center
+---
+Succession based on the tradeoffs of the previous figure.
+```
+>>>>>>> Stashed changes
 
 At the beginning in {numref}`Figure %s <fig_16_11>`, from time 0 to
 about time 3, the resource is at its maximum level, $R_{\rm max}$, and the
@@ -395,6 +577,7 @@ our simple models. Multiple resources are involved, species may be very close to
 each other in their ecological parameters, and stochastic events may intervene
 to add confusion.
 
+<<<<<<< Updated upstream
 **Figure 16.12.** `<figdef tag="FigBAAC">`
 {\it Schizacharium} at Cedar Creek with oaks invading.
 `</figdef>`
@@ -413,12 +596,34 @@ $$
 {\kern10.5em\stack{$\uparrow$,,$r_i$}
           \kern3.2em\stack{$\uparrow$,$s_{i,i} N_i$}
           \kern2.3em\stack{$\uparrow$,$s_{i,j} N_j$}}
+=======
+```{figure} ../img/fig_16_12.PNG
+alt: fig_16_12
+width: 600px
+align: center
+---
+_Schizacharium_ at Cedar Creek with oaks invading
+```
+
+### 16.5 Single-resource phase space
+
+Some aspects of competition for a resource are clarified by looking at the phase space, as introduced in [Chapter 10](). Combining
+Equations {eq}`Equation_16.3`  and  {eq}`Equation_16.4` gives the following as a starting point:
+
+$$\eqalign{
+{1\over N_1}{dN_1\over dt} = m_1(R_{\rm max}\!-\!R_1^\star) -u_1 m_1 N_1 -u_2 m_2 N_2
+\\
+{1\over N_2}{dN_2\over dt} = m_1(R_{max} \underset{\substack{\downarrow \\ r_i }}{-R_2^\star)} \underset{\substack{\downarrow \\ s_{i,i}N_i }}{-u_2m_2N_2}\underset{\substack{\downarrow \\ s_{i,j}N_j }}{-u_1m_1N_1}}
+$$
+(Equation 16.5)
+>>>>>>> Stashed changes
 
 As before, $m_i$ is the rate of growth of Species $i$ for each level
 of resource above its minimum resource requirement $R_i^\star$, and
 $u_i$ is the amount of resource tied up in each individual of
 Species $i$. For reference, here is the assignment of parameters in terms
 of $r_i$ and $s_{i,j}$.
+<<<<<<< Updated upstream
 $$\eqalign{
   r_1 = m_1(R_{\rm max}\!-\!R_1^\star),\hskip.5em
     s_{1,1} = -u_1 m_1,                \hskip.5em
@@ -427,6 +632,14 @@ $$\eqalign{
     s_{2,1} = -u_1 m_1,                \hskip.5em
     s_{2,2} = -u_2 m_2 \cr }
 $$
+=======
+
+$$
+\eqalign{
+r_1 = m_1(R_{\rm max}\!-\!R_1^\star), \ s_{1,1} = -u_1m_1, \ s_{1,2} = -u_2 m_2 \\
+r_2 = m_2(R_{\rm max}\!-\!R_2^\star), \ s_{2,1} = -u_1 m_1, \ s_{2,2} = -u_2 m_2 }
+$$ (Equation_16.6)
+>>>>>>> Stashed changes
 
 Where in the phase space will the growth rate be 0 for each species? For
 Species 1 it will be where
@@ -438,6 +651,7 @@ $$
 Solving for $N_2$ gives
 
 $$
+<<<<<<< Updated upstream
 N_2 = {-{r_1}\over s_{1,2}} -{{s_{1,1}}\over{s_{1,2}}} N_1
 
    \hbox{\kern 1.5em $\leftarrow$ \sl Species 1 isocline}
@@ -447,6 +661,19 @@ FIG16.13
 <figdef FigCphaseA>
 Species 1 increases below its isocline, shaded with gray copies of the numeral 1.
 `</figdef>`
+=======
+N_2 = {-{r_1}\over s_{1,2}} -{{s_{1,1}}\over{s_{1,2}}} N_1 \leftarrow \ \text{Species 1 isocline}
+$$
+(Equation 16.7)
+
+```{figure} ../img/fig_16_13.PNG
+alt: fig_16_13
+width: 600px
+align: center
+---
+Species 1 increases below its isocline, shaded with gray copies of the numeral 1.
+```
+>>>>>>> Stashed changes
 
 Anywhere along that line, the population of Species 1 will not change, but on either side of the line it will {numref}`Figure %s <fig_16_13>`.).
 Formulae for the four possible equilibria and their stability are in
@@ -455,6 +682,7 @@ where $N_1=0$, is $-{r_1}/{s_{1,2}}$, and the horizontal intercept,
 where $N_2=0$, is $-{r_1}/{s_{1,1}}$. The slope is $-s_{1,1}/s_{1,2}=(u_1 m_1)/(u_2 m_2)$.
 
 Similarly, growth of Species 2 will be 0 where
+<<<<<<< Updated upstream
 $$ {1\over N_2}{dN_2\over dt} = 0 = r_2 + s_{2,2}N_2 + s_{2,1}N_1 $$
 Solving for $N_2$ gives
 
@@ -489,6 +717,27 @@ FIG 16.15
 Species 2 increases below its isocline, shaded with gray copies of the numeral
 2.
 `</figdef>`
+=======
+
+$$
+{1\over N_2}{dN_2\over dt} = 0 = r_2 + s_{2,2}N_2 + s_{2,1}N_1
+$$
+
+```{figure} ../img/fig_16_14.PNG
+alt: fig_16_14
+width: 600px
+align: center
+---
+Species 2 increases below its isocline, shaded with gray copies of the numeral 2.
+```
+
+Solving for $N_2$ gives
+
+$$
+N_2 = {-{r_2}\over {s_{2,2}}} - {{s_{2,1}}\over {s_{2,2}}} N_1 \leftarrow \ \text{Species 2 isocline}
+
+$$ (Equation_16.8)
+>>>>>>> Stashed changes
 
 Again, anywhere along that line the population of Species 2 will not change, but
 on either side of the line it will ({numref}`Figure %s <fig_16_14>`.) The vertical
@@ -497,6 +746,7 @@ $N_1=0$, is $-{r_2}/{s_{2,2}$, the horizontal intercept, where
 $N_2=0$, is $-{r_2}/{s_{2,1}$, and the slope is
 $-s_{2,1}/s_{2,2}=(u_1 m_1)/(u_2 m_2)$.
 
+<<<<<<< Updated upstream
     |{\tenpoint
     |$$ \beginpicture %\linethickness.8pt
     |\setcoordinatesystem units < 3 in, 3 in> point at 0 0
@@ -531,6 +781,16 @@ Each species increases only below its respective isocline, shaded with gray with
 the species number, 1 or 2.
 `</figdef>`
 
+=======
+
+```{figure} ../img/fig_16_15.PNG
+alt: fig_16_15
+width: 600px
+align: center
+---
+Single-species parallel isoclines. Each species increases only below its respective isocline, shaded with gray with the species number, 1 or 2.
+```
+>>>>>>> Stashed changes
 Notice this: In terms of the resource, the slope of the isocline for Species 2
 is identical to the slope for Species 1---both are equal to $(u_1 m_1)/(u_2
 m_2)$. What does this mean? It means that the two isoclines are parallel. And
@@ -544,6 +804,7 @@ Once in the middle region, only Species 2 increases. That means
 the population of Species 1 is driven leftward, toward lower  values of $N_1$, while
 the population of Species 2 is driven upward,   toward higher values of $N_2$.
 
+<<<<<<< Updated upstream
     |{\tenpoint
     |$$ \beginpicture %\linethickness.8pt
     |\setcoordinatesystem units < 3 in, 3 in> point at 0 0
@@ -570,6 +831,15 @@ converging on a stable equilibrium where Species 2 excludes Species 1.
  $s_{21}\!=\!-0.533$,
  $s_{11}\!=\!s_{22}\!=\!-1$).
 `</figdef>`
+=======
+```{figure} ../img/fig_16_16.PNG
+alt: fig_16_16
+width: 600px
+align: center
+---
+Flow across the phase space, as explained in Chapter 10, converging on a stable equilibrium where Species 2 excludes Species 1. (<i>r<sub>1</sub> = 0.75, r<sub>2</sub>= 0.52, s<sub>12</sub>= -1,875 s<sub>21</sub> = -0.533, s<sub>11</sub>=s<sub>22</sub>=-1 </i>).
+```
+>>>>>>> Stashed changes
 
 These dynamics show up in the flow diagram of
 {numref}`Figure %s <fig_16_16>`..
@@ -623,7 +893,11 @@ $$
 \eqalign{
  R_A &= R_{A\rm max} -p_1 u_1 N_1 -p_2 u_2 N_2 \cr
  R_A &= R_{B\rm max} -q_1 u_1 N_1 -q_2 u_2 N_2 \cr }
+<<<<<<< Updated upstream
 $$
+=======
+$$ (Equation_16.9)
+>>>>>>> Stashed changes
 
 Suppose that populations of Species 1 and 2 grow based on which resource is
 closest to the $R^\star$ experienced by that species for the resource. This can
@@ -631,6 +905,7 @@ be represented by the "min" function, $\min(a,b)$, which selects the
 smaller of two values. For
 example, $\min(200,10)=10$, $\min(-200,10)=-200$. Now the
 two-species, two-resource growth equations, generalizing the single-species,
+<<<<<<< Updated upstream
 single-resource growth in Equation {eq}, are
 
 $$
@@ -638,6 +913,16 @@ $$
  {{1}\over {N_1}}{{dN_1}\over {dt}} &= m_1\,\min(R_A-R_{1A}^\star,\, R_B-R_{1B}^\star) \cr\noalign{\vskip4pt}
  {{1}\over {N_2}}{{dN_2}\over{dt}} &= m_2\,\min(R_A-R_{2A}^\star,\, R_B-R_{2B}^\star)\,. \cr}
  $$
+=======
+single-resource growth in Equation {eq}`Equation_16.1`, are
+
+$$
+\eqalign{
+ {{1}\over {N_1}}{{dN_1}\over {dt}} &= m_1\,\min(R_A-R_{1A}^\star,\, R_B-R_{1B}^\star) \\
+ {{1}\over {N_2}}{{dN_2}\over{dt}} &= m_2\,\min(R_A-R_{2A}^\star,\, R_B-R_{2B}^\star)\,. \cr}
+ $$
+
+>>>>>>> Stashed changes
 This could be refined, so that the growth rates $m_1$ and $m_2$ would depend on
 which resource was limiting, but this does not matter in the present analysis.
 
@@ -647,6 +932,7 @@ the previous section. But if the two species are quite different, they can be
 limited by different resources and the equations can be simplified.
 
 $$\eqalign{
+<<<<<<< Updated upstream
    {{1}\over {N_1}}{{dN_1}\over {dt}} &= m_1(R_A-R_{1A}^\star) \cr
    {{1}\over {N_2}}{{dN_2}\over{dt}} &= m_2(R_B-R_{2B}^\star) \cr }
 $$
@@ -667,6 +953,26 @@ $$
 {\kern8.0em\stack{$\uparrow$,$r_i$}
           \kern6.2em\stack{$\uparrow$,$s_{i,i} N_i$}
           \kern3.4em\stack{$\uparrow$,$s_{i,j} N_j$}}
+=======
+   {{1}\over {N_1}}{{dN_1}\over {dt}} &= m_1(R_A-R_{1A}^\star) \\
+   {{1}\over {N_2}}{{dN_2}\over{dt}} &= m_2(R_B-R_{2B}^\star) \cr }
+$$ (Equation_16.10)
+
+Some algebra will reveal the basic properties. If you substitute the expressions
+for $R_1$ and $R_2$ from Equation {eq}`Equation_16.9` into
+Equation {eq}`Equation_16.10`  you will get
+$$\eqalign{
+ {{1}\over {N_1}}{{dN_1}\over {dt}} &= m_1\,(R_{A\rm max} -p_1 u_1 N_1 -p_2 u_2 N_2 -R_{1A}^\star) \\
+ {{1}\over {N_2}}{{dN_2}\over{dt}} &= m_2\,(R_{B\rm max} -q_1 u_1 N_1 -q_2 u_2 N_2 -R_{2B}^\star)}
+ $$
+
+Now if you expand, collect, and rearrange terms, you get this equivalent form:
+
+$$\eqalign{
+{{1}\over {N_1}}{{dN_1}\over {dt}}= m_1\,(R_{A\rm max}\!-\!R_{A1}^\star) \!-\!m_1\,p_1 u_1\,N_1 \!-\!m_1\,p_2 u_2\,N_2 \\
+{1\over N_2}{dN_2\over dt} = m_2(R_{Bmax} \underset{\substack{\downarrow \\ r_i }}{-R_{B2}^\star)} \underset{\substack{\downarrow \\ s_{i,i}N_i }}{-m_2q_2u_2N_2}\underset{\substack{\downarrow \\ s_{i,j}N_j }}{-m_2q_1u_1N_1}}
+$$ (Equation_16.11)
+>>>>>>> Stashed changes
 
 Notice that, again, a mechanistic model with measurable parameters is just the
 general ecological {\sc rsn} model in disguise.
@@ -678,7 +984,11 @@ $-s_{1,1}/s_{1,2}$ and
 $-s_{2,1}/s_{2,2}$ for Species 1 and 2, respectively.
 
 These two slopes can be written in terms of the resource. With the values for
+<<<<<<< Updated upstream
 $s_{i,j}$ from Equation {eq}.
+=======
+$s_{i,j}$ from Equation {eq}`Equation_16.11`.
+>>>>>>> Stashed changes
 ($s_{1,1}= -m_1\,p_1 u_1$,
   $s_{1,2}= -m_1\,p_2 u_2$,
   $s_{2,1}= -m_2\,q_1 u_1$, and
@@ -687,8 +997,12 @@ the slopes of the isoclines become
 $$
 \eqalign{
   {{s_{1,1}}\over {s_{1,2}}} &= {{-m_1\,p_1 u_1}\over {-m_1\,p_2 u_2}}
+<<<<<<< Updated upstream
                          = {{u_1}\over {u_2}} \, {{p_1}\over{p_2}} \cr\noalign{\vskip 4pt}
   {{s_{2,1}}\over{s_{2,2}}} &= {{-m_2\,q_1 u_1}\over {-m_2\,q_2 u_2}}
+=======
+                         = {{u_1}\over {u_2}} \, {{p_1}\over{p_2}} \\ {{s_{2,1}}\over{s_{2,2}}} &= {{-m_2\,q_1 u_1}\over {-m_2\,q_2 u_2}}
+>>>>>>> Stashed changes
                          = {{u_1}\over {u_2}} \, {{1-p_1}\over{1-p_2}} \cr }
 $$
 
@@ -706,6 +1020,7 @@ completely. {numref}`Figures %s <fig_16_17>`  has the same properties as
 increase, including the broad band between the red and blue isoclines where
 Species 1 will decrease.
 
+<<<<<<< Updated upstream
     |{\tenpoint
     |$$ \beginpicture %\linethickness.8pt
     |\setcoordinatesystem units < 3 in, 3 in> point at 0 0
@@ -733,6 +1048,15 @@ Two species using resources differently, with Species 2 excluding Species 1.
  $s_{21}\!=\!-0.666$,
  $s_{11}\!=\!s_{22}\!=\!-1$)
 `</figdef>`
+=======
+```{figure} ../img/fig_16_17.PNG
+alt: fig_16_17
+width: 600px
+align: center
+---
+Two species using resources differently, with Species 2 excluding Species 1. (<i>r<sub>1</sub> = 0.75, r<sub>2</sub>= 0.65, s<sub>12</sub>= -1,875m s<sub>21</sub> = -0.666, s<sub>11</sub>=s<sub>22</sub>=-1 </i>).
+```
+>>>>>>> Stashed changes
 
 If the blue and red isoclines are reversed, the result is similar, but with
 Species 1 excluding Species 2.  {numref}`Figure %s <fig_16_18>`  shows this,
@@ -740,6 +1064,7 @@ with the arrows reversed as Species 1 increases everywhere below the blue
 isocline, including the broad band between the isoclines where Species 2
 decreases.
 
+<<<<<<< Updated upstream
     |{\tenpoint
     |$$ \beginpicture %\linethickness.8pt
     |\setcoordinatesystem units < 3 in, 3 in> point at 0 0
@@ -768,6 +1093,15 @@ Species 2.
  $s_{21}\!=\!-0.533$,
  $s_{11}\!=\!s_{22}\!=\!-1$).
 `</figdef>`
+=======
+```{figure} ../img/fig_16_18.PNG
+alt: fig_16_18
+width: 600px
+align: center
+---
+The opposite of the previous figure, with Species 1 excluding Species 2. (<i>r<sub>1</sub> = 0.975, r<sub>2</sub>= 0.4, s<sub>12</sub>= -1.5 s<sub>21</sub> = -0.533, s<sub>11</sub>=s<sub>22</sub>=-1 </i>).
+```
+>>>>>>> Stashed changes
 
 In all three cases, from {numref}`Figures %s <fig_16_16>`
 to {numref}`%s <fig_16_18>`, the system has three equilibria---at the origin
@@ -776,6 +1110,7 @@ Species 1 alone $(-r_1/s_{1,1},0)$, and at the carrying capacity $K_2$ for
 Species 2 alone $(0, -r_2/s_{2,2})$. The origin is unstable and only one of the
 other two equilibria is stable, depending on which isocline encloses the other.
 
+<<<<<<< Updated upstream
     |{\tenpoint
     |$$ \beginpicture %\linethickness.8pt
     |\setcoordinatesystem units < 3 in, 3 in> point at 0 0
@@ -855,6 +1190,8 @@ one stable equilibrium or the other.
  $s_{11}\!=\!s_{22}\!=\!-1$).
 `</figdef>`
 
+=======
+>>>>>>> Stashed changes
 {numref}`Figures %s <fig_16_17>`  and *{numref}`%s <fig_16_18>`  can be
 combined to give each species a chance to exclude the other, depending on
 circumstances. This means not allowing one isocline to completely enclose the
@@ -876,6 +1213,7 @@ though in some cases (such as the [Mandelbrot
 system,](https://en.wikipedia.org/wiki/Mandelbrot_set) not representing
 competition), related curves can be infinitely complex.
 
+<<<<<<< Updated upstream
     |{\tenpoint
     |$$ \beginpicture %\linethickness.8pt
     |\setcoordinatesystem units < 3 in, 3 in> point at 0 0
@@ -903,6 +1241,15 @@ Isoclines intersecting at a globally stable coexistence.
  $s_{21}\!=\!-0.410$,
  $s_{11}\!=\!s_{22}\!=\!-1$).
 `</figdef>`
+=======
+```{figure} ../img/fig_16_19.PNG
+alt: fig_16_19
+width: 600px
+align: center
+---
+Isoclines intersecting in a way that allows each species to exclude the other, depending on starting conditions.
+```
+>>>>>>> Stashed changes
 
 Finally, the isoclines can intersect in the opposite way, as in
 {numref}`Figure %s <fig_16_21>`. In this case, neither species has any region
@@ -912,6 +1259,7 @@ happen when neither species can exclude the other in any part of the phase
 space? They are forced to coexist. The individual equilibria on the axes become
 unstable and the interior equilibrium becomes stable---indeed, globally stable.
 
+<<<<<<< Updated upstream
     |{\tenpoint \input vectors6.tex
     |\def\sink{$\bullet$}
     |\def\source{$\circ$}
@@ -1014,6 +1362,15 @@ Case 2: Species 1 excludes Species 2.
 Case 3: one excludes the other, depending on starting conditions.
 Case 4: both species coexist.
 `</figdef>`
+=======
+```{figure} ../img/fig_16_20.PNG
+alt: fig_16_20
+width: 600px
+align: center
+---
+Flow in the bistable system of the previous figure. The black dashed line is a separatrix, dividing the phase space into regions that reach one stable equilibrium or the other. (<i>r<sub>1</sub> = 0.975, r<sub>2</sub>= 0.65, s<sub>12</sub>= -2.437 s<sub>21</sub> = -0.866, s<sub>11</sub>=s<sub>22</sub>=-1 </i>).
+```
+>>>>>>> Stashed changes
 
 In summary, the isoclines in competitive systems have four different
 configurations, as in {numref}`Figure %s <fig_16_22>`. Cases 1 and 2 can
@@ -1025,6 +1382,17 @@ starts out. Finally, Case 4 is globally stable, where neither species can
 exclude the other, and stable coexistence prevails. Cases 3 and 4 can represent
 competition for two different resources.
 
+<<<<<<< Updated upstream
+=======
+```{figure} ../img/fig_16_21.PNG
+alt: fig_16_21
+width: 600px
+align: center
+---
+Isoclines intersecting at a globally stable coexistence. (<i>r<sub>1</sub> = 0.75, r<sub>2</sub>= 0.4, s<sub>12</sub>= -1.153 s<sub>21</sub> = -0.410, s<sub>11</sub>=s<sub>22</sub>=-1 </i>).
+```
+
+>>>>>>> Stashed changes
 ## 16.7 Lotka--Volterra formulation
 
 Competition equations are usually presented in textbooks as the [Lotka--Volterra competition model.](https://en.wikipedia.org/wiki/Competitive_Lotka–Volterra_equations)
@@ -1035,7 +1403,19 @@ species' carrying capacities,   as follows.
 $$\eqalign{
   {1\over N_1}{dN_1\over dt} &= r_1 \left(1-{N_1+a_{1,2} N_2 \over K_1}\right) \cr
   {1\over N_2}{dN_2\over dt} &= r_2 \left(1-{N_2+a_{2,1} N_1 \over K_2}\right) \cr }
+<<<<<<< Updated upstream
 $$
+=======
+$$ (Equation_16.12)
+
+```{figure} ../img/fig_16_22.PNG
+alt: fig_16_22
+width: 600px
+align: center
+---
+Case 1: Species 2 excludes Species 1. Case 2: Species 1 excludes Species 2. Case 3: one excludes the other, depending on starting conditions. Case 4: both species coexist.
+```
+>>>>>>> Stashed changes
 
 $K_1$ and $K_2$ are the carrying capacities for Species 1 and 2, respectively.
 Parameters $a_{1,2}$ and $a_{2,1}$ represent the interference by each species on
@@ -1045,7 +1425,11 @@ the other hand, $a_{1,2}=1/2$, it takes two individuals of Species 2 to have the
 same negative effect on the growth of Species 1 as one individual of Species 1
 itself.
 
+<<<<<<< Updated upstream
 To compare this with the `RSN` formulation, represent {eq}  with $i$ and $j$ subscripts
+=======
+To compare this with the `RSN` formulation, represent {eq}`Equation_16.12`  with $i$ and $j$ subscripts
+>>>>>>> Stashed changes
 $$ {1\over N_i}{dN_i\over dt} = r_i \left(1-{N_i+a_{i,j} N_j \over K_i}\right) $$
 and multiply the right hand side through by $r_i$,
 $$ {1\over N_i}{dN_i\over dt} = r_i {-{r_i}\over {K_i}N_i} {-{a_{i,j} r_i}\over K_i} N_j $$
@@ -1075,6 +1459,7 @@ formulation. These terms obscure the effects of the interaction terms,
 $a_{1,2}$ and $a_{2,1}$, when carrying capacities differ between the
 species.
 
+<<<<<<< Updated upstream
 ```{note}
 <shaded height=.65 color=lightyellow>
 *Coexistence in the Lotka--Volterra model requires that each species be able
@@ -1084,11 +1469,32 @@ equilibrium.*
 ```
 
 What, then, is a correct statement about coexistence? It can be put in terms of increasing from low densities, as shown in Box *BoxCoexistenceRule*.
+=======
+<a id='box_16_1'></a>
+```{note}
+<i>Coexistence in the Lotka--Volterra model requires that each species be able
+to increase from low densities when the other species is at its single-species
+equilibrium.</i>
+</shaded>
+```
+
+What, then, is a correct statement about coexistence? It can be put in terms of increasing from low densities, as shown in [this box](#box_16_1).
+>>>>>>> Stashed changes
 The qualifying phrase "*from low densities*" is required, because the
 species not present can increase from high densities in a bistable system, as in
 {numref}`Figure %s <fig_16_20`, and flip it to the other state, even though
 coexistence cannot occur.
 
+<<<<<<< Updated upstream
+=======
+```{figure} ../img/fig_16_23.PNG
+alt: fig_16_23
+width: 600px
+align: center
+---
+Coexistence in terms of a kind of overyielding <i>(Vandermeer 1981, Bioscience)</i>
+```
+>>>>>>> Stashed changes
 Another way in which coexistence has been explained is by Vandermeer (1981
 *Bioscience*), connecting coexistence with a certain kind of
 "overyielding," wherein two crops require less land for the same annual
@@ -1100,6 +1506,7 @@ line ({numref}`Figure %s <fig_16_20`B).
 This view is correct for models we have been considering with straight-line
 isoclines, but incorrect for more general models with curved isoclines
 ({numref}`Figure %s <fig_16_20`C, D). The statement in
+<<<<<<< Updated upstream
 Box *BoxCoexistenceRule*, however, holds true in each of these cases.
 
     |{\tenpoint
@@ -1178,4 +1585,11 @@ Coexistence in terms of a kind of overyielding
 All things considered, rather than relying on rules of thumb, it can be
 better to evaluate a system directly, for example with the methods of
 eigenvectors and eigenvalues described in [Chapter]().
+=======
+[this box](#box_16_1), however, holds true in each of these cases.
+
+All things considered, rather than relying on rules of thumb, it can be
+better to evaluate a system directly, for example with the methods of
+eigenvectors and eigenvalues described in [Chapter 10]().
+>>>>>>> Stashed changes
 
