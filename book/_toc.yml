@@ -15,6 +15,12 @@
     - file: content/modeling_single_population
     - file: content/differential_and_difference_forms
     - file: content/ch6-human-population
+<<<<<<< Updated upstream
     - file: content/ch12-predator-prey.md
     - file: content/competition
     - file: content/C05-Differential_and_difference_forms
+=======
+    - file: content/theory_of_interactions
+    - file: content/embodied_by_natural_selection
+    - file: content/competition
+>>>>>>> Stashed changes
