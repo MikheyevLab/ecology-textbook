@@ -1,0 +1,10 @@
+# Chapter 15 {#sec-ch15}
+
+::: {.callout-note}
+## Not yet adapted
+
+Chapter 15 of the original textbook has not yet been adapted for this edition. Until it is, please read it in the original:
+[*Quantitative Ecology: A New Unified Approach*](http://hdl.handle.net/11299/204551) by Lehman, Loberg and Clark (CC BY-NC 4.0).
+
+This placeholder keeps chapter, figure and equation numbers aligned with the original book.
+:::

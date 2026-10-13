@@ -48,3 +48,10 @@ _build
 
 # stray conda env
 ecology-textbook/
+
+# Quarto
+book/_book/
+book/.quarto/
+/.quarto/
+book/_build/
+**/*.quarto_ipynb

@@ -1,0 +1,94 @@
+project:
+  type: book
+  output-dir: _book
+  resources:
+    - data/
+
+book:
+  title: "Quantitative Ecology"
+  subtitle: "A New Unified Approach"
+  author: "Lehman, Loberg and Clark (adapted for ANU)"
+  date: today
+  date-format: "YYYY"
+  repo-url: https://github.com/MikheyevLab/ecology-textbook
+  repo-subdir: book
+  repo-branch: main
+  repo-actions: [edit, issue, source]
+  site-url: https://mikheyevlab.github.io/ecology-textbook/
+  favicon: img/logo.png
+  cover-image: img/logo.png
+  google-analytics: "G-8SXREGQC46"
+  search: true
+  sidebar:
+    logo: img/logo.png
+  page-footer:
+    center: >
+      Adapted from *Quantitative Ecology: A New Unified Approach* by Lehman, Loberg and Clark,
+      licensed [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
+  chapters:
+    - index.qmd
+    - part: "Introduction"
+      chapters:
+        - 01-what-is-ecology.qmd
+        - 02-ecological-theory.qmd
+    - part: "Single populations"
+      chapters:
+        - 03-basic-population-model.qmd
+        - 04-modeling-single-population.qmd
+        - 05-differential-difference-forms.qmd
+        - 06-human-population-growth.qmd
+        - 07-discrete-time-chaos.qmd
+    - part: "Two species"
+      chapters:
+        - 08-theory-of-interactions.qmd
+        - 09-embodied-by-natural-selection.qmd
+        - 10-phase-space.qmd
+        - 11-state-space.qmd
+        - 12-predator-prey.qmd
+        - 13-humans-as-predators.qmd
+        - 14-humans-as-prey.qmd
+        - 15-not-yet-adapted.qmd
+        - 16-competition.qmd
+        - 17-mutualism.qmd
+
+bibliography: references.bib
+
+crossref:
+  chapters: true
+  # Code listings are called "Programs" in the original text (issue #21)
+  lst-title: "Program"
+  lst-prefix: "Program"
+  custom:
+    - kind: float
+      key: box
+      reference-prefix: "Box"
+      caption-prefix: "Box"
+      latex-env: box
+
+execute:
+  freeze: auto
+  warning: false
+  message: false
+
+knitr:
+  opts_chunk:
+    fig.align: center
+    out.width: "85%"
+    dev: ragg_png
+    dpi: 150
+    fig.width: 7
+    fig.height: 4.5
+
+format:
+  html:
+    theme:
+      light: [cosmo, styles.scss]
+    code-fold: false
+    code-tools: false
+    code-link: false
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    toc-depth: 3
+    number-depth: 3
+    html-math-method: mathjax
+    df-print: paged

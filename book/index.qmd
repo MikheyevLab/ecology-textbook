@@ -1,0 +1,19 @@
+# Preface {.unnumbered}
+
+This is a version of [*Quantitative Ecology: A New Unified Approach*](http://hdl.handle.net/11299/204551) by Lehman, Loberg and Clark, slightly modified for the Australian National University Ecology course. Some of the questions are from Adam Clark's [accompanying repository](https://github.com/adamtclark/QuantitativeEcologyBook).
+
+The original book is available under a [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license, and so is this adaptation.
+
+## Running the code
+
+The code in this book is written in R. Each chapter is a [Quarto](https://quarto.org) document (`.qmd`), so you can open it in RStudio, Positron or VS Code and run the code chunks yourself. The source for every chapter is linked from the "View source" button at the top right of each page.
+
+To try the code without installing anything, launch an RStudio session in your browser with Binder (it can take a few minutes to start):
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MikheyevLab/ecology-textbook/main?urlpath=rstudio)
+
+Once RStudio opens, go to the `book/` folder and open any chapter.
+
+## Chapter numbering
+
+Chapter, figure and equation numbers follow the original book. Chapters that have not yet been adapted are kept as short placeholders that link to the original.
