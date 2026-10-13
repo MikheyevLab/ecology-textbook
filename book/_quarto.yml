@@ -52,7 +52,6 @@ book:
         - 17-mutualism.qmd
         - 18-higher-order-models.qmd
 
-bibliography: references.bib
 
 crossref:
   chapters: true
