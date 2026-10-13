@@ -194,7 +194,7 @@ Others species benefit from complex deception to keep predators away, such as th
 ::: {#fig-9-13 layout-ncol=2 layout-valign="bottom"}
 ![Camouflaged grasshopper. [Photo: CC0.]{.credit}](https://pixnio.com/free-images/2019/10/08/2019-10-08-07-17-57.jpg){#fig-9-13-a fig-alt="A young grasshopper nearly invisible against pebbles."}
 
-![Killdeer. [Photo: Wikimedia Commons.]{.credit}](https://upload.wikimedia.org/wikipedia/commons/4/4a/Charadrius_vociferus_tx1.jpg){#fig-9-13-b fig-alt="A killdeer, a brown and white shorebird, standing on the ground."}
+![Killdeer. [Photo: Ejmc, CC BY-SA 3.0.]{.credit}](https://upload.wikimedia.org/wikipedia/commons/4/4a/Charadrius_vociferus_tx1.jpg){#fig-9-13-b fig-alt="A killdeer, a brown and white shorebird, standing on the ground."}
 
 Predation, camouflage, and temptation.
 :::

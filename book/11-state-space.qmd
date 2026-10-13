@@ -50,7 +50,7 @@ where $r_{1} = r-1$, $r_{2} = -1$, $s_{1,2} = -r$, and $s_{2,1} = \frac{1}{N_{2}
 r=2.27;                         # Sample growth rate.
 t0=100; t1=1000;                # Time boundaries.
 r1=r-1; r2=-1; s12=-r;          # Parameters.
-N1=.4; N2=.2; t=0; dt=1;        # Initial conditions.
+N1=.5; N2=.1; t=0; dt=1;        # Initial conditions.
 
 while(t<=t0+t1)                 # Iterate the system.
 { s21=1/N2;                     # Calculate coupling.

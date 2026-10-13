@@ -23,7 +23,7 @@ Successful diseases can exploit obligate behaviors. Animals, for example, must b
 | Tears | Mouth (mucosa) |
 | Feces | Mouth (tooth/gingival junction) |
 | Urine | Gut |
-| Seminal fluids | Skin (scabs, triconosis, warts, etc.) |
+| Seminal fluids | Skin (scabs, warts, etc.) |
 | Vaginal fluids | Urinary tract |
 | Blisters, boils, zits (via scratching, breaking the skin) | Rectum |
 | Blood (mosquitoes, ticks, hemorrhage) | Vagina (mucosa) |

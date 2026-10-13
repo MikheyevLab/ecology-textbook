@@ -204,7 +204,7 @@ mutualisms dominate. The joint biomass of cows, horses,
 pigs, chickens, and dogs exceeds the biomass of humans, to say nothing of the
 biomass of crops. We did not get here alone.
 
-![Stages in human population dynamics. Representative predator abundance is shown in red, prey abundance in green, and abundance of our ancestors in blue.](img/fig_17_9.png){#fig-17-9 fig-alt="Four stacked panels of abundance over time. A, Primordial: prey (green), human ancestors (blue) and predators (orange) cycle in boom and bust. B, Hunter-gatherer: prey and humans cycle without the predator. C, Agriculture: prey and humans grow without bound. D, Modern: both level off at dashed lines. Arrows on the right show the sign changes in interaction terms between stages." width="70%"}
+![Stages in human population dynamics. Representative predator abundance is shown in orange, prey abundance in green, and abundance of our ancestors in blue.](img/fig_17_9.png){#fig-17-9 fig-alt="Four stacked panels of abundance over time. A, Primordial: prey (green), human ancestors (blue) and predators (orange) cycle in boom and bust. B, Hunter-gatherer: prey and humans cycle without the predator. C, Agriculture: prey and humans grow without bound. D, Modern: both level off at dashed lines. Arrows on the right show the sign changes in interaction terms between stages." width="70%"}
 
 We have recently outgrown the need for animal mutualists to power plows and
 support locomotion, substituting engines consuming fossil fuels instead. These
