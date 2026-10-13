@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>9&nbsp; Embodied by natural selection – Quantitative Ecology</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./10-phase-space.html" rel="next">
+<link href="./08-theory-of-interactions.html" rel="prev">
+<link href="./img/logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-cb9e926c369b7bfff1b10eaa38db083c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8SXREGQC46"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-8SXREGQC46', { 'anonymize_ip': true});
+</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-theory-of-interactions.html">Two species</a></li><li class="breadcrumb-item"><a href="./09-embodied-by-natural-selection.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Embodied by natural selection</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Quantitative Ecology</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/MikheyevLab/ecology-textbook/tree/main/book/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-what-is-ecology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is ecology?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-ecological-theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ecological theory</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Single populations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-basic-population-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">A basic population model</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-modeling-single-population.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modeling a single population</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-differential-difference-forms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Differential and difference forms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-human-population-growth.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Human population growth</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-discrete-time-chaos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Discrete-time dynamics and chaos</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Two species</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-theory-of-interactions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Theory of interactions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-embodied-by-natural-selection.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Embodied by natural selection</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-phase-space.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Phase space</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-state-space.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">State space</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-predator-prey.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Predator and prey</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-humans-as-predators.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Humans as predators</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-humans-as-prey.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Humans as prey</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-not-yet-adapted.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chapter 15</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-competition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-mutualism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Mutualism</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-theory-of-interactions.html">Two species</a></li><li class="breadcrumb-item"><a href="./09-embodied-by-natural-selection.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Embodied by natural selection</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-natural-selection" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Embodied by natural selection</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The absolute simplicity of the three plus–minus combinations for two-species dynamics, explored in the previous chapter (<a href="08-theory-of-interactions.html" class="quarto-xref"><span>Chapter 8</span></a>), is converted by natural selection into physical forms of splendid complexity—unexpected and subtle, spectacular and sublime, stunning and beautiful.</p>
+<p>From our human perspective, some details appear to embody timeless altruism and kindness, others unbounded horror and cruelty. But nature seems to implement material possibilities without regard to human values, and we are left merely to observe and wonder, and strive to understand.</p>
+<p>At this point, to gain perspective before proceeding further, it is well to examine at least a tiny subset of ecological reality. The range of examples of multi-species interactions looks endless, and even within individual organisms are interactions among multiple species.</p>
+<p>At the deepest level, the eukaryotic cell seems to have been created of interactions among separate prokaryotic species one or two billion years ago. Mitochondrial genomes are separate genomes within the cell with parallels to bacterial genomes, but mitochondria are no longer able to live on their own except under very special circumstances. Chloroplasts are similar. These are mutualisms at the very basis of complex life. Other mutualisms, like those with gut bacteria, form higher levels.</p>
+<div id="fig-9-1" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-9-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-1" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-9-1-a" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A bee on a flower, collecting pollen.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-1-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Bee_on_flower_pollinating.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-1" alt="A bee on a flower, collecting pollen.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-1-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Bee. <span class="credit">Photo: Hussein Twabi, CC BY-SA 4.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-1" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-9-1-b" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A Namaqua rock mouse drinking nectar from a pagoda lily.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-1-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Namaqua_rock_mouse_feeding_on_Pagoda_Lily_nectar.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-1" alt="A Namaqua rock mouse drinking nectar from a pagoda lily.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-1-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Namaqua rock mouse. <span class="credit">Photo: Petra Wester, CC BY 4.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-1" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-9-1-c" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Pink flower clusters of swamp milkweed, Asclepias incarnata.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-1-c-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Swamp_Milkweed_%28Asclepias_incarnata%29_%287658289040%29.jpg/1200px-Swamp_Milkweed_%28Asclepias_incarnata%29_%287658289040%29.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-1" alt="Pink flower clusters of swamp milkweed, Asclepias incarnata.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-1-c-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) Swamp milkweed. <span class="credit">Photo: Albert Herring, CC BY-SA 2.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-9-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.1: Pollination mutualism.
+</figcaption>
+</figure>
+</div>
+<p>Mutualisms among pollinators and flowers are an ingenious arrangement for the fertilization of immobile organisms. A bee, for example, collects pollen as a food source and in the process spreads pollen from plant to plant. Plants advertise the pollen with bright flowers, and provide sweet nectar as an additional attraction (<a href="#fig-9-1" class="quarto-xref">Figure&nbsp;<span>9.1</span></a>, left).</p>
+<p>A small mammal can act similarly, drinking nectar from one plant, getting pollen on its whiskers, and transferring the pollen when it drinks from another plant, in turn pollinating that plant (<a href="#fig-9-1" class="quarto-xref">Figure&nbsp;<span>9.1</span></a>, middle).</p>
+<p>A fascinating pollination mutualism extends across the wetlands of the North American Upper Midwest, in marsh milkweed, <em>Asclepias incarnata</em> (<a href="#fig-9-1" class="quarto-xref">Figure&nbsp;<span>9.1</span></a>, right). Mutualisms are not necessarily perfect, and each member can be exploited in some small way. In this case, pollinators land on the milkweed flower and stand on “landing platforms” while taking nectar. But the platforms are not secure; they are curved and slightly difficult footholds. A pollinator’s legs slip into cracks between the platforms and, when the pollinator pulls its leg out, there are “saddle bags” of pollen (pollinia) wrapped around its leg, which can’t be dislodged. As it flies to another flower, the saddle bags rotate forward so they easily dislodge, and they’re pulled off when the pollinator slips on another insecure landing platform of the corresponding species.</p>
+<div id="fig-9-2" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-9-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-2" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-9-2-a" class="quarto-float quarto-figure quarto-figure-center anchored" alt="An African buffalo with red-billed oxpeckers perched on it.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-2-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/African_buffalo_or_Cape_buffalo%2C_Syncerus_caffer%2C_with_Red-billed_Oxpecker%2C_Buphagus_erythrorhynchus%2C_at_Kruger_National_Park%2C_South_Africa_%2820764930948%29.jpg/1200px-African_buffalo_or_Cape_buffalo%2C_Syncerus_caffer%2C_with_Red-billed_Oxpecker%2C_Buphagus_erythrorhynchus%2C_at_Kruger_National_Park%2C_South_Africa_%2820764930948%29.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-2" alt="An African buffalo with red-billed oxpeckers perched on it.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-2-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) African buffalo. <span class="credit">Photo: Derek Keats, CC BY 2.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-2" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-9-2-b" class="quarto-float quarto-figure quarto-figure-center anchored" alt="An ant tending a cluster of aphids on a plant stem.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-2-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Ant_guards_its_Aphids.jpg/1200px-Ant_guards_its_Aphids.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-2" alt="An ant tending a cluster of aphids on a plant stem.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-2-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Ants and aphids. <span class="credit">Photo: Geo Swan, CC BY 2.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-2" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-9-2-c" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Two small cleaner wrasses cleaning a large potato grouper.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-2-c-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Epinephelus_tukula_is_cleaned_by_two_Labroides_dimidiatus.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-2" alt="Two small cleaner wrasses cleaning a large potato grouper.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-2-c-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) Cleaner wrasses. <span class="credit">Photo: Richard Ling, CC BY-SA 2.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-9-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.2: Mutualisms through a third species.
+</figcaption>
+</figure>
+</div>
+<p>In another example, water buffalos (<a href="#fig-9-2" class="quarto-xref">Figure&nbsp;<span>9.2</span></a>, left) attract abundant ticks. What better place, then for Oxpeckers to find morsels of food than in the bristly fur of a water buffalo? A little blood in the tick is probably a bonus. This is good for the water buffalo, good for the oxpecker, and not good for the tick. This three-species interaction is (1) predation on the water buffalo by the tick, (2) predation on the tick by the oxpecker, and thus (3) mutualism between water buffalo and oxpecker. It is an “enemy of my enemy is my friend” interaction, one of the forty kinds of three-species interactions you will see in upcoming chapters.</p>
+<p>Likewise, ants ward off potential predators from aphids (<a href="#fig-9-2" class="quarto-xref">Figure&nbsp;<span>9.2</span></a>, middle) and “cleaner fish” swim freely within the mouth of a large fish (<a href="#fig-9-2" class="quarto-xref">Figure&nbsp;<span>9.2</span></a>, right) while they remove the fish’s parasites.</p>
+<div id="fig-9-3" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-9-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-3" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-9-3-a" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A clown fish among the tentacles of a sea anemone.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-3-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Clown_fish_in_the_Andaman_Coral_Reef.jpg/1200px-Clown_fish_in_the_Andaman_Coral_Reef.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-3" alt="A clown fish among the tentacles of a sea anemone.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-3-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Clown fish. <span class="credit">Photo: Ritiks, CC BY-SA 3.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-3" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-9-3-b" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A boxer crab holding a small sea anemone in each claw.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-3-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Boxer_Crab_carrying_eggs_-_Lybia_tessellata_%28cropped%29.jpg/1200px-Boxer_Crab_carrying_eggs_-_Lybia_tessellata_%28cropped%29.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-3" alt="A boxer crab holding a small sea anemone in each claw.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-3-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Pom-pom crab. <span class="credit">Photo: prilfish, CC BY 2.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-9-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.3: Mutualisms with a dangerous partner.
+</figcaption>
+</figure>
+</div>
+<p>Sea anemones have stinging tentacles that other fish must avoid, but clown fish can resist the sting (<a href="#fig-9-3" class="quarto-xref">Figure&nbsp;<span>9.3</span></a>, left). This mutualism is more complex. The clown fish protect themselves from predators by living among the anemones, and their bright colors may attract predators who become prey for the anemone. Clown fish eat scraps of food missed by the anemone, plus their own food from the water column, and provide nitrogen to the anemone from their digested waste. These are intricate mutualisms, in which specifically matched species of clown fish and anemone have become permanent partners.</p>
+<p><a href="https://en.wikipedia.org/wiki/Lybia_edmondsoni">Pom-pom crabs</a> employ sea anemones as weapons (<a href="#fig-9-3" class="quarto-xref">Figure&nbsp;<span>9.3</span></a>, right), carrying two anemones and waving them in a dance to dissuade approaching predators. Crabs are sloppy eaters, so the sea anemones get the benefit of the mess as payment.</p>
+<div id="fig-9-4" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-9-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-4" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-9-4-a" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A flock of sheep on a pasture.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-4-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://c.pxhere.com/photos/b7/b3/flock_of_sheep_sheep_flock_herd_animal_pasture_animals_sheep's_wool_wool-1257194.jpg!d" class="img-fluid figure-img" data-ref-parent="fig-9-4" alt="A flock of sheep on a pasture.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-4-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Sheep. <span class="credit">Photo: CC0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-4" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-9-4-b" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Small autonomous tractors working rows of a vineyard.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-4-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/dd/Autonomous_compact_tractors_in_a_Texas_vineyard%2C_Nov_2012.jpg/1200px-Autonomous_compact_tractors_in_a_Texas_vineyard%2C_Nov_2012.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-4" alt="Small autonomous tractors working rows of a vineyard.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-4-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Autonomous tractors. <span class="credit">Photo: ASIrobots, CC BY-SA 3.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-9-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.4: Mutualisms with people.
+</figcaption>
+</figure>
+</div>
+<p>Early on, our hunter-gatherer predecessors were predators, but later they domesticated some of their prey, changing some predator-prey interactions to mutualisms. From the point of view of domesticated sheep (<a href="#fig-9-4" class="quarto-xref">Figure&nbsp;<span>9.4</span></a>, left), humans may not be ideal mutualists. We protect them from wolves, harbor them from disease, and shield them from the worst vagaries of weather. But we also confine them to pens, shear off their wool, and kill and eat their lambs. Yet as agriculture advanced, the more people there were on the planet, and the more sheep there were, and vice versa. This is the ecological making of a mutualism.</p>
+<p>It is similar with crops. Instead of gathering grain and fruit from forest and field, we cleared areas specifically for domesticated plants. We protect the crops from competition with other plants, work to keep them free of disease, and add water and nutrients to the soil to help them grow. For thousands of years we used beasts of burden to accelerate cultivation, also in mutualisms with those beasts. Now we are entering a wholly synthetic phase, in which teams of satellite-guided tractors navigate fields with the power of a thousand horses (<a href="#fig-9-4" class="quarto-xref">Figure&nbsp;<span>9.4</span></a>, right).</p>
+<p>For a thought exercise, you may want to ponder our relationship with machines. If we were mutualists with draft horses, are we now mutualists with the machines that have replaced them? As you proceed through the next chapters, consider whether our relationships with our machines meet the ecological requirements of mutualisms.</p>
+<div id="fig-9-5" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-9-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-5" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-9-5-a" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A swallowtail caterpillar feeding on a leaf.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-5-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Papilio_machanon_Caterpillar_on_leaf.jpg/1200px-Papilio_machanon_Caterpillar_on_leaf.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-5" alt="A swallowtail caterpillar feeding on a leaf.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-5-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Caterpillar. <span class="credit">Photo: Simon Eugster, CC BY-SA 3.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-5" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-9-5-b" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Leaf cutter ants carrying pieces of leaves.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-5-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://live.staticflickr.com/4016/4350539953_3de115dacb_b.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-5" alt="Leaf cutter ants carrying pieces of leaves.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-5-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Leaf cutter ants. <span class="credit">Photo: Jon Pinder, CC BY-NC-ND 2.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-5" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-9-5-c" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A herd of bison grazing.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-5-c-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Bison_herd_at_Genesee_Park-2012_03_10_0603.jpg/1200px-Bison_herd_at_Genesee_Park-2012_03_10_0603.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-5" alt="A herd of bison grazing.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-5-c-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) Bison. <span class="credit">Photo: Postdlf, CC BY-SA 3.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-9-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.5: Herbivory.
+</figcaption>
+</figure>
+</div>
+<p>Herbivory is a kind of predation in which the prey is a plant. Upon detecting herbivory, the plant may pump toxins into the leaf to dissuade the herbivore. In response, the herbivore may quickly chew out a pattern to isolate part of the leaf from the toxins and then dine in relative salubrity (<a href="#fig-9-5" class="quarto-xref">Figure&nbsp;<span>9.5</span></a>, left).</p>
+<p>Multitudes of leaf cutter ants can be formidable herbivores (<a href="#fig-9-5" class="quarto-xref">Figure&nbsp;<span>9.5</span></a>, middle), cutting luggable-sized pieces of leaves to take back to their nests. The ants do not eat the leaves, but chew them further, feed them to fungus, and then eat the fungus—creating an ant-fungus mutualism, with ants being predators on the trees.</p>
+<p>At a larger scale, multitudes of bison were formidable herbivores of the prairie (<a href="#fig-9-5" class="quarto-xref">Figure&nbsp;<span>9.5</span></a>, right). The native tallgrass prairies were wildflower gardens, with a few dozen species of grasses but hundreds of species of flowers—said to bloom a different color each week.</p>
+<div id="fig-9-6" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-9-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-6" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-9-6-a" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Aspen trees felled by beavers.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-6-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="http://www.starfred.com/ebook-ecology/CAL13016.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-6" alt="Aspen trees felled by beavers.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-6-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Aspen. <span class="credit">Photo: <a href="http://www.starfred.com/ebook-ecology/CAL13016.html">starfred.com</a>.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-6" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-9-6-b" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A beaver swimming.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-6-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://cdn.pixabay.com/photo/2020/02/02/20/05/beaver-4814029_1280.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-6" alt="A beaver swimming.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-6-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Beaver. <span class="credit">Photo: Milo Szelezny, CC0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-6" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-9-6-c" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A beaver pond in midsummer with several defoliated, girdled trees.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-6-c-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="http://www.starfred.com/ebook-ecology/CAL11592.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-6" alt="A beaver pond in midsummer with several defoliated, girdled trees.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-6-c-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) Beaver pond. <span class="credit">Photo: <a href="http://www.starfred.com/ebook-ecology/CAL11592.html">starfred.com</a>.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-9-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.6: Beaver-aspen herbivory. Or is it mutualism?
+</figcaption>
+</figure>
+</div>
+<p>Beavers fell whole aspen trees (<a href="#fig-9-6" class="quarto-xref">Figure&nbsp;<span>9.6</span></a>, left) to make their dams and lodges (middle and right), and also for food. This sounds like herbivory. At the same time, however, they girdle and kill other species of trees that they do not use as food, clearing the way for new aspen. This is mutualism.</p>
+<p>The photo on the right in <a href="#fig-9-6" class="quarto-xref">Figure&nbsp;<span>9.6</span></a> shows a pond colonized by beaver after an absence of more than a century. Though it is midsummer, a few of the trees are defoliated—including one giant bur oak—because beaver have chewed off the cambium layer all around the trees, girdling and killing them. Judiciously followed, this practice would keep the forest in an early successional stage, a condition which favors staple aspen.</p>
+<div id="fig-9-7" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-9-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-7" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-9-7-a" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A bear catching a fish in a river.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-7-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://live.staticflickr.com/3532/3906978789_a105f449b7_b.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-7" alt="A bear catching a fish in a river.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-7-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Bear. <span class="credit">Photo: Patrick, CC BY-NC-ND 2.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-7" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-9-7-b" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A laughing kookaburra holding a frog in its beak.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-7-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Dacelo_novaeguineae_-Sydney%2C_Australia_-frog_in_beak-8b.jpg/804px-Dacelo_novaeguineae_-Sydney%2C_Australia_-frog_in_beak-8b.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-7" alt="A laughing kookaburra holding a frog in its beak.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-7-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Laughing kookaburra. <span class="credit">Photo: Richard Taylor, CC BY 2.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-7" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-9-7-c" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A camouflaged stonefish resting on the sea floor.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-7-c-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://cdn.pixabay.com/photo/2016/03/31/19/27/stone-fish-1295032_1280.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-7" alt="A camouflaged stonefish resting on the sea floor.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-7-c-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) Stonefish. <span class="credit">Photo: Andrea Bohl, CC0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-9-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.7: Predation.
+</figcaption>
+</figure>
+</div>
+<p>Bears catching fish and a kookaburra ambushing a frog (<a href="#fig-9-7" class="quarto-xref">Figure&nbsp;<span>9.7</span></a>, left and middle ) are simple kinds of predation. Other ambush strategies are also common. The stonefish (<a href="#fig-9-7" class="quarto-xref">Figure&nbsp;<span>9.7</span></a>, right) is disguised to match its background and waves a lure to attract other fish, who are then instantly swallowed whole. Despite hundreds of millions of years of evolution, the trick still works.</p>
+<div id="fig-9-8" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-9-8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-8" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-9-8-a" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A male cheetah lying in the grass.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-8-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Male_Cheetah.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-8" alt="A male cheetah lying in the grass.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-8-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Cheetah. <span class="credit">Photo: Valentina Storti, CC BY 2.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-8" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-9-8-b" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A heron holding a fish in its beak.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-8-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Bird_eating_fish.jpg/1200px-Bird_eating_fish.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-8" alt="A heron holding a fish in its beak.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-8-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Great blue heron. <span class="credit">Photo: Nigel, CC BY 2.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-9-8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.8: Ambush predation.
+</figcaption>
+</figure>
+</div>
+<p>Cats typically pursue ambush strategies, lying in wait (<a href="#fig-9-8" class="quarto-xref">Figure&nbsp;<span>9.8</span></a>, left), whereas dogs typically pursue sustained chasing strategies. This means that cats must be relatively odorless to avoid detection, but dogs need not be.</p>
+<p>In a curious ambush strategy only recently achieved, herons wave gathered feathers to attract fish, then drop the feathers and grab the fish (<a href="#fig-9-8" class="quarto-xref">Figure&nbsp;<span>9.8</span></a>, right). Such use of feathers is apparently an animal “meme” that has spread rapidly through heron populations after being discovered by some Einstein-heron.</p>
+<div id="fig-9-9" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-9-9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-9" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-9-9-a" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A bullsnake swallowing a mallard egg whole.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-9-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Bullsnake_Eating_Mallard_Egg_%2812779779555%29.jpg/1200px-Bullsnake_Eating_Mallard_Egg_%2812779779555%29.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-9" alt="A bullsnake swallowing a mallard egg whole.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-9-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Snake eating egg. <span class="credit">Photo: Tom Koerner, CC BY 2.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-9" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-9-9-b" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A wasp carrying a paralysed caterpillar.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-9-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Graafwesp.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-9" alt="A wasp carrying a paralysed caterpillar.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-9-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Ammophila wasp. <span class="credit">Photo: Patrick Reijnders, CC BY-SA 3.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-9-9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.9: Predation and parasitoidism.
+</figcaption>
+</figure>
+</div>
+<p>Species interactions can lead to remarkable evolutionary adaptations, including the non-messy way of eating an egg (<a href="#fig-9-9" class="quarto-xref">Figure&nbsp;<span>9.9</span></a>, left).</p>
+<p>Nature acknowledges neither kindness nor cruelty, but parasitoidism seems one of the cruelest strategies (<a href="#fig-9-9" class="quarto-xref">Figure&nbsp;<span>9.9</span></a>, right). Here an Ammophila wasp is carrying a caterpillar not to kill and eat, but as a living hatchery for her eggs. Young wasps developing from these eggs consume the caterpillar from within as the caterpillar remains alive, transforming it into wasp larvae. Parasitoidism is widespread.</p>
+<div id="fig-9-10" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-9-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-10" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-9-10-a" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A mosquito feeding on human skin.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-10-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Mosquito-feeding.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-10" alt="A mosquito feeding on human skin.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-10-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Mosquito. <span class="credit">Photo: Pratheeep P S, CC BY-SA 3.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-10" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-9-10-b" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A sexton beetle covered with mites.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-10-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Nicrophorus_humator_-_sexton_beetle_-_Flickr_-_Nick_Goodrum_Photography.jpg/1200px-Nicrophorus_humator_-_sexton_beetle_-_Flickr_-_Nick_Goodrum_Photography.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-10" alt="A sexton beetle covered with mites.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-10-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Beetle with mites. <span class="credit">Photo: Nick Goodrum, CC BY 2.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-9-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.10: Parasitism.
+</figcaption>
+</figure>
+</div>
+<p>When the predator is small relative to the prey, predator—prey interactions are called “parasitism.” At left in <a href="#fig-9-10" class="quarto-xref">Figure&nbsp;<span>9.10</span></a> is a blood-sucking mosquito attached to an unfortunate human. At right is a beetle seemingly overwhelmed with mites. When the predator is much smaller still, it is called a “pathogen” and the interactions are called “infection” and “disease.”</p>
+<div id="fig-9-11" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-9-11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-11" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-9-11-a" class="quarto-float quarto-figure quarto-figure-center anchored" alt="An open peatland landscape.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-11-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Peatlands_%2829101986238%29.jpg/1200px-Peatlands_%2829101986238%29.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-11" alt="An open peatland landscape.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-11-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Peatlands. <span class="credit">Photo: Joshua Mayer, CC BY-SA 2.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-11" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-9-11-b" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The vase-shaped trap of a pitcher plant.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-11-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Pitcher_Plant_%28Nepenthes_tentaculata%29_%2814667870636%29.jpg/587px-Pitcher_Plant_%28Nepenthes_tentaculata%29_%2814667870636%29.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-11" alt="The vase-shaped trap of a pitcher plant.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-11-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Pitcher plant. <span class="credit">Photo: Bernard Dupont, CC BY-SA 2.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-11" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-9-11-c" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A sundew with sticky droplets on its leaves.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-11-c-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Carnivorous_sundew_plant-Drosera_rotundifolia_%287189676245%29.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-11" alt="A sundew with sticky droplets on its leaves.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-11-c-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) Sundew. <span class="credit">Photo: Scott Darbey, CC BY 2.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-9-11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.11: Plants as predators.
+</figcaption>
+</figure>
+</div>
+<p>Peatlands can form over vast areas where the habitat is isolated from a normal supply of nutrients (<a href="#fig-9-11" class="quarto-xref">Figure&nbsp;<span>9.11</span></a>, left) and life there must endure low levels of nitrogen. In this situation, some plants become predators.</p>
+<p>The pitcher plant (<a href="#fig-9-11" class="quarto-xref">Figure&nbsp;<span>9.11</span></a>, middle), for example, attracts insects with nectar and then eats them to obtain nitrogen, trapping them in a pool of digestive fluid at the bottom of a tall green vase with slippery, unidirectional sides of downward-pointing hairs. The sundew (<a href="#fig-9-11" class="quarto-xref">Figure&nbsp;<span>9.11</span></a>, right) seems simpler, capturing unwary insects in sticky droplets and then consuming them.</p>
+<div id="fig-9-12" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-9-12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-12" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div id="fig-9-12-a" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A striped skunk.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-12-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Striped_Skunk.jpg/1200px-Striped_Skunk.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-12" alt="A striped skunk.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-12-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Skunk. <span class="credit">Photo: Tom Friedel, CC BY 3.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-12" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div id="fig-9-12-b" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A fire-bellied toad showing its brightly coloured underside.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-12-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://live.staticflickr.com/2216/2503041657_56bc175ee9_b.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-12" alt="A fire-bellied toad showing its brightly coloured underside.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-12-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Fire-bellied toad. <span class="credit">Photo: Brian Gratwicke, CC BY-NC 2.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-12" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div id="fig-9-12-c" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A hummingbird clearwing moth feeding at a flower.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-12-c-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://live.staticflickr.com/4121/4895985879_8f2712fe23_b.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-12" alt="A hummingbird clearwing moth feeding at a flower.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-12-c-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) Hummingbird clearwing moth. <span class="credit">Photo: Jay, CC BY 2.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-12" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div id="fig-9-12-d" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A caterpillar whose tail end resembles the head of a viper.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-12-d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://live.staticflickr.com/1663/26023026171_f5db7e7fa6_b.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-12" alt="A caterpillar whose tail end resembles the head of a viper.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-12-d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d) Snake-mimic caterpillar. <span class="credit">Photo: Andreas Kay, CC BY-NC-SA 2.0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-9-12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.12: Predation, warnings, and deception.
+</figcaption>
+</figure>
+</div>
+<p>Prey develop remarkable defenses against predators, following the processes of evolution, and provide warnings of the existence of their defenses. Some such defenses and advertisements are real, like the fetid fluid sprayed by skunks (<a href="#fig-9-12" class="quarto-xref">Figure&nbsp;<span>9.12</span></a>, left) that can deter even large bears from attacking. The fire-bellied toad (next to left) is filled with toxins and its bright color advertises, “Do not eat me!”</p>
+<p>Others species benefit from complex deception to keep predators away, such as the harmless clear-winged moth colored to look anything but harmless (next to right), and an edible caterpillar in disguise with a viper-like tail (right).</p>
+<div id="fig-9-13" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-9-13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-13" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-9-13-a" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A young grasshopper nearly invisible against pebbles.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-13-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://pixnio.com/free-images/2019/10/08/2019-10-08-07-17-57.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-13" alt="A young grasshopper nearly invisible against pebbles.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-13-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Camouflaged grasshopper. <span class="credit">Photo: CC0.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-13" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-9-13-b" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A killdeer, a brown and white shorebird, standing on the ground.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-13-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Charadrius_vociferus_tx1.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-13" alt="A killdeer, a brown and white shorebird, standing on the ground.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-13-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Killdeer. <span class="credit">Photo: Wikimedia Commons.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-9-13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.13: Predation, camouflage, and temptation.
+</figcaption>
+</figure>
+</div>
+<p>Hiding is a simple, common strategy for escaping predators. On the left in <a href="#fig-9-13" class="quarto-xref">Figure&nbsp;<span>9.13</span></a> is a young grasshopper on pebbles. Can you see it? Zoom in and look just a little below and to the left of center.</p>
+<p>The killdeer (<a href="#fig-9-13" class="quarto-xref">Figure&nbsp;<span>9.13</span></a>, right) tempts predators who get too close by stumbling away from the nest, feigning an injured wing and making itself look like an easy catch. Once it has lured the predator far from the nest, it lifts quite competently into the air and flies off.</p>
+<div id="fig-9-14" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-9-14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-14" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-9-14-a" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Pines, deciduous trees, red sumac and prairie grasses together in autumn.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-14-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="http://www.starfred.com/ebook-ecology/CAL21961.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-14" alt="Pines, deciduous trees, red sumac and prairie grasses together in autumn.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-14-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Triple ecotone. <span class="credit">Photo: <a href="http://www.starfred.com/ebook-ecology/CAL21961.html">starfred.com</a>.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-9-14" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-9-14-b" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A prairie fire burning through grassland.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-9-14-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="http://www.starfred.com/ebook-ecology/p1224-28.jpg" class="img-fluid figure-img" data-ref-parent="fig-9-14" alt="A prairie fire burning through grassland.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-9-14-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Prairie fire. <span class="credit">Photo: <a href="http://www.starfred.com/ebook-ecology/p1224-28.html">starfred.com</a>.</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-9-14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.14: Competition at the North American triple ecotone.
+</figcaption>
+</figure>
+</div>
+<p>Examples of competition seem both more subtle and more ordinary than examples of mutualism and predation. But competition is pervasive.</p>
+<p>North America has many ecosystems—the tundra of the Arctic, the deserts of the Southwest, the giant conifers of the Pacific Northwest—but the three largest ecosystems merge in a triple ecotone in the Upper Midwest, an area which exemplifies competition among plants. Here, the needle-leaf forests stretch north to the Arctic, the broad-leaf forests extend east to the Atlantic, and the prairies’ amber waves of grain flow west to the Rockies. <a href="#fig-9-14" class="quarto-xref">Figure&nbsp;<span>9.14</span></a> shows a whirlpool of competition at this broad triple ecotone. White pines stand tall above the deciduous trees in the background, with Big Bluestem and other native prairie grasses setting seed in the foreground. Staghorn Sumac in red fall colors tries to hold its own in the middle, with pines invading behind it. Leaves of Bur Oak are browning for the oncoming winter.</p>
+<p>While it may seem a peaceful scene, for the plants it is a scene of intense competition for their very existence. Fire is a foe of trees (<a href="#fig-9-14" class="quarto-xref">Figure&nbsp;<span>9.14</span></a> right), killing many instantly, and thus favoring grasses and prairie flowers. Times of moister conditions allow trees to reenter the grasslands, eventually shading the grassland vegetation to death if the moisture persists. But complexities of weather and climate have kept this competitive tension zone intact for thousands of years, with no group permanently gaining the competitive advantage.</p>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/mikheyevlab\.github\.io\/ecology-textbook\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./08-theory-of-interactions.html" class="pagination-link" aria-label="Theory of interactions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Theory of interactions</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./10-phase-space.html" class="pagination-link" aria-label="Phase space">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Phase space</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Adapted from <em>Quantitative Ecology: A New Unified Approach</em> by Lehman, Loberg and Clark, licensed <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.</p>
+<div class="toc-actions"><ul><li><a href="https://github.com/MikheyevLab/ecology-textbook/edit/main/book/09-embodied-by-natural-selection.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/MikheyevLab/ecology-textbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/MikheyevLab/ecology-textbook/blob/main/book/09-embodied-by-natural-selection.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

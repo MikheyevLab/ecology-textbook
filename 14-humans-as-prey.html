@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>14&nbsp; Humans as prey – Quantitative Ecology</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./15-not-yet-adapted.html" rel="next">
+<link href="./13-humans-as-predators.html" rel="prev">
+<link href="./img/logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-cb9e926c369b7bfff1b10eaa38db083c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8SXREGQC46"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-8SXREGQC46', { 'anonymize_ip': true});
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-theory-of-interactions.html">Two species</a></li><li class="breadcrumb-item"><a href="./14-humans-as-prey.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Humans as prey</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Quantitative Ecology</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/MikheyevLab/ecology-textbook/tree/main/book/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-what-is-ecology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is ecology?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-ecological-theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ecological theory</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Single populations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-basic-population-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">A basic population model</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-modeling-single-population.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modeling a single population</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-differential-difference-forms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Differential and difference forms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-human-population-growth.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Human population growth</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-discrete-time-chaos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Discrete-time dynamics and chaos</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Two species</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-theory-of-interactions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Theory of interactions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-embodied-by-natural-selection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Embodied by natural selection</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-phase-space.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Phase space</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-state-space.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">State space</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-predator-prey.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Predator and prey</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-humans-as-predators.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Humans as predators</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-humans-as-prey.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Humans as prey</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-not-yet-adapted.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chapter 15</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-competition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-mutualism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Mutualism</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#portals" id="toc-portals" class="nav-link active" data-scroll-target="#portals"><span class="header-section-number">14.1</span> Portals</a></li>
+  <li><a href="#pathogen-mobility" id="toc-pathogen-mobility" class="nav-link" data-scroll-target="#pathogen-mobility"><span class="header-section-number">14.2</span> Pathogen mobility</a></li>
+  <li><a href="#disease-more-generally" id="toc-disease-more-generally" class="nav-link" data-scroll-target="#disease-more-generally"><span class="header-section-number">14.3</span> Disease more generally</a></li>
+  <li><a href="#the-strange-case-of-polio" id="toc-the-strange-case-of-polio" class="nav-link" data-scroll-target="#the-strange-case-of-polio"><span class="header-section-number">14.4</span> The strange case of polio</a></li>
+  <li><a href="#modern-disease-trends" id="toc-modern-disease-trends" class="nav-link" data-scroll-target="#modern-disease-trends"><span class="header-section-number">14.5</span> Modern disease trends</a></li>
+  <li><a href="#an-ancient-plague-perhaps-vanishing" id="toc-an-ancient-plague-perhaps-vanishing" class="nav-link" data-scroll-target="#an-ancient-plague-perhaps-vanishing"><span class="header-section-number">14.6</span> An ancient plague perhaps vanishing</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/MikheyevLab/ecology-textbook/edit/main/book/14-humans-as-prey.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/MikheyevLab/ecology-textbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/MikheyevLab/ecology-textbook/blob/main/book/14-humans-as-prey.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-theory-of-interactions.html">Two species</a></li><li class="breadcrumb-item"><a href="./14-humans-as-prey.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Humans as prey</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-humans-prey" class="quarto-section-identifier"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Humans as prey</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Our species no longer suffers large predators as so many species do (<a href="13-humans-as-predators.html#fig-13-1" class="quarto-xref">Figure&nbsp;<span>13.1</span></a>). But dangerous predators remain part of the human condition. We call them diseases. By analogy, think of visible organisms living in a pond—from birds, fish, frogs, insects, and plankton to aquatic plants (<a href="#fig-14-1" class="quarto-xref">Figure&nbsp;<span>14.1</span></a>, left). To be successful across a region, the organisms must gain resources in the pond while competing with other species, survive predators, and enable their offspring to disperse to another pond. To be successful they must not destroy the pond in which they live, at least until they or their offspring have dispersed to another pond.</p>
+<div id="fig-14-1" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Left: a tree-lined pond with a small boat on the bank. Right: a black-and-white dairy cow grazing on grass.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-14-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/fig_14_1.png" class="img-fluid figure-img" style="width:80.0%" alt="Left: a tree-lined pond with a small boat on the bank. Right: a black-and-white dairy cow grazing on grass.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.1: Macroscopic organisms living in a pond are analogous to microscopic pathogens living in a body.
+</figcaption>
+</figure>
+</div>
+<p>What is the body of a plant or animal to an infectious virus or bacterium? It is like a pond. There may be other pathogens in the body competing for its metabolic resources. There are predators in the body in the form of an immune system. And to be successful the pathogen must disperse to another body without destroying the body in which it lives, at least until it or its offspring has orchestrated a way to disperse into and colonize another body.</p>
+<section id="portals" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="portals"><span class="header-section-number">14.1</span> Portals</h2>
+<p>A pond has entry and exit portals. If an organism is small enough, it can exit a pond on wind and spray. Some organisms can float downstream to another pond, while birds and insects can simply fly. Larger organisms such as amphibians can hop or walk from pond to pond to lay eggs. And a new exit portal has recently appeared in the form of boats and trailers that carry invasive weeds and animals from one pond and deposit them in another.</p>
+<p>Think analogously of the entry and exit portals of an animal (<a href="#tbl-14-1" class="quarto-xref">Table&nbsp;<span>14.1</span></a>). How can pathogens leave one body and enter another? While skin covers at most two square meters in humans, mucus membranes of the respiratory, digestive, and reproductive tracts cover more than 400 square meters. So, mucus membranes become good portals.</p>
+<p>Successful diseases can exploit obligate behaviors. Animals, for example, must breathe continually, so exploiting the respiratory pathway—being breathed out into the air by one animal and breathed in by another—is a reliable and ever-present method of transmission.</p>
+<div id="tbl-14-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-14-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;14.1: How infections can leave and enter the body (mix and match).
+</figcaption>
+<div aria-describedby="tbl-14-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Portals of exit</th>
+<th style="text-align: left;">Portals of entry</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Breath</td>
+<td style="text-align: left;">Blood (cuts, wounds, insects, needles)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Droplets (sneezing, coughing)</td>
+<td style="text-align: left;">Lungs</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Saliva</td>
+<td style="text-align: left;">Nose</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sweat</td>
+<td style="text-align: left;">Eyes (conjunctiva)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tears</td>
+<td style="text-align: left;">Mouth (mucosa)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Feces</td>
+<td style="text-align: left;">Mouth (tooth/gingival junction)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Urine</td>
+<td style="text-align: left;">Gut</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Seminal fluids</td>
+<td style="text-align: left;">Skin (scabs, triconosis, warts, etc.)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Vaginal fluids</td>
+<td style="text-align: left;">Urinary tract</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Blisters, boils, zits (via scratching, breaking the skin)</td>
+<td style="text-align: left;">Rectum</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Blood (mosquitoes, ticks, hemorrhage)</td>
+<td style="text-align: left;">Vagina (mucosa)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Penis (mucosa)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Animals must also eat frequently and periodically, so exploiting the oral pathway—leaving through urine and feces and getting back through the alimentary canal—is another reliable path, at least under conditions in the wild or with animals that live on and eat grass (<a href="#fig-14-1" class="quarto-xref">Figure&nbsp;<span>14.1</span></a>, right).</p>
+<p>Animals must reproduce, so exploiting the genital pathway—where many animals come into direct bodily contact—is a third reliable path. This can be especially productive, as mucosal tissues of high surface area are touching and infected fluids can be transferred from one sex to another. A pathogen that can get into seminal fluid of a mammal, for example, has a direct path for transmission.</p>
+<p>Finally, many animals care for young, so exploiting parental care can be a fourth reliable path. A pathogen that can enter a mother’s milk has a direct path for infecting her offspring. Such transmission from parent to offspring is called “vertical transmission,” with other forms called “horizontal transmission.”</p>
+</section>
+<section id="pathogen-mobility" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="pathogen-mobility"><span class="header-section-number">14.2</span> Pathogen mobility</h2>
+<p>While microscopic pathogens are not independently mobile, their hosts are, and pathogens have evolved ingenious ways of modifying the behavior of a host to enable their transferal to another host.</p>
+<div id="fig-14-2" class="quarto-float quarto-figure quarto-figure-center anchored" alt="High-speed photograph of a person sneezing, expelling a spray of droplets.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-14-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/fairuse/sneeze.jpg" class="img-fluid figure-img" style="width:80.0%" alt="High-speed photograph of a person sneezing, expelling a spray of droplets.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.2: Tiny predators getting from one host to another.
+</figcaption>
+</figure>
+</div>
+<p>Sneezing and coughing reflexes, for instance, are ancient responses for clearing obstructions from the nose and throat, and some pathogens deceptively induce those responses for a pathway out (<a href="#fig-14-2" class="quarto-xref">Figure&nbsp;<span>14.2</span></a>).</p>
+<p>What we call “symptoms of disease” are not, then, random effects of a disease, but can often be a pathogen’s way of getting out of one pond, so to speak, and into another. Any of the pathways of <a href="#tbl-14-1" class="quarto-xref">Table&nbsp;<span>14.1</span></a> can be exploited by a pathogen, which in doing so may upset these pathways and cause the host great distress.</p>
+<div id="fig-14-3" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Left: an eye reddened by conjunctivitis. Right: cold sores on the upper lip.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-14-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/fig_14_3.png" class="img-fluid figure-img" style="width:80.0%" alt="Left: an eye reddened by conjunctivitis. Right: cold sores on the upper lip.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.3: Pink eye and cold sores.
+</figcaption>
+</figure>
+</div>
+<p>Some pathogens, for example, get into your eyes and tears and deceptively cause itching and soreness (<a href="#fig-14-3" class="quarto-xref">Figure&nbsp;<span>14.3</span></a>, left), inducing you to rub your eyes and transfer the pathogens to your fingers. This in turn can successfully move them to other locations like food, from which they can enter another host by the oral pathway.</p>
+<p>Other pathogens are able to break the skin and get out of the body on their own. Cold sores (<a href="#fig-14-3" class="quarto-xref">Figure&nbsp;<span>14.3</span></a>, right), a form of oral herpes, form around the mouth and nose, transmitting to what touches the sore. A related genital herpes is transmitted sexually, though evolution has been proceeding and the genital form is now able to infect orally and the oral form genitally. This and other sexually transmitted diseases have been increasing since about the middle of the twentieth century.</p>
+<p>One of the most successful pathogens to use the lungs and skin as pathways out of the body is <a href="https://en.wikipedia.org/wiki/Smallpox">smallpox</a> (<a href="#fig-14-4" class="quarto-xref">Figure&nbsp;<span>14.4</span></a>). It leaves its host with permanent scars, often over the entire body. Smallpox is an ancient disease, dating from the time before the pyramids, that can kill a majority of those it infects and at times can infect a majority of the population.</p>
+<div id="fig-14-4" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A child whose face and arm are covered in smallpox pustules.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-14-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/fairuse/smallpox1.jpg" class="img-fluid figure-img" style="width:30.0%" alt="A child whose face and arm are covered in smallpox pustules.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.4: Smallpox, the first disease consciously driven extinct from the natural world.
+</figcaption>
+</figure>
+</div>
+<p>The very success and horror of smallpox was part of its ultimate destruction—its eradication was the first complete victory in the conquest of disease. Thanks to prolonged diligent attention throughout the world, and of course to the invention of vaccine, smallpox has been made extinct in the natural world. (We say “natural world” because laboratory samples are being retained.)</p>
+<p><a href="https://en.wikipedia.org/wiki/William_Foege">William Foege</a>, a key player in orchestrating the extinction of smallpox, said that we can conquer disease because we evolve so much more rapidly than the disease.</p>
+<p>This may be startling to hear, given that our physiological evolution is much slower than that of viruses or bacteria. But, he explained, because we evolve socially much more rapidly than a disease can evolve biologically, we are able to “outsmart” the disease.</p>
+<p><a href="https://en.wikipedia.org/wiki/Rinderpest">Rinderpest</a>, a viral disease causing high rates of mortality in cattle and wild mammals, was the second disease declared extinct in the natural world. Others—such as <a href="https://en.wikipedia.org/wiki/Polio">polio</a> and <a href="https://en.wikipedia.org/wiki/Dracunculiasis">Guinea-worm disease</a>—may soon follow, though the latter may simply be eradicated from human populations by our continual isolation from sources of infection.</p>
+<p>Diseases can exploit blood-sucking parasites to move directly from the blood stream of one host to that of another. Lyme disease (<a href="#fig-14-5" class="quarto-xref">Figure&nbsp;<span>14.5</span></a>, left), for example, is spread by ticks, which puncture the skin to obtain a blood meal for themselves but in the process can transfer pathogens. And Ebola (<a href="#fig-14-5" class="quarto-xref">Figure&nbsp;<span>14.5</span></a>, right) leaves by almost every exit portal listed in <a href="#tbl-14-1" class="quarto-xref">Table&nbsp;<span>14.1</span></a>, destroying those portals by carrying not just the pathogen but chunks of lung, intestine, or skin in the process.</p>
+<div id="fig-14-5" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Left: the expanding bulls-eye rash of Lyme disease on an arm. Right: legs covered in dark skin lesions from Ebola.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-14-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/fig_14_5.png" class="img-fluid figure-img" style="width:80.0%" alt="Left: the expanding bulls-eye rash of Lyme disease on an arm. Right: legs covered in dark skin lesions from Ebola.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.5: Lyme disease (left) and one form of Ebola (right).
+</figcaption>
+</figure>
+</div>
+<p>Human populations are so large and dense that even relatively inefficient pathogens can be successful. And diseases, of course, also affect wild and domestic animals as well as crops and other plants.</p>
+<p>As <a href="15-not-yet-adapted.html" class="quarto-xref"><span>Chapter 15</span></a> illustrates, many diseases can evolve to be relatively harmless to their hosts, promoting transmission and allowing the disease to become widespread. Rust fungus infections, for example, are common in many plant species, but seldom lead to the death of the host. Powder mildew on the prairie plant <em>Monarda fistulosa</em> is so widespread that it is used in plant identification books as a way to identify the species (<a href="#fig-14-6" class="quarto-xref">Figure&nbsp;<span>14.6</span></a>, right).</p>
+<div id="fig-14-6" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Left: prairie bush clover leaves speckled with orange rust fungus. Right: a Monarda fistulosa leaf whitened by powdery mildew.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-14-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/fig_14_6.png" class="img-fluid figure-img" style="width:80.0%" alt="Left: prairie bush clover leaves speckled with orange rust fungus. Right: a Monarda fistulosa leaf whitened by powdery mildew.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.6: Prairie Bush Clover and <em>Monarda fistulosa</em>.
+</figcaption>
+</figure>
+</div>
+<p>Pathogens can dramatically alter animal behavior. Rabies first gets through the salivary glands and into the saliva of an infected host. Physiological changes then make the host animal salivate profusely—foaming at the mouth—while psychological changes make it appear crazy and angry. The animal then bites through the skin of another animal, transferring the pathogen to that animal’s bloodstream, and the cycle continues. Both the physiological and psychological changes are caused by the pathogen and allow it to spread, even after the death of the initial host.</p>
+<p>“Mad dog behavior” is thus not an accidental consequence of the disease, but precisely the means the pathogen has developed for getting, so to speak, from pond to pond.</p>
+<p>It is useful to try to think of all the ways a pathogen might alter the behavior of its host to force the host to transfer the pathogen. This is not just an intellectual exercise, but could help identify potential for new emerging diseases. For example, what should a sexually transmitted disease do to its host in order to spread faster? It should render its host more active sexually! And indeed this happens. Female chimpanzees would normally mate only every two years or so, after having given birth and nursed their young to the point of weaning. But female chimps infected with <a href="https://en.wikipedia.org/wiki/Simian_immunodeficiency_virus">SIV</a> (simian immunodeficiency virus) reach estrus every month or so, and do not conceive. The pathogen changes their mating behavior to spread itself more than an order of magnitude faster than it would otherwise spread.</p>
+<p>Inspired to think in this way, one student came up with a novel idea: Imagine a disease that can escape through the sweat glands without harming its host. As behavioral modification, it makes infected hosts want to undergo strenuous exercise in groups, such as in gymnasiums—thus explaining the entire modern exercise phenomenon as a disease! (Gerbils may also harbor this disease.)</p>
+</section>
+<section id="disease-more-generally" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="disease-more-generally"><span class="header-section-number">14.3</span> Disease more generally</h2>
+<p>The tiniest predators—infection and disease—differ from what are usually thought of as predators in a number of ways, some of which you have seen. First, the disease organism is much smaller than its victim and not independently mobile. It must be carried by wind or water, or induce its host to transfer it in one of numerous ways.</p>
+<p>Second, disease does not necessarily kill its victims. Many diseases, in fact, leave their victims largely intact, the better to transmit the pathogen to another host. And third, after infection, the prey may become forever immune to future infections, both by that pathogen and related ones. This immunity is created by the enormously elaborate <a href="https://en.wikipedia.org/wiki/Immune_system">“immune system”</a> of vertebrates and other animals— a system recognizing and killing incoming pathogens before they can incubate and do much harm, and as elaborate and complex as the brain and central nervous system.</p>
+<p>One of the great discoveries of the last millennium was that the immune system could be primed to recognize a pathogen before it invaded, though what was happening inside the body was not understood until the twentieth century. <a href="https://en.wikipedia.org/wiki/Vaccination">Vaccination</a> played a central role in the eradication of smallpox. The twentieth century also saw the discovery of antibiotics such as penicillin, which allow doctors to cure disease after an infection has progressed.</p>
+<p>These discoveries show us that humans must be considered separately from plants and other animals, for we have developed special powers against disease. We are not passive prey, and do not simply suffer a disease or make behavioral modifications to avoid it. Instead we actively and globally strive to destroy disease, or subdue it. And we extend these efforts to diseases affecting the animals and plants we depend on.</p>
+<p>With respect to disease, plants have distinct properties that are in direct contrast with those of animals. Animals, in general, are high-energy organisms—metabolizing rapidly, moving about, and perpetually pumping oxygen throughout the body. Plants are nothing like this. Rather than hearts and rapid fluid flow to distribute food and oxygen and to cleanse waste materials, plants use the passive effects of <a href="https://en.wikipedia.org/wiki/Capillary_action">capillary action</a> and evaporation. This requires the tiniest of veins, or capillary action will fail. And these veins are too small to transport plant cells, or to allow larger pathogens like protozoa and many bacteria to gain access to the entire organism. This also means that plants cannot have the same kind of immune system as animals, with their own cells travelling through their tissues on patrol.</p>
+<p>In addition, plants are typically modular. An infected part—leaf, flower, or whole limb—can be discarded and grown again. The <a href="https://en.wikipedia.org/wiki/Meristem">apical meristem</a> cells at the tips of branches and roots are capable of developing entirely new plants. While cancer cells can spread through the body of an animal and kill it, such cells would simply plug the veins of plants. So while animals get cancer, plants get cankers. Plants have longevity, while animals have mortality—the cost of being a high-energy organism.</p>
+</section>
+<section id="the-strange-case-of-polio" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="the-strange-case-of-polio"><span class="header-section-number">14.4</span> The strange case of polio</h2>
+<p>Polio had long been a relatively rare disease of infants, called “infantile paralysis.” In the middle of the twentieth century, however, it became more common and started affecting older children and adults. A new form of the disease seemed to be emerging.</p>
+<p>Which of these people, do you think, performed the greatest service to human health and hygiene in the twentieth century, but inadvertently triggered this mid-century Polio epidemic? (a) Louis Pasteur, discoverer of pasteurization, (b) Alexander Fleming, discoverer of penicillin, (c) Jonas Salk, creator of the polio vaccine, (d) Franklin Delano Roosevelt, President of the United States and polio victim, or (e) Henry Ford, creator of the production line.</p>
+<p>This seems a strange question, with industrialist Henry Ford under consideration. But indeed, the answer is <a href="https://en.wikipedia.org/wiki/Henry_Ford">Henry Ford</a>! At the beginning of the twentieth century, most local transportation was by horse and powered, of course, almost entirely by the biofuel hay. While it has now largely left social memory, in the early decades of the twentieth century the streets were a slurry of gravel and horse manure. Flies were everywhere, and caused little concern, for this was the norm. People’s outhouses were ventilated to the open air, and flies laid eggs there and in the streets, then freely entered houses and landed on food. A number of diseases take advantage of the fecal–oral pathway, and polio is one of them. But automobiles and tractors intervened.</p>
+<p>As the horsedrawn era closed, manure generally vanished, running water arrived and flush toilets arrived, hygiene improved, sealed screen doors became common, and flies died in vast numbers. Without intending it, Henry Ford became the greatest fly killer of all time. The availability of the fecal–oral pathway diminished, and the infectivity of related diseases fell.</p>
+<p><a href="#fig-14-7" class="quarto-xref">Figure&nbsp;<span>14.7</span></a> shows the horse population declining slowly until World War I, then falling rather steadily as the number of cars increased in stages. The first increase in the number of cars ended around 1930 with the Great Depression, when many people could not afford cars. The end of World War II in 1945 brought another boom in car purchases, and by 1975 society had replaced almost every horse per capita with a car.</p>
+<div id="fig-14-7" class="quarto-float quarto-figure quarto-figure-center anchored" alt="U.S. horses per person (solid line) declining from about 0.28 in 1900 to near zero by 1975, while autos per person (dashed line) rise in stages to about 0.32.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-14-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/fig_14_7.png" class="img-fluid figure-img" style="width:80.0%" alt="U.S. horses per person (solid line) declining from about 0.28 in 1900 to near zero by 1975, while autos per person (dashed line) rise in stages to about 0.32.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.7: Horses and estimated cars in the United States, the source of Henry Ford’s public legacy. *Cars per person calculated from yearly data for U.S. car production, assuming an eight-year average life for a car.
+</figcaption>
+</figure>
+</div>
+<p>As the chance of catching polio fell, the average age of catching it increased. To understand this, consider residents of the northern hemisphere living at various latitudes. Because residents of the High Arctic have a chance to see the northern lights—<a href="https://en.wikipedia.org/wiki/Aurora">the aurora borealis</a>—every week, children living there will likely see the aurora before their first birthday. Farther south, at 50 degrees north latitude, the aurora may appear only once every few years, especially near the lights of cities, so a child could be 5 or 10 years old before ever seeing it. And finally, say at 35 degrees north latitude, the aurora may appear but once or twice in a lifetime, so many people could be in middle age before viewing them, and others might go an entire lifetime without being touched by their hypnotic display.</p>
+<p>So it is with disease. The number of opportunities for catching a highly infectious disease, naturally, is high. If the quantity of pathogens in the environment is such that all individuals encounter them on average once a year, only about one-third of infants will avoid infection in their first year. (Actually the number is <span class="math inline">\(\frac{1}{e} = 0.367...\)</span>, if the chance of infection is completely random.) The same fraction of the remaining infants will catch the disease during their first year, and the rest will be age two or older when they catch the disease. Therefore, as the pathways for transmitting polio diminished during the twentieth century, the chances of catching it in any year decreased and the age of onset correspondingly increased.</p>
+<p>Polio is like some other diseases that are not usually virulent in infants and young children. A baby infected with polio might have a cold and a runny nose, and the infection might go without particular notice. In an older child, however, it can stop bone growth and muscle development, crippling the child. The polio epidemic of mid-century America was thus not a new disease emerging, but an ancient disease dying out.</p>
+<p><a href="https://en.wikipedia.org/wiki/Albert_Sabin">Albert Sabin</a>, of polio vaccine fame, suspected a connection with flies. In 1941 he and his colleagues reported in Science on a study they performed in areas of the United States where polio had struck. They captured flies, pureed them in sterile fluid, and gave them to monkeys in feedings, nosedrops, or injections. As they put it, “Down came the monkeys with polio.”</p>
+<p>With further improvements in hygiene and broad use of vaccines, rates of polio have dropped to nearly zero. <a href="#fig-14-8" class="quarto-xref">Figure&nbsp;<span>14.8</span></a> shows a moderate number of cases of polio before the late 1940s, an outbreak lasting until the early 1960s, and nearly nothing in the years following.</p>
+<div id="fig-14-8" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Reported polio cases in the United States by year, moderate before the late 1940s, a large outbreak until the early 1960s, then near zero.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-14-8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/fairuse/polio.jpg" class="img-fluid figure-img" style="width:80.0%" alt="Reported polio cases in the United States by year, moderate before the late 1940s, a large outbreak until the early 1960s, then near zero.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14-8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.8: The recent course of polio in the United States.
+</figcaption>
+</figure>
+</div>
+<div id="fig-14-9" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Sepia photograph of a hewn log cabin with a frame addition.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-14-9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/lehman/COL12830-1920-TillieAndOscarsLogCabin-Sepia-Small.jpg" class="img-fluid figure-img" style="width:80.0%" alt="Sepia photograph of a hewn log cabin with a frame addition.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14-9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.9: Tillie and Oscar Lehman’s adz-hewn log cabin with frame addition, circa 1930s—the end of the horse-drawn era. They raised ten children in this cabin, all of whom likely had polio unnoticed as infants.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="modern-disease-trends" class="level2" data-number="14.5">
+<h2 data-number="14.5" class="anchored" data-anchor-id="modern-disease-trends"><span class="header-section-number">14.5</span> Modern disease trends</h2>
+<p>Many ordinary diseases have been subdued since the last half of the twentieth century, some to the point of extinction from the natural world. Smallpox and rinderpest are gone, and polio nearly so—as we are writing this (2016–17), polio workers are anticipating its extinction in the foreseeable future. Diphtheria is on a similar path (<a href="#fig-14-10" class="quarto-xref">Figure&nbsp;<span>14.10</span></a>), with only a handful of cases in the United States during the twenty-first century.</p>
+<p>Diseases such as whooping cough and measles (<a href="#fig-14-10" class="quarto-xref">Figure&nbsp;<span>14.10</span></a>) have been subdued but remain with us, with some cycling through periodic outbreaks. The rates of many ordinary diseases are being reduced, and infectious disease is no longer the major cause of deaths in human populations.</p>
+<div id="fig-14-10" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Four panels of reported cases in thousands over time for polio, diphtheria, whooping cough and measles, each falling to low levels by the 1970s or 1980s.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-14-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/fairuse/DiseasesOverTime.jpg" class="img-fluid figure-img" style="width:80.0%" alt="Four panels of reported cases in thousands over time for polio, diphtheria, whooping cough and measles, each falling to low levels by the 1970s or 1980s.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.10: Paths of four diseases. Vertical axis shows cases in thousands.
+</figcaption>
+</figure>
+</div>
+<p>Rates of various sexually transmitted diseases, however, are on a different course (<a href="#fig-14-11" class="quarto-xref">Figure&nbsp;<span>14.11</span></a>). Gonorrhea rates have declined but remain considerably above zero, and it is a commonly reported disease in the United States. The appearance of syphilis appears to be cyclic, as rates had declined but are now rising again. Rates of chlamydia—which can lead to serious outcomes, including infertility in women—have been increasing steadily, without an end in sight, and rates of genital herpes and other sexually transmitted diseases are rising similarly. Sexually transmitted diseases are a prominent problem to be solved in the twenty-first century.</p>
+<div id="fig-14-11" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Four panels: gonorrhea incidence peaking around 1975 then declining, syphilis falling after 1940 with a small recent rise, chlamydia rising steadily since 1985, and physician visits for genital herpes rising steadily since 1970.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-14-11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/fairuse/sexdisease.jpg" class="img-fluid figure-img" style="width:80.0%" alt="Four panels: gonorrhea incidence peaking around 1975 then declining, syphilis falling after 1940 with a small recent rise, chlamydia rising steadily since 1985, and physician visits for genital herpes rising steadily since 1970.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14-11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.11: Sexually transmitted diseases in the U.S. The vertical axis shows the rate per 100,000 population.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="an-ancient-plague-perhaps-vanishing" class="level2" data-number="14.6">
+<h2 data-number="14.6" class="anchored" data-anchor-id="an-ancient-plague-perhaps-vanishing"><span class="header-section-number">14.6</span> An ancient plague perhaps vanishing</h2>
+<p>We close this chapter with a graph to ponder. Examine <a href="#fig-14-12" class="quarto-xref">Figure&nbsp;<span>14.12</span></a>, an epidemiological view of annual deaths per 1000 population during the twentieth century, from a widespread and ancient cause. Imagine what it represents. Is it a sexually transmitted disease, an ordinary disease with an effective treatment introduced around 1946, or something else entirely?</p>
+<p>The solid blue regression line goes through the average number of deaths over time from 1946 forward, projected back on the dashed line through the outbreaks earlier in the century.</p>
+<div id="fig-14-12" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Worldwide deaths per 1000 per year from 1900 to 2000, with large peaks around the two world wars and low values after 1946; a vertical line marks 1945, a regression line declines slowly, and numbered arrows mark later conflicts.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-14-12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/fig_14_12.png" class="img-fluid figure-img" style="width:80.0%" alt="Worldwide deaths per 1000 per year from 1900 to 2000, with large peaks around the two world wars and low values after 1946; a vertical line marks 1945, a regression line declines slowly, and numbered arrows mark later conflicts.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14-12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.12: Worldwide deaths per year from an ancient human malady.
+</figcaption>
+</figure>
+</div>
+<p><a href="#fig-14-12" class="quarto-xref">Figure&nbsp;<span>14.12</span></a> is actually an epidemiological view of deaths from warfare, which have been declining per capita over the past 70 years. The vertical line marks the beginning of the atomic era, and the numbers in parenthesis indicate (1) World War I, (2) World War II, (3) Korea, (4) Vietnam, (5) Cambodia and Ethiopia, (6) USSR–Afghanistan and Iran–Iraq, and (7) Rwanda.</p>
+<p>Why include a chart of war deaths in a book on ecology, and in a chapter on the ecology of disease? First, war is directly connected with ecology and the environment. Throughout human history, warfare has been caused by environmental change, as existing territories became unproductive and new territories were sought, and in turn it has caused environmental change through habitat alteration and other forces. Second, humans are a dominant ecological force, whose impact we examine in this book, and warfare has been a prominent theme in the human condition. And third, warfare has some of the properties of a disease. It can spread from places of origin like a disease, and has analogs of competitors and mutualists in addition to obvious roles of predators and prey. Moreover, it involves an infectious agent—replicating not as biological agents spread between bodies of their hosts, but abstractly, like ideas—as seen by <a href="https://en.wikipedia.org/wiki/Richard_Dawkins">Richard Dawkins</a>—replicate as memes between minds of their hosts.</p>
+<p>Warfare has enough abstract similarities to biological agents, and enough tangible effects on ecology of the planet, that we want to offer these ideas for your future consideration, and with the hope that some progress can be made by enough minds examining them.</p>
+<p>From discussions with students and colleagues thus far, and from parts of the literature, here are some thoughts for your consideration.</p>
+<ul>
+<li><em>Nuclear weapons</em>. It seems indisputable that these caused an initial collapse of warfare, but they may also have affected the number of war deaths during the rest of the century. Of course, they could also have led to unprecedented numbers of deaths had political arrangements worked out differently.</li>
+<li><em>Immediate journalism</em>. Photographic news coverage becoming ever more immediate gave the world a different view of war. Cell-phone cameras, social networks, and the internet expand that indefinitely today.</li>
+<li><em>International law</em>. Most international law may not yet be written, but we have seen its beginnings. How much has the encoding of war crimes since World War II contributed to the decline?</li>
+<li><em>Self-government</em>. The rapid expansion of self-government since the middle of the twentieth century may have contributed to the decline in war-related deaths, as self-governing nations tend to avoid war with other self-governing nations.</li>
+<li><em>International trade</em>. In the same way, nations that trade mutualistically may also tend to avoid war so as to avoid destroying trading partnerships.</li>
+<li><em>Expanding ethics</em>. At the end of 1957 the Soviets launched the space dog “Little Curly” into orbit, intending him to die while orbiting our planet. Though this went largely unchallenged in the twentieth century, would any nation be able to do something like this in the twenty-first? Do expanding ethics in other realms contribute at all to the decline in war deaths?</li>
+<li><em>Women in power</em>. It is worth considering whether the increasing proportion of women in government has an effect on the number of war-related deaths. Among primates such as chimpanzees and baboons, males are the more aggressive sex. If this is true in humans, might it have continued effects in the future?</li>
+<li><em>Improved medicine</em>. Serious wounds once meant infection and death, but now victims can recover. And mortality from diseases which can spread rapidly in wartime—like influenza—has been reduced. The same level of warfare now manifests fewer deaths, making part of the decline an artifact.</li>
+<li><em>Reduced overkill</em>. The percentage of a population killed during a war decreased from nearly 100% in some ancient times to “what is necessary” in more recent cases. Has the development of precision weaponry contributed to continuing decrease in war deaths? This would also make part of the decline an artifact.</li>
+</ul>
+<p>Humanity has already unexpectedly broken the millennia-long rush of ever-accelerating population levels (<a href="06-human-population-growth.html#fig-6-3" class="quarto-xref">Figure&nbsp;<span>6.3</span></a>). Could something similar be happening with the millennia-long scourge of war? According to projections along the regression line, and for whatever the reasons, if the trends of <a href="#fig-14-12" class="quarto-xref">Figure&nbsp;<span>14.12</span></a> are real and can be understood and continued, humanity may be on a path toward the elimination of background warfare, even before the end of this century.</p>
+<p>This material is a partial encapsulation of <a href="https://en.wikipedia.org/wiki/Steven_Pinker">Steven Pinker’s</a> 800-page book, “The Better Angels of our Nature” (2011). That downward slope indicates a plausible goal to understand and a plausible hope to maintain. It is plausible, but we cannot know if it is practical without dedicating ourselves to it.</p>
+<p>There is a level of self-fulfillment in such things, for if we collectively do not believe a goal like this can be achieved, it likely will not, but if we believe in it and work toward it, we might succeed. Along present trends, you can work with reasonable, rational, data-based hope to make background warfare vanish in your lifetime. And regardless of the outcome, all will be ennobled by the effort.</p>
+<div id="fig-14-13" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Rows of white headstones at Arlington National Cemetery.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-14-13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/fairuse/Arlington.jpg" class="img-fluid figure-img" style="width:55.0%" alt="Rows of white headstones at Arlington National Cemetery.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14-13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.13: Arlington National Cemetery, Virginia.
+</figcaption>
+</figure>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/mikheyevlab\.github\.io\/ecology-textbook\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./13-humans-as-predators.html" class="pagination-link" aria-label="Humans as predators">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Humans as predators</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./15-not-yet-adapted.html" class="pagination-link" aria-label="Chapter 15">
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chapter 15</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Adapted from <em>Quantitative Ecology: A New Unified Approach</em> by Lehman, Loberg and Clark, licensed <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/MikheyevLab/ecology-textbook/edit/main/book/14-humans-as-prey.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/MikheyevLab/ecology-textbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/MikheyevLab/ecology-textbook/blob/main/book/14-humans-as-prey.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>12&nbsp; Predator and prey – Quantitative Ecology</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./13-humans-as-predators.html" rel="next">
+<link href="./11-state-space.html" rel="prev">
+<link href="./img/logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-cb9e926c369b7bfff1b10eaa38db083c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8SXREGQC46"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-8SXREGQC46', { 'anonymize_ip': true});
+</script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-theory-of-interactions.html">Two species</a></li><li class="breadcrumb-item"><a href="./12-predator-prey.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Predator and prey</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Quantitative Ecology</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/MikheyevLab/ecology-textbook/tree/main/book/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-what-is-ecology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is ecology?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-ecological-theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ecological theory</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Single populations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-basic-population-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">A basic population model</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-modeling-single-population.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modeling a single population</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-differential-difference-forms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Differential and difference forms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-human-population-growth.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Human population growth</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-discrete-time-chaos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Discrete-time dynamics and chaos</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Two species</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-theory-of-interactions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Theory of interactions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-embodied-by-natural-selection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Embodied by natural selection</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-phase-space.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Phase space</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-state-space.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">State space</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-predator-prey.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Predator and prey</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-humans-as-predators.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Humans as predators</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-humans-as-prey.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Humans as prey</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-not-yet-adapted.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chapter 15</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-competition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-mutualism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Mutualism</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#further-examples-of-predation" id="toc-further-examples-of-predation" class="nav-link active" data-scroll-target="#further-examples-of-predation"><span class="header-section-number">12.1</span> Further examples of predation</a></li>
+  <li><a href="#ecological-communities-are-complex" id="toc-ecological-communities-are-complex" class="nav-link" data-scroll-target="#ecological-communities-are-complex"><span class="header-section-number">12.2</span> Ecological communities are complex</a></li>
+  <li><a href="#predatorprey-model" id="toc-predatorprey-model" class="nav-link" data-scroll-target="#predatorprey-model"><span class="header-section-number">12.3</span> Predator–prey model</a></li>
+  <li><a href="#phase-space" id="toc-phase-space" class="nav-link" data-scroll-target="#phase-space"><span class="header-section-number">12.4</span> Phase space</a></li>
+  <li><a href="#assumptions-of-the-basic-model" id="toc-assumptions-of-the-basic-model" class="nav-link" data-scroll-target="#assumptions-of-the-basic-model"><span class="header-section-number">12.5</span> Assumptions of the basic model</a></li>
+  <li><a href="#independent-carrying-capacities" id="toc-independent-carrying-capacities" class="nav-link" data-scroll-target="#independent-carrying-capacities"><span class="header-section-number">12.6</span> Independent carrying capacities</a></li>
+  <li><a href="#predator-satiation-and-starvation" id="toc-predator-satiation-and-starvation" class="nav-link" data-scroll-target="#predator-satiation-and-starvation"><span class="header-section-number">12.7</span> Predator satiation and starvation</a></li>
+  <li><a href="#effects-of-space" id="toc-effects-of-space" class="nav-link" data-scroll-target="#effects-of-space"><span class="header-section-number">12.8</span> Effects of space</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/MikheyevLab/ecology-textbook/edit/main/book/12-predator-prey.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/MikheyevLab/ecology-textbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/MikheyevLab/ecology-textbook/blob/main/book/12-predator-prey.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-theory-of-interactions.html">Two species</a></li><li class="breadcrumb-item"><a href="./12-predator-prey.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Predator and prey</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-predator-prey" class="quarto-section-identifier"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Predator and prey</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Competition and mutualism can be understood without much attention to the sizes of the species involved. But predation is quite different. Think of a producer, the prey, and a consumer, the predator. When the consumer is extremely large and the producer very small, as with a whale and krill, the relationship is called filter feeding. There the predator kills the prey. When the producer and consumer are roughly matched in size, they are called predators and prey. When the producer is much smaller than the consumer, but still independently mobile, the relationship is called parasitism. And when the consumer is much smaller still, and has difficulty moving around on its own, the relationship is called infection and disease. Symptoms of disease are part of the ecology of disease. In parasitism and disease, the consumer often does not kill the producer.</p>
+<section id="further-examples-of-predation" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="further-examples-of-predation"><span class="header-section-number">12.1</span> Further examples of predation</h2>
+<p>Amazing mechanisms for both capturing prey and avoiding predators have been discovered through evolution. <a href="https://en.wikipedia.org/wiki/Fulmar">Fulmar</a> chicks, for example, can direct “projectile vomit” at predators approaching the nest too closely (<a href="#fig-12-1" class="quarto-xref">Figure&nbsp;<span>12.1</span></a>). This is not just icky for the predator. By damaging the waterproofing of an avian predator’s feathers, this ultimately can kill the predator. The chick’s projectile vomit is thus a lethal weapon.</p>
+<div id="fig-12-1" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A fulmar chick on its nest ejecting a stream of oily vomit toward an approaching intruder.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/downer/p101.jpg" class="img-fluid figure-img" style="width:65.0%" alt="A fulmar chick on its nest ejecting a stream of oily vomit toward an approaching intruder.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.1: Fulmar chick with projectile vomit as predator defense.
+</figcaption>
+</figure>
+</div>
+<p>One of the most remarkable predatory weapons is that of <a href="https://en.wikipedia.org/wiki/Alpheidae">pistol shrimp</a> (<a href="#fig-12-2" class="quarto-xref">Figure&nbsp;<span>12.2</span></a>). These shrimp have one special claw adapted to cavitation, and are capable of shooting bullets at their prey; colonies of these shrimp are loud from the sound of these bullets. But where does an underwater crustacean get bullets? Actually, it creates them from nothing at all—from cavitation. If you’ve ever piloted a powerful motorboat and pushed the throttle too hard, or watched a pilot do so, you’ve seen the propellers start kicking out bubbles, which look like air bubbles. But the propellers are well below the water line, where there is no air. The propellers are in fact creating bubbles of vacuum—separating the water so instantly that there is nothing left in between, except perhaps very low density water vapor. Such bubbles collapse back with numerous blasts, each so powerful that it rips pieces of bronze off the propeller itself, leaving a rough surface that is the telltale sign of cavitation.</p>
+<div id="fig-12-2" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A pistol shrimp with its single greatly enlarged snapping claw.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/fairuse/PistolShrimp.jpg" class="img-fluid figure-img" style="width:65.0%" alt="A pistol shrimp with its single greatly enlarged snapping claw.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.2: Pistol-packing shrimp shoot cavitation bullets.
+</figcaption>
+</figure>
+</div>
+<p>A pistol shrimp snaps its pistol claw together so quickly that it creates a vacuum where water used to be. With the right circulation of water around the vacuum bubble, the bubble can move, and a shrimp can actually project its bullet of vacuum toward its prey. When the bubble collapses, the effect is like thunder attending a lightning bolt, when air snaps together after the lightning has created a column of near-vacuum (<a href="https://www.youtube.com/watch?v=KkY_mSwboMQ">NatGeo video</a>). But the consequences are quite different in water. While a loud sound might hurt the ears of a terrestrial animal, the sound does not rip apart the fabric of the animal’s body. This is, however, what intense sounds in water can do, traveling through water and through the water-filled bodies of animals. In effect, pistol shrimp shoot bullets that explode near their prey and numb them into immobility. Somehow evolution discovered and perfected this amazing mechanism!</p>
+<div id="fig-12-3" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Left: men posing on and beside an enormous pile of bison skulls in the nineteenth century. Right: a small remnant herd of bison on open grassland.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/fig12_3.png" class="img-fluid figure-img" style="width:90.0%" alt="Left: men posing on and beside an enormous pile of bison skulls in the nineteenth century. Right: a small remnant herd of bison on open grassland.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.3: Rifle-carrying humans shoot lead bullets—bison bones and remnant herd.
+</figcaption>
+</figure>
+</div>
+<p>The ultimate weapons of predation, however, are those of our own species. <a href="#fig-12-3" class="quarto-xref">Figure&nbsp;<span>12.3</span></a> (right) shows a remnant bison herd, a few hundred of the hundreds of millions of bison that migrated the plains not many generations ago. No matter how vast their numbers, they were no match for gunpowder and lead bullets, and they dropped to near extinction by the beginning of the twentieth century. The image at the left illustrates the epic efficiency of lead bullets by showing a nineteenth-century pile of bison bones, with members of the predator species positioned atop and aside.</p>
+</section>
+<section id="ecological-communities-are-complex" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="ecological-communities-are-complex"><span class="header-section-number">12.2</span> Ecological communities are complex</h2>
+<p>Before proceeding with simplified models of predation, we want to stress that ecological communities are complex (<a href="#fig-12-4" class="quarto-xref">Figure&nbsp;<span>12.4</span></a>). Fortunately, progress in understanding them comes piece by piece. Complex food webs, like the one illustrated in the figure, can be examined in simpler “motifs.”</p>
+<div id="fig-12-4" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A dense network diagram of a Cretaceous terrestrial food web, with many species linked by feeding relationships.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/web/foodweb9.jpg" class="img-fluid figure-img" style="width:65.0%" alt="A dense network diagram of a Cretaceous terrestrial food web, with many species linked by feeding relationships.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.4: Cretaceous terrestrial food web, Mitchell et al.&nbsp;2012, PNAS.
+</figcaption>
+</figure>
+</div>
+<p>You have seen in earlier chapters that there are two motifs for a single species: logistic and orthologistic, with exponential growth forming a fine dividing line between them. And in the prior chapter, you saw three motifs for two species: predation, competition, and mutualism.</p>
+<p><img src="img/ch12_motif_1.png" class="img-fluid" style="width:15.0%" alt="Two-species motif: two circles joined by arrows pointing in both directions."></p>
+<p>Later you will see that there are exactly forty distinct three-species motifs, one of which is two prey pursued by one predator. This is called “apparent competition” because it has properties of competition.</p>
+<p><img src="img/ch12_motif_2.png" class="img-fluid" style="width:15.0%" alt="Three-species motif: two prey circles at the bottom, each with an arrow pointing up to a single predator circle at the top."></p>
+</section>
+<section id="predatorprey-model" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="predatorprey-model"><span class="header-section-number">12.3</span> Predator–prey model</h2>
+<p>For the next several chapters we will consider two species, starting with one predator and one prey. <a href="#fig-12-5" class="quarto-xref">Figure&nbsp;<span>12.5</span></a> depicts this situation, with one line sloping down and the other up.</p>
+<div id="fig-12-5" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Two graphs. Left: prey per-capita growth rate falling linearly from 1 as predator density N2 increases. Right: predator per-capita growth rate rising linearly from -0.5 as prey density N1 increases. The equations of the two lines appear below.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/fig12_5.png" class="img-fluid figure-img" style="width:65.0%" alt="Two graphs. Left: prey per-capita growth rate falling linearly from 1 as predator density N2 increases. Right: predator per-capita growth rate rising linearly from -0.5 as prey density N1 increases. The equations of the two lines appear below.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.5: Predator–prey interactions with corresponding equations.
+</figcaption>
+</figure>
+</div>
+<p>The graph on the left describes the prey, because its numbers <span class="math inline">\(N_1\)</span> are reduced when the numbers of predator, <span class="math inline">\(N_2\)</span>, increase. Likewise, the graph on the right describes the predator, because its numbers, <span class="math inline">\(N_2\)</span>, increase with the density of its prey, <span class="math inline">\(N_1\)</span>. The equations of growth are revealed by the slopes and intercepts of the two lines.</p>
+<p>Since these are both straight lines, <span class="math inline">\(y=mx+b\)</span>, the equations can be written down simply from the geometry. The intercept on the left is <span class="math inline">\(+1\)</span> and the slope is <span class="math inline">\(-1\)</span>. The intercept on the right is <span class="math inline">\(-1/2\)</span> and its slope is <span class="math inline">\(+1/2\)</span>. The equivalent equations of the two lines appear below the graphs.</p>
+<p>These specific equations can be generalized using symbols in place of actual numbers, writing <span class="math inline">\(r_1\)</span>, <span class="math inline">\(s_{1,2}\)</span>, <span class="math inline">\(r_2\)</span>, and <span class="math inline">\(s_{2,1}\)</span> for the intercept <span class="math inline">\(+1.0\)</span> and slope <span class="math inline">\(-1.0\)</span> on the left and the intercept <span class="math inline">\(-0.5\)</span> and slope <span class="math inline">\(+0.5\)</span> on the right, as follows.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{1}{N_1}\frac{dN_1}{dt} &amp;= r_1 + s_{1,2}N_2 \quad\text{with } r_1=+1.0,\; s_{1,2}=-1.0 \\
+\frac{1}{N_2}\frac{dN_2}{dt} &amp;= r_2 + s_{2,1}N_1 \quad\text{with } r_2=-0.5,\; s_{2,1}=+0.5
+\end{aligned}
+\]</span></p>
+<p>Merely by writing down the form of these geometric graphs, the classic Lotka–Volterra predator–prey equations have appeared:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{1}{N_1}\frac{dN_1}{dt} &amp;= r_1 + s_{1,2}N_2, \quad r_1&gt;0,\; s_{1,2}&lt;0 \\
+\frac{1}{N_2}\frac{dN_2}{dt} &amp;= r_2 + s_{2,1}N_1, \quad r_2&lt;0,\; s_{2,1}&gt;0
+\end{aligned}
+\]</span></p>
+<p>Here is how the equations look in many textbooks, with <span class="math inline">\(V\)</span> for prey density and <span class="math inline">\(P\)</span> for predator density:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{dV}{dt} &amp;= rV - \alpha VP \\
+\frac{dP}{dt} &amp;= \beta VP - qP
+\end{aligned}
+\]</span></p>
+<p><a href="https://en.wikipedia.org/wiki/Vito_Volterra">Volterra</a> arrived at the equation rather differently than we did, with a growth rate <span class="math inline">\(r\)</span> for the prey, reduced by a rate <span class="math inline">\(\alpha\)</span> for each encounter between predator and prey, <span class="math inline">\(V\!\cdot\!P\)</span>, and with a natural death rate <span class="math inline">\(q\)</span> for predators and compensatory growth rate <span class="math inline">\(\beta\)</span> for each encounter, <span class="math inline">\(V\!\cdot\!P\)</span>, between predator and prey.</p>
+<p>To see the equivalence, divide the first equation through by <span class="math inline">\(V\)</span> and the second by <span class="math inline">\(P\)</span>, then set <span class="math inline">\(V=N_1\)</span>, <span class="math inline">\(P=N_2\)</span>, <span class="math inline">\(r=r_1\)</span>, <span class="math inline">\(q=-r_2\)</span>, <span class="math inline">\(\alpha=-s_{1,2}\)</span>, <span class="math inline">\(\beta=s_{2,1}\)</span>. The Lotka–Volterra formulation will be revealed to be just the <span class="math inline">\(r+sN\)</span> equations in disguise.</p>
+<p><a href="#fig-12-5" class="quarto-xref">Figure&nbsp;<span>12.5</span></a> exposes the basic predator–prey equations from geometry, which reveal the unity of the equations of ecology, as you saw in <a href="05-differential-difference-forms.html#eq-5-2" class="quarto-xref">Equation&nbsp;<span>5.2</span></a> (<a href="05-differential-difference-forms.html" class="quarto-xref"><span>Chapter 5</span></a>). That analysis revealed a form of one-dimensional equation not considered in ecological textbooks—the orthologistic equation—and which is needed for understanding human and other rapidly growing populations.</p>
+<p>Now analyze these equations a bit. Suppose predator and prey densities are both 1, say 1 individual per hectare (<span class="math inline">\(N_1=N_2=1\)</span>). Substitute 1 for both <span class="math inline">\(N_1\)</span> and <span class="math inline">\(N_2\)</span>. What are the growth rates?</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{1}{1}\frac{dN_1}{dt} &amp;= \phantom{-}1.0 - 1.0 \times 1 = 0 \\
+\frac{1}{1}\frac{dN_2}{dt} &amp;= -0.5 + 0.5 \times 1 = 0
+\end{aligned}
+\]</span></p>
+<p>The population growth is zero for both species, so the populations do not change. This is an equilibrium.</p>
+<p>This can be seen in the graphs below. The fact that both growth rates, <span class="math inline">\(1/N_1\,dN_1/dt\)</span> and <span class="math inline">\(1/N_2\,dN_2/dt\)</span>, cross the horizontal axis at <span class="math inline">\(N_1=N_2=1\)</span> (position of the dots) means that growth stops for both. This is called an equilibrium, a steady state, or, sometimes, a fixed point.</p>
+<p><img src="img/fig12_5_image.png" class="img-fluid" style="width:65.0%" alt="The two growth-rate lines of the predator-prey model, with dots where each line crosses the horizontal axis at density 1."></p>
+<p>But what will happen if both populations are 2, say 2 individuals per hectare?</p>
+<p><img src="img/fig12_5_image2_2.png" class="img-fluid" style="width:65.0%" alt="The same two growth-rate lines, with dots at density 2: the prey line is below zero there and the predator line is above zero."></p>
+<p>The prey growth rate, <span class="math inline">\(1/N_1\,dN_1/dt\)</span>, is negative at <span class="math inline">\(N_2=2\)</span> (the line is below the horizontal axis) and the predator growth rate, <span class="math inline">\(1/N_2\,dN_2/dt\)</span>, is positive at <span class="math inline">\(N_1=2\)</span> (the line is above the horizontal axis). So the prey population will decrease and the predator population will increase. Exactly how the populations will develop over time can be worked out by putting these parameters into <a href="08-theory-of-interactions.html#lst-8-1" class="quarto-xref">Program&nbsp;<span>8.1</span></a> in <a href="08-theory-of-interactions.html" class="quarto-xref"><span>Chapter 8</span></a>. Here is what it shows.</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Same set-up as Program 8.1, with the parameters of Figure 12.5</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>N1 <span class="ot">&lt;-</span> <span class="dv">2</span>; N2 <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>r1 <span class="ot">&lt;-</span> <span class="fl">1.0</span>; r2 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">0.5</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>s11 <span class="ot">&lt;-</span> <span class="dv">0</span>; s12 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">1.0</span>; s21 <span class="ot">&lt;-</span> <span class="fl">0.5</span>; s22 <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="dv">0</span>; dt <span class="ot">&lt;-</span> <span class="fl">0.0001</span>; tmax <span class="ot">&lt;-</span> <span class="dv">30</span>; step <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>n_out <span class="ot">&lt;-</span> <span class="fu">round</span>(tmax <span class="sc">/</span> dt <span class="sc">/</span> <span class="dv">1000</span>) <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>finalpop <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">t =</span> <span class="fu">numeric</span>(n_out), <span class="at">N1 =</span> <span class="fu">numeric</span>(n_out), <span class="at">N2 =</span> <span class="fu">numeric</span>(n_out))</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>finalpop[<span class="dv">1</span>, ] <span class="ot">&lt;-</span> <span class="fu">c</span>(t, N1, N2); k <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">round</span>(tmax <span class="sc">/</span> dt)) {</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  dN1 <span class="ot">&lt;-</span> (r1 <span class="sc">+</span> s11 <span class="sc">*</span> N1 <span class="sc">+</span> s12 <span class="sc">*</span> N2) <span class="sc">*</span> N1 <span class="sc">*</span> dt</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  dN2 <span class="ot">&lt;-</span> (r2 <span class="sc">+</span> s21 <span class="sc">*</span> N1 <span class="sc">+</span> s22 <span class="sc">*</span> N2) <span class="sc">*</span> N2 <span class="sc">*</span> dt</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  N1 <span class="ot">&lt;-</span> N1 <span class="sc">+</span> dN1; <span class="cf">if</span> (N1 <span class="sc">&lt;</span> <span class="dv">0</span>) N1 <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  N2 <span class="ot">&lt;-</span> N2 <span class="sc">+</span> dN2; <span class="cf">if</span> (N2 <span class="sc">&lt;</span> <span class="dv">0</span>) N2 <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  t <span class="ot">&lt;-</span> t <span class="sc">+</span> dt; step <span class="ot">&lt;-</span> step <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (step <span class="sc">==</span> <span class="dv">1000</span>) {             <span class="co"># record every 1000th step</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    k <span class="ot">&lt;-</span> k <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    finalpop[k, ] <span class="ot">&lt;-</span> <span class="fu">c</span>(t, N1, N2)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    step <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>finalpop <span class="ot">&lt;-</span> finalpop[<span class="dv">1</span><span class="sc">:</span>k, ]</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(finalpop, <span class="fu">aes</span>(<span class="at">x =</span> t)) <span class="sc">+</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> N1), <span class="at">colour =</span> eco_cols[[<span class="st">"blue"</span>]]) <span class="sc">+</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> N2), <span class="at">colour =</span> eco_cols[[<span class="st">"red"</span>]]) <span class="sc">+</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">9.10</span>, <span class="at">y =</span> <span class="fl">3.03</span> <span class="sc">+</span> <span class="fl">0.25</span>, <span class="at">label =</span> <span class="st">"N[1] ~ (prey)"</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>           <span class="at">parse =</span> <span class="cn">TRUE</span>, <span class="at">colour =</span> eco_cols[[<span class="st">"blue"</span>]], <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> <span class="fl">9.10</span>, <span class="at">y =</span> <span class="fl">3.03</span> <span class="sc">+</span> <span class="fl">0.25</span>, <span class="at">xend =</span> <span class="fl">9.10</span>, <span class="at">yend =</span> <span class="fl">3.06</span>,</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>           <span class="at">colour =</span> eco_cols[[<span class="st">"blue"</span>]], <span class="at">arrow =</span> arr) <span class="sc">+</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">10.51</span>, <span class="at">y =</span> <span class="fl">2.29</span> <span class="sc">+</span> <span class="fl">0.25</span>, <span class="at">label =</span> <span class="st">"N[2] ~ (predator)"</span>,</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>           <span class="at">parse =</span> <span class="cn">TRUE</span>, <span class="at">colour =</span> eco_cols[[<span class="st">"red"</span>]], <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> <span class="fl">10.51</span>, <span class="at">y =</span> <span class="fl">2.29</span> <span class="sc">+</span> <span class="fl">0.25</span>, <span class="at">xend =</span> <span class="fl">10.51</span>, <span class="at">yend =</span> <span class="fl">2.32</span>,</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>           <span class="at">colour =</span> eco_cols[[<span class="st">"red"</span>]], <span class="at">arrow =</span> arr) <span class="sc">+</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">30</span>, <span class="at">by =</span> <span class="dv">5</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">30</span>)) <span class="sc">+</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">3.5</span>)) <span class="sc">+</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">expression</span>(<span class="st">"Day ("</span> <span class="sc">*</span> <span class="fu">italic</span>(t) <span class="sc">*</span> <span class="st">")"</span>),</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Population density (per ml)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-12-6" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Prey (blue) and predator (red) population densities oscillating over 30 days. Prey peak near 3 about every 10 days; predator peaks near 2.3 follow shortly after each prey peak.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="12-predator-prey_files/figure-html/fig-12-6-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%" alt="Prey (blue) and predator (red) population densities oscillating over 30 days. Prey peak near 3 about every 10 days; predator peaks near 2.3 follow shortly after each prey peak.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.6: Dynamics of the predator–prey system of <a href="#fig-12-5" class="quarto-xref">Figure&nbsp;<span>12.5</span></a> as calculated by <a href="08-theory-of-interactions.html#lst-8-1" class="quarto-xref">Program&nbsp;<span>8.1</span></a>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>For comparison, here is what early experimenters such as Gause and Huffaker showed for populations of protozoa, mites, and other small systems in the middle of the twentieth century:</p>
+<div id="fig-12-7" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Counts of a herbivorous prey mite and a predatory mite over time, showing repeated rises and falls, with predator peaks lagging prey peaks.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/fig12_7.png" class="img-fluid figure-img" style="width:65.0%" alt="Counts of a herbivorous prey mite and a predatory mite over time, showing repeated rises and falls, with predator peaks lagging prey peaks.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.7: Dynamics in an experimental predator–prey system conducted by <a href="https://en.wikipedia.org/wiki/Huffaker's_mite_experiment">C. B. Huffaker</a> in the 1950s with two species of mite.
+</figcaption>
+</figure>
+</div>
+<p>The dynamics here are much the same as those shown in the calculated version of <a href="#fig-12-6" class="quarto-xref">Figure&nbsp;<span>12.6</span></a> and the experimental version of <a href="#fig-12-7" class="quarto-xref">Figure&nbsp;<span>12.7</span></a>, but with stochasticity overlayed on the experimental system. Experimenters, however, had difficulty achieving continual cycling. In simple conditions, the predators would find the prey and eat every last one, and then the predators themselves would all die. Continual cycling could be achieved by providing the prey with places to escape, or making it difficult for the predators to move around the environment.</p>
+</section>
+<section id="phase-space" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="phase-space"><span class="header-section-number">12.4</span> Phase space</h2>
+<p>The cycling can be understood better in phase space, where the densities of the two species are represented as two-dimensional points.</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>phase_space_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">3.5</span>), <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">2.5</span>), <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">expression</span>(N[<span class="dv">1</span>] <span class="sc">~</span> (prey)), <span class="at">y =</span> <span class="fu">expression</span>(N[<span class="dv">2</span>] <span class="sc">~</span> (predator)))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Open circle marking the interior equilibrium</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>equilibrium <span class="ot">&lt;-</span> <span class="fu">annotate</span>(<span class="st">"point"</span>, <span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> <span class="dv">1</span>, <span class="at">shape =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">stroke =</span> <span class="dv">1</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                        <span class="at">colour =</span> <span class="st">"grey15"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Isoclines: prey (horizontal, blue) and predator (vertical, red)</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>prey_isocline <span class="ot">&lt;-</span> <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> <span class="dv">0</span>, <span class="at">xend =</span> <span class="fl">3.5</span>, <span class="at">y =</span> <span class="dv">1</span>, <span class="at">yend =</span> <span class="dv">1</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                          <span class="at">colour =</span> eco_cols[[<span class="st">"blue"</span>]], <span class="at">linewidth =</span> <span class="fl">0.8</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>pred_isocline <span class="ot">&lt;-</span> <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> <span class="dv">1</span>, <span class="at">xend =</span> <span class="dv">1</span>, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> <span class="fl">2.5</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                          <span class="at">colour =</span> eco_cols[[<span class="st">"red"</span>]], <span class="at">linewidth =</span> <span class="fl">0.8</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>phase_space_plot <span class="sc">+</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  equilibrium <span class="sc">+</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"point"</span>, <span class="at">x =</span> <span class="fl">1.5</span>, <span class="at">y =</span> <span class="fl">0.5</span>, <span class="at">shape =</span> <span class="st">"+"</span>, <span class="at">size =</span> <span class="dv">7</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">colour =</span> eco_cols[[<span class="st">"blue"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-12-8" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Empty phase plane with prey N1 on the horizontal axis and predator N2 on the vertical axis, an open circle at (1, 1) and a blue plus sign at (1.5, 0.5).">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12-8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="12-predator-prey_files/figure-html/fig-12-8-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Empty phase plane with prey N1 on the horizontal axis and predator N2 on the vertical axis, an open circle at (1, 1) and a blue plus sign at (1.5, 0.5).">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12-8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.8: Predator–prey phase space. The circle marks an equilibrium where growth of both predator and prey stops. The plus sign marks a population value of <span class="math inline">\(N_1=1.5\)</span>, <span class="math inline">\(N_2=0.5\)</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>For example, as explained in <a href="10-phase-space.html" class="quarto-xref"><span>Chapter 10</span></a> (<a href="10-phase-space.html#fig-10-1" class="quarto-xref">Figure&nbsp;<span>10.1</span></a>), if the prey population is 1.5 and the predator population is 0.5, the population will be 1.5 units to the right on the horizontal axis and 0.5 units up on the vertical axis, at the location of the blue plus sign in the graph.</p>
+<p>Where does the predator population cease to grow? In the equation</p>
+<p><span class="math display">\[
+\frac{1}{N_2}\frac{dN_2}{dt} = r_2 + s_{2,1} N_1
+\]</span></p>
+<p>it ceases to grow where <span class="math inline">\(0 = r_2 + s_{2,1} N_1\)</span>, or <span class="math inline">\(N_1=-r_2/s_{2,1}\)</span>. With <span class="math inline">\(r_2=-0.5\)</span> and <span class="math inline">\(s_{2,1}=0.5\)</span>, this is a vertical line—the predator isocline—at <span class="math inline">\(N_1=1\)</span>, as in <a href="#fig-12-9" class="quarto-xref">Figure&nbsp;<span>12.9</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vertical (predator) arrows at four sample points</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fl">0.25</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>pts <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">1.5</span>, <span class="fl">1.5</span>, <span class="fl">0.5</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">1.5</span>, <span class="fl">1.5</span>))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>pred_dir <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(pts<span class="sc">$</span>x <span class="sc">&lt;</span> <span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>)   <span class="co"># predators fall left of N1 = 1, rise right of it</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>prey_dir <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(pts<span class="sc">$</span>y <span class="sc">&lt;</span> <span class="dv">1</span>, <span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>)   <span class="co"># prey rise below N2 = 1, fall above it</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>pred_arrows <span class="ot">&lt;-</span> <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> pts<span class="sc">$</span>x, <span class="at">y =</span> pts<span class="sc">$</span>y, <span class="at">xend =</span> pts<span class="sc">$</span>x,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                        <span class="at">yend =</span> pts<span class="sc">$</span>y <span class="sc">+</span> d <span class="sc">*</span> pred_dir, <span class="at">colour =</span> <span class="st">"grey20"</span>, <span class="at">arrow =</span> arr)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>prey_arrows <span class="ot">&lt;-</span> <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> pts<span class="sc">$</span>x, <span class="at">y =</span> pts<span class="sc">$</span>y, <span class="at">xend =</span> pts<span class="sc">$</span>x <span class="sc">+</span> d <span class="sc">*</span> prey_dir,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                        <span class="at">yend =</span> pts<span class="sc">$</span>y, <span class="at">colour =</span> <span class="st">"grey20"</span>, <span class="at">arrow =</span> arr)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>both_arrows <span class="ot">&lt;-</span> <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> pts<span class="sc">$</span>x, <span class="at">y =</span> pts<span class="sc">$</span>y, <span class="at">xend =</span> pts<span class="sc">$</span>x <span class="sc">+</span> d <span class="sc">*</span> prey_dir,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>                        <span class="at">yend =</span> pts<span class="sc">$</span>y <span class="sc">+</span> d <span class="sc">*</span> pred_dir, <span class="at">colour =</span> <span class="st">"grey20"</span>, <span class="at">arrow =</span> arr)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>phase_space_plot <span class="sc">+</span> pred_isocline <span class="sc">+</span> pred_arrows <span class="sc">+</span> equilibrium</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-12-9" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Phase plane with a vertical red line at N1 = 1. Arrows to the left of the line point down; arrows to the right point up.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12-9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="12-predator-prey_files/figure-html/fig-12-9-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Phase plane with a vertical red line at N1 = 1. Arrows to the left of the line point down; arrows to the right point up.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12-9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.9: The predator isocline, at which the predator population ceases to grow.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>To the left of the isocline, prey are sparse and predators decline, as indicated by the downward arrows. To the right of the isocline, in contrast, prey are abundant and predators can increase, as indicated by the upward arrows.</p>
+<p>Likewise, where does the prey population cease to grow? In the equation</p>
+<p><span class="math display">\[
+\frac{1}{N_1}\frac{dN_1}{dt} = r_1 + s_{1,2} N_2
+\]</span></p>
+<p>it ceases to grow where <span class="math inline">\(0 = r_1 + s_{1,2} N_2\)</span>, which means <span class="math inline">\(N_2=-r_1/s_{1,2}\)</span>. With <span class="math inline">\(r_1=1\)</span> and <span class="math inline">\(s_{1,2}=-1\)</span>, this is a horizontal line—the prey isocline—at <span class="math inline">\(N_2=1\)</span>.</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>phase_space_plot <span class="sc">+</span> prey_isocline <span class="sc">+</span> prey_arrows</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-12-10" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Phase plane with a horizontal blue line at N2 = 1. Arrows below the line point right; arrows above it point left.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="12-predator-prey_files/figure-html/fig-12-10-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Phase plane with a horizontal blue line at N2 = 1. Arrows below the line point right; arrows above it point left.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.10: The prey isocline, at which the prey population ceases to grow.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Below the isocline, predators are sparse so prey can increase, as indicated by the arrows pointing right. Above the isocline, in contrast, predators are abundant and prey decrease, as indicated by the arrows pointing left. Putting <a href="#fig-12-9" class="quarto-xref">Figure&nbsp;<span>12.9</span></a> and <a href="#fig-12-10" class="quarto-xref">Figure&nbsp;<span>12.10</span></a> together gives <a href="#fig-12-11" class="quarto-xref">Figure&nbsp;<span>12.11</span></a>, which shows rotation in the combined arrows.</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>phase_space_plot <span class="sc">+</span> prey_isocline <span class="sc">+</span> pred_isocline <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  prey_arrows <span class="sc">+</span> pred_arrows <span class="sc">+</span> both_arrows <span class="sc">+</span> equilibrium</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-12-11" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Phase plane with the blue prey isocline and red predator isocline crossing at (1, 1). In each quadrant horizontal, vertical and combined diagonal arrows show counterclockwise rotation around the equilibrium.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12-11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="12-predator-prey_files/figure-html/fig-12-11-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Phase plane with the blue prey isocline and red predator isocline crossing at (1, 1). In each quadrant horizontal, vertical and combined diagonal arrows show counterclockwise rotation around the equilibrium.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12-11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.11: Both isoclines, with both sets of arrows combined, showing the cycling.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Here the rotation can be deduced by thinking about the dynamics of predator and prey. The rotation is corroborated by using the eigenvalue methods of <a href="10-phase-space.html" class="quarto-xref"><span>Chapter 10</span></a> to calculate the eigenvalues. The eigenvalues of the interior equilibrium turn out to be <span class="math inline">\(0\pm0.707i\)</span>, a number with both real and imaginary parts. The existence of an imaginary part, <span class="math inline">\(\pm0.707i\)</span>, implies cycling. The real part, 0, means that eigenvalues alone cannot determine the stability—it could be stable, unstable, or neutral. In fact, for this particular case with no self-limitation, deeper mathematical examination shows that the stability is neutral. The dynamics will rotate indefinitely, maintaining whatever cycle it started on.</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>day_labels <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="fu">as.character</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>),</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="fl">0.591851</span>, <span class="fl">0.240695</span>, <span class="fl">0.175371</span>, <span class="fl">0.198726</span>, <span class="fl">0.30022</span>, <span class="fl">0.538703</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="fl">1.05014</span>, <span class="fl">2.01495</span>, <span class="fl">3.01349</span>, <span class="fl">1.8691</span>),</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="fl">2.18264</span>, <span class="fl">1.59416</span>, <span class="fl">1.06725</span>, <span class="fl">0.70875</span>, <span class="fl">0.4850557</span>, <span class="fl">0.36001</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="fl">0.3198912</span>, <span class="fl">0.408964</span>, <span class="fl">0.902564</span>, <span class="fl">2.06225</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Trajectory of Figure 12.6 in the phase plane</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>cir_coord <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/fig12_12_circle_coor.csv"</span>, <span class="at">fileEncoding =</span> <span class="st">"UTF-8-BOM"</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cir_coord) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"x_coor"</span>, <span class="st">"y_coor"</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>cycle_path <span class="ot">&lt;-</span> <span class="fu">geom_path</span>(<span class="at">data =</span> cir_coord, <span class="fu">aes</span>(<span class="at">x =</span> x_coor, <span class="at">y =</span> y_coor),</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>                        <span class="at">colour =</span> eco_cols[[<span class="st">"blue"</span>]], <span class="at">alpha =</span> <span class="fl">0.6</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>phase_space_plot <span class="sc">+</span> prey_isocline <span class="sc">+</span> pred_isocline <span class="sc">+</span> cycle_path <span class="sc">+</span> equilibrium <span class="sc">+</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> day_labels<span class="sc">$</span>x, <span class="at">y =</span> day_labels<span class="sc">$</span>y, <span class="at">label =</span> day_labels<span class="sc">$</span>label,</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">colour =</span> eco_cols[[<span class="st">"red"</span>]], <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">2</span>, <span class="at">y =</span> <span class="fl">1.55</span>, <span class="at">label =</span> <span class="st">"Day"</span>, <span class="at">colour =</span> eco_cols[[<span class="st">"red"</span>]],</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>           <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="fl">4.5</span>) <span class="sc">+</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> <span class="dv">2</span>, <span class="at">y =</span> <span class="fl">1.62</span>, <span class="at">xend =</span> <span class="dv">2</span>, <span class="at">yend =</span> <span class="fl">1.92</span>,</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>           <span class="at">colour =</span> eco_cols[[<span class="st">"red"</span>]], <span class="at">arrow =</span> arr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-12-12" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Phase plane with the closed blue cycle of the predator-prey trajectory starting at (2, 2), with red numerals 0 to 10 marking the position on each day, travelling counterclockwise.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12-12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="12-predator-prey_files/figure-html/fig-12-12-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Phase plane with the closed blue cycle of the predator-prey trajectory starting at (2, 2), with red numerals 0 to 10 marking the position on each day, travelling counterclockwise.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12-12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.12: Days 1 through 10 marked on the cycle of <a href="#fig-12-6" class="quarto-xref">Figure&nbsp;<span>12.6</span></a>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Taking all the data from <a href="#fig-12-6" class="quarto-xref">Figure&nbsp;<span>12.6</span></a> and plotting <span class="math inline">\(N_1\)</span> versus <span class="math inline">\(N_2\)</span> gives <a href="#fig-12-12" class="quarto-xref">Figure&nbsp;<span>12.12</span></a>. The process starts at day 0 with <span class="math inline">\(N_1=N_2=2\)</span>. One day later, prey have dropped to <span class="math inline">\(N_1\approx0.5\)</span> and predators have increased to <span class="math inline">\(N_2\approx2.2\)</span>, marked by the red numeral 1 on the cycle. (By the symbol ‘<span class="math inline">\(\approx\)</span>’, we mean “approximately equal to.”) Two days later, prey have dropped to <span class="math inline">\(N_1\approx0.2\)</span> and predators have dropped to <span class="math inline">\(N_2\approx1.0\)</span>, marked by the numeral 3. With predators at relatively low levels, prey then start to increase and, four days later, have reached <span class="math inline">\(N_1\approx1.0\)</span>, while predators have dropped further to <span class="math inline">\(N_2\approx0.3\)</span>, marked by the numeral 7. Two days later, prey have increased to <span class="math inline">\(N_1\approx3.0\)</span> and predators have increased to <span class="math inline">\(N_2\approx1.0\)</span>, marked by the numeral 9. Finally, one day later the cycle begins to repeat, as marked with the numeral 10. This is another way of showing the cycling of <a href="#fig-12-6" class="quarto-xref">Figure&nbsp;<span>12.6</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>arrow_vect <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/arrows_vector.csv"</span>, <span class="at">fileEncoding =</span> <span class="st">"UTF-8-BOM"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(arrow_vect) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>, <span class="st">"xend"</span>, <span class="st">"yend"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>phase_space_plot <span class="sc">+</span> prey_isocline <span class="sc">+</span> pred_isocline <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> arrow_vect<span class="sc">$</span>x, <span class="at">y =</span> arrow_vect<span class="sc">$</span>y,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">xend =</span> arrow_vect<span class="sc">$</span>xend, <span class="at">yend =</span> arrow_vect<span class="sc">$</span>yend,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">colour =</span> eco_cols[[<span class="st">"grey"</span>]], <span class="at">linewidth =</span> <span class="fl">0.4</span>,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">type =</span> <span class="st">"closed"</span>, <span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.01</span>, <span class="st">"npc"</span>))) <span class="sc">+</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  cycle_path <span class="sc">+</span> equilibrium</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-12-13" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Phase plane filled with small grey arrows circulating counterclockwise around the equilibrium at (1, 1), with the blue cycle of Figure 12.12 overlaid.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12-13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="12-predator-prey_files/figure-html/fig-12-13-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Phase plane filled with small grey arrows circulating counterclockwise around the equilibrium at (1, 1), with the blue cycle of Figure 12.12 overlaid.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12-13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.13: The flow across the phase space.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>In <a href="#fig-12-13" class="quarto-xref">Figure&nbsp;<span>12.13</span></a>—a flow diagram—the entire phase space can be filled with arrows to show how cycling proceeds everywhere. The path of <a href="#fig-12-6" class="quarto-xref">Figure&nbsp;<span>12.6</span></a>, displayed in <a href="#fig-12-12" class="quarto-xref">Figure&nbsp;<span>12.12</span></a>, is overlayed in blue.</p>
+</section>
+<section id="assumptions-of-the-basic-model" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="assumptions-of-the-basic-model"><span class="header-section-number">12.5</span> Assumptions of the basic model</h2>
+<p>This basic model of interacting predators and prey reveals the tension between population growth and decline, and shows the kind of cycling that characterizes predator–prey systems. It has, however, a number of simplifying assumptions that can be relaxed in more detailed studies, including the following:</p>
+<ol type="1">
+<li>The predator lives only on this prey, and perishes without it.</li>
+<li>The prey has no carrying capacity of its own—only that imposed by the predator.</li>
+<li>The environment is homogeneous and prey have no hiding places.</li>
+<li>Growth is continuous, with no age structure, maturation periods, and so forth.</li>
+<li>The number of prey taken is proportional to the number of prey present. In other words, predators are never satiated.</li>
+<li>Genetics are uniform within each species, and there is no evolution.</li>
+</ol>
+<p>Relaxing all of these assumptions is a book in itself, but we will relax some of them in sections ahead.</p>
+</section>
+<section id="independent-carrying-capacities" class="level2" data-number="12.6">
+<h2 data-number="12.6" class="anchored" data-anchor-id="independent-carrying-capacities"><span class="header-section-number">12.6</span> Independent carrying capacities</h2>
+<p>Self-limitation or self-enhancement of population growth are within the <span class="math inline">\(r+sN\)</span> framework. Below these terms are in red.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{1}{N_1}\frac{dN_1}{dt} &amp;= r_1 + s_{1,2}N_2 \color{red}{{} + s_{1,1}N_1} \\
+\frac{1}{N_2}\frac{dN_2}{dt} &amp;= r_2 + s_{2,1}N_1 \color{red}{{} + s_{2,2}N_2}
+\end{aligned}
+\]</span></p>
+<p>The self-feedback term for the prey, <span class="math inline">\(s_{1,1}\)</span>, is typically negative, reflecting a carrying capacity for the prey in the absence of predators, <span class="math inline">\(K_1=-r_1/s_{1,1}\)</span>. This tends to stabilize the system, dampening oscillations and leading to a joint equilibrium of predator and prey.</p>
+<p>On the other hand, the self-feedback term for the predator, <span class="math inline">\(s_{2,2}\)</span>, is typically zero, meaning the predators vanish in the absence of prey. But it could be positive, indicating benefits from group hunting and the like. A positive value for <span class="math inline">\(s_{2,2}\)</span> tends to destabilize the system, leading to enlarging oscillations.</p>
+<div id="fig-12-14" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Left: well-fed lions lying at rest. Right: an emaciated, sick tiger.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12-14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/fig12_14.jpg" class="img-fluid figure-img" style="width:80.0%" alt="Left: well-fed lions lying at rest. Right: an emaciated, sick tiger.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12-14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.14: Predators satiated versus sick and starving.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="predator-satiation-and-starvation" class="level2" data-number="12.7">
+<h2 data-number="12.7" class="anchored" data-anchor-id="predator-satiation-and-starvation"><span class="header-section-number">12.7</span> Predator satiation and starvation</h2>
+<p>In the original Lotka–Volterra formulation, doubling the number of prey in the environment doubles the number of prey taken. The same is true in the equivalent <span class="math inline">\(r+sN\)</span> formulation explored above. While this may be reasonable at low prey densities, eventually the predators become satiated and stop hunting, as in the image at left in <a href="#fig-12-14" class="quarto-xref">Figure&nbsp;<span>12.14</span></a>. Satiation will therefore truncate the predator growth curve at some maximum rate, as at right in <a href="#fig-12-15" class="quarto-xref">Figure&nbsp;<span>12.15</span></a>.</p>
+<div id="fig-12-15" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Two graphs. Left: prey growth rate declining linearly with predator density. Right: predator growth rate rising linearly with prey density and then levelling off at a maximum.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12-15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/fig12_15.png" class="img-fluid figure-img" style="width:65.0%" alt="Two graphs. Left: prey growth rate declining linearly with predator density. Right: predator growth rate rising linearly with prey density and then levelling off at a maximum.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12-15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.15: Predator growth truncated at a maximum number of prey taken per predator per unit of time.
+</figcaption>
+</figure>
+</div>
+<p>In the opposite direction, if prey are not available, the predator population starves, as in the sad image at right in <a href="#fig-12-14" class="quarto-xref">Figure&nbsp;<span>12.14</span></a>. As indicated by a negative vertical intercept in <a href="#fig-12-5" class="quarto-xref">Figure&nbsp;<span>12.5</span></a> and elsewhere, the population does not reach a maximum rate of decline. In the complete absence of prey, vertebrate predators decline more and more rapidly, reaching extinction at a definite time in the future, as induced by the increasingly large rates of decline shown in the right part of <a href="#fig-12-16" class="quarto-xref">Figure&nbsp;<span>12.16</span></a>. This is a different kind of singularity that can actually occur in a finite time.</p>
+<div id="fig-12-16" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Two graphs. Left: prey growth rate declining linearly with predator density. Right: predator growth rate rising toward a horizontal asymptote at high prey density and plunging toward minus infinity as prey density approaches zero.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12-16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/fig12_16.png" class="img-fluid figure-img" style="width:65.0%" alt="Two graphs. Left: prey growth rate declining linearly with predator density. Right: predator growth rate rising toward a horizontal asymptote at high prey density and plunging toward minus infinity as prey density approaches zero.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12-16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.16: Vertebrate predators with asymptotic rates of consumption.
+</figcaption>
+</figure>
+</div>
+<p>As an exercise and illustration, let us create a predator–prey system in which the predators become satiated and reach a maximum growth rate, but for which there is no maximum death rate in the absence of prey, and see where it leads.</p>
+<p>For predators, we want to mimic the shape at right in <a href="#fig-12-16" class="quarto-xref">Figure&nbsp;<span>12.16</span></a>. This has the shape of a hyperbola, <span class="math inline">\(y=1/x\)</span>, but reflected about the horizontal axis and shifted upwards. The equation would be <span class="math inline">\(y=a-b/x\)</span>, where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are positive constants. When <span class="math inline">\(x\)</span> approaches infinity, the term <span class="math inline">\(b/x\)</span> goes to zero and <span class="math inline">\(y\)</span> therefore approaches <span class="math inline">\(a\)</span>. It crosses the horizontal axis where <span class="math inline">\(x=b/a\)</span>, then heads downward toward minus infinity as <span class="math inline">\(x\)</span> declines to zero. Such a curve has the right general properties.</p>
+<p>The predator equation can therefore be the following, with <span class="math inline">\(r_2\)</span> for <span class="math inline">\(a\)</span>, <span class="math inline">\(s_{2,1}\)</span> for <span class="math inline">\(-b\)</span>, and <span class="math inline">\(N_1\)</span> for <span class="math inline">\(x\)</span>.</p>
+<p><span class="math display">\[
+\frac{1}{N_2}\frac{dN_2}{dt} = r_2 + s_{2,1}\frac{1}{N_1}
+\]</span></p>
+<p>When there are ample prey <span class="math inline">\(N_1\)</span> will be large, so the term <span class="math inline">\(s_{2,1}/N_1\)</span> will be small and the predator growth rate will be near <span class="math inline">\(r_2\)</span>. As prey decline, the term <span class="math inline">\(s_{2,1}/N_1\)</span> will grow larger and larger without limit and, since <span class="math inline">\(s_{2,1}\)</span> is less than zero, the predator growth rate will get more and more negative, also without limit.</p>
+<p>What about the prey equation? The important point here is that predators become satiated, so the chance of an individual prey being caught goes down as the number of prey in the environment goes up. So instead of a term like <span class="math inline">\(s_{1,2}\,N_2\)</span> for the chance that an individual prey will be taken, it would be more like <span class="math inline">\(s_{1,2}\,N_2/N_1\)</span>.</p>
+<p><span class="math display">\[
+\frac{1}{N_1}\frac{dN_1}{dt} = r_1 + s_{1,2}\frac{N_2}{N_1} + s_{1,1}N_1
+\]</span></p>
+<p>In other words, the rate of prey being taken increases with the number of predators in the environment, but is diluted as there are more and more prey and predators become satiated. Eventually, with an extremely large number of prey in the area relative to the number of predators, the effect of predators on each individual prey becomes negligible. This creates the following predator–prey system, which takes satiation and starvation into account:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{1}{N_1}\frac{dN_1}{dt} &amp;= r_1 + s_{1,2}\frac{N_2}{N_1} + s_{1,1}N_1 \\
+\frac{1}{N_2}\frac{dN_2}{dt} &amp;= r_2 + s_{2,1}\frac{1}{N_1}
+\end{aligned}
+\]</span></p>
+<p>This system could be criticized because it is not “mass balanced.” In other words, one unit of mass of prey does not turn directly into a specific amount of mass of predators. But this is not a simple molecular system, and it at least fits more closely the realities of predator and prey behavior.</p>
+<p>In any case, keep in mind that</p>
+<ul>
+<li><span class="math inline">\(s_{1,1}\)</span> is less than 0, to reflect limitation of prey due to crowding and other effects;</li>
+<li><span class="math inline">\(s_{2,2}\)</span> is equal to 0, assuming the predator is limited only by the abundance of prey;</li>
+<li><span class="math inline">\(s_{1,2}\)</span> is less than 0 because the abundance of predators decreases the growth of prey; and</li>
+<li><span class="math inline">\(s_{2,1}\)</span> is also less than 0 because as the number of prey decreases there is an increasingly negative effect on the growth of the predator.</li>
+</ul>
+<p>The next step is to examine the isoclines for this new set of equations, making a phase-space graph with <span class="math inline">\(N_1\)</span> on the horizontal axis versus <span class="math inline">\(N_2\)</span> on the vertical. Where does the prey growth, <span class="math inline">\(1/N_1\,dN_1/dt\)</span>, cease? Working through some algebra, it is as follows:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{1}{N_1}\frac{dN_1}{dt} &amp;= 0 = r_1 + s_{1,2}\frac{N_2}{N_1} + s_{1,1}N_1 \\
+&amp;\Rightarrow -s_{1,2}\frac{N_2}{N_1} = r_1 + s_{1,1}N_1 \\
+&amp;\Rightarrow N_2 = -\frac{r_1}{s_{1,2}}N_1 - \frac{s_{1,1}}{s_{1,2}} N_1^{\,2}
+\end{aligned}
+\]</span></p>
+<p>Similarly, where does the predator growth, <span class="math inline">\(1/N_2\,dN_2/dt\)</span>, cease for the same phase-plane? Let’s follow similar algebra:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{1}{N_2}\frac{dN_2}{dt} &amp;= 0 = r_2 + s_{2,1}\frac{1}{N_1} \\
+&amp;\Rightarrow -r_2 = s_{2,1}\frac{1}{N_1} \\
+&amp;\Rightarrow N_1 = -\frac{s_{2,1}}{r_2}
+\end{aligned}
+\]</span></p>
+<p>This predator isocline is simply a vertical line, as before in <a href="#fig-12-9" class="quarto-xref">Figure&nbsp;<span>12.9</span></a> and following figures. But note that the prey curve has the form of an inverted parabola—a hump, as graphed for two cases in <a href="#fig-12-17" class="quarto-xref">Figure&nbsp;<span>12.17</span></a>.</p>
+<p>Remarkably, this formulation of predator–prey equations closely matches what earlier researchers deduced logically and graphically, when computers were slow or not yet available. If you want to better understand the shape of the prey curve, read Rosenzweig’s 1969 paper entitled “Why the prey curve has a hump.” For interest, his hand-drawn published figure with experimental data points is reproduced in <a href="#fig-12-18" class="quarto-xref">Figure&nbsp;<span>12.18</span></a>.</p>
+<p>Rosenzweig pointed out a paradoxical effect, which he called “the paradox of enrichment.” At left in <a href="#fig-12-17" class="quarto-xref">Figure&nbsp;<span>12.17</span></a>, the prey have a relatively low carrying capacity, with <span class="math inline">\(K=-r_1/s_{1,1}\)</span> about halfway along the horizontal axis. If you analyze the flow around the red dot that marks the equilibrium point to the right of the hump, or run a program to simulate the equations we just derived, you will find that the populations spiral inward. The equilibrium is stable.</p>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prey isocline: a hump N2 = c * N1 * (K - N1), peaking at N2 = 0.5</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>hump <span class="ot">&lt;-</span> <span class="cf">function</span>(K) {</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, K, <span class="at">length.out =</span> <span class="dv">101</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">x =</span> x, <span class="at">y =</span> <span class="dv">2</span> <span class="sc">*</span> x <span class="sc">*</span> (K <span class="sc">-</span> x) <span class="sc">/</span> K<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>pred_x <span class="ot">&lt;-</span> <span class="fl">0.4</span>   <span class="co"># predator isocline, N1 = -s21/r2</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>enrichment_plot <span class="ot">&lt;-</span> <span class="cf">function</span>(K, eq_shape) {</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  eq_y <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> pred_x <span class="sc">*</span> (K <span class="sc">-</span> pred_x) <span class="sc">/</span> K<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">hump</span>(K), <span class="fu">aes</span>(x, y)) <span class="sc">+</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="at">colour =</span> eco_cols[[<span class="st">"blue"</span>]]) <span class="sc">+</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> pred_x, <span class="at">xend =</span> pred_x, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> <span class="fl">0.9</span>,</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">colour =</span> eco_cols[[<span class="st">"red"</span>]], <span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> pred_x <span class="sc">+</span> <span class="fl">0.02</span>, <span class="at">y =</span> <span class="fl">0.75</span>, <span class="at">label =</span> <span class="st">"Predator</span><span class="sc">\n</span><span class="st">isocline"</span>,</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">lineheight =</span> <span class="fl">0.9</span>, <span class="at">colour =</span> eco_cols[[<span class="st">"red"</span>]]) <span class="sc">+</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">0.03</span>, <span class="at">y =</span> <span class="fl">0.6</span>, <span class="at">label =</span> <span class="st">"Prey isocline"</span>, <span class="at">hjust =</span> <span class="dv">0</span>,</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">colour =</span> eco_cols[[<span class="st">"blue"</span>]]) <span class="sc">+</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">annotate</span>(<span class="st">"point"</span>, <span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">shape =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">stroke =</span> <span class="dv">1</span>, <span class="at">colour =</span> <span class="st">"grey15"</span>) <span class="sc">+</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">annotate</span>(<span class="st">"point"</span>, <span class="at">x =</span> K, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">colour =</span> <span class="st">"grey15"</span>) <span class="sc">+</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">annotate</span>(<span class="st">"point"</span>, <span class="at">x =</span> pred_x, <span class="at">y =</span> eq_y, <span class="at">shape =</span> eq_shape, <span class="at">size =</span> <span class="dv">4</span>,</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>             <span class="at">stroke =</span> <span class="fl">1.2</span>, <span class="at">colour =</span> eco_cols[[<span class="st">"red"</span>]]) <span class="sc">+</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, K), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"0"</span>, <span class="fu">expression</span>(<span class="sc">-</span>r[<span class="dv">1</span>] <span class="sc">/</span> s[<span class="st">"1,1"</span>])),</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>                       <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">1.1</span>), <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">expression</span>(N[<span class="dv">1</span>] <span class="sc">~</span> (prey)), <span class="at">y =</span> <span class="fu">expression</span>(N[<span class="dv">2</span>] <span class="sc">~</span> (predator))) <span class="sc">+</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_cartesian</span>(<span class="at">clip =</span> <span class="st">"off"</span>) <span class="sc">+</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="fu">enrichment_plot</span>(<span class="at">K =</span> <span class="fl">0.5</span>, <span class="at">eq_shape =</span> <span class="dv">16</span>)   <span class="co"># stable: filled dot</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="fu">enrichment_plot</span>(<span class="at">K =</span> <span class="fl">1.0</span>, <span class="at">eq_shape =</span> <span class="dv">1</span>)    <span class="co"># unstable: open circle</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="fig-12-17" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12-17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-12-17" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-12-17-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Phase plane with a blue humped prey isocline ending at prey carrying capacity halfway along the axis, and a red vertical predator isocline at N1 = 0.4 crossing to the right of the hump, where a filled red dot marks a stable equilibrium.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-12-17-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="12-predator-prey_files/figure-html/fig-12-17-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" data-ref-parent="fig-12-17" alt="Phase plane with a blue humped prey isocline ending at prey carrying capacity halfway along the axis, and a red vertical predator isocline at N1 = 0.4 crossing to the right of the hump, where a filled red dot marks a stable equilibrium.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-12-17-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Stable equilibrium
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-12-17" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-12-17-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Phase plane with a wider blue humped prey isocline ending at a carrying capacity twice as large, and the red vertical predator isocline at N1 = 0.4 crossing to the left of the hump, where an open red circle marks an unstable equilibrium.">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-12-17-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="12-predator-prey_files/figure-html/fig-12-17-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" data-ref-parent="fig-12-17" alt="Phase plane with a wider blue humped prey isocline ending at a carrying capacity twice as large, and the red vertical predator isocline at N1 = 0.4 crossing to the left of the hump, where an open red circle marks an unstable equilibrium.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-12-17-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Unstable equilibrium
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12-17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.17: The paradox of enrichment, Rosenzweig, AmNat 1969.
+</figcaption>
+</figure>
+</div>
+<p>The paradox is this: if you try to improve conditions for the prey by increasing their carrying capacity—by artificially providing additional food, for example—you can drive the equilibrium to the left of the hump, as in the right part of <a href="#fig-12-17" class="quarto-xref">Figure&nbsp;<span>12.17</span></a>. Around the equilibrium marked by the red circle, the populations spiral outward. The system has become unstable.</p>
+<p>This is a warning from ecological theory. In conservation efforts where predators are present, trying to enhance a prey population by increasing its carrying capacity could have the opposite effect. This is not to say that efforts to enhance prey populations should not be undertaken, only that they should proceed with appropriate caution and study.</p>
+<div id="fig-12-18" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Hand-drawn phase-plane graph from Rosenzweig (1969) showing a humped prey isocline, a vertical predator isocline, flow arrows and experimental data points.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12-18-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/fig12_18.png" class="img-fluid figure-img" style="width:55.0%" alt="Hand-drawn phase-plane graph from Rosenzweig (1969) showing a humped prey isocline, a vertical predator isocline, flow arrows and experimental data points.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12-18-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.18: Rosenzweig’s original 1969 graph with phase-space arrows, interpreting Huffaker’s 1958 experiments with mites.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="effects-of-space" class="level2" data-number="12.8">
+<h2 data-number="12.8" class="anchored" data-anchor-id="effects-of-space"><span class="header-section-number">12.8</span> Effects of space</h2>
+<p>In predator–prey systems, especially in confined areas, the predator tends to capture all the prey and then starve, so the systems “crash.” But over large areas it is conceivable that a predator can completely wipe out its prey in one area and not go extinct, because it can simply move to another area where the prey still exist. Prey can then repopulate the area from which they had been depleted.</p>
+<p>Imagine a series of interconnected cells where, with some restrictions, predator and prey can migrate between adjacent cells. Now, even though the system may be locally unstable and crash in individual cells, the entire system across all cells could be stable and persist indefinitely.</p>
+<p>In the 1930s the Russian ecologist Gause conducted a very famous set of early experiments on competition among protozoa, but he also studied predation of <em>Didinium</em> on <em>Paramecium</em>. The populations he set up would commonly crash and go extinct, with the <em>Didinium</em> eating all the <em>Paramecia</em> and then finding themselves without food. If he made places for the <em>Paramecium</em> prey to hide, however, the systems could persist for many cycles.</p>
+<p>In the 1960s Krebs noticed that populations of fenced mice, even those with a full half-acre within the fence, would crash and disappear after grossly overgrazing their habitat. But in areas where they were allowed to disperse, the populations would persist.</p>
+<p>Huffaker also ran extensive experiments, again in the 1960s, with mites and oranges. A single population of mites on a single orange would crash and the whole population would disappear. Using multiple oranges with limited migration paths between them, however, allowed the system to persist for many generations.</p>
+<p>And in the 1970s Luckinbill did similar work with protozoa in aquatic tubs—larger and larger tubs holding miniature predator–prey systems. He found that the larger the tub, the longer the system persisted.</p>
+<p>The point to remember here is that the mere presence of spatial structure, in one form or another, can allow a predator–prey system to persist. The basic reason is simply that species can go extinct in some areas while continually recolonizing other areas, always maintaining a population that blinks in and out locally, but persists globally.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/mikheyevlab\.github\.io\/ecology-textbook\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./11-state-space.html" class="pagination-link" aria-label="State space">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">State space</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./13-humans-as-predators.html" class="pagination-link" aria-label="Humans as predators">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Humans as predators</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Adapted from <em>Quantitative Ecology: A New Unified Approach</em> by Lehman, Loberg and Clark, licensed <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/MikheyevLab/ecology-textbook/edit/main/book/12-predator-prey.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/MikheyevLab/ecology-textbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/MikheyevLab/ecology-textbook/blob/main/book/12-predator-prey.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

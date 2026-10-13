@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>3&nbsp; A basic population model – Quantitative Ecology</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./04-modeling-single-population.html" rel="next">
+<link href="./02-ecological-theory.html" rel="prev">
+<link href="./img/logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-cb9e926c369b7bfff1b10eaa38db083c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8SXREGQC46"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-8SXREGQC46', { 'anonymize_ip': true});
+</script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating slimcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-basic-population-model.html">Single populations</a></li><li class="breadcrumb-item"><a href="./03-basic-population-model.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">A basic population model</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Quantitative Ecology</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/MikheyevLab/ecology-textbook/tree/main/book/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-what-is-ecology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is ecology?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-ecological-theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ecological theory</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Single populations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-basic-population-model.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">A basic population model</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-modeling-single-population.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modeling a single population</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-differential-difference-forms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Differential and difference forms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-human-population-growth.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Human population growth</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-discrete-time-chaos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Discrete-time dynamics and chaos</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Two species</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-theory-of-interactions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Theory of interactions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-embodied-by-natural-selection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Embodied by natural selection</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-phase-space.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Phase space</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-state-space.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">State space</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-predator-prey.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Predator and prey</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-humans-as-predators.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Humans as predators</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-humans-as-prey.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Humans as prey</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-not-yet-adapted.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chapter 15</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-competition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-mutualism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Mutualism</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#characterizing-populations" id="toc-characterizing-populations" class="nav-link active" data-scroll-target="#characterizing-populations"><span class="header-section-number">3.1</span> Characterizing populations</a></li>
+  <li><a href="#bacterial-growth" id="toc-bacterial-growth" class="nav-link" data-scroll-target="#bacterial-growth"><span class="header-section-number">3.2</span> Bacterial growth</a></li>
+  <li><a href="#a-first-computer-model" id="toc-a-first-computer-model" class="nav-link" data-scroll-target="#a-first-computer-model"><span class="header-section-number">3.3</span> A first computer model</a></li>
+  <li><a href="#program-results" id="toc-program-results" class="nav-link" data-scroll-target="#program-results"><span class="header-section-number">3.4</span> Program results</a></li>
+  <li><a href="#darwins-elephants" id="toc-darwins-elephants" class="nav-link" data-scroll-target="#darwins-elephants"><span class="header-section-number">3.5</span> Darwin’s elephants</a></li>
+  <li><a href="#exercises-and-questions" id="toc-exercises-and-questions" class="nav-link" data-scroll-target="#exercises-and-questions"><span class="header-section-number">3.6</span> Exercises and questions</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/MikheyevLab/ecology-textbook/edit/main/book/03-basic-population-model.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/MikheyevLab/ecology-textbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/MikheyevLab/ecology-textbook/blob/main/book/03-basic-population-model.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-basic-population-model.html">Single populations</a></li><li class="breadcrumb-item"><a href="./03-basic-population-model.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">A basic population model</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-basic-population-model" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">A basic population model</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="characterizing-populations" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="characterizing-populations"><span class="header-section-number">3.1</span> Characterizing populations</h2>
+<p>One way to describe populations is to look at how many individuals they contain at various times. Or, instead of individuals, it may be more reasonable to consider total biomass—the total weight of all individuals in the population combined. For example, the number of trees may not be as important as their total weight, or the total area of their canopy. Density may also be relevant—how many individuals occupy a unit of area, or the percentage covered by the population in an area. All of these are gross properties of populations that can enter models.</p>
+<p>Additional properties that can be taken into account include the age structure—the portions of the population of various ages, and the size structure—the portions of the population of various sizes. Such detail can be important because juveniles or older individuals may not reproduce. Genetic structure can also be important; it is often left out of ecological models, but evolutionary directions can affect the ecology as well. Another important measure is the rate of change—how fast the population is changing. A population can be constant, increasing, or decreasing, or can fluctuate in complex ways.</p>
+<p>Remember that a model is just a simpler view of something complex, and that all scientific models are just approximations of nature. When the full complexity cannot be understood, which is almost always, we can try to construct a simplified model in hopes of finding the essence.</p>
+</section>
+<section id="bacterial-growth" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="bacterial-growth"><span class="header-section-number">3.2</span> Bacterial growth</h2>
+<p>The place to start a discussion of basic population models is in discrete-time at the macroscale—the most basic. Consider a hypothetical strain of bacteria reproducing every hour. Suppose a colony is started with a single bacterium when the clock reads zero, symbolized t = 0, and one hour later that bacterium divides into two, by time t = 1. Each of those divides in two one hour after that, by time t = 2. And so forth. Suppose you start this culture on a lab bench on Monday, let it go unchecked, and then come back late on Friday to see the results.</p>
+<p>If the colony grows unchecked in this way, how many bacteria will there be at the end of the work week, after five full days of growth? You could figure that out on a calculator, or more easily you could use computer code. More easily, that is, once you know computer coding.</p>
+<p>Because computer coding is becoming embedded in almost every aspect of life, appreciating the basics of coding is meaningful for each educated citizen of this century, and this book will expose you to the basics.</p>
+</section>
+<section id="a-first-computer-model" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="a-first-computer-model"><span class="header-section-number">3.3</span> A first computer model</h2>
+<p>Below are a few lines of computer code forming a program that models the bacterial colony as it doubles every hour written in R. We will go through the code carefully below.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span>(<span class="dv">5</span> <span class="sc">*</span> <span class="dv">24</span>) <span class="co"># create a sequence of numbers from 1 to 5 * 24, incrementing by 1</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(t <span class="cf">in</span> time) {</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  N <span class="ot">&lt;-</span> N <span class="sc">*</span> <span class="dv">2</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The way the model is implemented differs slightly from that of the original textbook, which used a <code>while</code> loop. These loops can run forever if not correctly specified, so are a bit dangerous for an interactive learning exercise. The actual model and results are the same.</p>
+</div>
+</div>
+<p>The first “statement” is <code>N &lt;- 1</code>. That instructs the computer to set the number of bacteria, <code>N</code>, equal to 1. The second line determines the starting generation time and how many generations will be run using a list called <code>time</code>. In R the colon (<code>:</code>) is used to create a list that increments by 1 from the number before the colon to the number after the colon, <em>e.g.</em>, <code>1:3</code> becomes <code>1 2 3</code>. So, <code>time &lt;- 1:(5 * 24)</code> instructs the computer to set the time from <code>1</code> to <code>5 * 24</code>. We put parentheses over the last expression to make sure that it’s computed first, before the list is created, or you would get <code>(1:5) * 24</code> using R’s rules of <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Syntax.html">operator precedence</a>. So, the final list will contain 120 items corresponding to the time steps of the model: <code>1 2 3 ... 119 120</code>. One bacterium at time one forms the “initial conditions,” and once the computer has finished that line, the program is said to be “initialized.”</p>
+<p>Note that a <code>#</code> character indicates that everything following it is a comment and is not parsed by the language interpreter. Comments are great at explaining what code does, and you should use them liberally. Over time you may yourself forget why you wrote a particular line of code or what it’s supposed to do.</p>
+<p>The third line of the program is more involved, but can be understood in two parts. The first part on the left, <code>for(t in time)</code>, instructs the computer to loop over each value in the list called <code>time</code>. During each loop it chooses a value in a sequence and assigns it to the variable <code>t</code>. So, this is done for 5 simulated days of 24 hours each. The second part is the code to be repeated, within braces on the right, <code>{...}</code>.</p>
+<p>Computer coding is an exacting business, where tiny variations can make huge differences. Missing parentheses, commas, or even incorrect line breaks can cause your code to fail. If you are accustomed to coding, you will already be familiar with such subtleties; if this is all new to you, it is something to get used to. Various primers on the web can help, but don’t be discouraged if it seems difficult at first; computer coding turns out to be one of the easiest things to jump into but one of the most difficult areas of all human endeavour to get exactly right. Time and patience will assist.</p>
+<p>At the moment the loop contains only one statement, <code>N &lt;- N * 2</code>, is read “N equals N times two.” It is similar in form to the statement on the first line, <code>N &lt;- 1</code>, which started things off with a single bacterium. The <code>N &lt;-</code> part is the same. It tells the computer that the number of bacteria, N, is about to change. (Of course, the computer has no clue what the program is about—that you are running a program about bacteria.) What N will change to is immediately to the right of the equal sign, <code>N * 2</code>. So this statement thus tells the computer to double the value of N. That is what the hypothesized bacterial population does every hour, so this statement models that doubling.</p>
+<p>After the loop has executed its statement(s) it will pull the next value from <code>time</code> and run again, until there are no more values in <code>time</code> left to run, <em>i.e.</em>, 120 times.</p>
+<p>This code illustrates looping, a fundamental aspect of computer coding. In larger programs loops are “nested” within other loops and condition tests are nested correspondingly. But this simple program is sufficient for our first model. You will soon see that this is not a trivial model, but one that demonstrates an inviolable law of biology, which Darwin put directly to use in creating his theory of evolution.</p>
+</section>
+<section id="program-results" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="program-results"><span class="header-section-number">3.4</span> Program results</h2>
+<p>As it happens, the program above correctly computes the results, but it doesn’t actually save or print them. Not very useful. Here we modify it slightly to save and print the results into a table, called a <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/data.frame"><code>data.frame</code></a> in R terminology. During each iteration of the loop, we save the results to a row of this table specified by the time in the <code>t</code> variable, which we didn’t use at all in the code above. Printing <code>populations</code> by itself in the last line dumps its contents to the screen. In real modeling or data analysis exercises you’ll always be storing your results as various kinds of data structures, so that you can manipulate and analyze them.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span>(<span class="dv">5</span> <span class="sc">*</span> <span class="dv">24</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>populations <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">size =</span> <span class="fu">integer</span>()) <span class="co"># create an empty table with one column called "size", to be filled with numbers</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(t <span class="cf">in</span> time) {</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  N <span class="ot">&lt;-</span> N <span class="sc">*</span> <span class="dv">2</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  populations[t, <span class="st">"size"</span>] <span class="ot">=</span> N <span class="co"># save the output to the table</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>populations <span class="co"># print the results!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["size"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"2.000000e+00","_rn_":"1"},{"1":"4.000000e+00","_rn_":"2"},{"1":"8.000000e+00","_rn_":"3"},{"1":"1.600000e+01","_rn_":"4"},{"1":"3.200000e+01","_rn_":"5"},{"1":"6.400000e+01","_rn_":"6"},{"1":"1.280000e+02","_rn_":"7"},{"1":"2.560000e+02","_rn_":"8"},{"1":"5.120000e+02","_rn_":"9"},{"1":"1.024000e+03","_rn_":"10"},{"1":"2.048000e+03","_rn_":"11"},{"1":"4.096000e+03","_rn_":"12"},{"1":"8.192000e+03","_rn_":"13"},{"1":"1.638400e+04","_rn_":"14"},{"1":"3.276800e+04","_rn_":"15"},{"1":"6.553600e+04","_rn_":"16"},{"1":"1.310720e+05","_rn_":"17"},{"1":"2.621440e+05","_rn_":"18"},{"1":"5.242880e+05","_rn_":"19"},{"1":"1.048576e+06","_rn_":"20"},{"1":"2.097152e+06","_rn_":"21"},{"1":"4.194304e+06","_rn_":"22"},{"1":"8.388608e+06","_rn_":"23"},{"1":"1.677722e+07","_rn_":"24"},{"1":"3.355443e+07","_rn_":"25"},{"1":"6.710886e+07","_rn_":"26"},{"1":"1.342177e+08","_rn_":"27"},{"1":"2.684355e+08","_rn_":"28"},{"1":"5.368709e+08","_rn_":"29"},{"1":"1.073742e+09","_rn_":"30"},{"1":"2.147484e+09","_rn_":"31"},{"1":"4.294967e+09","_rn_":"32"},{"1":"8.589935e+09","_rn_":"33"},{"1":"1.717987e+10","_rn_":"34"},{"1":"3.435974e+10","_rn_":"35"},{"1":"6.871948e+10","_rn_":"36"},{"1":"1.374390e+11","_rn_":"37"},{"1":"2.748779e+11","_rn_":"38"},{"1":"5.497558e+11","_rn_":"39"},{"1":"1.099512e+12","_rn_":"40"},{"1":"2.199023e+12","_rn_":"41"},{"1":"4.398047e+12","_rn_":"42"},{"1":"8.796093e+12","_rn_":"43"},{"1":"1.759219e+13","_rn_":"44"},{"1":"3.518437e+13","_rn_":"45"},{"1":"7.036874e+13","_rn_":"46"},{"1":"1.407375e+14","_rn_":"47"},{"1":"2.814750e+14","_rn_":"48"},{"1":"5.629500e+14","_rn_":"49"},{"1":"1.125900e+15","_rn_":"50"},{"1":"2.251800e+15","_rn_":"51"},{"1":"4.503600e+15","_rn_":"52"},{"1":"9.007199e+15","_rn_":"53"},{"1":"1.801440e+16","_rn_":"54"},{"1":"3.602880e+16","_rn_":"55"},{"1":"7.205759e+16","_rn_":"56"},{"1":"1.441152e+17","_rn_":"57"},{"1":"2.882304e+17","_rn_":"58"},{"1":"5.764608e+17","_rn_":"59"},{"1":"1.152922e+18","_rn_":"60"},{"1":"2.305843e+18","_rn_":"61"},{"1":"4.611686e+18","_rn_":"62"},{"1":"9.223372e+18","_rn_":"63"},{"1":"1.844674e+19","_rn_":"64"},{"1":"3.689349e+19","_rn_":"65"},{"1":"7.378698e+19","_rn_":"66"},{"1":"1.475740e+20","_rn_":"67"},{"1":"2.951479e+20","_rn_":"68"},{"1":"5.902958e+20","_rn_":"69"},{"1":"1.180592e+21","_rn_":"70"},{"1":"2.361183e+21","_rn_":"71"},{"1":"4.722366e+21","_rn_":"72"},{"1":"9.444733e+21","_rn_":"73"},{"1":"1.888947e+22","_rn_":"74"},{"1":"3.777893e+22","_rn_":"75"},{"1":"7.555786e+22","_rn_":"76"},{"1":"1.511157e+23","_rn_":"77"},{"1":"3.022315e+23","_rn_":"78"},{"1":"6.044629e+23","_rn_":"79"},{"1":"1.208926e+24","_rn_":"80"},{"1":"2.417852e+24","_rn_":"81"},{"1":"4.835703e+24","_rn_":"82"},{"1":"9.671407e+24","_rn_":"83"},{"1":"1.934281e+25","_rn_":"84"},{"1":"3.868563e+25","_rn_":"85"},{"1":"7.737125e+25","_rn_":"86"},{"1":"1.547425e+26","_rn_":"87"},{"1":"3.094850e+26","_rn_":"88"},{"1":"6.189700e+26","_rn_":"89"},{"1":"1.237940e+27","_rn_":"90"},{"1":"2.475880e+27","_rn_":"91"},{"1":"4.951760e+27","_rn_":"92"},{"1":"9.903520e+27","_rn_":"93"},{"1":"1.980704e+28","_rn_":"94"},{"1":"3.961408e+28","_rn_":"95"},{"1":"7.922816e+28","_rn_":"96"},{"1":"1.584563e+29","_rn_":"97"},{"1":"3.169127e+29","_rn_":"98"},{"1":"6.338253e+29","_rn_":"99"},{"1":"1.267651e+30","_rn_":"100"},{"1":"2.535301e+30","_rn_":"101"},{"1":"5.070602e+30","_rn_":"102"},{"1":"1.014120e+31","_rn_":"103"},{"1":"2.028241e+31","_rn_":"104"},{"1":"4.056482e+31","_rn_":"105"},{"1":"8.112964e+31","_rn_":"106"},{"1":"1.622593e+32","_rn_":"107"},{"1":"3.245186e+32","_rn_":"108"},{"1":"6.490371e+32","_rn_":"109"},{"1":"1.298074e+33","_rn_":"110"},{"1":"2.596148e+33","_rn_":"111"},{"1":"5.192297e+33","_rn_":"112"},{"1":"1.038459e+34","_rn_":"113"},{"1":"2.076919e+34","_rn_":"114"},{"1":"4.153837e+34","_rn_":"115"},{"1":"8.307675e+34","_rn_":"116"},{"1":"1.661535e+35","_rn_":"117"},{"1":"3.323070e+35","_rn_":"118"},{"1":"6.646140e+35","_rn_":"119"},{"1":"1.329228e+36","_rn_":"120"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Evaluating the code
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can change and re-run this code yourself in R (see “Running the code” in the Preface for how to open the chapters in RStudio or launch a session in your browser with Binder). Note that the order in which you evaluate code chunks matters. For example, you need to run the model before you can plot its results.</p>
+</div>
+</div>
+<p>Between Monday and Friday, 120 bacterial doublings would produce over <span class="math inline">\(10^{36}\)</span> bacteria—that’s 1 followed by 36 zeros. That is the computational result, which looks like an exponential increase. We can plot it using the R <code>ggplot2</code> graphics library.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(populations, <span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span>(<span class="dv">5</span> <span class="sc">*</span> <span class="dv">24</span>), <span class="at">y =</span> size)) <span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Time (hours)"</span>, <span class="at">y =</span> <span class="st">"Population size (bacterial cells)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-3-1" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Line plot of population size against time in hours from 1 to 120. The curve stays flat near zero for most of the week, then shoots up steeply in the last few hours to over 1e36 cells, the shape of exponential growth." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-3-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="03-basic-population-model_files/figure-html/fig-3-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%" alt="Line plot of population size against time in hours from 1 to 120. The curve stays flat near zero for most of the week, then shoots up steeply in the last few hours to over 1e36 cells, the shape of exponential growth.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-3-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1: Unchecked growth of a bacterial colony that doubles every hour, over five days.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The scientific question is how many individuals this amounts to. Worked out exactly, it is this number: <span class="math inline">\(2^{120} = 1,329,227,995,784,915,872,903,807,060,280,344,576\)</span>. To understand the size of this number, suppose the bacteria are roughly cubical 1 µm on a side—one millionth of a meter, or about four hundred thousandths of an inch (a suitable order-of-magnitude for a bacterium). What volume will the colony occupy in cubic meters at the end of the work week, after five full days of growing unchecked? You might want to speculate: will it fill the culture plate, overflow onto the lab bench, fill the lab, or what?</p>
+<p>Work it out and you will see that the answer is <span class="math inline">\(2^{120}\)</span> bacteria times <span class="math inline">\(10^{-18}\)</span> cubic meters per bacterium equals about <span class="math inline">\(1.3 \times 10^{18}\)</span> cubic meters total. How large is that? Estimate the ocean to be a film averaging 3.7 kilometers deep and coating two-thirds of a sphere with a 6400 kilometer radius (this approximates the amount of the earth’s surface that is covered by ocean). This is about <span class="math inline">\(1.3 \times 10^{18}\)</span> cubic meters! At the end of five days, the colony unchecked would thus fill all oceans of the earth with a dense microbial mass, from the greatest depths up to the surface! This result has deep-reaching implications. First, even though this bacterial model can be quite accurate for a day or so, it fails completely over the course of a week. All models are approximations to reality, at best applicable over a suitable range. Second, there are lessons in its failure. It illustrates one of the inviolable laws of biology—that no population growth can remain unlimited for long. And third, in a mind like Charles Darwin’s, and coupled with other biological principles, it leads to the conclusion that organisms must evolve. That is the story of Darwin’s elephants.</p>
+</section>
+<section id="darwins-elephants" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="darwins-elephants"><span class="header-section-number">3.5</span> Darwin’s elephants</h2>
+<p>With elephants recognized as the slowest breeders of all known animals, Darwin made a laborious calculation, similar to the bacterial calculation above but more detailed, assuming that elephants started breeding at age 30 and continued until age 90, producing 6 young in that time.</p>
+<div id="fig-3-elephants" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A herd of elephants walking across a dry savanna plain, with snow-capped Mount Kilimanjaro rising in the background.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-3-elephants-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Elephants_at_Amboseli_national_park_against_Mount_Kilimanjaro.jpg" class="img-fluid figure-img" style="width:80.0%" alt="A herd of elephants walking across a dry savanna plain, with snow-capped Mount Kilimanjaro rising in the background.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-3-elephants-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.2: Elephants at Amboseli National Park against Mount Kilimanjaro. <span class="credit">Photo: Amoghavarsha JS, CC BY-SA 3.0.</span>
+</figcaption>
+</figure>
+</div>
+<p>Of course he had no computers, nor calculators, and apparently kept track of 90 or more age classes and made his calculations (which have never been found) on paper. But he said it cost him “some pain” to reach the conclusion that at the end of the fifth century, fifteen million elephants would be walking the earth, descended from one original pair. From this, he concluded that unlimited growth is impossible.</p>
+<div id="fig-3-darwin" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Watercolour portrait of a young Charles Darwin, seated, in a brown coat and blue waistcoat.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-3-darwin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/Darwin.jpg" class="img-fluid figure-img" style="width:55.0%" alt="Watercolour portrait of a young Charles Darwin, seated, in a brown coat and blue waistcoat.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-3-darwin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.3: Charles Darwin was in his twenties when he realized that natural selection was a cause of evolution and started to formulate his theory. <span class="credit">Portrait: G. Richmond, public domain.</span>
+</figcaption>
+</figure>
+</div>
+<div class="epigraph">
+<p>There is no exception to the rule that every organic being naturally increases at so high a rate that, if not destroyed, the earth would soon be covered by the progeny.</p>
+<p><span class="attribution">— Darwin, 1859</span></p>
+</div>
+<p>That he explained in Chapter Three of his Origin of Species. After explaining results of selection by people in the breeding of domestic animals, he introduced the concept of selection by natural causes in the wild, which he called “natural selection.” The simplest model of unlimited population growth was thus useful in the extreme, leading to an inviolable law of biology and the theory of evolution as one of its consequences. Individuals with qualities that allow them to suffer lower mortality or to reproduce slightly faster, and who pass those qualities to their offspring, will be the ones whose qualities predominate.</p>
+</section>
+<section id="exercises-and-questions" class="level2 page-columns page-full" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="exercises-and-questions"><span class="header-section-number">3.6</span> Exercises and questions</h2>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><strong>Hint:</strong> Use the <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/seq">seq</a> command to vary the sequence step size, <em>e.g.</em>, <code>seq(0, 4, by = 2)</code> to get <code>0 2 4</code>.</p>
+</div></div><ol type="1">
+<li><p>Update this code to simulate growth of a population that triples every hour. What is the population at time after three days of growth?</p></li>
+<li><p>Update this code to simulate growth of a population that doubles every ten hours. What is the population at time after three days of growth?</p></li>
+<li><p>One of the convenient features of <code>ggplot</code> is that commands can be layered on top of each other to produce different plots. Add <code>+ scale_y_log10()</code> to the plotting code and re-plot the result. This adds a <a href="https://en.wikipedia.org/wiki/Logarithmic_scale">logarithmic</a> y-axis to the plot, which makes a straight line plot—the tell-tale sign of an exponential growth curve! What are the advantages of viewing the data in this way? Note: you’ll have to run the first model code cell first to save the results in the <code>populations</code> data frame.</p></li>
+<li><p>As pointed out by William Thomson, later to become <a href="https://en.wikipedia.org/wiki/William_Thomson%2C_1st_Baron_Kelvin">Lord Kelvin</a>, Darwin’s math was actually wrong (though the underlying idea is correct). How many elephants would be around after 10 generations (~500 years)?</p>
+<ul>
+<li>There are only female elephants</li>
+<li>Each female produces three offspring over her lifetime (as we ignore males, the numbers are halved from Darwin’s estimates)</li>
+<li>Elephants never die</li>
+</ul></li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/mikheyevlab\.github\.io\/ecology-textbook\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./02-ecological-theory.html" class="pagination-link" aria-label="Ecological theory">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ecological theory</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./04-modeling-single-population.html" class="pagination-link" aria-label="Modeling a single population">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modeling a single population</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Adapted from <em>Quantitative Ecology: A New Unified Approach</em> by Lehman, Loberg and Clark, licensed <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/MikheyevLab/ecology-textbook/edit/main/book/03-basic-population-model.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/MikheyevLab/ecology-textbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/MikheyevLab/ecology-textbook/blob/main/book/03-basic-population-model.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
