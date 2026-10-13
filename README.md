@@ -16,7 +16,6 @@ The book is a [Quarto](https://quarto.org) book in `book/`:
 - `book/styles.scss` — site styling
 - `book/img/` — static images, `book/data/` — data files read by the code
 - `book/_freeze/` — cached results of the R code (commit this)
-- `book/_source/` — raw text from the original book, for reference
 
 ### Writing conventions
 

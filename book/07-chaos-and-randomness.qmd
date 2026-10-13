@@ -222,16 +222,16 @@ while(t<=20)
 { dN=(r+s*N)*N; N=N+dN; t=t+1; print(N); }
 ```
 
-The initial condition is 11,107 insects---0.011107 million in this representation---which produces the time-pattern of @fig-7-2, Part A. But change that initial condition just a little, to 0.012107 million, and the time-pattern changes considerably. (Compare Parts A and B of @fig-7-3.) Part A is identical to Part A of @fig-7-2, but Part B of the new figure has quite a different pattern, of repeated population outbreaks---not unlike those seen in some insect populations.
+The initial condition is 11,107 insects---0.011107 million in this representation---which produces the time-pattern of @fig-7-2, Part A. But change that initial condition just a little, to 0.021107 million, and the time-pattern changes considerably. (Compare Parts A and B of @fig-7-3.) Part A is identical to Part A of @fig-7-2, but Part B of the new figure has quite a different pattern, of repeated population outbreaks---not unlike those seen in some insect populations.
 
 ```{r}
 #| label: fig-7-3
-#| fig-cap: "Sensitive dependence on initial conditions. Both parts have $r = 3$ and $s = -(r+1)$, but Part A starts at 0.011107 million and Part B starts at 0.012107 million."
-#| fig-alt: "Two timelines of N over 20 years with a dashed grey line at 0.75. A, starting at 0.011107, oscillates irregularly as in Figure 7.2. B, starting at 0.012107, shows a different pattern of repeated outbreaks to nearly 1 followed by crashes to near 0. Beside each timeline is the same U-shaped arcsine distribution, high near 0 and 1 and low in the middle."
+#| fig-cap: "Sensitive dependence on initial conditions. Both parts have $r = 3$ and $s = -(r+1)$, but Part A starts at 0.011107 million and Part B starts at 0.021107 million."
+#| fig-alt: "Two timelines of N over 20 years with a dashed grey line at 0.75. A, starting at 0.011107, oscillates irregularly as in Figure 7.2. B, starting at 0.021107, shows a different pattern of repeated outbreaks to nearly 1 followed by crashes to near 0. Beside each timeline is the same U-shaped arcsine distribution, high near 0 and 1 and low in the middle."
 #| code-fold: true
 #| fig-asp: 0.75
 timeline_row(3, N0 = 0.011107, tag = "A.", dist = "arcsine", K = 0.75) /
-  timeline_row(3, N0 = 0.012107, tag = "B.", dist = "arcsine", K = 0.75,
+  timeline_row(3, N0 = 0.021107, tag = "B.", dist = "arcsine", K = 0.75,
                show_x = TRUE)
 ```
 
