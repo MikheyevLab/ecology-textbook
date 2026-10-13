@@ -45,3 +45,6 @@ ecology-textbook.code-workspace
 
 _build
 .DS_Store
+
+# stray conda env
+ecology-textbook/
