@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>15&nbsp; Chapter 15 – Quantitative Ecology</title>
+<title>18&nbsp; Higher-order models – Quantitative Ecology</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./16-competition.html" rel="next">
-<link href="./14-humans-as-prey.html" rel="prev">
+<link href="./17-mutualism.html" rel="prev">
 <link href="./img/logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -79,11 +113,42 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-8SXREGQC46', { 'anonymize_ip': true});
 </script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating slimcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -92,7 +157,7 @@ gtag('config', 'G-8SXREGQC46', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-theory-of-interactions.html">Two species</a></li><li class="breadcrumb-item"><a href="./15-not-yet-adapted.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chapter 15</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-theory-of-interactions.html">Models of two species</a></li><li class="breadcrumb-item"><a href="./18-higher-order-models.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Higher-order models</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -132,7 +197,7 @@ gtag('config', 'G-8SXREGQC46', { 'anonymize_ip': true});
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Introduction</span></a>
+ <span class="menu-text">Background</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -187,8 +252,8 @@ gtag('config', 'G-8SXREGQC46', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-discrete-time-chaos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Discrete-time dynamics and chaos</span></span></a>
+  <a href="./07-chaos-and-randomness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Chaos and randomness</span></span></a>
   </div>
 </li>
       </ul>
@@ -196,7 +261,7 @@ gtag('config', 'G-8SXREGQC46', { 'anonymize_ip': true});
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Two species</span></a>
+ <span class="menu-text">Models of two species</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -246,8 +311,8 @@ gtag('config', 'G-8SXREGQC46', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./15-not-yet-adapted.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chapter 15</span></span></a>
+  <a href="./15-theory-of-disease.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Theory of disease</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -262,6 +327,12 @@ gtag('config', 'G-8SXREGQC46', { 'anonymize_ip': true});
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Mutualism</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-higher-order-models.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Higher-order models</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -269,15 +340,23 @@ gtag('config', 'G-8SXREGQC46', { 'anonymize_ip': true});
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#one-species-examples" id="toc-one-species-examples" class="nav-link active" data-scroll-target="#one-species-examples"><span class="header-section-number">18.1</span> One-species examples</a></li>
+  <li><a href="#two-species-blending" id="toc-two-species-blending" class="nav-link" data-scroll-target="#two-species-blending"><span class="header-section-number">18.2</span> Two-species blending</a></li>
+  <li><a href="#a-way-of-organizing" id="toc-a-way-of-organizing" class="nav-link" data-scroll-target="#a-way-of-organizing"><span class="header-section-number">18.3</span> A way of organizing</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/MikheyevLab/ecology-textbook/edit/main/book/18-higher-order-models.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/MikheyevLab/ecology-textbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/MikheyevLab/ecology-textbook/blob/main/book/18-higher-order-models.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-theory-of-interactions.html">Two species</a></li><li class="breadcrumb-item"><a href="./15-not-yet-adapted.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chapter 15</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-theory-of-interactions.html">Models of two species</a></li><li class="breadcrumb-item"><a href="./18-higher-order-models.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Higher-order models</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-ch15" class="quarto-section-identifier"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chapter 15</span></span></h1>
+<h1 class="title"><span id="sec-higher-order" class="quarto-section-identifier"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Higher-order models</span></span></h1>
 </div>
 
 
@@ -294,22 +373,148 @@ gtag('config', 'G-8SXREGQC46', { 'anonymize_ip': true});
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>The <span class="smallcaps">rsn</span> formulation of <a href="04-modeling-single-population.html#eq-4-1" class="quarto-xref">Equation&nbsp;<span>4.1</span></a> and <a href="08-theory-of-interactions.html#eq-8-1" class="quarto-xref">Equation&nbsp;<span>8.1</span></a> incorporate the classical competition, predation, and logistic equations of ecology, plus mutualistic and orthologistic equations that are not part of the classical set. For this, the parameters can remain constant.</p>
+<p>But they are not constant in all cases. <a href="https://en.wikipedia.org/wiki/Vito_Volterra">Volterra</a> (1928) considered parameters that vary through time, but more generally the parameters can be functions of population density as well. In this way the <span class="smallcaps">rsn</span> formulation can be extended to cover not just the classical equations of ecology and related equations, but any equations of ecology whatever, as with <a href="04-modeling-single-population.html#eq-4-3" class="quarto-xref">Equation&nbsp;<span>4.3</span></a>, proposed by <a href="https://en.wikipedia.org/wiki/Andrey_Kolmogorov">Kolmogorov</a>.</p>
+<section id="one-species-examples" class="level2" data-number="18.1">
+<h2 data-number="18.1" class="anchored" data-anchor-id="one-species-examples"><span class="header-section-number">18.1</span> One-species examples</h2>
+<p>To see the basic idea, start with a single species. With variable parameters, population growth for a single species (<a href="04-modeling-single-population.html#eq-4-1" class="quarto-xref">Equation&nbsp;<span>4.1</span></a>) can be written as follows, with the growth rate <span class="math inline">\(r\)</span> and the density dependence term <span class="math inline">\(s\)</span> depending on the population level <span class="math inline">\(N\)</span> and optionally on the time <span class="math inline">\(t\)</span>.</p>
+<p><span id="eq-18-1"><span class="math display">\[
+\frac{1}{N}\frac{dN}{dt}=r(N,t)+s(N,t)\,N
+\tag{18.1}\]</span></span></p>
+<p>Because anything can be embedded in the term <span class="math inline">\(r(N,t)\)</span>, or in the corresponding <span class="math inline">\(s(N,t)\)</span>, the equation is perfectly general and can cover any ecological situation for a single species modelled by a differential equation. A basic example, which you have already seen for human population growth, is where the parameters are approximately constant for long periods, but change at certain “bifurcation” events. The parameters for human population growth changed abruptly at the beginning of the modern era, resulting in overall population dynamics that were neither orthologistic nor logistic, but a piecewise combination of the two. In that case the two were blended by varying the parameters as follows.</p>
+<p><span class="math display">\[
+\frac{1}{N}\frac{dN}{dt}=
+\begin{cases}
+-0.001185+0.00684\,N, &amp; \text{when } N\le 3.28 \text{ billion} \\
+\phantom{-}0.03077-0.00289\,N, &amp; \text{when } N&gt; 3.28 \text{ billion}
+\end{cases}
+\]</span></p>
+<p>This led to the population growth curve of <a href="06-human-population-growth.html#fig-6-3" class="quarto-xref">Figure&nbsp;<span>6.3</span></a>, which nicely modeled human population growth over the centuries.</p>
+<p>Human population growth called for a piecewise blending of the parameters, because the parameters changed rather abruptly from one constant set to another. The parameters can also be blended continuously for parameters that change gradually.</p>
+<p>For example, take an orthologistic equation, <span class="math inline">\(1/N\,dN/dt=-2+2N\)</span>, and a logistic equation, <span class="math inline">\(1/N\,dN/dt=4-2N\)</span>, and consider <span class="math inline">\(N\)</span> as it ranges from 0 to 1. Have the orthologistic equation apply exactly as <span class="math inline">\(N\)</span> approaches 0, and the logistic equation apply exactly when <span class="math inline">\(N\)</span> reaches 1. Then let <span class="math inline">\(r\)</span> change uniformly from <span class="math inline">\(-2\)</span> to <span class="math inline">\(+4\)</span> and <span class="math inline">\(s\)</span> change uniformly from <span class="math inline">\(+2\)</span> to <span class="math inline">\(-2\)</span> as <span class="math inline">\(N\)</span> goes from 0 to 1, as follows.</p>
+<p><span class="math display">\[
+\begin{aligned}
+r(N,t)&amp;=\phantom{-}6N-2 \\
+s(N,t)&amp;=-4N+2
+\end{aligned}
+\]</span></p>
+<p>Plugging that into <a href="#eq-18-1" class="quarto-xref">Equation&nbsp;<span>18.1</span></a> gives</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{1}{N}\frac{dN}{dt}&amp;=(6N-2)+(-4N+2)\,N \\
+&amp;=-2+8N-4N^2 \\
+&amp;=\ r+sN+s_2N^2
+\end{aligned}
+\]</span></p>
+<p>This kind of blending between orthologistic and logistic has simply added one more term to the population growth equation, an <span class="math inline">\(N^2\)</span> term—one of the terms proposed by <a href="https://en.wikipedia.org/wiki/G._Evelyn_Hutchinson">Hutchinson</a> (<a href="04-modeling-single-population.html#eq-4-2" class="quarto-xref">Equation&nbsp;<span>4.2</span></a>). The result is graphed in <a href="#fig-18-1" class="quarto-xref">Figure&nbsp;<span>18.1</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Blended per-capita growth rate: r(N) + s(N) N with r = 6N - 2, s = -4N + 2</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>blend <span class="ot">&lt;-</span> <span class="cf">function</span>(N) (<span class="dv">6</span> <span class="sc">*</span> N <span class="sc">-</span> <span class="dv">2</span>) <span class="sc">+</span> (<span class="sc">-</span><span class="dv">4</span> <span class="sc">*</span> N <span class="sc">+</span> <span class="dv">2</span>) <span class="sc">*</span> N   <span class="co"># = -2 + 8N - 4N^2</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>curve_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">N =</span> <span class="fu">seq</span>(<span class="fl">0.12</span>, <span class="fl">1.88</span>, <span class="at">length.out =</span> <span class="dv">400</span>))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>curve_df<span class="sc">$</span>rate <span class="ot">&lt;-</span> <span class="fu">blend</span>(curve_df<span class="sc">$</span>N)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>allee    <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">sqrt</span>(<span class="dv">2</span>) <span class="sc">/</span> <span class="dv">2</span>   <span class="co"># roots of -2 + 8N - 4N^2 = 0</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>carrying <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="fu">sqrt</span>(<span class="dv">2</span>) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(curve_df, <span class="fu">aes</span>(N, rate)) <span class="sc">+</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">colour =</span> eco_cols[[<span class="st">"grey"</span>]], <span class="at">linewidth =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"point"</span>, <span class="at">x =</span> allee, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">fill =</span> <span class="st">"white"</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>           <span class="at">colour =</span> <span class="st">"grey15"</span>, <span class="at">size =</span> <span class="fl">2.5</span>, <span class="at">stroke =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"point"</span>, <span class="at">x =</span> carrying, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">fill =</span> <span class="st">"grey15"</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>           <span class="at">colour =</span> <span class="st">"grey15"</span>, <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> allee, <span class="at">y =</span> <span class="fl">0.15</span>, <span class="at">label =</span> <span class="st">"← Allee point"</span>,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">fontface =</span> <span class="st">"italic"</span>) <span class="sc">+</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> carrying, <span class="at">y =</span> <span class="fl">0.15</span>, <span class="at">label =</span> <span class="st">"← Carrying capacity"</span>,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>           <span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">fontface =</span> <span class="st">"italic"</span>) <span class="sc">+</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">2</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="fl">2.1</span>), <span class="at">breaks =</span> <span class="sc">-</span><span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">expression</span>(N), <span class="at">y =</span> <span class="fu">expression</span>(<span class="fu">frac</span>(<span class="dv">1</span>, N) <span class="sc">~</span> <span class="fu">frac</span>(dN, dt)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-18-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Per-capita growth rate against N from 0 to 2: a downward parabola rising from below zero, peaking at 2 when N is 1, and falling below zero again. It crosses zero at an open circle near N = 0.3, labelled Allee point, and at a filled circle near N = 1.7, labelled carrying capacity.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-18-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="18-higher-order-models_files/figure-html/fig-18-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%" alt="Per-capita growth rate against N from 0 to 2: a downward parabola rising from below zero, peaking at 2 when N is 1, and falling below zero again. It crosses zero at an open circle near N = 0.3, labelled Allee point, and at a filled circle near N = 1.7, labelled carrying capacity.">
 </div>
-<div class="callout-title-container flex-fill">
-Not yet adapted
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-18-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;18.1: Orthologistic and logistic equations smoothly blended.
+</figcaption>
+</figure>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Chapter 15 of the original textbook has not yet been adapted for this edition. Until it is, please read it in the original: <a href="http://hdl.handle.net/11299/204551"><em>Quantitative Ecology: A New Unified Approach</em></a> by Lehman, Loberg and Clark (CC BY-NC 4.0).</p>
-<p>This placeholder keeps chapter, figure and equation numbers aligned with the original book.</p>
 </div>
+<p>This smoothly blends the orthologistic, which has an Allee point but no carrying capacity, with the logistic, which has a carrying capacity with no Allee point, providing both in the blended curve of <a href="#fig-18-1" class="quarto-xref">Figure&nbsp;<span>18.1</span></a>. The curve has an Allee point at about <span class="math inline">\(N=0.3\)</span> and a carrying capacity at about <span class="math inline">\(N=1.7\)</span>. Compare this with the piecewise blending depicted earlier in <a href="04-modeling-single-population.html#fig-4-4" class="quarto-xref">Figure&nbsp;<span>4.4</span></a>.</p>
+</section>
+<section id="two-species-blending" class="level2" data-number="18.2">
+<h2 data-number="18.2" class="anchored" data-anchor-id="two-species-blending"><span class="header-section-number">18.2</span> Two-species blending</h2>
+<p>Blending two-species systems is a similar process, but has more options in the parameters. <a href="#eq-18-2" class="quarto-xref">Equation&nbsp;<span>18.2</span></a> is an example with limited options that produced the phase spaces in Figures <a href="10-phase-space.html#fig-10-3" class="quarto-xref"><span>10.3</span></a> through <a href="10-phase-space.html#fig-10-5" class="quarto-xref"><span>10.5</span></a>.</p>
+<p><span id="eq-18-2"><span class="math display">\[
+\begin{aligned}
+\frac{1}{N_1}\frac{dN_1}{dt}&amp;=r_1(N_1)+s_{1,1}\,N_1+s_{1,2}(N_1)\,N_2 \\
+\frac{1}{N_2}\frac{dN_2}{dt}&amp;=r_2(N_2)+s_{2,2}\,N_2+s_{2,1}(N_2)\,N_1
+\end{aligned}
+\tag{18.2}\]</span></span></p>
+<p>Changing the parameters uniformly from a <span class="math inline">\(b\)</span> value when the corresponding <span class="math inline">\(N\)</span> value is 0 to an <span class="math inline">\(a+b\)</span> value when the corresponding <span class="math inline">\(N\)</span> value is 1 is analogous to the blending that produced <a href="04-modeling-single-population.html#fig-4-4" class="quarto-xref">Figure&nbsp;<span>4.4</span></a>. The parameters would vary as follows, using four distinct <span class="math inline">\(a\)</span> values (<span class="math inline">\(a_1\)</span>, <span class="math inline">\(a_2\)</span>, <span class="math inline">\(a_{1,2}\)</span>, <span class="math inline">\(a_{2,1}\)</span>), plus four distinct <span class="math inline">\(b\)</span> values with matching subscripts (<span class="math inline">\(b_1\)</span>, <span class="math inline">\(b_2\)</span>, <span class="math inline">\(b_{1,2}\)</span>, <span class="math inline">\(b_{2,1}\)</span>).</p>
+<p><span class="math display">\[
+\begin{aligned}
+r_1(N_1)&amp;=a_1N_1+b_1, &amp;\quad s_{1,2}(N_1)&amp;=a_{1,2}N_1+b_{1,2} \\
+r_2(N_2)&amp;=a_2N_2+b_2, &amp;\quad s_{2,1}(N_2)&amp;=a_{2,1}N_2+b_{2,1}
+\end{aligned}
+\]</span></p>
+<p>Substituting the above into <a href="#eq-18-2" class="quarto-xref">Equation&nbsp;<span>18.2</span></a> and collecting terms gives an equation having all the <span class="smallcaps">rsn</span> terms present, but now with a cross-product in terms of <span class="math inline">\(N_1N_2\)</span> added at the end:</p>
+<p><span id="eq-18-3"><span class="math display">\[
+\begin{aligned}
+\frac{1}{N_1}\frac{dN_1}{dt}&amp;=b_1+(a_1+s_{1,1})N_1+b_{1,2}N_2+a_{1,2}N_1N_2 \\
+\frac{1}{N_2}\frac{dN_2}{dt}&amp;=b_2+(a_2+s_{2,2})N_2+b_{2,1}N_1+a_{2,1}N_1N_2
+\end{aligned}
+\tag{18.3}\]</span></span></p>
+<p>In the specific case of Figures <a href="10-phase-space.html#fig-10-3" class="quarto-xref"><span>10.3</span></a> through <a href="10-phase-space.html#fig-10-5" class="quarto-xref"><span>10.5</span></a>, we used <span class="math inline">\(s_{1,1}=s_{2,2}=-0.98\)</span> and</p>
+<p><span class="math display">\[
+\begin{aligned}
+r_1(N_1)&amp;=0.75N_1-0.5 &amp;\quad s_{1,2}(N_1)&amp;=-1.15N_1+2.5 \\
+r_2(N_2)&amp;=0.75N_2-0.5 &amp;\quad s_{2,1}(N_2)&amp;=-0.45N_2+1.3
+\end{aligned}
+\]</span></p>
+<p>which gave</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{1}{N_1}\frac{dN_1}{dt}&amp;=-0.5-0.23N_1+2.50N_2-1.15\,N_1N_2 \\
+\frac{1}{N_2}\frac{dN_2}{dt}&amp;=-0.5-0.23N_2+1.30N_1-0.45\,N_1N_2
+\end{aligned}
+\]</span></p>
+<p>for the flow in the figures.</p>
+</section>
+<section id="a-way-of-organizing" class="level2 page-columns page-full" data-number="18.3">
+<h2 data-number="18.3" class="anchored" data-anchor-id="a-way-of-organizing"><span class="header-section-number">18.3</span> A way of organizing</h2>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/fig_18_library.jpg" class="img-fluid figure-img" alt="A tall, wood-panelled library with books on shelves reaching to the ceiling, an upper gallery, a white spiral staircase, and display cases in the foreground."></p>
+<figcaption><span class="credit">Photo: CC0.</span></figcaption>
+</figure>
+</div>
+</div></div><p>The methods we have described in this chapter provide an organized way of designing higher-order models of ecological interactions. Characteristics of the individual models purely in <span class="smallcaps">rsn</span> form can be mixed and matched as needed to produce the higher-order model, then the resulting parameters can be fit to observations or modelling needs.</p>
+<p>For example, the bistable phase space in Figures <a href="10-phase-space.html#fig-10-3" class="quarto-xref"><span>10.3</span></a> through <a href="10-phase-space.html#fig-10-5" class="quarto-xref"><span>10.5</span></a>, with an unstable Allee point combined with a stable carrying capacity, was easy to achieve by combining sub-models, each with one of those characteristics. The result was simply an <span class="smallcaps">rsn</span> system with an <span class="math inline">\(N_1N_2\)</span> cross-product term added, but how easy would it have been to conceive that term <em>a priori</em> and perceive its sufficiency?</p>
+<p>Moreover, a blended model in the form of <a href="#eq-18-2" class="quarto-xref">Equation&nbsp;<span>18.2</span></a> can be visualized in terms of (1) the intrinsic growth rate of each species, (2) how each species affects the other, (3) how each species affects itself, and (4) how those effects change with population densities. In a way, any higher-order system constructed in this way can be viewed as an <span class="smallcaps">rsn</span> system at every point, yet as a higher-order system overall.</p>
+<p>In summary, we cautiously recommend this method of creating and organizing ecological models, and are eager to hear of successes and failures you might have with it.</p>
+<p>The characters acting in this book—the equations of population growth, the parameters and their relationships, the graphs and phase planes—live in variations and disguises within an enormous variety of actual ecological applications, detailed in thousands of scientific papers you will be able to sample as your journey continues. We hope you have enjoyed this introductory book and that it has been useful. We welcome your comments on any aspects at all. An ebook is never finished but can constantly be improved.</p>
+<div style="text-align: right;">
+<p>—<em>C.L., S.L., A.C.</em></p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/fig_18_portage.jpg" class="img-fluid figure-img" style="width:70.0%" alt="Watercolour of a man carrying an upturned birch-bark canoe over his head across sloping grey rocks beside white-water rapids, with dark forest behind."></p>
+<figcaption><em>The Portage</em>, by Winslow Homer. <span class="credit">Public domain.</span></figcaption>
+</figure>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -713,14 +918,11 @@ Not yet adapted
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./14-humans-as-prey.html" class="pagination-link" aria-label="Humans as prey">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Humans as prey</span></span>
+      <a href="./17-mutualism.html" class="pagination-link" aria-label="Mutualism">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Mutualism</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./16-competition.html" class="pagination-link" aria-label="Competition">
-        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Competition</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -731,7 +933,7 @@ Not yet adapted
     </div>   
     <div class="nav-footer-center">
 <p>Adapted from <em>Quantitative Ecology: A New Unified Approach</em> by Lehman, Loberg and Clark, licensed <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/MikheyevLab/ecology-textbook/edit/main/book/15-not-yet-adapted.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/MikheyevLab/ecology-textbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/MikheyevLab/ecology-textbook/blob/main/book/15-not-yet-adapted.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/MikheyevLab/ecology-textbook/edit/main/book/18-higher-order-models.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/MikheyevLab/ecology-textbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/MikheyevLab/ecology-textbook/blob/main/book/18-higher-order-models.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

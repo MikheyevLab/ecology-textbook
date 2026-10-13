@@ -198,7 +198,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Introduction</span></a>
+ <span class="menu-text">Background</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -253,8 +253,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-discrete-time-chaos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Discrete-time dynamics and chaos</span></span></a>
+  <a href="./07-chaos-and-randomness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Chaos and randomness</span></span></a>
   </div>
 </li>
       </ul>
@@ -262,7 +262,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Two species</span></a>
+ <span class="menu-text">Models of two species</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -312,8 +312,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./15-not-yet-adapted.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chapter 15</span></span></a>
+  <a href="./15-theory-of-disease.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Theory of disease</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -326,6 +326,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./17-mutualism.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Mutualism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-higher-order-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Higher-order models</span></span></a>
   </div>
 </li>
       </ul>
@@ -515,7 +521,7 @@ Program&nbsp;4.2: Orthologistic growth: the same code with <span class="math inl
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_growth</span>(population)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-4-2" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Population size against time. The exponential series (blue) rises gradually; the orthologistic series (red) shoots up almost vertically after about four time steps, heading towards a singularity." data-fig-align="center">
+<div id="fig-4-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Population size against time. The exponential series (blue) rises gradually; the orthologistic series (red) shoots up almost vertically after about four time steps, heading towards a singularity.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-4-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="04-modeling-single-population_files/figure-html/fig-4-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%" alt="Population size against time. The exponential series (blue) rises gradually; the orthologistic series (red) shoots up almost vertically after about four time steps, heading towards a singularity.">
@@ -579,7 +585,7 @@ Program&nbsp;4.3: Logistic growth: the same code with <span class="math inline">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_growth</span>(population)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-4-3" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Population size against time for three models. Exponential (blue) rises gradually, orthologistic (red) shoots up almost vertically, and logistic (green) rises in an S-shape and levels off at 1000." data-fig-align="center">
+<div id="fig-4-3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Population size against time for three models. Exponential (blue) rises gradually, orthologistic (red) shoots up almost vertically, and logistic (green) rises in an S-shape and levels off at 1000.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-4-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="04-modeling-single-population_files/figure-html/fig-4-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%" alt="Population size against time for three models. Exponential (blue) rises gradually, orthologistic (red) shoots up almost vertically, and logistic (green) rises in an S-shape and levels off at 1000.">
@@ -660,7 +666,7 @@ Figure&nbsp;4.5: Trumpeter swans—the largest North American birds, with wingsp
 \frac{1}{N}\frac{\Delta N}{\Delta t}=f(N)
 \tag{4.3}\]</span></span></p>
 <p>The higher-order terms in <a href="#eq-4-2" class="quarto-xref">Equation&nbsp;<span>4.2</span></a> could refine population projections if there were enough data to determine them. They are not really needed, however, because straight-line parts can be pieced together to form a general population growth curve, as in <a href="#fig-4-4" class="quarto-xref">Figure&nbsp;<span>4.4</span></a>. And as human population growth in <a href="06-human-population-growth.html#fig-6-3" class="quarto-xref">Figure&nbsp;<span>6.3</span></a> will show, a piecewise approach can more closely approximate the real situation.</p>
-<p>Moreover, blending separate versions of <a href="#eq-4-1" class="quarto-xref">Equation&nbsp;<span>4.1</span></a> can generalize to either the Hutchinson or Kolmogorov forms, <a href="#eq-4-2" class="quarto-xref">Equation&nbsp;<span>4.2</span></a> and <a href="#eq-4-3" class="quarto-xref">Equation&nbsp;<span>4.3</span></a>, as you will see in Chapter 18 of the <a href="http://hdl.handle.net/11299/204551">original book</a>.</p>
+<p>Moreover, blending separate versions of <a href="#eq-4-1" class="quarto-xref">Equation&nbsp;<span>4.1</span></a> can generalize to either the Hutchinson or Kolmogorov forms, <a href="#eq-4-2" class="quarto-xref">Equation&nbsp;<span>4.2</span></a> and <a href="#eq-4-3" class="quarto-xref">Equation&nbsp;<span>4.3</span></a>, as you will see in <a href="18-higher-order-models.html" class="quarto-xref"><span>Chapter 18</span></a>.</p>
 </section>
 <section id="exercises" class="level2" data-number="4.6">
 <h2 data-number="4.6" class="anchored" data-anchor-id="exercises"><span class="header-section-number">4.6</span> Exercises</h2>

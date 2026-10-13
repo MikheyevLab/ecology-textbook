@@ -66,7 +66,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./17-mutualism.html" rel="next">
-<link href="./15-not-yet-adapted.html" rel="prev">
+<link href="./15-theory-of-disease.html" rel="prev">
 <link href="./img/logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -158,7 +158,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-theory-of-interactions.html">Two species</a></li><li class="breadcrumb-item"><a href="./16-competition.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Competition</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-theory-of-interactions.html">Models of two species</a></li><li class="breadcrumb-item"><a href="./16-competition.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Competition</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -198,7 +198,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Introduction</span></a>
+ <span class="menu-text">Background</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -253,8 +253,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-discrete-time-chaos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Discrete-time dynamics and chaos</span></span></a>
+  <a href="./07-chaos-and-randomness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Chaos and randomness</span></span></a>
   </div>
 </li>
       </ul>
@@ -262,7 +262,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Two species</span></a>
+ <span class="menu-text">Models of two species</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -312,8 +312,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./15-not-yet-adapted.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chapter 15</span></span></a>
+  <a href="./15-theory-of-disease.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Theory of disease</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -326,6 +326,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./17-mutualism.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Mutualism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-higher-order-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Higher-order models</span></span></a>
   </div>
 </li>
       </ul>
@@ -353,7 +359,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-theory-of-interactions.html">Two species</a></li><li class="breadcrumb-item"><a href="./16-competition.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Competition</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-theory-of-interactions.html">Models of two species</a></li><li class="breadcrumb-item"><a href="./16-competition.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Competition</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="sec-competition" class="quarto-section-identifier"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Competition</span></span></h1>
 </div>
@@ -547,7 +553,7 @@ Note
 <p><span class="math display">\[
 \frac{1}{N}\frac{dN}{dt} = r + s N, \quad r=m(R_{\rm max}-R^\star), \quad s=-u m
 \]</span></p>
-<p>The same form arises in the epidemiological <span class="math inline">\(I\)</span> model of the <a href="http://hdl.handle.net/11299/204551">original book</a>. And it will arise again in future models.</p>
+<p>Recall that this also happened for the epidemiological <span class="math inline">\(I\)</span> model (<a href="15-theory-of-disease.html#sec-i-model" class="quarto-xref"><span>Section 15.5</span></a>). And it will arise again in future models.</p>
 </section>
 <section id="competitive-exclusion" class="level2" data-number="16.3">
 <h2 data-number="16.3" class="anchored" data-anchor-id="competitive-exclusion"><span class="header-section-number">16.3</span> Competitive exclusion</h2>
@@ -834,8 +840,8 @@ R_B &amp;= R_{B\rm max} - q_1 u_1 N_1 - q_2 u_2 N_2
 \frac{1}{N_2}\frac{dN_2}{dt} &amp;= \underbrace{m_2(R_{B\rm max}-R_{2B}^\star)}_{r_i}\ \underbrace{-\,m_2\,q_2 u_2\,N_2}_{s_{i,i}N_i}\ \underbrace{-\,m_2\,q_1 u_1\,N_1}_{s_{i,j}N_j}
 \end{aligned}
 \tag{16.11}\]</span></span></p>
-<p>Notice that, again, a mechanistic model with measurable parameters is just the general ecological <span class="math inline">\(RSN\)</span> model in disguise.</p>
-<p>The <span class="math inline">\(RSN\)</span> formulation can expose the possibilities of two-resource situations in phase space. The isoclines are Equations <a href="#eq-16-7" class="quarto-xref"><span>16.7</span></a> and <a href="#eq-16-8" class="quarto-xref"><span>16.8</span></a> of this chapter, with slopes <span class="math inline">\(-s_{1,1}/s_{1,2}\)</span> and <span class="math inline">\(-s_{2,1}/s_{2,2}\)</span> for Species 1 and 2, respectively.</p>
+<p>Notice that, again, a mechanistic model with measurable parameters is just the general ecological <span class="smallcaps">rsn</span> model in disguise.</p>
+<p>The <span class="smallcaps">rsn</span> formulation can expose the possibilities of two-resource situations in phase space. The isoclines are Equations <a href="#eq-16-7" class="quarto-xref"><span>16.7</span></a> and <a href="#eq-16-8" class="quarto-xref"><span>16.8</span></a> of this chapter, with slopes <span class="math inline">\(-s_{1,1}/s_{1,2}\)</span> and <span class="math inline">\(-s_{2,1}/s_{2,2}\)</span> for Species 1 and 2, respectively.</p>
 <p>These two slopes can be written in terms of the resource. With the values for <span class="math inline">\(s_{i,j}\)</span> from <a href="#eq-16-11" class="quarto-xref">Equation&nbsp;<span>16.11</span></a> (<span class="math inline">\(s_{1,1}= -m_1\,p_1 u_1\)</span>, <span class="math inline">\(s_{1,2}= -m_1\,p_2 u_2\)</span>, <span class="math inline">\(s_{2,1}= -m_2\,q_1 u_1\)</span>, and <span class="math inline">\(s_{2,2}= -m_2\,q_2 u_2\)</span>), the slopes of the isoclines become</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -922,7 +928,7 @@ Figure&nbsp;16.22: Case 1: Species 2 excludes Species 1. Case 2: Species 1 exclu
 </figure>
 </div>
 <p><span class="math inline">\(K_1\)</span> and <span class="math inline">\(K_2\)</span> are the carrying capacities for Species 1 and 2, respectively. Parameters <span class="math inline">\(a_{1,2}\)</span> and <span class="math inline">\(a_{2,1}\)</span> represent the interference by each species on the other. If <span class="math inline">\(a_{1,2}=2\)</span>, for example, each individual of Species 2 interferes with the growth of Species 1 as if it were two individuals of Species 1. If, on the other hand, <span class="math inline">\(a_{1,2}=1/2\)</span>, it takes two individuals of Species 2 to have the same negative effect on the growth of Species 1 as one individual of Species 1 itself.</p>
-<p>To compare this with the <span class="math inline">\(RSN\)</span> formulation, represent <a href="#eq-16-12" class="quarto-xref">Equation&nbsp;<span>16.12</span></a> with <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> subscripts</p>
+<p>To compare this with the <span class="smallcaps">rsn</span> formulation, represent <a href="#eq-16-12" class="quarto-xref">Equation&nbsp;<span>16.12</span></a> with <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> subscripts</p>
 <p><span class="math display">\[
 \frac{1}{N_i}\frac{dN_i}{dt} = r_i \left(1-\frac{N_i+a_{i,j} N_j}{K_i}\right)
 \]</span></p>
@@ -930,7 +936,7 @@ Figure&nbsp;16.22: Case 1: Species 2 excludes Species 1. Case 2: Species 1 exclu
 <p><span class="math display">\[
 \frac{1}{N_i}\frac{dN_i}{dt} = r_i - \frac{r_i}{K_i}N_i - \frac{a_{i,j}\, r_i}{K_i} N_j
 \]</span></p>
-<p>This shows that the Lotka–Volterra formulation is isomorphic to the <span class="math inline">\(RSN\)</span> formulation. All conclusions about competitive systems examined thus far apply to the Lotka–Volterra formulation as well, with the appropriate translation of parameters. Parameter <span class="math inline">\(r_i\)</span> is the same in both the Lotka–Volterra formulation and the <span class="math inline">\(RSN\)</span> formulation, but <span class="math inline">\(s_{i,i}=-r_i/K_i\)</span> and <span class="math inline">\(s_{i,j}=-a_{i,j}\,r_i/K_i\)</span>.</p>
+<p>This shows that the Lotka–Volterra formulation is isomorphic to the <span class="smallcaps">rsn</span> formulation. All conclusions about competitive systems examined thus far apply to the Lotka–Volterra formulation as well, with the appropriate translation of parameters. Parameter <span class="math inline">\(r_i\)</span> is the same in both the Lotka–Volterra formulation and the <span class="smallcaps">rsn</span> formulation, but <span class="math inline">\(s_{i,i}=-r_i/K_i\)</span> and <span class="math inline">\(s_{i,j}=-a_{i,j}\,r_i/K_i\)</span>.</p>
 <p>Beware, however, of a widely quoted statement derived from this formulation that appears throughout the ecological literature and textbooks. Statements like “Coexistence requires that each species inhibit itself more than it inhibits the other species” are abundant in textbooks and in the ecological literature. Alas, those statements are not correct.</p>
 <p>To see this, examine <a href="#fig-16-21" class="quarto-xref">Figure&nbsp;<span>16.21</span></a>. Here Species 2 inhibits itself with <span class="math inline">\(s_{2,2}=-1\)</span>, while it inhibits Species 1 more strongly, with <span class="math inline">\(s_{1,2}=-1.153\)</span>. Yet there is global coexistence. Evidently, coexistence <em>does not</em> require that each species inhibit itself more than it inhibits the other, as in the conventional wisdom.</p>
 <p>The confusion in the literature has apparently emerged from the presence of the carrying capacity terms, <span class="math inline">\(K_1\)</span> and <span class="math inline">\(K_2\)</span>, in the Lotka–Volterra formulation. These terms obscure the effects of the interaction terms, <span class="math inline">\(a_{1,2}\)</span> and <span class="math inline">\(a_{2,1}\)</span>, when carrying capacities differ between the species.</p>
@@ -1364,8 +1370,8 @@ Figure&nbsp;16.23: Coexistence in terms of a kind of overyielding (Vandermeer 19
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./15-not-yet-adapted.html" class="pagination-link" aria-label="Chapter 15">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chapter 15</span></span>
+      <a href="./15-theory-of-disease.html" class="pagination-link" aria-label="Theory of disease">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Theory of disease</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
