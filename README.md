@@ -45,6 +45,12 @@ quarto render book    # full build into book/_book/
 
 ## Publishing
 
-Pushing to `main` publishes the book to GitHub Pages automatically (`.github/workflows/publish.yml`). CI does not run R; it uses the frozen results in `book/_freeze/`. So after changing any R code, render locally (`quarto render book`) and commit the updated `book/_freeze/` along with your change.
+A maintainer publishes the book to GitHub Pages with
 
-To publish by hand instead: `quarto publish gh-pages book`.
+```
+quarto publish gh-pages book
+```
+
+The `gh-pages` branch is protected, so this has to be run by someone with push access to it. It uses the frozen results in `book/_freeze/`. So after changing any R code, render locally (`quarto render book`) and commit the updated `book/_freeze/` along with your change.
+
+On every push and pull request, GitHub Actions (`.github/workflows/check.yml`) checks that the book still builds without warnings, such as broken cross-references.

@@ -1,0 +1,25 @@
+# Check that the book builds (all cross-references resolve) on every push
+# and pull request. R code is NOT run in CI: computations are frozen locally
+# in book/_freeze/ (committed). After changing R code in a chapter, run
+# `quarto render book` locally and commit the updated _freeze/ directory.
+#
+# Publishing is done by a maintainer with `quarto publish gh-pages book`
+# (gh-pages is a protected branch, so the Actions bot cannot push to it).
+name: Check book
+
+on:
+  push:
+    branches: main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: quarto-dev/quarto-actions/setup@v2
+      - name: Render book (fail on unresolved cross-references)
+        run: |
+          quarto render book 2>&1 | tee render.log
+          if grep -q "WARN" render.log; then echo "::error::Render produced warnings"; exit 1; fi
