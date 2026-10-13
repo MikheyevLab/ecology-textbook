@@ -115,7 +115,7 @@ $$
 \frac{1}{N}\frac{dN}{dt} = r + s N, \quad r=m(R_{\rm max}-R^\star), \quad s=-u m
 $$
 
-The same form arises in the epidemiological $I$ model of the [original book](http://hdl.handle.net/11299/204551). And it will arise again in future models.
+Recall that this also happened for the epidemiological $I$ model (@sec-i-model). And it will arise again in future models.
 
 ## Competitive exclusion
 
@@ -370,9 +370,9 @@ $$
 \end{aligned}
 $$ {#eq-16-11}
 
-Notice that, again, a mechanistic model with measurable parameters is just the general ecological $RSN$ model in disguise.
+Notice that, again, a mechanistic model with measurable parameters is just the general ecological [rsn]{.smallcaps} model in disguise.
 
-The $RSN$ formulation can expose the possibilities of two-resource situations in phase space. The isoclines are Equations [-@eq-16-7] and [-@eq-16-8] of this chapter, with slopes $-s_{1,1}/s_{1,2}$ and $-s_{2,1}/s_{2,2}$ for Species 1 and 2, respectively.
+The [rsn]{.smallcaps} formulation can expose the possibilities of two-resource situations in phase space. The isoclines are Equations [-@eq-16-7] and [-@eq-16-8] of this chapter, with slopes $-s_{1,1}/s_{1,2}$ and $-s_{2,1}/s_{2,2}$ for Species 1 and 2, respectively.
 
 These two slopes can be written in terms of the resource. With the values for $s_{i,j}$ from @eq-16-11 ($s_{1,1}= -m_1\,p_1 u_1$, $s_{1,2}= -m_1\,p_2 u_2$, $s_{2,1}= -m_2\,q_1 u_1$, and $s_{2,2}= -m_2\,q_2 u_2$), the slopes of the isoclines become
 
@@ -424,7 +424,7 @@ $$ {#eq-16-12}
 
 $K_1$ and $K_2$ are the carrying capacities for Species 1 and 2, respectively. Parameters $a_{1,2}$ and $a_{2,1}$ represent the interference by each species on the other. If $a_{1,2}=2$, for example, each individual of Species 2 interferes with the growth of Species 1 as if it were two individuals of Species 1. If, on the other hand, $a_{1,2}=1/2$, it takes two individuals of Species 2 to have the same negative effect on the growth of Species 1 as one individual of Species 1 itself.
 
-To compare this with the $RSN$ formulation, represent @eq-16-12 with $i$ and $j$ subscripts
+To compare this with the [rsn]{.smallcaps} formulation, represent @eq-16-12 with $i$ and $j$ subscripts
 
 $$
 \frac{1}{N_i}\frac{dN_i}{dt} = r_i \left(1-\frac{N_i+a_{i,j} N_j}{K_i}\right)
@@ -436,7 +436,7 @@ $$
 \frac{1}{N_i}\frac{dN_i}{dt} = r_i - \frac{r_i}{K_i}N_i - \frac{a_{i,j}\, r_i}{K_i} N_j
 $$
 
-This shows that the Lotka--Volterra formulation is isomorphic to the $RSN$ formulation. All conclusions about competitive systems examined thus far apply to the Lotka--Volterra formulation as well, with the appropriate translation of parameters. Parameter $r_i$ is the same in both the Lotka--Volterra formulation and the $RSN$ formulation, but $s_{i,i}=-r_i/K_i$ and $s_{i,j}=-a_{i,j}\,r_i/K_i$.
+This shows that the Lotka--Volterra formulation is isomorphic to the [rsn]{.smallcaps} formulation. All conclusions about competitive systems examined thus far apply to the Lotka--Volterra formulation as well, with the appropriate translation of parameters. Parameter $r_i$ is the same in both the Lotka--Volterra formulation and the [rsn]{.smallcaps} formulation, but $s_{i,i}=-r_i/K_i$ and $s_{i,j}=-a_{i,j}\,r_i/K_i$.
 
 Beware, however, of a widely quoted statement derived from this formulation that appears throughout the ecological literature and textbooks. Statements like "Coexistence requires that each species inhibit itself more than it inhibits the other species" are abundant in textbooks and in the ecological literature. Alas, those statements are not correct.
 

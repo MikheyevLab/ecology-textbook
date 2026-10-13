@@ -71,7 +71,7 @@ Diseases can exploit blood-sucking parasites to move directly from the blood str
 
 Human populations are so large and dense that even relatively inefficient pathogens can be successful. And diseases, of course, also affect wild and domestic animals as well as crops and other plants.
 
-As @sec-ch15 illustrates, many diseases can evolve to be relatively harmless to their hosts, promoting transmission and allowing the disease to become widespread. Rust fungus infections, for example, are common in many plant species, but seldom lead to the death of the host. Powder mildew on the prairie plant *Monarda fistulosa* is so widespread that it is used in plant identification books as a way to identify the species (@fig-14-6, right).
+As @sec-disease illustrates, many diseases can evolve to be relatively harmless to their hosts, promoting transmission and allowing the disease to become widespread. Rust fungus infections, for example, are common in many plant species, but seldom lead to the death of the host. Powder mildew on the prairie plant *Monarda fistulosa* is so widespread that it is used in plant identification books as a way to identify the species (@fig-14-6, right).
 
 ![Prairie Bush Clover and *Monarda fistulosa*.](img/fig_14_6.png){#fig-14-6 fig-alt="Left: prairie bush clover leaves speckled with orange rust fungus. Right: a Monarda fistulosa leaf whitened by powdery mildew." width="80%"}
 

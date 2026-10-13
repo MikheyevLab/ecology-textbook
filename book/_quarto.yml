@@ -27,7 +27,7 @@ book:
       licensed [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
   chapters:
     - index.qmd
-    - part: "Introduction"
+    - part: "Background"
       chapters:
         - 01-what-is-ecology.qmd
         - 02-ecological-theory.qmd
@@ -37,8 +37,8 @@ book:
         - 04-modeling-single-population.qmd
         - 05-differential-difference-forms.qmd
         - 06-human-population-growth.qmd
-        - 07-discrete-time-chaos.qmd
-    - part: "Two species"
+        - 07-chaos-and-randomness.qmd
+    - part: "Models of two species"
       chapters:
         - 08-theory-of-interactions.qmd
         - 09-embodied-by-natural-selection.qmd
@@ -47,9 +47,10 @@ book:
         - 12-predator-prey.qmd
         - 13-humans-as-predators.qmd
         - 14-humans-as-prey.qmd
-        - 15-not-yet-adapted.qmd
+        - 15-theory-of-disease.qmd
         - 16-competition.qmd
         - 17-mutualism.qmd
+        - 18-higher-order-models.qmd
 
 bibliography: references.bib
 

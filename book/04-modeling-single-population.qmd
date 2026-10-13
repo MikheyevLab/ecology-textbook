@@ -265,7 +265,7 @@ $$ {#eq-4-3}
 
 The higher-order terms in @eq-4-2 could refine population projections if there were enough data to determine them. They are not really needed, however, because straight-line parts can be pieced together to form a general population growth curve, as in @fig-4-4. And as human population growth in @fig-6-3 will show, a piecewise approach can more closely approximate the real situation.
 
-Moreover, blending separate versions of @eq-4-1 can generalize to either the Hutchinson or Kolmogorov forms, @eq-4-2 and @eq-4-3, as you will see in Chapter 18 of the [original book](http://hdl.handle.net/11299/204551).
+Moreover, blending separate versions of @eq-4-1 can generalize to either the Hutchinson or Kolmogorov forms, @eq-4-2 and @eq-4-3, as you will see in @sec-higher-order.
 
 ## Exercises
 

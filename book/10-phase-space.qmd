@@ -196,7 +196,7 @@ v11=(-b-Sqrt(b^2-4*a*c))/(2*a);
 w11=(-b+Sqrt(b^2-4*a*c))/(2*a);
 ```
 
-The formulae in @tbl-10-1 work for any two-species $RSN$ model---that is, any model of the form $\frac{1}{N_{i}}\frac{dN_{i}}{dt} = r_{i} + s_{i,i}N_{i} + s_{i,j}N_{j}$ with constant coefficients---but formulae for other models must be derived separately, from a software package, or following methods for ["Jacobian matrices"](https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant).
+The formulae in @tbl-10-1 work for any two-species [rsn]{.smallcaps} model---that is, any model of the form $\frac{1}{N_{i}}\frac{dN_{i}}{dt} = r_{i} + s_{i,i}N_{i} + s_{i,j}N_{j}$ with constant coefficients---but formulae for other models must be derived separately, from a software package, or following methods for ["Jacobian matrices"](https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant).
 
 ::: {#box-10-2}
 | | | |

@@ -55,3 +55,6 @@ book/.quarto/
 /.quarto/
 book/_build/
 **/*.quarto_ipynb
+
+# Original book PDF (source for adaptation; not committed)
+QuantEco20190712.pdf
